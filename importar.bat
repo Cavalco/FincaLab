@@ -1,0 +1,1 @@
+C:\Users\jCarl\Desktop\Prueba\mysql.exe -uroot -proot beta_fincalab < C:\Users\jCarl\Downloads\prueba.sql
