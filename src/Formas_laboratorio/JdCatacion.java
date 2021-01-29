@@ -13,12 +13,15 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JFrame;
 import Idioma.Propiedades;
+import java.awt.event.MouseEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
+import javax.swing.JRadioButton;
 import javax.swing.UIManager;
 import javax.swing.UIManager.LookAndFeelInfo;
 import javax.swing.UnsupportedLookAndFeelException;
+
 /**
  *
  * @author Contador
@@ -31,23 +34,25 @@ public class JdCatacion extends javax.swing.JDialog {
     jpBitacora jpCT;
     metodosLaboratorio mdb;
     Connection cn;
-     Propiedades idioma;
-      String Idioma;
+    Propiedades idioma;
+    String Idioma;
     String csm = "", comunindad = "", tipo = "", id, forma = "";
+    String cadenaSweet = "" ,cadenaFloral = "", cadenaFrutal = "", cadenaAcFm = "", cadenaVV = "", 
+            cadenaOtros = "", cadenaTostado = "", cadenaEspecias = "", cadenaNC = "";
 
     public JdCatacion(java.awt.Frame parent, boolean modal, String tipo, String id, String csm, String comunindad, String tipoc, String forma, Connection c, String Idioma) {
         super(parent, modal);
-               try {
-                UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
-            } catch (ClassNotFoundException ex) {
-                Logger.getLogger(jdEvaluacionA.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (InstantiationException ex) {
-                Logger.getLogger(jdEvaluacionA.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (IllegalAccessException ex) {
-                Logger.getLogger(jdEvaluacionA.class.getName()).log(Level.SEVERE, null, ex);
-            } catch (UnsupportedLookAndFeelException ex) {
-                Logger.getLogger(jdEvaluacionA.class.getName()).log(Level.SEVERE, null, ex);
-            }
+        try {
+            UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());
+        } catch (ClassNotFoundException ex) {
+            Logger.getLogger(jdEvaluacionA.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (InstantiationException ex) {
+            Logger.getLogger(jdEvaluacionA.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (IllegalAccessException ex) {
+            Logger.getLogger(jdEvaluacionA.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (UnsupportedLookAndFeelException ex) {
+            Logger.getLogger(jdEvaluacionA.class.getName()).log(Level.SEVERE, null, ex);
+        }
         initComponents();
         this.csm = csm;
         this.comunindad = comunindad;
@@ -55,13 +60,299 @@ public class JdCatacion extends javax.swing.JDialog {
         this.forma = forma;
         this.id = id;
         this.cn = c;
-          this.Idioma=Idioma;
+        this.Idioma = Idioma;
         Csm.setText(csm);
         comunidad.setText(comunindad);
         Tipo.setText(tipoc);
-  mdb = new metodosLaboratorio(cn,Idioma);
-    Date date = new Date(System.currentTimeMillis());
+        mdb = new metodosLaboratorio(cn, Idioma);
+        Date date = new Date(System.currentTimeMillis());
         calendario.setMaxSelectableDate(date);
+    }
+
+    String ultimoSabor = "";
+    
+    public void intensidadSabor(JRadioButton radio) {
+        String nuevoSabor = radio.toString();
+        
+        if(nuevoSabor.equals(ultimoSabor)){
+        cont++;    
+        }
+        else{
+            cont = 0;
+            cont++;
+        }
+            
+        if (cont == 4) {
+            cont = 0;
+        }
+        switch (cont) {
+            case 1:
+                
+                radio.setBackground(Color.green);
+                radio.setSelected(true);
+                radio.setOpaque(true);
+                break;
+            case 2:
+                
+                radio.setBackground(Color.orange);
+                radio.setSelected(true);
+                radio.setOpaque(true);
+                break;
+            case 3:
+                
+                radio.setBackground(Color.red);
+                radio.setSelected(true);
+                radio.setOpaque(true);
+                break;
+            default:
+                
+                radio.setBackground(new Color(240, 240, 240));
+                radio.setSelected(false);
+                radio.setOpaque(false);
+        }
+        ultimoSabor = radio.toString();
+    }
+    
+    //Guardar intensidad de sabor Dulce
+    public void intensidadSweet(JRadioButton radio){
+        //cadena = tipoCadena;
+        switch (cont) {
+            case 1:
+                cadenaSweet+="1"+radio.getText()+", ";
+                cadenaSweet=cadenaSweet.replace("2"+ radio.getText()+", ","" );
+                cadenaSweet=cadenaSweet.replace("3"+ radio.getText()+", ","" );
+                break;
+            case 2:
+                cadenaSweet+="2"+radio.getText()+", ";
+                cadenaSweet=cadenaSweet.replace("1"+ radio.getText()+", ","" );
+                cadenaSweet=cadenaSweet.replace("3"+ radio.getText()+", ","" );
+                break;
+            case 3:
+                cadenaSweet+="3"+radio.getText()+", ";
+                cadenaSweet=cadenaSweet.replace("2"+ radio.getText()+", ","" );
+                cadenaSweet=cadenaSweet.replace("1"+ radio.getText()+", ","" );
+                break;
+            default:
+                cadenaSweet=cadenaSweet.replace("3"+ radio.getText()+", ","" );
+                cadenaSweet=cadenaSweet.replace("2"+ radio.getText()+", ","" );
+                cadenaSweet=cadenaSweet.replace("1"+ radio.getText()+", ","" );
+        }
+        System.out.println("Sweet: "+cadenaSweet);
+    }
+    
+    //Guardar intensidad de sabor Floral
+    public void intensidadFloral(JRadioButton radio){
+        //cadena = tipoCadena;
+        switch (cont) {
+            case 1:
+                cadenaFloral+="1"+radio.getText()+", ";
+                cadenaFloral=cadenaFloral.replace("2"+ radio.getText()+", ","" );
+                cadenaFloral=cadenaFloral.replace("3"+ radio.getText()+", ","" );
+                break;
+            case 2:
+                cadenaFloral+="2"+radio.getText()+", ";
+                cadenaFloral=cadenaFloral.replace("1"+ radio.getText()+", ","" );
+                cadenaFloral=cadenaFloral.replace("3"+ radio.getText()+", ","" );
+                break;
+            case 3:
+                cadenaFloral+="3"+radio.getText()+", ";
+                cadenaFloral=cadenaFloral.replace("2"+ radio.getText()+", ","" );
+                cadenaFloral=cadenaFloral.replace("1"+ radio.getText()+", ","" );
+                break;
+            default:
+                cadenaFloral=cadenaFloral.replace("3"+ radio.getText()+", ","" );
+                cadenaFloral=cadenaFloral.replace("2"+ radio.getText()+", ","" );
+                cadenaFloral=cadenaFloral.replace("1"+ radio.getText()+", ","" );
+        }
+        System.out.println("Floral: "+cadenaFloral);
+    }
+    
+    //Guardar intensidad de sabor Frutal
+    public void intensidadFrutal(JRadioButton radio){
+        //cadena = tipoCadena;
+        switch (cont) {
+            case 1:
+                cadenaFrutal+="1"+radio.getText()+", ";
+                cadenaFrutal=cadenaFrutal.replace("2"+ radio.getText()+", ","" );
+                cadenaFrutal=cadenaFrutal.replace("3"+ radio.getText()+", ","" );
+                break;
+            case 2:
+                cadenaFrutal+="2"+radio.getText()+", ";
+                cadenaFrutal=cadenaFrutal.replace("1"+ radio.getText()+", ","" );
+                cadenaFrutal=cadenaFrutal.replace("3"+ radio.getText()+", ","" );
+                break;
+            case 3:
+                cadenaFrutal+="3"+radio.getText()+", ";
+                cadenaFrutal=cadenaFrutal.replace("2"+ radio.getText()+", ","" );
+                cadenaFrutal=cadenaFrutal.replace("1"+ radio.getText()+", ","" );
+                break;
+            default:
+                cadenaFrutal=cadenaFrutal.replace("3"+ radio.getText()+", ","" );
+                cadenaFrutal=cadenaFrutal.replace("2"+ radio.getText()+", ","" );
+                cadenaFrutal=cadenaFrutal.replace("1"+ radio.getText()+", ","" );
+        }
+        System.out.println("Frutal: "+cadenaFrutal);
+    }
+    //Guardar intensidad de sabor Acido/Fermentado
+    public void intensidadAcFm(JRadioButton radio){
+        //cadena = tipoCadena;
+        switch (cont) {
+            case 1:
+                cadenaAcFm+="1"+radio.getText()+", ";
+                cadenaAcFm=cadenaAcFm.replace("2"+ radio.getText()+", ","" );
+                cadenaAcFm=cadenaAcFm.replace("3"+ radio.getText()+", ","" );
+                break;
+            case 2:
+                cadenaAcFm+="2"+radio.getText()+", ";
+                cadenaAcFm=cadenaAcFm.replace("1"+ radio.getText()+", ","" );
+                cadenaAcFm=cadenaAcFm.replace("3"+ radio.getText()+", ","" );
+                break;
+            case 3:
+                cadenaAcFm+="3"+radio.getText()+", ";
+                cadenaAcFm=cadenaAcFm.replace("2"+ radio.getText()+", ","" );
+                cadenaAcFm=cadenaAcFm.replace("1"+ radio.getText()+", ","" );
+                break;
+            default:
+                cadenaAcFm=cadenaAcFm.replace("3"+ radio.getText()+", ","" );
+                cadenaAcFm=cadenaAcFm.replace("2"+ radio.getText()+", ","" );
+                cadenaAcFm=cadenaAcFm.replace("1"+ radio.getText()+", ","" );
+        }
+        System.out.println("Acido/Fermentado: "+cadenaAcFm);
+    }
+    
+    //Guardar intensidad de sabor Verde/Vegetal
+    public void intensidadVV(JRadioButton radio){
+        //cadena = tipoCadena;
+        switch (cont) {
+            case 1:
+                cadenaVV+="1"+radio.getText()+", ";
+                cadenaVV=cadenaVV.replace("2"+ radio.getText()+", ","" );
+                cadenaVV=cadenaVV.replace("3"+ radio.getText()+", ","" );
+                break;
+            case 2:
+                cadenaVV+="2"+radio.getText()+", ";
+                cadenaVV=cadenaVV.replace("1"+ radio.getText()+", ","" );
+                cadenaVV=cadenaVV.replace("3"+ radio.getText()+", ","" );
+                break;
+            case 3:
+                cadenaVV+="3"+radio.getText()+", ";
+                cadenaVV=cadenaVV.replace("2"+ radio.getText()+", ","" );
+                cadenaVV=cadenaVV.replace("1"+ radio.getText()+", ","" );
+                break;
+            default:
+                cadenaVV=cadenaVV.replace("3"+ radio.getText()+", ","" );
+                cadenaVV=cadenaVV.replace("2"+ radio.getText()+", ","" );
+                cadenaVV=cadenaVV.replace("1"+ radio.getText()+", ","" );
+        }
+        System.out.println("Verde/Vegetal: "+cadenaVV);
+    }
+    
+    //Guardar intensidad de sabor Otros
+    public void intensidadOtros(JRadioButton radio){
+        //cadena = tipoCadena;
+        switch (cont) {
+            case 1:
+                cadenaOtros+="1"+radio.getText()+", ";
+                cadenaOtros=cadenaOtros.replace("2"+ radio.getText()+", ","" );
+                cadenaOtros=cadenaOtros.replace("3"+ radio.getText()+", ","" );
+                break;
+            case 2:
+                cadenaOtros+="2"+radio.getText()+", ";
+                cadenaOtros=cadenaOtros.replace("1"+ radio.getText()+", ","" );
+                cadenaOtros=cadenaOtros.replace("3"+ radio.getText()+", ","" );
+                break;
+            case 3:
+                cadenaOtros+="3"+radio.getText()+", ";
+                cadenaOtros=cadenaOtros.replace("2"+ radio.getText()+", ","" );
+                cadenaOtros=cadenaOtros.replace("1"+ radio.getText()+", ","" );
+                break;
+            default:
+                cadenaOtros=cadenaOtros.replace("3"+ radio.getText()+", ","" );
+                cadenaOtros=cadenaOtros.replace("2"+ radio.getText()+", ","" );
+                cadenaOtros=cadenaOtros.replace("1"+ radio.getText()+", ","" );
+        }
+        System.out.println("Otros: "+cadenaOtros);
+    }
+    
+    //Guardar intensidad de sabor Tostado
+    public void intensidadTostado(JRadioButton radio){
+        //cadena = tipoCadena;
+        switch (cont) {
+            case 1:
+                cadenaTostado+="1"+radio.getText()+", ";
+                cadenaTostado=cadenaTostado.replace("2"+ radio.getText()+", ","" );
+                cadenaTostado=cadenaTostado.replace("3"+ radio.getText()+", ","" );
+                break;
+            case 2:
+                cadenaTostado+="2"+radio.getText()+", ";
+                cadenaTostado=cadenaTostado.replace("1"+ radio.getText()+", ","" );
+                cadenaTostado=cadenaTostado.replace("3"+ radio.getText()+", ","" );
+                break;
+            case 3:
+                cadenaTostado+="3"+radio.getText()+", ";
+                cadenaTostado=cadenaTostado.replace("2"+ radio.getText()+", ","" );
+                cadenaTostado=cadenaTostado.replace("1"+ radio.getText()+", ","" );
+                break;
+            default:
+                cadenaTostado=cadenaTostado.replace("3"+ radio.getText()+", ","" );
+                cadenaTostado=cadenaTostado.replace("2"+ radio.getText()+", ","" );
+                cadenaTostado=cadenaTostado.replace("1"+ radio.getText()+", ","" );
+        }
+        System.out.println("Tostado: "+cadenaTostado);
+    }
+    
+    //Guardar intensidad de sabor Especias
+    public void intensidadEspecias(JRadioButton radio){
+        //cadena = tipoCadena;
+        switch (cont) {
+            case 1:
+                cadenaEspecias+="1"+radio.getText()+", ";
+                cadenaEspecias=cadenaEspecias.replace("2"+ radio.getText()+", ","" );
+                cadenaEspecias=cadenaEspecias.replace("3"+ radio.getText()+", ","" );
+                break;
+            case 2:
+                cadenaEspecias+="2"+radio.getText()+", ";
+                cadenaEspecias=cadenaEspecias.replace("1"+ radio.getText()+", ","" );
+                cadenaEspecias=cadenaEspecias.replace("3"+ radio.getText()+", ","" );
+                break;
+            case 3:
+                cadenaEspecias+="3"+radio.getText()+", ";
+                cadenaEspecias=cadenaEspecias.replace("2"+ radio.getText()+", ","" );
+                cadenaEspecias=cadenaEspecias.replace("1"+ radio.getText()+", ","" );
+                break;
+            default:
+                cadenaEspecias=cadenaEspecias.replace("3"+ radio.getText()+", ","" );
+                cadenaEspecias=cadenaEspecias.replace("2"+ radio.getText()+", ","" );
+                cadenaEspecias=cadenaEspecias.replace("1"+ radio.getText()+", ","" );
+        }
+        System.out.println("Especias: "+cadenaEspecias);
+    }
+    
+    //Guardar intensidad de sabor Nueces/Cacao
+    public void intensidadNC(JRadioButton radio){
+        //cadena = tipoCadena;
+        switch (cont) {
+            case 1:
+                cadenaNC+="1"+radio.getText()+", ";
+                cadenaNC=cadenaNC.replace("2"+ radio.getText()+", ","" );
+                cadenaNC=cadenaNC.replace("3"+ radio.getText()+", ","" );
+                break;
+            case 2:
+                cadenaNC+="2"+radio.getText()+", ";
+                cadenaNC=cadenaNC.replace("1"+ radio.getText()+", ","" );
+                cadenaNC=cadenaNC.replace("3"+ radio.getText()+", ","" );
+                break;
+            case 3:
+                cadenaNC+="3"+radio.getText()+", ";
+                cadenaNC=cadenaNC.replace("2"+ radio.getText()+", ","" );
+                cadenaNC=cadenaNC.replace("1"+ radio.getText()+", ","" );
+                break;
+            default:
+                cadenaNC=cadenaNC.replace("3"+ radio.getText()+", ","" );
+                cadenaNC=cadenaNC.replace("2"+ radio.getText()+", ","" );
+                cadenaNC=cadenaNC.replace("1"+ radio.getText()+", ","" );
+        }
+        System.out.println("Nueces/Cacao: "+cadenaNC);
     }
 
     /**
@@ -310,6 +601,7 @@ public class JdCatacion extends javax.swing.JDialog {
         Rose = new javax.swing.JRadioButton();
         Jasmine = new javax.swing.JRadioButton();
         Floral = new javax.swing.JRadioButton();
+        jButton3 = new javax.swing.JButton();
         jPanel9 = new javax.swing.JPanel();
         jPanel23 = new javax.swing.JPanel();
         BrownSugar1 = new javax.swing.JRadioButton();
@@ -773,6 +1065,14 @@ public class JdCatacion extends javax.swing.JDialog {
         Nutty4 = new javax.swing.JRadioButton();
         Nuttycocoa4 = new javax.swing.JRadioButton();
         Cocoa4 = new javax.swing.JRadioButton();
+        jPanel61 = new javax.swing.JPanel();
+        jLabel87 = new javax.swing.JLabel();
+        Thin1 = new javax.swing.JRadioButton();
+        Mediumbody1 = new javax.swing.JRadioButton();
+        Heavy1 = new javax.swing.JRadioButton();
+        Syrupy1 = new javax.swing.JRadioButton();
+        Oily1 = new javax.swing.JRadioButton();
+        Smooth1 = new javax.swing.JRadioButton();
         Acidityp = new javax.swing.JPanel();
         jPanel50 = new javax.swing.JPanel();
         Vinegar5 = new javax.swing.JRadioButton();
@@ -787,15 +1087,6 @@ public class JdCatacion extends javax.swing.JDialog {
         jLabel172 = new javax.swing.JLabel();
         OrangeAcidity5 = new javax.swing.JRadioButton();
         AppleAcidity5 = new javax.swing.JRadioButton();
-        jPanel13 = new javax.swing.JPanel();
-        jPanel60 = new javax.swing.JPanel();
-        jLabel86 = new javax.swing.JLabel();
-        Thin = new javax.swing.JRadioButton();
-        Mediumbody = new javax.swing.JRadioButton();
-        Heavy = new javax.swing.JRadioButton();
-        Syrupy = new javax.swing.JRadioButton();
-        Oily = new javax.swing.JRadioButton();
-        Smooth = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Evaluacion de Taza");
@@ -1736,6 +2027,7 @@ public class JdCatacion extends javax.swing.JDialog {
         });
 
         Dry.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        Dry.setOpaque(false);
         Dry.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 DryMouseClicked(evt);
@@ -1747,85 +2039,80 @@ public class JdCatacion extends javax.swing.JDialog {
         BrownSugar.setBackground(new java.awt.Color(255, 102, 102));
         BrownSugar.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         BrownSugar.setText("Brown Sugar");
-        BrownSugar.addItemListener(new java.awt.event.ItemListener() {
-            public void itemStateChanged(java.awt.event.ItemEvent evt) {
-                BrownSugarItemStateChanged(evt);
-            }
-        });
-        BrownSugar.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                BrownSugarStateChanged(evt);
-            }
-        });
-        BrownSugar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BrownSugarActionPerformed(evt);
+        BrownSugar.setOpaque(false);
+        BrownSugar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BrownSugarMouseClicked(evt);
             }
         });
 
         MapleSugar.setBackground(new java.awt.Color(255, 102, 102));
         MapleSugar.setText("Maple Sugar");
+        MapleSugar.setOpaque(false);
         MapleSugar.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 MapleSugarItemStateChanged(evt);
             }
         });
-        MapleSugar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MapleSugarActionPerformed(evt);
+        MapleSugar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MapleSugarMouseClicked(evt);
             }
         });
 
         Carmelized.setBackground(new java.awt.Color(255, 102, 102));
         Carmelized.setText("Carmelized");
+        Carmelized.setOpaque(false);
         Carmelized.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 CarmelizedItemStateChanged(evt);
             }
         });
-        Carmelized.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CarmelizedActionPerformed(evt);
+        Carmelized.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CarmelizedMouseClicked(evt);
             }
         });
 
         Molasses.setBackground(new java.awt.Color(255, 102, 102));
         Molasses.setText("Molasses");
+        Molasses.setOpaque(false);
         Molasses.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 MolassesItemStateChanged(evt);
             }
         });
-        Molasses.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MolassesActionPerformed(evt);
+        Molasses.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MolassesMouseClicked(evt);
             }
         });
 
-        Honey.setBackground(new java.awt.Color(255, 102, 102));
         Honey.setText("Honey");
+        Honey.setOpaque(false);
         Honey.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 HoneyItemStateChanged(evt);
             }
         });
-        Honey.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HoneyActionPerformed(evt);
+        Honey.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HoneyMouseClicked(evt);
             }
         });
 
         Vanilla.setBackground(new java.awt.Color(255, 102, 102));
         Vanilla.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Vanilla.setText("Vanilla");
+        Vanilla.setOpaque(false);
         Vanilla.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 VanillaItemStateChanged(evt);
             }
         });
-        Vanilla.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VanillaActionPerformed(evt);
+        Vanilla.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                VanillaMouseClicked(evt);
             }
         });
 
@@ -1868,145 +2155,145 @@ public class JdCatacion extends javax.swing.JDialog {
 
         Blackberry.setBackground(new java.awt.Color(236, 217, 25));
         Blackberry.setText("Blackberry");
-        Blackberry.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BlackberryActionPerformed(evt);
+        Blackberry.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BlackberryMouseClicked(evt);
             }
         });
 
         Raspberry.setBackground(new java.awt.Color(236, 217, 25));
         Raspberry.setText("Raspberry");
-        Raspberry.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RaspberryActionPerformed(evt);
+        Raspberry.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RaspberryMouseClicked(evt);
             }
         });
 
         Blueberry.setBackground(new java.awt.Color(236, 217, 25));
         Blueberry.setText("Blueberry");
-        Blueberry.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BlueberryActionPerformed(evt);
+        Blueberry.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BlueberryMouseClicked(evt);
             }
         });
 
         Strawberry.setBackground(new java.awt.Color(236, 217, 25));
         Strawberry.setText("Strawberry");
-        Strawberry.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                StrawberryActionPerformed(evt);
+        Strawberry.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                StrawberryMouseClicked(evt);
             }
         });
 
         Raisen.setBackground(new java.awt.Color(236, 217, 25));
         Raisen.setText("Raisen");
-        Raisen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RaisenActionPerformed(evt);
+        Raisen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RaisenMouseClicked(evt);
             }
         });
 
         Prune.setBackground(new java.awt.Color(236, 217, 25));
         Prune.setText("Prune");
-        Prune.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PruneActionPerformed(evt);
+        Prune.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PruneMouseClicked(evt);
             }
         });
 
         Coconut.setBackground(new java.awt.Color(236, 217, 25));
         Coconut.setText("Coconut");
-        Coconut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CoconutActionPerformed(evt);
+        Coconut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CoconutMouseClicked(evt);
             }
         });
 
         Cherry.setBackground(new java.awt.Color(236, 217, 25));
         Cherry.setText("Cherry");
-        Cherry.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CherryActionPerformed(evt);
+        Cherry.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CherryMouseClicked(evt);
             }
         });
 
         Pomagranite.setBackground(new java.awt.Color(236, 217, 25));
         Pomagranite.setText("Pomagranite");
-        Pomagranite.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PomagraniteActionPerformed(evt);
+        Pomagranite.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PomagraniteMouseClicked(evt);
             }
         });
 
         Pinneapple.setBackground(new java.awt.Color(236, 217, 25));
         Pinneapple.setText("Pinneapple");
-        Pinneapple.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PinneappleActionPerformed(evt);
+        Pinneapple.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PinneappleMouseClicked(evt);
             }
         });
 
         Grape.setBackground(new java.awt.Color(236, 217, 25));
         Grape.setText("Grape");
-        Grape.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GrapeActionPerformed(evt);
+        Grape.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GrapeMouseClicked(evt);
             }
         });
 
         Apple.setBackground(new java.awt.Color(236, 217, 25));
         Apple.setText("Apple");
-        Apple.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AppleActionPerformed(evt);
+        Apple.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AppleMouseClicked(evt);
             }
         });
 
         Peach.setBackground(new java.awt.Color(236, 217, 25));
         Peach.setText("Peach");
-        Peach.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PeachActionPerformed(evt);
+        Peach.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PeachMouseClicked(evt);
             }
         });
 
         Pear.setBackground(new java.awt.Color(236, 217, 25));
         Pear.setText("Pear");
-        Pear.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PearActionPerformed(evt);
+        Pear.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PearMouseClicked(evt);
             }
         });
 
         Grapefruit.setBackground(new java.awt.Color(236, 217, 25));
         Grapefruit.setText("Grapefruit");
-        Grapefruit.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GrapefruitActionPerformed(evt);
+        Grapefruit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GrapefruitMouseClicked(evt);
             }
         });
 
         Orange.setBackground(new java.awt.Color(236, 217, 25));
         Orange.setText("Orange");
-        Orange.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OrangeActionPerformed(evt);
+        Orange.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OrangeMouseClicked(evt);
             }
         });
 
         Lemon.setBackground(new java.awt.Color(236, 217, 25));
         Lemon.setText("Lemon");
-        Lemon.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LemonActionPerformed(evt);
+        Lemon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LemonMouseClicked(evt);
             }
         });
 
         Lime.setBackground(new java.awt.Color(236, 217, 25));
         Lime.setText("Lime");
-        Lime.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LimeActionPerformed(evt);
+        Lime.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                LimeMouseClicked(evt);
             }
         });
 
@@ -2022,18 +2309,38 @@ public class JdCatacion extends javax.swing.JDialog {
         Berry.setBackground(new java.awt.Color(236, 217, 25));
         Berry.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Berry.setText("Berry");
+        Berry.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BerryMouseClicked(evt);
+            }
+        });
 
         DriedFruit.setBackground(new java.awt.Color(236, 217, 25));
         DriedFruit.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         DriedFruit.setText("Dried Fruit");
+        DriedFruit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DriedFruitMouseClicked(evt);
+            }
+        });
 
         Otherfruit.setBackground(new java.awt.Color(236, 217, 25));
         Otherfruit.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Otherfruit.setText("Other fruit");
+        Otherfruit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OtherfruitMouseClicked(evt);
+            }
+        });
 
         Citrusfruit.setBackground(new java.awt.Color(236, 217, 25));
         Citrusfruit.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Citrusfruit.setText("Citrus Fruit");
+        Citrusfruit.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CitrusfruitMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
@@ -2059,9 +2366,8 @@ public class JdCatacion extends javax.swing.JDialog {
                     .addComponent(Pear)
                     .addComponent(Pomagranite)
                     .addComponent(Strawberry)
-                    .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(Berry)
-                        .addComponent(Citrusfruit))
+                    .addComponent(Berry)
+                    .addComponent(Citrusfruit)
                     .addComponent(DriedFruit)
                     .addComponent(Fruity)
                     .addComponent(Raisen)
@@ -2122,73 +2428,73 @@ public class JdCatacion extends javax.swing.JDialog {
 
         Vinegar.setBackground(new java.awt.Color(255, 241, 144));
         Vinegar.setText("Vinegar");
-        Vinegar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VinegarActionPerformed(evt);
+        Vinegar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                VinegarMouseClicked(evt);
             }
         });
 
         Rancidbutter.setBackground(new java.awt.Color(255, 241, 144));
         Rancidbutter.setText("Rancid butter");
-        Rancidbutter.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RancidbutterActionPerformed(evt);
+        Rancidbutter.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RancidbutterMouseClicked(evt);
             }
         });
 
         RancidCheese.setBackground(new java.awt.Color(255, 241, 144));
         RancidCheese.setText("Rancid Cheese");
-        RancidCheese.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RancidCheeseActionPerformed(evt);
+        RancidCheese.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RancidCheeseMouseClicked(evt);
             }
         });
 
         Winey.setBackground(new java.awt.Color(255, 241, 144));
         Winey.setText("Winey");
-        Winey.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                WineyActionPerformed(evt);
+        Winey.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                WineyMouseClicked(evt);
             }
         });
 
         Whiskey.setBackground(new java.awt.Color(255, 241, 144));
         Whiskey.setText("Whiskey");
-        Whiskey.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                WhiskeyActionPerformed(evt);
+        Whiskey.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                WhiskeyMouseClicked(evt);
             }
         });
 
         Fermented.setBackground(new java.awt.Color(255, 241, 144));
         Fermented.setText("Fermented");
-        Fermented.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FermentedActionPerformed(evt);
+        Fermented.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FermentedMouseClicked(evt);
             }
         });
 
         Overripe.setBackground(new java.awt.Color(255, 241, 144));
         Overripe.setText("Over-ripe");
-        Overripe.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OverripeActionPerformed(evt);
+        Overripe.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OverripeMouseClicked(evt);
             }
         });
 
         OrangeAcidity.setBackground(new java.awt.Color(255, 241, 144));
         OrangeAcidity.setText("Orange Acidity");
-        OrangeAcidity.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OrangeAcidityActionPerformed(evt);
+        OrangeAcidity.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OrangeAcidityMouseClicked(evt);
             }
         });
 
         AppleAcidity.setBackground(new java.awt.Color(255, 241, 144));
         AppleAcidity.setText("Apple Acidity");
-        AppleAcidity.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AppleAcidityActionPerformed(evt);
+        AppleAcidity.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AppleAcidityMouseClicked(evt);
             }
         });
 
@@ -2199,10 +2505,23 @@ public class JdCatacion extends javax.swing.JDialog {
         sour.setBackground(new java.awt.Color(255, 241, 144));
         sour.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         sour.setText("Sour");
+        sour.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sourMouseClicked(evt);
+            }
+        });
 
         Alcohol.setBackground(new java.awt.Color(255, 241, 144));
         Alcohol.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Alcohol.setText("Alcohol/Fermented");
+        Alcohol.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AlcoholMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                AlcoholMouseEntered(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
         jPanel18.setLayout(jPanel18Layout);
@@ -2220,7 +2539,7 @@ public class JdCatacion extends javax.swing.JDialog {
                             .addComponent(sour)
                             .addComponent(RancidCheese)
                             .addComponent(Vinegar))))
-                .addGap(0, 0, Short.MAX_VALUE))
+                .addGap(0, 6, Short.MAX_VALUE))
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2235,9 +2554,9 @@ public class JdCatacion extends javax.swing.JDialog {
             jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel18Layout.createSequentialGroup()
                 .addComponent(Sour, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(6, 6, 6)
+                .addGap(11, 11, 11)
                 .addComponent(sour, javax.swing.GroupLayout.PREFERRED_SIZE, 12, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(4, 4, 4)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Vinegar, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Rancidbutter, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2265,83 +2584,83 @@ public class JdCatacion extends javax.swing.JDialog {
         OliveOil.setBackground(new java.awt.Color(123, 236, 133));
         OliveOil.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         OliveOil.setText("Olive Oil");
-        OliveOil.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OliveOilActionPerformed(evt);
+        OliveOil.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OliveOilMouseClicked(evt);
             }
         });
 
         Raw.setBackground(new java.awt.Color(123, 236, 133));
         Raw.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Raw.setText("Raw");
-        Raw.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RawActionPerformed(evt);
+        Raw.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RawMouseClicked(evt);
             }
         });
 
         Underripe.setBackground(new java.awt.Color(123, 236, 133));
         Underripe.setText("Under-ripe");
-        Underripe.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                UnderripeActionPerformed(evt);
+        Underripe.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                UnderripeMouseClicked(evt);
             }
         });
 
         Peapod.setBackground(new java.awt.Color(123, 236, 133));
         Peapod.setText("Pea pod");
-        Peapod.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PeapodActionPerformed(evt);
+        Peapod.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PeapodMouseClicked(evt);
             }
         });
 
         Fresh.setBackground(new java.awt.Color(123, 236, 133));
         Fresh.setText("Fresh");
-        Fresh.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                FreshActionPerformed(evt);
+        Fresh.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                FreshMouseClicked(evt);
             }
         });
 
         DarkGreen.setBackground(new java.awt.Color(123, 236, 133));
         DarkGreen.setText("Dark Green");
-        DarkGreen.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DarkGreenActionPerformed(evt);
+        DarkGreen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DarkGreenMouseClicked(evt);
             }
         });
 
         Vegetative.setBackground(new java.awt.Color(123, 236, 133));
         Vegetative.setText("Vegetative");
-        Vegetative.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                VegetativeActionPerformed(evt);
+        Vegetative.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                VegetativeMouseClicked(evt);
             }
         });
 
         Haylike.setBackground(new java.awt.Color(123, 236, 133));
         Haylike.setText("Hay-like");
-        Haylike.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HaylikeActionPerformed(evt);
+        Haylike.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HaylikeMouseClicked(evt);
             }
         });
 
         Herblike.setBackground(new java.awt.Color(123, 236, 133));
         Herblike.setText("Herb-like");
-        Herblike.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HerblikeActionPerformed(evt);
+        Herblike.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HerblikeMouseClicked(evt);
             }
         });
 
         Beany.setBackground(new java.awt.Color(123, 236, 133));
         Beany.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Beany.setText("Beany");
-        Beany.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BeanyActionPerformed(evt);
+        Beany.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BeanyMouseClicked(evt);
             }
         });
 
@@ -2354,6 +2673,7 @@ public class JdCatacion extends javax.swing.JDialog {
         jPanel20Layout.setHorizontalGroup(
             jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel20Layout.createSequentialGroup()
+                .addContainerGap()
                 .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(OliveOil)
                     .addComponent(Raw)
@@ -2367,7 +2687,7 @@ public class JdCatacion extends javax.swing.JDialog {
                     .addComponent(Beany))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(jPanel20Layout.createSequentialGroup()
-                .addComponent(Green, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(Green, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
                 .addContainerGap())
         );
         jPanel20Layout.setVerticalGroup(
@@ -2401,129 +2721,129 @@ public class JdCatacion extends javax.swing.JDialog {
 
         Stale.setBackground(new java.awt.Color(94, 249, 235));
         Stale.setText("Stale");
-        Stale.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                StaleActionPerformed(evt);
+        Stale.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                StaleMouseClicked(evt);
             }
         });
 
         Cardboard.setBackground(new java.awt.Color(94, 249, 235));
         Cardboard.setText("Cardboard");
-        Cardboard.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CardboardActionPerformed(evt);
+        Cardboard.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CardboardMouseClicked(evt);
             }
         });
 
         Papery.setBackground(new java.awt.Color(94, 249, 235));
         Papery.setText("Papery");
-        Papery.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PaperyActionPerformed(evt);
+        Papery.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PaperyMouseClicked(evt);
             }
         });
 
         Woody.setBackground(new java.awt.Color(94, 249, 235));
         Woody.setText("Woody");
-        Woody.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                WoodyActionPerformed(evt);
+        Woody.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                WoodyMouseClicked(evt);
             }
         });
 
         MoldyDamp.setBackground(new java.awt.Color(94, 249, 235));
         MoldyDamp.setText("Moldy/Damp");
-        MoldyDamp.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MoldyDampActionPerformed(evt);
+        MoldyDamp.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MoldyDampMouseClicked(evt);
             }
         });
 
         MustyDusty.setBackground(new java.awt.Color(94, 249, 235));
         MustyDusty.setText("Musty/Dusty");
-        MustyDusty.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MustyDustyActionPerformed(evt);
+        MustyDusty.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MustyDustyMouseClicked(evt);
             }
         });
 
         MustyEarthy.setBackground(new java.awt.Color(94, 249, 235));
         MustyEarthy.setText("Musty/Earthy");
-        MustyEarthy.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MustyEarthyActionPerformed(evt);
+        MustyEarthy.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MustyEarthyMouseClicked(evt);
             }
         });
 
         Animalic.setBackground(new java.awt.Color(94, 249, 235));
         Animalic.setText("Animalic");
-        Animalic.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AnimalicActionPerformed(evt);
+        Animalic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AnimalicMouseClicked(evt);
             }
         });
 
         MeatyBrothy.setBackground(new java.awt.Color(94, 249, 235));
         MeatyBrothy.setText("Meaty/Brothy");
-        MeatyBrothy.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MeatyBrothyActionPerformed(evt);
+        MeatyBrothy.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MeatyBrothyMouseClicked(evt);
             }
         });
 
         Phenolic.setBackground(new java.awt.Color(94, 249, 235));
         Phenolic.setText("Phenolic");
-        Phenolic.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PhenolicActionPerformed(evt);
+        Phenolic.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PhenolicMouseClicked(evt);
             }
         });
 
         Bitter.setBackground(new java.awt.Color(94, 249, 235));
         Bitter.setText("Bitter");
-        Bitter.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BitterActionPerformed(evt);
+        Bitter.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BitterMouseClicked(evt);
             }
         });
 
         Salty.setBackground(new java.awt.Color(94, 249, 235));
         Salty.setText("Salty");
-        Salty.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SaltyActionPerformed(evt);
+        Salty.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SaltyMouseClicked(evt);
             }
         });
 
         Medicinal.setBackground(new java.awt.Color(94, 249, 235));
         Medicinal.setText("Medicinal");
-        Medicinal.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MedicinalActionPerformed(evt);
+        Medicinal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MedicinalMouseClicked(evt);
             }
         });
 
         Petroleum.setBackground(new java.awt.Color(94, 249, 235));
         Petroleum.setText("Petroleum");
-        Petroleum.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PetroleumActionPerformed(evt);
+        Petroleum.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PetroleumMouseClicked(evt);
             }
         });
 
         Skunky.setBackground(new java.awt.Color(94, 249, 235));
         Skunky.setText("Skunky");
-        Skunky.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SkunkyActionPerformed(evt);
+        Skunky.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SkunkyMouseClicked(evt);
             }
         });
 
         Rubber.setBackground(new java.awt.Color(94, 249, 235));
         Rubber.setText("Rubber");
-        Rubber.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RubberActionPerformed(evt);
+        Rubber.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RubberMouseClicked(evt);
             }
         });
 
@@ -2534,10 +2854,20 @@ public class JdCatacion extends javax.swing.JDialog {
         PaperyM.setBackground(new java.awt.Color(94, 249, 235));
         PaperyM.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         PaperyM.setText("Papery/Musty");
+        PaperyM.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PaperyMMouseClicked(evt);
+            }
+        });
 
         Chemical.setBackground(new java.awt.Color(94, 249, 235));
         Chemical.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Chemical.setText("Chemical");
+        Chemical.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ChemicalMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
         jPanel19.setLayout(jPanel19Layout);
@@ -2624,66 +2954,66 @@ public class JdCatacion extends javax.swing.JDialog {
         PipeTobacco.setBackground(new java.awt.Color(20, 181, 225));
         PipeTobacco.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         PipeTobacco.setText("Pipe Tobacco");
-        PipeTobacco.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PipeTobaccoActionPerformed(evt);
+        PipeTobacco.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PipeTobaccoMouseClicked(evt);
             }
         });
 
         Tobacco.setBackground(new java.awt.Color(20, 181, 225));
         Tobacco.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Tobacco.setText("Tobacco");
-        Tobacco.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                TobaccoActionPerformed(evt);
+        Tobacco.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                TobaccoMouseClicked(evt);
             }
         });
 
         Acrid.setBackground(new java.awt.Color(20, 181, 225));
         Acrid.setText("Acrid");
-        Acrid.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AcridActionPerformed(evt);
+        Acrid.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AcridMouseClicked(evt);
             }
         });
 
         Ashy.setBackground(new java.awt.Color(20, 181, 225));
         Ashy.setText("Ashy");
-        Ashy.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AshyActionPerformed(evt);
+        Ashy.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AshyMouseClicked(evt);
             }
         });
 
         Smoky.setBackground(new java.awt.Color(20, 181, 225));
         Smoky.setText("Smoky");
-        Smoky.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SmokyActionPerformed(evt);
+        Smoky.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                SmokyMouseClicked(evt);
             }
         });
 
         BrownRoast.setBackground(new java.awt.Color(20, 181, 225));
         BrownRoast.setText("Brown, Roast");
-        BrownRoast.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BrownRoastActionPerformed(evt);
+        BrownRoast.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BrownRoastMouseClicked(evt);
             }
         });
 
         Grain.setBackground(new java.awt.Color(20, 181, 225));
         Grain.setText("Grain");
-        Grain.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                GrainActionPerformed(evt);
+        Grain.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                GrainMouseClicked(evt);
             }
         });
 
         Malt.setBackground(new java.awt.Color(20, 181, 225));
         Malt.setText("Malt");
-        Malt.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MaltActionPerformed(evt);
+        Malt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MaltMouseClicked(evt);
             }
         });
 
@@ -2694,10 +3024,20 @@ public class JdCatacion extends javax.swing.JDialog {
         Burnt.setBackground(new java.awt.Color(20, 181, 225));
         Burnt.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Burnt.setText("Burnt");
+        Burnt.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BurntMouseClicked(evt);
+            }
+        });
 
         Cereal.setBackground(new java.awt.Color(20, 181, 225));
         Cereal.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Cereal.setText("Cereal");
+        Cereal.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CerealMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
         jPanel17.setLayout(jPanel17Layout);
@@ -2715,9 +3055,8 @@ public class JdCatacion extends javax.swing.JDialog {
                             .addComponent(BrownRoast)
                             .addComponent(Grain)
                             .addComponent(Malt)
-                            .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(Burnt)
-                                .addComponent(Cereal)))
+                            .addComponent(Burnt)
+                            .addComponent(Cereal))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel17Layout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -2756,50 +3095,50 @@ public class JdCatacion extends javax.swing.JDialog {
         Pungent.setBackground(new java.awt.Color(187, 187, 240));
         Pungent.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Pungent.setText("Pungent");
-        Pungent.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PungentActionPerformed(evt);
+        Pungent.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PungentMouseClicked(evt);
             }
         });
 
         Pepper.setBackground(new java.awt.Color(187, 187, 240));
         Pepper.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Pepper.setText("Pepper");
-        Pepper.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PepperActionPerformed(evt);
+        Pepper.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PepperMouseClicked(evt);
             }
         });
 
         Anise.setBackground(new java.awt.Color(187, 187, 240));
         Anise.setText("Anise");
-        Anise.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AniseActionPerformed(evt);
+        Anise.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AniseMouseClicked(evt);
             }
         });
 
         Nutmeg.setBackground(new java.awt.Color(187, 187, 240));
         Nutmeg.setText("Nutmeg");
-        Nutmeg.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NutmegActionPerformed(evt);
+        Nutmeg.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                NutmegMouseClicked(evt);
             }
         });
 
         Cinnamon.setBackground(new java.awt.Color(187, 187, 240));
         Cinnamon.setText("Cinnamon");
-        Cinnamon.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CinnamonActionPerformed(evt);
+        Cinnamon.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CinnamonMouseClicked(evt);
             }
         });
 
         Clove.setBackground(new java.awt.Color(187, 187, 240));
         Clove.setText("Clove");
-        Clove.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                CloveActionPerformed(evt);
+        Clove.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CloveMouseClicked(evt);
             }
         });
 
@@ -2810,6 +3149,11 @@ public class JdCatacion extends javax.swing.JDialog {
         Brownspices.setBackground(new java.awt.Color(187, 187, 240));
         Brownspices.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Brownspices.setText("Brown Spice");
+        Brownspices.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BrownspicesMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel21Layout = new javax.swing.GroupLayout(jPanel21);
         jPanel21.setLayout(jPanel21Layout);
@@ -2852,50 +3196,50 @@ public class JdCatacion extends javax.swing.JDialog {
 
         Peanuts.setBackground(new java.awt.Color(255, 102, 255));
         Peanuts.setText("Peanuts");
-        Peanuts.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PeanutsActionPerformed(evt);
+        Peanuts.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PeanutsMouseClicked(evt);
             }
         });
 
         Hazelenut.setBackground(new java.awt.Color(255, 102, 255));
         Hazelenut.setText("Hazelenut");
-        Hazelenut.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HazelenutActionPerformed(evt);
+        Hazelenut.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                HazelenutMouseClicked(evt);
             }
         });
 
         Almond.setBackground(new java.awt.Color(255, 102, 255));
         Almond.setText("Almond");
-        Almond.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AlmondActionPerformed(evt);
+        Almond.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AlmondMouseClicked(evt);
             }
         });
 
         Chocolate.setBackground(new java.awt.Color(255, 102, 255));
         Chocolate.setText("Chocolate");
-        Chocolate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ChocolateActionPerformed(evt);
+        Chocolate.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ChocolateMouseClicked(evt);
             }
         });
 
         DarkChocolate.setBackground(new java.awt.Color(255, 102, 255));
         DarkChocolate.setText("Dark Chocolate");
-        DarkChocolate.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DarkChocolateActionPerformed(evt);
+        DarkChocolate.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DarkChocolateMouseClicked(evt);
             }
         });
 
         Nutty.setBackground(new java.awt.Color(255, 102, 255));
         Nutty.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Nutty.setText("Nutty");
-        Nutty.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                NuttyActionPerformed(evt);
+        Nutty.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                NuttyMouseClicked(evt);
             }
         });
 
@@ -2906,6 +3250,11 @@ public class JdCatacion extends javax.swing.JDialog {
         Cocoa.setBackground(new java.awt.Color(255, 102, 255));
         Cocoa.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Cocoa.setText("Cocoa");
+        Cocoa.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                CocoaMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
         jPanel22.setLayout(jPanel22Layout);
@@ -2950,33 +3299,33 @@ public class JdCatacion extends javax.swing.JDialog {
         Blacktea.setBackground(new java.awt.Color(243, 187, 111));
         Blacktea.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Blacktea.setText("Black tea");
-        Blacktea.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BlackteaActionPerformed(evt);
+        Blacktea.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BlackteaMouseClicked(evt);
             }
         });
 
         Chamomile.setBackground(new java.awt.Color(243, 187, 111));
         Chamomile.setText("Chamomile");
-        Chamomile.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ChamomileActionPerformed(evt);
+        Chamomile.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                ChamomileMouseClicked(evt);
             }
         });
 
         Rose.setBackground(new java.awt.Color(243, 187, 111));
         Rose.setText("Rose");
-        Rose.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RoseActionPerformed(evt);
+        Rose.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RoseMouseClicked(evt);
             }
         });
 
         Jasmine.setBackground(new java.awt.Color(243, 187, 111));
         Jasmine.setText("Jasmine");
-        Jasmine.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                JasmineActionPerformed(evt);
+        Jasmine.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                JasmineMouseClicked(evt);
             }
         });
 
@@ -3013,6 +3362,13 @@ public class JdCatacion extends javax.swing.JDialog {
                 .addContainerGap())
         );
 
+        jButton3.setText("jButton3");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout DryLayout = new javax.swing.GroupLayout(Dry);
         Dry.setLayout(DryLayout);
         DryLayout.setHorizontalGroup(
@@ -3023,10 +3379,15 @@ public class JdCatacion extends javax.swing.JDialog {
                     .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(DryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(DryLayout.createSequentialGroup()
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel20, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(DryLayout.createSequentialGroup()
+                        .addGap(66, 66, 66)
+                        .addComponent(jButton3)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, 117, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -3047,7 +3408,10 @@ public class JdCatacion extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel15, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel16, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(DryLayout.createSequentialGroup()
+                        .addComponent(jPanel18, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(68, 68, 68)
+                        .addComponent(jButton3))
                     .addComponent(jPanel19, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(DryLayout.createSequentialGroup()
                         .addGroup(DryLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3066,50 +3430,50 @@ public class JdCatacion extends javax.swing.JDialog {
         BrownSugar1.setBackground(new java.awt.Color(255, 102, 102));
         BrownSugar1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         BrownSugar1.setText("Brown Sugar");
-        BrownSugar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BrownSugar1ActionPerformed(evt);
+        BrownSugar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BrownSugar1MouseClicked(evt);
             }
         });
 
         MapleSugar1.setBackground(new java.awt.Color(255, 102, 102));
         MapleSugar1.setText("Maple Sugar");
-        MapleSugar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MapleSugar1ActionPerformed(evt);
+        MapleSugar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MapleSugar1MouseClicked(evt);
             }
         });
 
         Carmelized1.setBackground(new java.awt.Color(255, 102, 102));
         Carmelized1.setText("Carmelized");
-        Carmelized1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Carmelized1ActionPerformed(evt);
+        Carmelized1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Carmelized1MouseClicked(evt);
             }
         });
 
         Molasses1.setBackground(new java.awt.Color(255, 102, 102));
         Molasses1.setText("Molasses");
-        Molasses1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Molasses1ActionPerformed(evt);
+        Molasses1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Molasses1MouseClicked(evt);
             }
         });
 
         Honey1.setBackground(new java.awt.Color(255, 102, 102));
         Honey1.setText("Honey");
-        Honey1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Honey1ActionPerformed(evt);
+        Honey1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Honey1MouseClicked(evt);
             }
         });
 
         Vanilla1.setBackground(new java.awt.Color(255, 102, 102));
         Vanilla1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Vanilla1.setText("Vanilla");
-        Vanilla1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Vanilla1ActionPerformed(evt);
+        Vanilla1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Vanilla1MouseClicked(evt);
             }
         });
 
@@ -3152,172 +3516,187 @@ public class JdCatacion extends javax.swing.JDialog {
 
         Blackberry1.setBackground(new java.awt.Color(236, 217, 25));
         Blackberry1.setText("Blackberry");
-        Blackberry1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Blackberry1ActionPerformed(evt);
+        Blackberry1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Blackberry1MouseClicked(evt);
             }
         });
 
         Raspberry1.setBackground(new java.awt.Color(236, 217, 25));
         Raspberry1.setText("Raspberry");
-        Raspberry1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Raspberry1ActionPerformed(evt);
+        Raspberry1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Raspberry1MouseClicked(evt);
             }
         });
 
         Blueberry1.setBackground(new java.awt.Color(236, 217, 25));
         Blueberry1.setText("Blueberry");
-        Blueberry1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Blueberry1ActionPerformed(evt);
+        Blueberry1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Blueberry1MouseClicked(evt);
             }
         });
 
         Strawberry1.setBackground(new java.awt.Color(236, 217, 25));
         Strawberry1.setText("Strawberry");
-        Strawberry1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Strawberry1ActionPerformed(evt);
+        Strawberry1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Strawberry1MouseClicked(evt);
             }
         });
 
         Raisen1.setBackground(new java.awt.Color(236, 217, 25));
         Raisen1.setText("Raisen");
-        Raisen1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Raisen1ActionPerformed(evt);
+        Raisen1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Raisen1MouseClicked(evt);
             }
         });
 
         Prune1.setBackground(new java.awt.Color(236, 217, 25));
         Prune1.setText("Prune");
-        Prune1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Prune1ActionPerformed(evt);
+        Prune1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Prune1MouseClicked(evt);
             }
         });
 
         Coconut1.setBackground(new java.awt.Color(236, 217, 25));
         Coconut1.setText("Coconut");
-        Coconut1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Coconut1ActionPerformed(evt);
+        Coconut1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Coconut1MouseClicked(evt);
             }
         });
 
         Cherry1.setBackground(new java.awt.Color(236, 217, 25));
         Cherry1.setText("Cherry");
-        Cherry1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cherry1ActionPerformed(evt);
+        Cherry1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Cherry1MouseClicked(evt);
             }
         });
 
         Pomagranite1.setBackground(new java.awt.Color(236, 217, 25));
         Pomagranite1.setText("Pomagranite");
-        Pomagranite1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pomagranite1ActionPerformed(evt);
+        Pomagranite1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Pomagranite1MouseClicked(evt);
             }
         });
 
         Pinneapple1.setBackground(new java.awt.Color(236, 217, 25));
         Pinneapple1.setText("Pinneapple");
-        Pinneapple1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pinneapple1ActionPerformed(evt);
+        Pinneapple1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Pinneapple1MouseClicked(evt);
             }
         });
 
         Grape1.setBackground(new java.awt.Color(236, 217, 25));
         Grape1.setText("Grape");
-        Grape1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Grape1ActionPerformed(evt);
+        Grape1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Grape1MouseClicked(evt);
             }
         });
 
         Apple1.setBackground(new java.awt.Color(236, 217, 25));
         Apple1.setText("Apple");
-        Apple1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Apple1ActionPerformed(evt);
+        Apple1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Apple1MouseClicked(evt);
             }
         });
 
         Peach1.setBackground(new java.awt.Color(236, 217, 25));
         Peach1.setText("Peach");
-        Peach1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Peach1ActionPerformed(evt);
+        Peach1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Peach1MouseClicked(evt);
             }
         });
 
         Pear1.setBackground(new java.awt.Color(236, 217, 25));
         Pear1.setText("Pear");
-        Pear1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pear1ActionPerformed(evt);
+        Pear1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Pear1MouseClicked(evt);
             }
         });
 
         Grapefruit1.setBackground(new java.awt.Color(236, 217, 25));
         Grapefruit1.setText("Grapefruit");
-        Grapefruit1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Grapefruit1ActionPerformed(evt);
+        Grapefruit1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Grapefruit1MouseClicked(evt);
             }
         });
 
         Orange1.setBackground(new java.awt.Color(236, 217, 25));
         Orange1.setText("Orange");
-        Orange1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Orange1ActionPerformed(evt);
+        Orange1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Orange1MouseClicked(evt);
             }
         });
 
         Lemon1.setBackground(new java.awt.Color(236, 217, 25));
         Lemon1.setText("Lemon");
-        Lemon1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Lemon1ActionPerformed(evt);
+        Lemon1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Lemon1MouseClicked(evt);
             }
         });
 
         Lime1.setBackground(new java.awt.Color(236, 217, 25));
         Lime1.setText("Lime");
-        Lime1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Lime1ActionPerformed(evt);
+        Lime1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Lime1MouseClicked(evt);
             }
         });
 
         Fruity1.setBackground(new java.awt.Color(236, 217, 25));
         Fruity1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Fruity1.setText("3   Fruity");
-        Fruity1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Fruity1ActionPerformed(evt);
-            }
-        });
 
         Berry1.setBackground(new java.awt.Color(236, 217, 25));
         Berry1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Berry1.setText("Berry");
+        Berry1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Berry1MouseClicked(evt);
+            }
+        });
 
         DriedFruit1.setBackground(new java.awt.Color(236, 217, 25));
         DriedFruit1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         DriedFruit1.setText("Dried Fruit");
+        DriedFruit1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DriedFruit1MouseClicked(evt);
+            }
+        });
 
         Otherfruit1.setBackground(new java.awt.Color(236, 217, 25));
         Otherfruit1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Otherfruit1.setText("Other fruit");
+        Otherfruit1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Otherfruit1MouseClicked(evt);
+            }
+        });
 
         Citrusfruit1.setBackground(new java.awt.Color(236, 217, 25));
         Citrusfruit1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Citrusfruit1.setText("Citrus Fruit");
+        Citrusfruit1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Citrusfruit1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel24Layout = new javax.swing.GroupLayout(jPanel24);
         jPanel24.setLayout(jPanel24Layout);
@@ -3408,35 +3787,30 @@ public class JdCatacion extends javax.swing.JDialog {
         Blacktea1.setBackground(new java.awt.Color(243, 187, 111));
         Blacktea1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Blacktea1.setText("Black tea");
-        Blacktea1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Blacktea1ActionPerformed(evt);
+        Blacktea1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Blacktea1MouseClicked(evt);
             }
         });
 
         Chamomile1.setBackground(new java.awt.Color(243, 187, 111));
         Chamomile1.setText("Chamomile");
-        Chamomile1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Chamomile1ActionPerformed(evt);
+        Chamomile1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Chamomile1MouseClicked(evt);
             }
         });
 
         Rose1.setBackground(new java.awt.Color(243, 187, 111));
         Rose1.setText("Rose");
-        Rose1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Rose1ActionPerformed(evt);
+        Rose1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Rose1MouseClicked(evt);
             }
         });
 
         Jasmine1.setBackground(new java.awt.Color(243, 187, 111));
         Jasmine1.setText("Jasmine");
-        Jasmine1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Jasmine1ActionPerformed(evt);
-            }
-        });
 
         Floral1.setBackground(new java.awt.Color(243, 187, 111));
         Floral1.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -3475,73 +3849,73 @@ public class JdCatacion extends javax.swing.JDialog {
 
         Vinegar1.setBackground(new java.awt.Color(255, 241, 144));
         Vinegar1.setText("Vinegar");
-        Vinegar1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Vinegar1ActionPerformed(evt);
+        Vinegar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Vinegar1MouseClicked(evt);
             }
         });
 
         Rancidbutter1.setBackground(new java.awt.Color(255, 241, 144));
         Rancidbutter1.setText("Rancid butter");
-        Rancidbutter1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Rancidbutter1ActionPerformed(evt);
+        Rancidbutter1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Rancidbutter1MouseClicked(evt);
             }
         });
 
         RancidCheese1.setBackground(new java.awt.Color(255, 241, 144));
         RancidCheese1.setText("Rancid Cheese");
-        RancidCheese1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RancidCheese1ActionPerformed(evt);
+        RancidCheese1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RancidCheese1MouseClicked(evt);
             }
         });
 
         Winey1.setBackground(new java.awt.Color(255, 241, 144));
         Winey1.setText("Winey");
-        Winey1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Winey1ActionPerformed(evt);
+        Winey1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Winey1MouseClicked(evt);
             }
         });
 
         Whiskey1.setBackground(new java.awt.Color(255, 241, 144));
         Whiskey1.setText("Whiskey");
-        Whiskey1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Whiskey1ActionPerformed(evt);
+        Whiskey1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Whiskey1MouseClicked(evt);
             }
         });
 
         Fermented1.setBackground(new java.awt.Color(255, 241, 144));
         Fermented1.setText("Fermented");
-        Fermented1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Fermented1ActionPerformed(evt);
+        Fermented1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Fermented1MouseClicked(evt);
             }
         });
 
         Overripe1.setBackground(new java.awt.Color(255, 241, 144));
         Overripe1.setText("Over-ripe");
-        Overripe1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Overripe1ActionPerformed(evt);
+        Overripe1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Overripe1MouseClicked(evt);
             }
         });
 
         OrangeAcidity1.setBackground(new java.awt.Color(255, 241, 144));
         OrangeAcidity1.setText("Orange Acidity");
-        OrangeAcidity1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OrangeAcidity1ActionPerformed(evt);
+        OrangeAcidity1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OrangeAcidity1MouseClicked(evt);
             }
         });
 
         AppleAcidity1.setBackground(new java.awt.Color(255, 241, 144));
         AppleAcidity1.setText("Apple Acidity");
-        AppleAcidity1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AppleAcidity1ActionPerformed(evt);
+        AppleAcidity1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AppleAcidity1MouseClicked(evt);
             }
         });
 
@@ -3552,15 +3926,20 @@ public class JdCatacion extends javax.swing.JDialog {
         sour1.setBackground(new java.awt.Color(255, 241, 144));
         sour1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         sour1.setText("Sour");
-        sour1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                sour1ActionPerformed(evt);
+        sour1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sour1MouseClicked(evt);
             }
         });
 
         Alcohol1.setBackground(new java.awt.Color(255, 241, 144));
         Alcohol1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Alcohol1.setText("Alcohol/Fermented");
+        Alcohol1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Alcohol1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel26Layout = new javax.swing.GroupLayout(jPanel26);
         jPanel26.setLayout(jPanel26Layout);
@@ -3618,83 +3997,83 @@ public class JdCatacion extends javax.swing.JDialog {
         OliveOil1.setBackground(new java.awt.Color(123, 236, 133));
         OliveOil1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         OliveOil1.setText("Olive Oil");
-        OliveOil1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OliveOil1ActionPerformed(evt);
+        OliveOil1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OliveOil1MouseClicked(evt);
             }
         });
 
         Raw1.setBackground(new java.awt.Color(123, 236, 133));
         Raw1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Raw1.setText("Raw");
-        Raw1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Raw1ActionPerformed(evt);
+        Raw1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Raw1MouseClicked(evt);
             }
         });
 
         Underripe1.setBackground(new java.awt.Color(123, 236, 133));
         Underripe1.setText("Under-ripe");
-        Underripe1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Underripe1ActionPerformed(evt);
+        Underripe1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Underripe1MouseClicked(evt);
             }
         });
 
         Peapod1.setBackground(new java.awt.Color(123, 236, 133));
         Peapod1.setText("Pea pod");
-        Peapod1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Peapod1ActionPerformed(evt);
+        Peapod1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Peapod1MouseClicked(evt);
             }
         });
 
         Fresh1.setBackground(new java.awt.Color(123, 236, 133));
         Fresh1.setText("Fresh");
-        Fresh1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Fresh1ActionPerformed(evt);
+        Fresh1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Fresh1MouseClicked(evt);
             }
         });
 
         DarkGreen1.setBackground(new java.awt.Color(123, 236, 133));
         DarkGreen1.setText("Dark Green");
-        DarkGreen1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DarkGreen1ActionPerformed(evt);
+        DarkGreen1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DarkGreen1MouseClicked(evt);
             }
         });
 
         Vegetative1.setBackground(new java.awt.Color(123, 236, 133));
         Vegetative1.setText("Vegetative");
-        Vegetative1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Vegetative1ActionPerformed(evt);
+        Vegetative1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Vegetative1MouseClicked(evt);
             }
         });
 
         Haylike1.setBackground(new java.awt.Color(123, 236, 133));
         Haylike1.setText("Hay-like");
-        Haylike1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Haylike1ActionPerformed(evt);
+        Haylike1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Haylike1MouseClicked(evt);
             }
         });
 
         Herblike1.setBackground(new java.awt.Color(123, 236, 133));
         Herblike1.setText("Herb-like");
-        Herblike1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Herblike1ActionPerformed(evt);
+        Herblike1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Herblike1MouseClicked(evt);
             }
         });
 
         Beany1.setBackground(new java.awt.Color(123, 236, 133));
         Beany1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Beany1.setText("Beany");
-        Beany1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Beany1ActionPerformed(evt);
+        Beany1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Beany1MouseClicked(evt);
             }
         });
 
@@ -3752,129 +4131,129 @@ public class JdCatacion extends javax.swing.JDialog {
 
         Stale1.setBackground(new java.awt.Color(94, 249, 235));
         Stale1.setText("Stale");
-        Stale1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Stale1ActionPerformed(evt);
+        Stale1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Stale1MouseClicked(evt);
             }
         });
 
         Cardboard1.setBackground(new java.awt.Color(94, 249, 235));
         Cardboard1.setText("Cardboard");
-        Cardboard1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cardboard1ActionPerformed(evt);
+        Cardboard1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Cardboard1MouseClicked(evt);
             }
         });
 
         Papery1.setBackground(new java.awt.Color(94, 249, 235));
         Papery1.setText("Papery");
-        Papery1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Papery1ActionPerformed(evt);
+        Papery1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Papery1MouseClicked(evt);
             }
         });
 
         Woody1.setBackground(new java.awt.Color(94, 249, 235));
         Woody1.setText("Woody");
-        Woody1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Woody1ActionPerformed(evt);
+        Woody1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Woody1MouseClicked(evt);
             }
         });
 
         MoldyDamp1.setBackground(new java.awt.Color(94, 249, 235));
         MoldyDamp1.setText("Moldy/Damp");
-        MoldyDamp1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MoldyDamp1ActionPerformed(evt);
+        MoldyDamp1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MoldyDamp1MouseClicked(evt);
             }
         });
 
         MustyDusty1.setBackground(new java.awt.Color(94, 249, 235));
         MustyDusty1.setText("Musty/Dusty");
-        MustyDusty1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MustyDusty1ActionPerformed(evt);
+        MustyDusty1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MustyDusty1MouseClicked(evt);
             }
         });
 
         MustyEarthy1.setBackground(new java.awt.Color(94, 249, 235));
         MustyEarthy1.setText("Musty/Earthy");
-        MustyEarthy1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MustyEarthy1ActionPerformed(evt);
+        MustyEarthy1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MustyEarthy1MouseClicked(evt);
             }
         });
 
         Animalic1.setBackground(new java.awt.Color(94, 249, 235));
         Animalic1.setText("Animalic");
-        Animalic1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Animalic1ActionPerformed(evt);
+        Animalic1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Animalic1MouseClicked(evt);
             }
         });
 
         MeatyBrothy1.setBackground(new java.awt.Color(94, 249, 235));
         MeatyBrothy1.setText("Meaty/Brothy");
-        MeatyBrothy1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MeatyBrothy1ActionPerformed(evt);
+        MeatyBrothy1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MeatyBrothy1MouseClicked(evt);
             }
         });
 
         Phenolic1.setBackground(new java.awt.Color(94, 249, 235));
         Phenolic1.setText("Phenolic");
-        Phenolic1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Phenolic1ActionPerformed(evt);
+        Phenolic1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Phenolic1MouseClicked(evt);
             }
         });
 
         Bitter1.setBackground(new java.awt.Color(94, 249, 235));
         Bitter1.setText("Bitter");
-        Bitter1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Bitter1ActionPerformed(evt);
+        Bitter1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Bitter1MouseClicked(evt);
             }
         });
 
         Salty1.setBackground(new java.awt.Color(94, 249, 235));
         Salty1.setText("Salty");
-        Salty1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Salty1ActionPerformed(evt);
+        Salty1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Salty1MouseClicked(evt);
             }
         });
 
         Medicinal1.setBackground(new java.awt.Color(94, 249, 235));
         Medicinal1.setText("Medicinal");
-        Medicinal1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Medicinal1ActionPerformed(evt);
+        Medicinal1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Medicinal1MouseClicked(evt);
             }
         });
 
         Petroleum1.setBackground(new java.awt.Color(94, 249, 235));
         Petroleum1.setText("Petroleum");
-        Petroleum1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Petroleum1ActionPerformed(evt);
+        Petroleum1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Petroleum1MouseClicked(evt);
             }
         });
 
         Skunky1.setBackground(new java.awt.Color(94, 249, 235));
         Skunky1.setText("Skunky");
-        Skunky1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Skunky1ActionPerformed(evt);
+        Skunky1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Skunky1MouseClicked(evt);
             }
         });
 
         Rubber1.setBackground(new java.awt.Color(94, 249, 235));
         Rubber1.setText("Rubber");
-        Rubber1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Rubber1ActionPerformed(evt);
+        Rubber1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Rubber1MouseClicked(evt);
             }
         });
 
@@ -3885,10 +4264,20 @@ public class JdCatacion extends javax.swing.JDialog {
         PaperyM1.setBackground(new java.awt.Color(94, 249, 235));
         PaperyM1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         PaperyM1.setText("Papery/Musty");
+        PaperyM1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PaperyM1MouseClicked(evt);
+            }
+        });
 
         Chemical1.setBackground(new java.awt.Color(94, 249, 235));
         Chemical1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Chemical1.setText("Chemical");
+        Chemical1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Chemical1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel28Layout = new javax.swing.GroupLayout(jPanel28);
         jPanel28.setLayout(jPanel28Layout);
@@ -3967,66 +4356,66 @@ public class JdCatacion extends javax.swing.JDialog {
         PipeTobacco1.setBackground(new java.awt.Color(20, 181, 225));
         PipeTobacco1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         PipeTobacco1.setText("Pipe Tobacco");
-        PipeTobacco1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PipeTobacco1ActionPerformed(evt);
+        PipeTobacco1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PipeTobacco1MouseClicked(evt);
             }
         });
 
         Tobacco1.setBackground(new java.awt.Color(20, 181, 225));
         Tobacco1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Tobacco1.setText("Tobacco");
-        Tobacco1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Tobacco1ActionPerformed(evt);
+        Tobacco1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tobacco1MouseClicked(evt);
             }
         });
 
         Acrid1.setBackground(new java.awt.Color(20, 181, 225));
         Acrid1.setText("Acrid");
-        Acrid1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Acrid1ActionPerformed(evt);
+        Acrid1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Acrid1MouseClicked(evt);
             }
         });
 
         Ashy1.setBackground(new java.awt.Color(20, 181, 225));
         Ashy1.setText("Ashy");
-        Ashy1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Ashy1ActionPerformed(evt);
+        Ashy1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Ashy1MouseClicked(evt);
             }
         });
 
         Smoky1.setBackground(new java.awt.Color(20, 181, 225));
         Smoky1.setText("Smoky");
-        Smoky1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Smoky1ActionPerformed(evt);
+        Smoky1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Smoky1MouseClicked(evt);
             }
         });
 
         BrownRoast1.setBackground(new java.awt.Color(20, 181, 225));
         BrownRoast1.setText("Brown, Roast");
-        BrownRoast1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BrownRoast1ActionPerformed(evt);
+        BrownRoast1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BrownRoast1MouseClicked(evt);
             }
         });
 
         Grain1.setBackground(new java.awt.Color(20, 181, 225));
         Grain1.setText("Grain");
-        Grain1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Grain1ActionPerformed(evt);
+        Grain1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Grain1MouseClicked(evt);
             }
         });
 
         Malt1.setBackground(new java.awt.Color(20, 181, 225));
         Malt1.setText("Malt");
-        Malt1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Malt1ActionPerformed(evt);
+        Malt1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Malt1MouseClicked(evt);
             }
         });
 
@@ -4038,10 +4427,20 @@ public class JdCatacion extends javax.swing.JDialog {
         Burnt1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Burnt1.setText("Burnt");
         Burnt1.setToolTipText("");
+        Burnt1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Burnt1MouseClicked(evt);
+            }
+        });
 
         Cereal1.setBackground(new java.awt.Color(20, 181, 225));
         Cereal1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Cereal1.setText("Cereal");
+        Cereal1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Cereal1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel29Layout = new javax.swing.GroupLayout(jPanel29);
         jPanel29.setLayout(jPanel29Layout);
@@ -4093,50 +4492,50 @@ public class JdCatacion extends javax.swing.JDialog {
         Pungent1.setBackground(new java.awt.Color(187, 187, 240));
         Pungent1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Pungent1.setText("Pungent");
-        Pungent1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pungent1ActionPerformed(evt);
+        Pungent1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Pungent1MouseClicked(evt);
             }
         });
 
         Pepper1.setBackground(new java.awt.Color(187, 187, 240));
         Pepper1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Pepper1.setText("Pepper");
-        Pepper1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pepper1ActionPerformed(evt);
+        Pepper1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Pepper1MouseClicked(evt);
             }
         });
 
         Anise1.setBackground(new java.awt.Color(187, 187, 240));
         Anise1.setText("Anise");
-        Anise1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Anise1ActionPerformed(evt);
+        Anise1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Anise1MouseClicked(evt);
             }
         });
 
         Nutmeg1.setBackground(new java.awt.Color(187, 187, 240));
         Nutmeg1.setText("Nutmeg");
-        Nutmeg1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Nutmeg1ActionPerformed(evt);
+        Nutmeg1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Nutmeg1MouseClicked(evt);
             }
         });
 
         Cinnamon1.setBackground(new java.awt.Color(187, 187, 240));
         Cinnamon1.setText("Cinnamon");
-        Cinnamon1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cinnamon1ActionPerformed(evt);
+        Cinnamon1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Cinnamon1MouseClicked(evt);
             }
         });
 
         Clove1.setBackground(new java.awt.Color(187, 187, 240));
         Clove1.setText("Clove");
-        Clove1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Clove1ActionPerformed(evt);
+        Clove1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Clove1MouseClicked(evt);
             }
         });
 
@@ -4147,6 +4546,11 @@ public class JdCatacion extends javax.swing.JDialog {
         Brownspices1.setBackground(new java.awt.Color(187, 187, 240));
         Brownspices1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Brownspices1.setText("Brown Spice");
+        Brownspices1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Brownspices1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel30Layout = new javax.swing.GroupLayout(jPanel30);
         jPanel30.setLayout(jPanel30Layout);
@@ -4189,50 +4593,50 @@ public class JdCatacion extends javax.swing.JDialog {
 
         Peanuts1.setBackground(new java.awt.Color(255, 102, 255));
         Peanuts1.setText("Peanuts");
-        Peanuts1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Peanuts1ActionPerformed(evt);
+        Peanuts1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Peanuts1MouseClicked(evt);
             }
         });
 
         Hazelenut1.setBackground(new java.awt.Color(255, 102, 255));
         Hazelenut1.setText("Hazelenut");
-        Hazelenut1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Hazelenut1ActionPerformed(evt);
+        Hazelenut1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Hazelenut1MouseClicked(evt);
             }
         });
 
         Almond1.setBackground(new java.awt.Color(255, 102, 255));
         Almond1.setText("Almond");
-        Almond1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Almond1ActionPerformed(evt);
+        Almond1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Almond1MouseClicked(evt);
             }
         });
 
         Chocolate1.setBackground(new java.awt.Color(255, 102, 255));
         Chocolate1.setText("Chocolate");
-        Chocolate1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Chocolate1ActionPerformed(evt);
+        Chocolate1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Chocolate1MouseClicked(evt);
             }
         });
 
         DarkChocolate1.setBackground(new java.awt.Color(255, 102, 255));
         DarkChocolate1.setText("Dark Chocolate");
-        DarkChocolate1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DarkChocolate1ActionPerformed(evt);
+        DarkChocolate1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DarkChocolate1MouseClicked(evt);
             }
         });
 
         Nutty1.setBackground(new java.awt.Color(255, 102, 255));
         Nutty1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Nutty1.setText("Nutty");
-        Nutty1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Nutty1ActionPerformed(evt);
+        Nutty1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Nutty1MouseClicked(evt);
             }
         });
 
@@ -4243,6 +4647,11 @@ public class JdCatacion extends javax.swing.JDialog {
         Cocoa1.setBackground(new java.awt.Color(255, 102, 255));
         Cocoa1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Cocoa1.setText("Cocoa");
+        Cocoa1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Cocoa1MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel31Layout = new javax.swing.GroupLayout(jPanel31);
         jPanel31.setLayout(jPanel31Layout);
@@ -4305,7 +4714,7 @@ public class JdCatacion extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel30, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel31, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(317, Short.MAX_VALUE))
+                .addContainerGap(706, Short.MAX_VALUE))
         );
         jPanel9Layout.setVerticalGroup(
             jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4335,61 +4744,56 @@ public class JdCatacion extends javax.swing.JDialog {
         BrownSugar2.setBackground(new java.awt.Color(255, 102, 102));
         BrownSugar2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         BrownSugar2.setText("Brown Sugar");
-        BrownSugar2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BrownSugar2ActionPerformed(evt);
+        BrownSugar2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BrownSugar2MouseClicked(evt);
             }
         });
 
         MapleSugar2.setBackground(new java.awt.Color(255, 102, 102));
         MapleSugar2.setText("Maple Sugar");
-        MapleSugar2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MapleSugar2ActionPerformed(evt);
+        MapleSugar2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MapleSugar2MouseClicked(evt);
             }
         });
 
         Carmelized2.setBackground(new java.awt.Color(255, 102, 102));
         Carmelized2.setText("Carmelized");
-        Carmelized2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Carmelized2ActionPerformed(evt);
+        Carmelized2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Carmelized2MouseClicked(evt);
             }
         });
 
         Molasses2.setBackground(new java.awt.Color(255, 102, 102));
         Molasses2.setText("Molasses");
-        Molasses2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Molasses2ActionPerformed(evt);
+        Molasses2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Molasses2MouseClicked(evt);
             }
         });
 
         Honey2.setBackground(new java.awt.Color(255, 102, 102));
         Honey2.setText("Honey");
-        Honey2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Honey2ActionPerformed(evt);
+        Honey2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Honey2MouseClicked(evt);
             }
         });
 
         Vanilla2.setBackground(new java.awt.Color(255, 102, 102));
         Vanilla2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Vanilla2.setText("Vanilla");
-        Vanilla2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Vanilla2ActionPerformed(evt);
+        Vanilla2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Vanilla2MouseClicked(evt);
             }
         });
 
         Sweet2.setBackground(new java.awt.Color(255, 102, 102));
         Sweet2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Sweet2.setText("1     Sweet");
-        Sweet2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Sweet2ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel62Layout = new javax.swing.GroupLayout(jPanel62);
         jPanel62.setLayout(jPanel62Layout);
@@ -4430,33 +4834,33 @@ public class JdCatacion extends javax.swing.JDialog {
         Blacktea2.setBackground(new java.awt.Color(243, 187, 111));
         Blacktea2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Blacktea2.setText("Black tea");
-        Blacktea2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Blacktea2ActionPerformed(evt);
+        Blacktea2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Blacktea2MouseClicked(evt);
             }
         });
 
         Chamomile2.setBackground(new java.awt.Color(243, 187, 111));
         Chamomile2.setText("Chamomile");
-        Chamomile2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Chamomile2ActionPerformed(evt);
+        Chamomile2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Chamomile2MouseClicked(evt);
             }
         });
 
         Rose2.setBackground(new java.awt.Color(243, 187, 111));
         Rose2.setText("Rose");
-        Rose2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Rose2ActionPerformed(evt);
+        Rose2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Rose2MouseClicked(evt);
             }
         });
 
         Jasmine2.setBackground(new java.awt.Color(243, 187, 111));
         Jasmine2.setText("Jasmine");
-        Jasmine2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Jasmine2ActionPerformed(evt);
+        Jasmine2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Jasmine2MouseClicked(evt);
             }
         });
 
@@ -4497,172 +4901,187 @@ public class JdCatacion extends javax.swing.JDialog {
 
         Blackberry2.setBackground(new java.awt.Color(236, 217, 25));
         Blackberry2.setText("Blackberry");
-        Blackberry2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Blackberry2ActionPerformed(evt);
+        Blackberry2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Blackberry2MouseClicked(evt);
             }
         });
 
         Raspberry2.setBackground(new java.awt.Color(236, 217, 25));
         Raspberry2.setText("Raspberry");
-        Raspberry2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Raspberry2ActionPerformed(evt);
+        Raspberry2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Raspberry2MouseClicked(evt);
             }
         });
 
         Blueberry2.setBackground(new java.awt.Color(236, 217, 25));
         Blueberry2.setText("Blueberry");
-        Blueberry2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Blueberry2ActionPerformed(evt);
+        Blueberry2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Blueberry2MouseClicked(evt);
             }
         });
 
         Strawberry2.setBackground(new java.awt.Color(236, 217, 25));
         Strawberry2.setText("Strawberry");
-        Strawberry2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Strawberry2ActionPerformed(evt);
+        Strawberry2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Strawberry2MouseClicked(evt);
             }
         });
 
         Raisen2.setBackground(new java.awt.Color(236, 217, 25));
         Raisen2.setText("Raisen");
-        Raisen2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Raisen2ActionPerformed(evt);
+        Raisen2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Raisen2MouseClicked(evt);
             }
         });
 
         Prune2.setBackground(new java.awt.Color(236, 217, 25));
         Prune2.setText("Prune");
-        Prune2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Prune2ActionPerformed(evt);
+        Prune2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Prune2MouseClicked(evt);
             }
         });
 
         Coconut2.setBackground(new java.awt.Color(236, 217, 25));
         Coconut2.setText("Coconut");
-        Coconut2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Coconut2ActionPerformed(evt);
+        Coconut2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Coconut2MouseClicked(evt);
             }
         });
 
         Cherry2.setBackground(new java.awt.Color(236, 217, 25));
         Cherry2.setText("Cherry");
-        Cherry2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cherry2ActionPerformed(evt);
+        Cherry2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Cherry2MouseClicked(evt);
             }
         });
 
         Pomagranite2.setBackground(new java.awt.Color(236, 217, 25));
         Pomagranite2.setText("Pomagranite");
-        Pomagranite2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pomagranite2ActionPerformed(evt);
+        Pomagranite2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Pomagranite2MouseClicked(evt);
             }
         });
 
         Pinneapple2.setBackground(new java.awt.Color(236, 217, 25));
         Pinneapple2.setText("Pinneapple");
-        Pinneapple2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pinneapple2ActionPerformed(evt);
+        Pinneapple2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Pinneapple2MouseClicked(evt);
             }
         });
 
         Grape2.setBackground(new java.awt.Color(236, 217, 25));
         Grape2.setText("Grape");
-        Grape2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Grape2ActionPerformed(evt);
+        Grape2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Grape2MouseClicked(evt);
             }
         });
 
         Apple2.setBackground(new java.awt.Color(236, 217, 25));
         Apple2.setText("Apple");
-        Apple2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Apple2ActionPerformed(evt);
+        Apple2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Apple2MouseClicked(evt);
             }
         });
 
         Peach2.setBackground(new java.awt.Color(236, 217, 25));
         Peach2.setText("Peach");
-        Peach2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Peach2ActionPerformed(evt);
+        Peach2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Peach2MouseClicked(evt);
             }
         });
 
         Pear2.setBackground(new java.awt.Color(236, 217, 25));
         Pear2.setText("Pear");
-        Pear2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pear2ActionPerformed(evt);
+        Pear2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Pear2MouseClicked(evt);
             }
         });
 
         Grapefruit2.setBackground(new java.awt.Color(236, 217, 25));
         Grapefruit2.setText("Grapefruit");
-        Grapefruit2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Grapefruit2ActionPerformed(evt);
+        Grapefruit2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Grapefruit2MouseClicked(evt);
             }
         });
 
         Orange2.setBackground(new java.awt.Color(236, 217, 25));
         Orange2.setText("Orange");
-        Orange2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Orange2ActionPerformed(evt);
+        Orange2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Orange2MouseClicked(evt);
             }
         });
 
         Lemon2.setBackground(new java.awt.Color(236, 217, 25));
         Lemon2.setText("Lemon");
-        Lemon2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Lemon2ActionPerformed(evt);
+        Lemon2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Lemon2MouseClicked(evt);
             }
         });
 
         Lime2.setBackground(new java.awt.Color(236, 217, 25));
         Lime2.setText("Lime");
-        Lime2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Lime2ActionPerformed(evt);
+        Lime2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Lime2MouseClicked(evt);
             }
         });
 
         Fruity2.setBackground(new java.awt.Color(236, 217, 25));
         Fruity2.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Fruity2.setText("3   Fruity");
-        Fruity2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Fruity2ActionPerformed(evt);
-            }
-        });
 
         Berry2.setBackground(new java.awt.Color(236, 217, 25));
         Berry2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Berry2.setText("Berry");
+        Berry2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Berry2MouseClicked(evt);
+            }
+        });
 
         DriedFruit2.setBackground(new java.awt.Color(236, 217, 25));
         DriedFruit2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         DriedFruit2.setText("Dried Fruit");
+        DriedFruit2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DriedFruit2MouseClicked(evt);
+            }
+        });
 
         Otherfruit2.setBackground(new java.awt.Color(236, 217, 25));
         Otherfruit2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Otherfruit2.setText("Other fruit");
+        Otherfruit2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Otherfruit2MouseClicked(evt);
+            }
+        });
 
         Citrusfruit2.setBackground(new java.awt.Color(236, 217, 25));
         Citrusfruit2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Citrusfruit2.setText("Citrus Fruit");
+        Citrusfruit2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Citrusfruit2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel64Layout = new javax.swing.GroupLayout(jPanel64);
         jPanel64.setLayout(jPanel64Layout);
@@ -4753,73 +5172,73 @@ public class JdCatacion extends javax.swing.JDialog {
 
         Vinegar2.setBackground(new java.awt.Color(255, 241, 144));
         Vinegar2.setText("Vinegar");
-        Vinegar2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Vinegar2ActionPerformed(evt);
+        Vinegar2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Vinegar2MouseClicked(evt);
             }
         });
 
         Rancidbutter2.setBackground(new java.awt.Color(255, 241, 144));
         Rancidbutter2.setText("Rancid butter");
-        Rancidbutter2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Rancidbutter2ActionPerformed(evt);
+        Rancidbutter2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Rancidbutter2MouseClicked(evt);
             }
         });
 
         RancidCheese2.setBackground(new java.awt.Color(255, 241, 144));
         RancidCheese2.setText("Rancid Cheese");
-        RancidCheese2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RancidCheese2ActionPerformed(evt);
+        RancidCheese2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RancidCheese2MouseClicked(evt);
             }
         });
 
         Winey2.setBackground(new java.awt.Color(255, 241, 144));
         Winey2.setText("Winey");
-        Winey2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Winey2ActionPerformed(evt);
+        Winey2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Winey2MouseClicked(evt);
             }
         });
 
         Whiskey2.setBackground(new java.awt.Color(255, 241, 144));
         Whiskey2.setText("Whiskey");
-        Whiskey2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Whiskey2ActionPerformed(evt);
+        Whiskey2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Whiskey2MouseClicked(evt);
             }
         });
 
         Fermented2.setBackground(new java.awt.Color(255, 241, 144));
         Fermented2.setText("Fermented");
-        Fermented2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Fermented2ActionPerformed(evt);
+        Fermented2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Fermented2MouseClicked(evt);
             }
         });
 
         Overripe2.setBackground(new java.awt.Color(255, 241, 144));
         Overripe2.setText("Over-ripe");
-        Overripe2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Overripe2ActionPerformed(evt);
+        Overripe2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Overripe2MouseClicked(evt);
             }
         });
 
         OrangeAcidity2.setBackground(new java.awt.Color(255, 241, 144));
         OrangeAcidity2.setText("Orange Acidity");
-        OrangeAcidity2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OrangeAcidity2ActionPerformed(evt);
+        OrangeAcidity2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OrangeAcidity2MouseClicked(evt);
             }
         });
 
         AppleAcidity2.setBackground(new java.awt.Color(255, 241, 144));
         AppleAcidity2.setText("Apple Acidity");
-        AppleAcidity2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AppleAcidity2ActionPerformed(evt);
+        AppleAcidity2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AppleAcidity2MouseClicked(evt);
             }
         });
 
@@ -4830,10 +5249,20 @@ public class JdCatacion extends javax.swing.JDialog {
         sour2.setBackground(new java.awt.Color(255, 241, 144));
         sour2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         sour2.setText("Sour");
+        sour2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sour2MouseClicked(evt);
+            }
+        });
 
         Alcohol2.setBackground(new java.awt.Color(255, 241, 144));
         Alcohol2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Alcohol2.setText("Alcohol/Fermented");
+        Alcohol2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Alcohol2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel65Layout = new javax.swing.GroupLayout(jPanel65);
         jPanel65.setLayout(jPanel65Layout);
@@ -4898,83 +5327,83 @@ public class JdCatacion extends javax.swing.JDialog {
         OliveOil2.setBackground(new java.awt.Color(123, 236, 133));
         OliveOil2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         OliveOil2.setText("Olive Oil");
-        OliveOil2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OliveOil2ActionPerformed(evt);
+        OliveOil2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OliveOil2MouseClicked(evt);
             }
         });
 
         Raw2.setBackground(new java.awt.Color(123, 236, 133));
         Raw2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Raw2.setText("Raw");
-        Raw2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Raw2ActionPerformed(evt);
+        Raw2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Raw2MouseClicked(evt);
             }
         });
 
         Underripe2.setBackground(new java.awt.Color(123, 236, 133));
         Underripe2.setText("Under-ripe");
-        Underripe2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Underripe2ActionPerformed(evt);
+        Underripe2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Underripe2MouseClicked(evt);
             }
         });
 
         Peapod2.setBackground(new java.awt.Color(123, 236, 133));
         Peapod2.setText("Pea pod");
-        Peapod2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Peapod2ActionPerformed(evt);
+        Peapod2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Peapod2MouseClicked(evt);
             }
         });
 
         Fresh2.setBackground(new java.awt.Color(123, 236, 133));
         Fresh2.setText("Fresh");
-        Fresh2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Fresh2ActionPerformed(evt);
+        Fresh2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Fresh2MouseClicked(evt);
             }
         });
 
         DarkGreen2.setBackground(new java.awt.Color(123, 236, 133));
         DarkGreen2.setText("Dark Green");
-        DarkGreen2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DarkGreen2ActionPerformed(evt);
+        DarkGreen2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DarkGreen2MouseClicked(evt);
             }
         });
 
         Vegetative2.setBackground(new java.awt.Color(123, 236, 133));
         Vegetative2.setText("Vegetative");
-        Vegetative2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Vegetative2ActionPerformed(evt);
+        Vegetative2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Vegetative2MouseClicked(evt);
             }
         });
 
         Haylike2.setBackground(new java.awt.Color(123, 236, 133));
         Haylike2.setText("Hay-like");
-        Haylike2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Haylike2ActionPerformed(evt);
+        Haylike2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Haylike2MouseClicked(evt);
             }
         });
 
         Herblike2.setBackground(new java.awt.Color(123, 236, 133));
         Herblike2.setText("Herb-like");
-        Herblike2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Herblike2ActionPerformed(evt);
+        Herblike2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Herblike2MouseClicked(evt);
             }
         });
 
         Beany2.setBackground(new java.awt.Color(123, 236, 133));
         Beany2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Beany2.setText("Beany");
-        Beany2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Beany2ActionPerformed(evt);
+        Beany2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Beany2MouseClicked(evt);
             }
         });
 
@@ -5031,129 +5460,129 @@ public class JdCatacion extends javax.swing.JDialog {
 
         Stale2.setBackground(new java.awt.Color(94, 249, 235));
         Stale2.setText("Stale");
-        Stale2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Stale2ActionPerformed(evt);
+        Stale2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Stale2MouseClicked(evt);
             }
         });
 
         Cardboard2.setBackground(new java.awt.Color(94, 249, 235));
         Cardboard2.setText("Cardboard");
-        Cardboard2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cardboard2ActionPerformed(evt);
+        Cardboard2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Cardboard2MouseClicked(evt);
             }
         });
 
         Papery2.setBackground(new java.awt.Color(94, 249, 235));
         Papery2.setText("Papery");
-        Papery2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Papery2ActionPerformed(evt);
+        Papery2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Papery2MouseClicked(evt);
             }
         });
 
         Woody2.setBackground(new java.awt.Color(94, 249, 235));
         Woody2.setText("Woody");
-        Woody2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Woody2ActionPerformed(evt);
+        Woody2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Woody2MouseClicked(evt);
             }
         });
 
         MoldyDamp2.setBackground(new java.awt.Color(94, 249, 235));
         MoldyDamp2.setText("Moldy/Damp");
-        MoldyDamp2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MoldyDamp2ActionPerformed(evt);
+        MoldyDamp2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MoldyDamp2MouseClicked(evt);
             }
         });
 
         MustyDusty2.setBackground(new java.awt.Color(94, 249, 235));
         MustyDusty2.setText("Musty/Dusty");
-        MustyDusty2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MustyDusty2ActionPerformed(evt);
+        MustyDusty2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MustyDusty2MouseClicked(evt);
             }
         });
 
         MustyEarthy2.setBackground(new java.awt.Color(94, 249, 235));
         MustyEarthy2.setText("Musty/Earthy");
-        MustyEarthy2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MustyEarthy2ActionPerformed(evt);
+        MustyEarthy2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MustyEarthy2MouseClicked(evt);
             }
         });
 
         Animalic2.setBackground(new java.awt.Color(94, 249, 235));
         Animalic2.setText("Animalic");
-        Animalic2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Animalic2ActionPerformed(evt);
+        Animalic2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Animalic2MouseClicked(evt);
             }
         });
 
         MeatyBrothy2.setBackground(new java.awt.Color(94, 249, 235));
         MeatyBrothy2.setText("Meaty/Brothy");
-        MeatyBrothy2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MeatyBrothy2ActionPerformed(evt);
+        MeatyBrothy2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MeatyBrothy2MouseClicked(evt);
             }
         });
 
         Phenolic2.setBackground(new java.awt.Color(94, 249, 235));
         Phenolic2.setText("Phenolic");
-        Phenolic2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Phenolic2ActionPerformed(evt);
+        Phenolic2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Phenolic2MouseClicked(evt);
             }
         });
 
         Bitter2.setBackground(new java.awt.Color(94, 249, 235));
         Bitter2.setText("Bitter");
-        Bitter2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Bitter2ActionPerformed(evt);
+        Bitter2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Bitter2MouseClicked(evt);
             }
         });
 
         Salty2.setBackground(new java.awt.Color(94, 249, 235));
         Salty2.setText("Salty");
-        Salty2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Salty2ActionPerformed(evt);
+        Salty2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Salty2MouseClicked(evt);
             }
         });
 
         Medicinal2.setBackground(new java.awt.Color(94, 249, 235));
         Medicinal2.setText("Medicinal");
-        Medicinal2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Medicinal2ActionPerformed(evt);
+        Medicinal2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Medicinal2MouseClicked(evt);
             }
         });
 
         Petroleum2.setBackground(new java.awt.Color(94, 249, 235));
         Petroleum2.setText("Petroleum");
-        Petroleum2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Petroleum2ActionPerformed(evt);
+        Petroleum2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Petroleum2MouseClicked(evt);
             }
         });
 
         Skunky2.setBackground(new java.awt.Color(94, 249, 235));
         Skunky2.setText("Skunky");
-        Skunky2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Skunky2ActionPerformed(evt);
+        Skunky2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Skunky2MouseClicked(evt);
             }
         });
 
         Rubber2.setBackground(new java.awt.Color(94, 249, 235));
         Rubber2.setText("Rubber");
-        Rubber2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Rubber2ActionPerformed(evt);
+        Rubber2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Rubber2MouseClicked(evt);
             }
         });
 
@@ -5164,10 +5593,20 @@ public class JdCatacion extends javax.swing.JDialog {
         PaperyM2.setBackground(new java.awt.Color(94, 249, 235));
         PaperyM2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         PaperyM2.setText("Papery/Musty");
+        PaperyM2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PaperyM2MouseClicked(evt);
+            }
+        });
 
         Chemical2.setBackground(new java.awt.Color(94, 249, 235));
         Chemical2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Chemical2.setText("Chemical");
+        Chemical2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Chemical2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel67Layout = new javax.swing.GroupLayout(jPanel67);
         jPanel67.setLayout(jPanel67Layout);
@@ -5246,66 +5685,66 @@ public class JdCatacion extends javax.swing.JDialog {
         PipeTobacco2.setBackground(new java.awt.Color(20, 181, 225));
         PipeTobacco2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         PipeTobacco2.setText("Pipe Tobacco");
-        PipeTobacco2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PipeTobacco2ActionPerformed(evt);
+        PipeTobacco2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PipeTobacco2MouseClicked(evt);
             }
         });
 
         Tobacco2.setBackground(new java.awt.Color(20, 181, 225));
         Tobacco2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Tobacco2.setText("Tobacco");
-        Tobacco2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Tobacco2ActionPerformed(evt);
+        Tobacco2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tobacco2MouseClicked(evt);
             }
         });
 
         Acrid2.setBackground(new java.awt.Color(20, 181, 225));
         Acrid2.setText("Acrid");
-        Acrid2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Acrid2ActionPerformed(evt);
+        Acrid2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Acrid2MouseClicked(evt);
             }
         });
 
         Ashy2.setBackground(new java.awt.Color(20, 181, 225));
         Ashy2.setText("Ashy");
-        Ashy2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Ashy2ActionPerformed(evt);
+        Ashy2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Ashy2MouseClicked(evt);
             }
         });
 
         Smoky2.setBackground(new java.awt.Color(20, 181, 225));
         Smoky2.setText("Smoky");
-        Smoky2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Smoky2ActionPerformed(evt);
+        Smoky2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Smoky2MouseClicked(evt);
             }
         });
 
         BrownRoast2.setBackground(new java.awt.Color(20, 181, 225));
         BrownRoast2.setText("Brown, Roast");
-        BrownRoast2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BrownRoast2ActionPerformed(evt);
+        BrownRoast2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BrownRoast2MouseClicked(evt);
             }
         });
 
         Grain2.setBackground(new java.awt.Color(20, 181, 225));
         Grain2.setText("Grain");
-        Grain2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Grain2ActionPerformed(evt);
+        Grain2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Grain2MouseClicked(evt);
             }
         });
 
         Malt2.setBackground(new java.awt.Color(20, 181, 225));
         Malt2.setText("Malt");
-        Malt2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Malt2ActionPerformed(evt);
+        Malt2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Malt2MouseClicked(evt);
             }
         });
 
@@ -5316,10 +5755,20 @@ public class JdCatacion extends javax.swing.JDialog {
         Burnt2.setBackground(new java.awt.Color(20, 181, 225));
         Burnt2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Burnt2.setText("Burnt");
+        Burnt2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Burnt2MouseClicked(evt);
+            }
+        });
 
         Cereal2.setBackground(new java.awt.Color(20, 181, 225));
         Cereal2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Cereal2.setText("Cereal");
+        Cereal2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Cereal2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel68Layout = new javax.swing.GroupLayout(jPanel68);
         jPanel68.setLayout(jPanel68Layout);
@@ -5370,50 +5819,50 @@ public class JdCatacion extends javax.swing.JDialog {
         Pungent2.setBackground(new java.awt.Color(187, 187, 240));
         Pungent2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Pungent2.setText("Pungent");
-        Pungent2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pungent2ActionPerformed(evt);
+        Pungent2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Pungent2MouseClicked(evt);
             }
         });
 
         Pepper2.setBackground(new java.awt.Color(187, 187, 240));
         Pepper2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Pepper2.setText("Pepper");
-        Pepper2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pepper2ActionPerformed(evt);
+        Pepper2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Pepper2MouseClicked(evt);
             }
         });
 
         Anise2.setBackground(new java.awt.Color(187, 187, 240));
         Anise2.setText("Anise");
-        Anise2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Anise2ActionPerformed(evt);
+        Anise2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Anise2MouseClicked(evt);
             }
         });
 
         Nutmeg2.setBackground(new java.awt.Color(187, 187, 240));
         Nutmeg2.setText("Nutmeg");
-        Nutmeg2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Nutmeg2ActionPerformed(evt);
+        Nutmeg2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Nutmeg2MouseClicked(evt);
             }
         });
 
         Cinnamon2.setBackground(new java.awt.Color(187, 187, 240));
         Cinnamon2.setText("Cinnamon");
-        Cinnamon2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cinnamon2ActionPerformed(evt);
+        Cinnamon2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Cinnamon2MouseClicked(evt);
             }
         });
 
         Clove2.setBackground(new java.awt.Color(187, 187, 240));
         Clove2.setText("Clove");
-        Clove2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Clove2ActionPerformed(evt);
+        Clove2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Clove2MouseClicked(evt);
             }
         });
 
@@ -5424,6 +5873,11 @@ public class JdCatacion extends javax.swing.JDialog {
         Brownspices2.setBackground(new java.awt.Color(187, 187, 240));
         Brownspices2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Brownspices2.setText("Brown Spice");
+        Brownspices2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Brownspices2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel69Layout = new javax.swing.GroupLayout(jPanel69);
         jPanel69.setLayout(jPanel69Layout);
@@ -5466,50 +5920,50 @@ public class JdCatacion extends javax.swing.JDialog {
 
         Peanuts2.setBackground(new java.awt.Color(255, 102, 255));
         Peanuts2.setText("Peanuts");
-        Peanuts2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Peanuts2ActionPerformed(evt);
+        Peanuts2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Peanuts2MouseClicked(evt);
             }
         });
 
         Hazelenut2.setBackground(new java.awt.Color(255, 102, 255));
         Hazelenut2.setText("Hazelenut");
-        Hazelenut2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Hazelenut2ActionPerformed(evt);
+        Hazelenut2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Hazelenut2MouseClicked(evt);
             }
         });
 
         Almond2.setBackground(new java.awt.Color(255, 102, 255));
         Almond2.setText("Almond");
-        Almond2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Almond2ActionPerformed(evt);
+        Almond2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Almond2MouseClicked(evt);
             }
         });
 
         Chocolate2.setBackground(new java.awt.Color(255, 102, 255));
         Chocolate2.setText("Chocolate");
-        Chocolate2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Chocolate2ActionPerformed(evt);
+        Chocolate2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Chocolate2MouseClicked(evt);
             }
         });
 
         DarkChocolate2.setBackground(new java.awt.Color(255, 102, 255));
         DarkChocolate2.setText("Dark Chocolate");
-        DarkChocolate2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DarkChocolate2ActionPerformed(evt);
+        DarkChocolate2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DarkChocolate2MouseClicked(evt);
             }
         });
 
         Nutty2.setBackground(new java.awt.Color(255, 102, 255));
         Nutty2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Nutty2.setText("Nutty");
-        Nutty2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Nutty2ActionPerformed(evt);
+        Nutty2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Nutty2MouseClicked(evt);
             }
         });
 
@@ -5520,6 +5974,11 @@ public class JdCatacion extends javax.swing.JDialog {
         Cocoa2.setBackground(new java.awt.Color(255, 102, 255));
         Cocoa2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Cocoa2.setText("Cocoa");
+        Cocoa2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Cocoa2MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel70Layout = new javax.swing.GroupLayout(jPanel70);
         jPanel70.setLayout(jPanel70Layout);
@@ -5586,7 +6045,7 @@ public class JdCatacion extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel69, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel70, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(323, Short.MAX_VALUE))
+                .addContainerGap(712, Short.MAX_VALUE))
         );
         jPanel8Layout.setVerticalGroup(
             jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -5616,50 +6075,50 @@ public class JdCatacion extends javax.swing.JDialog {
         BrownSugar3.setBackground(new java.awt.Color(255, 102, 102));
         BrownSugar3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         BrownSugar3.setText("Brown Sugar");
-        BrownSugar3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BrownSugar3ActionPerformed(evt);
+        BrownSugar3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BrownSugar3MouseClicked(evt);
             }
         });
 
         MapleSugar3.setBackground(new java.awt.Color(255, 102, 102));
         MapleSugar3.setText("Maple Sugar");
-        MapleSugar3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MapleSugar3ActionPerformed(evt);
+        MapleSugar3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MapleSugar3MouseClicked(evt);
             }
         });
 
         Carmelized3.setBackground(new java.awt.Color(255, 102, 102));
         Carmelized3.setText("Carmelized");
-        Carmelized3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Carmelized3ActionPerformed(evt);
+        Carmelized3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Carmelized3MouseClicked(evt);
             }
         });
 
         Molasses3.setBackground(new java.awt.Color(255, 102, 102));
         Molasses3.setText("Molasses");
-        Molasses3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Molasses3ActionPerformed(evt);
+        Molasses3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Molasses3MouseClicked(evt);
             }
         });
 
         Honey3.setBackground(new java.awt.Color(255, 102, 102));
         Honey3.setText("Honey");
-        Honey3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Honey3ActionPerformed(evt);
+        Honey3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Honey3MouseClicked(evt);
             }
         });
 
         Vanilla3.setBackground(new java.awt.Color(255, 102, 102));
         Vanilla3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Vanilla3.setText("Vanilla");
-        Vanilla3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Vanilla3ActionPerformed(evt);
+        Vanilla3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Vanilla3MouseClicked(evt);
             }
         });
 
@@ -5702,172 +6161,187 @@ public class JdCatacion extends javax.swing.JDialog {
 
         Blackberry3.setBackground(new java.awt.Color(236, 217, 25));
         Blackberry3.setText("Blackberry");
-        Blackberry3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Blackberry3ActionPerformed(evt);
+        Blackberry3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Blackberry3MouseClicked(evt);
             }
         });
 
         Raspberry3.setBackground(new java.awt.Color(236, 217, 25));
         Raspberry3.setText("Raspberry");
-        Raspberry3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Raspberry3ActionPerformed(evt);
+        Raspberry3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Raspberry3MouseClicked(evt);
             }
         });
 
         Blueberry3.setBackground(new java.awt.Color(236, 217, 25));
         Blueberry3.setText("Blueberry");
-        Blueberry3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Blueberry3ActionPerformed(evt);
+        Blueberry3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Blueberry3MouseClicked(evt);
             }
         });
 
         Strawberry3.setBackground(new java.awt.Color(236, 217, 25));
         Strawberry3.setText("Strawberry");
-        Strawberry3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Strawberry3ActionPerformed(evt);
+        Strawberry3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Strawberry3MouseClicked(evt);
             }
         });
 
         Raisen3.setBackground(new java.awt.Color(236, 217, 25));
         Raisen3.setText("Raisen");
-        Raisen3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Raisen3ActionPerformed(evt);
+        Raisen3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Raisen3MouseClicked(evt);
             }
         });
 
         Prune3.setBackground(new java.awt.Color(236, 217, 25));
         Prune3.setText("Prune");
-        Prune3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Prune3ActionPerformed(evt);
+        Prune3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Prune3MouseClicked(evt);
             }
         });
 
         Coconut3.setBackground(new java.awt.Color(236, 217, 25));
         Coconut3.setText("Coconut");
-        Coconut3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Coconut3ActionPerformed(evt);
+        Coconut3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Coconut3MouseClicked(evt);
             }
         });
 
         Cherry3.setBackground(new java.awt.Color(236, 217, 25));
         Cherry3.setText("Cherry");
-        Cherry3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cherry3ActionPerformed(evt);
+        Cherry3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Cherry3MouseClicked(evt);
             }
         });
 
         Pomagranite3.setBackground(new java.awt.Color(236, 217, 25));
         Pomagranite3.setText("Pomagranite");
-        Pomagranite3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pomagranite3ActionPerformed(evt);
+        Pomagranite3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Pomagranite3MouseClicked(evt);
             }
         });
 
         Pinneapple3.setBackground(new java.awt.Color(236, 217, 25));
         Pinneapple3.setText("Pinneapple");
-        Pinneapple3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pinneapple3ActionPerformed(evt);
+        Pinneapple3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Pinneapple3MouseClicked(evt);
             }
         });
 
         Grape3.setBackground(new java.awt.Color(236, 217, 25));
         Grape3.setText("Grape");
-        Grape3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Grape3ActionPerformed(evt);
+        Grape3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Grape3MouseClicked(evt);
             }
         });
 
         Apple3.setBackground(new java.awt.Color(236, 217, 25));
         Apple3.setText("Apple");
-        Apple3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Apple3ActionPerformed(evt);
+        Apple3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Apple3MouseClicked(evt);
             }
         });
 
         Peach3.setBackground(new java.awt.Color(236, 217, 25));
         Peach3.setText("Peach");
-        Peach3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Peach3ActionPerformed(evt);
+        Peach3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Peach3MouseClicked(evt);
             }
         });
 
         Pear3.setBackground(new java.awt.Color(236, 217, 25));
         Pear3.setText("Pear");
-        Pear3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pear3ActionPerformed(evt);
+        Pear3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Pear3MouseClicked(evt);
             }
         });
 
         Grapefruit3.setBackground(new java.awt.Color(236, 217, 25));
         Grapefruit3.setText("Grapefruit");
-        Grapefruit3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Grapefruit3ActionPerformed(evt);
+        Grapefruit3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Grapefruit3MouseClicked(evt);
             }
         });
 
         Orange3.setBackground(new java.awt.Color(236, 217, 25));
         Orange3.setText("Orange");
-        Orange3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Orange3ActionPerformed(evt);
+        Orange3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Orange3MouseClicked(evt);
             }
         });
 
         Lemon3.setBackground(new java.awt.Color(236, 217, 25));
         Lemon3.setText("Lemon");
-        Lemon3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Lemon3ActionPerformed(evt);
+        Lemon3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Lemon3MouseClicked(evt);
             }
         });
 
         Lime3.setBackground(new java.awt.Color(236, 217, 25));
         Lime3.setText("Lime");
-        Lime3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Lime3ActionPerformed(evt);
+        Lime3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Lime3MouseClicked(evt);
             }
         });
 
         Fruity3.setBackground(new java.awt.Color(236, 217, 25));
         Fruity3.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Fruity3.setText("3   Fruity");
-        Fruity3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Fruity3ActionPerformed(evt);
-            }
-        });
 
         Berry3.setBackground(new java.awt.Color(236, 217, 25));
         Berry3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Berry3.setText("Berry");
+        Berry3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Berry3MouseClicked(evt);
+            }
+        });
 
         DriedFruit3.setBackground(new java.awt.Color(236, 217, 25));
         DriedFruit3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         DriedFruit3.setText("Dried Fruit");
+        DriedFruit3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DriedFruit3MouseClicked(evt);
+            }
+        });
 
         Otherfruit3.setBackground(new java.awt.Color(236, 217, 25));
         Otherfruit3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Otherfruit3.setText("Other fruit");
+        Otherfruit3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Otherfruit3MouseClicked(evt);
+            }
+        });
 
         Citrusfruit3.setBackground(new java.awt.Color(236, 217, 25));
         Citrusfruit3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Citrusfruit3.setText("Citrus Fruit");
+        Citrusfruit3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Citrusfruit3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel33Layout = new javax.swing.GroupLayout(jPanel33);
         jPanel33.setLayout(jPanel33Layout);
@@ -5951,7 +6425,8 @@ public class JdCatacion extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(Lemon3, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Lime3, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(Lime3, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(9, Short.MAX_VALUE))
         );
 
         jPanel34.setBackground(new java.awt.Color(243, 187, 111));
@@ -5959,33 +6434,33 @@ public class JdCatacion extends javax.swing.JDialog {
         Blacktea3.setBackground(new java.awt.Color(243, 187, 111));
         Blacktea3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Blacktea3.setText("Black tea");
-        Blacktea3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Blacktea3ActionPerformed(evt);
+        Blacktea3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Blacktea3MouseClicked(evt);
             }
         });
 
         Chamomile3.setBackground(new java.awt.Color(243, 187, 111));
         Chamomile3.setText("Chamomile");
-        Chamomile3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Chamomile3ActionPerformed(evt);
+        Chamomile3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Chamomile3MouseClicked(evt);
             }
         });
 
         Rose3.setBackground(new java.awt.Color(243, 187, 111));
         Rose3.setText("Rose");
-        Rose3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Rose3ActionPerformed(evt);
+        Rose3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Rose3MouseClicked(evt);
             }
         });
 
         Jasmine3.setBackground(new java.awt.Color(243, 187, 111));
         Jasmine3.setText("Jasmine");
-        Jasmine3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Jasmine3ActionPerformed(evt);
+        Jasmine3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Jasmine3MouseClicked(evt);
             }
         });
 
@@ -6031,73 +6506,73 @@ public class JdCatacion extends javax.swing.JDialog {
 
         Vinegar3.setBackground(new java.awt.Color(255, 241, 144));
         Vinegar3.setText("Vinegar");
-        Vinegar3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Vinegar3ActionPerformed(evt);
+        Vinegar3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Vinegar3MouseClicked(evt);
             }
         });
 
         Rancidbutter3.setBackground(new java.awt.Color(255, 241, 144));
         Rancidbutter3.setText("Rancid butter");
-        Rancidbutter3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Rancidbutter3ActionPerformed(evt);
+        Rancidbutter3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Rancidbutter3MouseClicked(evt);
             }
         });
 
         RancidCheese3.setBackground(new java.awt.Color(255, 241, 144));
         RancidCheese3.setText("Rancid Cheese");
-        RancidCheese3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RancidCheese3ActionPerformed(evt);
+        RancidCheese3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                RancidCheese3MouseClicked(evt);
             }
         });
 
         Winey3.setBackground(new java.awt.Color(255, 241, 144));
         Winey3.setText("Winey");
-        Winey3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Winey3ActionPerformed(evt);
+        Winey3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Winey3MouseClicked(evt);
             }
         });
 
         Whiskey3.setBackground(new java.awt.Color(255, 241, 144));
         Whiskey3.setText("Whiskey");
-        Whiskey3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Whiskey3ActionPerformed(evt);
+        Whiskey3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Whiskey3MouseClicked(evt);
             }
         });
 
         Fermented3.setBackground(new java.awt.Color(255, 241, 144));
         Fermented3.setText("Fermented");
-        Fermented3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Fermented3ActionPerformed(evt);
+        Fermented3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Fermented3MouseClicked(evt);
             }
         });
 
         Overripe3.setBackground(new java.awt.Color(255, 241, 144));
         Overripe3.setText("Over-ripe");
-        Overripe3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Overripe3ActionPerformed(evt);
+        Overripe3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Overripe3MouseClicked(evt);
             }
         });
 
         OrangeAcidity3.setBackground(new java.awt.Color(255, 241, 144));
         OrangeAcidity3.setText("Orange Acidity");
-        OrangeAcidity3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OrangeAcidity3ActionPerformed(evt);
+        OrangeAcidity3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OrangeAcidity3MouseClicked(evt);
             }
         });
 
         AppleAcidity3.setBackground(new java.awt.Color(255, 241, 144));
         AppleAcidity3.setText("Apple Acidity");
-        AppleAcidity3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AppleAcidity3ActionPerformed(evt);
+        AppleAcidity3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                AppleAcidity3MouseClicked(evt);
             }
         });
 
@@ -6108,10 +6583,20 @@ public class JdCatacion extends javax.swing.JDialog {
         sour3.setBackground(new java.awt.Color(255, 241, 144));
         sour3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         sour3.setText("Sour");
+        sour3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sour3MouseClicked(evt);
+            }
+        });
 
         Alcohol3.setBackground(new java.awt.Color(255, 241, 144));
         Alcohol3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Alcohol3.setText("Alcohol/Fermented");
+        Alcohol3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Alcohol3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel35Layout = new javax.swing.GroupLayout(jPanel35);
         jPanel35.setLayout(jPanel35Layout);
@@ -6172,83 +6657,83 @@ public class JdCatacion extends javax.swing.JDialog {
         OliveOil3.setBackground(new java.awt.Color(123, 236, 133));
         OliveOil3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         OliveOil3.setText("Olive Oil");
-        OliveOil3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OliveOil3ActionPerformed(evt);
+        OliveOil3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                OliveOil3MouseClicked(evt);
             }
         });
 
         Raw3.setBackground(new java.awt.Color(123, 236, 133));
         Raw3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Raw3.setText("Raw");
-        Raw3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Raw3ActionPerformed(evt);
+        Raw3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Raw3MouseClicked(evt);
             }
         });
 
         Underripe3.setBackground(new java.awt.Color(123, 236, 133));
         Underripe3.setText("Under-ripe");
-        Underripe3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Underripe3ActionPerformed(evt);
+        Underripe3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Underripe3MouseClicked(evt);
             }
         });
 
         Peapod3.setBackground(new java.awt.Color(123, 236, 133));
         Peapod3.setText("Pea pod");
-        Peapod3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Peapod3ActionPerformed(evt);
+        Peapod3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Peapod3MouseClicked(evt);
             }
         });
 
         Fresh3.setBackground(new java.awt.Color(123, 236, 133));
         Fresh3.setText("Fresh");
-        Fresh3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Fresh3ActionPerformed(evt);
+        Fresh3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Fresh3MouseClicked(evt);
             }
         });
 
         DarkGreen3.setBackground(new java.awt.Color(123, 236, 133));
         DarkGreen3.setText("Dark Green");
-        DarkGreen3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DarkGreen3ActionPerformed(evt);
+        DarkGreen3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DarkGreen3MouseClicked(evt);
             }
         });
 
         Vegetative3.setBackground(new java.awt.Color(123, 236, 133));
         Vegetative3.setText("Vegetative");
-        Vegetative3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Vegetative3ActionPerformed(evt);
+        Vegetative3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Vegetative3MouseClicked(evt);
             }
         });
 
         Haylike3.setBackground(new java.awt.Color(123, 236, 133));
         Haylike3.setText("Hay-like");
-        Haylike3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Haylike3ActionPerformed(evt);
+        Haylike3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Haylike3MouseClicked(evt);
             }
         });
 
         Herblike3.setBackground(new java.awt.Color(123, 236, 133));
         Herblike3.setText("Herb-like");
-        Herblike3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Herblike3ActionPerformed(evt);
+        Herblike3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Herblike3MouseClicked(evt);
             }
         });
 
         Beany3.setBackground(new java.awt.Color(123, 236, 133));
         Beany3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Beany3.setText("Beany");
-        Beany3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Beany3ActionPerformed(evt);
+        Beany3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Beany3MouseClicked(evt);
             }
         });
 
@@ -6303,129 +6788,129 @@ public class JdCatacion extends javax.swing.JDialog {
 
         Stale3.setBackground(new java.awt.Color(94, 249, 235));
         Stale3.setText("Stale");
-        Stale3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Stale3ActionPerformed(evt);
+        Stale3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Stale3MouseClicked(evt);
             }
         });
 
         Cardboard3.setBackground(new java.awt.Color(94, 249, 235));
         Cardboard3.setText("Cardboard");
-        Cardboard3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cardboard3ActionPerformed(evt);
+        Cardboard3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Cardboard3MouseClicked(evt);
             }
         });
 
         Papery3.setBackground(new java.awt.Color(94, 249, 235));
         Papery3.setText("Papery");
-        Papery3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Papery3ActionPerformed(evt);
+        Papery3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Papery3MouseClicked(evt);
             }
         });
 
         Woody3.setBackground(new java.awt.Color(94, 249, 235));
         Woody3.setText("Woody");
-        Woody3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Woody3ActionPerformed(evt);
+        Woody3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Woody3MouseClicked(evt);
             }
         });
 
         MoldyDamp3.setBackground(new java.awt.Color(94, 249, 235));
         MoldyDamp3.setText("Moldy/Damp");
-        MoldyDamp3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MoldyDamp3ActionPerformed(evt);
+        MoldyDamp3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MoldyDamp3MouseClicked(evt);
             }
         });
 
         MustyDusty3.setBackground(new java.awt.Color(94, 249, 235));
         MustyDusty3.setText("Musty/Dusty");
-        MustyDusty3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MustyDusty3ActionPerformed(evt);
+        MustyDusty3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MustyDusty3MouseClicked(evt);
             }
         });
 
         MustyEarthy3.setBackground(new java.awt.Color(94, 249, 235));
         MustyEarthy3.setText("Musty/Earthy");
-        MustyEarthy3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MustyEarthy3ActionPerformed(evt);
+        MustyEarthy3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MustyEarthy3MouseClicked(evt);
             }
         });
 
         Animalic3.setBackground(new java.awt.Color(94, 249, 235));
         Animalic3.setText("Animalic");
-        Animalic3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Animalic3ActionPerformed(evt);
+        Animalic3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Animalic3MouseClicked(evt);
             }
         });
 
         MeatyBrothy3.setBackground(new java.awt.Color(94, 249, 235));
         MeatyBrothy3.setText("Meaty/Brothy");
-        MeatyBrothy3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MeatyBrothy3ActionPerformed(evt);
+        MeatyBrothy3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                MeatyBrothy3MouseClicked(evt);
             }
         });
 
         Phenolic3.setBackground(new java.awt.Color(94, 249, 235));
         Phenolic3.setText("Phenolic");
-        Phenolic3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Phenolic3ActionPerformed(evt);
+        Phenolic3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Phenolic3MouseClicked(evt);
             }
         });
 
         Bitter3.setBackground(new java.awt.Color(94, 249, 235));
         Bitter3.setText("Bitter");
-        Bitter3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Bitter3ActionPerformed(evt);
+        Bitter3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Bitter3MouseClicked(evt);
             }
         });
 
         Salty3.setBackground(new java.awt.Color(94, 249, 235));
         Salty3.setText("Salty");
-        Salty3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Salty3ActionPerformed(evt);
+        Salty3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Salty3MouseClicked(evt);
             }
         });
 
         Medicinal3.setBackground(new java.awt.Color(94, 249, 235));
         Medicinal3.setText("Medicinal");
-        Medicinal3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Medicinal3ActionPerformed(evt);
+        Medicinal3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Medicinal3MouseClicked(evt);
             }
         });
 
         Petroleum3.setBackground(new java.awt.Color(94, 249, 235));
         Petroleum3.setText("Petroleum");
-        Petroleum3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Petroleum3ActionPerformed(evt);
+        Petroleum3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Petroleum3MouseClicked(evt);
             }
         });
 
         Skunky3.setBackground(new java.awt.Color(94, 249, 235));
         Skunky3.setText("Skunky");
-        Skunky3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Skunky3ActionPerformed(evt);
+        Skunky3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Skunky3MouseClicked(evt);
             }
         });
 
         Rubber3.setBackground(new java.awt.Color(94, 249, 235));
         Rubber3.setText("Rubber");
-        Rubber3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Rubber3ActionPerformed(evt);
+        Rubber3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Rubber3MouseClicked(evt);
             }
         });
 
@@ -6436,10 +6921,20 @@ public class JdCatacion extends javax.swing.JDialog {
         PaperyM3.setBackground(new java.awt.Color(94, 249, 235));
         PaperyM3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         PaperyM3.setText("Papery/Musty");
+        PaperyM3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PaperyM3MouseClicked(evt);
+            }
+        });
 
         Chemical3.setBackground(new java.awt.Color(94, 249, 235));
         Chemical3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Chemical3.setText("Chemical");
+        Chemical3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Chemical3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel37Layout = new javax.swing.GroupLayout(jPanel37);
         jPanel37.setLayout(jPanel37Layout);
@@ -6518,66 +7013,66 @@ public class JdCatacion extends javax.swing.JDialog {
         PipeTobacco3.setBackground(new java.awt.Color(20, 181, 225));
         PipeTobacco3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         PipeTobacco3.setText("Pipe Tobacco");
-        PipeTobacco3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                PipeTobacco3ActionPerformed(evt);
+        PipeTobacco3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                PipeTobacco3MouseClicked(evt);
             }
         });
 
         Tobacco3.setBackground(new java.awt.Color(20, 181, 225));
         Tobacco3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Tobacco3.setText("Tobacco");
-        Tobacco3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Tobacco3ActionPerformed(evt);
+        Tobacco3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Tobacco3MouseClicked(evt);
             }
         });
 
         Acrid3.setBackground(new java.awt.Color(20, 181, 225));
         Acrid3.setText("Acrid");
-        Acrid3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Acrid3ActionPerformed(evt);
+        Acrid3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Acrid3MouseClicked(evt);
             }
         });
 
         Ashy3.setBackground(new java.awt.Color(20, 181, 225));
         Ashy3.setText("Ashy");
-        Ashy3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Ashy3ActionPerformed(evt);
+        Ashy3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Ashy3MouseClicked(evt);
             }
         });
 
         Smoky3.setBackground(new java.awt.Color(20, 181, 225));
         Smoky3.setText("Smoky");
-        Smoky3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Smoky3ActionPerformed(evt);
+        Smoky3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Smoky3MouseClicked(evt);
             }
         });
 
         BrownRoast3.setBackground(new java.awt.Color(20, 181, 225));
         BrownRoast3.setText("Brown, Roast");
-        BrownRoast3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BrownRoast3ActionPerformed(evt);
+        BrownRoast3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                BrownRoast3MouseClicked(evt);
             }
         });
 
         Grain3.setBackground(new java.awt.Color(20, 181, 225));
         Grain3.setText("Grain");
-        Grain3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Grain3ActionPerformed(evt);
+        Grain3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Grain3MouseClicked(evt);
             }
         });
 
         Malt3.setBackground(new java.awt.Color(20, 181, 225));
         Malt3.setText("Malt");
-        Malt3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Malt3ActionPerformed(evt);
+        Malt3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Malt3MouseClicked(evt);
             }
         });
 
@@ -6588,10 +7083,20 @@ public class JdCatacion extends javax.swing.JDialog {
         Burnt3.setBackground(new java.awt.Color(20, 181, 225));
         Burnt3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Burnt3.setText("Burnt");
+        Burnt3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Burnt3MouseClicked(evt);
+            }
+        });
 
         Cereal3.setBackground(new java.awt.Color(20, 181, 225));
         Cereal3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Cereal3.setText("Cereal");
+        Cereal3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Cereal3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel38Layout = new javax.swing.GroupLayout(jPanel38);
         jPanel38.setLayout(jPanel38Layout);
@@ -6642,50 +7147,50 @@ public class JdCatacion extends javax.swing.JDialog {
         Pungent3.setBackground(new java.awt.Color(187, 187, 240));
         Pungent3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Pungent3.setText("Pungent");
-        Pungent3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pungent3ActionPerformed(evt);
+        Pungent3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Pungent3MouseClicked(evt);
             }
         });
 
         Pepper3.setBackground(new java.awt.Color(187, 187, 240));
         Pepper3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Pepper3.setText("Pepper");
-        Pepper3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pepper3ActionPerformed(evt);
+        Pepper3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Pepper3MouseClicked(evt);
             }
         });
 
         Anise3.setBackground(new java.awt.Color(187, 187, 240));
         Anise3.setText("Anise");
-        Anise3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Anise3ActionPerformed(evt);
+        Anise3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Anise3MouseClicked(evt);
             }
         });
 
         Nutmeg3.setBackground(new java.awt.Color(187, 187, 240));
         Nutmeg3.setText("Nutmeg");
-        Nutmeg3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Nutmeg3ActionPerformed(evt);
+        Nutmeg3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Nutmeg3MouseClicked(evt);
             }
         });
 
         Cinnamon3.setBackground(new java.awt.Color(187, 187, 240));
         Cinnamon3.setText("Cinnamon");
-        Cinnamon3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cinnamon3ActionPerformed(evt);
+        Cinnamon3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Cinnamon3MouseClicked(evt);
             }
         });
 
         Clove3.setBackground(new java.awt.Color(187, 187, 240));
         Clove3.setText("Clove");
-        Clove3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Clove3ActionPerformed(evt);
+        Clove3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Clove3MouseClicked(evt);
             }
         });
 
@@ -6696,6 +7201,11 @@ public class JdCatacion extends javax.swing.JDialog {
         Brownspices3.setBackground(new java.awt.Color(187, 187, 240));
         Brownspices3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Brownspices3.setText("Brown Spice");
+        Brownspices3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Brownspices3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel39Layout = new javax.swing.GroupLayout(jPanel39);
         jPanel39.setLayout(jPanel39Layout);
@@ -6738,50 +7248,50 @@ public class JdCatacion extends javax.swing.JDialog {
 
         Peanuts3.setBackground(new java.awt.Color(255, 102, 255));
         Peanuts3.setText("Peanuts");
-        Peanuts3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Peanuts3ActionPerformed(evt);
+        Peanuts3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Peanuts3MouseClicked(evt);
             }
         });
 
         Hazelenut3.setBackground(new java.awt.Color(255, 102, 255));
         Hazelenut3.setText("Hazelenut");
-        Hazelenut3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Hazelenut3ActionPerformed(evt);
+        Hazelenut3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Hazelenut3MouseClicked(evt);
             }
         });
 
         Almond3.setBackground(new java.awt.Color(255, 102, 255));
         Almond3.setText("Almond");
-        Almond3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Almond3ActionPerformed(evt);
+        Almond3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Almond3MouseClicked(evt);
             }
         });
 
         Chocolate3.setBackground(new java.awt.Color(255, 102, 255));
         Chocolate3.setText("Chocolate");
-        Chocolate3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Chocolate3ActionPerformed(evt);
+        Chocolate3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Chocolate3MouseClicked(evt);
             }
         });
 
         DarkChocolate3.setBackground(new java.awt.Color(255, 102, 255));
         DarkChocolate3.setText("Dark Chocolate");
-        DarkChocolate3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DarkChocolate3ActionPerformed(evt);
+        DarkChocolate3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                DarkChocolate3MouseClicked(evt);
             }
         });
 
         Nutty3.setBackground(new java.awt.Color(255, 102, 255));
         Nutty3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Nutty3.setText("Nutty");
-        Nutty3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Nutty3ActionPerformed(evt);
+        Nutty3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Nutty3MouseClicked(evt);
             }
         });
 
@@ -6792,6 +7302,11 @@ public class JdCatacion extends javax.swing.JDialog {
         Cocoa3.setBackground(new java.awt.Color(255, 102, 255));
         Cocoa3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Cocoa3.setText("Cocoa");
+        Cocoa3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                Cocoa3MouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel40Layout = new javax.swing.GroupLayout(jPanel40);
         jPanel40.setLayout(jPanel40Layout);
@@ -6865,7 +7380,6 @@ public class JdCatacion extends javax.swing.JDialog {
                         .addComponent(jPanel32, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel34, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel33, javax.swing.GroupLayout.PREFERRED_SIZE, 327, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel35, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jPanel37, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel10Layout.createSequentialGroup()
@@ -6874,8 +7388,9 @@ public class JdCatacion extends javax.swing.JDialog {
                             .addComponent(jPanel39, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel40, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(171, Short.MAX_VALUE))
+                    .addComponent(jPanel36, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jPanel33, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(158, Short.MAX_VALUE))
         );
 
         contenedorpaneles.addTab("Flavor", jPanel10);
@@ -6884,46 +7399,21 @@ public class JdCatacion extends javax.swing.JDialog {
 
         buttonGroup2.add(Medium);
         Medium.setText("Medium");
-        Medium.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MediumActionPerformed(evt);
-            }
-        });
 
         buttonGroup2.add(Long);
         Long.setText("Long");
-        Long.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                LongActionPerformed(evt);
-            }
-        });
 
         jLabel84.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel84.setText("11   Finish ");
 
         buttonGroup2.add(Short1);
         Short1.setText("Short");
-        Short1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Short1ActionPerformed(evt);
-            }
-        });
 
         buttonGroup2.add(Dryf);
         Dryf.setText("Dry");
-        Dryf.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DryfActionPerformed(evt);
-            }
-        });
 
         buttonGroup2.add(Astringent);
         Astringent.setText("Astringent");
-        Astringent.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AstringentActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel59Layout = new javax.swing.GroupLayout(jPanel59);
         jPanel59.setLayout(jPanel59Layout);
@@ -6954,7 +7444,7 @@ public class JdCatacion extends javax.swing.JDialog {
                 .addComponent(Dryf, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(Astringent, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(10, Short.MAX_VALUE))
+                .addContainerGap(16, Short.MAX_VALUE))
         );
 
         jPanel41.setBackground(new java.awt.Color(255, 102, 102));
@@ -6962,52 +7452,22 @@ public class JdCatacion extends javax.swing.JDialog {
         BrownSugar4.setBackground(new java.awt.Color(255, 102, 102));
         BrownSugar4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         BrownSugar4.setText("Brown Sugar");
-        BrownSugar4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                BrownSugar4ActionPerformed(evt);
-            }
-        });
 
         MapleSugar4.setBackground(new java.awt.Color(255, 102, 102));
         MapleSugar4.setText("Maple Sugar");
-        MapleSugar4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MapleSugar4ActionPerformed(evt);
-            }
-        });
 
         Carmelized4.setBackground(new java.awt.Color(255, 102, 102));
         Carmelized4.setText("Carmelized");
-        Carmelized4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Carmelized4ActionPerformed(evt);
-            }
-        });
 
         Molasses4.setBackground(new java.awt.Color(255, 102, 102));
         Molasses4.setText("Molasses");
-        Molasses4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Molasses4ActionPerformed(evt);
-            }
-        });
 
         Honey4.setBackground(new java.awt.Color(255, 102, 102));
         Honey4.setText("Honey");
-        Honey4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Honey4ActionPerformed(evt);
-            }
-        });
 
         Vanilla4.setBackground(new java.awt.Color(255, 102, 102));
         Vanilla4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Vanilla4.setText("Vanilla");
-        Vanilla4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Vanilla4ActionPerformed(evt);
-            }
-        });
 
         Sweet4.setBackground(new java.awt.Color(255, 102, 102));
         Sweet4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -7048,156 +7508,61 @@ public class JdCatacion extends javax.swing.JDialog {
 
         Blackberry4.setBackground(new java.awt.Color(236, 217, 25));
         Blackberry4.setText("Blackberry");
-        Blackberry4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Blackberry4ActionPerformed(evt);
-            }
-        });
 
         Raspberry4.setBackground(new java.awt.Color(236, 217, 25));
         Raspberry4.setText("Raspberry");
-        Raspberry4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Raspberry4ActionPerformed(evt);
-            }
-        });
 
         Blueberry4.setBackground(new java.awt.Color(236, 217, 25));
         Blueberry4.setText("Blueberry");
-        Blueberry4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Blueberry4ActionPerformed(evt);
-            }
-        });
 
         Strawberry4.setBackground(new java.awt.Color(236, 217, 25));
         Strawberry4.setText("Strawberry");
-        Strawberry4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Strawberry4ActionPerformed(evt);
-            }
-        });
 
         Raisen4.setBackground(new java.awt.Color(236, 217, 25));
         Raisen4.setText("Raisen");
-        Raisen4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Raisen4ActionPerformed(evt);
-            }
-        });
 
         Prune4.setBackground(new java.awt.Color(236, 217, 25));
         Prune4.setText("Prune");
-        Prune4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Prune4ActionPerformed(evt);
-            }
-        });
 
         Coconut4.setBackground(new java.awt.Color(236, 217, 25));
         Coconut4.setText("Coconut");
-        Coconut4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Coconut4ActionPerformed(evt);
-            }
-        });
 
         Cherry4.setBackground(new java.awt.Color(236, 217, 25));
         Cherry4.setText("Cherry");
-        Cherry4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Cherry4ActionPerformed(evt);
-            }
-        });
 
         Pomagranite4.setBackground(new java.awt.Color(236, 217, 25));
         Pomagranite4.setText("Pomagranite");
-        Pomagranite4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pomagranite4ActionPerformed(evt);
-            }
-        });
 
         Pinneapple4.setBackground(new java.awt.Color(236, 217, 25));
         Pinneapple4.setText("Pinneapple");
-        Pinneapple4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pinneapple4ActionPerformed(evt);
-            }
-        });
 
         Grape4.setBackground(new java.awt.Color(236, 217, 25));
         Grape4.setText("Grape");
-        Grape4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Grape4ActionPerformed(evt);
-            }
-        });
 
         Apple4.setBackground(new java.awt.Color(236, 217, 25));
         Apple4.setText("Apple");
-        Apple4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Apple4ActionPerformed(evt);
-            }
-        });
 
         Peach4.setBackground(new java.awt.Color(236, 217, 25));
         Peach4.setText("Peach");
-        Peach4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Peach4ActionPerformed(evt);
-            }
-        });
 
         Pear4.setBackground(new java.awt.Color(236, 217, 25));
         Pear4.setText("Pear");
-        Pear4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Pear4ActionPerformed(evt);
-            }
-        });
 
         Grapefruit4.setBackground(new java.awt.Color(236, 217, 25));
         Grapefruit4.setText("Grapefruit");
-        Grapefruit4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Grapefruit4ActionPerformed(evt);
-            }
-        });
 
         Orange4.setBackground(new java.awt.Color(236, 217, 25));
         Orange4.setText("Orange");
-        Orange4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Orange4ActionPerformed(evt);
-            }
-        });
 
         Lemon4.setBackground(new java.awt.Color(236, 217, 25));
         Lemon4.setText("Lemon");
-        Lemon4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Lemon4ActionPerformed(evt);
-            }
-        });
 
         Lime4.setBackground(new java.awt.Color(236, 217, 25));
         Lime4.setText("Lime");
-        Lime4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Lime4ActionPerformed(evt);
-            }
-        });
 
         Fruity4.setBackground(new java.awt.Color(236, 217, 25));
         Fruity4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         Fruity4.setText("3   Fruity");
-        Fruity4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Fruity4ActionPerformed(evt);
-            }
-        });
 
         Berry4.setBackground(new java.awt.Color(236, 217, 25));
         Berry4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -7305,35 +7670,15 @@ public class JdCatacion extends javax.swing.JDialog {
         Blacktea4.setBackground(new java.awt.Color(243, 187, 111));
         Blacktea4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Blacktea4.setText("Black tea");
-        Blacktea4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Blacktea4ActionPerformed(evt);
-            }
-        });
 
         Chamomile4.setBackground(new java.awt.Color(243, 187, 111));
         Chamomile4.setText("Chamomile");
-        Chamomile4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Chamomile4ActionPerformed(evt);
-            }
-        });
 
         Rose4.setBackground(new java.awt.Color(243, 187, 111));
         Rose4.setText("Rose");
-        Rose4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Rose4ActionPerformed(evt);
-            }
-        });
 
         Jasmine4.setBackground(new java.awt.Color(243, 187, 111));
         Jasmine4.setText("Jasmine");
-        Jasmine4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Jasmine4ActionPerformed(evt);
-            }
-        });
 
         Floral4.setBackground(new java.awt.Color(243, 187, 111));
         Floral4.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -7371,75 +7716,30 @@ public class JdCatacion extends javax.swing.JDialog {
 
         Vinegar4.setBackground(new java.awt.Color(255, 241, 144));
         Vinegar4.setText("Vinegar");
-        Vinegar4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Vinegar4ActionPerformed(evt);
-            }
-        });
 
         Rancidbutter4.setBackground(new java.awt.Color(255, 241, 144));
         Rancidbutter4.setText("Rancid butter");
-        Rancidbutter4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Rancidbutter4ActionPerformed(evt);
-            }
-        });
 
         RancidCheese4.setBackground(new java.awt.Color(255, 241, 144));
         RancidCheese4.setText("Rancid Cheese");
-        RancidCheese4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RancidCheese4ActionPerformed(evt);
-            }
-        });
 
         Winey4.setBackground(new java.awt.Color(255, 241, 144));
         Winey4.setText("Winey");
-        Winey4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Winey4ActionPerformed(evt);
-            }
-        });
 
         Whiskey4.setBackground(new java.awt.Color(255, 241, 144));
         Whiskey4.setText("Whiskey");
-        Whiskey4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Whiskey4ActionPerformed(evt);
-            }
-        });
 
         Fermented4.setBackground(new java.awt.Color(255, 241, 144));
         Fermented4.setText("Fermented");
-        Fermented4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Fermented4ActionPerformed(evt);
-            }
-        });
 
         Overripe4.setBackground(new java.awt.Color(255, 241, 144));
         Overripe4.setText("Over-ripe");
-        Overripe4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Overripe4ActionPerformed(evt);
-            }
-        });
 
         OrangeAcidity4.setBackground(new java.awt.Color(255, 241, 144));
         OrangeAcidity4.setText("Orange Acidity");
-        OrangeAcidity4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OrangeAcidity4ActionPerformed(evt);
-            }
-        });
 
         AppleAcidity4.setBackground(new java.awt.Color(255, 241, 144));
         AppleAcidity4.setText("Apple Acidity");
-        AppleAcidity4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AppleAcidity4ActionPerformed(evt);
-            }
-        });
 
         Sour4.setBackground(new java.awt.Color(255, 241, 144));
         Sour4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -7469,9 +7769,8 @@ public class JdCatacion extends javax.swing.JDialog {
                     .addComponent(Vinegar4)
                     .addComponent(AppleAcidity4)
                     .addComponent(OrangeAcidity4)
-                    .addGroup(jPanel44Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(sour4)
-                        .addComponent(Alcohol4))
+                    .addComponent(sour4)
+                    .addComponent(Alcohol4)
                     .addComponent(Sour4)))
         );
         jPanel44Layout.setVerticalGroup(
@@ -7508,85 +7807,35 @@ public class JdCatacion extends javax.swing.JDialog {
         OliveOil4.setBackground(new java.awt.Color(123, 236, 133));
         OliveOil4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         OliveOil4.setText("Olive Oil");
-        OliveOil4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OliveOil4ActionPerformed(evt);
-            }
-        });
 
         Raw4.setBackground(new java.awt.Color(123, 236, 133));
         Raw4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Raw4.setText("Raw");
-        Raw4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Raw4ActionPerformed(evt);
-            }
-        });
 
         Underripe4.setBackground(new java.awt.Color(123, 236, 133));
         Underripe4.setText("Under-ripe");
-        Underripe4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Underripe4ActionPerformed(evt);
-            }
-        });
 
         Peapod4.setBackground(new java.awt.Color(123, 236, 133));
         Peapod4.setText("Pea pod");
-        Peapod4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Peapod4ActionPerformed(evt);
-            }
-        });
 
         Fresh4.setBackground(new java.awt.Color(123, 236, 133));
         Fresh4.setText("Fresh");
-        Fresh4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Fresh4ActionPerformed(evt);
-            }
-        });
 
         DarkGreen4.setBackground(new java.awt.Color(123, 236, 133));
         DarkGreen4.setText("Dark Green");
-        DarkGreen4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                DarkGreen4ActionPerformed(evt);
-            }
-        });
 
         Vegetative4.setBackground(new java.awt.Color(123, 236, 133));
         Vegetative4.setText("Vegetative");
-        Vegetative4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Vegetative4ActionPerformed(evt);
-            }
-        });
 
         Haylike4.setBackground(new java.awt.Color(123, 236, 133));
         Haylike4.setText("Hay-like");
-        Haylike4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Haylike4ActionPerformed(evt);
-            }
-        });
 
         Herblike4.setBackground(new java.awt.Color(123, 236, 133));
         Herblike4.setText("Herb-like");
-        Herblike4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Herblike4ActionPerformed(evt);
-            }
-        });
 
         Beany4.setBackground(new java.awt.Color(123, 236, 133));
         Beany4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         Beany4.setText("Beany");
-        Beany4.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Beany4ActionPerformed(evt);
-            }
-        });
 
         Green4.setBackground(new java.awt.Color(123, 236, 133));
         Green4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -8175,6 +8424,65 @@ public class JdCatacion extends javax.swing.JDialog {
                 .addContainerGap(15, Short.MAX_VALUE))
         );
 
+        jPanel61.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
+
+        jLabel87.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel87.setText("10   Body ");
+
+        buttonGroup3.add(Thin1);
+        Thin1.setText("Thin");
+
+        buttonGroup3.add(Mediumbody1);
+        Mediumbody1.setText("Medium");
+
+        buttonGroup3.add(Heavy1);
+        Heavy1.setText("Heavy");
+
+        buttonGroup3.add(Syrupy1);
+        Syrupy1.setText("Syrupy");
+
+        buttonGroup3.add(Oily1);
+        Oily1.setText("Oily");
+
+        buttonGroup3.add(Smooth1);
+        Smooth1.setText("Smooth");
+
+        javax.swing.GroupLayout jPanel61Layout = new javax.swing.GroupLayout(jPanel61);
+        jPanel61.setLayout(jPanel61Layout);
+        jPanel61Layout.setHorizontalGroup(
+            jPanel61Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel61Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel61Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(Smooth1)
+                    .addComponent(Oily1)
+                    .addComponent(Syrupy1)
+                    .addComponent(Heavy1)
+                    .addComponent(Mediumbody1)
+                    .addComponent(Thin1)
+                    .addComponent(jLabel87))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel61Layout.setVerticalGroup(
+            jPanel61Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel61Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel87)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(Thin1, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Mediumbody1, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Heavy1, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Syrupy1, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Oily1, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(Smooth1, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout FisnishLayout = new javax.swing.GroupLayout(Fisnish);
         Fisnish.setLayout(FisnishLayout);
         FisnishLayout.setHorizontalGroup(
@@ -8185,16 +8493,18 @@ public class JdCatacion extends javax.swing.JDialog {
                     .addComponent(jPanel41, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGroup(FisnishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(FisnishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(FisnishLayout.createSequentialGroup()
-                        .addGap(159, 159, 159)
-                        .addComponent(jPanel59, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(FisnishLayout.createSequentialGroup()
+                        .addComponent(jPanel61, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel59, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(FisnishLayout.createSequentialGroup()
                         .addComponent(jPanel44, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
                         .addComponent(jPanel45, javax.swing.GroupLayout.PREFERRED_SIZE, 136, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(395, 395, 395)
                 .addComponent(jPanel46, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(FisnishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8219,15 +8529,17 @@ public class JdCatacion extends javax.swing.JDialog {
                             .addComponent(jPanel45, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
                             .addComponent(jPanel44, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jPanel59, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(FisnishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jPanel59, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jPanel61, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(FisnishLayout.createSequentialGroup()
                         .addGroup(FisnishLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jPanel47, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jPanel48, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel49, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(176, Short.MAX_VALUE))
+                        .addComponent(jPanel49, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel42, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(164, Short.MAX_VALUE))
         );
 
         contenedorpaneles.addTab("Aftertaste", Fisnish);
@@ -8236,59 +8548,24 @@ public class JdCatacion extends javax.swing.JDialog {
 
         Vinegar5.setBackground(new java.awt.Color(255, 241, 144));
         Vinegar5.setText("Vinegar(Acetic Acid)");
-        Vinegar5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Vinegar5ActionPerformed(evt);
-            }
-        });
 
         Rancidbutter5.setBackground(new java.awt.Color(255, 241, 144));
         Rancidbutter5.setText("Rancid butter(Butyric Acid)");
-        Rancidbutter5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Rancidbutter5ActionPerformed(evt);
-            }
-        });
 
         RancidCheese5.setBackground(new java.awt.Color(255, 241, 144));
         RancidCheese5.setText("Rancid Cheese(Isovaleric Acid)");
-        RancidCheese5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                RancidCheese5ActionPerformed(evt);
-            }
-        });
 
         Winey5.setBackground(new java.awt.Color(255, 241, 144));
         Winey5.setText("Winey");
-        Winey5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Winey5ActionPerformed(evt);
-            }
-        });
 
         Whiskey5.setBackground(new java.awt.Color(255, 241, 144));
         Whiskey5.setText("Whiskey");
-        Whiskey5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Whiskey5ActionPerformed(evt);
-            }
-        });
 
         Fermented5.setBackground(new java.awt.Color(255, 241, 144));
         Fermented5.setText("Fermented");
-        Fermented5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Fermented5ActionPerformed(evt);
-            }
-        });
 
         Overripe5.setBackground(new java.awt.Color(255, 241, 144));
         Overripe5.setText("Over-ripe");
-        Overripe5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                Overripe5ActionPerformed(evt);
-            }
-        });
 
         jLabel75.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel75.setText("4 Sour/Fermented");
@@ -8301,19 +8578,9 @@ public class JdCatacion extends javax.swing.JDialog {
 
         OrangeAcidity5.setBackground(new java.awt.Color(255, 241, 144));
         OrangeAcidity5.setText("Orange Acidity(Citric Acid)");
-        OrangeAcidity5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OrangeAcidity5ActionPerformed(evt);
-            }
-        });
 
         AppleAcidity5.setBackground(new java.awt.Color(255, 241, 144));
         AppleAcidity5.setText("Apple Acidity (Malic Acid)");
-        AppleAcidity5.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                AppleAcidity5ActionPerformed(evt);
-            }
-        });
 
         javax.swing.GroupLayout jPanel50Layout = new javax.swing.GroupLayout(jPanel50);
         jPanel50.setLayout(jPanel50Layout);
@@ -8382,7 +8649,7 @@ public class JdCatacion extends javax.swing.JDialog {
             .addGroup(AciditypLayout.createSequentialGroup()
                 .addGap(173, 173, 173)
                 .addComponent(jPanel50, javax.swing.GroupLayout.PREFERRED_SIZE, 194, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(779, Short.MAX_VALUE))
+                .addContainerGap(1168, Short.MAX_VALUE))
         );
         AciditypLayout.setVerticalGroup(
             AciditypLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -8392,114 +8659,6 @@ public class JdCatacion extends javax.swing.JDialog {
         );
 
         contenedorpaneles.addTab("Acidity", Acidityp);
-
-        jPanel60.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
-
-        jLabel86.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel86.setText("10   Body ");
-
-        buttonGroup3.add(Thin);
-        Thin.setText("Thin");
-        Thin.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                ThinActionPerformed(evt);
-            }
-        });
-
-        buttonGroup3.add(Mediumbody);
-        Mediumbody.setText("Medium");
-        Mediumbody.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                MediumbodyActionPerformed(evt);
-            }
-        });
-
-        buttonGroup3.add(Heavy);
-        Heavy.setText("Heavy");
-        Heavy.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                HeavyActionPerformed(evt);
-            }
-        });
-
-        buttonGroup3.add(Syrupy);
-        Syrupy.setText("Syrupy");
-        Syrupy.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SyrupyActionPerformed(evt);
-            }
-        });
-
-        buttonGroup3.add(Oily);
-        Oily.setText("Oily");
-        Oily.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                OilyActionPerformed(evt);
-            }
-        });
-
-        buttonGroup3.add(Smooth);
-        Smooth.setText("Smooth");
-        Smooth.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                SmoothActionPerformed(evt);
-            }
-        });
-
-        javax.swing.GroupLayout jPanel60Layout = new javax.swing.GroupLayout(jPanel60);
-        jPanel60.setLayout(jPanel60Layout);
-        jPanel60Layout.setHorizontalGroup(
-            jPanel60Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel60Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel60Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(Smooth)
-                    .addComponent(Oily)
-                    .addComponent(Syrupy)
-                    .addComponent(Heavy)
-                    .addComponent(Mediumbody)
-                    .addComponent(Thin)
-                    .addComponent(jLabel86))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel60Layout.setVerticalGroup(
-            jPanel60Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel60Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel86)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(Thin, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Mediumbody, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Heavy, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Syrupy, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Oily, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(Smooth, javax.swing.GroupLayout.PREFERRED_SIZE, 13, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                .addGap(640, 640, 640)
-                .addComponent(jPanel60, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(93, 93, 93))
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jPanel60, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(355, Short.MAX_VALUE))
-        );
-
-        contenedorpaneles.addTab("Body", jPanel13);
 
         jScrollPane1.setViewportView(contenedorpaneles);
 
@@ -8572,7 +8731,7 @@ public class JdCatacion extends javax.swing.JDialog {
                                         .addComponent(plusAcidity, javax.swing.GroupLayout.PREFERRED_SIZE, 41, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                         .addComponent(jLabel27)))
-                                .addContainerGap(97, Short.MAX_VALUE))
+                                .addContainerGap(112, Short.MAX_VALUE))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(flavorslider, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -8776,7 +8935,7 @@ DecimalFormat formato = new DecimalFormat("#.#");
             flavorv = 9.5;
         }
         System.out.println(flavorv);
-        flavor.setText(flavorv + "");  
+        flavor.setText(flavorv + "");
         formula();
         paint(4);// TODO add your handling code here:
     }//GEN-LAST:event_flavorsliderStateChanged
@@ -8802,458 +8961,457 @@ DecimalFormat formato = new DecimalFormat("#.#");
     private void lesswetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lesswetActionPerformed
         wetslider.setValue(wetslider.getValue() - 50);
         formula();
-            paint(2);  
+        paint(2);
 // TODO add your handling code here:
     }//GEN-LAST:event_lesswetActionPerformed
 
     private void lessdryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessdryActionPerformed
         dryslider.setValue(dryslider.getValue() - 50);
         formula();// TODO add your handling code here:
-             paint(1);   
+        paint(1);
     }//GEN-LAST:event_lessdryActionPerformed
 
     private void plusbreakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusbreakActionPerformed
         breakslider.setValue(breakslider.getValue() + 50);
         formula();// TODO add your handling code here:
-        paint(3);  
+        paint(3);
     }//GEN-LAST:event_plusbreakActionPerformed
 
     private void pluswetActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_pluswetActionPerformed
         wetslider.setValue(wetslider.getValue() + 50);
         formula();
-    paint(2);  
+        paint(2);
 // TODO add you handling code here:
     }//GEN-LAST:event_pluswetActionPerformed
 
     private void plusdryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_plusdryActionPerformed
         dryslider.setValue(dryslider.getValue() + 50);
         formula();
-        paint(1);     
+        paint(1);
     }//GEN-LAST:event_plusdryActionPerformed
-public void paint(int band){
-    if (band>0) {
-      switch (band) {  
-          case 1:
-          contenedorpaneles.setSelectedIndex(0);
-dry.setBackground(Color.BLUE);
-dry.setForeground(Color.WHITE);
-contenedorpaneles.setForegroundAt(0, Color.blue);
+    public void paint(int band) {
+        if (band > 0) {
+            switch (band) {
+                case 1:
+                    contenedorpaneles.setSelectedIndex(0);
+                    dry.setBackground(Color.BLUE);
+                    dry.setForeground(Color.WHITE);
+                    contenedorpaneles.setForegroundAt(0, Color.blue);
 //Dry.setBackground(Color.BLUE);
-wet.setBackground(Color.WHITE);
-wet.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(1, Color.BLACK);
-breaks.setBackground(Color.WHITE);
-breaks.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(2, Color.BLACK);
-flavor.setBackground(Color.WHITE);
-flavor.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(3, Color.BLACK);
-Aftertaste.setBackground(Color.WHITE);
-Aftertaste.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(4, Color.BLACK);
-Acidity.setBackground(Color.WHITE);
-Acidity.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(5, Color.BLACK);
-Body.setBackground(Color.WHITE);
-Body.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(6, Color.BLACK);
-break;
-          case 2:
-          contenedorpaneles.setSelectedIndex(1);
-dry.setBackground(Color.WHITE);
-dry.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(0, Color.BLACK);
-wet.setBackground(Color.BLUE);
-wet.setForeground(Color.WHITE);
-contenedorpaneles.setForegroundAt(1, Color.BLUE);
-breaks.setBackground(Color.WHITE);
-breaks.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(2, Color.BLACK);
-flavor.setBackground(Color.WHITE);
-flavor.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(3, Color.BLACK);
-Aftertaste.setBackground(Color.WHITE);
-Aftertaste.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(4, Color.BLACK);
-Acidity.setBackground(Color.WHITE);
-Acidity.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(5, Color.BLACK);
-Body.setBackground(Color.WHITE);
-Body.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(6, Color.BLACK);
-break;
-         case 3:
-          contenedorpaneles.setSelectedIndex(2);
-dry.setBackground(Color.WHITE);
-dry.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(0, Color.BLACK);
-wet.setBackground(Color.WHITE);
-wet.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(1, Color.BLACK);
-breaks.setBackground(Color.BLUE);
-breaks.setForeground(Color.WHITE);
-contenedorpaneles.setForegroundAt(2, Color.BLUE);
-flavor.setBackground(Color.WHITE);
-flavor.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(3, Color.BLACK);
-Aftertaste.setBackground(Color.WHITE);
-Aftertaste.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(4, Color.BLACK);
-Acidity.setBackground(Color.WHITE);
-Acidity.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(5, Color.BLACK);
-Body.setBackground(Color.WHITE);
-Body.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(6, Color.BLACK);
-break;
-        
-         case 4:
-          contenedorpaneles.setSelectedIndex(3);
-dry.setBackground(Color.WHITE);
-dry.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(0, Color.BLACK);
-wet.setBackground(Color.WHITE);
-wet.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(1, Color.BLACK);
-breaks.setBackground(Color.WHITE);
-breaks.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(2, Color.BLACK);
-flavor.setBackground(Color.BLUE);
-flavor.setForeground(Color.WHITE);
-contenedorpaneles.setForegroundAt(3, Color.BLUE);
-Aftertaste.setBackground(Color.WHITE);
-Aftertaste.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(4, Color.BLACK);
-Acidity.setBackground(Color.WHITE);
-Acidity.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(5, Color.BLACK);
-Body.setBackground(Color.WHITE);
-Body.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(6, Color.BLACK);
-break;
-  case 5:
-          contenedorpaneles.setSelectedIndex(4);
-dry.setBackground(Color.WHITE);
-dry.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(0, Color.BLACK);
-wet.setBackground(Color.WHITE);
-wet.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(1, Color.BLACK);
-breaks.setBackground(Color.WHITE);
-breaks.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(2, Color.BLACK);
-flavor.setBackground(Color.WHITE);
-flavor.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(3, Color.BLACK);
-Aftertaste.setBackground(Color.BLUE);
-Aftertaste.setForeground(Color.WHITE);
-contenedorpaneles.setForegroundAt(4, Color.BLUE);
-Acidity.setBackground(Color.WHITE);
-Acidity.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(5, Color.BLACK);
-Body.setBackground(Color.WHITE);
-Body.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(6, Color.BLACK);
-break;
-  case 6:
-          contenedorpaneles.setSelectedIndex(5);
-dry.setBackground(Color.WHITE);
-dry.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(0, Color.BLACK);
-wet.setBackground(Color.WHITE);
-wet.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(1, Color.BLACK);
-breaks.setBackground(Color.WHITE);
-breaks.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(2, Color.BLACK);
-flavor.setBackground(Color.WHITE);
-flavor.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(3, Color.BLACK);
-Aftertaste.setBackground(Color.WHITE);
-Aftertaste.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(4, Color.BLACK);
-Acidity.setBackground(Color.BLUE);
-Acidity.setForeground(Color.WHITE);
-contenedorpaneles.setForegroundAt(5, Color.BLUE);
-Body.setBackground(Color.WHITE);
-Body.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(6, Color.BLACK);
-break;
-  case 7:
-          contenedorpaneles.setSelectedIndex(6);
-dry.setBackground(Color.WHITE);
-dry.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(0, Color.BLACK);
-wet.setBackground(Color.WHITE);
-wet.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(1, Color.BLACK);
-breaks.setBackground(Color.WHITE);
-breaks.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(2, Color.BLACK);
-flavor.setBackground(Color.WHITE);
-flavor.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(3, Color.BLACK);
-Aftertaste.setBackground(Color.WHITE);
-Aftertaste.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(4, Color.BLACK);
-Acidity.setBackground(Color.WHITE);
-Acidity.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(5, Color.BLACK);
-Body.setBackground(Color.BLUE);
-Body.setForeground(Color.WHITE);
-contenedorpaneles.setForegroundAt(6, Color.BLUE);
-break;
-  case 8:
-          contenedorpaneles.setSelectedIndex(6);
-dry.setBackground(Color.WHITE);
-dry.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(0, Color.BLACK);
-wet.setBackground(Color.WHITE);
-wet.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(1, Color.BLACK);
-breaks.setBackground(Color.WHITE);
-breaks.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(2, Color.BLACK);
-flavor.setBackground(Color.WHITE);
-flavor.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(3, Color.BLACK);
-Aftertaste.setBackground(Color.WHITE);
-Aftertaste.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(4, Color.BLACK);
-Acidity.setBackground(Color.WHITE);
-Acidity.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(5, Color.BLACK);
-Body.setBackground(Color.WHITE);
-Body.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(6, Color.BLACK);
-break;
-      }
-    }else{
-    band=contenedorpaneles.getSelectedIndex();
-          switch (band) {  
-          case 0:
-          contenedorpaneles.setSelectedIndex(0);
-dry.setBackground(Color.BLUE);
-dry.setForeground(Color.WHITE);
-contenedorpaneles.setForegroundAt(0, Color.blue);
+                    wet.setBackground(Color.WHITE);
+                    wet.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(1, Color.BLACK);
+                    breaks.setBackground(Color.WHITE);
+                    breaks.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(2, Color.BLACK);
+                    flavor.setBackground(Color.WHITE);
+                    flavor.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(3, Color.BLACK);
+                    Aftertaste.setBackground(Color.WHITE);
+                    Aftertaste.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(4, Color.BLACK);
+                    Acidity.setBackground(Color.WHITE);
+                    Acidity.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(5, Color.BLACK);
+                    Body.setBackground(Color.WHITE);
+                    Body.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(6, Color.BLACK);
+                    break;
+                case 2:
+                    contenedorpaneles.setSelectedIndex(1);
+                    dry.setBackground(Color.WHITE);
+                    dry.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(0, Color.BLACK);
+                    wet.setBackground(Color.BLUE);
+                    wet.setForeground(Color.WHITE);
+                    contenedorpaneles.setForegroundAt(1, Color.BLUE);
+                    breaks.setBackground(Color.WHITE);
+                    breaks.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(2, Color.BLACK);
+                    flavor.setBackground(Color.WHITE);
+                    flavor.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(3, Color.BLACK);
+                    Aftertaste.setBackground(Color.WHITE);
+                    Aftertaste.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(4, Color.BLACK);
+                    Acidity.setBackground(Color.WHITE);
+                    Acidity.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(5, Color.BLACK);
+                    Body.setBackground(Color.WHITE);
+                    Body.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(6, Color.BLACK);
+                    break;
+                case 3:
+                    contenedorpaneles.setSelectedIndex(2);
+                    dry.setBackground(Color.WHITE);
+                    dry.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(0, Color.BLACK);
+                    wet.setBackground(Color.WHITE);
+                    wet.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(1, Color.BLACK);
+                    breaks.setBackground(Color.BLUE);
+                    breaks.setForeground(Color.WHITE);
+                    contenedorpaneles.setForegroundAt(2, Color.BLUE);
+                    flavor.setBackground(Color.WHITE);
+                    flavor.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(3, Color.BLACK);
+                    Aftertaste.setBackground(Color.WHITE);
+                    Aftertaste.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(4, Color.BLACK);
+                    Acidity.setBackground(Color.WHITE);
+                    Acidity.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(5, Color.BLACK);
+                    Body.setBackground(Color.WHITE);
+                    Body.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(6, Color.BLACK);
+                    break;
+
+                case 4:
+                    contenedorpaneles.setSelectedIndex(3);
+                    dry.setBackground(Color.WHITE);
+                    dry.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(0, Color.BLACK);
+                    wet.setBackground(Color.WHITE);
+                    wet.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(1, Color.BLACK);
+                    breaks.setBackground(Color.WHITE);
+                    breaks.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(2, Color.BLACK);
+                    flavor.setBackground(Color.BLUE);
+                    flavor.setForeground(Color.WHITE);
+                    contenedorpaneles.setForegroundAt(3, Color.BLUE);
+                    Aftertaste.setBackground(Color.WHITE);
+                    Aftertaste.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(4, Color.BLACK);
+                    Acidity.setBackground(Color.WHITE);
+                    Acidity.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(5, Color.BLACK);
+                    Body.setBackground(Color.WHITE);
+                    Body.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(6, Color.BLACK);
+                    break;
+                case 5:
+                    contenedorpaneles.setSelectedIndex(4);
+                    dry.setBackground(Color.WHITE);
+                    dry.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(0, Color.BLACK);
+                    wet.setBackground(Color.WHITE);
+                    wet.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(1, Color.BLACK);
+                    breaks.setBackground(Color.WHITE);
+                    breaks.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(2, Color.BLACK);
+                    flavor.setBackground(Color.WHITE);
+                    flavor.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(3, Color.BLACK);
+                    Aftertaste.setBackground(Color.BLUE);
+                    Aftertaste.setForeground(Color.WHITE);
+                    contenedorpaneles.setForegroundAt(4, Color.BLUE);
+                    Acidity.setBackground(Color.WHITE);
+                    Acidity.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(5, Color.BLACK);
+                    Body.setBackground(Color.WHITE);
+                    Body.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(6, Color.BLACK);
+                    break;
+                case 6:
+                    contenedorpaneles.setSelectedIndex(5);
+                    dry.setBackground(Color.WHITE);
+                    dry.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(0, Color.BLACK);
+                    wet.setBackground(Color.WHITE);
+                    wet.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(1, Color.BLACK);
+                    breaks.setBackground(Color.WHITE);
+                    breaks.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(2, Color.BLACK);
+                    flavor.setBackground(Color.WHITE);
+                    flavor.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(3, Color.BLACK);
+                    Aftertaste.setBackground(Color.WHITE);
+                    Aftertaste.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(4, Color.BLACK);
+                    Acidity.setBackground(Color.BLUE);
+                    Acidity.setForeground(Color.WHITE);
+                    contenedorpaneles.setForegroundAt(5, Color.BLUE);
+                    Body.setBackground(Color.WHITE);
+                    Body.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(6, Color.BLACK);
+                    break;
+                case 7:
+                    contenedorpaneles.setSelectedIndex(6);
+                    dry.setBackground(Color.WHITE);
+                    dry.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(0, Color.BLACK);
+                    wet.setBackground(Color.WHITE);
+                    wet.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(1, Color.BLACK);
+                    breaks.setBackground(Color.WHITE);
+                    breaks.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(2, Color.BLACK);
+                    flavor.setBackground(Color.WHITE);
+                    flavor.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(3, Color.BLACK);
+                    Aftertaste.setBackground(Color.WHITE);
+                    Aftertaste.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(4, Color.BLACK);
+                    Acidity.setBackground(Color.WHITE);
+                    Acidity.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(5, Color.BLACK);
+                    Body.setBackground(Color.BLUE);
+                    Body.setForeground(Color.WHITE);
+                    contenedorpaneles.setForegroundAt(6, Color.BLUE);
+                    break;
+                case 8:
+                    contenedorpaneles.setSelectedIndex(6);
+                    dry.setBackground(Color.WHITE);
+                    dry.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(0, Color.BLACK);
+                    wet.setBackground(Color.WHITE);
+                    wet.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(1, Color.BLACK);
+                    breaks.setBackground(Color.WHITE);
+                    breaks.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(2, Color.BLACK);
+                    flavor.setBackground(Color.WHITE);
+                    flavor.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(3, Color.BLACK);
+                    Aftertaste.setBackground(Color.WHITE);
+                    Aftertaste.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(4, Color.BLACK);
+                    Acidity.setBackground(Color.WHITE);
+                    Acidity.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(5, Color.BLACK);
+                    Body.setBackground(Color.WHITE);
+                    Body.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(6, Color.BLACK);
+                    break;
+            }
+        } else {
+            band = contenedorpaneles.getSelectedIndex();
+            switch (band) {
+                case 0:
+                    contenedorpaneles.setSelectedIndex(0);
+                    dry.setBackground(Color.BLUE);
+                    dry.setForeground(Color.WHITE);
+                    contenedorpaneles.setForegroundAt(0, Color.blue);
 //Dry.setBackground(Color.BLUE);
-wet.setBackground(Color.WHITE);
-wet.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(1, Color.BLACK);
-breaks.setBackground(Color.WHITE);
-breaks.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(2, Color.BLACK);
-flavor.setBackground(Color.WHITE);
-flavor.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(3, Color.BLACK);
-Aftertaste.setBackground(Color.WHITE);
-Aftertaste.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(4, Color.BLACK);
-Acidity.setBackground(Color.WHITE);
-Acidity.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(5, Color.BLACK);
-Body.setBackground(Color.WHITE);
-Body.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(6, Color.BLACK);
-break;
-          case 1:
-          contenedorpaneles.setSelectedIndex(1);
-dry.setBackground(Color.WHITE);
-dry.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(0, Color.BLACK);
-wet.setBackground(Color.BLUE);
-wet.setForeground(Color.WHITE);
-contenedorpaneles.setForegroundAt(1, Color.BLUE);
-breaks.setBackground(Color.WHITE);
-breaks.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(2, Color.BLACK);
-flavor.setBackground(Color.WHITE);
-flavor.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(3, Color.BLACK);
-Aftertaste.setBackground(Color.WHITE);
-Aftertaste.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(4, Color.BLACK);
-Acidity.setBackground(Color.WHITE);
-Acidity.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(5, Color.BLACK);
-Body.setBackground(Color.WHITE);
-Body.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(6, Color.BLACK);
-break;
-         case 2:
-          contenedorpaneles.setSelectedIndex(2);
-dry.setBackground(Color.WHITE);
-dry.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(0, Color.BLACK);
-wet.setBackground(Color.WHITE);
-wet.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(1, Color.BLACK);
-breaks.setBackground(Color.BLUE);
-breaks.setForeground(Color.WHITE);
-contenedorpaneles.setForegroundAt(2, Color.BLUE);
-flavor.setBackground(Color.WHITE);
-flavor.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(3, Color.BLACK);
-Aftertaste.setBackground(Color.WHITE);
-Aftertaste.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(4, Color.BLACK);
-Acidity.setBackground(Color.WHITE);
-Acidity.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(5, Color.BLACK);
-Body.setBackground(Color.WHITE);
-Body.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(6, Color.BLACK);
-break;
-        
-         case 3:
-          contenedorpaneles.setSelectedIndex(3);
-dry.setBackground(Color.WHITE);
-dry.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(0, Color.BLACK);
-wet.setBackground(Color.WHITE);
-wet.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(1, Color.BLACK);
-breaks.setBackground(Color.WHITE);
-breaks.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(2, Color.BLACK);
-flavor.setBackground(Color.BLUE);
-flavor.setForeground(Color.WHITE);
-contenedorpaneles.setForegroundAt(3, Color.BLUE);
-Aftertaste.setBackground(Color.WHITE);
-Aftertaste.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(4, Color.BLACK);
-Acidity.setBackground(Color.WHITE);
-Acidity.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(5, Color.BLACK);
-Body.setBackground(Color.WHITE);
-Body.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(6, Color.BLACK);
-break;
-  case 4:
-          contenedorpaneles.setSelectedIndex(4);
-dry.setBackground(Color.WHITE);
-dry.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(0, Color.BLACK);
-wet.setBackground(Color.WHITE);
-wet.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(1, Color.BLACK);
-breaks.setBackground(Color.WHITE);
-breaks.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(2, Color.BLACK);
-flavor.setBackground(Color.WHITE);
-flavor.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(3, Color.BLACK);
-Aftertaste.setBackground(Color.BLUE);
-Aftertaste.setForeground(Color.WHITE);
-contenedorpaneles.setForegroundAt(4, Color.BLUE);
-Acidity.setBackground(Color.WHITE);
-Acidity.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(5, Color.BLACK);
-Body.setBackground(Color.WHITE);
-Body.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(6, Color.BLACK);
-break;
-  case 5:
-          contenedorpaneles.setSelectedIndex(5);
-dry.setBackground(Color.WHITE);
-dry.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(0, Color.BLACK);
-wet.setBackground(Color.WHITE);
-wet.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(1, Color.BLACK);
-breaks.setBackground(Color.WHITE);
-breaks.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(2, Color.BLACK);
-flavor.setBackground(Color.WHITE);
-flavor.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(3, Color.BLACK);
-Aftertaste.setBackground(Color.WHITE);
-Aftertaste.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(4, Color.BLACK);
-Acidity.setBackground(Color.BLUE);
-Acidity.setForeground(Color.WHITE);
-contenedorpaneles.setForegroundAt(5, Color.BLUE);
-Body.setBackground(Color.WHITE);
-Body.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(6, Color.BLACK);
-break;
-  case 6:
-          contenedorpaneles.setSelectedIndex(6);
-dry.setBackground(Color.WHITE);
-dry.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(0, Color.BLACK);
-wet.setBackground(Color.WHITE);
-wet.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(1, Color.BLACK);
-breaks.setBackground(Color.WHITE);
-breaks.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(2, Color.BLACK);
-flavor.setBackground(Color.WHITE);
-flavor.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(3, Color.BLACK);
-Aftertaste.setBackground(Color.WHITE);
-Aftertaste.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(4, Color.BLACK);
-Acidity.setBackground(Color.WHITE);
-Acidity.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(5, Color.BLACK);
-Body.setBackground(Color.BLUE);
-Body.setForeground(Color.WHITE);
-contenedorpaneles.setForegroundAt(6, Color.BLUE);
-break;
-  case 7:
-          contenedorpaneles.setSelectedIndex(6);
-dry.setBackground(Color.WHITE);
-dry.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(0, Color.BLACK);
-wet.setBackground(Color.WHITE);
-wet.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(1, Color.BLACK);
-breaks.setBackground(Color.WHITE);
-breaks.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(2, Color.BLACK);
-flavor.setBackground(Color.WHITE);
-flavor.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(3, Color.BLACK);
-Aftertaste.setBackground(Color.WHITE);
-Aftertaste.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(4, Color.BLACK);
-Acidity.setBackground(Color.WHITE);
-Acidity.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(5, Color.BLACK);
-Body.setBackground(Color.WHITE);
-Body.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(6, Color.BLACK);
-break;
-  case 8:
-          contenedorpaneles.setSelectedIndex(6);
-dry.setBackground(Color.WHITE);
-dry.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(0, Color.BLACK);
-wet.setBackground(Color.WHITE);
-wet.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(1, Color.BLACK);
-breaks.setBackground(Color.WHITE);
-breaks.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(2, Color.BLACK);
-flavor.setBackground(Color.WHITE);
-flavor.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(3, Color.BLACK);
-Aftertaste.setBackground(Color.WHITE);
-Aftertaste.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(4, Color.BLACK);
-Acidity.setBackground(Color.WHITE);
-Acidity.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(5, Color.BLACK);
-Body.setBackground(Color.WHITE);
-Body.setForeground(Color.BLACK);
-contenedorpaneles.setForegroundAt(6, Color.BLACK);
-break;
-      }
+                    wet.setBackground(Color.WHITE);
+                    wet.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(1, Color.BLACK);
+                    breaks.setBackground(Color.WHITE);
+                    breaks.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(2, Color.BLACK);
+                    flavor.setBackground(Color.WHITE);
+                    flavor.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(3, Color.BLACK);
+                    Aftertaste.setBackground(Color.WHITE);
+                    Aftertaste.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(4, Color.BLACK);
+                    Acidity.setBackground(Color.WHITE);
+                    Acidity.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(5, Color.BLACK);
+                    Body.setBackground(Color.WHITE);
+                    Body.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(6, Color.BLACK);
+                    break;
+                case 1:
+                    contenedorpaneles.setSelectedIndex(1);
+                    dry.setBackground(Color.WHITE);
+                    dry.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(0, Color.BLACK);
+                    wet.setBackground(Color.BLUE);
+                    wet.setForeground(Color.WHITE);
+                    contenedorpaneles.setForegroundAt(1, Color.BLUE);
+                    breaks.setBackground(Color.WHITE);
+                    breaks.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(2, Color.BLACK);
+                    flavor.setBackground(Color.WHITE);
+                    flavor.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(3, Color.BLACK);
+                    Aftertaste.setBackground(Color.WHITE);
+                    Aftertaste.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(4, Color.BLACK);
+                    Acidity.setBackground(Color.WHITE);
+                    Acidity.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(5, Color.BLACK);
+                    Body.setBackground(Color.WHITE);
+                    Body.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(6, Color.BLACK);
+                    break;
+                case 2:
+                    contenedorpaneles.setSelectedIndex(2);
+                    dry.setBackground(Color.WHITE);
+                    dry.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(0, Color.BLACK);
+                    wet.setBackground(Color.WHITE);
+                    wet.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(1, Color.BLACK);
+                    breaks.setBackground(Color.BLUE);
+                    breaks.setForeground(Color.WHITE);
+                    contenedorpaneles.setForegroundAt(2, Color.BLUE);
+                    flavor.setBackground(Color.WHITE);
+                    flavor.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(3, Color.BLACK);
+                    Aftertaste.setBackground(Color.WHITE);
+                    Aftertaste.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(4, Color.BLACK);
+                    Acidity.setBackground(Color.WHITE);
+                    Acidity.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(5, Color.BLACK);
+                    Body.setBackground(Color.WHITE);
+                    Body.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(6, Color.BLACK);
+                    break;
+
+                case 3:
+                    contenedorpaneles.setSelectedIndex(3);
+                    dry.setBackground(Color.WHITE);
+                    dry.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(0, Color.BLACK);
+                    wet.setBackground(Color.WHITE);
+                    wet.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(1, Color.BLACK);
+                    breaks.setBackground(Color.WHITE);
+                    breaks.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(2, Color.BLACK);
+                    flavor.setBackground(Color.BLUE);
+                    flavor.setForeground(Color.WHITE);
+                    contenedorpaneles.setForegroundAt(3, Color.BLUE);
+                    Aftertaste.setBackground(Color.WHITE);
+                    Aftertaste.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(4, Color.BLACK);
+                    Acidity.setBackground(Color.WHITE);
+                    Acidity.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(5, Color.BLACK);
+                    Body.setBackground(Color.WHITE);
+                    Body.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(6, Color.BLACK);
+                    break;
+                case 4:
+                    contenedorpaneles.setSelectedIndex(4);
+                    dry.setBackground(Color.WHITE);
+                    dry.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(0, Color.BLACK);
+                    wet.setBackground(Color.WHITE);
+                    wet.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(1, Color.BLACK);
+                    breaks.setBackground(Color.WHITE);
+                    breaks.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(2, Color.BLACK);
+                    flavor.setBackground(Color.WHITE);
+                    flavor.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(3, Color.BLACK);
+                    Aftertaste.setBackground(Color.BLUE);
+                    Aftertaste.setForeground(Color.WHITE);
+                    contenedorpaneles.setForegroundAt(4, Color.BLUE);
+                    Acidity.setBackground(Color.WHITE);
+                    Acidity.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(5, Color.BLACK);
+                    Body.setBackground(Color.WHITE);
+                    Body.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(6, Color.BLACK);
+                    break;
+                case 5:
+                    contenedorpaneles.setSelectedIndex(5);
+                    dry.setBackground(Color.WHITE);
+                    dry.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(0, Color.BLACK);
+                    wet.setBackground(Color.WHITE);
+                    wet.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(1, Color.BLACK);
+                    breaks.setBackground(Color.WHITE);
+                    breaks.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(2, Color.BLACK);
+                    flavor.setBackground(Color.WHITE);
+                    flavor.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(3, Color.BLACK);
+                    Aftertaste.setBackground(Color.WHITE);
+                    Aftertaste.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(4, Color.BLACK);
+                    Acidity.setBackground(Color.BLUE);
+                    Acidity.setForeground(Color.WHITE);
+                    contenedorpaneles.setForegroundAt(5, Color.BLUE);
+                    Body.setBackground(Color.WHITE);
+                    Body.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(6, Color.BLACK);
+                    break;
+                case 6:
+                    contenedorpaneles.setSelectedIndex(6);
+                    dry.setBackground(Color.WHITE);
+                    dry.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(0, Color.BLACK);
+                    wet.setBackground(Color.WHITE);
+                    wet.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(1, Color.BLACK);
+                    breaks.setBackground(Color.WHITE);
+                    breaks.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(2, Color.BLACK);
+                    flavor.setBackground(Color.WHITE);
+                    flavor.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(3, Color.BLACK);
+                    Aftertaste.setBackground(Color.WHITE);
+                    Aftertaste.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(4, Color.BLACK);
+                    Acidity.setBackground(Color.WHITE);
+                    Acidity.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(5, Color.BLACK);
+                    Body.setBackground(Color.BLUE);
+                    Body.setForeground(Color.WHITE);
+                    contenedorpaneles.setForegroundAt(6, Color.BLUE);
+                    break;
+                case 7:
+                    contenedorpaneles.setSelectedIndex(6);
+                    dry.setBackground(Color.WHITE);
+                    dry.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(0, Color.BLACK);
+                    wet.setBackground(Color.WHITE);
+                    wet.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(1, Color.BLACK);
+                    breaks.setBackground(Color.WHITE);
+                    breaks.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(2, Color.BLACK);
+                    flavor.setBackground(Color.WHITE);
+                    flavor.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(3, Color.BLACK);
+                    Aftertaste.setBackground(Color.WHITE);
+                    Aftertaste.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(4, Color.BLACK);
+                    Acidity.setBackground(Color.WHITE);
+                    Acidity.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(5, Color.BLACK);
+                    Body.setBackground(Color.WHITE);
+                    Body.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(6, Color.BLACK);
+                    break;
+                case 8:
+                    contenedorpaneles.setSelectedIndex(6);
+                    dry.setBackground(Color.WHITE);
+                    dry.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(0, Color.BLACK);
+                    wet.setBackground(Color.WHITE);
+                    wet.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(1, Color.BLACK);
+                    breaks.setBackground(Color.WHITE);
+                    breaks.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(2, Color.BLACK);
+                    flavor.setBackground(Color.WHITE);
+                    flavor.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(3, Color.BLACK);
+                    Aftertaste.setBackground(Color.WHITE);
+                    Aftertaste.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(4, Color.BLACK);
+                    Acidity.setBackground(Color.WHITE);
+                    Acidity.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(5, Color.BLACK);
+                    Body.setBackground(Color.WHITE);
+                    Body.setForeground(Color.BLACK);
+                    contenedorpaneles.setForegroundAt(6, Color.BLACK);
+                    break;
+            }
+        }
+
     }
-
-
-}
     private void breaksActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_breaksActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_breaksActionPerformed
@@ -9348,7 +9506,7 @@ break;
         aromaT = (a1 + a2 + a3) / 3;
         aroma.setText(formato.format(aromaT) + "");
         formula();// TODO add your handling code here:
-        paint(2);  
+        paint(2);
     }//GEN-LAST:event_wetsliderStateChanged
     double dryv = 0, aromaT, a1, a2, a3;
     private void drysliderStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_drysliderStateChanged
@@ -9395,7 +9553,7 @@ break;
         aromaT = (a1 + a2 + a3) / 3;
         aroma.setText(formato.format(aromaT) + "");
         formula();
-        paint(1);   
+        paint(1);
 // TODO add your handling code here:
     }//GEN-LAST:event_drysliderStateChanged
 
@@ -9567,8 +9725,8 @@ break;
 
     private void lessCatadorActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lessCatadorActionPerformed
         Catadorslider.setValue(Catadorslider.getValue() - 50);
-        formula();   
-paint(8);
+        formula();
+        paint(8);
     }//GEN-LAST:event_lessCatadorActionPerformed
     public void formula() {
         double total, a = Double.valueOf(aroma.getText()), b = Double.valueOf(flavor.getText()), c = Double.valueOf(Aftertaste.getText()), d = Double.valueOf(Acidity.getText()), e = Double.valueOf(Body.getText()), f = Double.valueOf(Balance.getText()), g = Double.valueOf(Tazas.getText()), h = Double.valueOf(uniformtaza.getText()), i = Double.valueOf(tazalimpia.getText()), j = Double.valueOf(dulzor.getText()), k = Double.valueOf(Catador.getText()), l = Double.valueOf(Defectos.getText());
@@ -9808,148 +9966,9 @@ paint(8);
         guardar();       // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
-    private void ThinActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ThinActionPerformed
-       //validbuton(Thin,7);  // TODO add your handling code here:
-    }//GEN-LAST:event_ThinActionPerformed
-
-    private void MoldyDampActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MoldyDampActionPerformed
-//validbuton(MoldyDamp,1);         // TODO add your handling code here:
-    }//GEN-LAST:event_MoldyDampActionPerformed
-
-    private void VinegarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VinegarActionPerformed
- //validbuton(Vinegar,1);          // TODO add your handling code here:
-    }//GEN-LAST:event_VinegarActionPerformed
-
-    private void LemonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LemonActionPerformed
-  //validbuton(Lemon,1);       // TODO add your handling code here:
-    }//GEN-LAST:event_LemonActionPerformed
-
-    private void PomagraniteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PomagraniteActionPerformed
-//validbuton(Pomagranite,1);         // TODO add your handling code here:
-    }//GEN-LAST:event_PomagraniteActionPerformed
-
-    private void CoconutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CoconutActionPerformed
- //validbuton(Coconut,1);        // TODO add your handling code here:
-    }//GEN-LAST:event_CoconutActionPerformed
-
-    private void RaspberryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RaspberryActionPerformed
-//validbuton(Raspberry,1);     // TODO add your handling code here:
-    }//GEN-LAST:event_RaspberryActionPerformed
-
-    private void CarmelizedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CarmelizedActionPerformed
-//validbuton(Carmelized,1);          // TODO add your handling code here:
-    }//GEN-LAST:event_CarmelizedActionPerformed
-
-    private void Carmelized2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Carmelized2ActionPerformed
-//validbuton(Carmelized2,3);         // TODO add your handling code here:
-    }//GEN-LAST:event_Carmelized2ActionPerformed
-
-    private void Raspberry2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Raspberry2ActionPerformed
-//validbuton(Raspberry2,3);         // TODO add your handling code here:
-    }//GEN-LAST:event_Raspberry2ActionPerformed
-
-    private void Coconut2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Coconut2ActionPerformed
-  //validbuton(Coconut2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Coconut2ActionPerformed
-
-    private void Pomagranite2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pomagranite2ActionPerformed
-    //validbuton(Pomagranite2,3);     // TODO add your handling code here:
-    }//GEN-LAST:event_Pomagranite2ActionPerformed
-
-    private void Lemon2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lemon2ActionPerformed
-    //validbuton(Lemon2,3);     // TODO add your handling code here:
-    }//GEN-LAST:event_Lemon2ActionPerformed
-
-    private void MoldyDamp2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MoldyDamp2ActionPerformed
-    //validbuton(MoldyDamp2,3);     // TODO add your handling code here:
-    }//GEN-LAST:event_MoldyDamp2ActionPerformed
-
-    private void Tobacco2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tobacco2ActionPerformed
-      //validbuton(Tobacco2,3);   // TODO add your handling code here:
-    }//GEN-LAST:event_Tobacco2ActionPerformed
-
-    private void Carmelized1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Carmelized1ActionPerformed
-//validbuton(Carmelized1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Carmelized1ActionPerformed
-
-    private void Raspberry1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Raspberry1ActionPerformed
-//validbuton(Raspberry1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Raspberry1ActionPerformed
-
-    private void Coconut1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Coconut1ActionPerformed
-//validbuton(Coconut1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Coconut1ActionPerformed
-
-    private void Pomagranite1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pomagranite1ActionPerformed
-//validbuton(Pomagranite1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Pomagranite1ActionPerformed
-
-    private void Lemon1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lemon1ActionPerformed
-//validbuton(Lemon1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Lemon1ActionPerformed
-
-    private void Vinegar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Vinegar1ActionPerformed
-//validbuton(Vinegar1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Vinegar1ActionPerformed
-
-    private void MoldyDamp1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MoldyDamp1ActionPerformed
-//validbuton(MoldyDamp1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_MoldyDamp1ActionPerformed
-
-    private void Carmelized3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Carmelized3ActionPerformed
-  //validbuton(Carmelized3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Carmelized3ActionPerformed
-
-    private void Raspberry3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Raspberry3ActionPerformed
-  //validbuton(Raspberry3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Raspberry3ActionPerformed
-
-    private void Coconut3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Coconut3ActionPerformed
- //validbuton(Coconut3,4);        // TODO add your handling code here:
-    }//GEN-LAST:event_Coconut3ActionPerformed
-
-    private void Pomagranite3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pomagranite3ActionPerformed
-  //validbuton(Pomagranite3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Pomagranite3ActionPerformed
-
-    private void Lemon3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lemon3ActionPerformed
- //validbuton(Lemon3,4);        // TODO add your handling code here:
-    }//GEN-LAST:event_Lemon3ActionPerformed
-
-    private void Vinegar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Vinegar3ActionPerformed
- //validbuton(Vinegar3,4);        // TODO add your handling code here:
-    }//GEN-LAST:event_Vinegar3ActionPerformed
-
-    private void MoldyDamp3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MoldyDamp3ActionPerformed
-  //validbuton(MoldyDamp3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_MoldyDamp3ActionPerformed
-
-    private void Carmelized4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Carmelized4ActionPerformed
-  //validbuton(Carmelized4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Carmelized4ActionPerformed
-
-    private void Raspberry4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Raspberry4ActionPerformed
-   //validbuton(Raspberry4,5);        // TODO add your handling code here:
-    }//GEN-LAST:event_Raspberry4ActionPerformed
-
-    private void Coconut4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Coconut4ActionPerformed
-  //validbuton(Coconut4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Coconut4ActionPerformed
-
-    private void Pomagranite4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pomagranite4ActionPerformed
-  //validbuton(Pomagranite4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Pomagranite4ActionPerformed
-
-    private void Lemon4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lemon4ActionPerformed
-  //validbuton(Lemon4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Lemon4ActionPerformed
-
-    private void Vinegar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Vinegar4ActionPerformed
-  ////validbuton(Vinegar4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Vinegar4ActionPerformed
 
     private void MoldyDamp4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MoldyDamp4ActionPerformed
-  ////validbuton(MoldyDamp4,5);         // TODO add your handling code here:
+        ////validbuton(MoldyDamp4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_MoldyDamp4ActionPerformed
 
     private void uniformtazaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_uniformtazaKeyReleased
@@ -9969,131 +9988,131 @@ paint(8);
         formula();        // TODO add your handling code here:
     }//GEN-LAST:event_TazasKeyReleased
 
-    private void AppleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AppleActionPerformed
- ////validbuton(Apple,1);         // TODO add your handling code here:
-    }//GEN-LAST:event_AppleActionPerformed
-
-    private void CinnamonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CinnamonActionPerformed
- ////validbuton(Cinnamon,1);         // TODO add your handling code here:
-    }//GEN-LAST:event_CinnamonActionPerformed
-
-    private void Vinegar5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Vinegar5ActionPerformed
-   ////validbuton(Vinegar5,6);      // TODO add your handling code here:
-    }//GEN-LAST:event_Vinegar5ActionPerformed
-
     private void DryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DryMouseClicked
-       paint(0); // TODO add your handling code here:
+        paint(0); // TODO add your handling code here:
     }//GEN-LAST:event_DryMouseClicked
 
     private void contenedorpanelesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_contenedorpanelesMouseClicked
-    paint(0);    // TODO add your handling code here:
+        paint(0);    // TODO add your handling code here:
+        jPanel41.setEnabled(false);
     }//GEN-LAST:event_contenedorpanelesMouseClicked
 
     private void BalanceActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BalanceActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_BalanceActionPerformed
 
-    private void BrownSugarStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_BrownSugarStateChanged
-        // TODO add your handling code here:
-    }//GEN-LAST:event_BrownSugarStateChanged
+    int p1 = 0, p2 = 0, p3 = 0, p4 = 0, p5 = 0, p6 = 0, p7 = 0, p8 = 0, p9 = 0;
 
-    
- int p1=0,p2=0,p3=0,p4=0,p5=0,p6=0,p7=0,p8=0,p9=0;   
-public void validbuton(javax.swing.JRadioButton name, int I){
- switch(I){
-     case 1: 
-    if (name.isSelected()) {
-            if (p1>=5) {
-            JOptionPane.showMessageDialog(null, "¡Solo se pueden seleccionar 5 sabores!");            
-            name.setSelected(false);
-                       }else {p1++;
-                             }    
-                                }else{p1--;
-                                       }break;
-      case 2: 
-    if (name.isSelected()) {
-            if (p2>=5) {
-            JOptionPane.showMessageDialog(null, "¡Solo se pueden seleccionar 5 sabores!");            
-            name.setSelected(false);
-                       }else {p2++;
-                             }    
-                                }else{p2--;
-                                       }break;
-      case 3: 
-      if (name.isSelected()) {
-            if (p3>=5) {
-            JOptionPane.showMessageDialog(null, "¡Solo se pueden seleccionar 5 sabores!");            
-            name.setSelected(false);
-                       }else {p3++;
-                             }    
-                                }else{p3--;
-                                       }
-     break;
-     
-     case 4:  
-        if (name.isSelected()) {
-            if (p4>=5) {
-            JOptionPane.showMessageDialog(null, "¡Solo se pueden seleccionar 5 sabores!");            
-            name.setSelected(false);
-                       }else {p4++;
-                             }    
-                                }else{p4--;
-                                       }
-     break;
-     case 5: 
-      if (name.isSelected()) {
-            if (p5>=5) {
-            JOptionPane.showMessageDialog(null, "¡Solo se pueden seleccionar 5 sabores!");            
-            name.setSelected(false);
-                       }else {p5++;
-                             }    
-                                }else{p5--;
-                                       }
-     break;
-   case 6: 
-    if (name.isSelected()) {
-            if (p6>=5) {
-            JOptionPane.showMessageDialog(null, "¡Solo se pueden seleccionar 5 sabores!");            
-            name.setSelected(false);
-                       }else {p6++;
-                             }    
-                                }else{p6--;
-                                       }
-     break;
-      case 7: 
-     if (name.isSelected()) {
-     p7++;
-     }else {p7--;}
-     break;
-        
-      case 8: 
-     if (name.isSelected()) {
-     p8++;
-     }else {p8--;}
-     break;
+    public void validbuton(javax.swing.JRadioButton name, int I) {
+        switch (I) {
+            case 1:
+                if (name.isSelected()) {
+                    if (p1 >= 5) {
+                        JOptionPane.showMessageDialog(null, "¡Solo se pueden seleccionar 5 sabores!");
+                        name.setSelected(false);
+                    } else {
+                        p1++;
+                    }
+                } else {
+                    p1--;
+                }
+                break;
+            case 2:
+                if (name.isSelected()) {
+                    if (p2 >= 5) {
+                        JOptionPane.showMessageDialog(null, "¡Solo se pueden seleccionar 5 sabores!");
+                        name.setSelected(false);
+                    } else {
+                        p2++;
+                    }
+                } else {
+                    p2--;
+                }
+                break;
+            case 3:
+                if (name.isSelected()) {
+                    if (p3 >= 5) {
+                        JOptionPane.showMessageDialog(null, "¡Solo se pueden seleccionar 5 sabores!");
+                        name.setSelected(false);
+                    } else {
+                        p3++;
+                    }
+                } else {
+                    p3--;
+                }
+                break;
 
-     case 9: 
-     if (name.isSelected()) {
-     p9++;
-     }else {p9--;}
-     break;
-}
-}
-    private void BrownSugarItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_BrownSugarItemStateChanged
+            case 4:
+                if (name.isSelected()) {
+                    if (p4 >= 5) {
+                        JOptionPane.showMessageDialog(null, "¡Solo se pueden seleccionar 5 sabores!");
+                        name.setSelected(false);
+                    } else {
+                        p4++;
+                    }
+                } else {
+                    p4--;
+                }
+                break;
+            case 5:
+                if (name.isSelected()) {
+                    if (p5 >= 5) {
+                        JOptionPane.showMessageDialog(null, "¡Solo se pueden seleccionar 5 sabores!");
+                        name.setSelected(false);
+                    } else {
+                        p5++;
+                    }
+                } else {
+                    p5--;
+                }
+                break;
+            case 6:
+                if (name.isSelected()) {
+                    if (p6 >= 5) {
+                        JOptionPane.showMessageDialog(null, "¡Solo se pueden seleccionar 5 sabores!");
+                        name.setSelected(false);
+                    } else {
+                        p6++;
+                    }
+                } else {
+                    p6--;
+                }
+                break;
+            case 7:
+                if (name.isSelected()) {
+                    p7++;
+                } else {
+                    p7--;
+                }
+                break;
 
-            // TODO add your handling code here:
-    }//GEN-LAST:event_BrownSugarItemStateChanged
+            case 8:
+                if (name.isSelected()) {
+                    p8++;
+                } else {
+                    p8--;
+                }
+                break;
 
+            case 9:
+                if (name.isSelected()) {
+                    p9++;
+                } else {
+                    p9--;
+                }
+                break;
+        }
+    }
     private void MolassesItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_MolassesItemStateChanged
-   // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_MolassesItemStateChanged
 
     private void MapleSugarItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_MapleSugarItemStateChanged
-     // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_MapleSugarItemStateChanged
 
     private void CarmelizedItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_CarmelizedItemStateChanged
-      // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_CarmelizedItemStateChanged
 
     private void HoneyItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_HoneyItemStateChanged
@@ -10101,1647 +10120,2471 @@ public void validbuton(javax.swing.JRadioButton name, int I){
     }//GEN-LAST:event_HoneyItemStateChanged
 
     private void VanillaItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_VanillaItemStateChanged
-     // TODO add your handling code here:
+        // TODO add your handling code here:
     }//GEN-LAST:event_VanillaItemStateChanged
 
-    private void BrownSugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrownSugarActionPerformed
-            ////validbuton(BrownSugar,1);     // TODO add your handling code here:
-    }//GEN-LAST:event_BrownSugarActionPerformed
-
-    private void MolassesActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MolassesActionPerformed
-    ////validbuton(Molasses,1);       // TODO add your handling code here:
-    }//GEN-LAST:event_MolassesActionPerformed
-
-    private void MapleSugarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MapleSugarActionPerformed
-        ////validbuton(MapleSugar,1);    // TODO add your handling code here:
-    }//GEN-LAST:event_MapleSugarActionPerformed
-
-    private void HoneyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HoneyActionPerformed
-    ////validbuton(Honey,1);       // TODO add your handling code here:
-    }//GEN-LAST:event_HoneyActionPerformed
-
-    private void VanillaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VanillaActionPerformed
-    ////validbuton(Vanilla,1);         // TODO add your handling code here:
-    }//GEN-LAST:event_VanillaActionPerformed
-
-    private void BlackteaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BlackteaActionPerformed
-     ////validbuton(Blacktea,1);     // TODO add your handling code here:
-    }//GEN-LAST:event_BlackteaActionPerformed
-
-    private void ChamomileActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChamomileActionPerformed
- ////validbuton(Chamomile,1);        // TODO add your handling code here:
-    }//GEN-LAST:event_ChamomileActionPerformed
-
-    private void RoseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RoseActionPerformed
-////validbuton(Rose,1);        // TODO add your handling code here:
-    }//GEN-LAST:event_RoseActionPerformed
-
-    private void JasmineActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_JasmineActionPerformed
-////validbuton(Jasmine,1);        // TODO add your handling code here:
-    }//GEN-LAST:event_JasmineActionPerformed
-
-    private void BlackberryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BlackberryActionPerformed
-  ////validbuton(Blackberry,1);       // TODO add your handling code here:
-    }//GEN-LAST:event_BlackberryActionPerformed
-
-    private void BlueberryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BlueberryActionPerformed
-    ////validbuton(Blueberry,1);    // TODO add your handling code here:
-    }//GEN-LAST:event_BlueberryActionPerformed
-
-    private void StrawberryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StrawberryActionPerformed
- ////validbuton(Strawberry,1);        // TODO add your handling code here:
-    }//GEN-LAST:event_StrawberryActionPerformed
-
-    private void RaisenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RaisenActionPerformed
-       ////validbuton(Raisen,1);   // TODO add your handling code here:
-    }//GEN-LAST:event_RaisenActionPerformed
-
-    private void PruneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PruneActionPerformed
-   ////validbuton(Prune,1);      // TODO add your handling code here:
-    }//GEN-LAST:event_PruneActionPerformed
-
-    private void CherryActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CherryActionPerformed
- ////validbuton(Cherry,1);         // TODO add your handling code here:
-    }//GEN-LAST:event_CherryActionPerformed
-
-    private void PinneappleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PinneappleActionPerformed
-    ////validbuton(Pinneapple,1);      // TODO add your handling code here:
-    }//GEN-LAST:event_PinneappleActionPerformed
-
-    private void GrapeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GrapeActionPerformed
-     ////validbuton(Grape,1);    // TODO add your handling code here:
-    }//GEN-LAST:event_GrapeActionPerformed
-
-    private void PeachActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PeachActionPerformed
-       ////validbuton(Peach,1);    // TODO add your handling code here:
-    }//GEN-LAST:event_PeachActionPerformed
-
-    private void PearActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PearActionPerformed
-  ////validbuton(Pear,1);           // TODO add your handling code here:
-    }//GEN-LAST:event_PearActionPerformed
-
-    private void GrapefruitActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GrapefruitActionPerformed
-     ////validbuton(Grapefruit,1);      // TODO add your handling code here:
-    }//GEN-LAST:event_GrapefruitActionPerformed
-
-    private void OrangeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrangeActionPerformed
-  ////validbuton(Orange,1);         // TODO add your handling code here:
-    }//GEN-LAST:event_OrangeActionPerformed
-
-    private void LimeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LimeActionPerformed
-       ////validbuton(Lime,1);      // TODO add your handling code here:
-    }//GEN-LAST:event_LimeActionPerformed
-
-    private void RancidbutterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RancidbutterActionPerformed
-////validbuton(Rancidbutter,1);         // TODO add your handling code here:
-    }//GEN-LAST:event_RancidbutterActionPerformed
-
-    private void RancidCheeseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RancidCheeseActionPerformed
-////validbuton(RancidCheese,1);         // TODO add your handling code here:
-    }//GEN-LAST:event_RancidCheeseActionPerformed
-
-    private void OrangeAcidityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrangeAcidityActionPerformed
-////validbuton(Orange,1);          // TODO add your handling code here:
-    }//GEN-LAST:event_OrangeAcidityActionPerformed
-
-    private void AppleAcidityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AppleAcidityActionPerformed
-      ////validbuton(AppleAcidity,1);      // TODO add your handling code here:
-    }//GEN-LAST:event_AppleAcidityActionPerformed
-
-    private void WineyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WineyActionPerformed
- ////validbuton(Winey,1);            // TODO add your handling code here:
-    }//GEN-LAST:event_WineyActionPerformed
-
-    private void WhiskeyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WhiskeyActionPerformed
-  ////validbuton(Whiskey,1);        // TODO add your handling code here:
-    }//GEN-LAST:event_WhiskeyActionPerformed
-
-    private void FermentedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FermentedActionPerformed
- ////validbuton(Fermented,1);        // TODO add your handling code here:
-    }//GEN-LAST:event_FermentedActionPerformed
-
-    private void OverripeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OverripeActionPerformed
-      ////validbuton(Overripe,1);   // TODO add your handling code here:
-    }//GEN-LAST:event_OverripeActionPerformed
-
-    private void OliveOilActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OliveOilActionPerformed
-      ////validbuton(OliveOil,1);   // TODO add your handling code here:
-    }//GEN-LAST:event_OliveOilActionPerformed
-
-    private void RawActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RawActionPerformed
-          ////validbuton(Raw,1);    // TODO add your handling code here:
-    }//GEN-LAST:event_RawActionPerformed
-
-    private void UnderripeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_UnderripeActionPerformed
-////validbuton(Underripe,1);          // TODO add your handling code here:
-    }//GEN-LAST:event_UnderripeActionPerformed
-
-    private void PeapodActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PeapodActionPerformed
- ////validbuton(Peapod,1);          // TODO add your handling code here:
-    }//GEN-LAST:event_PeapodActionPerformed
-
-    private void FreshActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FreshActionPerformed
- ////validbuton(Fresh,1);          // TODO add your handling code here:
-    }//GEN-LAST:event_FreshActionPerformed
-
-    private void DarkGreenActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DarkGreenActionPerformed
-////validbuton(DarkGreen,1);         // TODO add your handling code here:
-    }//GEN-LAST:event_DarkGreenActionPerformed
-
-    private void VegetativeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_VegetativeActionPerformed
-////validbuton(Vegetative,1);          // TODO add your handling code here:
-    }//GEN-LAST:event_VegetativeActionPerformed
-
-    private void HaylikeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HaylikeActionPerformed
-////validbuton(Haylike,1);           // TODO add your handling code here:
-    }//GEN-LAST:event_HaylikeActionPerformed
-
-    private void HerblikeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HerblikeActionPerformed
-////validbuton(Herblike,1);          // TODO add your handling code here:
-    }//GEN-LAST:event_HerblikeActionPerformed
-
-    private void BeanyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BeanyActionPerformed
- ////validbuton(Beany,1);         // TODO add your handling code here:
-    }//GEN-LAST:event_BeanyActionPerformed
-
-    private void StaleActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_StaleActionPerformed
- ////validbuton(Stale,1);           // TODO add your handling code here:
-    }//GEN-LAST:event_StaleActionPerformed
-
-    private void CardboardActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CardboardActionPerformed
- ////validbuton(Cardboard,1);         // TODO add your handling code here:
-    }//GEN-LAST:event_CardboardActionPerformed
-
-    private void PaperyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PaperyActionPerformed
- ////validbuton(Papery,1);       // TODO add your handling code here:
-    }//GEN-LAST:event_PaperyActionPerformed
-
-    private void WoodyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_WoodyActionPerformed
- ////validbuton(Woody,1);       // TODO add your handling code here:
-    }//GEN-LAST:event_WoodyActionPerformed
-
-    private void MustyDustyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MustyDustyActionPerformed
-  ////validbuton(MustyDusty,1);         // TODO add your handling code here:
-    }//GEN-LAST:event_MustyDustyActionPerformed
-
-    private void MustyEarthyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MustyEarthyActionPerformed
-         ////validbuton(MustyEarthy,1);    // TODO add your handling code here:
-    }//GEN-LAST:event_MustyEarthyActionPerformed
-
-    private void AnimalicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AnimalicActionPerformed
- ////validbuton(Animalic,1);       // TODO add your handling code here:
-    }//GEN-LAST:event_AnimalicActionPerformed
-
-    private void PhenolicActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PhenolicActionPerformed
-      ////validbuton(Phenolic,1);   // TODO add your handling code here:
-    }//GEN-LAST:event_PhenolicActionPerformed
-
-    private void MeatyBrothyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MeatyBrothyActionPerformed
-  ////validbuton(MeatyBrothy,1);        // TODO add your handling code here:
-    }//GEN-LAST:event_MeatyBrothyActionPerformed
-
-    private void BitterActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BitterActionPerformed
-   ////validbuton(Bitter,1);      // TODO add your handling code here:
-    }//GEN-LAST:event_BitterActionPerformed
-
-    private void SaltyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SaltyActionPerformed
-      ////validbuton(Salty,1);       // TODO add your handling code here:
-    }//GEN-LAST:event_SaltyActionPerformed
-
-    private void MedicinalActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MedicinalActionPerformed
-    ////validbuton(Medicinal,1);           // TODO add your handling code here:
-    }//GEN-LAST:event_MedicinalActionPerformed
-
-    private void PetroleumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PetroleumActionPerformed
- ////validbuton(Petroleum,1);         // TODO add your handling code here:
-    }//GEN-LAST:event_PetroleumActionPerformed
-
-    private void SkunkyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SkunkyActionPerformed
- ////validbuton(Skunky,1);        // TODO add your handling code here:
-    }//GEN-LAST:event_SkunkyActionPerformed
-
-    private void RubberActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RubberActionPerformed
-      ////validbuton(Rubber,1);     // TODO add your handling code here:
-    }//GEN-LAST:event_RubberActionPerformed
-
-    private void PipeTobaccoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PipeTobaccoActionPerformed
-       ////validbuton(PipeTobacco,1);        // TODO add your handling code here:
-    }//GEN-LAST:event_PipeTobaccoActionPerformed
-
-    private void TobaccoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_TobaccoActionPerformed
-   ////validbuton(Tobacco,1);          // TODO add your handling code here:
-    }//GEN-LAST:event_TobaccoActionPerformed
-
-    private void AcridActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AcridActionPerformed
-   ////validbuton(Acrid,1);        // TODO add your handling code here:
-    }//GEN-LAST:event_AcridActionPerformed
-
-    private void AshyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AshyActionPerformed
- ////validbuton(Ashy,1);       // TODO add your handling code here:
-    }//GEN-LAST:event_AshyActionPerformed
-
-    private void SmokyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SmokyActionPerformed
-  ////validbuton(Smoky,1);       // TODO add your handling code here:
-    }//GEN-LAST:event_SmokyActionPerformed
-
-    private void BrownRoastActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrownRoastActionPerformed
-   ////validbuton(BrownRoast,1);        // TODO add your handling code here:
-    }//GEN-LAST:event_BrownRoastActionPerformed
-
-    private void GrainActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_GrainActionPerformed
-  ////validbuton(Grain,1);        // TODO add your handling code here:
-    }//GEN-LAST:event_GrainActionPerformed
-
-    private void MaltActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MaltActionPerformed
-      ////validbuton(Malt,1);  // TODO add your handling code here:
-    }//GEN-LAST:event_MaltActionPerformed
-
-    private void PungentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PungentActionPerformed
-          ////validbuton(Pungent,1);   // TODO add your handling code here:
-    }//GEN-LAST:event_PungentActionPerformed
-
-    private void PepperActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PepperActionPerformed
-       ////validbuton(Pepper,1);  // TODO add your handling code here:
-    }//GEN-LAST:event_PepperActionPerformed
-
-    private void AniseActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AniseActionPerformed
- ////validbuton(Anise,1);        // TODO add your handling code here:
-    }//GEN-LAST:event_AniseActionPerformed
-
-    private void NutmegActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NutmegActionPerformed
-   ////validbuton(Nutmeg,1);        // TODO add your handling code here:
-    }//GEN-LAST:event_NutmegActionPerformed
-
-    private void CloveActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CloveActionPerformed
-  ////validbuton(Clove,1);        // TODO add your handling code here:
-    }//GEN-LAST:event_CloveActionPerformed
-
-    private void NuttyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_NuttyActionPerformed
-  ////validbuton(Nutty,1);       // TODO add your handling code here:
-    }//GEN-LAST:event_NuttyActionPerformed
-
-    private void PeanutsActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PeanutsActionPerformed
-   ////validbuton(Peanuts,1);     // TODO add your handling code here:
-    }//GEN-LAST:event_PeanutsActionPerformed
-
-    private void HazelenutActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HazelenutActionPerformed
-   ////validbuton(Hazelenut,1);      // TODO add your handling code here:
-    }//GEN-LAST:event_HazelenutActionPerformed
-
-    private void AlmondActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AlmondActionPerformed
-      ////validbuton(Almond,1);    // TODO add your handling code here:
-    }//GEN-LAST:event_AlmondActionPerformed
-
-    private void ChocolateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ChocolateActionPerformed
-     ////validbuton(Chocolate,1);      // TODO add your handling code here:
-    }//GEN-LAST:event_ChocolateActionPerformed
-
-    private void DarkChocolateActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DarkChocolateActionPerformed
-       ////validbuton(DarkChocolate,1);  // TODO add your handling code here:
-    }//GEN-LAST:event_DarkChocolateActionPerformed
-
-    private void BrownSugar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrownSugar1ActionPerformed
- ////validbuton(BrownSugar1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_BrownSugar1ActionPerformed
-
-    private void BrownSugar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrownSugar3ActionPerformed
- ////validbuton(BrownSugar3,4);        // TODO add your handling code here:
-    }//GEN-LAST:event_BrownSugar3ActionPerformed
-
-    private void Molasses3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Molasses3ActionPerformed
-  ////validbuton(Molasses3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Molasses3ActionPerformed
-
-    private void MapleSugar3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MapleSugar3ActionPerformed
-  ////validbuton(MapleSugar3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_MapleSugar3ActionPerformed
-
-    private void Honey3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Honey3ActionPerformed
-  ////validbuton(Honey3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Honey3ActionPerformed
-
-    private void Vanilla3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Vanilla3ActionPerformed
-  ////validbuton(Vanilla3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Vanilla3ActionPerformed
-
-    private void Blacktea3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Blacktea3ActionPerformed
-  ////validbuton(Blacktea3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Blacktea3ActionPerformed
-
-    private void Chamomile3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Chamomile3ActionPerformed
-  ////validbuton(Chamomile3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Chamomile3ActionPerformed
-
-    private void Rose3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rose3ActionPerformed
-   ////validbuton(Rose3,4);      // TODO add your handling code here:
-    }//GEN-LAST:event_Rose3ActionPerformed
-
-    private void Jasmine3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jasmine3ActionPerformed
-  ////validbuton(Jasmine3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Jasmine3ActionPerformed
-
-    private void Blackberry3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Blackberry3ActionPerformed
- ////validbuton(Blackberry3,4);        // TODO add your handling code here:
-    }//GEN-LAST:event_Blackberry3ActionPerformed
-
-    private void Blueberry3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Blueberry3ActionPerformed
- ////validbuton(Blueberry3,4);        // TODO add your handling code here:
-    }//GEN-LAST:event_Blueberry3ActionPerformed
-
-    private void Strawberry3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Strawberry3ActionPerformed
-  ////validbuton(Strawberry3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Strawberry3ActionPerformed
-
-    private void Raisen3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Raisen3ActionPerformed
-  ////validbuton(Raisen3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Raisen3ActionPerformed
-
-    private void Prune3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Prune3ActionPerformed
-  ////validbuton(Prune3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Prune3ActionPerformed
-
-    private void Cherry3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cherry3ActionPerformed
-  ////validbuton(Cherry3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Cherry3ActionPerformed
-
-    private void Pinneapple3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pinneapple3ActionPerformed
-  ////validbuton(Pinneapple3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Pinneapple3ActionPerformed
-
-    private void Grape3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Grape3ActionPerformed
-  ////validbuton(Grape3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Grape3ActionPerformed
-
-    private void Apple3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Apple3ActionPerformed
-  ////validbuton(Apple3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Apple3ActionPerformed
-
-    private void Peach3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Peach3ActionPerformed
-   ////validbuton(Peach3,4);      // TODO add your handling code here:
-    }//GEN-LAST:event_Peach3ActionPerformed
-
-    private void Pear3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pear3ActionPerformed
-  ////validbuton(Pear3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Pear3ActionPerformed
-
-    private void Grapefruit3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Grapefruit3ActionPerformed
-  ////validbuton(Grapefruit3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Grapefruit3ActionPerformed
-
-    private void Orange3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Orange3ActionPerformed
-  ////validbuton(Orange3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Orange3ActionPerformed
-
-    private void Lime3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lime3ActionPerformed
-  ////validbuton(Lime3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Lime3ActionPerformed
-
-    private void Rancidbutter3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rancidbutter3ActionPerformed
-  ////validbuton(Rancidbutter3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Rancidbutter3ActionPerformed
-
-    private void RancidCheese3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RancidCheese3ActionPerformed
-  ////validbuton(RancidCheese3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_RancidCheese3ActionPerformed
-
-    private void OrangeAcidity3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrangeAcidity3ActionPerformed
-  ////validbuton(OrangeAcidity3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_OrangeAcidity3ActionPerformed
-
-    private void AppleAcidity3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AppleAcidity3ActionPerformed
-  ////validbuton(AppleAcidity3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_AppleAcidity3ActionPerformed
-
-    private void Winey3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Winey3ActionPerformed
-  ////validbuton(Winey3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Winey3ActionPerformed
-
-    private void Whiskey3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Whiskey3ActionPerformed
-  ////validbuton(Whiskey3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Whiskey3ActionPerformed
-
-    private void Fermented3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Fermented3ActionPerformed
-  ////validbuton(Fermented3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Fermented3ActionPerformed
-
-    private void Overripe3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Overripe3ActionPerformed
-  ////validbuton(Overripe3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Overripe3ActionPerformed
-
-    private void OliveOil3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OliveOil3ActionPerformed
-  ////validbuton(OliveOil3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_OliveOil3ActionPerformed
-
-    private void Raw3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Raw3ActionPerformed
-  ////validbuton(Raw3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Raw3ActionPerformed
-
-    private void Underripe3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Underripe3ActionPerformed
-  ////validbuton(Underripe3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Underripe3ActionPerformed
-
-    private void Peapod3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Peapod3ActionPerformed
-  ////validbuton(Peapod3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Peapod3ActionPerformed
-
-    private void Fresh3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Fresh3ActionPerformed
-  ////validbuton(Fresh3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Fresh3ActionPerformed
-
-    private void DarkGreen3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DarkGreen3ActionPerformed
-  ////validbuton(DarkGreen3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_DarkGreen3ActionPerformed
-
-    private void Vegetative3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Vegetative3ActionPerformed
-  ////validbuton(Vegetative3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Vegetative3ActionPerformed
-
-    private void Haylike3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Haylike3ActionPerformed
-  ////validbuton(Haylike3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Haylike3ActionPerformed
-
-    private void Herblike3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Herblike3ActionPerformed
-  //validbuton(Herblike3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Herblike3ActionPerformed
-
-    private void Beany3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Beany3ActionPerformed
-  //validbuton(Beany3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Beany3ActionPerformed
-
-    private void Stale3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Stale3ActionPerformed
- //validbuton( Stale3,4);        // TODO add your handling code here:
-    }//GEN-LAST:event_Stale3ActionPerformed
-
-    private void Cardboard3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cardboard3ActionPerformed
-  //validbuton(Cardboard3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Cardboard3ActionPerformed
-
-    private void Papery3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Papery3ActionPerformed
-  //validbuton(Papery3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Papery3ActionPerformed
-
-    private void Woody3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Woody3ActionPerformed
- //validbuton(Woody3,4);        // TODO add your handling code here:
-    }//GEN-LAST:event_Woody3ActionPerformed
-
-    private void MustyDusty3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MustyDusty3ActionPerformed
-  //validbuton(MustyDusty3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_MustyDusty3ActionPerformed
-
-    private void MustyEarthy3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MustyEarthy3ActionPerformed
-  //validbuton(MustyEarthy3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_MustyEarthy3ActionPerformed
-
-    private void Animalic3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Animalic3ActionPerformed
- //validbuton(Animalic3,4);        // TODO add your handling code here:
-    }//GEN-LAST:event_Animalic3ActionPerformed
-
-    private void MeatyBrothy3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MeatyBrothy3ActionPerformed
-  //validbuton(MeatyBrothy3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_MeatyBrothy3ActionPerformed
-
-    private void Phenolic3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Phenolic3ActionPerformed
-  //validbuton(Phenolic3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Phenolic3ActionPerformed
-
-    private void Bitter3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bitter3ActionPerformed
-  //validbuton(Bitter3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Bitter3ActionPerformed
-
-    private void Salty3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Salty3ActionPerformed
-   //validbuton(Salty3,4);      // TODO add your handling code here:
-    }//GEN-LAST:event_Salty3ActionPerformed
-
-    private void Medicinal3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Medicinal3ActionPerformed
-  //validbuton(Medicinal3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Medicinal3ActionPerformed
-
-    private void Petroleum3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Petroleum3ActionPerformed
-  //validbuton(Petroleum3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Petroleum3ActionPerformed
-
-    private void Skunky3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Skunky3ActionPerformed
-  //validbuton(Skunky3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Skunky3ActionPerformed
-
-    private void Rubber3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rubber3ActionPerformed
- //validbuton(Rubber3,4);        // TODO add your handling code here:
-    }//GEN-LAST:event_Rubber3ActionPerformed
-
-    private void PipeTobacco3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PipeTobacco3ActionPerformed
-  //validbuton(PipeTobacco3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_PipeTobacco3ActionPerformed
-
-    private void Tobacco3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tobacco3ActionPerformed
-  //validbuton(Tobacco3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Tobacco3ActionPerformed
-
-    private void Acrid3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Acrid3ActionPerformed
-  //validbuton(Acrid3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Acrid3ActionPerformed
-
-    private void Ashy3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ashy3ActionPerformed
-  //validbuton(Ashy3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Ashy3ActionPerformed
-
-    private void Smoky3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Smoky3ActionPerformed
-  //validbuton(Smoky3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Smoky3ActionPerformed
-
-    private void BrownRoast3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrownRoast3ActionPerformed
-  //validbuton(BrownRoast3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_BrownRoast3ActionPerformed
-
-    private void Grain3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Grain3ActionPerformed
-  //validbuton(Grain3,4);       // TODO add your handling code here:
-    }//GEN-LAST:event_Grain3ActionPerformed
-
-    private void Malt3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Malt3ActionPerformed
-  //validbuton(Malt3,4);  
- 
-    }//GEN-LAST:event_Malt3ActionPerformed
-
-    private void Pungent3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pungent3ActionPerformed
-  //validbuton(Pungent3,4);        // TODO add your handling code here:
-    }//GEN-LAST:event_Pungent3ActionPerformed
-
-    private void Pepper3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pepper3ActionPerformed
-      //validbuton(Pepper3,4);   // TODO add your handling code here:
-    }//GEN-LAST:event_Pepper3ActionPerformed
-
-    private void Anise3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Anise3ActionPerformed
-  //validbuton(Anise3,4);        // TODO add your handling code here:
-    }//GEN-LAST:event_Anise3ActionPerformed
-
-    private void Nutmeg3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nutmeg3ActionPerformed
-  //validbuton(Nutmeg3,4);        // TODO add your handling code here:
-    }//GEN-LAST:event_Nutmeg3ActionPerformed
-
-    private void Cinnamon3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cinnamon3ActionPerformed
-  //validbuton(Cinnamon3,4);        // TODO add your handling code here:
-    }//GEN-LAST:event_Cinnamon3ActionPerformed
-
-    private void Clove3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Clove3ActionPerformed
-  //validbuton(Clove3,4);        // TODO add your handling code here:
-    }//GEN-LAST:event_Clove3ActionPerformed
-
-    private void Nutty3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nutty3ActionPerformed
-  //validbuton(Nutty3,4);        // TODO add your handling code here:
-    }//GEN-LAST:event_Nutty3ActionPerformed
-
-    private void Peanuts3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Peanuts3ActionPerformed
-  //validbuton(Peanuts3,4);        // TODO add your handling code here:
-    }//GEN-LAST:event_Peanuts3ActionPerformed
-
-    private void Hazelenut3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Hazelenut3ActionPerformed
-  //validbuton(Hazelenut3,4);        // TODO add your handling code here:
-    }//GEN-LAST:event_Hazelenut3ActionPerformed
-
-    private void Almond3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Almond3ActionPerformed
-  //validbuton(Almond3,4);        // TODO add your handling code here:
-    }//GEN-LAST:event_Almond3ActionPerformed
-
-    private void Chocolate3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Chocolate3ActionPerformed
-  //validbuton(Chocolate3,4);        // TODO add your handling code here:
-    }//GEN-LAST:event_Chocolate3ActionPerformed
-
-    private void DarkChocolate3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DarkChocolate3ActionPerformed
-  //validbuton(DarkChocolate3,4);        // TODO add your handling code here:
-    }//GEN-LAST:event_DarkChocolate3ActionPerformed
-
-    private void Molasses1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Molasses1ActionPerformed
-//validbuton(Molasses1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Molasses1ActionPerformed
-
-    private void MapleSugar1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MapleSugar1ActionPerformed
-//validbuton(MapleSugar1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_MapleSugar1ActionPerformed
-
-    private void Honey1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Honey1ActionPerformed
-//validbuton(Honey1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Honey1ActionPerformed
-
-    private void Vanilla1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Vanilla1ActionPerformed
-//validbuton(Vanilla1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Vanilla1ActionPerformed
-
-    private void Blacktea1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Blacktea1ActionPerformed
-//validbuton(Blacktea1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Blacktea1ActionPerformed
-
-    private void Chamomile1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Chamomile1ActionPerformed
-//validbuton(Chamomile1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Chamomile1ActionPerformed
-
-    private void Rose1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rose1ActionPerformed
-//validbuton(Rose1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Rose1ActionPerformed
-
-    private void Jasmine1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jasmine1ActionPerformed
-//validbuton(Jasmine1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Jasmine1ActionPerformed
-
-    private void Blackberry1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Blackberry1ActionPerformed
-//validbuton(Blackberry1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Blackberry1ActionPerformed
-
-    private void Blueberry1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Blueberry1ActionPerformed
-//validbuton(Blueberry1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Blueberry1ActionPerformed
-
-    private void Strawberry1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Strawberry1ActionPerformed
-//validbuton(Strawberry1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Strawberry1ActionPerformed
-
-    private void Raisen1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Raisen1ActionPerformed
-//validbuton(Raisen1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Raisen1ActionPerformed
-
-    private void Prune1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Prune1ActionPerformed
-//validbuton(Prune1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Prune1ActionPerformed
-
-    private void Cherry1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cherry1ActionPerformed
-//validbuton(Cherry1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Cherry1ActionPerformed
-
-    private void Pinneapple1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pinneapple1ActionPerformed
-//validbuton(Pinneapple1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Pinneapple1ActionPerformed
-
-    private void Grape1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Grape1ActionPerformed
-//validbuton(Grape1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Grape1ActionPerformed
-
-    private void Apple1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Apple1ActionPerformed
-//validbuton(Apple1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Apple1ActionPerformed
-
-    private void Peach1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Peach1ActionPerformed
-//validbuton(Peach1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Peach1ActionPerformed
-
-    private void Pear1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pear1ActionPerformed
-//validbuton(Pear1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Pear1ActionPerformed
-
-    private void Grapefruit1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Grapefruit1ActionPerformed
-//validbuton(Grapefruit1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Grapefruit1ActionPerformed
-
-    private void Orange1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Orange1ActionPerformed
-//validbuton(Orange1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Orange1ActionPerformed
-
-    private void Lime1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lime1ActionPerformed
-//validbuton(Lime1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Lime1ActionPerformed
-
-    private void Rancidbutter1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rancidbutter1ActionPerformed
-//validbuton(Rancidbutter1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Rancidbutter1ActionPerformed
-
-    private void RancidCheese1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RancidCheese1ActionPerformed
-//validbuton(RancidCheese1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_RancidCheese1ActionPerformed
-
-    private void OrangeAcidity1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrangeAcidity1ActionPerformed
-//validbuton(OrangeAcidity1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_OrangeAcidity1ActionPerformed
-
-    private void AppleAcidity1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AppleAcidity1ActionPerformed
-//validbuton(AppleAcidity1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_AppleAcidity1ActionPerformed
-
-    private void Winey1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Winey1ActionPerformed
-//validbuton(Winey1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Winey1ActionPerformed
-
-    private void Whiskey1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Whiskey1ActionPerformed
-//validbuton(Whiskey1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Whiskey1ActionPerformed
-
-    private void Fermented1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Fermented1ActionPerformed
-//validbuton(Fermented1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Fermented1ActionPerformed
-
-    private void Overripe1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Overripe1ActionPerformed
-//validbuton(Overripe1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Overripe1ActionPerformed
-
-    private void OliveOil1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OliveOil1ActionPerformed
-//validbuton(OliveOil1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_OliveOil1ActionPerformed
-
-    private void Raw1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Raw1ActionPerformed
-//validbuton(Raw1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Raw1ActionPerformed
-
-    private void Underripe1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Underripe1ActionPerformed
-//validbuton(Underripe1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Underripe1ActionPerformed
-
-    private void Peapod1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Peapod1ActionPerformed
-//validbuton(Peapod1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Peapod1ActionPerformed
-
-    private void Fresh1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Fresh1ActionPerformed
-//validbuton(Fresh1,2);        // TODO add your handling code here:
-    }//GEN-LAST:event_Fresh1ActionPerformed
-
-    private void DarkGreen1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DarkGreen1ActionPerformed
-    //validbuton(DarkGreen1,2);      // TODO add your handling code here:
-    }//GEN-LAST:event_DarkGreen1ActionPerformed
-
-    private void Vegetative1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Vegetative1ActionPerformed
-//validbuton(Vegetative1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Vegetative1ActionPerformed
-
-    private void Haylike1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Haylike1ActionPerformed
-//validbuton(Haylike1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Haylike1ActionPerformed
-
-    private void Herblike1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Herblike1ActionPerformed
-//validbuton(Herblike1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Herblike1ActionPerformed
-
-    private void Beany1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Beany1ActionPerformed
-     //validbuton(Beany1,2);     // TODO add your handling code here:
-    }//GEN-LAST:event_Beany1ActionPerformed
-
-    private void Stale1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Stale1ActionPerformed
-//validbuton(Stale1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Stale1ActionPerformed
-
-    private void Cardboard1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cardboard1ActionPerformed
-//validbuton(Cardboard1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Cardboard1ActionPerformed
-
-    private void Papery1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Papery1ActionPerformed
-//validbuton(Papery1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Papery1ActionPerformed
-
-    private void Woody1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Woody1ActionPerformed
-//validbuton(Woody1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Woody1ActionPerformed
-
-    private void MustyDusty1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MustyDusty1ActionPerformed
-//validbuton(MustyDusty1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_MustyDusty1ActionPerformed
-
-    private void MustyEarthy1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MustyEarthy1ActionPerformed
-//validbuton(MustyEarthy1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_MustyEarthy1ActionPerformed
-
-    private void Animalic1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Animalic1ActionPerformed
-//validbuton(Animalic1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Animalic1ActionPerformed
-
-    private void MeatyBrothy1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MeatyBrothy1ActionPerformed
-//validbuton(MeatyBrothy1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_MeatyBrothy1ActionPerformed
-
-    private void Phenolic1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Phenolic1ActionPerformed
-//validbuton(Phenolic1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Phenolic1ActionPerformed
-
-    private void Bitter1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bitter1ActionPerformed
-//validbuton(Bitter1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Bitter1ActionPerformed
-
-    private void Salty1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Salty1ActionPerformed
-//validbuton(Salty1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Salty1ActionPerformed
-
-    private void Medicinal1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Medicinal1ActionPerformed
-//validbuton(Medicinal1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Medicinal1ActionPerformed
-
-    private void Petroleum1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Petroleum1ActionPerformed
-//validbuton(Petroleum1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Petroleum1ActionPerformed
-
-    private void Skunky1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Skunky1ActionPerformed
-//validbuton(Skunky1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Skunky1ActionPerformed
-
-    private void Rubber1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rubber1ActionPerformed
-//validbuton(Rubber1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Rubber1ActionPerformed
-
-    private void PipeTobacco1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PipeTobacco1ActionPerformed
-//validbuton(PipeTobacco1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_PipeTobacco1ActionPerformed
-
-    private void Tobacco1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tobacco1ActionPerformed
-//validbuton(Tobacco1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Tobacco1ActionPerformed
-
-    private void Acrid1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Acrid1ActionPerformed
-//validbuton(Acrid1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Acrid1ActionPerformed
-
-    private void Ashy1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ashy1ActionPerformed
-//validbuton(Ashy1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Ashy1ActionPerformed
-
-    private void Smoky1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Smoky1ActionPerformed
-//validbuton(Smoky1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Smoky1ActionPerformed
-
-    private void BrownRoast1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrownRoast1ActionPerformed
-//validbuton(BrownRoast1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_BrownRoast1ActionPerformed
-
-    private void Grain1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Grain1ActionPerformed
-//validbuton(Grain1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Grain1ActionPerformed
-
-    private void Malt1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Malt1ActionPerformed
-//validbuton(Malt1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Malt1ActionPerformed
-
-    private void Pungent1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pungent1ActionPerformed
-//validbuton(Pungent1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Pungent1ActionPerformed
-
-    private void Pepper1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pepper1ActionPerformed
-//validbuton(Pepper1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Pepper1ActionPerformed
-
-    private void Anise1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Anise1ActionPerformed
-//validbuton(Anise1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Anise1ActionPerformed
-
-    private void Nutmeg1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nutmeg1ActionPerformed
-//validbuton(Nutmeg1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Nutmeg1ActionPerformed
-
-    private void Cinnamon1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cinnamon1ActionPerformed
-//validbuton(Cinnamon1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Cinnamon1ActionPerformed
-
-    private void Clove1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Clove1ActionPerformed
-//validbuton(Clove1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Clove1ActionPerformed
-
-    private void Nutty1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nutty1ActionPerformed
-//validbuton(Nutty1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Nutty1ActionPerformed
-
-    private void Peanuts1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Peanuts1ActionPerformed
-//validbuton(Peanuts1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Peanuts1ActionPerformed
-
-    private void Hazelenut1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Hazelenut1ActionPerformed
-//validbuton(Hazelenut1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Hazelenut1ActionPerformed
-
-    private void Almond1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Almond1ActionPerformed
-//validbuton(Almond1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Almond1ActionPerformed
-
-    private void Chocolate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Chocolate1ActionPerformed
-//validbuton(Chocolate1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_Chocolate1ActionPerformed
-
-    private void DarkChocolate1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DarkChocolate1ActionPerformed
-//validbuton(DarkChocolate1,2);          // TODO add your handling code here:
-    }//GEN-LAST:event_DarkChocolate1ActionPerformed
-
-    private void BrownSugar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrownSugar2ActionPerformed
-   //validbuton(BrownSugar2,3);      // TODO add your handling code here:
-    }//GEN-LAST:event_BrownSugar2ActionPerformed
-
-    private void Molasses2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Molasses2ActionPerformed
- //validbuton(Molasses2,3);        // TODO add your handling code here:
-    }//GEN-LAST:event_Molasses2ActionPerformed
-
-    private void MapleSugar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MapleSugar2ActionPerformed
- //validbuton(MapleSugar2,3);        // TODO add your handling code here:
-    }//GEN-LAST:event_MapleSugar2ActionPerformed
-
-    private void Honey2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Honey2ActionPerformed
- //validbuton(Honey2,3);        // TODO add your handling code here:
-    }//GEN-LAST:event_Honey2ActionPerformed
-
-    private void Vanilla2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Vanilla2ActionPerformed
- //validbuton(Vanilla2,3);        // TODO add your handling code here:
-    }//GEN-LAST:event_Vanilla2ActionPerformed
-
-    private void Blacktea2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Blacktea2ActionPerformed
-//validbuton(Blacktea2,3);         // TODO add your handling code here:
-    }//GEN-LAST:event_Blacktea2ActionPerformed
-
-    private void Chamomile2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Chamomile2ActionPerformed
-//validbuton(Chamomile2,3);         // TODO add your handling code here:
-    }//GEN-LAST:event_Chamomile2ActionPerformed
-
-    private void Rose2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rose2ActionPerformed
- //validbuton(Rose2,3);        // TODO add your handling code here:
-    }//GEN-LAST:event_Rose2ActionPerformed
-
-    private void Jasmine2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jasmine2ActionPerformed
- //validbuton(Jasmine2,3);        // TODO add your handling code here:
-    }//GEN-LAST:event_Jasmine2ActionPerformed
-
-    private void Blackberry2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Blackberry2ActionPerformed
- //validbuton(Blackberry2,3);        // TODO add your handling code here:
-    }//GEN-LAST:event_Blackberry2ActionPerformed
-
-    private void Blueberry2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Blueberry2ActionPerformed
- //validbuton(Blueberry2,3);        // TODO add your handling code here:
-    }//GEN-LAST:event_Blueberry2ActionPerformed
-
-    private void Strawberry2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Strawberry2ActionPerformed
- //validbuton(Strawberry2,3);        // TODO add your handling code here:
-    }//GEN-LAST:event_Strawberry2ActionPerformed
-
-    private void Raisen2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Raisen2ActionPerformed
- //validbuton(Raisen2,3);        // TODO add your handling code here:
-    }//GEN-LAST:event_Raisen2ActionPerformed
-
-    private void Prune2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Prune2ActionPerformed
- //validbuton(Prune2,3);        // TODO add your handling code here:
-    }//GEN-LAST:event_Prune2ActionPerformed
-
-    private void Cherry2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cherry2ActionPerformed
- //validbuton(Cherry2,3);        // TODO add your handling code here:
-    }//GEN-LAST:event_Cherry2ActionPerformed
-
-    private void Pinneapple2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pinneapple2ActionPerformed
- //validbuton(Pinneapple2,3);        // TODO add your handling code here:
-    }//GEN-LAST:event_Pinneapple2ActionPerformed
-
-    private void Grape2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Grape2ActionPerformed
- //validbuton(Grape2,3);        // TODO add your handling code here:
-    }//GEN-LAST:event_Grape2ActionPerformed
-
-    private void Apple2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Apple2ActionPerformed
- //validbuton(Apple2,3);        // TODO add your handling code here:
-    }//GEN-LAST:event_Apple2ActionPerformed
-
-    private void Peach2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Peach2ActionPerformed
- //validbuton(Peach2,3);        // TODO add your handling code here:
-    }//GEN-LAST:event_Peach2ActionPerformed
-
-    private void Pear2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pear2ActionPerformed
- //validbuton(Pear2,3);        // TODO add your handling code here:
-    }//GEN-LAST:event_Pear2ActionPerformed
-
-    private void Grapefruit2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Grapefruit2ActionPerformed
- //validbuton(Grapefruit2,3);        // TODO add your handling code here:
-    }//GEN-LAST:event_Grapefruit2ActionPerformed
-
-    private void Orange2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Orange2ActionPerformed
- //validbuton(Orange2,3);        // TODO add your handling code here:
-    }//GEN-LAST:event_Orange2ActionPerformed
-
-    private void Lime2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lime2ActionPerformed
-     //validbuton(Lime2,3);     // TODO add your handling code here:
-    }//GEN-LAST:event_Lime2ActionPerformed
-
-    private void OliveOil2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OliveOil2ActionPerformed
- //validbuton(OliveOil2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_OliveOil2ActionPerformed
-
-    private void Raw2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Raw2ActionPerformed
- //validbuton(Raw2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Raw2ActionPerformed
-
-    private void Underripe2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Underripe2ActionPerformed
- //validbuton(Underripe2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Underripe2ActionPerformed
-
-    private void Peapod2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Peapod2ActionPerformed
- //validbuton(Peapod2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Peapod2ActionPerformed
-
-    private void Fresh2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Fresh2ActionPerformed
- //validbuton(Fresh2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Fresh2ActionPerformed
-
-    private void DarkGreen2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DarkGreen2ActionPerformed
- //validbuton(DarkGreen2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_DarkGreen2ActionPerformed
-
-    private void Vegetative2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Vegetative2ActionPerformed
- //validbuton(Vegetative2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Vegetative2ActionPerformed
-
-    private void Haylike2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Haylike2ActionPerformed
- //validbuton(Haylike2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Haylike2ActionPerformed
-
-    private void Herblike2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Herblike2ActionPerformed
- //validbuton(Herblike2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Herblike2ActionPerformed
-
-    private void Beany2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Beany2ActionPerformed
-  //validbuton(Beany2,3);      // TODO add your handling code here:
-    }//GEN-LAST:event_Beany2ActionPerformed
-
-    private void Stale2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Stale2ActionPerformed
-//validbuton(Stale2,3);        // TODO add your handling code here:
-    }//GEN-LAST:event_Stale2ActionPerformed
-
-    private void Cardboard2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cardboard2ActionPerformed
-//validbuton(Cardboard2,3);        // TODO add your handling code here:
-    }//GEN-LAST:event_Cardboard2ActionPerformed
-
-    private void Papery2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Papery2ActionPerformed
- //validbuton(Papery2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Papery2ActionPerformed
-
-    private void Woody2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Woody2ActionPerformed
- //validbuton( Woody2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Woody2ActionPerformed
-
-    private void MustyDusty2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MustyDusty2ActionPerformed
- //validbuton(MustyDusty2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_MustyDusty2ActionPerformed
-
-    private void MustyEarthy2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MustyEarthy2ActionPerformed
- //validbuton(MustyEarthy2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_MustyEarthy2ActionPerformed
-
-    private void Animalic2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Animalic2ActionPerformed
- //validbuton(Animalic2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Animalic2ActionPerformed
-
-    private void MeatyBrothy2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MeatyBrothy2ActionPerformed
- //validbuton(MeatyBrothy2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_MeatyBrothy2ActionPerformed
-
-    private void Phenolic2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Phenolic2ActionPerformed
- //validbuton(Phenolic2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Phenolic2ActionPerformed
-
-    private void Bitter2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bitter2ActionPerformed
- //validbuton(Bitter2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Bitter2ActionPerformed
-
-    private void Salty2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Salty2ActionPerformed
- //validbuton(Salty2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Salty2ActionPerformed
-
-    private void Medicinal2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Medicinal2ActionPerformed
- //validbuton(Medicinal2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Medicinal2ActionPerformed
-
-    private void Petroleum2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Petroleum2ActionPerformed
- //validbuton(Petroleum2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Petroleum2ActionPerformed
-
-    private void Skunky2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Skunky2ActionPerformed
- //validbuton(Skunky2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Skunky2ActionPerformed
-
-    private void Rubber2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rubber2ActionPerformed
- //validbuton(Rubber2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Rubber2ActionPerformed
-
-    private void PipeTobacco2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PipeTobacco2ActionPerformed
- //validbuton(PipeTobacco2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_PipeTobacco2ActionPerformed
-
-    private void Acrid2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Acrid2ActionPerformed
- //validbuton(Acrid2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Acrid2ActionPerformed
-
-    private void Ashy2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ashy2ActionPerformed
- //validbuton(Ashy2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Ashy2ActionPerformed
-
-    private void Smoky2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Smoky2ActionPerformed
-  //validbuton(Smoky2,3);      // TODO add your handling code here:
-    }//GEN-LAST:event_Smoky2ActionPerformed
-
-    private void BrownRoast2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrownRoast2ActionPerformed
-  //validbuton(BrownRoast2,3);      // TODO add your handling code here:
-    }//GEN-LAST:event_BrownRoast2ActionPerformed
-
-    private void Grain2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Grain2ActionPerformed
-  //validbuton(Grain2,3);      // TODO add your handling code here:
-    }//GEN-LAST:event_Grain2ActionPerformed
-
-    private void Malt2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Malt2ActionPerformed
- //validbuton(Malt2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Malt2ActionPerformed
-
-    private void Pungent2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pungent2ActionPerformed
-  //validbuton(Pungent2,3);      // TODO add your handling code here:
-    }//GEN-LAST:event_Pungent2ActionPerformed
-
-    private void Pepper2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pepper2ActionPerformed
- //validbuton(Pepper2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Pepper2ActionPerformed
-
-    private void Anise2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Anise2ActionPerformed
- //validbuton(Anise2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Anise2ActionPerformed
-
-    private void Cinnamon2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cinnamon2ActionPerformed
- //validbuton(Cinnamon2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Cinnamon2ActionPerformed
-
-    private void Nutmeg2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nutmeg2ActionPerformed
- //validbuton(Nutmeg2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Nutmeg2ActionPerformed
-
-    private void Clove2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Clove2ActionPerformed
- //validbuton(Clove2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Clove2ActionPerformed
-
-    private void Nutty2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nutty2ActionPerformed
- //validbuton(Nutty2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Nutty2ActionPerformed
-
-    private void Peanuts2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Peanuts2ActionPerformed
- //validbuton(Peanuts2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Peanuts2ActionPerformed
-
-    private void Hazelenut2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Hazelenut2ActionPerformed
- //validbuton(Hazelenut2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Hazelenut2ActionPerformed
-
-    private void Almond2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Almond2ActionPerformed
- //validbuton(Almond2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Almond2ActionPerformed
-
-    private void Chocolate2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Chocolate2ActionPerformed
- //validbuton(Chocolate2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Chocolate2ActionPerformed
-
-    private void DarkChocolate2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DarkChocolate2ActionPerformed
- //validbuton(DarkChocolate2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_DarkChocolate2ActionPerformed
-
-    private void BrownSugar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrownSugar4ActionPerformed
-  //validbuton(BrownSugar4,5);           // TODO add your handling code here:
-    }//GEN-LAST:event_BrownSugar4ActionPerformed
-
-    private void Molasses4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Molasses4ActionPerformed
-   //validbuton(Molasses4,5);        // TODO add your handling code here:
-    }//GEN-LAST:event_Molasses4ActionPerformed
-
-    private void MapleSugar4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MapleSugar4ActionPerformed
-   //validbuton(MapleSugar4,5);        // TODO add your handling code here:
-    }//GEN-LAST:event_MapleSugar4ActionPerformed
-
-    private void Honey4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Honey4ActionPerformed
-  //validbuton(Honey4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Honey4ActionPerformed
-
-    private void Vanilla4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Vanilla4ActionPerformed
-   //validbuton(Vanilla4,5);        // TODO add your handling code here:
-    }//GEN-LAST:event_Vanilla4ActionPerformed
-
-    private void Blacktea4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Blacktea4ActionPerformed
-   //validbuton(Blacktea4,5);        // TODO add your handling code here:
-    }//GEN-LAST:event_Blacktea4ActionPerformed
-
-    private void Chamomile4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Chamomile4ActionPerformed
-   //validbuton(Chamomile4,5);        // TODO add your handling code here:
-    }//GEN-LAST:event_Chamomile4ActionPerformed
-
-    private void Rose4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rose4ActionPerformed
-   //validbuton( Rose4,5);        // TODO add your handling code here:
-    }//GEN-LAST:event_Rose4ActionPerformed
-
-    private void Jasmine4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Jasmine4ActionPerformed
-  //validbuton(Jasmine4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Jasmine4ActionPerformed
-
-    private void Blackberry4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Blackberry4ActionPerformed
-   //validbuton(Blackberry4,5);        // TODO add your handling code here:
-    }//GEN-LAST:event_Blackberry4ActionPerformed
-
-    private void Blueberry4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Blueberry4ActionPerformed
-  //validbuton(Blueberry4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Blueberry4ActionPerformed
-
-    private void Strawberry4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Strawberry4ActionPerformed
-  //validbuton(Strawberry4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Strawberry4ActionPerformed
-
-    private void Raisen4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Raisen4ActionPerformed
-   //validbuton(Raisen4,5);        // TODO add your handling code here:
-    }//GEN-LAST:event_Raisen4ActionPerformed
-
-    private void Prune4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Prune4ActionPerformed
-   //validbuton(Prune4,5);        // TODO add your handling code here:
-    }//GEN-LAST:event_Prune4ActionPerformed
-
-    private void Cherry4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cherry4ActionPerformed
-   //validbuton(Cherry4,5);        // TODO add your handling code here:
-    }//GEN-LAST:event_Cherry4ActionPerformed
-
-    private void Pinneapple4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pinneapple4ActionPerformed
-  //validbuton(Pinneapple4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Pinneapple4ActionPerformed
-
-    private void Grape4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Grape4ActionPerformed
-   //validbuton(Grape4,5);        // TODO add your handling code here:
-    }//GEN-LAST:event_Grape4ActionPerformed
-
-    private void Apple4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Apple4ActionPerformed
-  //validbuton(Apple4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Apple4ActionPerformed
-
-    private void Peach4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Peach4ActionPerformed
-  //validbuton(Peach4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Peach4ActionPerformed
-
-    private void Pear4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pear4ActionPerformed
-   //validbuton(Pear4,5);        // TODO add your handling code here:
-    }//GEN-LAST:event_Pear4ActionPerformed
-
-    private void Orange4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Orange4ActionPerformed
-   //validbuton(Orange4,5);        // TODO add your handling code here:
-    }//GEN-LAST:event_Orange4ActionPerformed
-
-    private void Grapefruit4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Grapefruit4ActionPerformed
-  //validbuton(Grapefruit4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Grapefruit4ActionPerformed
-
-    private void Lime4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Lime4ActionPerformed
-   //validbuton(Lime4,5);        // TODO add your handling code here:
-    }//GEN-LAST:event_Lime4ActionPerformed
-
-    private void Rancidbutter4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rancidbutter4ActionPerformed
-  //validbuton(Rancidbutter4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Rancidbutter4ActionPerformed
-
-    private void RancidCheese4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RancidCheese4ActionPerformed
-  //validbuton(RancidCheese4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_RancidCheese4ActionPerformed
-
-    private void OrangeAcidity4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrangeAcidity4ActionPerformed
-  //validbuton(OrangeAcidity4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_OrangeAcidity4ActionPerformed
-
-    private void AppleAcidity4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AppleAcidity4ActionPerformed
-  //validbuton(AppleAcidity4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_AppleAcidity4ActionPerformed
-
-    private void Winey4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Winey4ActionPerformed
-  //validbuton(Winey4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Winey4ActionPerformed
-
-    private void Whiskey4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Whiskey4ActionPerformed
-  //validbuton(Whiskey4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Whiskey4ActionPerformed
-
-    private void Fermented4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Fermented4ActionPerformed
-  //validbuton(Fermented4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Fermented4ActionPerformed
-
-    private void Overripe4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Overripe4ActionPerformed
-  //validbuton(Overripe4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Overripe4ActionPerformed
-
-    private void OliveOil4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OliveOil4ActionPerformed
-  //validbuton(OliveOil4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_OliveOil4ActionPerformed
-
-    private void Raw4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Raw4ActionPerformed
-  //validbuton(Raw4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Raw4ActionPerformed
-
-    private void Underripe4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Underripe4ActionPerformed
-  //validbuton(Underripe4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Underripe4ActionPerformed
-
-    private void Peapod4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Peapod4ActionPerformed
-  //validbuton(Peapod4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Peapod4ActionPerformed
-
-    private void Fresh4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Fresh4ActionPerformed
-  //validbuton(Fresh4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Fresh4ActionPerformed
-
-    private void DarkGreen4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DarkGreen4ActionPerformed
-  //validbuton(DarkGreen4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_DarkGreen4ActionPerformed
-
-    private void Vegetative4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Vegetative4ActionPerformed
-  //validbuton(Vegetative4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Vegetative4ActionPerformed
-
-    private void Haylike4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Haylike4ActionPerformed
-  //validbuton(Haylike4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Haylike4ActionPerformed
-
-    private void Herblike4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Herblike4ActionPerformed
-  //validbuton(Herblike4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Herblike4ActionPerformed
-
-    private void Beany4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Beany4ActionPerformed
-  //validbuton(Beany4,5);         // TODO add your handling code here:
-    }//GEN-LAST:event_Beany4ActionPerformed
-
     private void Stale4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Stale4ActionPerformed
-  //validbuton(Stale4,5);         // TODO add your handling code here:
+        //validbuton(Stale4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Stale4ActionPerformed
 
     private void Cardboard4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cardboard4ActionPerformed
-  //validbuton(Cardboard4,5);         // TODO add your handling code here:
+        //validbuton(Cardboard4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Cardboard4ActionPerformed
 
     private void Papery4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Papery4ActionPerformed
-  //validbuton(Papery4,5);         // TODO add your handling code here:
+        //validbuton(Papery4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Papery4ActionPerformed
 
     private void Woody4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Woody4ActionPerformed
-  //validbuton(Woody4,5);         // TODO add your handling code here:
+        //validbuton(Woody4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Woody4ActionPerformed
 
     private void MustyDusty4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MustyDusty4ActionPerformed
-  //validbuton(MustyDusty4,5);         // TODO add your handling code here:
+        //validbuton(MustyDusty4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_MustyDusty4ActionPerformed
 
     private void MustyEarthy4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MustyEarthy4ActionPerformed
-  //validbuton(MustyEarthy4,5);         // TODO add your handling code here:
+        //validbuton(MustyEarthy4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_MustyEarthy4ActionPerformed
 
     private void Animalic4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Animalic4ActionPerformed
-  //validbuton(Animalic4,5);         // TODO add your handling code here:
+        //validbuton(Animalic4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Animalic4ActionPerformed
 
     private void MeatyBrothy4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MeatyBrothy4ActionPerformed
-  //validbuton(MeatyBrothy4,5);         // TODO add your handling code here:
+        //validbuton(MeatyBrothy4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_MeatyBrothy4ActionPerformed
 
     private void Phenolic4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Phenolic4ActionPerformed
-  //validbuton(Phenolic4,5);         // TODO add your handling code here:
+        //validbuton(Phenolic4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Phenolic4ActionPerformed
 
     private void Bitter4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Bitter4ActionPerformed
-  //validbuton(Bitter4,5);         // TODO add your handling code here:
+        //validbuton(Bitter4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Bitter4ActionPerformed
 
     private void Salty4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Salty4ActionPerformed
-  //validbuton(Salty4,5);         // TODO add your handling code here:
+        //validbuton(Salty4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Salty4ActionPerformed
 
     private void Medicinal4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Medicinal4ActionPerformed
-  //validbuton(Medicinal4,5);         // TODO add your handling code here:
+        //validbuton(Medicinal4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Medicinal4ActionPerformed
 
     private void Petroleum4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Petroleum4ActionPerformed
-  //validbuton(Petroleum4,5);         // TODO add your handling code here:
+        //validbuton(Petroleum4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Petroleum4ActionPerformed
 
     private void Skunky4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Skunky4ActionPerformed
-  //validbuton(Skunky4,5);         // TODO add your handling code here:
+        //validbuton(Skunky4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Skunky4ActionPerformed
 
     private void Rubber4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rubber4ActionPerformed
-  //validbuton(Rubber4,5);         // TODO add your handling code here:
+        //validbuton(Rubber4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Rubber4ActionPerformed
 
     private void PipeTobacco4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_PipeTobacco4ActionPerformed
-  //validbuton(PipeTobacco4,5);         // TODO add your handling code here:
+        //validbuton(PipeTobacco4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_PipeTobacco4ActionPerformed
 
     private void Tobacco4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Tobacco4ActionPerformed
-  //validbuton(Tobacco4,5);         // TODO add your handling code here:
+        //validbuton(Tobacco4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Tobacco4ActionPerformed
 
     private void Acrid4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Acrid4ActionPerformed
-  //validbuton(Acrid4,5);         // TODO add your handling code here:
+        //validbuton(Acrid4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Acrid4ActionPerformed
 
     private void Ashy4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Ashy4ActionPerformed
-  //validbuton(Ashy4,5);         // TODO add your handling code here:
+        //validbuton(Ashy4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Ashy4ActionPerformed
 
     private void Smoky4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Smoky4ActionPerformed
-  //validbuton(Smoky4,5);         // TODO add your handling code here:
+        //validbuton(Smoky4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Smoky4ActionPerformed
 
     private void BrownRoast4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BrownRoast4ActionPerformed
-  //validbuton(BrownRoast4,5);         // TODO add your handling code here:
+        //validbuton(BrownRoast4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_BrownRoast4ActionPerformed
 
     private void Grain4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Grain4ActionPerformed
-  //validbuton(Grain4,5);         // TODO add your handling code here:
+        //validbuton(Grain4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Grain4ActionPerformed
 
     private void Malt4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Malt4ActionPerformed
-  //validbuton(Malt4,5);         // TODO add your handling code here:
+        //validbuton(Malt4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Malt4ActionPerformed
 
     private void Pungent4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pungent4ActionPerformed
-  //validbuton(Pungent4,5);         // TODO add your handling code here:
+        //validbuton(Pungent4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Pungent4ActionPerformed
 
     private void Pepper4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Pepper4ActionPerformed
-  //validbuton(Pepper4,5);         // TODO add your handling code here:
+        //validbuton(Pepper4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Pepper4ActionPerformed
 
     private void Anise4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Anise4ActionPerformed
-  //validbuton(Anise4,5);         // TODO add your handling code here:
+        //validbuton(Anise4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Anise4ActionPerformed
 
     private void Nutmeg4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nutmeg4ActionPerformed
-  //validbuton(Nutmeg4,5);         // TODO add your handling code here:
+        //validbuton(Nutmeg4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Nutmeg4ActionPerformed
 
     private void Cinnamon4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Cinnamon4ActionPerformed
-  //validbuton(Cinnamon4,5);         // TODO add your handling code here:
+        //validbuton(Cinnamon4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Cinnamon4ActionPerformed
 
     private void Clove4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Clove4ActionPerformed
-  //validbuton(Clove4,5);         // TODO add your handling code here:
+        //validbuton(Clove4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Clove4ActionPerformed
 
     private void Nutty4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Nutty4ActionPerformed
-  //validbuton(Nutty4,5);         // TODO add your handling code here:
+        //validbuton(Nutty4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Nutty4ActionPerformed
 
     private void Peanuts4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Peanuts4ActionPerformed
-  //validbuton(Peanuts4,5);         // TODO add your handling code here:
+        //validbuton(Peanuts4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Peanuts4ActionPerformed
 
     private void Hazelenut4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Hazelenut4ActionPerformed
-  //validbuton(Hazelenut4,5);         // TODO add your handling code here:
+        //validbuton(Hazelenut4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Hazelenut4ActionPerformed
 
     private void Almond4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Almond4ActionPerformed
-  //validbuton(Almond4,5);         // TODO add your handling code here:
+        //validbuton(Almond4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Almond4ActionPerformed
 
     private void Chocolate4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Chocolate4ActionPerformed
-  //validbuton(Chocolate4,5);         // TODO add your handling code here:
+        //validbuton(Chocolate4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_Chocolate4ActionPerformed
 
     private void DarkChocolate4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DarkChocolate4ActionPerformed
-  //validbuton(DarkChocolate4,5);         // TODO add your handling code here:
+        //validbuton(DarkChocolate4,5);         // TODO add your handling code here:
     }//GEN-LAST:event_DarkChocolate4ActionPerformed
 
-    private void Rancidbutter5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rancidbutter5ActionPerformed
-//validbuton(Rancidbutter5,6);         // TODO add your handling code here:
-    }//GEN-LAST:event_Rancidbutter5ActionPerformed
-
-    private void RancidCheese5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RancidCheese5ActionPerformed
- //validbuton(RancidCheese5,6);        // TODO add your handling code here:
-    }//GEN-LAST:event_RancidCheese5ActionPerformed
-
-    private void OrangeAcidity5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrangeAcidity5ActionPerformed
-    //validbuton(OrangeAcidity5,6);         // TODO add your handling code here:
-    }//GEN-LAST:event_OrangeAcidity5ActionPerformed
-
-    private void AppleAcidity5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AppleAcidity5ActionPerformed
-    //validbuton(AppleAcidity5,6);      // TODO add your handling code here:
-    }//GEN-LAST:event_AppleAcidity5ActionPerformed
-
-    private void Winey5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Winey5ActionPerformed
-    //validbuton(Winey5,6);    // TODO add your handling code here:
-    }//GEN-LAST:event_Winey5ActionPerformed
-
-    private void Whiskey5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Whiskey5ActionPerformed
- //validbuton(Whiskey5,6);     // TODO add your handling code here:
-    }//GEN-LAST:event_Whiskey5ActionPerformed
-
-    private void Fermented5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Fermented5ActionPerformed
-  //validbuton(Fermented5,6);       // TODO add your handling code here:
-    }//GEN-LAST:event_Fermented5ActionPerformed
-
-    private void Overripe5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Overripe5ActionPerformed
-   //validbuton(Overripe5,6);        // TODO add your handling code here:
-    }//GEN-LAST:event_Overripe5ActionPerformed
-
-    private void MediumbodyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MediumbodyActionPerformed
-  //validbuton(Mediumbody,7);       // TODO add your handling code here:
-    }//GEN-LAST:event_MediumbodyActionPerformed
-
-    private void HeavyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_HeavyActionPerformed
-//validbuton(Heavy,7);        // TODO add your handling code here:
-    }//GEN-LAST:event_HeavyActionPerformed
-
-    private void SyrupyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SyrupyActionPerformed
-  //validbuton(Syrupy,7);       // TODO add your handling code here:
-    }//GEN-LAST:event_SyrupyActionPerformed
-
-    private void OilyActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OilyActionPerformed
- //validbuton(Oily,7);         // TODO add your handling code here:
-    }//GEN-LAST:event_OilyActionPerformed
-
-    private void SmoothActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SmoothActionPerformed
- //validbuton(Smooth,7);          // TODO add your handling code here:
-    }//GEN-LAST:event_SmoothActionPerformed
-
     private void quakersFocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_quakersFocusGained
-if (quakers.getText().equals("0")) {
+        if (quakers.getText().equals("0")) {
             quakers.setText("");
         }        // TODO add your handling code here:
     }//GEN-LAST:event_quakersFocusGained
 
     private void quakersFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_quakersFocusLost
-if (quakers.getText().equals("")) {
+        if (quakers.getText().equals("")) {
             quakers.setText("0");
         }        // TODO add your handling code here:
     }//GEN-LAST:event_quakersFocusLost
 
-    private void Short1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Short1ActionPerformed
-//validbuton(Short1,8);        // TODO add your handling code here:
-    }//GEN-LAST:event_Short1ActionPerformed
-
-    private void MediumActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_MediumActionPerformed
-   //validbuton(Medium,8);       // TODO add your handling code here:
-    }//GEN-LAST:event_MediumActionPerformed
-
-    private void LongActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_LongActionPerformed
-    //validbuton(Long,8);    // TODO add your handling code here:
-    }//GEN-LAST:event_LongActionPerformed
-
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-       try {
-    for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
-        if ("Nimbus".equals(info.getName())) {
-            UIManager.setLookAndFeel(info.getClassName());
-            break;
+        try {
+            for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                if ("Nimbus".equals(info.getName())) {
+                    UIManager.setLookAndFeel(info.getClassName());
+                    break;
+                }
+            }
+        } catch (Exception e) {
+            // If Nimbus is not available, you can set the GUI to another look and feel.
         }
-    }
-} catch (Exception e) {
-    // If Nimbus is not available, you can set the GUI to another look and feel.
-}
         this.dispose();            // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void DryfActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_DryfActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_DryfActionPerformed
-
-    private void AstringentActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AstringentActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_AstringentActionPerformed
 
     private void FruityActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_FruityActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_FruityActionPerformed
 
-    private void Sweet2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Sweet2ActionPerformed
+    private void sourMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sourMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_Sweet2ActionPerformed
+        intensidadSabor(sour);
+        intensidadAcFm(sour);
+    }//GEN-LAST:event_sourMouseClicked
 
-    private void Fruity1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Fruity1ActionPerformed
+    private void VinegarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VinegarMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_Fruity1ActionPerformed
+        intensidadSabor(Vinegar);
+        intensidadAcFm(Vinegar);
+    }//GEN-LAST:event_VinegarMouseClicked
 
-    private void Fruity2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Fruity2ActionPerformed
+    private void BrownSugarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BrownSugarMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_Fruity2ActionPerformed
+        intensidadSabor(BrownSugar);
+        intensidadSweet(BrownSugar);
+    }//GEN-LAST:event_BrownSugarMouseClicked
 
-    private void Fruity3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Fruity3ActionPerformed
+    private void BerryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BerryMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_Fruity3ActionPerformed
+        intensidadSabor(Berry);
+        intensidadFrutal(Berry);
+    }//GEN-LAST:event_BerryMouseClicked
 
-    private void Fruity4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Fruity4ActionPerformed
+    private void BlackteaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BlackteaMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_Fruity4ActionPerformed
+        intensidadSabor(Blacktea);
+        intensidadFloral(Blacktea);
+    }//GEN-LAST:event_BlackteaMouseClicked
 
-    private void AppleAcidity2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AppleAcidity2ActionPerformed
-        //validbuton(AppleAcidity2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_AppleAcidity2ActionPerformed
-
-    private void OrangeAcidity2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_OrangeAcidity2ActionPerformed
-        //validbuton(OrangeAcidity2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_OrangeAcidity2ActionPerformed
-
-    private void Overripe2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Overripe2ActionPerformed
-        //validbuton(Overripe2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Overripe2ActionPerformed
-
-    private void Fermented2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Fermented2ActionPerformed
-        //validbuton(Fermented2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Fermented2ActionPerformed
-
-    private void Whiskey2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Whiskey2ActionPerformed
-        //validbuton(Whiskey2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Whiskey2ActionPerformed
-
-    private void Winey2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Winey2ActionPerformed
-        //validbuton(Winey2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_Winey2ActionPerformed
-
-    private void RancidCheese2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_RancidCheese2ActionPerformed
-        //validbuton(RancidCheese2,3);       // TODO add your handling code here:
-    }//GEN-LAST:event_RancidCheese2ActionPerformed
-
-    private void Rancidbutter2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Rancidbutter2ActionPerformed
-        //validbuton(Rancidbutter2,3);    // TODO add your handling code here:
-    }//GEN-LAST:event_Rancidbutter2ActionPerformed
-
-    private void Vinegar2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_Vinegar2ActionPerformed
-        //validbuton(Vinegar2,3);     // TODO add your handling code here:
-    }//GEN-LAST:event_Vinegar2ActionPerformed
-
-    private void sour1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_sour1ActionPerformed
+    private void OliveOilMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OliveOilMouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_sour1ActionPerformed
+        intensidadSabor(OliveOil);
+        intensidadVV(OliveOil);
+    }//GEN-LAST:event_OliveOilMouseClicked
+    
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+       
+        if(Vinegar.getBackground() == new Color(255,0,0))
+            
+            JOptionPane.showMessageDialog(null,"es igual");
+        else
+            JOptionPane.showMessageDialog(null,"no es igual");
+       
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void MolassesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MolassesMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Molasses);
+        intensidadSweet(Molasses);
+    }//GEN-LAST:event_MolassesMouseClicked
+
+    private void VanillaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VanillaMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Vanilla);
+        intensidadSweet(Vanilla);
+    }//GEN-LAST:event_VanillaMouseClicked
+
+    private void JasmineMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_JasmineMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Jasmine);
+        intensidadFloral(Jasmine);
+    }//GEN-LAST:event_JasmineMouseClicked
+
+    private void ChamomileMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ChamomileMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Chamomile);
+        intensidadFloral(Chamomile);
+    }//GEN-LAST:event_ChamomileMouseClicked
+
+    private void RoseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RoseMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Rose);
+        intensidadFloral(Rose);
+    }//GEN-LAST:event_RoseMouseClicked
+
+    private void MapleSugarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MapleSugarMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(MapleSugar);
+        intensidadSweet(MapleSugar);
+    }//GEN-LAST:event_MapleSugarMouseClicked
+
+    private void CarmelizedMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CarmelizedMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Carmelized);
+        intensidadSweet(Carmelized);
+    }//GEN-LAST:event_CarmelizedMouseClicked
+
+    private void HoneyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HoneyMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Honey);
+        intensidadSweet(Honey);
+    }//GEN-LAST:event_HoneyMouseClicked
+
+    private void BlackberryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BlackberryMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Blackberry);
+        intensidadFrutal(Blackberry);
+    }//GEN-LAST:event_BlackberryMouseClicked
+
+    private void RaspberryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RaspberryMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Raspberry);
+        intensidadFrutal(Raspberry);
+    }//GEN-LAST:event_RaspberryMouseClicked
+
+    private void BlueberryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BlueberryMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Blueberry);
+        intensidadFrutal(Blueberry);
+    }//GEN-LAST:event_BlueberryMouseClicked
+
+    private void StrawberryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StrawberryMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Strawberry);
+        intensidadFrutal(Strawberry);
+    }//GEN-LAST:event_StrawberryMouseClicked
+
+    private void DriedFruitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DriedFruitMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(DriedFruit);
+        intensidadFrutal(DriedFruit);
+    }//GEN-LAST:event_DriedFruitMouseClicked
+
+    private void RaisenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RaisenMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Raisen);
+        intensidadFrutal(Raisen);
+    }//GEN-LAST:event_RaisenMouseClicked
+
+    private void PruneMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PruneMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Prune);
+        intensidadFrutal(Prune);
+    }//GEN-LAST:event_PruneMouseClicked
+
+    private void OtherfruitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OtherfruitMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Otherfruit);
+        intensidadFrutal(Otherfruit);
+    }//GEN-LAST:event_OtherfruitMouseClicked
+
+    private void CoconutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CoconutMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Coconut);
+        intensidadFrutal(Coconut);
+    }//GEN-LAST:event_CoconutMouseClicked
+
+    private void CherryMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CherryMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Cherry);
+        intensidadFrutal(Cherry);
+    }//GEN-LAST:event_CherryMouseClicked
+
+    private void PomagraniteMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PomagraniteMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Pomagranite);
+        intensidadFrutal(Pomagranite);
+    }//GEN-LAST:event_PomagraniteMouseClicked
+
+    private void PinneappleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PinneappleMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Pinneapple);
+        intensidadFrutal(Pinneapple);
+    }//GEN-LAST:event_PinneappleMouseClicked
+
+    private void GrapeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GrapeMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Grape);
+        intensidadFrutal(Grape);
+    }//GEN-LAST:event_GrapeMouseClicked
+
+    private void AppleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AppleMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Apple);
+        intensidadFrutal(Apple);
+    }//GEN-LAST:event_AppleMouseClicked
+
+    private void PeachMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PeachMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Peach);
+        intensidadFrutal(Peach);
+    }//GEN-LAST:event_PeachMouseClicked
+
+    private void PearMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PearMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Pear);
+        intensidadFrutal(Pear);
+    }//GEN-LAST:event_PearMouseClicked
+
+    private void CitrusfruitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CitrusfruitMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Citrusfruit);
+        intensidadFrutal(Citrusfruit);
+    }//GEN-LAST:event_CitrusfruitMouseClicked
+
+    private void GrapefruitMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GrapefruitMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Grapefruit);
+        intensidadFrutal(Grapefruit);
+    }//GEN-LAST:event_GrapefruitMouseClicked
+
+    private void OrangeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OrangeMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Orange);
+        intensidadFrutal(Orange);
+    }//GEN-LAST:event_OrangeMouseClicked
+
+    private void LemonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LemonMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Lemon);
+        intensidadFrutal(Lemon);
+    }//GEN-LAST:event_LemonMouseClicked
+
+    private void LimeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_LimeMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Lime);
+        intensidadFrutal(Lime);
+    }//GEN-LAST:event_LimeMouseClicked
+
+    private void RancidbutterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RancidbutterMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Rancidbutter);
+        intensidadAcFm(sour);
+    }//GEN-LAST:event_RancidbutterMouseClicked
+
+    private void RancidCheeseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RancidCheeseMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(RancidCheese);
+        intensidadAcFm(RancidCheese);
+    }//GEN-LAST:event_RancidCheeseMouseClicked
+
+    private void OrangeAcidityMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OrangeAcidityMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(OrangeAcidity);
+        intensidadAcFm(OrangeAcidity);
+    }//GEN-LAST:event_OrangeAcidityMouseClicked
+
+    private void AppleAcidityMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AppleAcidityMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(AppleAcidity);
+        intensidadAcFm(AppleAcidity);
+    }//GEN-LAST:event_AppleAcidityMouseClicked
+
+    private void AlcoholMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AlcoholMouseEntered
+        // TODO add your handling code here:
+    }//GEN-LAST:event_AlcoholMouseEntered
+
+    private void AlcoholMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AlcoholMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Alcohol);
+        intensidadAcFm(Alcohol);
+    }//GEN-LAST:event_AlcoholMouseClicked
+
+    private void WineyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WineyMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Winey);
+        intensidadAcFm(Winey);
+    }//GEN-LAST:event_WineyMouseClicked
+
+    private void WhiskeyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WhiskeyMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Whiskey);
+        intensidadAcFm(Whiskey);
+    }//GEN-LAST:event_WhiskeyMouseClicked
+
+    private void FermentedMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FermentedMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Fermented);
+        intensidadAcFm(Fermented);
+    }//GEN-LAST:event_FermentedMouseClicked
+
+    private void OverripeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OverripeMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Overripe);
+        intensidadAcFm(Overripe);
+    }//GEN-LAST:event_OverripeMouseClicked
+
+    private void RawMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RawMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Raw);
+        intensidadVV(Raw);
+    }//GEN-LAST:event_RawMouseClicked
+
+    private void BeanyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BeanyMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Beany);
+        intensidadVV(Beany);
+    }//GEN-LAST:event_BeanyMouseClicked
+
+    private void UnderripeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_UnderripeMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Underripe);
+        intensidadVV(Underripe);
+    }//GEN-LAST:event_UnderripeMouseClicked
+
+    private void PeapodMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PeapodMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Peapod);
+        intensidadVV(Peapod);
+    }//GEN-LAST:event_PeapodMouseClicked
+
+    private void FreshMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_FreshMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Fresh);
+        intensidadVV(Fresh);
+    }//GEN-LAST:event_FreshMouseClicked
+
+    private void DarkGreenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DarkGreenMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(DarkGreen);
+        intensidadVV(DarkGreen);
+    }//GEN-LAST:event_DarkGreenMouseClicked
+
+    private void VegetativeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_VegetativeMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Vegetative);
+        intensidadVV(Vegetative);
+    }//GEN-LAST:event_VegetativeMouseClicked
+
+    private void HaylikeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HaylikeMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Haylike);
+        intensidadVV(Haylike);
+    }//GEN-LAST:event_HaylikeMouseClicked
+
+    private void HerblikeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HerblikeMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Herblike);
+        intensidadVV(Herblike);
+    }//GEN-LAST:event_HerblikeMouseClicked
+
+    private void PaperyMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PaperyMMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(PaperyM);
+        intensidadOtros(PaperyM);
+    }//GEN-LAST:event_PaperyMMouseClicked
+
+    private void StaleMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_StaleMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Stale);
+        intensidadOtros(Stale);
+    }//GEN-LAST:event_StaleMouseClicked
+
+    private void CardboardMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CardboardMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Cardboard);
+        intensidadOtros(Cardboard);
+    }//GEN-LAST:event_CardboardMouseClicked
+
+    private void PaperyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PaperyMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Papery);
+        intensidadOtros(Papery);
+    }//GEN-LAST:event_PaperyMouseClicked
+
+    private void WoodyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_WoodyMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Woody);
+        intensidadOtros(Woody);
+    }//GEN-LAST:event_WoodyMouseClicked
+
+    private void MoldyDampMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MoldyDampMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(MoldyDamp);
+        intensidadOtros(MoldyDamp);
+    }//GEN-LAST:event_MoldyDampMouseClicked
+
+    private void MustyDustyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MustyDustyMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(MustyDusty);
+        intensidadOtros(MustyDusty);
+    }//GEN-LAST:event_MustyDustyMouseClicked
+
+    private void MustyEarthyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MustyEarthyMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(MustyEarthy);
+        intensidadOtros(MustyEarthy);
+    }//GEN-LAST:event_MustyEarthyMouseClicked
+
+    private void AnimalicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AnimalicMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Animalic);
+        intensidadOtros(Animalic);
+    }//GEN-LAST:event_AnimalicMouseClicked
+
+    private void MeatyBrothyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MeatyBrothyMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(MeatyBrothy);
+        intensidadOtros(MeatyBrothy);
+    }//GEN-LAST:event_MeatyBrothyMouseClicked
+
+    private void PhenolicMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PhenolicMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Phenolic);
+        intensidadOtros(Phenolic);
+    }//GEN-LAST:event_PhenolicMouseClicked
+
+    private void ChemicalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ChemicalMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Chemical);
+        intensidadOtros(Chemical);
+    }//GEN-LAST:event_ChemicalMouseClicked
+
+    private void BitterMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BitterMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Bitter);
+        intensidadOtros(Bitter);
+    }//GEN-LAST:event_BitterMouseClicked
+
+    private void SaltyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SaltyMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Salty);
+        intensidadOtros(Salty);
+    }//GEN-LAST:event_SaltyMouseClicked
+
+    private void MedicinalMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MedicinalMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Medicinal);
+        intensidadOtros(Medicinal);
+    }//GEN-LAST:event_MedicinalMouseClicked
+
+    private void PetroleumMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PetroleumMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Petroleum);
+        intensidadOtros(Petroleum);
+    }//GEN-LAST:event_PetroleumMouseClicked
+
+    private void SkunkyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SkunkyMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Skunky);
+        intensidadOtros(Skunky);
+    }//GEN-LAST:event_SkunkyMouseClicked
+
+    private void RubberMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RubberMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Rubber);
+        intensidadOtros(Rubber);
+    }//GEN-LAST:event_RubberMouseClicked
+
+    private void PipeTobaccoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PipeTobaccoMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(PipeTobacco);
+        intensidadTostado(PipeTobacco);
+    }//GEN-LAST:event_PipeTobaccoMouseClicked
+
+    private void TobaccoMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_TobaccoMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Tobacco);
+        intensidadTostado(Tobacco);
+    }//GEN-LAST:event_TobaccoMouseClicked
+
+    private void BurntMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BurntMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Burnt);
+        intensidadTostado(Burnt);
+    }//GEN-LAST:event_BurntMouseClicked
+
+    private void AcridMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AcridMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Acrid);
+        intensidadTostado(Acrid);
+    }//GEN-LAST:event_AcridMouseClicked
+
+    private void AshyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AshyMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Ashy);
+        intensidadTostado(Ashy);
+    }//GEN-LAST:event_AshyMouseClicked
+
+    private void SmokyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SmokyMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Smoky);
+        intensidadTostado(Smoky);
+    }//GEN-LAST:event_SmokyMouseClicked
+
+    private void BrownRoastMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BrownRoastMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(BrownRoast);
+        intensidadTostado(BrownRoast);
+    }//GEN-LAST:event_BrownRoastMouseClicked
+
+    private void CerealMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CerealMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Cereal);
+        intensidadTostado(Cereal);
+    }//GEN-LAST:event_CerealMouseClicked
+
+    private void GrainMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_GrainMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Grain);
+        intensidadTostado(Grain);
+    }//GEN-LAST:event_GrainMouseClicked
+
+    private void MaltMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MaltMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Malt);
+        intensidadTostado(Malt);
+    }//GEN-LAST:event_MaltMouseClicked
+
+    private void PungentMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PungentMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Pungent);
+        intensidadEspecias(Pungent);
+    }//GEN-LAST:event_PungentMouseClicked
+
+    private void PepperMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PepperMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Pepper);
+        intensidadEspecias(Pepper);
+    }//GEN-LAST:event_PepperMouseClicked
+
+    private void BrownspicesMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BrownspicesMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Brownspices);
+        intensidadEspecias(Brownspices);
+    }//GEN-LAST:event_BrownspicesMouseClicked
+
+    private void AniseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AniseMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Anise);
+        intensidadEspecias(Anise);
+    }//GEN-LAST:event_AniseMouseClicked
+
+    private void NutmegMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NutmegMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Nutmeg);
+        intensidadEspecias(Nutmeg);
+    }//GEN-LAST:event_NutmegMouseClicked
+
+    private void CinnamonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CinnamonMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Cinnamon);
+        intensidadEspecias(Cinnamon);
+    }//GEN-LAST:event_CinnamonMouseClicked
+
+    private void CloveMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CloveMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Clove);
+        intensidadEspecias(Clove);
+    }//GEN-LAST:event_CloveMouseClicked
+
+    private void NuttyMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_NuttyMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Nutty);
+        intensidadNC(Nutty);
+    }//GEN-LAST:event_NuttyMouseClicked
+
+    private void PeanutsMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PeanutsMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Peanuts);
+        intensidadNC(Peanuts);
+    }//GEN-LAST:event_PeanutsMouseClicked
+
+    private void HazelenutMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_HazelenutMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Hazelenut);
+        intensidadNC(Hazelenut);
+    }//GEN-LAST:event_HazelenutMouseClicked
+
+    private void AlmondMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AlmondMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Almond);
+        intensidadNC(Almond);
+    }//GEN-LAST:event_AlmondMouseClicked
+
+    private void CocoaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_CocoaMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Cocoa);
+        intensidadNC(Cocoa);
+    }//GEN-LAST:event_CocoaMouseClicked
+
+    private void ChocolateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_ChocolateMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Chocolate);
+        intensidadNC(Chocolate);
+    }//GEN-LAST:event_ChocolateMouseClicked
+
+    private void DarkChocolateMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DarkChocolateMouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(DarkChocolate);
+        intensidadNC(DarkChocolate);
+    }//GEN-LAST:event_DarkChocolateMouseClicked
+
+    private void BrownSugar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BrownSugar1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(BrownSugar1);
+        intensidadSweet(BrownSugar1);
+    }//GEN-LAST:event_BrownSugar1MouseClicked
+
+    private void Molasses1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Molasses1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Molasses1);
+        intensidadSweet(Molasses1);
+    }//GEN-LAST:event_Molasses1MouseClicked
+
+    private void MapleSugar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MapleSugar1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(MapleSugar1);
+        intensidadSweet(MapleSugar1);
+    }//GEN-LAST:event_MapleSugar1MouseClicked
+
+    private void Carmelized1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Carmelized1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Carmelized1);
+        intensidadSweet(Carmelized1);
+    }//GEN-LAST:event_Carmelized1MouseClicked
+
+    private void Honey1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Honey1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Honey1);
+        intensidadSweet(Honey1);
+    }//GEN-LAST:event_Honey1MouseClicked
+
+    private void Vanilla1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Vanilla1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Vanilla1);
+        intensidadSweet(Vanilla1);
+    }//GEN-LAST:event_Vanilla1MouseClicked
+
+    private void Blacktea1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Blacktea1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Blacktea1);
+        intensidadFloral(Blacktea1);
+    }//GEN-LAST:event_Blacktea1MouseClicked
+
+    private void Chamomile1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Chamomile1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Chamomile1);
+        intensidadFloral(Chamomile1);
+    }//GEN-LAST:event_Chamomile1MouseClicked
+
+    private void Rose1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Rose1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Rose1);
+        intensidadFloral(Rose1);
+    }//GEN-LAST:event_Rose1MouseClicked
+
+    private void Berry1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Berry1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Berry1);
+        intensidadFrutal(Berry1);
+    }//GEN-LAST:event_Berry1MouseClicked
+
+    private void Blackberry1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Blackberry1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Blackberry1);
+        intensidadFrutal(Blackberry1);
+    }//GEN-LAST:event_Blackberry1MouseClicked
+
+    private void Raspberry1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Raspberry1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Raspberry1);
+        intensidadFrutal(Raspberry1);
+    }//GEN-LAST:event_Raspberry1MouseClicked
+
+    private void Blueberry1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Blueberry1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Blueberry1);
+        intensidadFrutal(Blueberry1);
+    }//GEN-LAST:event_Blueberry1MouseClicked
+
+    private void Strawberry1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Strawberry1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Strawberry1);
+        intensidadFrutal(Strawberry1);
+    }//GEN-LAST:event_Strawberry1MouseClicked
+
+    private void DriedFruit1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DriedFruit1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(DriedFruit1);
+        intensidadFrutal(DriedFruit1);
+    }//GEN-LAST:event_DriedFruit1MouseClicked
+
+    private void Raisen1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Raisen1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Raisen1);
+        intensidadFrutal(Raisen1);
+    }//GEN-LAST:event_Raisen1MouseClicked
+
+    private void Prune1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Prune1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Prune1);
+        intensidadFrutal(Prune1);
+    }//GEN-LAST:event_Prune1MouseClicked
+
+    private void Otherfruit1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Otherfruit1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Otherfruit1);
+        intensidadFrutal(Otherfruit1);
+    }//GEN-LAST:event_Otherfruit1MouseClicked
+
+    private void Coconut1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Coconut1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Coconut1);
+        intensidadFrutal(Coconut1);
+    }//GEN-LAST:event_Coconut1MouseClicked
+
+    private void Cherry1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cherry1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Cherry1);
+        intensidadFrutal(Cherry1);
+    }//GEN-LAST:event_Cherry1MouseClicked
+
+    private void Pomagranite1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pomagranite1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Pomagranite1);
+        intensidadFrutal(Pomagranite1);
+    }//GEN-LAST:event_Pomagranite1MouseClicked
+
+    private void Pinneapple1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pinneapple1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Pinneapple1);
+        intensidadFrutal(Pinneapple1);
+    }//GEN-LAST:event_Pinneapple1MouseClicked
+
+    private void Grape1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Grape1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Grape1);
+        intensidadFrutal(Grape1);
+    }//GEN-LAST:event_Grape1MouseClicked
+
+    private void Apple1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Apple1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Apple1);
+        intensidadFrutal(Apple1);
+    }//GEN-LAST:event_Apple1MouseClicked
+
+    private void Peach1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Peach1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Peach1);
+        intensidadFrutal(Peach1);
+    }//GEN-LAST:event_Peach1MouseClicked
+
+    private void Pear1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pear1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Pear1);
+        intensidadFrutal(Pear1);
+    }//GEN-LAST:event_Pear1MouseClicked
+
+    private void Citrusfruit1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Citrusfruit1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Citrusfruit1);
+        intensidadFrutal(Citrusfruit1);
+    }//GEN-LAST:event_Citrusfruit1MouseClicked
+
+    private void Grapefruit1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Grapefruit1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Grapefruit1);
+        intensidadFrutal(Grapefruit1);
+    }//GEN-LAST:event_Grapefruit1MouseClicked
+
+    private void Orange1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Orange1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Orange1);
+        intensidadFrutal(Orange1);
+    }//GEN-LAST:event_Orange1MouseClicked
+
+    private void Lemon1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lemon1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Lemon1);
+        intensidadFrutal(Lemon1);
+    }//GEN-LAST:event_Lemon1MouseClicked
+
+    private void Lime1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lime1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Lime1);
+        intensidadFrutal(Lime1);
+    }//GEN-LAST:event_Lime1MouseClicked
+
+    private void sour1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sour1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(sour1);
+        intensidadAcFm(sour1);
+    }//GEN-LAST:event_sour1MouseClicked
+
+    private void Vinegar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Vinegar1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Vinegar1);
+        intensidadAcFm(Vinegar1);
+    }//GEN-LAST:event_Vinegar1MouseClicked
+
+    private void Rancidbutter1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Rancidbutter1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Rancidbutter1);
+        intensidadAcFm(Rancidbutter1);
+    }//GEN-LAST:event_Rancidbutter1MouseClicked
+
+    private void RancidCheese1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RancidCheese1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(RancidCheese1);
+        intensidadAcFm(RancidCheese1);
+    }//GEN-LAST:event_RancidCheese1MouseClicked
+
+    private void OrangeAcidity1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OrangeAcidity1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(OrangeAcidity1);
+        intensidadAcFm(OrangeAcidity1);
+    }//GEN-LAST:event_OrangeAcidity1MouseClicked
+
+    private void AppleAcidity1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AppleAcidity1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(AppleAcidity1);
+        intensidadAcFm(AppleAcidity1);
+    }//GEN-LAST:event_AppleAcidity1MouseClicked
+
+    private void Alcohol1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Alcohol1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Alcohol1);
+        intensidadAcFm(Alcohol1);
+    }//GEN-LAST:event_Alcohol1MouseClicked
+
+    private void Winey1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Winey1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Winey1);
+        intensidadAcFm(Winey1);
+    }//GEN-LAST:event_Winey1MouseClicked
+
+    private void Whiskey1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Whiskey1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Whiskey1);
+        intensidadAcFm(Whiskey1);
+    }//GEN-LAST:event_Whiskey1MouseClicked
+
+    private void Fermented1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Fermented1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Fermented1);
+        intensidadAcFm(Fermented1);
+    }//GEN-LAST:event_Fermented1MouseClicked
+
+    private void Overripe1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Overripe1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Overripe1);
+        intensidadAcFm(Overripe1);
+    }//GEN-LAST:event_Overripe1MouseClicked
+
+    private void OliveOil1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OliveOil1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(OliveOil1);
+        intensidadVV(OliveOil1);
+    }//GEN-LAST:event_OliveOil1MouseClicked
+
+    private void Raw1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Raw1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Raw1);
+        intensidadVV(Raw1);
+    }//GEN-LAST:event_Raw1MouseClicked
+
+    private void Beany1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Beany1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Beany1);
+        intensidadVV(Beany1);
+    }//GEN-LAST:event_Beany1MouseClicked
+
+    private void Underripe1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Underripe1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Underripe1);
+        intensidadVV(Underripe1);
+    }//GEN-LAST:event_Underripe1MouseClicked
+
+    private void Peapod1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Peapod1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Peapod1);
+        intensidadVV(Peapod1);
+    }//GEN-LAST:event_Peapod1MouseClicked
+
+    private void Fresh1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Fresh1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Fresh1);
+        intensidadVV(Fresh1);
+    }//GEN-LAST:event_Fresh1MouseClicked
+
+    private void DarkGreen1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DarkGreen1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(DarkGreen1);
+        intensidadVV(DarkGreen1);
+    }//GEN-LAST:event_DarkGreen1MouseClicked
+
+    private void Vegetative1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Vegetative1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Vegetative1);
+        intensidadVV(Vegetative1);
+    }//GEN-LAST:event_Vegetative1MouseClicked
+
+    private void Haylike1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Haylike1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Haylike1);
+        intensidadVV(Haylike1);
+    }//GEN-LAST:event_Haylike1MouseClicked
+
+    private void Herblike1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Herblike1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Herblike1);
+        intensidadVV(Herblike1);
+    }//GEN-LAST:event_Herblike1MouseClicked
+
+    private void PaperyM1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PaperyM1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(PaperyM1);
+        intensidadOtros(PaperyM1);
+    }//GEN-LAST:event_PaperyM1MouseClicked
+
+    private void Stale1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stale1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Stale1);
+        intensidadOtros(Stale1);
+    }//GEN-LAST:event_Stale1MouseClicked
+
+    private void Cardboard1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cardboard1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Cardboard1);
+        intensidadOtros(Cardboard1);
+    }//GEN-LAST:event_Cardboard1MouseClicked
+
+    private void Papery1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Papery1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Papery1);
+        intensidadOtros(Papery1);
+    }//GEN-LAST:event_Papery1MouseClicked
+
+    private void Woody1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Woody1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Woody1);
+        intensidadOtros(Woody1);
+    }//GEN-LAST:event_Woody1MouseClicked
+
+    private void MoldyDamp1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MoldyDamp1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(MoldyDamp1);
+        intensidadOtros(MoldyDamp1);
+    }//GEN-LAST:event_MoldyDamp1MouseClicked
+
+    private void MustyDusty1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MustyDusty1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(MustyDusty1);
+        intensidadOtros(MustyDusty1);
+    }//GEN-LAST:event_MustyDusty1MouseClicked
+
+    private void MustyEarthy1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MustyEarthy1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(MustyEarthy1);
+        intensidadOtros(MustyEarthy1);
+    }//GEN-LAST:event_MustyEarthy1MouseClicked
+
+    private void Animalic1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Animalic1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Animalic);
+        intensidadOtros(Animalic);
+    }//GEN-LAST:event_Animalic1MouseClicked
+
+    private void MeatyBrothy1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MeatyBrothy1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(MeatyBrothy1);
+        intensidadOtros(MeatyBrothy1);
+    }//GEN-LAST:event_MeatyBrothy1MouseClicked
+
+    private void Phenolic1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Phenolic1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Phenolic1);
+        intensidadOtros(Phenolic1);
+    }//GEN-LAST:event_Phenolic1MouseClicked
+
+    private void Chemical1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Chemical1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Chemical1);
+        intensidadOtros(Chemical1);
+    }//GEN-LAST:event_Chemical1MouseClicked
+
+    private void Bitter1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bitter1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Bitter1);
+        intensidadOtros(Bitter1);
+    }//GEN-LAST:event_Bitter1MouseClicked
+
+    private void Salty1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Salty1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Salty1);
+        intensidadOtros(Salty1);
+    }//GEN-LAST:event_Salty1MouseClicked
+
+    private void Medicinal1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Medicinal1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Medicinal1);
+        intensidadOtros(Medicinal1);
+    }//GEN-LAST:event_Medicinal1MouseClicked
+
+    private void Petroleum1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Petroleum1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Petroleum1);
+        intensidadOtros(Petroleum1);
+    }//GEN-LAST:event_Petroleum1MouseClicked
+
+    private void Skunky1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Skunky1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Skunky1);
+        intensidadOtros(Skunky1);
+    }//GEN-LAST:event_Skunky1MouseClicked
+
+    private void Rubber1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Rubber1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Rubber1);
+        intensidadOtros(Rubber1);
+    }//GEN-LAST:event_Rubber1MouseClicked
+
+    private void PipeTobacco1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PipeTobacco1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(PipeTobacco1);
+        intensidadTostado(PipeTobacco1);
+    }//GEN-LAST:event_PipeTobacco1MouseClicked
+
+    private void Tobacco1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tobacco1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Tobacco1);
+        intensidadTostado(Tobacco1);
+    }//GEN-LAST:event_Tobacco1MouseClicked
+
+    private void Burnt1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Burnt1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Burnt1);
+        intensidadTostado(Burnt1);
+    }//GEN-LAST:event_Burnt1MouseClicked
+
+    private void Acrid1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Acrid1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Acrid1);
+        intensidadTostado(Acrid1);
+    }//GEN-LAST:event_Acrid1MouseClicked
+
+    private void Ashy1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ashy1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Ashy1);
+        intensidadTostado(Ashy1);
+    }//GEN-LAST:event_Ashy1MouseClicked
+
+    private void Smoky1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Smoky1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Smoky1);
+        intensidadTostado(Smoky1);
+    }//GEN-LAST:event_Smoky1MouseClicked
+
+    private void BrownRoast1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BrownRoast1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(BrownRoast1);
+        intensidadTostado(BrownRoast1);
+    }//GEN-LAST:event_BrownRoast1MouseClicked
+
+    private void Cereal1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cereal1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Cereal1);
+        intensidadTostado(Cereal1);
+    }//GEN-LAST:event_Cereal1MouseClicked
+
+    private void Grain1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Grain1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Grain1);
+        intensidadTostado(Grain1);
+    }//GEN-LAST:event_Grain1MouseClicked
+
+    private void Malt1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Malt1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Malt1);
+        intensidadTostado(Malt1);
+    }//GEN-LAST:event_Malt1MouseClicked
+
+    private void Pungent1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pungent1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Pungent1);
+        intensidadEspecias(Pungent1);
+    }//GEN-LAST:event_Pungent1MouseClicked
+
+    private void Pepper1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pepper1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Pepper1);
+        intensidadEspecias(Pepper1);
+    }//GEN-LAST:event_Pepper1MouseClicked
+
+    private void Brownspices1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Brownspices1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Brownspices1);
+        intensidadEspecias(Brownspices1);
+    }//GEN-LAST:event_Brownspices1MouseClicked
+
+    private void Anise1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Anise1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Anise1);
+        intensidadEspecias(Anise1);
+    }//GEN-LAST:event_Anise1MouseClicked
+
+    private void Nutmeg1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Nutmeg1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Nutmeg1);
+        intensidadEspecias(Nutmeg1);
+    }//GEN-LAST:event_Nutmeg1MouseClicked
+
+    private void Cinnamon1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cinnamon1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Cinnamon1);
+        intensidadEspecias(Cinnamon1);
+    }//GEN-LAST:event_Cinnamon1MouseClicked
+
+    private void Clove1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Clove1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Clove1);
+        intensidadEspecias(Clove1);
+    }//GEN-LAST:event_Clove1MouseClicked
+
+    private void Nutty1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Nutty1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Nutty1);
+        intensidadNC(Nutty1);
+    }//GEN-LAST:event_Nutty1MouseClicked
+
+    private void Peanuts1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Peanuts1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Peanuts1);
+        intensidadNC(Peanuts1);
+    }//GEN-LAST:event_Peanuts1MouseClicked
+
+    private void Hazelenut1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Hazelenut1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Hazelenut1);
+        intensidadNC(Hazelenut1);
+    }//GEN-LAST:event_Hazelenut1MouseClicked
+
+    private void Almond1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Almond1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Almond1);
+        intensidadNC(Almond1);
+    }//GEN-LAST:event_Almond1MouseClicked
+
+    private void Cocoa1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cocoa1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Cocoa1);
+        intensidadNC(Cocoa1);
+    }//GEN-LAST:event_Cocoa1MouseClicked
+
+    private void Chocolate1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Chocolate1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Chocolate1);
+        intensidadNC(Chocolate1);
+    }//GEN-LAST:event_Chocolate1MouseClicked
+
+    private void DarkChocolate1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DarkChocolate1MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(DarkChocolate1);
+        intensidadNC(DarkChocolate1);
+    }//GEN-LAST:event_DarkChocolate1MouseClicked
+
+    private void BrownSugar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BrownSugar2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(BrownSugar2);
+        intensidadSweet(BrownSugar2);
+    }//GEN-LAST:event_BrownSugar2MouseClicked
+
+    private void Molasses2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Molasses2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Molasses2);
+        intensidadSweet(Molasses2);
+    }//GEN-LAST:event_Molasses2MouseClicked
+
+    private void MapleSugar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MapleSugar2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(MapleSugar2);
+        intensidadSweet(MapleSugar2);
+    }//GEN-LAST:event_MapleSugar2MouseClicked
+
+    private void Carmelized2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Carmelized2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Carmelized2);
+        intensidadSweet(Carmelized2);
+    }//GEN-LAST:event_Carmelized2MouseClicked
+
+    private void Honey2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Honey2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Honey2);
+        intensidadSweet(Honey2);
+    }//GEN-LAST:event_Honey2MouseClicked
+
+    private void Vanilla2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Vanilla2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Vanilla2);
+        intensidadSweet(Vanilla2);
+    }//GEN-LAST:event_Vanilla2MouseClicked
+
+    private void Blacktea2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Blacktea2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Blacktea2);
+        intensidadFloral(Blacktea2);
+    }//GEN-LAST:event_Blacktea2MouseClicked
+
+    private void Chamomile2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Chamomile2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Chamomile2);
+        intensidadFloral(Chamomile2);
+    }//GEN-LAST:event_Chamomile2MouseClicked
+
+    private void Rose2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Rose2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Rose2);
+        intensidadFloral(Rose2);
+    }//GEN-LAST:event_Rose2MouseClicked
+
+    private void Jasmine2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Jasmine2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Jasmine2);
+        intensidadFloral(Jasmine2);
+    }//GEN-LAST:event_Jasmine2MouseClicked
+
+    private void Berry2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Berry2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Berry2);
+        intensidadFrutal(Berry2);
+    }//GEN-LAST:event_Berry2MouseClicked
+
+    private void Blackberry2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Blackberry2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Blackberry2);
+        intensidadFrutal(Blackberry2);
+    }//GEN-LAST:event_Blackberry2MouseClicked
+
+    private void Raspberry2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Raspberry2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Raspberry2);
+        intensidadFrutal(Raspberry2);
+    }//GEN-LAST:event_Raspberry2MouseClicked
+
+    private void Blueberry2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Blueberry2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Blueberry2);
+        intensidadFrutal(Blueberry2);
+    }//GEN-LAST:event_Blueberry2MouseClicked
+
+    private void Strawberry2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Strawberry2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Strawberry2);
+        intensidadFrutal(Strawberry2);
+    }//GEN-LAST:event_Strawberry2MouseClicked
+
+    private void DriedFruit2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DriedFruit2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(DriedFruit2);
+        intensidadFrutal(DriedFruit2);
+    }//GEN-LAST:event_DriedFruit2MouseClicked
+
+    private void Raisen2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Raisen2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Raisen2);
+        intensidadFrutal(Raisen2);
+    }//GEN-LAST:event_Raisen2MouseClicked
+
+    private void Prune2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Prune2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Prune2);
+        intensidadFrutal(Prune2);
+    }//GEN-LAST:event_Prune2MouseClicked
+
+    private void Otherfruit2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Otherfruit2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Otherfruit2);
+        intensidadFrutal(Otherfruit2);
+    }//GEN-LAST:event_Otherfruit2MouseClicked
+
+    private void Coconut2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Coconut2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Coconut2);
+        intensidadFrutal(Coconut2);
+    }//GEN-LAST:event_Coconut2MouseClicked
+
+    private void Cherry2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cherry2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Cherry2);
+        intensidadFrutal(Cherry2);
+    }//GEN-LAST:event_Cherry2MouseClicked
+
+    private void Pomagranite2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pomagranite2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Pomagranite2);
+        intensidadFrutal(Pomagranite2);
+    }//GEN-LAST:event_Pomagranite2MouseClicked
+
+    private void Pinneapple2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pinneapple2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Pinneapple2);
+        intensidadFrutal(Pinneapple2);
+    }//GEN-LAST:event_Pinneapple2MouseClicked
+
+    private void Grape2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Grape2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Grape2);
+        intensidadFrutal(Grape2);
+    }//GEN-LAST:event_Grape2MouseClicked
+
+    private void Apple2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Apple2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Apple2);
+        intensidadFrutal(Apple2);
+    }//GEN-LAST:event_Apple2MouseClicked
+
+    private void Peach2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Peach2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Peach2);
+        intensidadFrutal(Peach2);
+    }//GEN-LAST:event_Peach2MouseClicked
+
+    private void Pear2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pear2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Pear2);
+        intensidadFrutal(Pear2);
+    }//GEN-LAST:event_Pear2MouseClicked
+
+    private void Citrusfruit2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Citrusfruit2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Citrusfruit2);
+        intensidadFrutal(Citrusfruit2);
+    }//GEN-LAST:event_Citrusfruit2MouseClicked
+
+    private void Grapefruit2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Grapefruit2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Grapefruit2);
+        intensidadFrutal(Grapefruit2);
+    }//GEN-LAST:event_Grapefruit2MouseClicked
+
+    private void Orange2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Orange2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Orange2);
+        intensidadFrutal(Orange2);
+    }//GEN-LAST:event_Orange2MouseClicked
+
+    private void Lemon2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lemon2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Lemon2);
+        intensidadFrutal(Lemon2);
+    }//GEN-LAST:event_Lemon2MouseClicked
+
+    private void Lime2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lime2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Lime2);
+        intensidadFrutal(Lime2);
+    }//GEN-LAST:event_Lime2MouseClicked
+
+    private void sour2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sour2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(sour2);
+        intensidadAcFm(sour2);
+    }//GEN-LAST:event_sour2MouseClicked
+
+    private void Vinegar2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Vinegar2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Vinegar2);
+        intensidadAcFm(Vinegar2);
+    }//GEN-LAST:event_Vinegar2MouseClicked
+
+    private void Rancidbutter2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Rancidbutter2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Rancidbutter2);
+        intensidadAcFm(Rancidbutter2);
+    }//GEN-LAST:event_Rancidbutter2MouseClicked
+
+    private void RancidCheese2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RancidCheese2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(RancidCheese2);
+        intensidadAcFm(RancidCheese2);
+    }//GEN-LAST:event_RancidCheese2MouseClicked
+
+    private void OrangeAcidity2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OrangeAcidity2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(OrangeAcidity2);
+        intensidadAcFm(OrangeAcidity2);
+    }//GEN-LAST:event_OrangeAcidity2MouseClicked
+
+    private void AppleAcidity2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AppleAcidity2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(AppleAcidity2);
+        intensidadAcFm(AppleAcidity2);
+    }//GEN-LAST:event_AppleAcidity2MouseClicked
+
+    private void Alcohol2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Alcohol2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Alcohol2);
+        intensidadAcFm(Alcohol2);
+    }//GEN-LAST:event_Alcohol2MouseClicked
+
+    private void Winey2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Winey2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Winey2);
+        intensidadAcFm(Winey2);
+    }//GEN-LAST:event_Winey2MouseClicked
+
+    private void Whiskey2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Whiskey2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Whiskey2);
+        intensidadAcFm(Whiskey2);
+    }//GEN-LAST:event_Whiskey2MouseClicked
+
+    private void Fermented2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Fermented2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Fermented2);
+        intensidadAcFm(Fermented2);
+    }//GEN-LAST:event_Fermented2MouseClicked
+
+    private void Overripe2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Overripe2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Overripe2);
+        intensidadAcFm(Overripe2);
+    }//GEN-LAST:event_Overripe2MouseClicked
+
+    private void OliveOil2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OliveOil2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(OliveOil2);
+        intensidadVV(OliveOil2);
+    }//GEN-LAST:event_OliveOil2MouseClicked
+
+    private void Raw2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Raw2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Raw2);
+        intensidadVV(Raw2);
+    }//GEN-LAST:event_Raw2MouseClicked
+
+    private void Beany2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Beany2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Beany2);
+        intensidadVV(Beany2);
+    }//GEN-LAST:event_Beany2MouseClicked
+
+    private void Underripe2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Underripe2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Underripe2);
+        intensidadVV(Underripe2);
+    }//GEN-LAST:event_Underripe2MouseClicked
+
+    private void Peapod2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Peapod2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Peapod2);
+        intensidadVV(Peapod2);
+    }//GEN-LAST:event_Peapod2MouseClicked
+
+    private void Fresh2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Fresh2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Fresh2);
+        intensidadVV(Fresh2);
+    }//GEN-LAST:event_Fresh2MouseClicked
+
+    private void DarkGreen2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DarkGreen2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(DarkGreen2);
+        intensidadVV(DarkGreen2);
+    }//GEN-LAST:event_DarkGreen2MouseClicked
+
+    private void Vegetative2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Vegetative2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Vegetative2);
+        intensidadVV(Vegetative2);
+    }//GEN-LAST:event_Vegetative2MouseClicked
+
+    private void Haylike2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Haylike2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Haylike2);
+        intensidadVV(Haylike2);
+    }//GEN-LAST:event_Haylike2MouseClicked
+
+    private void Herblike2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Herblike2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Herblike2);
+        intensidadVV(Herblike2);
+    }//GEN-LAST:event_Herblike2MouseClicked
+
+    private void PaperyM2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PaperyM2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(PaperyM2);
+        intensidadOtros(PaperyM2);
+    }//GEN-LAST:event_PaperyM2MouseClicked
+
+    private void Stale2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stale2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Stale2);
+        intensidadOtros(Stale2);
+    }//GEN-LAST:event_Stale2MouseClicked
+
+    private void Cardboard2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cardboard2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Cardboard2);
+        intensidadOtros(Cardboard2);
+    }//GEN-LAST:event_Cardboard2MouseClicked
+
+    private void Papery2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Papery2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Papery2);
+        intensidadOtros(Papery2);
+    }//GEN-LAST:event_Papery2MouseClicked
+
+    private void Woody2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Woody2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Woody2);
+        intensidadOtros(Woody2);
+    }//GEN-LAST:event_Woody2MouseClicked
+
+    private void MoldyDamp2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MoldyDamp2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(MoldyDamp2);
+        intensidadOtros(MoldyDamp2);
+    }//GEN-LAST:event_MoldyDamp2MouseClicked
+
+    private void MustyDusty2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MustyDusty2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(MustyDusty2);
+        intensidadOtros(MustyDusty2);
+    }//GEN-LAST:event_MustyDusty2MouseClicked
+
+    private void MustyEarthy2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MustyEarthy2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(MustyEarthy2);
+        intensidadOtros(MustyEarthy2);
+    }//GEN-LAST:event_MustyEarthy2MouseClicked
+
+    private void Animalic2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Animalic2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Animalic2);
+        intensidadOtros(Animalic2);
+    }//GEN-LAST:event_Animalic2MouseClicked
+
+    private void MeatyBrothy2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MeatyBrothy2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(MeatyBrothy2);
+        intensidadOtros(MeatyBrothy2);
+    }//GEN-LAST:event_MeatyBrothy2MouseClicked
+
+    private void Phenolic2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Phenolic2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Phenolic2);
+        intensidadOtros(Phenolic2);
+    }//GEN-LAST:event_Phenolic2MouseClicked
+
+    private void Chemical2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Chemical2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Chemical2);
+        intensidadOtros(Chemical2);
+    }//GEN-LAST:event_Chemical2MouseClicked
+
+    private void Bitter2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bitter2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Bitter2);
+        intensidadOtros(Bitter2);
+    }//GEN-LAST:event_Bitter2MouseClicked
+
+    private void Salty2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Salty2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Salty2);
+        intensidadOtros(Salty2);
+    }//GEN-LAST:event_Salty2MouseClicked
+
+    private void Medicinal2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Medicinal2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Medicinal2);
+        intensidadOtros(Medicinal2);
+    }//GEN-LAST:event_Medicinal2MouseClicked
+
+    private void Petroleum2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Petroleum2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Petroleum2);
+        intensidadOtros(Petroleum2);
+    }//GEN-LAST:event_Petroleum2MouseClicked
+
+    private void Skunky2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Skunky2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Skunky2);
+        intensidadOtros(Skunky2);
+    }//GEN-LAST:event_Skunky2MouseClicked
+
+    private void Rubber2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Rubber2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Rubber2);
+        intensidadOtros(Rubber2);
+    }//GEN-LAST:event_Rubber2MouseClicked
+
+    private void PipeTobacco2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PipeTobacco2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(PipeTobacco2);
+        intensidadTostado(PipeTobacco2);
+    }//GEN-LAST:event_PipeTobacco2MouseClicked
+
+    private void Tobacco2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tobacco2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Tobacco2);
+        intensidadTostado(Tobacco2);
+    }//GEN-LAST:event_Tobacco2MouseClicked
+
+    private void Burnt2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Burnt2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Burnt2);
+        intensidadTostado(Burnt2);
+    }//GEN-LAST:event_Burnt2MouseClicked
+
+    private void Acrid2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Acrid2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Acrid2);
+        intensidadTostado(Acrid2);
+    }//GEN-LAST:event_Acrid2MouseClicked
+
+    private void Ashy2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ashy2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Ashy2);
+        intensidadTostado(Ashy2);
+    }//GEN-LAST:event_Ashy2MouseClicked
+
+    private void Smoky2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Smoky2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Smoky2);
+        intensidadTostado(Smoky2);
+    }//GEN-LAST:event_Smoky2MouseClicked
+
+    private void BrownRoast2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BrownRoast2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(BrownRoast2);
+        intensidadTostado(BrownRoast2);
+    }//GEN-LAST:event_BrownRoast2MouseClicked
+
+    private void Cereal2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cereal2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Cereal2);
+        intensidadTostado(Cereal2);
+    }//GEN-LAST:event_Cereal2MouseClicked
+
+    private void Grain2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Grain2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Grain2);
+        intensidadTostado(Grain2);
+    }//GEN-LAST:event_Grain2MouseClicked
+
+    private void Malt2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Malt2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Malt2);
+        intensidadTostado(Malt2);
+    }//GEN-LAST:event_Malt2MouseClicked
+
+    private void Pungent2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pungent2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Pungent2);
+        intensidadEspecias(Pungent2);
+    }//GEN-LAST:event_Pungent2MouseClicked
+
+    private void Pepper2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pepper2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Pepper2);
+        intensidadEspecias(Pepper2);
+    }//GEN-LAST:event_Pepper2MouseClicked
+
+    private void Brownspices2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Brownspices2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Brownspices2);
+        intensidadEspecias(Brownspices2);
+    }//GEN-LAST:event_Brownspices2MouseClicked
+
+    private void Anise2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Anise2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Anise2);
+        intensidadEspecias(Anise2);
+    }//GEN-LAST:event_Anise2MouseClicked
+
+    private void Nutmeg2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Nutmeg2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Nutmeg2);
+        intensidadEspecias(Nutmeg2);
+    }//GEN-LAST:event_Nutmeg2MouseClicked
+
+    private void Cinnamon2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cinnamon2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Cinnamon2);
+        intensidadEspecias(Cinnamon2);
+    }//GEN-LAST:event_Cinnamon2MouseClicked
+
+    private void Clove2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Clove2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Clove2);
+        intensidadEspecias(Clove2);
+    }//GEN-LAST:event_Clove2MouseClicked
+
+    private void Nutty2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Nutty2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Nutty2);
+        intensidadNC(Nutty2);
+    }//GEN-LAST:event_Nutty2MouseClicked
+
+    private void Peanuts2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Peanuts2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Peanuts2);
+        intensidadNC(Peanuts2);
+    }//GEN-LAST:event_Peanuts2MouseClicked
+
+    private void Hazelenut2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Hazelenut2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Hazelenut2);
+        intensidadNC(Hazelenut2);
+    }//GEN-LAST:event_Hazelenut2MouseClicked
+
+    private void Almond2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Almond2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Almond2);
+        intensidadNC(Almond2);
+    }//GEN-LAST:event_Almond2MouseClicked
+
+    private void Cocoa2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cocoa2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Cocoa2);
+        intensidadNC(Cocoa2);
+    }//GEN-LAST:event_Cocoa2MouseClicked
+
+    private void Chocolate2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Chocolate2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Chocolate2);
+        intensidadNC(Chocolate2);
+    }//GEN-LAST:event_Chocolate2MouseClicked
+
+    private void DarkChocolate2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DarkChocolate2MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(DarkChocolate2);
+        intensidadNC(DarkChocolate2);
+    }//GEN-LAST:event_DarkChocolate2MouseClicked
+
+    private void BrownSugar3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BrownSugar3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(BrownSugar3);
+        intensidadSweet(BrownSugar3);
+    }//GEN-LAST:event_BrownSugar3MouseClicked
+
+    private void Molasses3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Molasses3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Molasses3);
+        intensidadSweet(Molasses3);
+    }//GEN-LAST:event_Molasses3MouseClicked
+
+    private void MapleSugar3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MapleSugar3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(MapleSugar3);
+        intensidadSweet(MapleSugar3);
+    }//GEN-LAST:event_MapleSugar3MouseClicked
+
+    private void Carmelized3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Carmelized3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Carmelized3);
+        intensidadSweet(Carmelized3);
+    }//GEN-LAST:event_Carmelized3MouseClicked
+
+    private void Honey3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Honey3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Honey3);
+        intensidadSweet(Honey3);
+    }//GEN-LAST:event_Honey3MouseClicked
+
+    private void Vanilla3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Vanilla3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Vanilla3);
+        intensidadSweet(Vanilla3);
+    }//GEN-LAST:event_Vanilla3MouseClicked
+
+    private void Blacktea3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Blacktea3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Blacktea3);
+        intensidadFloral(Blacktea3);
+    }//GEN-LAST:event_Blacktea3MouseClicked
+
+    private void Chamomile3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Chamomile3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Chamomile3);
+        intensidadFloral(Chamomile3);
+    }//GEN-LAST:event_Chamomile3MouseClicked
+
+    private void Rose3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Rose3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Rose3);
+        intensidadFloral(Rose3);
+    }//GEN-LAST:event_Rose3MouseClicked
+
+    private void Jasmine3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Jasmine3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Jasmine3);
+        intensidadFloral(Jasmine3);
+    }//GEN-LAST:event_Jasmine3MouseClicked
+
+    private void Berry3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Berry3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Berry3);
+        intensidadFrutal(Berry3);
+    }//GEN-LAST:event_Berry3MouseClicked
+
+    private void Blackberry3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Blackberry3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Blackberry3);
+        intensidadFrutal(Blackberry3);
+    }//GEN-LAST:event_Blackberry3MouseClicked
+
+    private void Raspberry3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Raspberry3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Raspberry3);
+        intensidadFrutal(Raspberry3);
+    }//GEN-LAST:event_Raspberry3MouseClicked
+
+    private void Blueberry3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Blueberry3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Blueberry3);
+        intensidadFrutal(Blueberry3);
+    }//GEN-LAST:event_Blueberry3MouseClicked
+
+    private void Strawberry3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Strawberry3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Strawberry3);
+        intensidadFrutal(Strawberry3);
+    }//GEN-LAST:event_Strawberry3MouseClicked
+
+    private void DriedFruit3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DriedFruit3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(DriedFruit3);
+        intensidadFrutal(DriedFruit3);
+    }//GEN-LAST:event_DriedFruit3MouseClicked
+
+    private void Raisen3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Raisen3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Raisen3);
+        intensidadFrutal(Raisen3);
+    }//GEN-LAST:event_Raisen3MouseClicked
+
+    private void Prune3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Prune3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Prune3);
+        intensidadFrutal(Prune3);
+    }//GEN-LAST:event_Prune3MouseClicked
+
+    private void Otherfruit3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Otherfruit3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Otherfruit3);
+        intensidadFrutal(Otherfruit3);
+    }//GEN-LAST:event_Otherfruit3MouseClicked
+
+    private void Coconut3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Coconut3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Coconut3);
+        intensidadFrutal(Coconut3);
+    }//GEN-LAST:event_Coconut3MouseClicked
+
+    private void Cherry3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cherry3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Cherry3);
+        intensidadFrutal(Cherry3);
+    }//GEN-LAST:event_Cherry3MouseClicked
+
+    private void Pomagranite3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pomagranite3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Pomagranite3);
+        intensidadFrutal(Pomagranite3);
+    }//GEN-LAST:event_Pomagranite3MouseClicked
+
+    private void Pinneapple3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pinneapple3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Pinneapple3);
+        intensidadFrutal(Pinneapple3);
+    }//GEN-LAST:event_Pinneapple3MouseClicked
+
+    private void Grape3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Grape3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Grape3);
+        intensidadFrutal(Grape3);
+    }//GEN-LAST:event_Grape3MouseClicked
+
+    private void Apple3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Apple3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Apple3);
+        intensidadFrutal(Apple3);
+    }//GEN-LAST:event_Apple3MouseClicked
+
+    private void Peach3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Peach3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Peach3);
+        intensidadFrutal(Peach3);
+    }//GEN-LAST:event_Peach3MouseClicked
+
+    private void Pear3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pear3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Pear3);
+        intensidadFrutal(Pear3);
+    }//GEN-LAST:event_Pear3MouseClicked
+
+    private void Citrusfruit3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Citrusfruit3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Citrusfruit3);
+        intensidadFrutal(Citrusfruit3);
+    }//GEN-LAST:event_Citrusfruit3MouseClicked
+
+    private void Grapefruit3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Grapefruit3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Grapefruit3);
+        intensidadFrutal(Grapefruit3);
+    }//GEN-LAST:event_Grapefruit3MouseClicked
+
+    private void Orange3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Orange3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Orange3);
+        intensidadFrutal(Orange3);
+    }//GEN-LAST:event_Orange3MouseClicked
+
+    private void Lemon3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lemon3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Lemon3);
+        intensidadFrutal(Lemon3);
+    }//GEN-LAST:event_Lemon3MouseClicked
+
+    private void Lime3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Lime3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Lime3);
+        intensidadFrutal(Lime3);
+    }//GEN-LAST:event_Lime3MouseClicked
+
+    private void sour3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sour3MouseClicked
+        // TODO add your handling code here:intensidadSabor(sour);
+        intensidadSabor(sour3);
+        intensidadAcFm(sour3);
+    }//GEN-LAST:event_sour3MouseClicked
+
+    private void Vinegar3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Vinegar3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Vinegar3);
+        intensidadAcFm(Vinegar3);
+    }//GEN-LAST:event_Vinegar3MouseClicked
+
+    private void Rancidbutter3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Rancidbutter3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Rancidbutter3);
+        intensidadAcFm(Rancidbutter3);
+    }//GEN-LAST:event_Rancidbutter3MouseClicked
+
+    private void RancidCheese3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_RancidCheese3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(RancidCheese3);
+        intensidadAcFm(RancidCheese3);
+    }//GEN-LAST:event_RancidCheese3MouseClicked
+
+    private void OrangeAcidity3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OrangeAcidity3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(OrangeAcidity3);
+        intensidadAcFm(OrangeAcidity3);
+    }//GEN-LAST:event_OrangeAcidity3MouseClicked
+
+    private void AppleAcidity3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_AppleAcidity3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(AppleAcidity3);
+        intensidadAcFm(AppleAcidity3);
+    }//GEN-LAST:event_AppleAcidity3MouseClicked
+
+    private void Alcohol3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Alcohol3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Alcohol3);
+        intensidadAcFm(Alcohol3);
+    }//GEN-LAST:event_Alcohol3MouseClicked
+
+    private void Winey3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Winey3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Winey3);
+        intensidadAcFm(Winey3);
+    }//GEN-LAST:event_Winey3MouseClicked
+
+    private void Whiskey3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Whiskey3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Whiskey3);
+        intensidadAcFm(Whiskey3);
+    }//GEN-LAST:event_Whiskey3MouseClicked
+
+    private void Fermented3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Fermented3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Fermented3);
+        intensidadAcFm(Fermented3);
+    }//GEN-LAST:event_Fermented3MouseClicked
+
+    private void Overripe3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Overripe3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Overripe3);
+        intensidadAcFm(Overripe3);
+    }//GEN-LAST:event_Overripe3MouseClicked
+
+    private void OliveOil3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_OliveOil3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(OliveOil3);
+        intensidadVV(OliveOil3);
+    }//GEN-LAST:event_OliveOil3MouseClicked
+
+    private void Raw3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Raw3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Raw3);
+        intensidadVV(Raw3);
+    }//GEN-LAST:event_Raw3MouseClicked
+
+    private void Beany3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Beany3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Beany3);
+        intensidadVV(Beany3);
+    }//GEN-LAST:event_Beany3MouseClicked
+
+    private void Underripe3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Underripe3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Underripe3);
+        intensidadVV(Underripe3);
+    }//GEN-LAST:event_Underripe3MouseClicked
+
+    private void Peapod3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Peapod3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Peapod3);
+        intensidadVV(Peapod3);
+    }//GEN-LAST:event_Peapod3MouseClicked
+
+    private void Fresh3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Fresh3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Fresh3);
+        intensidadVV(Fresh3);
+    }//GEN-LAST:event_Fresh3MouseClicked
+
+    private void DarkGreen3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DarkGreen3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(DarkGreen3);
+        intensidadVV(DarkGreen3);
+    }//GEN-LAST:event_DarkGreen3MouseClicked
+
+    private void Vegetative3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Vegetative3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Vegetative3);
+        intensidadVV(Vegetative3);
+    }//GEN-LAST:event_Vegetative3MouseClicked
+
+    private void Haylike3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Haylike3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Haylike3);
+        intensidadVV(Haylike3);
+    }//GEN-LAST:event_Haylike3MouseClicked
+
+    private void Herblike3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Herblike3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Herblike3);
+        intensidadVV(Herblike3);
+    }//GEN-LAST:event_Herblike3MouseClicked
+
+    private void PaperyM3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PaperyM3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(PaperyM3);
+        intensidadOtros(PaperyM3);
+    }//GEN-LAST:event_PaperyM3MouseClicked
+
+    private void Stale3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Stale3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Stale3);
+        intensidadOtros(Stale3);
+    }//GEN-LAST:event_Stale3MouseClicked
+
+    private void Cardboard3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cardboard3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Cardboard3);
+        intensidadOtros(Cardboard3);
+    }//GEN-LAST:event_Cardboard3MouseClicked
+
+    private void Papery3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Papery3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Papery3);
+        intensidadOtros(Papery3);
+    }//GEN-LAST:event_Papery3MouseClicked
+
+    private void Woody3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Woody3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Woody3);
+        intensidadOtros(Woody3);
+    }//GEN-LAST:event_Woody3MouseClicked
+
+    private void MoldyDamp3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MoldyDamp3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(MoldyDamp3);
+        intensidadOtros(MoldyDamp3);
+    }//GEN-LAST:event_MoldyDamp3MouseClicked
+
+    private void MustyDusty3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MustyDusty3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(MustyDusty3);
+        intensidadOtros(MustyDusty3);
+    }//GEN-LAST:event_MustyDusty3MouseClicked
+
+    private void MustyEarthy3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MustyEarthy3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(MustyEarthy3);
+        intensidadOtros(MustyEarthy3);
+    }//GEN-LAST:event_MustyEarthy3MouseClicked
+
+    private void Animalic3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Animalic3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Animalic3);
+        intensidadOtros(Animalic3);
+    }//GEN-LAST:event_Animalic3MouseClicked
+
+    private void MeatyBrothy3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_MeatyBrothy3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(MeatyBrothy3);
+        intensidadOtros(MeatyBrothy3);
+    }//GEN-LAST:event_MeatyBrothy3MouseClicked
+
+    private void Phenolic3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Phenolic3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Phenolic3);
+        intensidadOtros(Phenolic3);
+    }//GEN-LAST:event_Phenolic3MouseClicked
+
+    private void Chemical3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Chemical3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Chemical3);
+        intensidadOtros(Chemical3);
+    }//GEN-LAST:event_Chemical3MouseClicked
+
+    private void Bitter3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Bitter3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Bitter3);
+        intensidadOtros(Bitter3);
+    }//GEN-LAST:event_Bitter3MouseClicked
+
+    private void Salty3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Salty3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Salty3);
+        intensidadOtros(Salty3);
+    }//GEN-LAST:event_Salty3MouseClicked
+
+    private void Medicinal3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Medicinal3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Medicinal3);
+        intensidadOtros(Medicinal3);
+    }//GEN-LAST:event_Medicinal3MouseClicked
+
+    private void Petroleum3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Petroleum3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Petroleum3);
+        intensidadOtros(Petroleum3);
+    }//GEN-LAST:event_Petroleum3MouseClicked
+
+    private void Skunky3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Skunky3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Skunky3);
+        intensidadOtros(Skunky3);
+    }//GEN-LAST:event_Skunky3MouseClicked
+
+    private void Rubber3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Rubber3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Rubber3);
+        intensidadOtros(Rubber3);
+    }//GEN-LAST:event_Rubber3MouseClicked
+
+    private void PipeTobacco3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_PipeTobacco3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(PipeTobacco3);
+        intensidadTostado(PipeTobacco3);
+    }//GEN-LAST:event_PipeTobacco3MouseClicked
+
+    private void Tobacco3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Tobacco3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Tobacco3);
+        intensidadTostado(Tobacco3);
+    }//GEN-LAST:event_Tobacco3MouseClicked
+
+    private void Burnt3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Burnt3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Burnt3);
+        intensidadTostado(Burnt3);
+    }//GEN-LAST:event_Burnt3MouseClicked
+
+    private void Acrid3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Acrid3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Acrid3);
+        intensidadTostado(Acrid3);
+    }//GEN-LAST:event_Acrid3MouseClicked
+
+    private void Ashy3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Ashy3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Ashy3);
+        intensidadTostado(Ashy3);
+    }//GEN-LAST:event_Ashy3MouseClicked
+
+    private void Smoky3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Smoky3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Smoky3);
+        intensidadTostado(Smoky3);
+    }//GEN-LAST:event_Smoky3MouseClicked
+
+    private void BrownRoast3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_BrownRoast3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(BrownRoast3);
+        intensidadTostado(BrownRoast3);
+    }//GEN-LAST:event_BrownRoast3MouseClicked
+
+    private void Cereal3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cereal3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Cereal3);
+        intensidadTostado(Cereal3);
+    }//GEN-LAST:event_Cereal3MouseClicked
+
+    private void Grain3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Grain3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Grain3);
+        intensidadTostado(Grain3);
+    }//GEN-LAST:event_Grain3MouseClicked
+
+    private void Malt3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Malt3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Malt3);
+        intensidadTostado(Malt3);
+    }//GEN-LAST:event_Malt3MouseClicked
+
+    private void Pungent3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pungent3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Pungent3);
+        intensidadEspecias(Pungent3);
+    }//GEN-LAST:event_Pungent3MouseClicked
+
+    private void Pepper3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Pepper3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Pepper3);
+        intensidadEspecias(Pepper3);
+    }//GEN-LAST:event_Pepper3MouseClicked
+
+    private void Brownspices3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Brownspices3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Brownspices3);
+        intensidadEspecias(Brownspices3);
+    }//GEN-LAST:event_Brownspices3MouseClicked
+
+    private void Anise3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Anise3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Anise3);
+        intensidadEspecias(Anise3);
+    }//GEN-LAST:event_Anise3MouseClicked
+
+    private void Nutmeg3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Nutmeg3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Nutmeg3);
+        intensidadEspecias(Nutmeg3);
+    }//GEN-LAST:event_Nutmeg3MouseClicked
+
+    private void Cinnamon3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cinnamon3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Cinnamon3);
+        intensidadEspecias(Cinnamon3);
+    }//GEN-LAST:event_Cinnamon3MouseClicked
+
+    private void Clove3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Clove3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Clove3);
+        intensidadEspecias(Clove3);
+    }//GEN-LAST:event_Clove3MouseClicked
+
+    private void Nutty3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Nutty3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Nutty3);
+        intensidadNC(Nutty3);
+    }//GEN-LAST:event_Nutty3MouseClicked
+
+    private void Peanuts3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Peanuts3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Peanuts3);
+        intensidadNC(Peanuts3);
+    }//GEN-LAST:event_Peanuts3MouseClicked
+
+    private void Hazelenut3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Hazelenut3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Hazelenut3);
+        intensidadNC(Hazelenut3);
+    }//GEN-LAST:event_Hazelenut3MouseClicked
+
+    private void Almond3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Almond3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Almond3);
+        intensidadNC(Almond3);
+    }//GEN-LAST:event_Almond3MouseClicked
+
+    private void Cocoa3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Cocoa3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Cocoa3);
+        intensidadNC(Cocoa3);
+    }//GEN-LAST:event_Cocoa3MouseClicked
+
+    private void Chocolate3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_Chocolate3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(Chocolate3);
+        intensidadNC(Chocolate3);
+    }//GEN-LAST:event_Chocolate3MouseClicked
+
+    private void DarkChocolate3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_DarkChocolate3MouseClicked
+        // TODO add your handling code here:
+        intensidadSabor(DarkChocolate3);
+        intensidadNC(DarkChocolate3);
+    }//GEN-LAST:event_DarkChocolate3MouseClicked
+
+    int cont = 0;
+    Color original = new Color(255, 241, 144);
+
     public void guardar() {
         String fecha = null;
         if (calendario.getDate() != null) {
@@ -11752,7 +12595,7 @@ if (quakers.getText().equals("")) {
             nt = 1;
         }
         if (nt2.isSelected()) {
-            nt = 2;     
+            nt = 2;
         }
         if (nt3.isSelected()) {
             nt = 3;
@@ -11765,7 +12608,7 @@ if (quakers.getText().equals("")) {
         }
         int dv = 0, wv = 0, bv = 0, fv = 0, av = 0, acv = 0, bov = 0;
         String d = " ", w = " ", b = " ", f = " ", a = " ", ac = " ", bo = " ", Flavors = " ";
-      if (Sweet.isSelected()) {
+        if (Sweet.isSelected()) {
             if (dv == 0) {
                 d = d + Sweet.getText();
             } else {
@@ -11773,7 +12616,7 @@ if (quakers.getText().equals("")) {
             }
             dv = 1;
         }
-      if (Floral.isSelected()) {
+        if (Floral.isSelected()) {
             if (dv == 0) {
                 d = d + Floral.getText();
             } else {
@@ -11781,7 +12624,7 @@ if (quakers.getText().equals("")) {
             }
             dv = 1;
         }
-      if (Fruity.isSelected()) {
+        if (Fruity.isSelected()) {
             if (dv == 0) {
                 d = d + Fruity.getText();
             } else {
@@ -11789,7 +12632,7 @@ if (quakers.getText().equals("")) {
             }
             dv = 1;
         }
-       if (Berry.isSelected()) {
+        if (Berry.isSelected()) {
             if (dv == 0) {
                 d = d + Berry.getText();
             } else {
@@ -11805,7 +12648,7 @@ if (quakers.getText().equals("")) {
             }
             dv = 1;
         }
-         if (Otherfruit.isSelected()) {
+        if (Otherfruit.isSelected()) {
             if (dv == 0) {
                 d = d + Otherfruit.getText();
             } else {
@@ -11813,7 +12656,7 @@ if (quakers.getText().equals("")) {
             }
             dv = 1;
         }
-          if (Citrusfruit.isSelected()) {
+        if (Citrusfruit.isSelected()) {
             if (dv == 0) {
                 d = d + Citrusfruit.getText();
             } else {
@@ -11821,7 +12664,7 @@ if (quakers.getText().equals("")) {
             }
             dv = 1;
         }
-         if (Sour.isSelected()) {
+        if (Sour.isSelected()) {
             if (dv == 0) {
                 d = d + Sour.getText();
             } else {
@@ -11829,7 +12672,7 @@ if (quakers.getText().equals("")) {
             }
             dv = 1;
         }
-          if (sour.isSelected()) {
+        if (sour.isSelected()) {
             if (dv == 0) {
                 d = d + sour.getText();
             } else {
@@ -11837,7 +12680,7 @@ if (quakers.getText().equals("")) {
             }
             dv = 1;
         }
-           if (Alcohol.isSelected()) {
+        if (Alcohol.isSelected()) {
             if (dv == 0) {
                 d = d + Alcohol.getText();
             } else {
@@ -11845,7 +12688,7 @@ if (quakers.getText().equals("")) {
             }
             dv = 1;
         }
-            if (Green.isSelected()) {
+        if (Green.isSelected()) {
             if (dv == 0) {
                 d = d + Green.getText();
             } else {
@@ -11861,7 +12704,7 @@ if (quakers.getText().equals("")) {
             }
             dv = 1;
         }
-         if (PaperyM.isSelected()) {
+        if (PaperyM.isSelected()) {
             if (dv == 0) {
                 d = d + PaperyM.getText();
             } else {
@@ -11869,7 +12712,7 @@ if (quakers.getText().equals("")) {
             }
             dv = 1;
         }
-          if (Chemical.isSelected()) {
+        if (Chemical.isSelected()) {
             if (dv == 0) {
                 d = d + Chemical.getText();
             } else {
@@ -11885,7 +12728,7 @@ if (quakers.getText().equals("")) {
             }
             dv = 1;
         }
-         if (Burnt.isSelected()) {
+        if (Burnt.isSelected()) {
             if (dv == 0) {
                 d = d + Burnt.getText();
             } else {
@@ -11893,7 +12736,7 @@ if (quakers.getText().equals("")) {
             }
             dv = 1;
         }
-          if (Cereal.isSelected()) {
+        if (Cereal.isSelected()) {
             if (dv == 0) {
                 d = d + Cereal.getText();
             } else {
@@ -11901,7 +12744,7 @@ if (quakers.getText().equals("")) {
             }
             dv = 1;
         }
-         if (Spices.isSelected()) {
+        if (Spices.isSelected()) {
             if (dv == 0) {
                 d = d + Spices.getText();
             } else {
@@ -11909,7 +12752,7 @@ if (quakers.getText().equals("")) {
             }
             dv = 1;
         }
-         if (Brownspices.isSelected()) {
+        if (Brownspices.isSelected()) {
             if (dv == 0) {
                 d = d + Brownspices.getText();
             } else {
@@ -11925,7 +12768,7 @@ if (quakers.getText().equals("")) {
             }
             dv = 1;
         }
-          if (Cocoa.isSelected()) {
+        if (Cocoa.isSelected()) {
             if (dv == 0) {
                 d = d + Cocoa.getText();
             } else {
@@ -11933,7 +12776,7 @@ if (quakers.getText().equals("")) {
             }
             dv = 1;
         }
-        
+
         if (BrownSugar.isSelected()) {
             if (dv == 0) {
                 d = d + BrownSugar.getText();
@@ -11982,9 +12825,6 @@ if (quakers.getText().equals("")) {
             }
             dv = 1;
         }
-
-   
-
 
         if (Blacktea.isSelected()) {
             if (dv == 0) {
@@ -12607,7 +13447,7 @@ if (quakers.getText().equals("")) {
         if (dv != 2) {
             d = "Dry:" + d + ";";
         }
-           if (Sweet1.isSelected()) {
+        if (Sweet1.isSelected()) {
             if (wv == 0) {
                 w = w + Sweet1.getText();
             } else {
@@ -12615,7 +13455,7 @@ if (quakers.getText().equals("")) {
             }
             wv = 1;
         }
-      if (Floral1.isSelected()) {
+        if (Floral1.isSelected()) {
             if (wv == 0) {
                 w = w + Floral1.getText();
             } else {
@@ -12623,7 +13463,7 @@ if (quakers.getText().equals("")) {
             }
             wv = 1;
         }
-      if (Fruity1.isSelected()) {
+        if (Fruity1.isSelected()) {
             if (wv == 0) {
                 w = w + Fruity1.getText();
             } else {
@@ -12631,7 +13471,7 @@ if (quakers.getText().equals("")) {
             }
             wv = 1;
         }
-       if (Berry1.isSelected()) {
+        if (Berry1.isSelected()) {
             if (wv == 0) {
                 w = w + Berry1.getText();
             } else {
@@ -12647,7 +13487,7 @@ if (quakers.getText().equals("")) {
             }
             wv = 1;
         }
-         if (Otherfruit1.isSelected()) {
+        if (Otherfruit1.isSelected()) {
             if (wv == 0) {
                 w = w + Otherfruit1.getText();
             } else {
@@ -12655,7 +13495,7 @@ if (quakers.getText().equals("")) {
             }
             wv = 1;
         }
-          if (Citrusfruit1.isSelected()) {
+        if (Citrusfruit1.isSelected()) {
             if (wv == 0) {
                 w = w + Citrusfruit1.getText();
             } else {
@@ -12663,7 +13503,7 @@ if (quakers.getText().equals("")) {
             }
             wv = 1;
         }
-         if (Sour1.isSelected()) {
+        if (Sour1.isSelected()) {
             if (wv == 0) {
                 w = w + Sour1.getText();
             } else {
@@ -12671,7 +13511,7 @@ if (quakers.getText().equals("")) {
             }
             wv = 1;
         }
-          if (sour1.isSelected()) {
+        if (sour1.isSelected()) {
             if (wv == 0) {
                 w = w + sour1.getText();
             } else {
@@ -12679,7 +13519,7 @@ if (quakers.getText().equals("")) {
             }
             wv = 1;
         }
-           if (Alcohol1.isSelected()) {
+        if (Alcohol1.isSelected()) {
             if (wv == 0) {
                 w = w + Alcohol1.getText();
             } else {
@@ -12687,7 +13527,7 @@ if (quakers.getText().equals("")) {
             }
             wv = 1;
         }
-            if (Green1.isSelected()) {
+        if (Green1.isSelected()) {
             if (wv == 0) {
                 w = w + Green1.getText();
             } else {
@@ -12703,7 +13543,7 @@ if (quakers.getText().equals("")) {
             }
             wv = 1;
         }
-         if (PaperyM1.isSelected()) {
+        if (PaperyM1.isSelected()) {
             if (wv == 0) {
                 w = w + PaperyM1.getText();
             } else {
@@ -12711,7 +13551,7 @@ if (quakers.getText().equals("")) {
             }
             wv = 1;
         }
-          if (Chemical1.isSelected()) {
+        if (Chemical1.isSelected()) {
             if (wv == 0) {
                 w = w + Chemical1.getText();
             } else {
@@ -12727,7 +13567,7 @@ if (quakers.getText().equals("")) {
             }
             wv = 1;
         }
-         if (Burnt1.isSelected()) {
+        if (Burnt1.isSelected()) {
             if (wv == 0) {
                 w = w + Burnt1.getText();
             } else {
@@ -12735,7 +13575,7 @@ if (quakers.getText().equals("")) {
             }
             wv = 1;
         }
-          if (Cereal1.isSelected()) {
+        if (Cereal1.isSelected()) {
             if (wv == 0) {
                 w = w + Cereal1.getText();
             } else {
@@ -12743,7 +13583,7 @@ if (quakers.getText().equals("")) {
             }
             wv = 1;
         }
-         if (Spices1.isSelected()) {
+        if (Spices1.isSelected()) {
             if (wv == 0) {
                 w = w + Spices1.getText();
             } else {
@@ -12751,7 +13591,7 @@ if (quakers.getText().equals("")) {
             }
             wv = 1;
         }
-         if (Brownspices1.isSelected()) {
+        if (Brownspices1.isSelected()) {
             if (wv == 0) {
                 w = w + Brownspices1.getText();
             } else {
@@ -12767,7 +13607,7 @@ if (quakers.getText().equals("")) {
             }
             wv = 1;
         }
-          if (Cocoa1.isSelected()) {
+        if (Cocoa1.isSelected()) {
             if (wv == 0) {
                 w = w + Cocoa1.getText();
             } else {
@@ -12775,7 +13615,7 @@ if (quakers.getText().equals("")) {
             }
             wv = 1;
         }
-         
+
         if (BrownSugar1.isSelected()) {
             if (wv == 0) {
                 w = w + BrownSugar1.getText();
@@ -13443,10 +14283,10 @@ if (quakers.getText().equals("")) {
             }
             wv = 1;
         }
-        if (wv !=2) {
+        if (wv != 2) {
             w = "Wet:" + w + ";";
         }
-              if (Sweet2.isSelected()) {
+        if (Sweet2.isSelected()) {
             if (bv == 0) {
                 b = b + Sweet2.getText();
             } else {
@@ -13454,7 +14294,7 @@ if (quakers.getText().equals("")) {
             }
             bv = 2;
         }
-      if (Floral2.isSelected()) {
+        if (Floral2.isSelected()) {
             if (bv == 0) {
                 b = b + Floral2.getText();
             } else {
@@ -13462,7 +14302,7 @@ if (quakers.getText().equals("")) {
             }
             bv = 2;
         }
-      if (Fruity2.isSelected()) {
+        if (Fruity2.isSelected()) {
             if (bv == 0) {
                 b = b + Fruity2.getText();
             } else {
@@ -13470,7 +14310,7 @@ if (quakers.getText().equals("")) {
             }
             bv = 2;
         }
-       if (Berry2.isSelected()) {
+        if (Berry2.isSelected()) {
             if (bv == 0) {
                 b = b + Berry2.getText();
             } else {
@@ -13486,7 +14326,7 @@ if (quakers.getText().equals("")) {
             }
             bv = 2;
         }
-         if (Otherfruit2.isSelected()) {
+        if (Otherfruit2.isSelected()) {
             if (bv == 0) {
                 b = b + Otherfruit2.getText();
             } else {
@@ -13494,7 +14334,7 @@ if (quakers.getText().equals("")) {
             }
             bv = 2;
         }
-          if (Citrusfruit2.isSelected()) {
+        if (Citrusfruit2.isSelected()) {
             if (bv == 0) {
                 b = b + Citrusfruit2.getText();
             } else {
@@ -13502,7 +14342,7 @@ if (quakers.getText().equals("")) {
             }
             bv = 2;
         }
-         if (Sour2.isSelected()) {
+        if (Sour2.isSelected()) {
             if (bv == 0) {
                 b = b + Sour2.getText();
             } else {
@@ -13510,7 +14350,7 @@ if (quakers.getText().equals("")) {
             }
             bv = 2;
         }
-          if (sour2.isSelected()) {
+        if (sour2.isSelected()) {
             if (bv == 0) {
                 b = b + sour2.getText();
             } else {
@@ -13518,7 +14358,7 @@ if (quakers.getText().equals("")) {
             }
             bv = 2;
         }
-           if (Alcohol2.isSelected()) {
+        if (Alcohol2.isSelected()) {
             if (bv == 0) {
                 b = b + Alcohol2.getText();
             } else {
@@ -13526,7 +14366,7 @@ if (quakers.getText().equals("")) {
             }
             bv = 2;
         }
-            if (Green2.isSelected()) {
+        if (Green2.isSelected()) {
             if (bv == 0) {
                 b = b + Green2.getText();
             } else {
@@ -13542,7 +14382,7 @@ if (quakers.getText().equals("")) {
             }
             bv = 2;
         }
-         if (PaperyM2.isSelected()) {
+        if (PaperyM2.isSelected()) {
             if (bv == 0) {
                 b = b + PaperyM2.getText();
             } else {
@@ -13550,7 +14390,7 @@ if (quakers.getText().equals("")) {
             }
             bv = 2;
         }
-          if (Chemical2.isSelected()) {
+        if (Chemical2.isSelected()) {
             if (bv == 0) {
                 b = b + Chemical2.getText();
             } else {
@@ -13566,7 +14406,7 @@ if (quakers.getText().equals("")) {
             }
             bv = 2;
         }
-         if (Burnt2.isSelected()) {
+        if (Burnt2.isSelected()) {
             if (bv == 0) {
                 b = b + Burnt2.getText();
             } else {
@@ -13574,7 +14414,7 @@ if (quakers.getText().equals("")) {
             }
             bv = 2;
         }
-          if (Cereal2.isSelected()) {
+        if (Cereal2.isSelected()) {
             if (bv == 0) {
                 b = b + Cereal2.getText();
             } else {
@@ -13582,7 +14422,7 @@ if (quakers.getText().equals("")) {
             }
             bv = 2;
         }
-         if (Spices2.isSelected()) {
+        if (Spices2.isSelected()) {
             if (bv == 0) {
                 b = b + Spices2.getText();
             } else {
@@ -13590,7 +14430,7 @@ if (quakers.getText().equals("")) {
             }
             bv = 2;
         }
-         if (Brownspices2.isSelected()) {
+        if (Brownspices2.isSelected()) {
             if (bv == 0) {
                 b = b + Brownspices2.getText();
             } else {
@@ -13606,7 +14446,7 @@ if (quakers.getText().equals("")) {
             }
             bv = 2;
         }
-          if (Cocoa2.isSelected()) {
+        if (Cocoa2.isSelected()) {
             if (bv == 0) {
                 b = b + Cocoa2.getText();
             } else {
@@ -13614,7 +14454,7 @@ if (quakers.getText().equals("")) {
             }
             bv = 2;
         }
-         
+
         if (BrownSugar2.isSelected()) {
             if (bv == 0) {
                 b = b + BrownSugar2.getText();
@@ -14282,10 +15122,10 @@ if (quakers.getText().equals("")) {
             }
             bv = 2;
         }
-        if (bv !=1) {
+        if (bv != 1) {
             b = "Break:" + b + ";";
         }
-              if (Sweet3.isSelected()) {
+        if (Sweet3.isSelected()) {
             if (fv == 0) {
                 f = f + Sweet3.getText();
             } else {
@@ -14293,7 +15133,7 @@ if (quakers.getText().equals("")) {
             }
             fv = 3;
         }
-      if (Floral3.isSelected()) {
+        if (Floral3.isSelected()) {
             if (fv == 0) {
                 f = f + Floral3.getText();
             } else {
@@ -14301,7 +15141,7 @@ if (quakers.getText().equals("")) {
             }
             fv = 3;
         }
-      if (Fruity3.isSelected()) {
+        if (Fruity3.isSelected()) {
             if (fv == 0) {
                 f = f + Fruity3.getText();
             } else {
@@ -14309,7 +15149,7 @@ if (quakers.getText().equals("")) {
             }
             fv = 3;
         }
-       if (Berry3.isSelected()) {
+        if (Berry3.isSelected()) {
             if (fv == 0) {
                 f = f + Berry3.getText();
             } else {
@@ -14325,7 +15165,7 @@ if (quakers.getText().equals("")) {
             }
             fv = 3;
         }
-         if (Otherfruit3.isSelected()) {
+        if (Otherfruit3.isSelected()) {
             if (fv == 0) {
                 f = f + Otherfruit3.getText();
             } else {
@@ -14333,7 +15173,7 @@ if (quakers.getText().equals("")) {
             }
             fv = 3;
         }
-          if (Citrusfruit3.isSelected()) {
+        if (Citrusfruit3.isSelected()) {
             if (fv == 0) {
                 f = f + Citrusfruit3.getText();
             } else {
@@ -14341,7 +15181,7 @@ if (quakers.getText().equals("")) {
             }
             fv = 3;
         }
-         if (Sour3.isSelected()) {
+        if (Sour3.isSelected()) {
             if (fv == 0) {
                 f = f + Sour3.getText();
             } else {
@@ -14349,7 +15189,7 @@ if (quakers.getText().equals("")) {
             }
             fv = 3;
         }
-          if (sour3.isSelected()) {
+        if (sour3.isSelected()) {
             if (fv == 0) {
                 f = f + sour3.getText();
             } else {
@@ -14357,7 +15197,7 @@ if (quakers.getText().equals("")) {
             }
             fv = 3;
         }
-           if (Alcohol3.isSelected()) {
+        if (Alcohol3.isSelected()) {
             if (fv == 0) {
                 f = f + Alcohol3.getText();
             } else {
@@ -14365,7 +15205,7 @@ if (quakers.getText().equals("")) {
             }
             fv = 3;
         }
-            if (Green3.isSelected()) {
+        if (Green3.isSelected()) {
             if (fv == 0) {
                 f = f + Green3.getText();
             } else {
@@ -14381,7 +15221,7 @@ if (quakers.getText().equals("")) {
             }
             fv = 3;
         }
-         if (PaperyM3.isSelected()) {
+        if (PaperyM3.isSelected()) {
             if (fv == 0) {
                 f = f + PaperyM3.getText();
             } else {
@@ -14389,7 +15229,7 @@ if (quakers.getText().equals("")) {
             }
             fv = 3;
         }
-          if (Chemical3.isSelected()) {
+        if (Chemical3.isSelected()) {
             if (fv == 0) {
                 f = f + Chemical3.getText();
             } else {
@@ -14405,7 +15245,7 @@ if (quakers.getText().equals("")) {
             }
             fv = 3;
         }
-         if (Burnt3.isSelected()) {
+        if (Burnt3.isSelected()) {
             if (fv == 0) {
                 f = f + Burnt3.getText();
             } else {
@@ -14413,7 +15253,7 @@ if (quakers.getText().equals("")) {
             }
             fv = 3;
         }
-          if (Cereal3.isSelected()) {
+        if (Cereal3.isSelected()) {
             if (fv == 0) {
                 f = f + Cereal3.getText();
             } else {
@@ -14421,7 +15261,7 @@ if (quakers.getText().equals("")) {
             }
             fv = 3;
         }
-         if (Spices3.isSelected()) {
+        if (Spices3.isSelected()) {
             if (fv == 0) {
                 f = f + Spices3.getText();
             } else {
@@ -14429,7 +15269,7 @@ if (quakers.getText().equals("")) {
             }
             fv = 3;
         }
-         if (Brownspices3.isSelected()) {
+        if (Brownspices3.isSelected()) {
             if (fv == 0) {
                 f = f + Brownspices3.getText();
             } else {
@@ -14445,7 +15285,7 @@ if (quakers.getText().equals("")) {
             }
             fv = 3;
         }
-          if (Cocoa3.isSelected()) {
+        if (Cocoa3.isSelected()) {
             if (fv == 0) {
                 f = f + Cocoa3.getText();
             } else {
@@ -14453,7 +15293,7 @@ if (quakers.getText().equals("")) {
             }
             fv = 3;
         }
-         
+
         if (BrownSugar3.isSelected()) {
             if (fv == 0) {
                 f = f + BrownSugar3.getText();
@@ -15121,10 +15961,10 @@ if (quakers.getText().equals("")) {
             }
             fv = 3;
         }
-        if (fv !=1) {
+        if (fv != 1) {
             f = "Flavor:" + f + ";";
         }
-              if (Sweet1.isSelected()) {
+        if (Sweet1.isSelected()) {
             if (av == 0) {
                 a = a + Sweet1.getText();
             } else {
@@ -15132,7 +15972,7 @@ if (quakers.getText().equals("")) {
             }
             av = 4;
         }
-      if (Floral1.isSelected()) {
+        if (Floral1.isSelected()) {
             if (av == 0) {
                 a = a + Floral1.getText();
             } else {
@@ -15140,7 +15980,7 @@ if (quakers.getText().equals("")) {
             }
             av = 4;
         }
-      if (Fruity1.isSelected()) {
+        if (Fruity1.isSelected()) {
             if (av == 0) {
                 a = a + Fruity1.getText();
             } else {
@@ -15148,7 +15988,7 @@ if (quakers.getText().equals("")) {
             }
             av = 4;
         }
-       if (Berry1.isSelected()) {
+        if (Berry1.isSelected()) {
             if (av == 0) {
                 a = a + Berry1.getText();
             } else {
@@ -15164,7 +16004,7 @@ if (quakers.getText().equals("")) {
             }
             av = 4;
         }
-         if (Otherfruit1.isSelected()) {
+        if (Otherfruit1.isSelected()) {
             if (av == 0) {
                 a = a + Otherfruit1.getText();
             } else {
@@ -15172,7 +16012,7 @@ if (quakers.getText().equals("")) {
             }
             av = 4;
         }
-          if (Citrusfruit1.isSelected()) {
+        if (Citrusfruit1.isSelected()) {
             if (av == 0) {
                 a = a + Citrusfruit1.getText();
             } else {
@@ -15180,7 +16020,7 @@ if (quakers.getText().equals("")) {
             }
             av = 4;
         }
-         if (Sour1.isSelected()) {
+        if (Sour1.isSelected()) {
             if (av == 0) {
                 a = a + Sour1.getText();
             } else {
@@ -15188,7 +16028,7 @@ if (quakers.getText().equals("")) {
             }
             av = 4;
         }
-          if (sour1.isSelected()) {
+        if (sour1.isSelected()) {
             if (av == 0) {
                 a = a + sour1.getText();
             } else {
@@ -15196,7 +16036,7 @@ if (quakers.getText().equals("")) {
             }
             av = 4;
         }
-           if (Alcohol1.isSelected()) {
+        if (Alcohol1.isSelected()) {
             if (av == 0) {
                 a = a + Alcohol1.getText();
             } else {
@@ -15204,7 +16044,7 @@ if (quakers.getText().equals("")) {
             }
             av = 4;
         }
-            if (Green1.isSelected()) {
+        if (Green1.isSelected()) {
             if (av == 0) {
                 a = a + Green1.getText();
             } else {
@@ -15220,7 +16060,7 @@ if (quakers.getText().equals("")) {
             }
             av = 4;
         }
-         if (PaperyM1.isSelected()) {
+        if (PaperyM1.isSelected()) {
             if (av == 0) {
                 a = a + PaperyM1.getText();
             } else {
@@ -15228,7 +16068,7 @@ if (quakers.getText().equals("")) {
             }
             av = 4;
         }
-          if (Chemical1.isSelected()) {
+        if (Chemical1.isSelected()) {
             if (av == 0) {
                 a = a + Chemical1.getText();
             } else {
@@ -15244,7 +16084,7 @@ if (quakers.getText().equals("")) {
             }
             av = 4;
         }
-         if (Burnt1.isSelected()) {
+        if (Burnt1.isSelected()) {
             if (av == 0) {
                 a = a + Burnt1.getText();
             } else {
@@ -15252,7 +16092,7 @@ if (quakers.getText().equals("")) {
             }
             av = 4;
         }
-          if (Cereal1.isSelected()) {
+        if (Cereal1.isSelected()) {
             if (av == 0) {
                 a = a + Cereal1.getText();
             } else {
@@ -15260,7 +16100,7 @@ if (quakers.getText().equals("")) {
             }
             av = 4;
         }
-         if (Spices1.isSelected()) {
+        if (Spices1.isSelected()) {
             if (av == 0) {
                 a = a + Spices1.getText();
             } else {
@@ -15268,7 +16108,7 @@ if (quakers.getText().equals("")) {
             }
             av = 4;
         }
-         if (Brownspices1.isSelected()) {
+        if (Brownspices1.isSelected()) {
             if (av == 0) {
                 a = a + Brownspices1.getText();
             } else {
@@ -15284,7 +16124,7 @@ if (quakers.getText().equals("")) {
             }
             av = 4;
         }
-          if (Cocoa1.isSelected()) {
+        if (Cocoa1.isSelected()) {
             if (av == 0) {
                 a = a + Cocoa1.getText();
             } else {
@@ -15292,7 +16132,7 @@ if (quakers.getText().equals("")) {
             }
             av = 4;
         }
-         
+
         if (BrownSugar4.isSelected()) {
             if (av == 0) {
                 a = a + BrownSugar4.getText();
@@ -15341,8 +16181,6 @@ if (quakers.getText().equals("")) {
             }
             av = 4;
         }
-
-   
 
         if (Blacktea4.isSelected()) {
             if (av == 0) {
@@ -15986,7 +16824,7 @@ if (quakers.getText().equals("")) {
             }
             av = 4;
         }
-   if (Dryf.isSelected()) {
+        if (Dryf.isSelected()) {
             if (av == 0) {
                 a = a + "-finish=" + Dryf.getText();
             } else {
@@ -15994,7 +16832,7 @@ if (quakers.getText().equals("")) {
             }
             av = 4;
         }
-   if (Astringent.isSelected()) {
+        if (Astringent.isSelected()) {
             if (av == 0) {
                 a = a + "-finish=" + Astringent.getText();
             } else {
@@ -16002,7 +16840,7 @@ if (quakers.getText().equals("")) {
             }
             av = 4;
         }
-        if (av !=1) {
+        if (av != 1) {
             a = "Aftertaste:" + a + ";";
         }
         if (Vinegar5.isSelected()) {
@@ -16077,10 +16915,10 @@ if (quakers.getText().equals("")) {
             }
             acv = 5;
         }
-        if (acv !=1) {
+        if (acv != 1) {
             ac = "Acidity:" + ac + ";";
         }
-        if (Thin.isSelected()) {
+        /*if (Thin.isSelected()) {
             if (bov == 0) {
                 bo = Thin.getText();
             }
@@ -16116,9 +16954,9 @@ if (quakers.getText().equals("")) {
             }
             bov = 6;
         }
-        if (bov !=1) {
+        if (bov != 1) {
             bo = "Body:" + bo + ";";
-        }
+        }*/
         Flavors = d + w + b + f + a + ac + bo;
         System.out.println(Flavors);
         String insert = "", update = "", estatus = "T";
@@ -16127,46 +16965,49 @@ if (quakers.getText().equals("")) {
         if (aspecto.equals("1")) {
             estatus = "Disp";
         }
-        insert = "insert into catacion values (null," + id + "," + nt + "," + uniformidadtostado.getValue() + "," + quakers.getText() + ",'" + Puntuacion.getText() + "'," + Tazas.getText() + "," + Defectos.getText() + "," + numtazasdefectos.getText() + "," + intensidadefectos.getText() + "," + uniformtaza.getText() + "," + tazalimpia.getText() + "," + dulzor.getText() + ",'" + dry.getText() + "','" + wet.getText() + "','" + breaks.getText() + "','" + aroma.getText() + "','" + flavor.getText() + "','" + Aftertaste.getText() + "','" + Acidity.getText() + "','" + intensidadacidity.getValue() + "','" + Body.getText() + "','" + intensidadbody.getValue() + "','" + Balance.getText() + "','" + Catador.getText() + "','Consenso','" + fecha + "','"+DenTost.getText()+"')";
+        insert = "insert into catacion values (null," + id + "," + nt + "," + uniformidadtostado.getValue() + "," + quakers.getText() + ",'" + Puntuacion.getText() + "'," + Tazas.getText() + "," + Defectos.getText() + "," + numtazasdefectos.getText() + "," + intensidadefectos.getText() + "," + uniformtaza.getText() + "," + tazalimpia.getText() + "," + dulzor.getText() + ",'" + dry.getText() + "','" + wet.getText() + "','" + breaks.getText() + "','" + aroma.getText() + "','" + flavor.getText() + "','" + Aftertaste.getText() + "','" + Acidity.getText() + "','" + intensidadacidity.getValue() + "','" + Body.getText() + "','" + intensidadbody.getValue() + "','" + Balance.getText() + "','" + Catador.getText() + "','Consenso','" + fecha + "','" + DenTost.getText() + "')";
         update = "update bitacoralab set taza='1'   , sabores='" + Flavors + "' where id_bitacora=" + id;
-        if (fecha!=null) {
-        //if (p1>=3) {
-           // if (p2>=3) {
-               //  if (p3>=3) {
-                 //    if (p4>=3) {
-                    //     if (p5>=3) {
-                       //      if (p6>=3) {
-                     //            if (p7>0) {
-                             //         if (p8>0) {
-        try {
-            
-            mdb.insertarBasicos("insert into catacion values (null," + id + "," + nt + "," + uniformidadtostado.getValue() + "," + quakers.getText() + ",'" + Puntuacion.getText() + "'," + Tazas.getText() + "," + Defectos.getText() + "," + numtazasdefectos.getText() + "," + intensidadefectos.getText() + "," + uniformtaza.getText() + "," + tazalimpia.getText() + "," + dulzor.getText() + ",'" + dry.getText() + "','" + wet.getText() + "','" + breaks.getText() + "','" + aroma.getText() + "','" + flavor.getText() + "','" + Aftertaste.getText() + "','" + Acidity.getText() + "','" + intensidadacidity.getValue() + "','" + Body.getText() + "','" + intensidadbody.getValue() + "','" + Balance.getText() + "','" + Catador.getText() + "','Consenso','" + fecha + "','"+DenTost.getText()+"')");
-            mdb.actualizarBasicos("update bitacoralab set taza='1' ,estatus='" + estatus + "'  , sabores='" + Flavors + "' where id_bitacora=" + id);
-           jpCT.llenarTabla();
+        if (fecha != null) {
+            //if (p1>=3) {
+            // if (p2>=3) {
+            //  if (p3>=3) {
+            //    if (p4>=3) {
+            //     if (p5>=3) {
+            //      if (p6>=3) {
+            //            if (p7>0) {
+            //         if (p8>0) {
             try {
-    for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
-        if ("Nimbus".equals(info.getName())) {
-            UIManager.setLookAndFeel(info.getClassName());
-            break;
+
+                mdb.insertarBasicos("insert into catacion values (null," + id + "," + nt + "," + uniformidadtostado.getValue() + "," + quakers.getText() + ",'" + Puntuacion.getText() + "'," + Tazas.getText() + "," + Defectos.getText() + "," + numtazasdefectos.getText() + "," + intensidadefectos.getText() + "," + uniformtaza.getText() + "," + tazalimpia.getText() + "," + dulzor.getText() + ",'" + dry.getText() + "','" + wet.getText() + "','" + breaks.getText() + "','" + aroma.getText() + "','" + flavor.getText() + "','" + Aftertaste.getText() + "','" + Acidity.getText() + "','" + intensidadacidity.getValue() + "','" + Body.getText() + "','" + intensidadbody.getValue() + "','" + Balance.getText() + "','" + Catador.getText() + "','Consenso','" + fecha + "','" + DenTost.getText() + "')");
+                mdb.actualizarBasicos("update bitacoralab set taza='1' ,estatus='" + estatus + "'  , sabores='" + Flavors + "' where id_bitacora=" + id);
+                jpCT.llenarTabla();
+                try {
+                    for (LookAndFeelInfo info : UIManager.getInstalledLookAndFeels()) {
+                        if ("Nimbus".equals(info.getName())) {
+                            UIManager.setLookAndFeel(info.getClassName());
+                            break;
+                        }
+                    }
+                } catch (Exception e) {
+                    // If Nimbus is not available, you can set the GUI to another look and feel.
+                }
+                this.dispose();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e);
+            }
+            //                  }else{JOptionPane.showMessageDialog(null, "¡Selecciona almenos 1 opcion de Finish en el apartado Aftertaste!");paint(8); }
+            //             }else{JOptionPane.showMessageDialog(null, "¡Selecciona almenos una opcion en el apartado Body!");paint(7); }
+            //          }else{JOptionPane.showMessageDialog(null, "¡Selecciona almenos 3 sabores en el apartado Acidity!");paint(6); }
+            //      }else{JOptionPane.showMessageDialog(null, "¡Selecciona almenos 3 sabores en el apartado Aftertaste!");paint(5); }
+            //    }else{JOptionPane.showMessageDialog(null, "¡Selecciona almenos 3 sabores en el apartado Flavor!");paint(4); }
+            //   }else{JOptionPane.showMessageDialog(null, "¡Selecciona almenos 3 sabores en el apartado Break!");paint(3); }
+            // }else{JOptionPane.showMessageDialog(null, "¡Selecciona almenos 3 sabores en el apartado Wet!");paint(2); }
+            //  }else{JOptionPane.showMessageDialog(null, "¡Selecciona almenos 3 sabores en el apartado Dry!");paint(1); }
+        } else {
+            JOptionPane.showMessageDialog(null, "¡Selecciona La Fecha!");
         }
     }
-} catch (Exception e) {
-    // If Nimbus is not available, you can set the GUI to another look and feel.
-}
-            this.dispose();
-        } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, e);
-        }
-                          //                  }else{JOptionPane.showMessageDialog(null, "¡Selecciona almenos 1 opcion de Finish en el apartado Aftertaste!");paint(8); }
-                           //             }else{JOptionPane.showMessageDialog(null, "¡Selecciona almenos una opcion en el apartado Body!");paint(7); }
-                          //          }else{JOptionPane.showMessageDialog(null, "¡Selecciona almenos 3 sabores en el apartado Acidity!");paint(6); }
-                          //      }else{JOptionPane.showMessageDialog(null, "¡Selecciona almenos 3 sabores en el apartado Aftertaste!");paint(5); }
-                        //    }else{JOptionPane.showMessageDialog(null, "¡Selecciona almenos 3 sabores en el apartado Flavor!");paint(4); }
-                     //   }else{JOptionPane.showMessageDialog(null, "¡Selecciona almenos 3 sabores en el apartado Break!");paint(3); }
-                   // }else{JOptionPane.showMessageDialog(null, "¡Selecciona almenos 3 sabores en el apartado Wet!");paint(2); }
-              //  }else{JOptionPane.showMessageDialog(null, "¡Selecciona almenos 3 sabores en el apartado Dry!");paint(1); }
-   }else{JOptionPane.showMessageDialog(null, "¡Selecciona La Fecha!"); }
-  }
+
     /**
      * @param args the command line arguments
      */
@@ -16459,7 +17300,7 @@ if (quakers.getText().equals("")) {
     private javax.swing.JRadioButton Hazelenut2;
     private javax.swing.JRadioButton Hazelenut3;
     private javax.swing.JRadioButton Hazelenut4;
-    private javax.swing.JRadioButton Heavy;
+    private javax.swing.JRadioButton Heavy1;
     private javax.swing.JRadioButton Herblike;
     private javax.swing.JRadioButton Herblike1;
     private javax.swing.JRadioButton Herblike2;
@@ -16507,7 +17348,7 @@ if (quakers.getText().equals("")) {
     private javax.swing.JRadioButton Medicinal3;
     private javax.swing.JRadioButton Medicinal4;
     private javax.swing.JRadioButton Medium;
-    private javax.swing.JRadioButton Mediumbody;
+    private javax.swing.JRadioButton Mediumbody1;
     private javax.swing.JRadioButton Molasses;
     private javax.swing.JRadioButton Molasses1;
     private javax.swing.JRadioButton Molasses2;
@@ -16543,7 +17384,7 @@ if (quakers.getText().equals("")) {
     private javax.swing.JRadioButton Nuttycocoa2;
     private javax.swing.JRadioButton Nuttycocoa3;
     private javax.swing.JRadioButton Nuttycocoa4;
-    private javax.swing.JRadioButton Oily;
+    private javax.swing.JRadioButton Oily1;
     private javax.swing.JRadioButton OliveOil;
     private javax.swing.JRadioButton OliveOil1;
     private javax.swing.JRadioButton OliveOil2;
@@ -16705,7 +17546,7 @@ if (quakers.getText().equals("")) {
     private javax.swing.JRadioButton Smoky2;
     private javax.swing.JRadioButton Smoky3;
     private javax.swing.JRadioButton Smoky4;
-    private javax.swing.JRadioButton Smooth;
+    private javax.swing.JRadioButton Smooth1;
     private javax.swing.JRadioButton Sour;
     private javax.swing.JRadioButton Sour1;
     private javax.swing.JRadioButton Sour2;
@@ -16731,9 +17572,9 @@ if (quakers.getText().equals("")) {
     private javax.swing.JRadioButton Sweet2;
     private javax.swing.JRadioButton Sweet3;
     private javax.swing.JRadioButton Sweet4;
-    private javax.swing.JRadioButton Syrupy;
+    private javax.swing.JRadioButton Syrupy1;
     private javax.swing.JTextField Tazas;
-    private javax.swing.JRadioButton Thin;
+    private javax.swing.JRadioButton Thin1;
     private javax.swing.JLabel Tipo;
     private javax.swing.JRadioButton Tobacco;
     private javax.swing.JRadioButton Tobacco1;
@@ -16799,6 +17640,7 @@ if (quakers.getText().equals("")) {
     private javax.swing.JTextField intensidadefectos;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
+    private javax.swing.JButton jButton3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel15;
@@ -16837,11 +17679,10 @@ if (quakers.getText().equals("")) {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel84;
     private javax.swing.JLabel jLabel85;
-    private javax.swing.JLabel jLabel86;
+    private javax.swing.JLabel jLabel87;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
@@ -16885,7 +17726,7 @@ if (quakers.getText().equals("")) {
     private javax.swing.JPanel jPanel50;
     private javax.swing.JPanel jPanel59;
     private javax.swing.JPanel jPanel6;
-    private javax.swing.JPanel jPanel60;
+    private javax.swing.JPanel jPanel61;
     private javax.swing.JPanel jPanel62;
     private javax.swing.JPanel jPanel63;
     private javax.swing.JPanel jPanel64;

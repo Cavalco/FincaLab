@@ -4995,6 +4995,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
     private void B1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B1KeyPressed
 
     }//GEN-LAST:event_B1KeyPressed
+
     private void B2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B2KeyTyped
         char c = evt.getKeyChar();
         if (Character.isAlphabetic(c)) {
@@ -5135,9 +5136,11 @@ public class jdEvaluacionA extends javax.swing.JDialog {
     private void C4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C4ActionPerformed
 
     }//GEN-LAST:event_C4ActionPerformed
+
     private void C4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_C4KeyReleased
         suma(3);
     }//GEN-LAST:event_C4KeyReleased
+
     private void C4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_C4KeyTyped
         char c = evt.getKeyChar();
         if (Character.isAlphabetic(c)) {
@@ -5159,9 +5162,11 @@ public class jdEvaluacionA extends javax.swing.JDialog {
     private void C1KeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_C1KeyPressed
 
     }//GEN-LAST:event_C1KeyPressed
+
     private void C1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_C1KeyReleased
         suma(3);
     }//GEN-LAST:event_C1KeyReleased
+
     private void C1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_C1KeyTyped
         char c = evt.getKeyChar();
         if (Character.isAlphabetic(c)) {
@@ -5183,9 +5188,11 @@ public class jdEvaluacionA extends javax.swing.JDialog {
     private void C2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C2ActionPerformed
 
     }//GEN-LAST:event_C2ActionPerformed
+
     private void C2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_C2KeyReleased
         suma(3);
     }//GEN-LAST:event_C2KeyReleased
+
     private void C2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_C2KeyTyped
         char c = evt.getKeyChar();
         if (Character.isAlphabetic(c)) {
@@ -5204,9 +5211,11 @@ public class jdEvaluacionA extends javax.swing.JDialog {
         }
         suma(3);
     }//GEN-LAST:event_C3FocusLost
+
     private void C3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_C3KeyReleased
         suma(3);
     }//GEN-LAST:event_C3KeyReleased
+
     private void C3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_C3KeyTyped
         char c = evt.getKeyChar();
         if (Character.isAlphabetic(c)) {
@@ -5225,9 +5234,11 @@ public class jdEvaluacionA extends javax.swing.JDialog {
         }
         suma(3);
     }//GEN-LAST:event_C5FocusLost
+
     private void C5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_C5KeyReleased
         suma(3);
     }//GEN-LAST:event_C5KeyReleased
+
     private void C5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_C5KeyTyped
         char c = evt.getKeyChar();
         if (Character.isAlphabetic(c)) {
@@ -5249,9 +5260,11 @@ public class jdEvaluacionA extends javax.swing.JDialog {
     private void C6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_C6ActionPerformed
 
     }//GEN-LAST:event_C6ActionPerformed
+
     private void C6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_C6KeyReleased
         suma(3);
     }//GEN-LAST:event_C6KeyReleased
+
     private void C6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_C6KeyTyped
         char c = evt.getKeyChar();
         if (Character.isAlphabetic(c)) {
@@ -6540,9 +6553,9 @@ public class jdEvaluacionA extends javax.swing.JDialog {
     }//GEN-LAST:event_JTActionPerformed
 
     private void H1FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_H1FocusGained
-        if (H1.getText().equals("0")) {
-            H1.setText("");
-        }   // TODO add your handling code here:
+        //if (H1.getText().equals("0")) {
+        //    H1.setText("");
+        //}   // TODO add your handling code here:
     }//GEN-LAST:event_H1FocusGained
 
     private void H1FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_H1FocusLost
@@ -6557,7 +6570,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
     }//GEN-LAST:event_H1KeyPressed
 
     private void H1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_H1KeyReleased
-        suma(8);    // TODO add your handling code here:
+        //suma(8);    // TODO add your handling code here:
     }//GEN-LAST:event_H1KeyReleased
 
     private void H1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_H1KeyTyped
@@ -6569,16 +6582,16 @@ public class jdEvaluacionA extends javax.swing.JDialog {
     }//GEN-LAST:event_H1KeyTyped
 
     private void H2FocusGained(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_H2FocusGained
-        if (H2.getText().equals("0")) {
+        /*if (H2.getText().equals("0")) {
             H2.setText("");
-        }  // TODO add your handling code here:
+        }*/  // TODO add your handling code here:
     }//GEN-LAST:event_H2FocusGained
 
     private void H2FocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_H2FocusLost
         if (H2.getText().equals("")) {
             H2.setText("0");
         }
-        suma(8);    // TODO add your handling code here:
+        //suma(8);    // TODO add your handling code here:
     }//GEN-LAST:event_H2FocusLost
 
     private void H2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_H2ActionPerformed
@@ -6586,7 +6599,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
     }//GEN-LAST:event_H2ActionPerformed
 
     private void H2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_H2KeyReleased
-        suma(8);  // TODO add your handling code here:
+        //suma(8);  // TODO add your handling code here:
     }//GEN-LAST:event_H2KeyReleased
 
     private void H2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_H2KeyTyped
@@ -8689,7 +8702,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
 
     }
 
-    public static int trunc(double num) {
+    public int trunc(double num) {
         String strnum = num + "";
         int indice = strnum.indexOf(".");
         return Integer.parseInt(strnum.substring(0, indice));
@@ -8725,7 +8738,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
                 av=vt/5;
                 ad=350/Pe;
                 System.out.println("av="+av+"ad="+ad);
-                formula = (Pe / 350) * (vt / 5);
+                formula = (350 / Pe) * (vt / 5);
                 System.out.println(formula);
                 res = trunc(formula);
                 System.out.println(res);
@@ -8748,8 +8761,10 @@ public class jdEvaluacionA extends javax.swing.JDialog {
 
                 vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (Pe / 350) * (vt / 10);
+                formula = (350 / Pe) * (vt / 10);
+                System.out.println("formula = "+formula);
                 res = trunc(formula);
+                System.out.println("res = "+res);
                 if (res == 0) {
                     CT.setText("0");
                 } else {
@@ -8767,7 +8782,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
 
                 vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (Pe / 350) * (vt / 1);
+                formula = (350 / Pe) * (vt / 1);
                 res = trunc(formula);
                 if (res == 0) {
                     DT.setText("0");
@@ -8786,7 +8801,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
 
                 vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (Pe / 350) * (vt / 3);
+                formula = (350 / Pe) * (vt / 3);
                 res = trunc(formula);
                 if (res == 0) {
                     ET.setText("0");
@@ -8805,7 +8820,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
 
                 vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (Pe / 350) * (vt / 1);
+                formula = (350 / Pe) * (vt / 1);
                 res = trunc(formula);
                 if (res == 0) {
                     FT.setText("0");
@@ -8826,7 +8841,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
 
                 vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (Pe / 350) * (vt / 3);
+                formula = (350 / Pe) * (vt / 3);
                 res = trunc(formula);
                 if (res == 0) {
                     GT.setText("0");
@@ -8845,7 +8860,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
 
                 vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (Pe / 350) * (vt / 5);
+                formula = (350 / Pe) * (vt / 5);
                 res = trunc(formula);
                 if (res == 0) {
                     HT.setText("0");
@@ -8864,7 +8879,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
 
                 vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (Pe / 350) * (vt / 5);
+                formula = (350 / Pe) * (vt / 5);
                 res = trunc(formula);
                 if (res == 0) {
                     IT.setText("0");
@@ -8882,7 +8897,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
                 v[5] = Integer.parseInt(J6.getText());
 
                 vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                formula = (Pe / 350) * (vt / 3);
+                formula = (350 / Pe) * (vt / 3);
                 res = trunc(formula);
                 if (res == 0) {
                     JT.setText("0");
@@ -8901,7 +8916,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
 
                 vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (Pe / 350) * (vt / 5);
+                formula = (350 / Pe) * (vt / 5);
                 res = trunc(formula);
                 if (res == 0) {
                     KT.setText("0");
@@ -8920,7 +8935,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
 
                 vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (Pe / 350) * (vt / 5);
+                formula = (350 / Pe) * (vt / 5);
                 res = trunc(formula);
                 if (res == 0) {
                     LT.setText("0");
@@ -8939,7 +8954,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
 
                 vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (Pe / 350) * (vt / 5);
+                formula = (350 / Pe) * (vt / 5);
                 res = trunc(formula);
                 if (res == 0) {
                     MT.setText("0");
@@ -8958,7 +8973,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
 
                 vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (Pe / 350) * (vt / 5);
+                formula = (350 / Pe) * (vt / 5);
                 res = trunc(formula);
                 if (res == 0) {
                     NT.setText("0");
@@ -8976,7 +8991,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
                 v[5] = Integer.parseInt(O6.getText());
 
                 vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                formula = (Pe / 350) * (vt / 1);
+                formula = (350 / Pe) * (vt / 1);
                 res = trunc(formula);
                 if (res == 0) {
                     OT.setText("0");
@@ -8994,7 +9009,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
                 v[5] = Integer.parseInt(P6.getText());
 
                 vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                formula = (Pe / 350) * (vt / 5);
+                formula = (350 / Pe) * (vt / 5);
                 res = trunc(formula);
                 if (res == 0) {
                     PT.setText("0");
@@ -9012,7 +9027,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
                 v[5] = Integer.parseInt(Q6.getText());
 
                 vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                formula = (Pe / 350) * (vt / 5);
+                formula = (350 / Pe) * (vt / 5);
                 res = trunc(formula);
                 if (res == 0) {
                     QT.setText("0");
@@ -9030,7 +9045,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
                 v[5] = Integer.parseInt(R6.getText());
 
                 vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                formula = (Pe / 350) * (vt / 5);
+                formula = (350 / Pe) * (vt / 5);
                 res = trunc(formula);
                 if (res == 0) {
                     RT.setText("0");
@@ -9048,7 +9063,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
                 v[5] = Integer.parseInt(S6.getText());
 
                 vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                formula = (Pe / 350) * (vt / 5);
+                formula = (350 / Pe) * (vt / 5);
                 res = trunc(formula);
                 if (res == 0) {
                     ST.setText("0");
@@ -9067,7 +9082,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
 
                 vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (Pe / 350) * (vt / 5);
+                formula = (350 / Pe) * (vt / 5);
                 res = trunc(formula);
                 if (res == 0) {
                     TT.setText("0");
@@ -9086,7 +9101,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
 
                 vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (Pe / 350) * (vt / 5);
+                formula = (350 / Pe) * (vt / 5);
                 res = trunc(formula);
                 if (res == 0) {
                     UT.setText("0");
@@ -9105,7 +9120,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
 
                 vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (Pe / 350) * (vt / 5);
+                formula = (350 / Pe) * (vt / 5);
                 res = trunc(formula);
                 if (res == 0) {
                     VT.setText("0");
@@ -9124,7 +9139,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
 
                 vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (Pe / 350) * (vt / 5);
+                formula = (350 / Pe) * (vt / 5);
                 res = trunc(formula);
                 if (res == 0) {
                     WT.setText("0");
@@ -9143,7 +9158,7 @@ public class jdEvaluacionA extends javax.swing.JDialog {
 
                 vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (Pe / 350) * (vt / 1);
+                formula = (350 / Pe) * (vt / 1);
                 res = trunc(formula);
                 if (res == 0) {
                     XT.setText("0");

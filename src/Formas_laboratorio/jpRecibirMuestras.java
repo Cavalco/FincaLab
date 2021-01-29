@@ -232,13 +232,13 @@ llenarTabla2();
 public void llenarTabla() {
         limpiar(tablaM);
       
-        mdb.cargarInformacion2(modelo, 10, "SELECT`tipocafe`, `forma`, `beneficio`, `dueño`, `lote`,`certificado`, `peso`, `sacos`, `comunidad`,`Metodosecado`FROM muestrasenviadas;");
+        mdb.cargarInformacion(modelo, 10, "SELECT`tipocafe`, `forma`, `beneficio`, `dueño`, `lote`,`certificado`, `peso`, `sacos`, `comunidad`,`Metodosecado`FROM muestrasenviadas;");
     
 }
 public void llenarTabla2() {
         limpiar(tablaM1);
       
-        mdb.cargarInformacion2(modelo2, 10, "SELECT`tipocafe`, `forma`, `beneficio`, `dueño`,  `lote`,`certificado`, `peso`, `sacos`, `comunidad`,`Metodosecado`FROM bitacoralab where idlote=''and beneficio like'"+beneficio+"' and lote like'"+numsublote+"' and dueño like'"+dueño+"' ;");
+        mdb.cargarInformacion(modelo2, 10, "SELECT`tipocafe`, `forma`, `beneficio`, `dueño`,  `lote`,`certificado`, `peso`, `sacos`, `comunidad`,`Metodosecado`FROM bitacoralab where idlote=''and beneficio like'"+beneficio+"' and lote like'"+numsublote+"' and dueño like'"+dueño+"' ;");
     String a="";
    a= mdb.devuelveUnDato("SELECT `lote` FROM bitacoralab where idlote=''and beneficio like'"+beneficio+"' and lote like'"+numsublote+"' and dueño like'"+dueño+"' ;");
         if (!a.equals("")) {

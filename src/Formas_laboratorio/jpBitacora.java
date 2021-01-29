@@ -5,6 +5,7 @@
  */
 package Formas_laboratorio;
 
+import Formas_LaboratorioN.jdEvaluacion;
 import Idioma.Propiedades;
 import Metodos_Configuraciones.metodosLaboratorio;
 import java.awt.Color;
@@ -35,6 +36,7 @@ public class jpBitacora extends javax.swing.JPanel {
     String Idioma;
     JdCatacion jdc;
     jdObservaciones jdo;
+    jdEvaluacion jdEA;
   
     ArrayList<String> array = new ArrayList<String>();
 
@@ -281,16 +283,17 @@ public class jpBitacora extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel5)
-                .addGap(0, 0, Short.MAX_VALUE))
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(ALL)
-                    .addComponent(Sinevaluar)
-                    .addComponent(Aspecto)
-                    .addComponent(Catadas))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel5)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(ALL)
+                            .addComponent(Sinevaluar)
+                            .addComponent(Aspecto)
+                            .addComponent(Catadas))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -470,10 +473,10 @@ public class jpBitacora extends javax.swing.JPanel {
 public void llenarTabla() {
         limpiar(tablabitacora);
       limpiar(tablaconsulta);
-        mdb.cargarInformacion2(modelo, 15, "SELECT b.id_muestra,b.fecha_llegada,b.tipocafe,b.forma,b.beneficio,b.dueño,b.lote,b.certificado,b.peso,b.sacos,\n" +
+        mdb.cargarInformacion(modelo, 15, "SELECT b.id_muestra,b.fecha_llegada,b.tipocafe,b.forma,b.beneficio,b.dueño,b.lote,b.certificado,b.peso,b.sacos,\n" +
 "b.comunidad,b.estatus,d.puntuacion,c.Puntuacion,b.mezcla from bitacoralab b left join datosev d on b.id_bitacora=d.id_bitacora left join \n" +
 " catacion c on b.id_bitacora=c.id_bitacora where estatus != 'Desactivada' order by b.id_muestra");
-         mdb.cargarInformacion2(modelo2,21, " select b.estatus,b.id_muestra,b.beneficio,b.lote,b.tipocafe,b.forma,b.certificado,b.peso,b.Kgconfirm,\n" +
+         mdb.cargarInformacion(modelo2,21, " select b.estatus,b.id_muestra,b.beneficio,b.lote,b.tipocafe,b.forma,b.certificado,b.peso,b.Kgconfirm,\n" +
 " b.sacos,b.comunidad,b.dueño,b.fechalote,c.Puntuacion,d.puntuacion,d.humedad_o,c.quakers,b.sabores,\n" +
 " b.observaciones,d.Densidadoro,c.densidadtostado from  bitacoralab b left join   datosev d on b.id_bitacora=d.id_bitacora left join \n" +
 " catacion c on b.id_bitacora=c.id_bitacora where estatus != 'Desactivada' order by b.id_muestra");
@@ -575,8 +578,8 @@ public void llenarTabla() {
         }
          limpiar(tablabitacora);
          limpiar(tablaconsulta);
-        mdb.cargarInformacion2(modelo, 15, sql);
-        mdb.cargarInformacion2(modelo2,21, sql2);
+        mdb.cargarInformacion(modelo, 15, sql);
+        mdb.cargarInformacion(modelo2,21, sql2);
     }
     String csm = "", comunindad = "", tipo = "", id, forma = "", estatus = "", taza = "", aspecto = "",mezasig="",calcer="",kgconfirm="";
     private void tablabitacoraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablabitacoraMouseClicked
@@ -674,9 +677,9 @@ public void llenarTabla() {
             id = mdb.comprobarExistencia("select id_bitacora from bitacoralab "
                     + "where (id_muestra='" + csm + "' and comunidad='" + comunindad + "')");
             System.out.println(id+ csm+ comunindad+ tipo+ forma);
-            jdDP = new jdEvaluacionA(null, true, "2", id, csm, comunindad, tipo, forma, cn,calcer,Idioma);
-            jdDP.jpDP = this;
-            jdDP.setVisible(true);
+            jdEA = new jdEvaluacion(cn,id,csm,comunindad,tipo,forma,calcer,Idioma);
+            
+            jdEA.setVisible(true);
         }
     }//GEN-LAST:event_evaspectoActionPerformed
     private void evtazaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_evtazaActionPerformed
@@ -767,38 +770,38 @@ busqueda();        // TODO add your handling code here:
     }//GEN-LAST:event_jComboBox1ItemStateChanged
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JRadioButton ALL;
-    private javax.swing.JRadioButton Aspecto;
-    private javax.swing.JRadioButton Catadas;
-    private javax.swing.JRadioButton Sinevaluar;
-    private javax.swing.ButtonGroup buttonGroup1;
-    private javax.swing.ButtonGroup buttonGroup2;
+    public javax.swing.JRadioButton ALL;
+    public javax.swing.JRadioButton Aspecto;
+    public javax.swing.JRadioButton Catadas;
+    public javax.swing.JRadioButton Sinevaluar;
+    public javax.swing.ButtonGroup buttonGroup1;
+    public javax.swing.ButtonGroup buttonGroup2;
     private javax.swing.JComboBox<String> combobusqueda;
     private javax.swing.JComboBox<String> combotipo;
-    private javax.swing.JMenuItem evaspecto;
-    private javax.swing.JMenuItem evtaza;
-    private javax.swing.JButton jButton2;
+    public javax.swing.JMenuItem evaspecto;
+    public javax.swing.JMenuItem evtaza;
+    public javax.swing.JButton jButton2;
     private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JMenuItem jMenuItem1;
-    private javax.swing.JMenuItem jMenuItem4;
-    private javax.swing.JMenuItem jMenuItem5;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel2;
-    private javax.swing.JPopupMenu jPopupMenu1;
-    private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JSeparator jSeparator1;
-    private javax.swing.JMenuItem kgyn;
-    private javax.swing.JMenuItem mezcla;
-    private javax.swing.JMenuItem sabores;
-    private javax.swing.JTable tablabitacora;
-    private javax.swing.JTable tablaconsulta;
-    private javax.swing.JTextField txtBusqueda;
-    private javax.swing.JLabel yn;
+    public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel2;
+    public javax.swing.JLabel jLabel4;
+    public javax.swing.JLabel jLabel5;
+    public javax.swing.JMenuItem jMenuItem1;
+    public javax.swing.JMenuItem jMenuItem4;
+    public javax.swing.JMenuItem jMenuItem5;
+    public javax.swing.JPanel jPanel1;
+    public javax.swing.JPanel jPanel2;
+    public javax.swing.JPopupMenu jPopupMenu1;
+    public javax.swing.JScrollPane jScrollPane1;
+    public javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JSeparator jSeparator1;
+    public javax.swing.JMenuItem kgyn;
+    public javax.swing.JMenuItem mezcla;
+    public javax.swing.JMenuItem sabores;
+    public javax.swing.JTable tablabitacora;
+    public javax.swing.JTable tablaconsulta;
+    public javax.swing.JTextField txtBusqueda;
+    public javax.swing.JLabel yn;
     // End of variables declaration//GEN-END:variables
   excel excel = new excel();
 }
