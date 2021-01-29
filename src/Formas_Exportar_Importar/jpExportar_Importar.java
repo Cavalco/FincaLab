@@ -42,9 +42,6 @@ public class jpExportar_Importar extends javax.swing.JPanel {
         initComponents();
         cn = c;
         this.Idioma = Idioma;
-        
-        //Iniciar con opcion BD seleccionada
-        rbBD.setSelected(true);
     }
     
     /*
@@ -96,115 +93,19 @@ public class jpExportar_Importar extends javax.swing.JPanel {
         buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel5 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        rbBD = new javax.swing.JRadioButton();
-        rbTabla = new javax.swing.JRadioButton();
-        jPanel3 = new javax.swing.JPanel();
-        btnExportar = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jPanel4 = new javax.swing.JPanel();
-        cbSociedad = new javax.swing.JComboBox();
-        jLabel1 = new javax.swing.JLabel();
 
         jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel5.setPreferredSize(new java.awt.Dimension(830, 570));
 
         jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Exportar datos", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 11))); // NOI18N
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Tipo de exportación"));
-
-        buttonGroup1.add(rbBD);
-        rbBD.setText("Base de datos");
-
-        buttonGroup1.add(rbTabla);
-        rbTabla.setText("Tabla");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rbBD)
-                    .addComponent(rbTabla))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(rbBD)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(rbTabla)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder("Guardar archivo"));
-
-        btnExportar.setText("Exportar");
-        btnExportar.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnExportarActionPerformed(evt);
-            }
-        });
-
-        jButton1.setText("Exportar 2");
+        jButton1.setText("Generar Respaldo");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton1ActionPerformed(evt);
             }
         });
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnExportar, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton1))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(btnExportar)
-                .addGap(18, 18, 18)
-                .addComponent(jButton1)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Seleccione Sociedad"));
-
-        cbSociedad.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione", "Astal", "Caldio", "Basilio/Riviera", "Cafeico", "Procaa", "Cuerno", "Tambor" }));
-
-        jLabel1.setText("Sociedades");
-
-        javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
-        jPanel4.setLayout(jPanel4Layout);
-        jPanel4Layout.setHorizontalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel1)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(cbSociedad, 0, 218, Short.MAX_VALUE))
-                .addContainerGap())
-        );
-        jPanel4Layout.setVerticalGroup(
-            jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel4Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel1)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(cbSociedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -212,22 +113,15 @@ public class jpExportar_Importar extends javax.swing.JPanel {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(228, Short.MAX_VALUE))
+                .addComponent(jButton1)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
@@ -236,15 +130,15 @@ public class jpExportar_Importar extends javax.swing.JPanel {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addContainerGap())
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -253,39 +147,17 @@ public class jpExportar_Importar extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 907, Short.MAX_VALUE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 175, Short.MAX_VALUE)
                 .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 397, Short.MAX_VALUE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 94, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnExportarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnExportarActionPerformed
-        // TODO add your handling code here:
-        //String c = "cmd /c mysql -u root -p beta_fincalab < "+txtUbicacion.getText();
-        execBackup();
-        /*if(rbBD.isSelected()){
-            Runtime aplicacion = Runtime.getRuntime(); 
-        try{aplicacion.exec("cmd.exe /K start C:\\Users\\jCarl\\Desktop\\Prueba\\exportar.bat"); }
-        catch(Exception e){System.out.println(e);}
-        }else if(rbTabla.isSelected()){
-            Runtime aplicacion = Runtime.getRuntime(); 
-            try{
-                //aplicacion.exec("cmd.exe /K start C:\\Users\\jCarl\\Desktop\\Prueba\\exportar_tabla.bat");
-                aplicacion.exec("cmd.exe /K start C:\\Users\\jCarl\\Desktop\\Prueba\\exportar_tabla.bat");
-        
-            //String PATH = fileDB.getAbsolutePath();
-            //"cmd.exe /K start C:\\Users\\jCarl\\Desktop\\Prueba\\mysqldump.exe -uroot -proot fincalab_astal > "+ PATH
-            
-            }
-            catch(Exception e){System.out.println(e);}
-        }*/
-    }//GEN-LAST:event_btnExportarActionPerformed
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -293,49 +165,11 @@ public class jpExportar_Importar extends javax.swing.JPanel {
         try{aplicacion.exec("cmd.exe /K start C:\\Cafe\\exportar.bat"); }
         catch(Exception e){System.out.println(e);}
     }//GEN-LAST:event_jButton1ActionPerformed
-
-    public void execBackup(){
-        JOptionPane.showMessageDialog(null, "Colocar la extencion .sql seguida del nombre del backup", "Atención",JOptionPane.INFORMATION_MESSAGE);
-        try{
-            String pathFile = "";
-            JFileChooser fileChooser = new JFileChooser();
-            fileChooser.setApproveButtonText("Guardar Backup de la Base de datos");
-            FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos sql", "sql");
-            fileChooser.addChoosableFileFilter(filter);
-            fileChooser.showSaveDialog(null);
-            File fileDB = fileChooser.getSelectedFile();
-            String PATH = fileDB.getAbsolutePath();
-            Runtime runtime = Runtime.getRuntime();//backupFile se utiliza para indicarle la ubicacion y nombre del archivo que contendra el backup con la extencion .sql/
-            String pathDB = "\"C:\\Cafe\\mysqldump.exe\" -uroot -proot beta_fincalab ";
-            
-            if(! rbBD.isSelected()){
-                pathDB += "recibos" + "boletasalidareceptor" + " ";
-            }
-            
-            pathDB += "-r "+ PATH;
-            Process child = runtime.exec(pathDB);
- 
-            //backupFile se utiliza para indicarle la ubicacion y nombre del archivo que contendra el backup con la extencion .sql/
-            //Process es el que ejecuta el comando para buscar el mysqldump.exe
-            JOptionPane.showMessageDialog(null, "Archivo generado", "Verificar",JOptionPane.INFORMATION_MESSAGE);
-        }catch(Exception e){
-            e.printStackTrace();
-            JOptionPane.showMessageDialog(null, "Error no se genero el archivo por el siguiente motivo: " + e.getMessage(), "Verificar",JOptionPane.ERROR_MESSAGE);
-        }
-    }
     
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    public javax.swing.JButton btnExportar;
     public javax.swing.ButtonGroup buttonGroup1;
-    public javax.swing.JComboBox cbSociedad;
     public javax.swing.JButton jButton1;
-    public javax.swing.JLabel jLabel1;
     public javax.swing.JPanel jPanel1;
-    public javax.swing.JPanel jPanel2;
-    public javax.swing.JPanel jPanel3;
-    public javax.swing.JPanel jPanel4;
     public javax.swing.JPanel jPanel5;
-    public javax.swing.JRadioButton rbBD;
-    public javax.swing.JRadioButton rbTabla;
     // End of variables declaration//GEN-END:variables
 }

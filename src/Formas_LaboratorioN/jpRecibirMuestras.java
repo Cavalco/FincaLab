@@ -32,7 +32,7 @@ public class jpRecibirMuestras extends javax.swing.JPanel {
     }
     public void cargarDatos(){
         limpiar(tablaRegistroManual);
-        ml.cargarInformacion(modelo, 10, "SELECT proceso, formaCafe, beneficio, dueno, idSublote, certificacion, "
+        ml.cargarInformacion2(modelo, 10, "SELECT proceso, formaCafe, beneficio, dueno, idSublote, certificacion, "
                 + "kilos, costales, comunidad, metodoSecado FROM `muestrasrecibidas`");
     }
     private void limpiar(JTable tabla) {

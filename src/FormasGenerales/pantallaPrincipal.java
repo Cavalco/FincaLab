@@ -1572,9 +1572,11 @@ public class pantallaPrincipal extends javax.swing.JFrame {
         javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("Recibos"));
         javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("CortesDelDia"));
         javax.swing.tree.DefaultMutableTreeNode treeNode4 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("CortesEnviados"));
+        javax.swing.tree.DefaultMutableTreeNode treeNode5 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("Exportar"));
         treeNode1.add(treeNode2);
         treeNode1.add(treeNode3);
         treeNode1.add(treeNode4);
+        treeNode1.add(treeNode5);
 
         jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
         jLabel3.setVisible(true);

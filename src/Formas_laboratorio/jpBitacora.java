@@ -473,10 +473,10 @@ public class jpBitacora extends javax.swing.JPanel {
 public void llenarTabla() {
         limpiar(tablabitacora);
       limpiar(tablaconsulta);
-        mdb.cargarInformacion(modelo, 15, "SELECT b.id_muestra,b.fecha_llegada,b.tipocafe,b.forma,b.beneficio,b.dueño,b.lote,b.certificado,b.peso,b.sacos,\n" +
+        mdb.cargarInformacion2(modelo, 15, "SELECT b.id_muestra,b.fecha_llegada,b.tipocafe,b.forma,b.beneficio,b.dueño,b.lote,b.certificado,b.peso,b.sacos,\n" +
 "b.comunidad,b.estatus,d.puntuacion,c.Puntuacion,b.mezcla from bitacoralab b left join datosev d on b.id_bitacora=d.id_bitacora left join \n" +
 " catacion c on b.id_bitacora=c.id_bitacora where estatus != 'Desactivada' order by b.id_muestra");
-         mdb.cargarInformacion(modelo2,21, " select b.estatus,b.id_muestra,b.beneficio,b.lote,b.tipocafe,b.forma,b.certificado,b.peso,b.Kgconfirm,\n" +
+         mdb.cargarInformacion2(modelo2,21, " select b.estatus,b.id_muestra,b.beneficio,b.lote,b.tipocafe,b.forma,b.certificado,b.peso,b.Kgconfirm,\n" +
 " b.sacos,b.comunidad,b.dueño,b.fechalote,c.Puntuacion,d.puntuacion,d.humedad_o,c.quakers,b.sabores,\n" +
 " b.observaciones,d.Densidadoro,c.densidadtostado from  bitacoralab b left join   datosev d on b.id_bitacora=d.id_bitacora left join \n" +
 " catacion c on b.id_bitacora=c.id_bitacora where estatus != 'Desactivada' order by b.id_muestra");
@@ -578,8 +578,8 @@ public void llenarTabla() {
         }
          limpiar(tablabitacora);
          limpiar(tablaconsulta);
-        mdb.cargarInformacion(modelo, 15, sql);
-        mdb.cargarInformacion(modelo2,21, sql2);
+        mdb.cargarInformacion2(modelo, 15, sql);
+        mdb.cargarInformacion2(modelo2,21, sql2);
     }
     String csm = "", comunindad = "", tipo = "", id, forma = "", estatus = "", taza = "", aspecto = "",mezasig="",calcer="",kgconfirm="";
     private void tablabitacoraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablabitacoraMouseClicked
