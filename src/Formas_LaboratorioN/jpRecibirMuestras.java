@@ -21,20 +21,33 @@ public class jpRecibirMuestras extends javax.swing.JPanel {
      */
     Connection cn;
     metodosLaboratorio ml;
-    DefaultTableModel modelo;
+    DefaultTableModel modelo, modelo2;
+    String dueño="",numsublote="",beneficio="",idlote="";
     
     public jpRecibirMuestras(Connection cn, String idioma) {
         initComponents();
         this.cn = cn;
         ml = new metodosLaboratorio(cn,"");
         modelo = (DefaultTableModel) tablaRegistroManual.getModel();
+        modelo2 = (DefaultTableModel) tablaMRecibidas.getModel();
         cargarDatos();
+        cargarDatos2();
     }
+    
+    
+    //muestrasenviadas
     public void cargarDatos(){
-        limpiar(tablaRegistroManual);
-        ml.cargarInformacion2(modelo, 10, "SELECT proceso, formaCafe, beneficio, dueno, idSublote, certificacion, "
-                + "kilos, costales, comunidad, metodoSecado FROM `muestrasrecibidas`");
+        limpiar(tablaMRecibidas);
+        ml.cargarInformacion2(modelo, 10, "SELECT`tipocafe`, `forma`, `beneficio`, `dueño`,  `lote`,`certificado`, `peso`, `sacos`, `comunidad`,`Metodosecado`FROM bitacoralab where idlote=''and beneficio like'"+beneficio+"' and lote like'"+numsublote+"' and dueño like'"+dueño+"' ;");
     }
+    
+    //bitacora
+    public void cargarDatos2(){
+        limpiar(tablaRegistroManual);
+        ml.cargarInformacion2(modelo, 10, "SELECT`tipocafe`, `forma`, `beneficio`, `dueño`,  `lote`,`certificado`, "
+                + "`peso`, `sacos`, `comunidad`,`Metodosecado`FROM bitacoralab");
+    }
+    
     private void limpiar(JTable tabla) {
         while (tabla.getRowCount() > 0) {
             ((DefaultTableModel) tabla.getModel()).removeRow(0);
@@ -53,7 +66,7 @@ public class jpRecibirMuestras extends javax.swing.JPanel {
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        tablaMRecibidas = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablaRegistroManual = new javax.swing.JTable();
@@ -66,7 +79,7 @@ public class jpRecibirMuestras extends javax.swing.JPanel {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder("Muestras recibidas"));
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        tablaMRecibidas.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null, null, null, null, null, null, null},
                 {null, null, null, null, null, null, null, null, null, null},
@@ -85,7 +98,7 @@ public class jpRecibirMuestras extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane1.setViewportView(jTable1);
+        jScrollPane1.setViewportView(tablaMRecibidas);
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -238,7 +251,7 @@ public class jpRecibirMuestras extends javax.swing.JPanel {
     private javax.swing.JPanel jPanel4;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane2;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable tablaMRecibidas;
     private javax.swing.JTable tablaRegistroManual;
     // End of variables declaration//GEN-END:variables
 }

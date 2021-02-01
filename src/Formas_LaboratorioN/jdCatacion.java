@@ -6,6 +6,7 @@
 package Formas_LaboratorioN;
 
 import java.text.DecimalFormat;
+import java.util.Date;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,35 +22,44 @@ public class jdCatacion extends javax.swing.JFrame {
     /**
      * Creates new form jdCatacion
      */
-    public jdCatacion() {
+    public jdCatacion(String proceso, String id, String csm, String comunidad, String formaCafe) {
         initComponents();
+        setLocationRelativeTo(null);
+        
+        lblCSM.setText(csm);
+        lblProceso.setText(proceso);
+        lblComunidad.setText(comunidad);
+
+        Date date = new Date(System.currentTimeMillis());
+        txtFecha.setMaxSelectableDate(date);
     }
 
     //Formula para evaluación en taza
     public void formula() {
-        double total, a = Double.valueOf(lblFragancia.getText()), 
-                b = Double.valueOf(txtSabor.getText()), 
-                c = Double.valueOf(txtAftertaste.getText()), 
-                d = Double.valueOf(txtAcidez.getText()), 
-                e = Double.valueOf(txtCuerpo.getText()), 
-                f = Double.valueOf(txtBalance.getText()), 
-                g = Double.valueOf(txtTazasCat.getText()), 
-                h = Double.valueOf(txtUniTaza.getText()), 
-                i = Double.valueOf(txtTazaLim.getText()), 
-                j = Double.valueOf(txtDulzor.getText()), 
-                k = Double.valueOf(txtCatador.getText()), 
+        double total, a = Double.valueOf(lblFragancia.getText()),
+                b = Double.valueOf(txtSabor.getText()),
+                c = Double.valueOf(txtAftertaste.getText()),
+                d = Double.valueOf(txtAcidez.getText()),
+                e = Double.valueOf(txtCuerpo.getText()),
+                f = Double.valueOf(txtBalance.getText()),
+                g = Double.valueOf(txtTazasCat.getText()),
+                h = Double.valueOf(txtUniTaza.getText()),
+                i = Double.valueOf(txtTazaLim.getText()),
+                j = Double.valueOf(txtDulzor.getText()),
+                k = Double.valueOf(txtCatador.getText()),
                 l = Double.valueOf(txtDefectos.getText());
-        
+
         total = a + b + c + d + e + f + ((10 / g) * h) + ((10 / g) * i) + ((10 / g) * j) + k - l;
         lblPuntuacion.setText(formato.format(total) + "");
     }
+
     public void promedio() {
         a1 = Double.parseDouble(txtSeco.getText());
         a2 = Double.parseDouble(txtMojado.getText());
         a3 = Double.parseDouble(txtQuebrado.getText());
 
         promFragancia = (a1 + a2 + a3) / 3;
-        lblFragancia.setText(formato.format(promFragancia)+"");
+        lblFragancia.setText(formato.format(promFragancia) + "");
     }
 
     /**
@@ -167,7 +177,7 @@ public class jdCatacion extends javax.swing.JFrame {
         txtCatador = new javax.swing.JTextField();
         jButton21 = new javax.swing.JButton();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -1072,19 +1082,29 @@ public class jdCatacion extends javax.swing.JFrame {
         //JOptionPane.showMessageDialog(this, slSeco.getValue());
         Double valor = Double.parseDouble(slSeco.getValue() + "");
         Double valor2 = valor / 100;
+        
+        if (valor2 >= 4.0 && valor < 5.0) {
+            valor2 = 4.5;
+        }
+         if (valor2 >= 6.0 && valor < 6.5) {
+            valor2 = 6.0;
+        }
+        
+        
+        
         txtSeco.setText(valor2 + "");
         promedio();
     }//GEN-LAST:event_slSecoStateChanged
 
     private void btnMenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenosActionPerformed
         // TODO add your handling code here:
-        slSeco.setValue(slSeco.getValue()-50);
+        slSeco.setValue(slSeco.getValue() - 50);
         promedio();
     }//GEN-LAST:event_btnMenosActionPerformed
 
     private void btnMasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMasActionPerformed
         // TODO add your handling code here:
-         slSeco.setValue(slSeco.getValue()+50);
+        slSeco.setValue(slSeco.getValue() + 50);
         promedio();
     }//GEN-LAST:event_btnMasActionPerformed
 
@@ -1106,25 +1126,25 @@ public class jdCatacion extends javax.swing.JFrame {
 
     private void btnMenos2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenos2ActionPerformed
         // TODO add your handling code here:
-        slMojado.setValue(slMojado.getValue()-50);
+        slMojado.setValue(slMojado.getValue() - 50);
         promedio();
     }//GEN-LAST:event_btnMenos2ActionPerformed
 
     private void btnMas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMas2ActionPerformed
         // TODO add your handling code here:
-        slMojado.setValue(slMojado.getValue()+50);
+        slMojado.setValue(slMojado.getValue() + 50);
         promedio();
     }//GEN-LAST:event_btnMas2ActionPerformed
 
     private void btnMenos3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenos3ActionPerformed
         // TODO add your handling code here:
-        slQuebrado.setValue(slQuebrado.getValue()-50);
+        slQuebrado.setValue(slQuebrado.getValue() - 50);
         promedio();
     }//GEN-LAST:event_btnMenos3ActionPerformed
 
     private void btnMas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMas3ActionPerformed
         // TODO add your handling code here:
-        slQuebrado.setValue(slQuebrado.getValue()+50);
+        slQuebrado.setValue(slQuebrado.getValue() + 50);
         promedio();
     }//GEN-LAST:event_btnMas3ActionPerformed
 
@@ -1151,37 +1171,37 @@ public class jdCatacion extends javax.swing.JFrame {
 
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
-        slSabor.setValue(slSabor.getValue()-50);
+        slSabor.setValue(slSabor.getValue() - 50);
         promedio();
     }//GEN-LAST:event_jButton10ActionPerformed
 
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
-        slSabor.setValue(slSabor.getValue()+50);
+        slSabor.setValue(slSabor.getValue() + 50);
         promedio();
     }//GEN-LAST:event_jButton11ActionPerformed
 
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
-        slAftertaste.setValue(slAftertaste.getValue()-50);
+        slAftertaste.setValue(slAftertaste.getValue() - 50);
         promedio();
     }//GEN-LAST:event_jButton12ActionPerformed
 
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
-        slAftertaste.setValue(slAftertaste.getValue()+50);
+        slAftertaste.setValue(slAftertaste.getValue() + 50);
         promedio();
     }//GEN-LAST:event_jButton13ActionPerformed
 
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         // TODO add your handling code here:
-        slAcidez.setValue(slAcidez.getValue()-50);
+        slAcidez.setValue(slAcidez.getValue() - 50);
         promedio();
     }//GEN-LAST:event_jButton14ActionPerformed
 
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         // TODO add your handling code here:
-        slAcidez.setValue(slAcidez.getValue()+50);
+        slAcidez.setValue(slAcidez.getValue() + 50);
         promedio();
     }//GEN-LAST:event_jButton15ActionPerformed
 
@@ -1194,13 +1214,13 @@ public class jdCatacion extends javax.swing.JFrame {
 
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         // TODO add your handling code here:
-        slCuerpo.setValue(slCuerpo.getValue()-50);
+        slCuerpo.setValue(slCuerpo.getValue() - 50);
         promedio();
     }//GEN-LAST:event_jButton16ActionPerformed
 
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
         // TODO add your handling code here:
-        slCuerpo.setValue(slCuerpo.getValue()+50);
+        slCuerpo.setValue(slCuerpo.getValue() + 50);
         promedio();
     }//GEN-LAST:event_jButton17ActionPerformed
 
@@ -1213,13 +1233,13 @@ public class jdCatacion extends javax.swing.JFrame {
 
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         // TODO add your handling code here:
-        slBalance.setValue(slBalance.getValue()-50);
+        slBalance.setValue(slBalance.getValue() - 50);
         promedio();
     }//GEN-LAST:event_jButton18ActionPerformed
 
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         // TODO add your handling code here:
-        slBalance.setValue(slBalance.getValue()+50);
+        slBalance.setValue(slBalance.getValue() + 50);
         promedio();
     }//GEN-LAST:event_jButton19ActionPerformed
 
@@ -1232,13 +1252,13 @@ public class jdCatacion extends javax.swing.JFrame {
 
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
         // TODO add your handling code here:
-        slCatador.setValue(slCatador.getValue()-50);
+        slCatador.setValue(slCatador.getValue() - 50);
         promedio();
     }//GEN-LAST:event_jButton20ActionPerformed
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
         // TODO add your handling code here:
-        slCatador.setValue(slCatador.getValue()+50);
+        slCatador.setValue(slCatador.getValue() + 50);
         promedio();
     }//GEN-LAST:event_jButton21ActionPerformed
 
@@ -1256,7 +1276,7 @@ public class jdCatacion extends javax.swing.JFrame {
         if (Character.isAlphabetic(m)) {
             getToolkit().beep();
             evt.consume();
-        } 
+        }
     }//GEN-LAST:event_txtNoTazasKeyTyped
 
     private void txtUniTazaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUniTazaKeyTyped
@@ -1265,7 +1285,7 @@ public class jdCatacion extends javax.swing.JFrame {
         if (Character.isAlphabetic(m)) {
             getToolkit().beep();
             evt.consume();
-        } 
+        }
     }//GEN-LAST:event_txtUniTazaKeyTyped
 
     private void txtTazaLimKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTazaLimKeyTyped
@@ -1274,7 +1294,7 @@ public class jdCatacion extends javax.swing.JFrame {
         if (Character.isAlphabetic(m)) {
             getToolkit().beep();
             evt.consume();
-        } 
+        }
     }//GEN-LAST:event_txtTazaLimKeyTyped
 
     private void txtDulzorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDulzorKeyTyped
@@ -1283,7 +1303,7 @@ public class jdCatacion extends javax.swing.JFrame {
         if (Character.isAlphabetic(m)) {
             getToolkit().beep();
             evt.consume();
-        } 
+        }
     }//GEN-LAST:event_txtDulzorKeyTyped
 
     private void txtIntensidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIntensidadKeyTyped
@@ -1292,7 +1312,7 @@ public class jdCatacion extends javax.swing.JFrame {
         if (Character.isAlphabetic(m)) {
             getToolkit().beep();
             evt.consume();
-        } 
+        }
     }//GEN-LAST:event_txtIntensidadKeyTyped
 
     private void txtNoTazasKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNoTazasKeyReleased
@@ -1354,11 +1374,11 @@ public class jdCatacion extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        java.awt.EventQueue.invokeLater(new Runnable() {
+       /* java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new jdCatacion().setVisible(true);
             }
-        });
+        });*/
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

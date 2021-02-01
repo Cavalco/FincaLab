@@ -83,7 +83,7 @@ import Formas_Sociedades.jpCatalogoSociedades;
 import Formas_Sociedades.jpLocalidadesSociedades;
 import Formas_Sociedades.jpRecepcion;
 import Formas_laboratorio.jpBitacora;
-import Formas_laboratorio.jpRecibirMuestras;
+import Formas_LaboratorioN.jpRecibirMuestras;
 import Formas_Almacen.jdSeleccionAlmacen;
 import Formas_Almacen.jpSubLotesRecibidosAlmacen;
 import Formas_Almacen.jpSubLotesActivosAlmacen;
