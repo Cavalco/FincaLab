@@ -52,23 +52,79 @@ public class jdCatacion extends javax.swing.JFrame {
     //Formula para evaluación en taza
     public void formula() {
         //JOptionPane.showMessageDialog(null,"Entre al metodo");
-        double total, a = Double.valueOf(lblFragancia.getText()),
-                b = Double.valueOf(txtSabor.getText()),
-                c = Double.valueOf(txtAftertaste.getText()),
-                d = Double.valueOf(txtAcidez.getText()),
-                e = Double.valueOf(txtCuerpo.getText()),
-                f = Double.valueOf(txtBalance.getText()),
-                g = Double.valueOf(txtTazasCat.getText()),
-                h = Double.valueOf(txtUniTaza.getText()),
-                i = Double.valueOf(txtTazaLim.getText()),
-                j = Double.valueOf(txtDulzor.getText()),
-                k = Double.valueOf(txtCatador.getText()),
-                l = Double.valueOf(txtDefectos.getText());
+        double total, a = Double.valueOf(lblFragancia.getText()), b, c, d,
+                e, f,g,h,i,j,k,l;
+
+        if (!txtSabor.getText().equals("")) {
+            b = Double.valueOf(txtSabor.getText());
+        } else {
+            b = 0;
+        }
+
+        if (!txtAftertaste.getText().equals("")) {
+            c = Double.valueOf(txtAftertaste.getText());
+        } else {
+            c = 0;
+        }
+
+        if (!txtAcidez.getText().equals("")) {
+            d = Double.valueOf(txtAcidez.getText());
+        } else {
+            d = 0;
+        }
+
+        if (!txtCuerpo.getText().equals("")) {
+            e = Double.valueOf(txtCuerpo.getText());
+        } else {
+            e = 0;
+        }
+
+        if (!txtBalance.getText().equals("")) {
+            f = Double.valueOf(txtBalance.getText());
+        } else {
+            f = 0;
+        }
+
+        if (!txtTazasCat.getText().equals("")) {
+            g = Double.valueOf(txtTazasCat.getText());
+        } else {
+            g = 0;
+        }
+
+        if (!txtUniTaza.getText().equals("")) {
+            h = Double.valueOf(txtUniTaza.getText());
+        } else {
+            h = 0;
+        }
+
+        if (!txtTazaLim.getText().equals("")) {
+            i = Double.valueOf(txtTazaLim.getText());
+        } else {
+            i = 0;
+        }
+
+        if (!txtDulzor.getText().equals("")) {
+            j = Double.valueOf(txtDulzor.getText());
+        } else {
+            j = 0;
+        }
+
+        if (!txtCatador.getText().equals("")) {
+            k = Double.valueOf(txtCatador.getText());
+        } else {
+            k = 0;
+        }
+
+        if (!txtDefectos.getText().equals("")) {
+            l = Double.valueOf(txtDefectos.getText());
+        } else {
+            l = 0;
+        }
 
         total = a + b + c + d + e + f + ((10 / g) * h) + ((10 / g) * i) + ((10 / g) * j) + k - l;
         lblPuntuacion.setText(formato.format(total) + "");
-        
-        System.out.println("Puntuacion: "+a+" + "+b+" + "+c+" + "+d+" + "+e+" + "+f+" + ((10/"+g+") * "+h+") + ((10/g) * "+i+") + ((10/"+g+") * "+j+") + "+k+" - 1");
+
+        System.out.println("Puntuacion: " + a + " + " + b + " + " + c + " + " + d + " + " + e + " + " + f + " + ((10/" + g + ") * " + h + ") + ((10/g) * " + i + ") + ((10/" + g + ") * " + j + ") + " + k + " - 1");
     }
 
     public void promedio() {
@@ -1511,7 +1567,7 @@ public class jdCatacion extends javax.swing.JFrame {
         l2 = Integer.parseInt(txtIntensidad.getText());
         totalD = l1 * l2;
         txtDefectos.setText(formato.format(totalD) + "");
-       
+
     }//GEN-LAST:event_txtNoTazasKeyReleased
 
     private void txtIntensidadKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIntensidadKeyReleased
@@ -1587,13 +1643,13 @@ public class jdCatacion extends javax.swing.JFrame {
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        jdSaboresPropuesta2 jdS = new jdSaboresPropuesta2(null,true);
+        jdSaboresPropuesta2 jdS = new jdSaboresPropuesta2(null, true);
         jdS.setVisible(true);
     }//GEN-LAST:event_jButton4ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         // TODO add your handling code here:
-        JdCatacion jdC = new JdCatacion(null, true, "","","","","","",cn,"");
+        JdCatacion jdC = new JdCatacion(null, true, "", "", "", "", "", "", cn, "");
         jdC.setVisible(true);
     }//GEN-LAST:event_jButton6ActionPerformed
 
@@ -1617,7 +1673,7 @@ public class jdCatacion extends javax.swing.JFrame {
                 //jpCT.llenarTabla();
                 this.dispose();
             } catch (Exception e) {
-                JOptionPane.showMessageDialog(null, e+"Error try");
+                JOptionPane.showMessageDialog(null, e + "Error try");
             }
         } else {
             JOptionPane.showMessageDialog(null, "¡Selecciona La Fecha!");
