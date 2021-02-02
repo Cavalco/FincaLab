@@ -5,9 +5,14 @@
  */
 package Formas_LaboratorioN;
 
+import Formas_laboratorio.jpBitacora;
+import Metodos_Configuraciones.metodosLaboratorio;
+import java.sql.Connection;
 import java.text.DecimalFormat;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 import javax.swing.JOptionPane;
+import javax.swing.UIManager;
 
 /**
  *
@@ -18,24 +23,33 @@ public class jdCatacion extends javax.swing.JFrame {
     DecimalFormat formato = new DecimalFormat("#.#");
     double dryv = 0, promFragancia, a1, a2, a3;
     int l1, l2, totalD;
+    Connection cn;
+    metodosLaboratorio mdb;
+    String id = "";
+    jpBitacora jpCT;
+    //String csm = "", comunidad = "", tipo = "", id, forma = "";
 
     /**
      * Creates new form jdCatacion
      */
-    public jdCatacion(String proceso, String id, String csm, String comunidad, String formaCafe) {
+    public jdCatacion(Connection cn, String proceso, String id, String csm, String comunidad, String formaCafe) {
         initComponents();
         setLocationRelativeTo(null);
-        
+
+        this.cn = cn;
+        this.id = id;
         lblCSM.setText(csm);
         lblProceso.setText(proceso);
         lblComunidad.setText(comunidad);
 
         Date date = new Date(System.currentTimeMillis());
         txtFecha.setMaxSelectableDate(date);
+        mdb = new metodosLaboratorio(cn, "");
     }
 
     //Formula para evaluación en taza
     public void formula() {
+        //JOptionPane.showMessageDialog(null,"Entre al metodo");
         double total, a = Double.valueOf(lblFragancia.getText()),
                 b = Double.valueOf(txtSabor.getText()),
                 c = Double.valueOf(txtAftertaste.getText()),
@@ -106,7 +120,6 @@ public class jdCatacion extends javax.swing.JFrame {
         txtTazaLim = new javax.swing.JTextField();
         txtDulzor = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
-        jLabel13 = new javax.swing.JLabel();
         txtDefectos = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
@@ -118,6 +131,7 @@ public class jdCatacion extends javax.swing.JFrame {
         lblPuntuacion = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         txtTazasCat = new javax.swing.JTextField();
+        jLabel13 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -166,8 +180,8 @@ public class jdCatacion extends javax.swing.JFrame {
         jButton16 = new javax.swing.JButton();
         txtCuerpo = new javax.swing.JTextField();
         jButton17 = new javax.swing.JButton();
-        jSpinner1 = new javax.swing.JSpinner();
-        jSpinner2 = new javax.swing.JSpinner();
+        spAcidezInt = new javax.swing.JSpinner();
+        spCuerpoInt = new javax.swing.JSpinner();
         slBalance = new javax.swing.JSlider();
         jButton18 = new javax.swing.JButton();
         txtBalance = new javax.swing.JTextField();
@@ -203,7 +217,9 @@ public class jdCatacion extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblCSM, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(lblComunidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblProceso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(lblProceso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(53, 53, 53)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -219,10 +235,10 @@ public class jdCatacion extends javax.swing.JFrame {
                     .addComponent(lblComunidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(18, 18, 18)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblProceso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel3)
-                        .addGap(0, 0, Short.MAX_VALUE))
-                    .addComponent(lblProceso, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
 
@@ -230,6 +246,7 @@ public class jdCatacion extends javax.swing.JFrame {
 
         jLabel4.setText("Nivel de tostado");
 
+        jTextField1.setEditable(false);
         jTextField1.setBackground(new java.awt.Color(0, 0, 0));
 
         slUniTostado.setMajorTickSpacing(1);
@@ -238,12 +255,16 @@ public class jdCatacion extends javax.swing.JFrame {
         slUniTostado.setPaintLabels(true);
         slUniTostado.setValue(3);
 
+        jTextField2.setEditable(false);
         jTextField2.setBackground(new java.awt.Color(51, 51, 51));
 
+        jTextField3.setEditable(false);
         jTextField3.setBackground(new java.awt.Color(102, 102, 102));
 
+        jTextField4.setEditable(false);
         jTextField4.setBackground(new java.awt.Color(153, 153, 153));
 
+        jTextField5.setEditable(false);
         jTextField5.setBackground(new java.awt.Color(204, 204, 204));
 
         jLabel5.setText("Uniformidad de tostado");
@@ -253,6 +274,11 @@ public class jdCatacion extends javax.swing.JFrame {
         slNivelTostado.setMinimum(1);
         slNivelTostado.setPaintLabels(true);
         slNivelTostado.setValue(3);
+        slNivelTostado.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                slNivelTostadoStateChanged(evt);
+            }
+        });
 
         jLabel6.setForeground(new java.awt.Color(204, 0, 0));
         jLabel6.setText("* 5 = parejo");
@@ -307,8 +333,8 @@ public class jdCatacion extends javax.swing.JFrame {
                 .addContainerGap()
                 .addComponent(jLabel4)
                 .addGap(4, 4, 4)
-                .addComponent(slNivelTostado, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
+                .addComponent(slNivelTostado, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -371,7 +397,12 @@ public class jdCatacion extends javax.swing.JFrame {
             }
         });
 
-        jLabel13.setText("Defectos:");
+        txtDefectos.setEditable(false);
+        txtDefectos.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtDefectosKeyReleased(evt);
+            }
+        });
 
         jLabel14.setText("No. Tazas:");
 
@@ -407,10 +438,12 @@ public class jdCatacion extends javax.swing.JFrame {
         jLabel19.setText("Tazas catadas:");
 
         txtTazasCat.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyTyped(java.awt.event.KeyEvent evt) {
-                txtTazasCatKeyTyped(evt);
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtTazasCatKeyReleased(evt);
             }
         });
+
+        jLabel13.setText("Defectos:");
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -419,26 +452,37 @@ public class jdCatacion extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jSeparator2)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel9)
-                        .addGap(18, 18, 18)
-                        .addComponent(txtFecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel10)
-                            .addComponent(jLabel11)
-                            .addComponent(jLabel12))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(txtUniTaza)
-                            .addComponent(txtTazaLim)
-                            .addComponent(txtDulzor, javax.swing.GroupLayout.Alignment.TRAILING)))
-                    .addComponent(jSeparator3)
-                    .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel17)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblPuntuacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel13)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(txtDefectos, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jSeparator2)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel10)
+                                    .addComponent(jLabel11)
+                                    .addComponent(jLabel12))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtUniTaza)
+                                    .addComponent(txtTazaLim)
+                                    .addComponent(txtDulzor, javax.swing.GroupLayout.Alignment.TRAILING)))
+                            .addComponent(jSeparator3)
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addComponent(jLabel17)
+                                .addGap(18, 18, 18)
+                                .addComponent(lblPuntuacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel4Layout.createSequentialGroup()
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel15)
+                                    .addComponent(jLabel14))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(txtNoTazas, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtIntensidad, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 26, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                        .addContainerGap())
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel16)
@@ -446,18 +490,11 @@ public class jdCatacion extends javax.swing.JFrame {
                                 .addComponent(jLabel19)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(txtTazasCat, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 3, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel15)
-                            .addComponent(jLabel14)
-                            .addComponent(jLabel13))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(txtDefectos, javax.swing.GroupLayout.DEFAULT_SIZE, 26, Short.MAX_VALUE)
-                            .addComponent(txtNoTazas)
-                            .addComponent(txtIntensidad))))
-                .addContainerGap())
+                        .addComponent(jLabel9)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(txtFecha, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -482,16 +519,16 @@ public class jdCatacion extends javax.swing.JFrame {
                 .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel13)
-                    .addComponent(txtDefectos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(txtNoTazas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtIntensidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtIntensidad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtNoTazas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel15))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtDefectos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel13))
                 .addGap(18, 18, 18)
                 .addComponent(jLabel16)
                 .addGap(18, 18, 18)
@@ -511,6 +548,11 @@ public class jdCatacion extends javax.swing.JFrame {
         jPanel5.setBorder(new javax.swing.border.SoftBevelBorder(javax.swing.border.BevelBorder.LOWERED));
 
         jButton1.setText("Guardar");
+        jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jButton1MouseClicked(evt);
+            }
+        });
 
         jButton2.setText("Salir");
 
@@ -523,7 +565,7 @@ public class jdCatacion extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(26, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -643,10 +685,9 @@ public class jdCatacion extends javax.swing.JFrame {
             }
         });
 
-        slSabor.setMajorTickSpacing(1);
-        slSabor.setMaximum(5);
-        slSabor.setMinimum(1);
-        slSabor.setValue(3);
+        slSabor.setMaximum(950);
+        slSabor.setMinimum(450);
+        slSabor.setValue(700);
         slSabor.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 slSaborStateChanged(evt);
@@ -669,10 +710,9 @@ public class jdCatacion extends javax.swing.JFrame {
             }
         });
 
-        slAftertaste.setMajorTickSpacing(1);
-        slAftertaste.setMaximum(5);
-        slAftertaste.setMinimum(1);
-        slAftertaste.setValue(3);
+        slAftertaste.setMaximum(950);
+        slAftertaste.setMinimum(450);
+        slAftertaste.setValue(700);
         slAftertaste.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 slAftertasteStateChanged(evt);
@@ -695,10 +735,9 @@ public class jdCatacion extends javax.swing.JFrame {
             }
         });
 
-        slAcidez.setMajorTickSpacing(1);
-        slAcidez.setMaximum(5);
-        slAcidez.setMinimum(1);
-        slAcidez.setValue(3);
+        slAcidez.setMaximum(950);
+        slAcidez.setMinimum(450);
+        slAcidez.setValue(700);
         slAcidez.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 slAcidezStateChanged(evt);
@@ -721,10 +760,9 @@ public class jdCatacion extends javax.swing.JFrame {
             }
         });
 
-        slCuerpo.setMajorTickSpacing(1);
-        slCuerpo.setMaximum(5);
-        slCuerpo.setMinimum(1);
-        slCuerpo.setValue(3);
+        slCuerpo.setMaximum(950);
+        slCuerpo.setMinimum(450);
+        slCuerpo.setValue(700);
         slCuerpo.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 slCuerpoStateChanged(evt);
@@ -738,6 +776,8 @@ public class jdCatacion extends javax.swing.JFrame {
             }
         });
 
+        txtCuerpo.setText("7.0");
+
         jButton17.setText("+");
         jButton17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -745,10 +785,9 @@ public class jdCatacion extends javax.swing.JFrame {
             }
         });
 
-        slBalance.setMajorTickSpacing(1);
-        slBalance.setMaximum(5);
-        slBalance.setMinimum(1);
-        slBalance.setValue(3);
+        slBalance.setMaximum(950);
+        slBalance.setMinimum(450);
+        slBalance.setValue(700);
         slBalance.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 slBalanceStateChanged(evt);
@@ -762,6 +801,8 @@ public class jdCatacion extends javax.swing.JFrame {
             }
         });
 
+        txtBalance.setText("7.0");
+
         jButton19.setText("+");
         jButton19.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -769,10 +810,9 @@ public class jdCatacion extends javax.swing.JFrame {
             }
         });
 
-        slCatador.setMajorTickSpacing(1);
-        slCatador.setMaximum(5);
-        slCatador.setMinimum(1);
-        slCatador.setValue(3);
+        slCatador.setMaximum(950);
+        slCatador.setMinimum(450);
+        slCatador.setValue(700);
         slCatador.addChangeListener(new javax.swing.event.ChangeListener() {
             public void stateChanged(javax.swing.event.ChangeEvent evt) {
                 slCatadorStateChanged(evt);
@@ -785,6 +825,8 @@ public class jdCatacion extends javax.swing.JFrame {
                 jButton20ActionPerformed(evt);
             }
         });
+
+        txtCatador.setText("7.0");
 
         jButton21.setText("+");
         jButton21.addActionListener(new java.awt.event.ActionListener() {
@@ -830,7 +872,7 @@ public class jdCatacion extends javax.swing.JFrame {
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(jLabel30)
                                 .addGap(18, 18, 18)
-                                .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(spCuerpoInt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel21)
@@ -911,7 +953,7 @@ public class jdCatacion extends javax.swing.JFrame {
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(jLabel28)
                                 .addGap(18, 18, 18)
-                                .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(spAcidezInt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 8, Short.MAX_VALUE)))
                 .addContainerGap())
         );
@@ -984,7 +1026,7 @@ public class jdCatacion extends javax.swing.JFrame {
                         .addGap(25, 25, 25)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel28)
-                            .addComponent(jSpinner1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(spAcidezInt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(19, 19, 19)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel6Layout.createSequentialGroup()
@@ -999,7 +1041,7 @@ public class jdCatacion extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel30)
-                            .addComponent(jSpinner2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(spCuerpoInt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -1031,9 +1073,9 @@ public class jdCatacion extends javax.swing.JFrame {
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(18, 18, 18)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jPanel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -1082,16 +1124,14 @@ public class jdCatacion extends javax.swing.JFrame {
         //JOptionPane.showMessageDialog(this, slSeco.getValue());
         Double valor = Double.parseDouble(slSeco.getValue() + "");
         Double valor2 = valor / 100;
-        
+
         if (valor2 >= 4.0 && valor < 5.0) {
             valor2 = 4.5;
         }
-         if (valor2 >= 6.0 && valor < 6.5) {
+        if (valor2 >= 6.0 && valor < 6.5) {
             valor2 = 6.0;
         }
-        
-        
-        
+
         txtSeco.setText(valor2 + "");
         promedio();
     }//GEN-LAST:event_slSecoStateChanged
@@ -1262,14 +1302,6 @@ public class jdCatacion extends javax.swing.JFrame {
         promedio();
     }//GEN-LAST:event_jButton21ActionPerformed
 
-    private void txtTazasCatKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTazasCatKeyTyped
-        // TODO add your handling code here:
-        l1 = Integer.parseInt(txtNoTazas.getText());
-        l2 = Integer.parseInt(txtIntensidad.getText());
-        totalD = l1 * l2;
-        txtDefectos.setText(formato.format(totalD) + "");
-    }//GEN-LAST:event_txtTazasCatKeyTyped
-
     private void txtNoTazasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNoTazasKeyTyped
         // TODO add your handling code here:
         char m = evt.getKeyChar();
@@ -1346,6 +1378,53 @@ public class jdCatacion extends javax.swing.JFrame {
         formula();
     }//GEN-LAST:event_txtDulzorKeyReleased
 
+    private void slNivelTostadoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slNivelTostadoStateChanged
+        // TODO add your handling code here:
+        System.out.println(slNivelTostado.getValue());
+    }//GEN-LAST:event_slNivelTostadoStateChanged
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        guardar();
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void txtDefectosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDefectosKeyReleased
+        // TODO add your handling code here:
+        formula();
+    }//GEN-LAST:event_txtDefectosKeyReleased
+
+    private void txtTazasCatKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTazasCatKeyReleased
+        // TODO add your handling code here:
+        formula();
+    }//GEN-LAST:event_txtTazasCatKeyReleased
+
+    public void guardar() {
+        String fecha = null;
+        if (txtFecha.getDate() != null) {
+            fecha = new SimpleDateFormat("dd-MMM-yyyy").format(txtFecha.getDate());
+        }
+        //slNivelTostado.getValue();
+        String estatus = "T";
+        String aspecto = mdb.devuelveUnDato("select aspecto from bitacoralab "
+                + "where (id_muestra='" + lblCSM.getText() + "' and comunidad='" + lblComunidad.getText() + "')");
+        if (aspecto.equals("1")) {
+            estatus = "Disp";
+        }
+        if (fecha != null) {
+            try {
+
+                mdb.insertarBasicos("insert into catacion values (null," + id + "," + slNivelTostado.getValue() + "," + slUniTostado.getValue() + "," + Quakers.getText() + ",'" + lblPuntuacion.getText() + "'," + txtTazasCat.getText() + "," + txtDefectos.getText() + "," + txtNoTazas.getText() + "," + txtIntensidad.getText() + "," + txtUniTaza.getText() + "," + txtTazaLim.getText() + "," + txtDulzor.getText() + ",'" + txtSeco.getText() + "','" + txtMojado.getText() + "','" + txtQuebrado.getText() + "','" + lblFragancia.getText() + "','" + txtSabor.getText() + "','" + txtAftertaste.getText() + "','" + txtAcidez.getText() + "','" + spAcidezInt.getValue() + "','" + txtCuerpo.getText() + "','" + spCuerpoInt.getValue() + "','" + txtBalance.getText() + "','" + txtCatador.getText() + "','Consenso','" + fecha + "','" + txtDenTostado.getText() + "')");
+                mdb.actualizarBasicos("update bitacoralab set taza='1'   , sabores= 'pendiente' where id_bitacora=" + id);
+                //jpCT.llenarTabla();
+                this.dispose();
+            } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, e+"Error try");
+            }
+        } else {
+            JOptionPane.showMessageDialog(null, "¡Selecciona La Fecha!");
+        }
+    }
+
     /**
      * @param args the command line arguments
      */
@@ -1374,7 +1453,7 @@ public class jdCatacion extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-       /* java.awt.EventQueue.invokeLater(new Runnable() {
+ /* java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new jdCatacion().setVisible(true);
             }
@@ -1446,8 +1525,6 @@ public class jdCatacion extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JSpinner jSpinner2;
     private javax.swing.JTextField jTextField1;
     private javax.swing.JTextField jTextField2;
     private javax.swing.JTextField jTextField3;
@@ -1469,6 +1546,8 @@ public class jdCatacion extends javax.swing.JFrame {
     private javax.swing.JSlider slSabor;
     private javax.swing.JSlider slSeco;
     private javax.swing.JSlider slUniTostado;
+    private javax.swing.JSpinner spAcidezInt;
+    private javax.swing.JSpinner spCuerpoInt;
     private javax.swing.JTextField txtAcidez;
     private javax.swing.JTextField txtAftertaste;
     private javax.swing.JTextField txtBalance;

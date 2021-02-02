@@ -692,9 +692,9 @@ public void llenarTabla() {
             id = mdb.comprobarExistencia("select id_bitacora from bitacoralab "
                     + "where (id_muestra='" + csm + "' and comunidad='" + comunindad + "')");
 
-            jdc = new jdCatacion(tipo, id, csm, comunindad, forma);
+            jdc = new jdCatacion(cn, tipo, id, csm, comunindad, forma);
 //Modificar para refrescar
-//            jdc.jpCT = this;
+            //jdc.jpCT = this;
             jdc.setVisible(true);
         }
     }//GEN-LAST:event_evtazaActionPerformed
