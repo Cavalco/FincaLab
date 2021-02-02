@@ -32,7 +32,7 @@ public class jpLotesEnProceso extends javax.swing.JPanel {
     Connection cn;
     metodosBeneficioHumedo mbh;
     DefaultTableModel modelo;
-    String idSociedad, idBeneficio;
+    String idSociedad, idBeneficio, sociedad;
 
     public jpLotesEnProceso(String idBeneficio, String Idioma, Connection cn) {
         initComponents();
@@ -44,6 +44,7 @@ public class jpLotesEnProceso extends javax.swing.JPanel {
         jMenuItem1.setText("Asignar Secado");
 
         idSociedad = mbh.devuelveUnDato("Select idSociedad from beneficioshumedos where nombre='" + idBeneficio + "'");
+        //sociedad = mbh.devuelveUnDato("select nombrecorto from personam where id="+idSociedad);
         //idBeneficio = mbh.devuelveUnDato("select id from beneficioshumedos where nombre='" + beneficio + "'");
 
         DefaultTableCellRenderer tcr = new DefaultTableCellRenderer();
@@ -423,12 +424,12 @@ inner join boletaentradabh be
         certificacion = jTable1.getValueAt(jTable1.getSelectedRow(), 3) + "";
         proceso = jTable1.getValueAt(jTable1.getSelectedRow(), 6) + "";
         metodo = jTable1.getValueAt(jTable1.getSelectedRow(), 8) + "";
-        comunidad = jTable1.getValueAt(jTable1.getSelectedRow(), 1) + "";
+        sociedad = jTable1.getValueAt(jTable1.getSelectedRow(), 1) + "";
     }//GEN-LAST:event_jTable1MouseClicked
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         //Boton para confirmar que ya se secó el lote
-        jdMuestra jd = new jdMuestra(null, true, idSubLote, certificacion, proceso, metodo, idBeneficio, comunidad, cn);
+        jdMuestra jd = new jdMuestra(null, true, idSubLote, certificacion, proceso, metodo, idBeneficio, sociedad, cn);
         jd.jp = this;
         jd.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed

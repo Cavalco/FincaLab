@@ -42,6 +42,8 @@ class jdSaboresPropuesta2 extends javax.swing.JDialog {
         super(parent, modal);
         initComponents();
         
+        setLocationRelativeTo(null);
+        
         modelo = (DefaultTableModel) Sweet.getModel();
     }
 

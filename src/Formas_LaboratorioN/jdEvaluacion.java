@@ -8,6 +8,7 @@ package Formas_LaboratorioN;
 import Formas_laboratorio.jpBitacora;
 import Idioma.Propiedades;
 import Metodos_Configuraciones.metodosLaboratorio;
+import java.awt.Dimension;
 import java.sql.Connection;
 import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
@@ -31,14 +32,14 @@ public class jdEvaluacion extends javax.swing.JFrame {
     String csm = "", comunindad = "", tipo = "", id, forma = "";
     jpBitacora jpDP;
 
-    public jdEvaluacion(Connection cn, String id, String csm, String comunindad, String tipoc, String forma,String calcer, String idioma) {
+    public jdEvaluacion(Connection cn, String id, String csm, String comunindad, String tipoc, String forma, String calcer, String idioma) {
         initComponents();
-        
+
         setLocationRelativeTo(null);
         this.cn = cn;
         this.csm = csm;
         this.comunindad = comunindad;
-           
+
         this.tipo = tipoc;
         this.forma = forma;
         this.id = id;
@@ -144,468 +145,468 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
     //Operacion con las cribas
     public void suma(int num) {
-        try{
+        try {
 
-        double formula, Pe, ad;
-        int v[] = new int[6], vt, res, av;
-        Pe = Integer.parseInt(txtPeso.getText());
-        switch (num) {
-            case 1:
-                v[0] = Integer.parseInt(A1.getText());
-                v[1] = Integer.parseInt(A2.getText());
-                v[2] = Integer.parseInt(A3.getText());
-                v[3] = Integer.parseInt(A4.getText());
-                v[4] = Integer.parseInt(A5.getText());
-                v[5] = Integer.parseInt(A6.getText());
+            double formula, Pe, ad;
+            int v[] = new int[6], vt, res, av;
+            Pe = Integer.parseInt(txtPeso.getText());
+            switch (num) {
+                case 1:
+                    v[0] = Integer.parseInt(A1.getText());
+                    v[1] = Integer.parseInt(A2.getText());
+                    v[2] = Integer.parseInt(A3.getText());
+                    v[3] = Integer.parseInt(A4.getText());
+                    v[4] = Integer.parseInt(A5.getText());
+                    v[5] = Integer.parseInt(A6.getText());
 
-                vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
+                    vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                AT.setText(vt + "");
-                break;
-            case 2:
-                v[0] = Integer.parseInt(B1.getText());
-                v[1] = Integer.parseInt(B2.getText());
-                v[2] = Integer.parseInt(B3.getText());
-                v[3] = Integer.parseInt(B4.getText());
-                v[4] = Integer.parseInt(B5.getText());
-                v[5] = Integer.parseInt(B6.getText());
+                    AT.setText(vt + "");
+                    break;
+                case 2:
+                    v[0] = Integer.parseInt(B1.getText());
+                    v[1] = Integer.parseInt(B2.getText());
+                    v[2] = Integer.parseInt(B3.getText());
+                    v[3] = Integer.parseInt(B4.getText());
+                    v[4] = Integer.parseInt(B5.getText());
+                    v[5] = Integer.parseInt(B6.getText());
 
-                vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                av = vt / 5;
-                ad = 350 / Pe;
-                System.out.println("av=" + av + "ad=" + ad);
-                formula = (350 / Pe) * (vt / 5);
-                System.out.println(formula);
-                res = trunc(formula);
-                System.out.println(res);
-                if (res == 0) {
-                    BT.setText("0");
-                } else {
-                    BT.setText(res + "");
-                    puntuacion();
-                }
+                    vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
+                    av = vt / 5;
+                    ad = 350 / Pe;
+                    System.out.println("av=" + av + "ad=" + ad);
+                    formula = (350 / Pe) * (vt / 5);
+                    System.out.println(formula);
+                    res = trunc(formula);
+                    System.out.println(res);
+                    if (res == 0) {
+                        BT.setText("0");
+                    } else {
+                        BT.setText(res + "");
+                        puntuacion();
+                    }
 
-                break;
+                    break;
 
-            case 3:
-                v[0] = Integer.parseInt(C1.getText());
-                v[1] = Integer.parseInt(C2.getText());
-                v[2] = Integer.parseInt(C3.getText());
-                v[3] = Integer.parseInt(C4.getText());
-                v[4] = Integer.parseInt(C5.getText());
-                v[5] = Integer.parseInt(C6.getText());
+                case 3:
+                    v[0] = Integer.parseInt(C1.getText());
+                    v[1] = Integer.parseInt(C2.getText());
+                    v[2] = Integer.parseInt(C3.getText());
+                    v[3] = Integer.parseInt(C4.getText());
+                    v[4] = Integer.parseInt(C5.getText());
+                    v[5] = Integer.parseInt(C6.getText());
 
-                vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
+                    vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (350 / Pe) * (vt / 10);
-                System.out.println("formula = " + formula);
-                res = trunc(formula);
-                System.out.println("res = " + res);
-                if (res == 0) {
-                    CT.setText("0");
-                } else {
-                    CT.setText(res + "");
-                    puntuacion();
-                }
-                break;
-            case 4:
-                v[0] = Integer.parseInt(D1.getText());
-                v[1] = Integer.parseInt(D2.getText());
-                v[2] = Integer.parseInt(D3.getText());
-                v[3] = Integer.parseInt(D4.getText());
-                v[4] = Integer.parseInt(D5.getText());
-                v[5] = Integer.parseInt(D6.getText());
+                    formula = (350 / Pe) * (vt / 10);
+                    System.out.println("formula = " + formula);
+                    res = trunc(formula);
+                    System.out.println("res = " + res);
+                    if (res == 0) {
+                        CT.setText("0");
+                    } else {
+                        CT.setText(res + "");
+                        puntuacion();
+                    }
+                    break;
+                case 4:
+                    v[0] = Integer.parseInt(D1.getText());
+                    v[1] = Integer.parseInt(D2.getText());
+                    v[2] = Integer.parseInt(D3.getText());
+                    v[3] = Integer.parseInt(D4.getText());
+                    v[4] = Integer.parseInt(D5.getText());
+                    v[5] = Integer.parseInt(D6.getText());
 
-                vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
+                    vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (350 / Pe) * (vt / 1);
-                res = trunc(formula);
-                if (res == 0) {
-                    DT.setText("0");
-                } else {
-                    DT.setText(res + "");
-                    puntuacion();
-                }
-                break;
-            case 5:
-                v[0] = Integer.parseInt(E1.getText());
-                v[1] = Integer.parseInt(E2.getText());
-                v[2] = Integer.parseInt(E3.getText());
-                v[3] = Integer.parseInt(E4.getText());
-                v[4] = Integer.parseInt(E5.getText());
-                v[5] = Integer.parseInt(E6.getText());
+                    formula = (350 / Pe) * (vt / 1);
+                    res = trunc(formula);
+                    if (res == 0) {
+                        DT.setText("0");
+                    } else {
+                        DT.setText(res + "");
+                        puntuacion();
+                    }
+                    break;
+                case 5:
+                    v[0] = Integer.parseInt(E1.getText());
+                    v[1] = Integer.parseInt(E2.getText());
+                    v[2] = Integer.parseInt(E3.getText());
+                    v[3] = Integer.parseInt(E4.getText());
+                    v[4] = Integer.parseInt(E5.getText());
+                    v[5] = Integer.parseInt(E6.getText());
 
-                vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
+                    vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (350 / Pe) * (vt / 3);
-                res = trunc(formula);
-                if (res == 0) {
-                    ET.setText("0");
-                } else {
-                    ET.setText(res + "");
-                    puntuacion();
-                }
-                break;
-            case 6:
-                v[0] = Integer.parseInt(F1.getText());
-                v[1] = Integer.parseInt(F2.getText());
-                v[2] = Integer.parseInt(F3.getText());
-                v[3] = Integer.parseInt(F4.getText());
-                v[4] = Integer.parseInt(F5.getText());
-                v[5] = Integer.parseInt(F6.getText());
+                    formula = (350 / Pe) * (vt / 3);
+                    res = trunc(formula);
+                    if (res == 0) {
+                        ET.setText("0");
+                    } else {
+                        ET.setText(res + "");
+                        puntuacion();
+                    }
+                    break;
+                case 6:
+                    v[0] = Integer.parseInt(F1.getText());
+                    v[1] = Integer.parseInt(F2.getText());
+                    v[2] = Integer.parseInt(F3.getText());
+                    v[3] = Integer.parseInt(F4.getText());
+                    v[4] = Integer.parseInt(F5.getText());
+                    v[5] = Integer.parseInt(F6.getText());
 
-                vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
+                    vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (350 / Pe) * (vt / 1);
-                res = trunc(formula);
-                if (res == 0) {
-                    FT.setText("0");
-                } else if (tipo.equals("N")) {
-                    FT.setText("0");
-                } else {
-                    FT.setText(res + "");
-                    puntuacion();
-                }
-                break;
-            case 7:
-                v[0] = Integer.parseInt(G1.getText());
-                v[1] = Integer.parseInt(G2.getText());
-                v[2] = Integer.parseInt(G3.getText());
-                v[3] = Integer.parseInt(G4.getText());
-                v[4] = Integer.parseInt(G5.getText());
-                v[5] = Integer.parseInt(G6.getText());
+                    formula = (350 / Pe) * (vt / 1);
+                    res = trunc(formula);
+                    if (res == 0) {
+                        FT.setText("0");
+                    } else if (tipo.equals("N")) {
+                        FT.setText("0");
+                    } else {
+                        FT.setText(res + "");
+                        puntuacion();
+                    }
+                    break;
+                case 7:
+                    v[0] = Integer.parseInt(G1.getText());
+                    v[1] = Integer.parseInt(G2.getText());
+                    v[2] = Integer.parseInt(G3.getText());
+                    v[3] = Integer.parseInt(G4.getText());
+                    v[4] = Integer.parseInt(G5.getText());
+                    v[5] = Integer.parseInt(G6.getText());
 
-                vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
+                    vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (350 / Pe) * (vt / 3);
-                res = trunc(formula);
-                if (res == 0) {
-                    GT.setText("0");
-                } else {
-                    GT.setText(res + "");
-                    puntuacion();
-                }
-                break;
-            case 8:
-                v[0] = Integer.parseInt(H1.getText());
-                v[1] = Integer.parseInt(H2.getText());
-                v[2] = Integer.parseInt(H3.getText());
-                v[3] = Integer.parseInt(H4.getText());
-                v[4] = Integer.parseInt(H5.getText());
-                v[5] = Integer.parseInt(H6.getText());
+                    formula = (350 / Pe) * (vt / 3);
+                    res = trunc(formula);
+                    if (res == 0) {
+                        GT.setText("0");
+                    } else {
+                        GT.setText(res + "");
+                        puntuacion();
+                    }
+                    break;
+                case 8:
+                    v[0] = Integer.parseInt(H1.getText());
+                    v[1] = Integer.parseInt(H2.getText());
+                    v[2] = Integer.parseInt(H3.getText());
+                    v[3] = Integer.parseInt(H4.getText());
+                    v[4] = Integer.parseInt(H5.getText());
+                    v[5] = Integer.parseInt(H6.getText());
 
-                vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
+                    vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (350 / Pe) * (vt / 5);
-                res = trunc(formula);
-                if (res == 0) {
-                    HT.setText("0");
-                } else {
-                    HT.setText(res + "");
-                    puntuacion();
-                }
-                break;
-            case 9:
-                v[0] = Integer.parseInt(I1.getText());
-                v[1] = Integer.parseInt(I2.getText());
-                v[2] = Integer.parseInt(I3.getText());
-                v[3] = Integer.parseInt(I4.getText());
-                v[4] = Integer.parseInt(I5.getText());
-                v[5] = Integer.parseInt(I6.getText());
+                    formula = (350 / Pe) * (vt / 5);
+                    res = trunc(formula);
+                    if (res == 0) {
+                        HT.setText("0");
+                    } else {
+                        HT.setText(res + "");
+                        puntuacion();
+                    }
+                    break;
+                case 9:
+                    v[0] = Integer.parseInt(I1.getText());
+                    v[1] = Integer.parseInt(I2.getText());
+                    v[2] = Integer.parseInt(I3.getText());
+                    v[3] = Integer.parseInt(I4.getText());
+                    v[4] = Integer.parseInt(I5.getText());
+                    v[5] = Integer.parseInt(I6.getText());
 
-                vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
+                    vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (350 / Pe) * (vt / 5);
-                res = trunc(formula);
-                if (res == 0) {
-                    IT.setText("0");
-                } else {
-                    IT.setText(res + "");
-                    puntuacion();
-                }
-                break;
-            case 10:
-                v[0] = Integer.parseInt(J1.getText());
-                v[1] = Integer.parseInt(J2.getText());
-                v[2] = Integer.parseInt(J3.getText());
-                v[3] = Integer.parseInt(J4.getText());
-                v[4] = Integer.parseInt(J5.getText());
-                v[5] = Integer.parseInt(J6.getText());
+                    formula = (350 / Pe) * (vt / 5);
+                    res = trunc(formula);
+                    if (res == 0) {
+                        IT.setText("0");
+                    } else {
+                        IT.setText(res + "");
+                        puntuacion();
+                    }
+                    break;
+                case 10:
+                    v[0] = Integer.parseInt(J1.getText());
+                    v[1] = Integer.parseInt(J2.getText());
+                    v[2] = Integer.parseInt(J3.getText());
+                    v[3] = Integer.parseInt(J4.getText());
+                    v[4] = Integer.parseInt(J5.getText());
+                    v[5] = Integer.parseInt(J6.getText());
 
-                vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                formula = (350 / Pe) * (vt / 3);
-                res = trunc(formula);
-                if (res == 0) {
-                    JT.setText("0");
-                } else {
-                    JT.setText(res + "");
-                    puntuacion();
-                }
-                break;
-            case 11:
-                v[0] = Integer.parseInt(K1.getText());
-                v[1] = Integer.parseInt(K2.getText());
-                v[2] = Integer.parseInt(K3.getText());
-                v[3] = Integer.parseInt(K4.getText());
-                v[4] = Integer.parseInt(K5.getText());
-                v[5] = Integer.parseInt(K6.getText());
+                    vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
+                    formula = (350 / Pe) * (vt / 3);
+                    res = trunc(formula);
+                    if (res == 0) {
+                        JT.setText("0");
+                    } else {
+                        JT.setText(res + "");
+                        puntuacion();
+                    }
+                    break;
+                case 11:
+                    v[0] = Integer.parseInt(K1.getText());
+                    v[1] = Integer.parseInt(K2.getText());
+                    v[2] = Integer.parseInt(K3.getText());
+                    v[3] = Integer.parseInt(K4.getText());
+                    v[4] = Integer.parseInt(K5.getText());
+                    v[5] = Integer.parseInt(K6.getText());
 
-                vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
+                    vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (350 / Pe) * (vt / 5);
-                res = trunc(formula);
-                if (res == 0) {
-                    KT.setText("0");
-                } else {
-                    KT.setText(res + "");
-                    puntuacion();
-                }
-                break;
-            case 12:
-                v[0] = Integer.parseInt(L1.getText());
-                v[1] = Integer.parseInt(L2.getText());
-                v[2] = Integer.parseInt(L3.getText());
-                v[3] = Integer.parseInt(L4.getText());
-                v[4] = Integer.parseInt(L5.getText());
-                v[5] = Integer.parseInt(L6.getText());
+                    formula = (350 / Pe) * (vt / 5);
+                    res = trunc(formula);
+                    if (res == 0) {
+                        KT.setText("0");
+                    } else {
+                        KT.setText(res + "");
+                        puntuacion();
+                    }
+                    break;
+                case 12:
+                    v[0] = Integer.parseInt(L1.getText());
+                    v[1] = Integer.parseInt(L2.getText());
+                    v[2] = Integer.parseInt(L3.getText());
+                    v[3] = Integer.parseInt(L4.getText());
+                    v[4] = Integer.parseInt(L5.getText());
+                    v[5] = Integer.parseInt(L6.getText());
 
-                vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
+                    vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (350 / Pe) * (vt / 5);
-                res = trunc(formula);
-                if (res == 0) {
-                    LT.setText("0");
-                } else {
-                    LT.setText("0");
-                    puntuacion();
-                }
-                break;
-            case 13:
-                v[0] = Integer.parseInt(M1.getText());
-                v[1] = Integer.parseInt(M2.getText());
-                v[2] = Integer.parseInt(M3.getText());
-                v[3] = Integer.parseInt(M4.getText());
-                v[4] = Integer.parseInt(M5.getText());
-                v[5] = Integer.parseInt(M6.getText());
+                    formula = (350 / Pe) * (vt / 5);
+                    res = trunc(formula);
+                    if (res == 0) {
+                        LT.setText("0");
+                    } else {
+                        LT.setText("0");
+                        puntuacion();
+                    }
+                    break;
+                case 13:
+                    v[0] = Integer.parseInt(M1.getText());
+                    v[1] = Integer.parseInt(M2.getText());
+                    v[2] = Integer.parseInt(M3.getText());
+                    v[3] = Integer.parseInt(M4.getText());
+                    v[4] = Integer.parseInt(M5.getText());
+                    v[5] = Integer.parseInt(M6.getText());
 
-                vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
+                    vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (350 / Pe) * (vt / 5);
-                res = trunc(formula);
-                if (res == 0) {
-                    MT.setText("0");
-                } else {
-                    MT.setText(res + "");
-                    puntuacion();
-                }
-                break;
-            case 14:
-                v[0] = Integer.parseInt(N1.getText());
-                v[1] = Integer.parseInt(N2.getText());
-                v[2] = Integer.parseInt(N3.getText());
-                v[3] = Integer.parseInt(N4.getText());
-                v[4] = Integer.parseInt(N5.getText());
-                v[5] = Integer.parseInt(N6.getText());
+                    formula = (350 / Pe) * (vt / 5);
+                    res = trunc(formula);
+                    if (res == 0) {
+                        MT.setText("0");
+                    } else {
+                        MT.setText(res + "");
+                        puntuacion();
+                    }
+                    break;
+                case 14:
+                    v[0] = Integer.parseInt(N1.getText());
+                    v[1] = Integer.parseInt(N2.getText());
+                    v[2] = Integer.parseInt(N3.getText());
+                    v[3] = Integer.parseInt(N4.getText());
+                    v[4] = Integer.parseInt(N5.getText());
+                    v[5] = Integer.parseInt(N6.getText());
 
-                vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
+                    vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (350 / Pe) * (vt / 5);
-                res = trunc(formula);
-                if (res == 0) {
-                    NT.setText("0");
-                } else {
-                    NT.setText("0");
-                    puntuacion();
-                }
-                break;
-            case 15:
-                v[0] = Integer.parseInt(O1.getText());
-                v[1] = Integer.parseInt(O2.getText());
-                v[2] = Integer.parseInt(O3.getText());
-                v[3] = Integer.parseInt(O4.getText());
-                v[4] = Integer.parseInt(O5.getText());
-                v[5] = Integer.parseInt(O6.getText());
+                    formula = (350 / Pe) * (vt / 5);
+                    res = trunc(formula);
+                    if (res == 0) {
+                        NT.setText("0");
+                    } else {
+                        NT.setText("0");
+                        puntuacion();
+                    }
+                    break;
+                case 15:
+                    v[0] = Integer.parseInt(O1.getText());
+                    v[1] = Integer.parseInt(O2.getText());
+                    v[2] = Integer.parseInt(O3.getText());
+                    v[3] = Integer.parseInt(O4.getText());
+                    v[4] = Integer.parseInt(O5.getText());
+                    v[5] = Integer.parseInt(O6.getText());
 
-                vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                formula = (350 / Pe) * (vt / 1);
-                res = trunc(formula);
-                if (res == 0) {
-                    OT.setText("0");
-                } else {
-                    OT.setText(res + "");
-                    puntuacion();
-                }
-                break;
-            case 16:
-                v[0] = Integer.parseInt(P1.getText());
-                v[1] = Integer.parseInt(P2.getText());
-                v[2] = Integer.parseInt(P3.getText());
-                v[3] = Integer.parseInt(P4.getText());
-                v[4] = Integer.parseInt(P5.getText());
-                v[5] = Integer.parseInt(P6.getText());
+                    vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
+                    formula = (350 / Pe) * (vt / 1);
+                    res = trunc(formula);
+                    if (res == 0) {
+                        OT.setText("0");
+                    } else {
+                        OT.setText(res + "");
+                        puntuacion();
+                    }
+                    break;
+                case 16:
+                    v[0] = Integer.parseInt(P1.getText());
+                    v[1] = Integer.parseInt(P2.getText());
+                    v[2] = Integer.parseInt(P3.getText());
+                    v[3] = Integer.parseInt(P4.getText());
+                    v[4] = Integer.parseInt(P5.getText());
+                    v[5] = Integer.parseInt(P6.getText());
 
-                vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                formula = (350 / Pe) * (vt / 5);
-                res = trunc(formula);
-                if (res == 0) {
-                    PT.setText("0");
-                } else {
-                    PT.setText(res + "");
-                    puntuacion();
-                }
-                break;
-            case 17:
-                v[0] = Integer.parseInt(Q1.getText());
-                v[1] = Integer.parseInt(Q2.getText());
-                v[2] = Integer.parseInt(Q3.getText());
-                v[3] = Integer.parseInt(Q4.getText());
-                v[4] = Integer.parseInt(Q5.getText());
-                v[5] = Integer.parseInt(Q6.getText());
+                    vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
+                    formula = (350 / Pe) * (vt / 5);
+                    res = trunc(formula);
+                    if (res == 0) {
+                        PT.setText("0");
+                    } else {
+                        PT.setText(res + "");
+                        puntuacion();
+                    }
+                    break;
+                case 17:
+                    v[0] = Integer.parseInt(Q1.getText());
+                    v[1] = Integer.parseInt(Q2.getText());
+                    v[2] = Integer.parseInt(Q3.getText());
+                    v[3] = Integer.parseInt(Q4.getText());
+                    v[4] = Integer.parseInt(Q5.getText());
+                    v[5] = Integer.parseInt(Q6.getText());
 
-                vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                formula = (350 / Pe) * (vt / 5);
-                res = trunc(formula);
-                if (res == 0) {
-                    QT.setText("0");
-                } else {
-                    QT.setText(res + "");
-                    puntuacion();
-                }
-                break;
-            case 18:
-                v[0] = Integer.parseInt(R1.getText());
-                v[1] = Integer.parseInt(R2.getText());
-                v[2] = Integer.parseInt(R3.getText());
-                v[3] = Integer.parseInt(R4.getText());
-                v[4] = Integer.parseInt(R5.getText());
-                v[5] = Integer.parseInt(R6.getText());
+                    vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
+                    formula = (350 / Pe) * (vt / 5);
+                    res = trunc(formula);
+                    if (res == 0) {
+                        QT.setText("0");
+                    } else {
+                        QT.setText(res + "");
+                        puntuacion();
+                    }
+                    break;
+                case 18:
+                    v[0] = Integer.parseInt(R1.getText());
+                    v[1] = Integer.parseInt(R2.getText());
+                    v[2] = Integer.parseInt(R3.getText());
+                    v[3] = Integer.parseInt(R4.getText());
+                    v[4] = Integer.parseInt(R5.getText());
+                    v[5] = Integer.parseInt(R6.getText());
 
-                vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                formula = (350 / Pe) * (vt / 5);
-                res = trunc(formula);
-                if (res == 0) {
-                    RT.setText("0");
-                } else {
-                    RT.setText(res + "");
-                    puntuacion();
-                }
-                break;
-            case 19:
-                v[0] = Integer.parseInt(S1.getText());
-                v[1] = Integer.parseInt(S2.getText());
-                v[2] = Integer.parseInt(S3.getText());
-                v[3] = Integer.parseInt(S4.getText());
-                v[4] = Integer.parseInt(S5.getText());
-                v[5] = Integer.parseInt(S6.getText());
+                    vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
+                    formula = (350 / Pe) * (vt / 5);
+                    res = trunc(formula);
+                    if (res == 0) {
+                        RT.setText("0");
+                    } else {
+                        RT.setText(res + "");
+                        puntuacion();
+                    }
+                    break;
+                case 19:
+                    v[0] = Integer.parseInt(S1.getText());
+                    v[1] = Integer.parseInt(S2.getText());
+                    v[2] = Integer.parseInt(S3.getText());
+                    v[3] = Integer.parseInt(S4.getText());
+                    v[4] = Integer.parseInt(S5.getText());
+                    v[5] = Integer.parseInt(S6.getText());
 
-                vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                formula = (350 / Pe) * (vt / 5);
-                res = trunc(formula);
-                if (res == 0) {
-                    ST.setText("0");
-                } else {
-                    ST.setText(res + "");
-                    puntuacion();
-                }
-                break;
-            case 20:
-                v[0] = Integer.parseInt(T1.getText());
-                v[1] = Integer.parseInt(T2.getText());
-                v[2] = Integer.parseInt(T3.getText());
-                v[3] = Integer.parseInt(T4.getText());
-                v[4] = Integer.parseInt(T5.getText());
-                v[5] = Integer.parseInt(T6.getText());
+                    vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
+                    formula = (350 / Pe) * (vt / 5);
+                    res = trunc(formula);
+                    if (res == 0) {
+                        ST.setText("0");
+                    } else {
+                        ST.setText(res + "");
+                        puntuacion();
+                    }
+                    break;
+                case 20:
+                    v[0] = Integer.parseInt(T1.getText());
+                    v[1] = Integer.parseInt(T2.getText());
+                    v[2] = Integer.parseInt(T3.getText());
+                    v[3] = Integer.parseInt(T4.getText());
+                    v[4] = Integer.parseInt(T5.getText());
+                    v[5] = Integer.parseInt(T6.getText());
 
-                vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
+                    vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (350 / Pe) * (vt / 5);
-                res = trunc(formula);
-                if (res == 0) {
-                    TT.setText("0");
-                } else {
-                    TT.setText("0");
-                    puntuacion();
-                }
-                break;
-            case 21:
-                v[0] = Integer.parseInt(U1.getText());
-                v[1] = Integer.parseInt(U2.getText());
-                v[2] = Integer.parseInt(U3.getText());
-                v[3] = Integer.parseInt(U4.getText());
-                v[4] = Integer.parseInt(U5.getText());
-                v[5] = Integer.parseInt(U6.getText());
+                    formula = (350 / Pe) * (vt / 5);
+                    res = trunc(formula);
+                    if (res == 0) {
+                        TT.setText("0");
+                    } else {
+                        TT.setText("0");
+                        puntuacion();
+                    }
+                    break;
+                case 21:
+                    v[0] = Integer.parseInt(U1.getText());
+                    v[1] = Integer.parseInt(U2.getText());
+                    v[2] = Integer.parseInt(U3.getText());
+                    v[3] = Integer.parseInt(U4.getText());
+                    v[4] = Integer.parseInt(U5.getText());
+                    v[5] = Integer.parseInt(U6.getText());
 
-                vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
+                    vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (350 / Pe) * (vt / 5);
-                res = trunc(formula);
-                if (res == 0) {
-                    UT.setText("0");
-                } else {
-                    UT.setText(res + "");
-                    puntuacion();
-                }
-                break;
-            case 22:
-                v[0] = Integer.parseInt(V1.getText());
-                v[1] = Integer.parseInt(V2.getText());
-                v[2] = Integer.parseInt(V3.getText());
-                v[3] = Integer.parseInt(V4.getText());
-                v[4] = Integer.parseInt(V5.getText());
-                v[5] = Integer.parseInt(V6.getText());
+                    formula = (350 / Pe) * (vt / 5);
+                    res = trunc(formula);
+                    if (res == 0) {
+                        UT.setText("0");
+                    } else {
+                        UT.setText(res + "");
+                        puntuacion();
+                    }
+                    break;
+                case 22:
+                    v[0] = Integer.parseInt(V1.getText());
+                    v[1] = Integer.parseInt(V2.getText());
+                    v[2] = Integer.parseInt(V3.getText());
+                    v[3] = Integer.parseInt(V4.getText());
+                    v[4] = Integer.parseInt(V5.getText());
+                    v[5] = Integer.parseInt(V6.getText());
 
-                vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
+                    vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (350 / Pe) * (vt / 5);
-                res = trunc(formula);
-                if (res == 0) {
-                    VT.setText("0");
-                } else {
-                    VT.setText(res + "");
-                    puntuacion();
-                }
-                break;
-            case 23:
-                v[0] = Integer.parseInt(W1.getText());
-                v[1] = Integer.parseInt(W2.getText());
-                v[2] = Integer.parseInt(W3.getText());
-                v[3] = Integer.parseInt(W4.getText());
-                v[4] = Integer.parseInt(W5.getText());
-                v[5] = Integer.parseInt(W6.getText());
+                    formula = (350 / Pe) * (vt / 5);
+                    res = trunc(formula);
+                    if (res == 0) {
+                        VT.setText("0");
+                    } else {
+                        VT.setText(res + "");
+                        puntuacion();
+                    }
+                    break;
+                case 23:
+                    v[0] = Integer.parseInt(W1.getText());
+                    v[1] = Integer.parseInt(W2.getText());
+                    v[2] = Integer.parseInt(W3.getText());
+                    v[3] = Integer.parseInt(W4.getText());
+                    v[4] = Integer.parseInt(W5.getText());
+                    v[5] = Integer.parseInt(W6.getText());
 
-                vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
+                    vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (350 / Pe) * (vt / 5);
-                res = trunc(formula);
-                if (res == 0) {
-                    WT.setText("0");
-                } else {
-                    WT.setText(res + "");
-                    puntuacion();
-                }
-                break;
-            case 24:
-                v[0] = Integer.parseInt(X1.getText());
-                v[1] = Integer.parseInt(X2.getText());
-                v[2] = Integer.parseInt(X3.getText());
-                v[3] = Integer.parseInt(X4.getText());
-                v[4] = Integer.parseInt(X5.getText());
-                v[5] = Integer.parseInt(X6.getText());
+                    formula = (350 / Pe) * (vt / 5);
+                    res = trunc(formula);
+                    if (res == 0) {
+                        WT.setText("0");
+                    } else {
+                        WT.setText(res + "");
+                        puntuacion();
+                    }
+                    break;
+                case 24:
+                    v[0] = Integer.parseInt(X1.getText());
+                    v[1] = Integer.parseInt(X2.getText());
+                    v[2] = Integer.parseInt(X3.getText());
+                    v[3] = Integer.parseInt(X4.getText());
+                    v[4] = Integer.parseInt(X5.getText());
+                    v[5] = Integer.parseInt(X6.getText());
 
-                vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
+                    vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                formula = (350 / Pe) * (vt / 1);
-                res = trunc(formula);
-                if (res == 0) {
-                    XT.setText("0");
-                } else {
-                    XT.setText(res + "");
-                    puntuacion();
-                }
-                break;
-        }
-        }catch(Exception e){
-            
+                    formula = (350 / Pe) * (vt / 1);
+                    res = trunc(formula);
+                    if (res == 0) {
+                        XT.setText("0");
+                    } else {
+                        XT.setText(res + "");
+                        puntuacion();
+                    }
+                    break;
+            }
+        } catch (Exception e) {
+
         }
 
     }
@@ -628,39 +629,6 @@ public class jdEvaluacion extends javax.swing.JFrame {
         jTextField34 = new javax.swing.JTextField();
         jTextField35 = new javax.swing.JTextField();
         jPanel1 = new javax.swing.JPanel();
-        jPanel2 = new javax.swing.JPanel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        lblCSM = new javax.swing.JLabel();
-        lblComunidad = new javax.swing.JLabel();
-        lblCalC = new javax.swing.JLabel();
-        lblTipo = new javax.swing.JLabel();
-        lblForma = new javax.swing.JLabel();
-        jPanel3 = new javax.swing.JPanel();
-        jLabel6 = new javax.swing.JLabel();
-        dcFechaE = new com.toedter.calendar.JDateChooser();
-        jLabel7 = new javax.swing.JLabel();
-        txtPeso = new javax.swing.JTextField();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        txtHumedadOro = new javax.swing.JTextField();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        txtHumedadCas = new javax.swing.JTextField();
-        jLabel12 = new javax.swing.JLabel();
-        cbEvaluador = new javax.swing.JComboBox();
-        jLabel13 = new javax.swing.JLabel();
-        txtDenOro = new javax.swing.JTextField();
-        jLabel14 = new javax.swing.JLabel();
-        lblPuntuacion = new javax.swing.JLabel();
-        spUniOro = new javax.swing.JSpinner();
-        spColorOro = new javax.swing.JSpinner();
-        jLabel47 = new javax.swing.JLabel();
-        jLabel48 = new javax.swing.JLabel();
-        jLabel49 = new javax.swing.JLabel();
         jPanel5 = new javax.swing.JPanel();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
@@ -868,217 +836,54 @@ public class jdEvaluacion extends javax.swing.JFrame {
         X5 = new javax.swing.JTextField();
         X6 = new javax.swing.JTextField();
         XT = new javax.swing.JTextField();
+        jPanel6 = new javax.swing.JPanel();
+        jLabel1 = new javax.swing.JLabel();
+        lblCSM = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        lblComunidad = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        lblTipo = new javax.swing.JLabel();
+        jLabel3 = new javax.swing.JLabel();
+        lblCalC = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
+        lblForma = new javax.swing.JLabel();
+        jLabel50 = new javax.swing.JLabel();
+        jPanel2 = new javax.swing.JPanel();
+        jLabel6 = new javax.swing.JLabel();
+        dcFechaE = new com.toedter.calendar.JDateChooser();
+        jLabel51 = new javax.swing.JLabel();
+        txtPeso = new javax.swing.JTextField();
+        jLabel47 = new javax.swing.JLabel();
+        jLabel52 = new javax.swing.JLabel();
+        spUniOro = new javax.swing.JSpinner();
+        jLabel53 = new javax.swing.JLabel();
+        txtHumedadOro = new javax.swing.JTextField();
+        jLabel48 = new javax.swing.JLabel();
+        jLabel54 = new javax.swing.JLabel();
+        txtHumedadCas = new javax.swing.JTextField();
+        jLabel49 = new javax.swing.JLabel();
+        jLabel55 = new javax.swing.JLabel();
+        spColorOro = new javax.swing.JSpinner();
+        jLabel12 = new javax.swing.JLabel();
+        cbEvaluador = new javax.swing.JComboBox();
+        jLabel13 = new javax.swing.JLabel();
+        txtDenOro = new javax.swing.JTextField();
+        jLabel14 = new javax.swing.JLabel();
+        lblPuntuacion = new javax.swing.JLabel();
+        jLabel56 = new javax.swing.JLabel();
+        jLabel7 = new javax.swing.JLabel();
+        jLabel8 = new javax.swing.JLabel();
 
         jSeparator4.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setTitle("Evaluación Aspecto");
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jPanel2.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Información", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+        jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
-        jLabel1.setText("No. CSM:");
-
-        jLabel2.setText("Comunidad:");
-
-        jLabel3.setText("Calificación cereza:");
-
-        jLabel4.setText("Tipo:");
-
-        jLabel5.setText("Forma:");
-
-        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
-        jPanel2.setLayout(jPanel2Layout);
-        jPanel2Layout.setHorizontalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel3)
-                    .addComponent(jLabel2)
-                    .addComponent(jLabel1)
-                    .addComponent(jLabel4)
-                    .addComponent(jLabel5))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblForma, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCSM, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblComunidad, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblCalC, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(55, Short.MAX_VALUE))
-        );
-        jPanel2Layout.setVerticalGroup(
-            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel2Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblCSM, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblComunidad, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addGap(11, 11, 11)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3)
-                    .addComponent(lblCalC, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(lblTipo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lblForma, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel5))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-
-        jPanel3.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Datos de evaluación", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
-
-        jLabel6.setText("Fecha:");
-
-        jLabel7.setText("Peso evaluado:");
-
-        txtPeso.setText("0");
-
-        jLabel8.setText("Uniformidad de café en oro:");
-
-        jLabel9.setText("Humedad de café en oro:");
-
-        txtHumedadOro.setText("0");
-
-        jLabel10.setText("Humedad de cáscara:");
-
-        jLabel11.setText("Color en oro:");
-
-        txtHumedadCas.setText("0");
-
-        jLabel12.setText("Evaluador:");
-
-        cbEvaluador.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "James Kosalos", "Jacob Frankel", "Carlos bustamante", "Gigi Mengistu", "Tom Bennett" }));
-
-        jLabel13.setText("Densidad en oro:");
-
-        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        jLabel14.setText("Puntuación:");
-
-        lblPuntuacion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-
-        jLabel47.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel47.setText("g");
-
-        jLabel48.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel48.setText("%");
-
-        jLabel49.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
-        jLabel49.setText("%");
-
-        javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
-        jPanel3.setLayout(jPanel3Layout);
-        jPanel3Layout.setHorizontalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addContainerGap()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addGroup(jPanel3Layout.createSequentialGroup()
-                                    .addComponent(jLabel8)
-                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                    .addComponent(spUniOro, javax.swing.GroupLayout.PREFERRED_SIZE, 52, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel7)
-                                        .addComponent(jLabel6))
-                                    .addGap(62, 62, 62)
-                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addGroup(jPanel3Layout.createSequentialGroup()
-                                            .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, 51, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                            .addComponent(jLabel47))
-                                        .addComponent(dcFechaE, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel11)
-                                    .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(jLabel9, javax.swing.GroupLayout.Alignment.TRAILING)
-                                        .addComponent(jLabel10)))
-                                .addGap(18, 18, 18)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(spColorOro, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtHumedadOro, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtHumedadCas, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel49)
-                                    .addComponent(jLabel48)))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(jLabel12)
-                                    .addComponent(jLabel13))
-                                .addGap(58, 58, 58)
-                                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtDenOro, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(cbEvaluador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                    .addGroup(jPanel3Layout.createSequentialGroup()
-                        .addGap(20, 20, 20)
-                        .addComponent(jLabel14)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblPuntuacion, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel3Layout.setVerticalGroup(
-            jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(4, 4, 4)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(dcFechaE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel7)
-                    .addComponent(jLabel47))
-                .addGap(13, 13, 13)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel8)
-                    .addComponent(spUniOro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel9)
-                    .addComponent(txtHumedadOro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel48))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(txtHumedadCas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel49)
-                    .addComponent(jLabel10))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(spColorOro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel11))
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jLabel13))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(cbEvaluador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel12))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                        .addComponent(txtDenOro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblPuntuacion, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14))
-                .addContainerGap())
-        );
-
-        jPanel5.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Acciones", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
-
-        jButton1.setText("Guardar evaluación");
+        jButton1.setText("Guardar");
         jButton1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jButton1MouseClicked(evt);
@@ -1097,9 +902,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         jPanel5Layout.setHorizontalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
-                .addGap(27, 27, 27)
+                .addContainerGap()
                 .addComponent(jButton1)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton2)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -1115,7 +920,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
         jScrollPane1.setBorder(null);
 
-        jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder(null, "Evaluación", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 12))); // NOI18N
+        jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel4.setAutoscrolls(true);
 
         jLabel15.setText("Criba");
@@ -2643,7 +2448,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
                         .addComponent(A6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(AT, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 54, Short.MAX_VALUE))
+                .addGap(0, 150, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2926,34 +2731,269 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
         jScrollPane1.setViewportView(jPanel4);
 
+        jPanel6.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel1.setText("# CSM");
+
+        lblCSM.setText("csm");
+
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setText("Comunidad");
+
+        lblComunidad.setText("comunidad");
+
+        jLabel4.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel4.setText("Tipo");
+
+        lblTipo.setText("tipo");
+
+        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel3.setText("Calificación Cereza");
+
+        lblCalC.setText("calificacion");
+
+        jLabel5.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel5.setText("Forma");
+
+        lblForma.setText("forma");
+
+        javax.swing.GroupLayout jPanel6Layout = new javax.swing.GroupLayout(jPanel6);
+        jPanel6.setLayout(jPanel6Layout);
+        jPanel6Layout.setHorizontalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel1)
+                    .addComponent(lblCSM, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel2)
+                    .addComponent(lblComunidad))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel4)
+                    .addComponent(lblTipo))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jLabel3)
+                    .addComponent(lblCalC))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblForma)
+                    .addComponent(jLabel5))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel6Layout.setVerticalGroup(
+            jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel6Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel1)
+                    .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(jLabel3)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(lblCSM, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblComunidad)
+                    .addComponent(lblTipo)
+                    .addComponent(lblCalC)
+                    .addComponent(lblForma))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel50.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel50.setText("Información");
+
+        jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        jLabel6.setText("Fecha");
+
+        jLabel51.setText("Peso Evaluado");
+
+        txtPeso.setText("0");
+
+        jLabel47.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel47.setText("g");
+
+        jLabel52.setText("Uniformidad Café Oro");
+
+        jLabel53.setText("Humedad Café Oro");
+
+        txtHumedadOro.setText("0");
+
+        jLabel48.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel48.setText("%");
+
+        jLabel54.setText("Humedad Cascara");
+
+        txtHumedadCas.setText("0");
+
+        jLabel49.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        jLabel49.setText("%");
+
+        jLabel55.setText("Color En Oro");
+
+        jLabel12.setText("Evaluador");
+
+        cbEvaluador.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "James Kosalos", "Jacob Frankel", "Carlos bustamante", "Gigi Mengistu", "Tom Bennett" }));
+
+        jLabel13.setText("Densidad En Oro");
+
+        jLabel14.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel14.setText("Puntuación");
+
+        lblPuntuacion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+
+        javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
+        jPanel2.setLayout(jPanel2Layout);
+        jPanel2Layout.setHorizontalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(spColorOro)
+                    .addComponent(dcFechaE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(txtPeso)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel47))
+                    .addComponent(spUniOro)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(txtHumedadCas)
+                            .addComponent(txtHumedadOro))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel48, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addComponent(jLabel49, javax.swing.GroupLayout.Alignment.TRAILING)))
+                    .addComponent(cbEvaluador, 0, 160, Short.MAX_VALUE)
+                    .addComponent(txtDenOro)
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel51)
+                            .addComponent(jLabel52)
+                            .addComponent(jLabel53)
+                            .addComponent(jLabel54)
+                            .addComponent(jLabel55)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel13))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addGroup(jPanel2Layout.createSequentialGroup()
+                        .addComponent(jLabel14)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblPuntuacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                .addContainerGap())
+        );
+        jPanel2Layout.setVerticalGroup(
+            jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel2Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jLabel6)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(dcFechaE, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel51)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtPeso, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel47))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel52)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(spUniOro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel53)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtHumedadOro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel48))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel54)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtHumedadCas, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel49))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel55)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(spColorOro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel12)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(cbEvaluador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel13)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtDenOro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblPuntuacion, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+
+        jLabel56.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel56.setText("Datos de Evaluacion");
+
+        jLabel7.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel7.setText("Evaluacion");
+
+        jLabel8.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel8.setText("Acciones");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane1)
-                .addContainerGap())
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jPanel6, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel1Layout.createSequentialGroup()
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addGroup(jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jLabel56))
+                                    .addGap(18, 18, 18))
+                                .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                        .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                        .addComponent(jLabel8))
+                                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
+                            .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jLabel7)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 469, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                    .addComponent(jLabel50))
+                .addContainerGap(25, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane1)
+                .addGap(8, 8, 8)
+                .addComponent(jLabel50)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel56)
+                    .addComponent(jLabel7))
+                .addGap(1, 1, 1)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(42, 42, 42)
+                        .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(0, 0, Short.MAX_VALUE)))
-                .addContainerGap())
+                        .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -3719,7 +3759,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
         /* If Nimbus (introduced in Java SE 6) is not available, stay with the default look and feel.
          * For details see http://download.oracle.com/javase/tutorial/uiswing/lookandfeel/plaf.html 
          */
-        /*try {
+ /*try {
             for (javax.swing.UIManager.LookAndFeelInfo info : javax.swing.UIManager.getInstalledLookAndFeels()) {
                 if ("Nimbus".equals(info.getName())) {
                     javax.swing.UIManager.setLookAndFeel(info.getClassName());
@@ -3738,7 +3778,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
         //</editor-fold>
 
         /* Create and display the form */
-        /*java.awt.EventQueue.invokeLater(new Runnable() {
+ /*java.awt.EventQueue.invokeLater(new Runnable() {
             public void run() {
                 new jdEvaluacion().setVisible(true);
             }
@@ -3919,8 +3959,6 @@ public class jdEvaluacion extends javax.swing.JFrame {
     public javax.swing.JButton jButton1;
     public javax.swing.JButton jButton2;
     public javax.swing.JLabel jLabel1;
-    public javax.swing.JLabel jLabel10;
-    public javax.swing.JLabel jLabel11;
     public javax.swing.JLabel jLabel12;
     public javax.swing.JLabel jLabel13;
     public javax.swing.JLabel jLabel14;
@@ -3963,15 +4001,21 @@ public class jdEvaluacion extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel48;
     public javax.swing.JLabel jLabel49;
     public javax.swing.JLabel jLabel5;
+    public javax.swing.JLabel jLabel50;
+    public javax.swing.JLabel jLabel51;
+    public javax.swing.JLabel jLabel52;
+    public javax.swing.JLabel jLabel53;
+    public javax.swing.JLabel jLabel54;
+    public javax.swing.JLabel jLabel55;
+    public javax.swing.JLabel jLabel56;
     public javax.swing.JLabel jLabel6;
     public javax.swing.JLabel jLabel7;
     public javax.swing.JLabel jLabel8;
-    public javax.swing.JLabel jLabel9;
     public javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jPanel2;
-    public javax.swing.JPanel jPanel3;
     public javax.swing.JPanel jPanel4;
     public javax.swing.JPanel jPanel5;
+    public javax.swing.JPanel jPanel6;
     public javax.swing.JScrollPane jScrollPane1;
     public javax.swing.JSeparator jSeparator1;
     public javax.swing.JSeparator jSeparator10;

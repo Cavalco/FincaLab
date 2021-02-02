@@ -426,14 +426,19 @@ inner join boletaentradabh be
         }
         idBoleta = "";*/
     }//GEN-LAST:event_jButton4ActionPerformed
-    String idSubLote = "", certificacion = "", proceso = "", metodo = "", sociedad = "";
+    String idSubLote = "", certificacion = "", proceso = "", metodo = "", sociedad = "", fechaS="", sacosFinales="",kgFinales="",formaCafe="";
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
         // TODO add your handling code here:
         idSubLote = jTable1.getValueAt(jTable1.getSelectedRow(), 0) + "";
-        certificacion = jTable1.getValueAt(jTable1.getSelectedRow(), 3) + "";
-        proceso = jTable1.getValueAt(jTable1.getSelectedRow(), 5) + "";
-        metodo = jTable1.getValueAt(jTable1.getSelectedRow(), 6) + "";
         sociedad = jTable1.getValueAt(jTable1.getSelectedRow(), 1) + "";
+        fechaS = jTable1.getValueAt(jTable1.getSelectedRow(), 2) + "";
+        certificacion = jTable1.getValueAt(jTable1.getSelectedRow(), 5) + "";
+        formaCafe = jTable1.getValueAt(jTable1.getSelectedRow(), 6) + "";
+        proceso = jTable1.getValueAt(jTable1.getSelectedRow(), 7) + "";
+        metodo = jTable1.getValueAt(jTable1.getSelectedRow(), 8) + "";
+        sacosFinales = jTable1.getValueAt(jTable1.getSelectedRow(), 9) + "";
+        kgFinales = jTable1.getValueAt(jTable1.getSelectedRow(), 10) + "";
+        
 
         if (idSubLote.contains("SLot")) {
             idSubLote = mbh.devuelveUnDato("select idLoteOrigen from sublotesconfirmados where idSublote='" + idSubLote + "' ");
@@ -474,7 +479,7 @@ inner join boletaentradabh be
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-        jdMuestraIndividual jd = new jdMuestraIndividual(null, true, idSubLote, certificacion, proceso, metodo, beneficio, sociedad, cn);
+        jdMuestraIndividual jd = new jdMuestraIndividual(null, true, idSubLote, certificacion, proceso, metodo, beneficio, sociedad, fechaS, sacosFinales, kgFinales, formaCafe, cn);
         jd.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
