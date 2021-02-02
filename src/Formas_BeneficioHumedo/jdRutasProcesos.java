@@ -42,18 +42,18 @@ public class jdRutasProcesos extends javax.swing.JDialog {
     Propiedades idioma;
     String Idioma, idBeneficio, idLote;
     jdAsignarProceso jdA;
-
+    
     public jdRutasProcesos(java.awt.Frame parent, boolean modal, String idBeneficio, String idLote, String Idioma, Connection cn) {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
         setTitle("Creación de Ruta");
-
+        
         this.cn = cn;
         this.Idioma = Idioma;
         this.idLote = idLote;
         this.idBeneficio = idBeneficio;
-
+        
         mdb = new metodosDatosBasicos(cn, Idioma);
         modelo = (DefaultTableModel) tablaProceso.getModel();
         cargarCombos();
@@ -64,24 +64,34 @@ public class jdRutasProcesos extends javax.swing.JDialog {
         tablaProceso.getColumnModel().getColumn(6).setCellRenderer(color);*/
         //tablaProceso.setDefaultRenderer(Object.class, new MiRender());
     }
-
+    
     public void cargarCombos() {
         String[] datos = mdb.cargarCombos("select actividad from actividadesbh").split("¬");
         comboActividad.setModel(new DefaultComboBoxModel((Object[]) datos));
     }
-
+    
     public void cargarCombos2() {
         String[] datos = mdb.cargarCombos("select nombre from maquinariabh").split("¬");
         comboMaquinaria.setModel(new DefaultComboBoxModel((Object[]) datos));
     }
-
+    
     public void cargarProcesos() {
         String[] datos = mdb.cargarCombos("select descripcion from procesocafe").split("¬");
         comboProcesos.setModel(new DefaultComboBoxModel((Object[]) datos));
     }
-
+    
     public void cargarRuta(String clave, String actividad) {
-
+        
+       /* String[] entradas = mdb.cargarCombos("SELECT\n"
+                + "    clave\n"
+                + "FROM\n"
+                + "    entradasmaquinaria\n"
+                + "WHERE\n"
+                + "    idMaquinaria ="+mdb.devuelveUnDato("select id from maquinariabh where nombre='"+comboMaquinaria.getSelectedItem()+"'")+" ").split("¬");
+        
+        JOptionPane.showMessageDialog(null,"Numero entradas  "+entradas.length);*/
+        
+        
         mdb.cargarInformacion2(modelo, 5, "SELECT\n"
                 + "    a.Actividad,\n"
                 + "    e.clave,\n"
@@ -98,7 +108,7 @@ public class jdRutasProcesos extends javax.swing.JDialog {
                 + "    (s.idMaquinaria = m.id) "
                 + "WHERE\n"
                 + "    m.nombre = '" + comboMaquinaria.getSelectedItem() + "' and s.clave='" + clave + "'");
-
+        
         String[] datos = mdb.cargarCombos("SELECT a.actividad\n"
                 + "from relacionsalidamaquinarias r \n"
                 + "inner join actividadesbh a on(r.idActividad=a.id)\n"
@@ -109,7 +119,7 @@ public class jdRutasProcesos extends javax.swing.JDialog {
         comboActividad.removeAllItems();
         comboActividad.setModel(new DefaultComboBoxModel((Object[]) datos));
     }
-
+    
     public void validarMaquinaria() {
         if (mdb.devuelveUnDato("select generarLote from maquinariabh where nombre='" + comboMaquinaria.getSelectedItem() + "'").equals("1")) {
             JOptionPane.showMessageDialog(null, "Se genera nuevo lote");
@@ -118,18 +128,18 @@ public class jdRutasProcesos extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(null, "No se genera un nuevo Lote");
         }
     }
-
+    
     public static String encodeToString(BufferedImage image) {
         String imageString = null;
         ByteArrayOutputStream bos = new ByteArrayOutputStream();
-
+        
         try {
             ImageIO.write(image, "jpg", bos);
             byte[] imageBytes = bos.toByteArray();
-
+            
             BASE64Encoder encoder = new BASE64Encoder();
             imageString = encoder.encode(imageBytes);
-
+            
             bos.close();
         } catch (IOException e) {
             e.printStackTrace();
@@ -162,6 +172,7 @@ public class jdRutasProcesos extends javax.swing.JDialog {
         txtRuta = new javax.swing.JTextField();
         jLabel5 = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
+        jButton4 = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -222,6 +233,13 @@ public class jdRutasProcesos extends javax.swing.JDialog {
             }
         });
 
+        jButton4.setText("Eliminar Fila");
+        jButton4.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton4ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -258,6 +276,8 @@ public class jdRutasProcesos extends javax.swing.JDialog {
                                 .addComponent(txtRuta, javax.swing.GroupLayout.PREFERRED_SIZE, 245, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jButton3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jButton4)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton2)))))
                 .addContainerGap())
@@ -291,7 +311,8 @@ public class jdRutasProcesos extends javax.swing.JDialog {
                     .addComponent(jButton2)
                     .addComponent(txtNombreRuta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtRuta, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jButton3))
+                    .addComponent(jButton3)
+                    .addComponent(jButton4))
                 .addContainerGap())
         );
 
@@ -332,16 +353,16 @@ public class jdRutasProcesos extends javax.swing.JDialog {
                 + "    (r.idActividad = a.id)\n"
                 + "WHERE\n"
                 + "    r.idMaquinaria = " + mdb.devuelveUnDato("select id from maquinariabh where nombre='" + comboMaquinaria.getSelectedItem() + "'") + "   \n"
-                + "GROUP BY\n"
-                + "    a.actividad").split("¬");
+        ).split("¬");
 
+        //String[] entradas = mdb.cargarCombos(idLote)
         //   REVISAR POR QUE LAS SALIDAS DAN 1 MAS DE LAS QUE REALMENTE SON EJ. SON 2 SALIDAS Y MARCA 3
         //JOptionPane.showMessageDialog(null,"Salidas - "+salidas.length);
         if (salidas.length - 1 > 1) {
             jdSeleccionDeRuta jdr = new jdSeleccionDeRuta(null, true, salidas, cn);
             jdr.jdp = this;
             jdr.setVisible(true);
-
+            
         } else { //if (salidas.length-1 == 1) {
 
             mdb.cargarInformacion2(modelo, 5, "SELECT\n"
@@ -360,12 +381,12 @@ public class jdRutasProcesos extends javax.swing.JDialog {
                     + "    (s.idMaquinaria = m.id) "
                     + "WHERE\n"
                     + "    m.nombre = '" + comboMaquinaria.getSelectedItem() + "'");
-
+            
             String[] datos = mdb.cargarCombos("SELECT a.actividad\n"
                     + "from relacionsalidamaquinarias r \n"
                     + "inner join actividadesbh a on(r.idActividad=a.id)\n"
                     + "where r.idMaquinaria=" + mdb.devuelveUnDato("select id from maquinariabh where nombre='" + comboMaquinaria.getSelectedItem() + "'") + " group by a.actividad").split("¬");
-
+            
             comboActividad.removeAllItems();
             comboActividad.setModel(new DefaultComboBoxModel((Object[]) datos));
         }
@@ -375,16 +396,16 @@ public class jdRutasProcesos extends javax.swing.JDialog {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         String image_string = "NO";
-        JOptionPane.showMessageDialog(null,"Entre al boton");
+        JOptionPane.showMessageDialog(null, "Entre al boton");
         String idProceso = mdb.devuelveUnDato("select id from procesocafe where descripcion='" + comboProcesos.getSelectedItem() + "'");
         if (mdb.insertarBasicosComprobacion("insert into rutabeneficiohumedo values(null, '" + idBeneficio + "', "
                 + "" + idProceso + ", "
                 + "'" + txtNombreRuta.getText() + "' )")) {
             
-            JOptionPane.showMessageDialog(this,"Entre a insertar ruta beneficio y triunfe");
-
+            JOptionPane.showMessageDialog(this, "Entre a insertar ruta beneficio y triunfe");
+            
             String idRuta = mdb.devuelveUnDato("select id from rutabeneficiohumedo where nombreRuta='" + txtNombreRuta.getText() + "'");
-
+            
             for (int i = 0; i < tablaProceso.getRowCount(); i++) {
                 mdb.insertarEnCiclo("insert into detalle_rutabh values"
                         + "(" + idRuta + ", "
@@ -392,25 +413,25 @@ public class jdRutasProcesos extends javax.swing.JDialog {
                         + "'" + mdb.devuelveUnDato("select id from maquinariabh where nombre='" + tablaProceso.getValueAt(i, 2) + "'") + "', "
                         + "'" + tablaProceso.getValueAt(i, 4) + "', '" + tablaProceso.getValueAt(i, 3) + "'  ) ");
             }
-
+            
             if (!txtRuta.getText().equals("")) {
                 try {
                     BufferedImage img = ImageIO.read(new File(fichero.toString()));
                     image_string = encodeToString(img);
-
+                    
                     mdb.insertarBasicos("insert into imagenrutabh values(null," + idRuta + ", '" + image_string + "' )");
-
+                    
                 } catch (Exception e) {
                 }
             }
-
+            
             JOptionPane.showMessageDialog(null, "Ruta Almacenada");
             jdA.cargarCombo();
             this.dispose();
-        }else{
-            JOptionPane.showMessageDialog(this,"Entre a insertar ruta beneficio y valio verga");
+        } else {
+            JOptionPane.showMessageDialog(this, "Entre a insertar ruta beneficio y valio verga");
         }
-
+        
 
     }//GEN-LAST:event_jButton2ActionPerformed
     File fichero = null;
@@ -421,7 +442,7 @@ public class jdRutasProcesos extends javax.swing.JDialog {
         JFileChooser file = new JFileChooser();
         FileNameExtensionFilter filtro = new FileNameExtensionFilter("*.jpg", "jpg");
         file.setFileFilter(filtro);
-
+        
         int seleccion = file.showOpenDialog(contentPane);
         //Si el usuario, pincha en aceptar
         if (seleccion == JFileChooser.APPROVE_OPTION) {
@@ -437,6 +458,11 @@ public class jdRutasProcesos extends javax.swing.JDialog {
 
         }
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
+        // TODO add your handling code here:
+        modelo.removeRow(tablaProceso.getSelectedRow());
+    }//GEN-LAST:event_jButton4ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -474,6 +500,7 @@ public class jdRutasProcesos extends javax.swing.JDialog {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton4;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

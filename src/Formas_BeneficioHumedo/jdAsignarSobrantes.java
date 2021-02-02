@@ -542,7 +542,7 @@ public class jdAsignarSobrantes extends javax.swing.JDialog {
                 + "'" + lblKilos.getText() + "', '" + formaSalida + "','0',' ', 1  )")) {
             
            mbh.insertarBoleta("insert into historialsublotes values('" + jLabel5.getText() + "', '" + lblIdLote.getText() + "', "
-                    + "'" + lblFormaCafe.getText() + "', '" + lblEstadoCafe.getText() + "', " + lblKilos.getText() + ",'" + fechaActual + "','Fragmentacion','1'  ) ");
+                    + "'" + lblFormaCafe.getText() + "', '" + lblEstadoCafe.getText() + "', " + lblKilos.getText() + ",'" + fechaActual + "','1'  ) ");
 
             
         }
