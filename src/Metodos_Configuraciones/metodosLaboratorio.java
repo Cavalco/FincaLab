@@ -43,6 +43,7 @@ Propiedades idioma;
 
     public void actualizarBasicos(String sql) {
         try {
+            System.out.println(sql);
             PreparedStatement cmd = cn.prepareCall(sql);
             cmd.execute();
             cmd.close();

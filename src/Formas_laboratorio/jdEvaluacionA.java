@@ -15,6 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import com.sun.java.swing.plaf.windows.*;
+import java.awt.event.KeyEvent;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.UnsupportedLookAndFeelException;
@@ -64,6 +65,14 @@ public class jdEvaluacionA extends javax.swing.JDialog {
           mdb = new metodosLaboratorio(cn,Idioma);
             Date date = new Date(System.currentTimeMillis());
         calendario.setMaxSelectableDate(date);
+    }
+    
+    public void soloNumeros(KeyEvent evt){
+        char c = evt.getKeyChar();
+        if (Character.isAlphabetic(c)) {
+            getToolkit().beep();
+            evt.consume();
+        }
     }
 
     /**
