@@ -77,31 +77,35 @@ public class jdMuestra extends javax.swing.JDialog {
     }
 
     public void confirmarSecado() {
+        try {
+            String fechaS = new SimpleDateFormat("yyyy-MM-dd").format(fechaSecado.getDate());
 
-        String fechaS = new SimpleDateFormat("yyyy-MM-dd").format(fechaSecado.getDate());
-        String fechaM = new SimpleDateFormat("yyyy-MM-dd").format(fechaMuestra.getDate());
+            if (mbh.insertarBoleta("insert into sublotessecos values(null,"
+                    + "'" + mbh.devuelveUnDato("select idLoteOrigen from lotesprocesosecado where idSubLote='" + lbIdLote.getText() + "'") + "', "
+                    + "'" + lbIdLote.getText() + "','" + lbSociedad.getText() + "', '" + idBeneficio + "', '" + fechaS + "', "
+                    + "'" + certificacion + "', "
+                    + "'" + mbh.devuelveUnDato("select formaSalidaFinal from lotesprocesosecado where idSubLote='" + lbIdLote.getText() + "'") + "',"
+                    + "'" + metodo + "','" + proceso + "','" + txtSacos.getText() + "', '" + txtKgFinales.getText() + "', "
+                    + "'" + txtHumedad.getText() + "', '" + txtTemperatura.getText() + "', '" + txtPesoMuestra.getText() + "','Fecha','" + txtTomadaPor.getText() + "', '1' ) ")) {
 
-        if (mbh.insertarBoleta("insert into sublotessecos values(null,"
-                + "'" + mbh.devuelveUnDato("select idLoteOrigen from lotesprocesosecado where idSubLote='" + lbIdLote.getText() + "'") + "', "
-                + "'" + lbIdLote.getText() + "','" + lbSociedad.getText() + "', '" + idBeneficio + "', '" + fechaS + "', "
-                + "'" + certificacion + "', "
-                + "'" + mbh.devuelveUnDato("select formaSalidaFinal from lotesprocesosecado where idSubLote='" + lbIdLote.getText() + "'") + "',"
-                + "'" + metodo + "','" + proceso + "','" + txtSacos.getText() + "', '" + txtKgFinales.getText() + "', "
-                + "'" + txtHumedad.getText() + "', '" + txtTemperatura.getText() + "', '" + txtPesoMuestra.getText() + "','" + fechaM + "','" + txtTomadaPor.getText() + "', '1' ) ")) {
+                mbh.actualizarBoleta("update lotesprocesosecado set estatus=0 where idSubLote='" + lbIdLote.getText() + "'");
 
-            mbh.actualizarBoleta("update lotesprocesosecado set estatus=0 where idSubLote='" + lbIdLote.getText() + "'");
+            }
 
-        }
+            if (checkMuestra.isSelected()) {
+                String fechaM = new SimpleDateFormat("yyyy-MM-dd").format(fechaMuestra.getDate());
 
-        if (checkMuestra.isSelected()) {
-            mbh.insertarBoleta("insert into muestrasenviadas values "
-                    + "(null, '" + lbIdLote.getText() + "', 'Tipo Cafe', '" + lbForma.getText() + "', "
-                    + "'" + lbBeneficio.getText() + "', '" + lbSociedad.getText() + "', '" + lbIdLote.getText() + "', "
-                    + "'" + txtKgFinales.getText() + "', '" + txtSacos.getText() + "', '" + comunidad + "', "
-                    + "'" + txtObservaciones.getText() + "', '" + metodoSecado.getText() + "', 'Calidad', "
-                    + "'" + txtPesoMuestra.getText() + "', 'Ubicacion', 'Fecha Lote', '" + fechaS + "', "
-                    + "'" + fechaM + "', 'Fecha Cosecha', '" + txtTomadaPor.getText() + "', "
-                    + "'Recibida Por', '"+txtTransportadaPor.getText()+"', '" + lbCertificado.getText() + "' )");
+                mbh.insertarBoleta("insert into muestrasenviadas values "
+                        + "(null, '" + lbIdLote.getText() + "', 'Tipo Cafe', '" + lbForma.getText() + "', "
+                        + "'" + lbBeneficio.getText() + "', '" + lbSociedad.getText() + "', '" + lbIdLote.getText() + "', "
+                        + "'" + txtKgFinales.getText() + "', '" + txtSacos.getText() + "', '" + comunidad + "', "
+                        + "'" + txtObservaciones.getText() + "', '" + metodoSecado.getText() + "', 'Calidad', "
+                        + "'" + txtPesoMuestra.getText() + "', 'Ubicacion', 'Fecha Lote', '" + fechaS + "', "
+                        + "'" + fechaM + "', 'Fecha Cosecha', '" + txtTomadaPor.getText() + "', "
+                        + "'Recibida Por', '" + txtTransportadaPor.getText() + "', '" + lbCertificado.getText() + "' )");
+            }
+        } catch (Exception e) {
+
         }
     }
 

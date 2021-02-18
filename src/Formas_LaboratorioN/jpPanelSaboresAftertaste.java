@@ -5,17 +5,34 @@
  */
 package Formas_LaboratorioN;
 
+import javax.swing.JTable;
+
 /**
  *
  * @author Carlos Valdez
  */
-public class jpPanelSaboresWet extends javax.swing.JPanel {
+public class jpPanelSaboresAftertaste extends javax.swing.JPanel {
 
     /**
      * Creates new form jpPanelSaboresDry
      */
-    public jpPanelSaboresWet() {
+    jdCatacion jd;
+
+    public jpPanelSaboresAftertaste() {
         initComponents();
+    }
+    
+    String cadena="";
+    public void cadena(JTable tabla){
+      
+         for (int i=0; i<tabla.getRowCount(); i++ ) {
+           if(tabla.getValueAt(i, 1) != null ){
+             cadena += tabla.getValueAt(i,0)+"-"+tabla.getValueAt(i,1)+",";
+         }
+        }
+         
+        //jd.cadenas(cadena.substring(0,cadena.length()-1));
+        jd.cadenas(cadena);
     }
 
     /**
@@ -27,20 +44,30 @@ public class jpPanelSaboresWet extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jPanel1 = new javax.swing.JPanel();
         jScrollPane9 = new javax.swing.JScrollPane();
         Sweet = new javax.swing.JTable();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        Fruity = new javax.swing.JTable();
         jScrollPane3 = new javax.swing.JScrollPane();
         Floral = new javax.swing.JTable();
+        jScrollPane4 = new javax.swing.JScrollPane();
+        Fruit = new javax.swing.JTable();
         jScrollPane5 = new javax.swing.JScrollPane();
         SourFer = new javax.swing.JTable();
         jScrollPane10 = new javax.swing.JScrollPane();
         GreenVeg = new javax.swing.JTable();
+        jButton1 = new javax.swing.JButton();
+
+        setAutoscrolls(true);
+
+        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        jScrollPane1.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_ALWAYS);
+        jScrollPane1.setAutoscrolls(true);
 
         Sweet.setBackground(new java.awt.Color(255, 102, 102));
         Sweet.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {"1 Sweet", null},
                 {"Brown Sugar", null},
                 {"Molasses", null},
                 {"Maple Sugar", null},
@@ -61,9 +88,33 @@ public class jpPanelSaboresWet extends javax.swing.JPanel {
         });
         jScrollPane9.setViewportView(Sweet);
 
-        Fruity.setBackground(new java.awt.Color(255, 204, 0));
-        Fruity.setModel(new javax.swing.table.DefaultTableModel(
+        Floral.setBackground(new java.awt.Color(255, 153, 102));
+        Floral.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {"2 Floral", null},
+                {"Black Tea", null},
+                {"Chamomile", null},
+                {"Rose", null},
+                {"Jasmine", null}
+            },
+            new String [] {
+                "Sabor", "Intensidad"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jScrollPane3.setViewportView(Floral);
+
+        Fruit.setBackground(new java.awt.Color(255, 204, 0));
+        Fruit.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"3 Fruit", null},
                 {"Berry", null},
                 {"Blackberry", null},
                 {"Raspberry", null},
@@ -99,33 +150,12 @@ public class jpPanelSaboresWet extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        jScrollPane4.setViewportView(Fruity);
-
-        Floral.setBackground(new java.awt.Color(255, 153, 102));
-        Floral.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Black Tea", null},
-                {"Chamomile", null},
-                {"Rose", null},
-                {"Jasmine", null}
-            },
-            new String [] {
-                "Sabor", "Intensidad"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        jScrollPane3.setViewportView(Floral);
+        jScrollPane4.setViewportView(Fruit);
 
         SourFer.setBackground(new java.awt.Color(255, 255, 153));
         SourFer.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {"4 Sour/Fermented", null},
                 {"Sour", null},
                 {"Vinegar", null},
                 {"Rancid butter", null},
@@ -143,7 +173,7 @@ public class jpPanelSaboresWet extends javax.swing.JPanel {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -155,6 +185,7 @@ public class jpPanelSaboresWet extends javax.swing.JPanel {
         GreenVeg.setBackground(new java.awt.Color(102, 255, 102));
         GreenVeg.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
+                {"5 Green/Vegetative", null},
                 {"Olive Oil", null},
                 {"Raw", null},
                 {"Beany", null},
@@ -171,7 +202,7 @@ public class jpPanelSaboresWet extends javax.swing.JPanel {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -180,23 +211,32 @@ public class jpPanelSaboresWet extends javax.swing.JPanel {
         });
         jScrollPane10.setViewportView(GreenVeg);
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
-        this.setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        jButton1.setText("Añadir");
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane10, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 215, Short.MAX_VALUE)
-                    .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap())
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(jButton1)
+                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 185, Short.MAX_VALUE)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)))
+                .addContainerGap(68, Short.MAX_VALUE))
         );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -207,17 +247,51 @@ public class jpPanelSaboresWet extends javax.swing.JPanel {
                 .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 73, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(179, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jButton1)
+                .addContainerGap(355, Short.MAX_VALUE))
+        );
+
+        jScrollPane1.setViewportView(jPanel1);
+
+        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
+        this.setLayout(layout);
+        layout.setHorizontalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 225, Short.MAX_VALUE)
+                .addContainerGap())
+        );
+        layout.setVerticalGroup(
+            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 818, Short.MAX_VALUE)
+                .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        cadena(Sweet);
+        cadena(Floral);
+        cadena(Fruit);
+        cadena(SourFer);
+        cadena(GreenVeg);
+    
+    }//GEN-LAST:event_jButton1ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Floral;
-    private javax.swing.JTable Fruity;
+    private javax.swing.JTable Fruit;
     private javax.swing.JTable GreenVeg;
     private javax.swing.JTable SourFer;
     private javax.swing.JTable Sweet;
+    private javax.swing.JButton jButton1;
+    private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JScrollPane jScrollPane10;
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
