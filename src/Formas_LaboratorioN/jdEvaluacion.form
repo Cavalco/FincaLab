@@ -251,7 +251,7 @@
                                               <Group type="103" groupAlignment="0" attributes="0">
                                                   <Group type="102" alignment="0" attributes="0">
                                                       <Component id="J1" min="-2" pref="30" max="-2" attributes="0"/>
-                                                      <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
+                                                      <EmptySpace type="separate" max="-2" attributes="0"/>
                                                       <Component id="J2" min="-2" pref="30" max="-2" attributes="0"/>
                                                       <EmptySpace type="separate" max="-2" attributes="0"/>
                                                       <Component id="J3" min="-2" pref="30" max="-2" attributes="0"/>
@@ -782,11 +782,6 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="J1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="J2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="J3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="J4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="J5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="J6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel33" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -819,7 +814,16 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="IT" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="JT" min="-2" max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="JT" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Group type="103" alignment="3" groupAlignment="3" attributes="0">
+                                          <Component id="J2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="J3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="J4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="J5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                          <Component id="J6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      </Group>
+                                  </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="KT" min="-2" max="-2" attributes="0"/>
                               </Group>
@@ -1189,7 +1193,7 @@
                 </Component>
                 <Component class="javax.swing.JLabel" name="jLabel46">
                   <Properties>
-                    <Property name="text" type="java.lang.String" value="Material extra:"/>
+                    <Property name="text" type="java.lang.String" value="Materia extra:"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="B1">

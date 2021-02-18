@@ -82,7 +82,7 @@ public class jpBitacora extends javax.swing.JPanel {
         jLabel1.setText(idioma.getProperty("FiltrarPC"));
         jLabel2.setText(idioma.getProperty("BusquedaPor"));
 
-        jLabel4.setText(idioma.getProperty("KilosConfirmados"));
+        //jLabel4.setText(idioma.getProperty("KilosConfirmados"));
 
         jMenuItem1.setText(idioma.getProperty("ReporteIndividual"));
         evaspecto.setText(idioma.getProperty("EvaluacionPorAspecto"));
@@ -135,15 +135,13 @@ public class jpBitacora extends javax.swing.JPanel {
         ALL = new javax.swing.JRadioButton();
         jScrollPane2 = new javax.swing.JScrollPane();
         tablabitacora = new javax.swing.JTable();
-        jLabel4 = new javax.swing.JLabel();
-        yn = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        combotipo = new javax.swing.JComboBox<>();
+        combotipo = new javax.swing.JComboBox<String>();
         jLabel2 = new javax.swing.JLabel();
-        combobusqueda = new javax.swing.JComboBox<>();
+        combobusqueda = new javax.swing.JComboBox<String>();
         txtBusqueda = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        jComboBox1 = new javax.swing.JComboBox<String>();
         jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
@@ -301,17 +299,11 @@ public class jpBitacora extends javax.swing.JPanel {
         });
         jScrollPane2.setViewportView(tablabitacora);
 
-        jLabel4.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        jLabel4.setText("Kilos Confirmados:");
-
-        yn.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
-        yn.setText("-");
-
         jPanel3.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
         jLabel1.setText("Proceso Café");
 
-        combotipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "Natural", "Lavado", "Semi Lavado" }));
+        combotipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Todos", "Natural", "Lavado", "Semi Lavado" }));
         combotipo.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 combotipoItemStateChanged(evt);
@@ -320,7 +312,7 @@ public class jpBitacora extends javax.swing.JPanel {
 
         jLabel2.setText("Busqueda Por");
 
-        combobusqueda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione...", "# CSM", "Fecha de llegada", "Proceso", "Forma", "Beneficio", "Dueño" }));
+        combobusqueda.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione...", "# CSM", "Fecha de llegada", "Proceso", "Forma", "Beneficio", "Dueño" }));
 
         txtBusqueda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -397,12 +389,7 @@ public class jpBitacora extends javax.swing.JPanel {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jButton2))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane2)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel4)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(yn)))
+                        .addComponent(jScrollPane2)
                         .addGap(10, 10, 10))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -423,11 +410,7 @@ public class jpBitacora extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 11, Short.MAX_VALUE)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel4)
-                    .addComponent(yn))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -580,7 +563,7 @@ public void llenarTabla() {
                 + "where (id_muestra='" + csm + "' and comunidad='" + comunindad + "')");
         kgconfirm = mdb.devuelveUnDato("select Kgconfirm from bitacoralab "
                 + "where (id_muestra='" + csm + "' and comunidad='" + comunindad + "')");
-        if (kgconfirm.equals("1")) {
+        /*if (kgconfirm.equals("1")) {
             yn.setText(idioma.getProperty("Si"));
             yn.setForeground(Color.green);
             kgyn.setEnabled(false);
@@ -588,7 +571,7 @@ public void llenarTabla() {
             yn.setText(idioma.getProperty("No"));
             yn.setForeground(Color.red);
             kgyn.setEnabled(true);
-        }
+        }*/
         if (estatus.equals(idioma.getProperty("Desactivada"))) {
             jMenuItem4.setText(idioma.getProperty("Activar"));
             System.out.println(estatus);
@@ -747,8 +730,8 @@ public void llenarTabla() {
                 String sql = "UPDATE bitacoralab SET Kgconfirm='1' where id_muestra='" + csm + "'and comunidad='" + comunindad + "'";
                 mdb.actualizarBasicos(sql);
                 busqueda();
-                yn.setText(idioma.getProperty("Si"));
-                yn.setForeground(Color.green);
+                //yn.setText(idioma.getProperty("Si"));
+                //yn.setForeground(Color.green);
             }
         }        // TODO add your handling code here:
     }//GEN-LAST:event_kgynActionPerformed
@@ -773,7 +756,6 @@ public void llenarTabla() {
     public javax.swing.JLabel jLabel1;
     public javax.swing.JLabel jLabel2;
     public javax.swing.JLabel jLabel3;
-    public javax.swing.JLabel jLabel4;
     public javax.swing.JMenuItem jMenuItem1;
     public javax.swing.JMenuItem jMenuItem4;
     public javax.swing.JMenuItem jMenuItem5;
@@ -787,7 +769,6 @@ public void llenarTabla() {
     public javax.swing.JMenuItem sabores;
     public javax.swing.JTable tablabitacora;
     public javax.swing.JTextField txtBusqueda;
-    public javax.swing.JLabel yn;
     // End of variables declaration//GEN-END:variables
   excel excel = new excel();
 }
