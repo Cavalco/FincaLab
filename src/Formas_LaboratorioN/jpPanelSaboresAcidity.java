@@ -61,18 +61,19 @@ public class jpPanelSaboresAcidity extends javax.swing.JPanel {
         SourFer.setBackground(new java.awt.Color(255, 255, 153));
         SourFer.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"4 Sour/Fermented", null},
-                {"Sour", null},
-                {"Vinegar", null},
-                {"Rancid butter", null},
-                {"Rancid Cheese", null},
-                {"Orange Acidity", null},
-                {"Apple Acidity", null},
-                {"Alcohol/Fermented", null},
-                {"Winey", null},
-                {"Whiskey", null},
-                {"Fermented", null},
-                {"Over-ripe", null}
+                {"4 Acido/Fermentado", null},
+                {"Acido", null},
+                {"Arom-acido", null},
+                {"Acido-acét", null},
+                {"Acido-butí", null},
+                {"Acido-iscoc", null},
+                {"Acido-cítr", null},
+                {"Acido-malí", null},
+                {"Alcoh/Ferm", null},
+                {"Vinoso", null},
+                {"Whisky", null},
+                {"Fermentado", null},
+                {"Super-madu", null}
             },
             new String [] {
                 "Sabor", "Intensidad"

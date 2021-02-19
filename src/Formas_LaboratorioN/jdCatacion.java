@@ -1800,6 +1800,11 @@ public class jdCatacion extends javax.swing.JFrame {
     }//GEN-LAST:event_jButton3ActionPerformed
 
     public void guardar() {
+        cadenaFinal = "Seco:" + lblSeco.getText() + " + Mojado:" + lblMojado.getText()
+                + " + Quebrado:" + lblQuebrado.getText() +" + Sabor:"+lblSabor.getText()
+                + " + SaborRemanente:"+ lblRemanente.getText()+" + Acidez:"+lblAcidez.getText();
+        
+        JOptionPane.showMessageDialog(null,cadenaFinal);
         String fecha = null;
         if (txtFecha.getDate() != null) {
             fecha = new SimpleDateFormat("dd-MMM-yyyy").format(txtFecha.getDate());
@@ -1815,7 +1820,7 @@ public class jdCatacion extends javax.swing.JFrame {
             try {
 
                 mdb.insertarBasicos("insert into catacion values (null," + id + "," + slNivelTostado.getValue() + "," + slUniTostado.getValue() + "," + Quakers.getText() + ",'" + lblPuntuacion.getText() + "'," + txtTazasCat.getText() + "," + txtDefectos.getText() + "," + txtNoTazas.getText() + "," + txtIntensidad.getText() + "," + txtUniTaza.getText() + "," + txtTazaLim.getText() + "," + txtDulzor.getText() + ",'" + txtSeco.getText() + "','" + txtMojado.getText() + "','" + txtQuebrado.getText() + "','" + lblFragancia.getText() + "','" + txtSabor.getText() + "','" + txtAftertaste.getText() + "','" + txtAcidez.getText() + "','" + spAcidezInt.getValue() + "','" + txtCuerpo.getText() + "','" + spCuerpoInt.getValue() + "','" + txtBalance.getText() + "','" + txtCatador.getText() + "','Consenso','" + fecha + "','" + txtDenTostado.getText() + "')");
-                mdb.actualizarBasicos("update bitacoralab set taza='1'   , sabores= 'pendiente' where id_bitacora=" + id);
+                mdb.actualizarBasicos("update bitacoralab set taza='1'   , sabores= '"+cadenaFinal+"' where id_bitacora=" + id);
                 //jpCT.llenarTabla();
                 this.dispose();
             } catch (Exception e) {

@@ -87,20 +87,21 @@
                       <Color blue="99" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="2" rowCount="12">
+                      <Table columnCount="2" rowCount="13">
                         <Column editable="false" title="Sabor" type="java.lang.Object">
-                          <Data value="4 Sour/Fermented"/>
-                          <Data value="Sour"/>
-                          <Data value="Vinegar"/>
-                          <Data value="Rancid butter"/>
-                          <Data value="Rancid Cheese"/>
-                          <Data value="Orange Acidity"/>
-                          <Data value="Apple Acidity"/>
-                          <Data value="Alcohol/Fermented"/>
-                          <Data value="Winey"/>
-                          <Data value="Whiskey"/>
-                          <Data value="Fermented"/>
-                          <Data value="Over-ripe"/>
+                          <Data value="4 Acido/Fermentado"/>
+                          <Data value="Acido"/>
+                          <Data value="Arom-acido"/>
+                          <Data value="Acido-ac&#xe9;t"/>
+                          <Data value="Acido-but&#xed;"/>
+                          <Data value="Acido-iscoc"/>
+                          <Data value="Acido-c&#xed;tr"/>
+                          <Data value="Acido-mal&#xed;"/>
+                          <Data value="Alcoh/Ferm"/>
+                          <Data value="Vinoso"/>
+                          <Data value="Whisky"/>
+                          <Data value="Fermentado"/>
+                          <Data value="Super-madu"/>
                         </Column>
                         <Column editable="true" title="Intensidad" type="java.lang.Object"/>
                       </Table>

@@ -67,12 +67,13 @@ public class jpPanelSaboresAftertaste extends javax.swing.JPanel {
         Sweet.setBackground(new java.awt.Color(255, 102, 102));
         Sweet.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1 Sweet", null},
-                {"Brown Sugar", null},
-                {"Molasses", null},
-                {"Maple Sugar", null},
-                {"Caramelized", null},
-                {"Honey", null}
+                {"1 Dulce", null},
+                {"Azúcar-Mor", null},
+                {"Molaza", null},
+                {"Jarab-mapl", null},
+                {"Caramelo", null},
+                {"Miel", null},
+                {"Vainilla", null}
             },
             new String [] {
                 "Sabor", "Intensidad"
@@ -92,10 +93,10 @@ public class jpPanelSaboresAftertaste extends javax.swing.JPanel {
         Floral.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"2 Floral", null},
-                {"Black Tea", null},
-                {"Chamomile", null},
-                {"Rose", null},
-                {"Jasmine", null}
+                {"Té negro", null},
+                {"Manzanilla", null},
+                {"Rosa", null},
+                {"Jazmine", null}
             },
             new String [] {
                 "Sabor", "Intensidad"
@@ -114,29 +115,29 @@ public class jpPanelSaboresAftertaste extends javax.swing.JPanel {
         Fruit.setBackground(new java.awt.Color(255, 204, 0));
         Fruit.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"3 Fruit", null},
-                {"Berry", null},
-                {"Blackberry", null},
-                {"Raspberry", null},
-                {"Blueberry", null},
-                {"Strawberry", null},
-                {"Dried Fruit", null},
-                {"Raisen", null},
-                {"Prune", null},
-                {"Other fruit", null},
-                {"coconut", null},
-                {"Cherry", null},
-                {"Pomagranite", null},
-                {"Pinneapple", null},
-                {"Grape", null},
-                {"Apple", null},
-                {"Peach", null},
-                {"Pear", null},
-                {"Citrus Fruit", null},
-                {"Grapefruit", null},
-                {"Orange", null},
-                {"Lemon", null},
-                {"Lime", null}
+                {"3 Afrutado", null},
+                {"Bayas", null},
+                {"Moras", null},
+                {"Frambuesa", null},
+                {"Arándano", null},
+                {"Fresa", null},
+                {"Frutos-sec", null},
+                {"Pasas", null},
+                {"Ciruel-pas", null},
+                {"Otras-frut", null},
+                {"Coco", null},
+                {"Cereza", null},
+                {"Granada", null},
+                {"Piña", null},
+                {"Uva", null},
+                {"Manzana", null},
+                {"Durazno", null},
+                {"Pera", null},
+                {"Citricos", null},
+                {"Toronja", null},
+                {"Naranja", null},
+                {"Limon", null},
+                {"Lima", null}
             },
             new String [] {
                 "Sabor", "Intensidad"
@@ -155,18 +156,19 @@ public class jpPanelSaboresAftertaste extends javax.swing.JPanel {
         SourFer.setBackground(new java.awt.Color(255, 255, 153));
         SourFer.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"4 Sour/Fermented", null},
-                {"Sour", null},
-                {"Vinegar", null},
-                {"Rancid butter", null},
-                {"Rancid Cheese", null},
-                {"Orange Acidity", null},
-                {"Apple Acidity", null},
-                {"Alcohol/Fermented", null},
-                {"Winey", null},
-                {"Whiskey", null},
-                {"Fermented", null},
-                {"Over-ripe", null}
+                {"4 Acido/Fermentado", null},
+                {"Acido", null},
+                {"Arom-acid", null},
+                {"Acido-acét", null},
+                {"Acido-butí", null},
+                {"Acido-isoc", null},
+                {"Acido-cítr", null},
+                {"Acido-máli", null},
+                {"Alcoh/Ferm", null},
+                {"Vinoso", null},
+                {"Whisky", null},
+                {"Fermentado", null},
+                {"Super-madu", null}
             },
             new String [] {
                 "Sabor", "Intensidad"
@@ -185,17 +187,18 @@ public class jpPanelSaboresAftertaste extends javax.swing.JPanel {
         GreenVeg.setBackground(new java.awt.Color(102, 255, 102));
         GreenVeg.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"5 Green/Vegetative", null},
-                {"Olive Oil", null},
-                {"Raw", null},
-                {"Beany", null},
-                {"Under-ripe", null},
-                {"Pea pod", null},
-                {"Fresh", null},
-                {"Dark Green", null},
-                {"Vegetative", null},
-                {"Hay-like", null},
-                {"Herb-like", null}
+                {"5 Verde/Vegetal", null},
+                {"Aceit-Oliv", null},
+                {"Crudo", null},
+                {"Verde/Vege", null},
+                {"Inmaduro", null},
+                {"Vaina", null},
+                {"Fresco", null},
+                {"Verde-oscu", null},
+                {"Vegetal", null},
+                {"Paja", null},
+                {"Herbaceo", null},
+                {"Leguminoso", null}
             },
             new String [] {
                 "Sabor", "Intensidad"

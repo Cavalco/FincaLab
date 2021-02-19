@@ -101,14 +101,15 @@
                       <Color blue="66" green="66" red="ff" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="2" rowCount="6">
+                      <Table columnCount="2" rowCount="7">
                         <Column editable="false" title="Sabor" type="java.lang.Object">
-                          <Data value="1 Sweet"/>
-                          <Data value="Brown Sugar"/>
-                          <Data value="Molasses"/>
-                          <Data value="Maple Sugar"/>
-                          <Data value="Caramelized"/>
-                          <Data value="Honey"/>
+                          <Data value="1 Dulce"/>
+                          <Data value="Az&#xfa;car-Mor"/>
+                          <Data value="Molaza"/>
+                          <Data value="Jarab-mapl"/>
+                          <Data value="Caramelo"/>
+                          <Data value="Miel"/>
+                          <Data value="Vainilla"/>
                         </Column>
                         <Column editable="true" title="Intensidad" type="java.lang.Object"/>
                       </Table>
@@ -150,10 +151,10 @@
                       <Table columnCount="2" rowCount="5">
                         <Column editable="false" title="Sabor" type="java.lang.Object">
                           <Data value="2 Floral"/>
-                          <Data value="Black Tea"/>
-                          <Data value="Chamomile"/>
-                          <Data value="Rose"/>
-                          <Data value="Jasmine"/>
+                          <Data value="T&#xe9; negro"/>
+                          <Data value="Manzanilla"/>
+                          <Data value="Rosa"/>
+                          <Data value="Jazmine"/>
                         </Column>
                         <Column editable="true" title="Intensidad" type="java.lang.Object"/>
                       </Table>
@@ -194,29 +195,29 @@
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                       <Table columnCount="2" rowCount="23">
                         <Column editable="false" title="Sabor" type="java.lang.Object">
-                          <Data value="3 Fruit"/>
-                          <Data value="Berry"/>
-                          <Data value="Blackberry"/>
-                          <Data value="Raspberry"/>
-                          <Data value="Blueberry"/>
-                          <Data value="Strawberry"/>
-                          <Data value="Dried Fruit"/>
-                          <Data value="Raisen"/>
-                          <Data value="Prune"/>
-                          <Data value="Other fruit"/>
-                          <Data value="coconut"/>
-                          <Data value="Cherry"/>
-                          <Data value="Pomagranite"/>
-                          <Data value="Pinneapple"/>
-                          <Data value="Grape"/>
-                          <Data value="Apple"/>
-                          <Data value="Peach"/>
-                          <Data value="Pear"/>
-                          <Data value="Citrus Fruit"/>
-                          <Data value="Grapefruit"/>
-                          <Data value="Orange"/>
-                          <Data value="Lemon"/>
-                          <Data value="Lime"/>
+                          <Data value="3 Afrutado"/>
+                          <Data value="Bayas"/>
+                          <Data value="Moras"/>
+                          <Data value="Frambuesa"/>
+                          <Data value="Ar&#xe1;ndano"/>
+                          <Data value="Fresa"/>
+                          <Data value="Frutos-sec"/>
+                          <Data value="Pasas"/>
+                          <Data value="Ciruel-pas"/>
+                          <Data value="Otras-frut"/>
+                          <Data value="Coco"/>
+                          <Data value="Cereza"/>
+                          <Data value="Granada"/>
+                          <Data value="Pi&#xf1;a"/>
+                          <Data value="Uva"/>
+                          <Data value="Manzana"/>
+                          <Data value="Durazno"/>
+                          <Data value="Pera"/>
+                          <Data value="Citricos"/>
+                          <Data value="Toronja"/>
+                          <Data value="Naranja"/>
+                          <Data value="Limon"/>
+                          <Data value="Lima"/>
                         </Column>
                         <Column editable="true" title="Intensidad" type="java.lang.Object"/>
                       </Table>
@@ -255,20 +256,21 @@
                       <Color blue="99" green="ff" red="ff" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="2" rowCount="12">
+                      <Table columnCount="2" rowCount="13">
                         <Column editable="false" title="Sabor" type="java.lang.Object">
-                          <Data value="4 Sour/Fermented"/>
-                          <Data value="Sour"/>
-                          <Data value="Vinegar"/>
-                          <Data value="Rancid butter"/>
-                          <Data value="Rancid Cheese"/>
-                          <Data value="Orange Acidity"/>
-                          <Data value="Apple Acidity"/>
-                          <Data value="Alcohol/Fermented"/>
-                          <Data value="Winey"/>
-                          <Data value="Whiskey"/>
-                          <Data value="Fermented"/>
-                          <Data value="Over-ripe"/>
+                          <Data value="4 Acido/Fermentado"/>
+                          <Data value="Acido"/>
+                          <Data value="Arom-acid"/>
+                          <Data value="Acido-ac&#xe9;t"/>
+                          <Data value="Acido-but&#xed;"/>
+                          <Data value="Acido-isoc"/>
+                          <Data value="Acido-c&#xed;tr"/>
+                          <Data value="Acido-m&#xe1;li"/>
+                          <Data value="Alcoh/Ferm"/>
+                          <Data value="Vinoso"/>
+                          <Data value="Whisky"/>
+                          <Data value="Fermentado"/>
+                          <Data value="Super-madu"/>
                         </Column>
                         <Column editable="true" title="Intensidad" type="java.lang.Object"/>
                       </Table>
@@ -307,19 +309,20 @@
                       <Color blue="66" green="ff" red="66" type="rgb"/>
                     </Property>
                     <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                      <Table columnCount="2" rowCount="11">
+                      <Table columnCount="2" rowCount="12">
                         <Column editable="false" title="Sabor" type="java.lang.Object">
-                          <Data value="5 Green/Vegetative"/>
-                          <Data value="Olive Oil"/>
-                          <Data value="Raw"/>
-                          <Data value="Beany"/>
-                          <Data value="Under-ripe"/>
-                          <Data value="Pea pod"/>
-                          <Data value="Fresh"/>
-                          <Data value="Dark Green"/>
-                          <Data value="Vegetative"/>
-                          <Data value="Hay-like"/>
-                          <Data value="Herb-like"/>
+                          <Data value="5 Verde/Vegetal"/>
+                          <Data value="Aceit-Oliv"/>
+                          <Data value="Crudo"/>
+                          <Data value="Verde/Vege"/>
+                          <Data value="Inmaduro"/>
+                          <Data value="Vaina"/>
+                          <Data value="Fresco"/>
+                          <Data value="Verde-oscu"/>
+                          <Data value="Vegetal"/>
+                          <Data value="Paja"/>
+                          <Data value="Herbaceo"/>
+                          <Data value="Leguminoso"/>
                         </Column>
                         <Column editable="true" title="Intensidad" type="java.lang.Object"/>
                       </Table>
