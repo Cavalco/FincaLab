@@ -52,6 +52,10 @@ public class jdObservaciones extends javax.swing.JDialog {
         if (band==2) {
          setTitle("Sabores");
          label.setText("Sabores");
+       //   JOptionPane.showMessageDialog(null,ObservacionesC);
+       //  String[] datos = ObservacionesC.split("+");
+       //  txtDatos.setText(datos[0]);//+"\n"+datos[1]+"\n"+datos[2]+"\n"+datos[3]+"\n"+datos[4]+"\n");
+         
         }
         if (band==3) {
         setTitle("Mezcla Asignada");
@@ -168,8 +172,8 @@ public class jdObservaciones extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtObservaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(63, 63, 63)
+                .addComponent(txtObservaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
                     .addComponent(jButton2))

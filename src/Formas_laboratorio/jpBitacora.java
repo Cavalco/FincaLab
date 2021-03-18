@@ -6,6 +6,7 @@
 package Formas_laboratorio;
 
 import Formas_LaboratorioN.jdCatacion;
+import Formas_LaboratorioN.jdCatacion2;
 import Formas_LaboratorioN.jdEvaluacion;
 import Idioma.Propiedades;
 import Metodos_Configuraciones.metodosLaboratorio;
@@ -34,7 +35,7 @@ public class jpBitacora extends javax.swing.JPanel {
     jdEvaluacionA jdDP;
     Propiedades idioma;
     String Idioma;
-    jdCatacion jdc;
+    jdCatacion2 jdc;
     jdObservaciones jdo;
     jdEvaluacion jdEA;
 
@@ -657,7 +658,7 @@ public void llenarTabla() {
             id = mdb.comprobarExistencia("select id_bitacora from bitacoralab "
                     + "where (id_muestra='" + csm + "' and comunidad='" + comunindad + "')");
 
-            jdc = new jdCatacion(cn, tipo, id, csm, comunindad, forma);
+            jdc = new jdCatacion2(cn, tipo, id, csm, comunindad, forma);
 //Modificar para refrescar
             //jdc.jpCT = this;
             jdc.setVisible(true);
