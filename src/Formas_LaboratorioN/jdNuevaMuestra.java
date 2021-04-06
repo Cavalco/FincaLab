@@ -70,7 +70,7 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
         String[] datos10 = ml.cargarCombos("select concat(p.Nombre,' ',p.ApellidoPaterno,' ',p.ApellidoMaterno)\n"
                 + "from asignacionespersona a\n"
                 + "left join personaf p on (a.id_persona=p.ID)\n"
-                + "where a.puesto='Encargado de Recepcion'").split("¬");
+                + "where a.puesto='Encargado de Beneficio'").split("¬");
         cmbTomada.setModel(new DefaultComboBoxModel((Object[]) datos10));
     }
 

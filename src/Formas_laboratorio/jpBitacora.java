@@ -66,7 +66,7 @@ public class jpBitacora extends javax.swing.JPanel {
         tablabitacora.getColumnModel().getColumn(4).setHeaderValue(idioma.getProperty("Beneficio"));
         tablabitacora.getColumnModel().getColumn(5).setHeaderValue(idioma.getProperty("Dueño"));
         tablabitacora.getColumnModel().getColumn(6).setHeaderValue(idioma.getProperty("Sublote"));
-        tablabitacora.getColumnModel().getColumn(7).setHeaderValue(idioma.getProperty("Certificion"));
+        tablabitacora.getColumnModel().getColumn(7).setHeaderValue(idioma.getProperty("Certificacion"));
         tablabitacora.getColumnModel().getColumn(8).setHeaderValue(idioma.getProperty("Peso"));
         tablabitacora.getColumnModel().getColumn(9).setHeaderValue(idioma.getProperty("Sacos"));
         tablabitacora.getColumnModel().getColumn(10).setHeaderValue(idioma.getProperty("Comunidad"));
@@ -138,11 +138,11 @@ public class jpBitacora extends javax.swing.JPanel {
         tablabitacora = new javax.swing.JTable();
         jPanel3 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
-        combotipo = new javax.swing.JComboBox<String>();
+        combotipo = new javax.swing.JComboBox<>();
         jLabel2 = new javax.swing.JLabel();
-        combobusqueda = new javax.swing.JComboBox<String>();
+        combobusqueda = new javax.swing.JComboBox<>();
         txtBusqueda = new javax.swing.JTextField();
-        jComboBox1 = new javax.swing.JComboBox<String>();
+        jComboBox1 = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
 
@@ -284,7 +284,7 @@ public class jpBitacora extends javax.swing.JPanel {
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, true, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -304,7 +304,7 @@ public class jpBitacora extends javax.swing.JPanel {
 
         jLabel1.setText("Proceso Café");
 
-        combotipo.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Todos", "Natural", "Lavado", "Semi Lavado" }));
+        combotipo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Todos", "Natural", "Lavado", "Semi Lavado" }));
         combotipo.addItemListener(new java.awt.event.ItemListener() {
             public void itemStateChanged(java.awt.event.ItemEvent evt) {
                 combotipoItemStateChanged(evt);
@@ -313,7 +313,7 @@ public class jpBitacora extends javax.swing.JPanel {
 
         jLabel2.setText("Busqueda Por");
 
-        combobusqueda.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione...", "# CSM", "Fecha de llegada", "Proceso", "Forma", "Beneficio", "Dueño" }));
+        combobusqueda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione...", "# CSM", "Fecha de llegada", "Proceso", "Forma", "Beneficio", "Dueño" }));
 
         txtBusqueda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {

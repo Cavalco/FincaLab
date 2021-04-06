@@ -288,7 +288,7 @@
                     <Column editable="false" title="Peso KG" type="java.lang.Object"/>
                     <Column editable="false" title="# Sacos" type="java.lang.Object"/>
                     <Column editable="false" title="Comunidad" type="java.lang.Object"/>
-                    <Column editable="false" title="Estatus" type="java.lang.Object"/>
+                    <Column editable="true" title="Estatus" type="java.lang.Object"/>
                     <Column editable="false" title="Eval Aspecto" type="java.lang.Object"/>
                     <Column editable="false" title="Eval Taza" type="java.lang.Object"/>
                     <Column editable="false" title="Mezcla" type="java.lang.Object"/>

@@ -5,7 +5,6 @@
  */
 package Formas_laboratorio;
 
-
 import Idioma.Propiedades;
 import Metodos_Configuraciones.metodosLaboratorio;
 import java.sql.Connection;
@@ -22,91 +21,84 @@ public class jdObservaciones extends javax.swing.JDialog {
     /**
      * Creates new form jdPais
      */
-    String id,ObservacionesC;
-    String Observaciones,importe;
+    String id, ObservacionesC;
+    String Observaciones, importe;
     Propiedades idioma;
-      String Idioma;
+    String Idioma;
     int band;
     Connection cn;
     jpBitacora jpo;
-   
 
     metodosLaboratorio mdb;
 
-    public jdObservaciones(java.awt.Frame parent, boolean modal, String ObservacionesC,String csm, Connection c,int band, String Idioma) {
+    public jdObservaciones(java.awt.Frame parent, boolean modal, String ObservacionesC, String csm, Connection c, int band, String Idioma) {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
 
-        this.id = csm;
+      /*  this.id = csm;
         this.ObservacionesC = ObservacionesC;
         cn = c;
-        this.band=band;
+        this.band = band;
         if (ObservacionesC.equals("null")) {
             txtObservaciones.setText("");
-        }else {  txtObservaciones.setText(ObservacionesC);}
-        if (band==1) {
-         this.setTitle("Observaciones");
-         label.setText("Observaciones");
+        } else {
+            txtObservaciones.setText(ObservacionesC);
         }
-        if (band==2) {
-         setTitle("Sabores");
-         label.setText("Sabores");
-       //   JOptionPane.showMessageDialog(null,ObservacionesC);
-       //  String[] datos = ObservacionesC.split("+");
-       //  txtDatos.setText(datos[0]);//+"\n"+datos[1]+"\n"+datos[2]+"\n"+datos[3]+"\n"+datos[4]+"\n");
-         
+        if (band == 1) {
+            this.setTitle("Observaciones");
+            label.setText("Observaciones");
         }
-        if (band==3) {
-        setTitle("Mezcla Asignada");
-         label.setText("Mezcla Asignada");
-        }
-          
-       this.Idioma=Idioma;
-              idioma=new Propiedades(Idioma);
-            mdb = new metodosLaboratorio(cn,Idioma);
-       
-              
-            
-             
- 
-    }
+        if (band == 2) {
+            setTitle("Sabores");
+            label.setText("Sabores");
+            //   JOptionPane.showMessageDialog(null,ObservacionesC);
+            //  String[] datos = ObservacionesC.split("+");
+            //  txtDatos.setText(datos[0]);//+"\n"+datos[1]+"\n"+datos[2]+"\n"+datos[3]+"\n"+datos[4]+"\n");
 
- 
+        }
+        if (band == 3) {
+            setTitle("Mezcla Asignada");
+            label.setText("Mezcla Asignada");
+        }
+
+        this.Idioma = Idioma;
+        idioma = new Propiedades(Idioma);
+        mdb = new metodosLaboratorio(cn, Idioma);
+*/
+    }
 
     public void tipoProceso() {
         try {
             String sql = "";
 
-          
-          
-         Observaciones = txtObservaciones.getText();
-        
-    if (band==1) {
-      
+            //Observaciones = txtObservaciones.getText();
+
+            if (band == 1) {
+
                 //editarPais();
-                sql = "UPDATE bitacoralab SET  observaciones ='" +Observaciones+ "' where id_bitacora=" + id + " ";
+                sql = "UPDATE bitacoralab SET  observaciones ='" + Observaciones + "' where id_bitacora=" + id + " ";
                 mdb.actualizarBasicos(sql);
-               
+
                 this.dispose();
- }
-   if (band==2) {
-   
+            }
+            if (band == 2) {
+
                 //editarPais();
-                sql = "UPDATE bitacoralab SET  sabores ='" +Observaciones+ "' where id_bitacora=" + id + " ";
+                sql = "UPDATE bitacoralab SET  sabores ='" + Observaciones + "' where id_bitacora=" + id + " ";
                 mdb.actualizarBasicos(sql);
-               
+
                 this.dispose();
- }
-      if (band==3) {
-     
+            }
+            if (band == 3) {
+
                 //editarPais();
-                sql = "UPDATE bitacoralab SET  mezcla ='" +Observaciones+ "',mezasig='1',estatus='Asignada' where id_bitacora=" + id + " ";
+                sql = "UPDATE bitacoralab SET  mezcla ='" + Observaciones + "',mezasig='1',estatus='Asignada' where id_bitacora=" + id + " ";
                 mdb.actualizarBasicos(sql);
-               
+
                 this.dispose();
- }
-              
+            }
+
         } catch (Exception e) {
         }
     }
@@ -127,13 +119,14 @@ public class jdObservaciones extends javax.swing.JDialog {
 
         jPanel1 = new javax.swing.JPanel();
         label = new javax.swing.JLabel();
-        txtObservaciones = new javax.swing.JTextField();
         jButton1 = new javax.swing.JButton();
         jButton2 = new javax.swing.JButton();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jTextArea1 = new javax.swing.JTextArea();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        label.setText("Observaciones:");
+        label.setText("Cualidades");
 
         jButton1.setText("Aceptar");
         jButton1.addActionListener(new java.awt.event.ActionListener() {
@@ -149,6 +142,11 @@ public class jdObservaciones extends javax.swing.JDialog {
             }
         });
 
+        jTextArea1.setColumns(20);
+        jTextArea1.setRows(5);
+        jTextArea1.setText("Sabor: Manzanilla2\nRemanente: Citricos1\nAcidez: Acido-citr1\n\nSeco: Vainilla2 Coco1\nMojado: Miel1\nQuebrado: Melaza2\n");
+        jScrollPane1.setViewportView(jTextArea1);
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -156,7 +154,7 @@ public class jdObservaciones extends javax.swing.JDialog {
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(txtObservaciones)
+                    .addComponent(jScrollPane1)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton1, javax.swing.GroupLayout.PREFERRED_SIZE, 190, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -172,7 +170,7 @@ public class jdObservaciones extends javax.swing.JDialog {
                 .addContainerGap()
                 .addComponent(label)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtObservaciones, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 158, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton1)
@@ -264,7 +262,8 @@ public class jdObservaciones extends javax.swing.JDialog {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JTextArea jTextArea1;
     private javax.swing.JLabel label;
-    private javax.swing.JTextField txtObservaciones;
     // End of variables declaration//GEN-END:variables
 }
