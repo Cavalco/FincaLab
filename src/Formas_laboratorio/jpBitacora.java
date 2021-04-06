@@ -53,7 +53,7 @@ public class jpBitacora extends javax.swing.JPanel {
         //modelo2 = (DefaultTableModel) tablaconsulta.getModel();
         llenarTabla();
         tablabitacora.setRowSorter(new TableRowSorter(modelo));
-       // tablaconsulta.setRowSorter(new TableRowSorter(modelo2));
+        // tablaconsulta.setRowSorter(new TableRowSorter(modelo2));
 
         ALL.setSelected(true);
         idioma = new Propiedades(Idioma);
@@ -84,7 +84,6 @@ public class jpBitacora extends javax.swing.JPanel {
         jLabel2.setText(idioma.getProperty("BusquedaPor"));
 
         //jLabel4.setText(idioma.getProperty("KilosConfirmados"));
-
         jMenuItem1.setText(idioma.getProperty("ReporteIndividual"));
         evaspecto.setText(idioma.getProperty("EvaluacionPorAspecto"));
         evtaza.setText(idioma.getProperty("EvaluacionDeTaza"));
@@ -442,11 +441,11 @@ public void llenarTabla() {
         mdb.cargarInformacion2(modelo, 15, "SELECT b.id_muestra,b.fecha_llegada,b.tipocafe,b.forma,b.beneficio,b.dueño,b.lote,b.certificado,b.peso,b.sacos,\n"
                 + "b.comunidad,b.estatus,d.puntuacion,c.Puntuacion,b.mezcla from bitacoralab b left join datosev d on b.id_bitacora=d.id_bitacora left join \n"
                 + " catacion c on b.id_bitacora=c.id_bitacora where estatus != 'Desactivada' order by b.id_muestra");
-     /*   mdb.cargarInformacion2(modelo2, 21, " select b.estatus,b.id_muestra,b.beneficio,b.lote,b.tipocafe,b.forma,b.certificado,b.peso,b.Kgconfirm,\n"
+        /*   mdb.cargarInformacion2(modelo2, 21, " select b.estatus,b.id_muestra,b.beneficio,b.lote,b.tipocafe,b.forma,b.certificado,b.peso,b.Kgconfirm,\n"
                 + " b.sacos,b.comunidad,b.dueño,b.fechalote,c.Puntuacion,d.puntuacion,d.humedad_o,c.quakers,b.sabores,\n"
                 + " b.observaciones,d.Densidadoro,c.densidadtostado from  bitacoralab b left join   datosev d on b.id_bitacora=d.id_bitacora left join \n"
                 + " catacion c on b.id_bitacora=c.id_bitacora where estatus != 'Desactivada' order by b.id_muestra");
-      */  String[] datos2 = mdb.cargarCombos2("select CONCAT(Descripcion,' -', Clave,'- ') FROM procesocafe where clave != 'PR';").split("¬");//1
+         */ String[] datos2 = mdb.cargarCombos2("select CONCAT(Descripcion,' -', Clave,'- ') FROM procesocafe where clave != 'PR';").split("¬");//1
         combotipo.setModel(new DefaultComboBoxModel((Object[]) datos2));
     }
 
@@ -545,7 +544,7 @@ public void llenarTabla() {
         limpiar(tablabitacora);
 //        limpiar(tablaconsulta);
         mdb.cargarInformacion2(modelo, 15, sql);
-    //    mdb.cargarInformacion2(modelo2, 21, sql2);
+        //    mdb.cargarInformacion2(modelo2, 21, sql2);
     }
     String csm = "", comunindad = "", tipo = "", id, forma = "", estatus = "", taza = "", aspecto = "", mezasig = "", calcer = "", kgconfirm = "";
     private void tablabitacoraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablabitacoraMouseClicked
@@ -660,7 +659,7 @@ public void llenarTabla() {
 
             jdc = new jdCatacion2(cn, tipo, id, csm, comunindad, forma);
 //Modificar para refrescar
-            //jdc.jpCT = this;
+//            jdc.jpCT = this;
             jdc.setVisible(true);
         }
     }//GEN-LAST:event_evtazaActionPerformed

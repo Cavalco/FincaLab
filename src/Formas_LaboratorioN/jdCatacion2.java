@@ -5,7 +5,6 @@
  */
 package Formas_LaboratorioN;
 
-import Formas_laboratorio.JdCatacion;
 import Formas_laboratorio.jpBitacora;
 import Metodos_Configuraciones.metodosLaboratorio;
 import java.awt.Dimension;
@@ -3290,12 +3289,14 @@ public class jdCatacion2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         slSeco.setValue(slSeco.getValue() - 50);
         promedio();
+        formula();
     }//GEN-LAST:event_btnMenosActionPerformed
 
     private void btnMasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMasActionPerformed
         // TODO add your handling code here:
         slSeco.setValue(slSeco.getValue() + 50);
         promedio();
+        formula();
     }//GEN-LAST:event_btnMasActionPerformed
 
     private void slMojadoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slMojadoStateChanged
@@ -3318,24 +3319,28 @@ public class jdCatacion2 extends javax.swing.JFrame {
         // TODO add your handling code here:
         slMojado.setValue(slMojado.getValue() - 50);
         promedio();
+        formula();
     }//GEN-LAST:event_btnMenos2ActionPerformed
 
     private void btnMas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMas2ActionPerformed
         // TODO add your handling code here:
         slMojado.setValue(slMojado.getValue() + 50);
         promedio();
+        formula();
     }//GEN-LAST:event_btnMas2ActionPerformed
 
     private void btnMenos3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenos3ActionPerformed
         // TODO add your handling code here:
         slQuebrado.setValue(slQuebrado.getValue() - 50);
         promedio();
+        formula();
     }//GEN-LAST:event_btnMenos3ActionPerformed
 
     private void btnMas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMas3ActionPerformed
         // TODO add your handling code here:
         slQuebrado.setValue(slQuebrado.getValue() + 50);
         promedio();
+        formula();
     }//GEN-LAST:event_btnMas3ActionPerformed
 
     private void slSaborStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slSaborStateChanged
@@ -4067,9 +4072,9 @@ public class jdCatacion2 extends javax.swing.JFrame {
     String cadenaSabores = "", cadenaOlores = "";
 
     public void guardar() {
-        cadenaSabores = lblSabor.getText() + " " + lblRemanente.getText() + " " + lblAcidez.getText();
+        cadenaSabores = "Sabor: "+lblSabor.getText() + ", Sabor Remanente: " + lblRemanente.getText() + ", Acidez: " + lblAcidez.getText();
 
-        cadenaOlores = lblSeco.getText() + " " + lblMojado.getText() + " " + lblQuebrado.getText();
+        cadenaOlores = "Seco: "+lblSeco.getText() + ", Mojado: " + lblMojado.getText() + ", Quebrado: " + lblQuebrado.getText();
 
         JOptionPane.showMessageDialog(null, "Sabores: " + cadenaSabores + "\nOlores: " + cadenaOlores);
         String fecha = null;
