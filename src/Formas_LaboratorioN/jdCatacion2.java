@@ -1281,12 +1281,12 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
-        jLabel33.setText("Informaciòn");
+        jLabel33.setText("Información");
 
         Sweet.setBackground(new java.awt.Color(255, 102, 102));
         Sweet.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1 Dulce", null},
+                {"Dulce", null},
                 {"Azúcar Morena", null},
                 {"Melaza", null},
                 {"Jarab-mapl", null},
@@ -1295,7 +1295,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Vainilla", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "1 Cualidad", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1321,14 +1321,14 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Floral.setBackground(new java.awt.Color(255, 153, 102));
         Floral.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"2 Floral", null},
+                {"Floral", null},
                 {"Té negro", null},
                 {"Manzanilla", null},
                 {"Rosa", null},
                 {"Jazmine", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "2 Cualidad", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1350,7 +1350,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Fruit.setBackground(new java.awt.Color(255, 204, 0));
         Fruit.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"3 Frutas", null},
+                {"Frutas", null},
                 {"Bayas", null},
                 {"Moras", null},
                 {"Frambuesa", null},
@@ -1375,7 +1375,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Lima", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "3 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1396,7 +1396,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         SourFer.setBackground(new java.awt.Color(255, 255, 153));
         SourFer.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"4 Acido", null},
+                {"Acido", null},
                 {"Arom-acido", null},
                 {"Acido-acét", null},
                 {"Acido-butí", null},
@@ -1410,7 +1410,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Super-madu", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "4 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1431,7 +1431,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         GreenVeg.setBackground(new java.awt.Color(102, 255, 102));
         GreenVeg.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"5 Verde/Vegetal", null},
+                {"Verde/Vegetal", null},
                 {"Aceit-Oliv", null},
                 {"Crudo", null},
                 {"Verde/Vege", null},
@@ -1445,7 +1445,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Leguminoso", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "5 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1466,10 +1466,10 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Other.setBackground(new java.awt.Color(51, 255, 255));
         Other.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"6 Otros", null},
+                {"Otros", null},
                 {"Papel/Hume", null},
                 {"Rancio", null},
-                {"Carbon", null},
+                {"Carton", null},
                 {"Papel", null},
                 {"Madera", null},
                 {"Mohoso", null},
@@ -1487,7 +1487,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Goma", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "6 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1508,7 +1508,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Roasted.setBackground(new java.awt.Color(0, 204, 255));
         Roasted.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"7 Tostado", null},
+                {"Tostado", null},
                 {"Tabac-pipa", null},
                 {"Tabaco", null},
                 {"Quemado", null},
@@ -1521,7 +1521,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Malta", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "7 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1542,17 +1542,17 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Spices.setBackground(new java.awt.Color(153, 153, 255));
         Spices.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"8 Spices", null},
-                {"Pungent", null},
-                {"Pepper", null},
-                {"Brown Spice", null},
-                {"Anise", null},
-                {"Nutmeg", null},
-                {"Cinnamon", null},
-                {"Clove", null}
+                {"Especias", null},
+                {"Acre", null},
+                {"Pimienta", null},
+                {"Especias marrones", null},
+                {"Anis", null},
+                {"Nuez moscada", null},
+                {"Canela", null},
+                {"Clavo de olor", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "8 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1573,18 +1573,17 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Nutty.setBackground(new java.awt.Color(255, 102, 204));
         Nutty.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"9 Nutty/Cocoa", null},
-                {"Nutty", null},
-                {"Peanuts", null},
-                {"Hazelenut", null},
-                {"Hazelnut", null},
-                {"Almond", null},
-                {"Cocoa", null},
+                {"Nueces/Cacao", null},
+                {"Nueces", null},
+                {"Mani", null},
+                {"Avellana", null},
+                {"Almendra", null},
+                {"Cacao", null},
                 {"Chocolate", null},
-                {"Dark Chocolate", null}
+                {"Choc amargo", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "9 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1643,10 +1642,10 @@ public class jdCatacion2 extends javax.swing.JFrame {
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Seco", jPanel10);
@@ -1654,7 +1653,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Sweet1.setBackground(new java.awt.Color(255, 102, 102));
         Sweet1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1 Dulce", null},
+                {"Dulce", null},
                 {"Azúcar Morena", null},
                 {"Melaza", null},
                 {"Jarab-mapl", null},
@@ -1663,7 +1662,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Vainilla", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "1 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1684,14 +1683,14 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Floral1.setBackground(new java.awt.Color(255, 153, 102));
         Floral1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"2 Floral", null},
+                {"Floral", null},
                 {"Té negro", null},
                 {"Manzanilla", null},
                 {"Rosa", null},
                 {"Jazmine", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "2 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1713,7 +1712,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Fruit1.setBackground(new java.awt.Color(255, 204, 0));
         Fruit1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"3 Frutas", null},
+                {"Frutas", null},
                 {"Bayas", null},
                 {"Moras", null},
                 {"Frambuesa", null},
@@ -1738,7 +1737,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Lima", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "3 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1759,7 +1758,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         SourFer1.setBackground(new java.awt.Color(255, 255, 153));
         SourFer1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"4 Acido", null},
+                {"Acido", null},
                 {"Arom-acido", null},
                 {"Acido-acét", null},
                 {"Acido-butí", null},
@@ -1773,7 +1772,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Super-madu", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "4 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1794,7 +1793,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         GreenVeg1.setBackground(new java.awt.Color(102, 255, 102));
         GreenVeg1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"5 Verde/Vegetal", null},
+                {"Verde/Vegetal", null},
                 {"Aceit-Oliv", null},
                 {"Crudo", null},
                 {"Verde/Vege", null},
@@ -1808,7 +1807,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Leguminoso", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "5 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1829,10 +1828,10 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Other1.setBackground(new java.awt.Color(51, 255, 255));
         Other1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"6 Otros", null},
+                {"Otros", null},
                 {"Papel/Hume", null},
                 {"Rancio", null},
-                {"Carbon", null},
+                {"Carton", null},
                 {"Papel", null},
                 {"Madera", null},
                 {"Mohoso", null},
@@ -1850,7 +1849,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Goma", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "6 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1871,7 +1870,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Roasted1.setBackground(new java.awt.Color(0, 204, 255));
         Roasted1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"7 Tostado", null},
+                {"Tostado", null},
                 {"Tabac-pipa", null},
                 {"Tabaco", null},
                 {"Quemado", null},
@@ -1884,7 +1883,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Malta", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "7 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1905,17 +1904,17 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Spices1.setBackground(new java.awt.Color(153, 153, 255));
         Spices1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"8 Spices", null},
-                {"Pungent", null},
-                {"Pepper", null},
-                {"Brown Spice", null},
-                {"Anise", null},
-                {"Nutmeg", null},
-                {"Cinnamon", null},
-                {"Clove", null}
+                {"Especias", null},
+                {"Acre", null},
+                {"Pimienta", null},
+                {"Especias marrones", null},
+                {"Anis", null},
+                {"Nuez moscada", null},
+                {"Canela", null},
+                {"Clavo de olor", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "8 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1936,18 +1935,17 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Nutty1.setBackground(new java.awt.Color(255, 102, 204));
         Nutty1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"9 Nutty/Cocoa", null},
-                {"Nutty", null},
-                {"Peanuts", null},
-                {"Hazelenut", null},
-                {"Hazelnut", null},
-                {"Almond", null},
-                {"Cocoa", null},
-                {"Chocolate", null},
-                {"Dark Chocolate", null}
+                {"Nueces/Cacao", null},
+                {"Nueces", null},
+                {"Mani", null},
+                {"Avellana", null},
+                {"Almendra", null},
+                {"Cacao", null},
+                {"Choocolate", null},
+                {"Choc amargo", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "9 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2010,7 +2008,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                         .addGroup(jPanel11Layout.createSequentialGroup()
                             .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addContainerGap(12, Short.MAX_VALUE)))
@@ -2021,7 +2019,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Sweet2.setBackground(new java.awt.Color(255, 102, 102));
         Sweet2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1 Dulce", null},
+                {"Dulce", null},
                 {"Azúcar Morena", null},
                 {"Melaza", null},
                 {"Jarab-mapl", null},
@@ -2030,7 +2028,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Vainilla", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "1 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2051,14 +2049,14 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Floral2.setBackground(new java.awt.Color(255, 153, 102));
         Floral2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"2 Floral", null},
+                {"Floral", null},
                 {"Té negro", null},
                 {"Manzanilla", null},
                 {"Rosa", null},
                 {"Jazmine", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "2 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2080,7 +2078,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Fruit2.setBackground(new java.awt.Color(255, 204, 0));
         Fruit2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"3 Frutas", null},
+                {"Frutas", null},
                 {"Bayas", null},
                 {"Moras", null},
                 {"Frambuesa", null},
@@ -2105,7 +2103,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Lima", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "3 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2126,7 +2124,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         SourFer2.setBackground(new java.awt.Color(255, 255, 153));
         SourFer2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"4 Acido", null},
+                {"Acido", null},
                 {"Arom-acido", null},
                 {"Acido-acét", null},
                 {"Acido-butí", null},
@@ -2140,7 +2138,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Super-madu", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "4 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2161,7 +2159,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         GreenVeg2.setBackground(new java.awt.Color(102, 255, 102));
         GreenVeg2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"5 Verde/Vegetal", null},
+                {"Verde/Vegetal", null},
                 {"Aceit-Oliv", null},
                 {"Crudo", null},
                 {"Verde/Vege", null},
@@ -2175,7 +2173,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Leguminoso", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "5 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2196,10 +2194,10 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Other2.setBackground(new java.awt.Color(51, 255, 255));
         Other2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"6 Otros", null},
+                {"Otros", null},
                 {"Papel/Hume", null},
                 {"Rancio", null},
-                {"Carbon", null},
+                {"Carton", null},
                 {"Papel", null},
                 {"Madera", null},
                 {"Mohoso", null},
@@ -2217,7 +2215,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Goma", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "6 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2238,7 +2236,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Roasted2.setBackground(new java.awt.Color(0, 204, 255));
         Roasted2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"7 Tostado", null},
+                {"Tostado", null},
                 {"Tabac-pipa", null},
                 {"Tabaco", null},
                 {"Quemado", null},
@@ -2251,7 +2249,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Malta", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "7 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2272,17 +2270,17 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Spices2.setBackground(new java.awt.Color(153, 153, 255));
         Spices2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"8 Spices", null},
-                {"Pungent", null},
-                {"Pepper", null},
-                {"Brown Spice", null},
-                {"Anise", null},
-                {"Nutmeg", null},
-                {"Cinnamon", null},
-                {"Clove", null}
+                {"Especias", null},
+                {"Acre", null},
+                {"Pimienta", null},
+                {"Especias marrones", null},
+                {"Anis", null},
+                {"Nuez moscada", null},
+                {"Canela", null},
+                {"Clavo de olor", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "8 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2303,18 +2301,17 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Nutty2.setBackground(new java.awt.Color(255, 102, 204));
         Nutty2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"9 Nutty/Cocoa", null},
-                {"Nutty", null},
-                {"Peanuts", null},
-                {"Hazelenut", null},
-                {"Hazelnut", null},
-                {"Almond", null},
-                {"Cocoa", null},
+                {"Nueces/Cacao", null},
+                {"Nueces", null},
+                {"Mani", null},
+                {"Avellana", null},
+                {"Almendra", null},
+                {"Cacao", null},
                 {"Chocolate", null},
-                {"Dark Chocolate", null}
+                {"Choc amargo", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "9 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2377,7 +2374,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                         .addGroup(jPanel12Layout.createSequentialGroup()
                             .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addContainerGap(12, Short.MAX_VALUE)))
@@ -2388,7 +2385,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Sweet3.setBackground(new java.awt.Color(255, 102, 102));
         Sweet3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1 Dulce", null},
+                {"Dulce", null},
                 {"Azúcar Morena", null},
                 {"Melaza", null},
                 {"Jarab-mapl", null},
@@ -2397,7 +2394,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Vainilla", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "1 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2418,14 +2415,14 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Floral3.setBackground(new java.awt.Color(255, 153, 102));
         Floral3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"2 Floral", null},
+                {"Floral", null},
                 {"Té negro", null},
                 {"Manzanilla", null},
                 {"Rosa", null},
                 {"Jazmine", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "2 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2447,7 +2444,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Fruit3.setBackground(new java.awt.Color(255, 204, 0));
         Fruit3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"3 Frutas", null},
+                {"Frutas", null},
                 {"Bayas", null},
                 {"Moras", null},
                 {"Frambuesa", null},
@@ -2472,7 +2469,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Lima", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "3 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2493,7 +2490,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         SourFer3.setBackground(new java.awt.Color(255, 255, 153));
         SourFer3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"4 Acido", null},
+                {"Acido", null},
                 {"Arom-acido", null},
                 {"Acido-acét", null},
                 {"Acido-butí", null},
@@ -2507,7 +2504,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Super-madu", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "4 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2528,7 +2525,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         GreenVeg3.setBackground(new java.awt.Color(102, 255, 102));
         GreenVeg3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"5 Verde/Vegetal", null},
+                {"Verde/Vegetal", null},
                 {"Aceit-Oliv", null},
                 {"Crudo", null},
                 {"Verde/Vege", null},
@@ -2542,7 +2539,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Leguminoso", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "5 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2563,10 +2560,10 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Other3.setBackground(new java.awt.Color(51, 255, 255));
         Other3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"6 Otros", null},
+                {"Otros", null},
                 {"Papel/Hume", null},
                 {"Rancio", null},
-                {"Carbon", null},
+                {"Carton", null},
                 {"Papel", null},
                 {"Madera", null},
                 {"Mohoso", null},
@@ -2584,7 +2581,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Goma", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "6 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2605,7 +2602,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Roasted3.setBackground(new java.awt.Color(0, 204, 255));
         Roasted3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"7 Tostado", null},
+                {"Tostado", null},
                 {"Tabac-pipa", null},
                 {"Tabaco", null},
                 {"Quemado", null},
@@ -2618,7 +2615,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Malta", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "7 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2639,17 +2636,17 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Spices3.setBackground(new java.awt.Color(153, 153, 255));
         Spices3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"8 Spices", null},
-                {"Pungent", null},
-                {"Pepper", null},
-                {"Brown Spice", null},
-                {"Anise", null},
-                {"Nutmeg", null},
-                {"Cinnamon", null},
-                {"Clove", null}
+                {"Especias", null},
+                {"Acre", null},
+                {"Pimienta", null},
+                {"Especias marrones", null},
+                {"Anis", null},
+                {"Nuez moscada", null},
+                {"Canela", null},
+                {"Clavo de olor", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "8 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2670,18 +2667,17 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Nutty3.setBackground(new java.awt.Color(255, 102, 204));
         Nutty3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"9 Nutty/Cocoa", null},
-                {"Nutty", null},
-                {"Peanuts", null},
-                {"Hazelenut", null},
-                {"Hazelnut", null},
-                {"Almond", null},
-                {"Cocoa", null},
+                {"Nueces/Cacap", null},
+                {"Nueces", null},
+                {"Mani", null},
+                {"Avellana", null},
+                {"Almendra", null},
+                {"Cacao", null},
                 {"Chocolate", null},
-                {"Dark Chocolate", null}
+                {"Choc amargo", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "9 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2744,7 +2740,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                         .addGroup(jPanel13Layout.createSequentialGroup()
                             .addComponent(jScrollPane39, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jScrollPane40, javax.swing.GroupLayout.PREFERRED_SIZE, 177, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane40, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jScrollPane37, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jScrollPane38, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addContainerGap(12, Short.MAX_VALUE)))
@@ -2755,7 +2751,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Sweet4.setBackground(new java.awt.Color(255, 102, 102));
         Sweet4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"1 Dulce", null},
+                {"Dulce", null},
                 {"Azúcar Morena", null},
                 {"Melaza", null},
                 {"Jarab-mapl", null},
@@ -2764,7 +2760,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Vainilla", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "1 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2785,14 +2781,14 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Floral4.setBackground(new java.awt.Color(255, 153, 102));
         Floral4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"2 Floral", null},
+                {"Floral", null},
                 {"Té negro", null},
                 {"Manzanilla", null},
                 {"Rosa", null},
                 {"Jazmine", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "2 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2814,7 +2810,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Fruit4.setBackground(new java.awt.Color(255, 204, 0));
         Fruit4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"3 Frutas", null},
+                {"Frutas", null},
                 {"Bayas", null},
                 {"Moras", null},
                 {"Frambuesa", null},
@@ -2839,7 +2835,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Lima", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "3 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2860,7 +2856,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         SourFer4.setBackground(new java.awt.Color(255, 255, 153));
         SourFer4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"4 Acido", null},
+                {"Acido", null},
                 {"Arom-acido", null},
                 {"Acido-acét", null},
                 {"Acido-butí", null},
@@ -2874,7 +2870,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Super-madu", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "4 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2895,7 +2891,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         GreenVeg4.setBackground(new java.awt.Color(102, 255, 102));
         GreenVeg4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"5 Verde/Vegetal", null},
+                {"Verde/Vegetal", null},
                 {"Aceit-Oliv", null},
                 {"Crudo", null},
                 {"Verde/Vege", null},
@@ -2909,7 +2905,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Leguminoso", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "5 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2929,19 +2925,19 @@ public class jdCatacion2 extends javax.swing.JFrame {
 
         Body1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Thin", null},
-                {"Medium", null},
-                {"Heavy", null},
-                {"Syrupy", null},
-                {"Oily", null},
-                {"Smooth", null}
+                {"Ligero", null},
+                {"Medio", null},
+                {"Pesado", null},
+                {"Jarabe", null},
+                {"Aceitoso", null},
+                {"Suave", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -2957,18 +2953,18 @@ public class jdCatacion2 extends javax.swing.JFrame {
 
         Finish1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Short", null},
-                {"Medium", null},
-                {"Long", null},
-                {"Dry", null},
-                {"Astringent", null}
+                {"Corto", null},
+                {"Medio", null},
+                {"Largo", null},
+                {"Seco", null},
+                {"Astringente", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false
+                false, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -3026,7 +3022,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         SourFer5.setBackground(new java.awt.Color(255, 255, 153));
         SourFer5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"4 Acido", null},
+                {"Acido", null},
                 {"Arom-acido", null},
                 {"Acido-acét", null},
                 {"Acido-butí", null},
@@ -3040,7 +3036,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Super-madu", null}
             },
             new String [] {
-                "Sabor", "Intensidad"
+                "4 Cualidades", "Intensidad"
             }
         ) {
             boolean[] canEdit = new boolean [] {
