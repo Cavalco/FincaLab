@@ -122,7 +122,8 @@ public class jdCatacion2 extends javax.swing.JFrame {
         } else {
             l = 0;
         }
-
+        
+        //Formula anterior que debe utilizarse de nuevo para coincidir con archivo Eval Green
         //total = a + b + c + d + e + f + ((10 / g) * h) + ((10 / g) * i) + ((10 / g) * j) + k - l;
         total = a + b + c + d + e + f + h + i + j + k - l;
 
@@ -389,6 +390,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
         jPanel15 = new javax.swing.JPanel();
         jScrollPane48 = new javax.swing.JScrollPane();
         SourFer5 = new javax.swing.JTable();
+        jPanel16 = new javax.swing.JPanel();
+        jScrollPane54 = new javax.swing.JScrollPane();
+        Body2 = new javax.swing.JTable();
+        jScrollPane55 = new javax.swing.JScrollPane();
+        Finish2 = new javax.swing.JTable();
         jLabel17 = new javax.swing.JLabel();
         lblPuntuacion = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
@@ -406,6 +412,8 @@ public class jdCatacion2 extends javax.swing.JFrame {
         lblAcidez = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel34 = new javax.swing.JLabel();
+        jLabel37 = new javax.swing.JLabel();
+        lblCuerpo = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
@@ -1287,7 +1295,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Sweet.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Dulce", null},
-                {"Azúcar Morena", null},
+                {"Azúcar-Mor", null},
                 {"Melaza", null},
                 {"Jarab-mapl", null},
                 {"Caramelo", null},
@@ -1322,7 +1330,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Floral.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Floral", null},
-                {"Té negro", null},
+                {"Té-Negro", null},
                 {"Manzanilla", null},
                 {"Rosa", null},
                 {"Jazmine", null}
@@ -1356,10 +1364,10 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Frambuesa", null},
                 {"Arándano", null},
                 {"Fresa", null},
-                {"Fruta Seca", null},
+                {"Fruto-sec", null},
                 {"Pasas", null},
-                {"Ciruel-pasa", null},
-                {"Otras frut", null},
+                {"Ciruel-pas", null},
+                {"Otras-frut", null},
                 {"Coco", null},
                 {"Cereza", null},
                 {"Granada", null},
@@ -1545,11 +1553,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Especias", null},
                 {"Acre", null},
                 {"Pimienta", null},
-                {"Especias marrones", null},
+                {"Especias-mo", null},
                 {"Anis", null},
-                {"Nuez moscada", null},
+                {"Nuez-mosca", null},
                 {"Canela", null},
-                {"Clavo de olor", null}
+                {"Clavo-olor", null}
             },
             new String [] {
                 "8 Cualidades", "Intensidad"
@@ -1580,7 +1588,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Almendra", null},
                 {"Cacao", null},
                 {"Chocolate", null},
-                {"Choc amargo", null}
+                {"Choc-amarg", null}
             },
             new String [] {
                 "9 Cualidades", "Intensidad"
@@ -1654,7 +1662,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Sweet1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Dulce", null},
-                {"Azúcar Morena", null},
+                {"Azúcar-Mor", null},
                 {"Melaza", null},
                 {"Jarab-mapl", null},
                 {"Caramelo", null},
@@ -1684,7 +1692,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Floral1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Floral", null},
-                {"Té negro", null},
+                {"Té-Negro", null},
                 {"Manzanilla", null},
                 {"Rosa", null},
                 {"Jazmine", null}
@@ -1718,10 +1726,10 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Frambuesa", null},
                 {"Arándano", null},
                 {"Fresa", null},
-                {"Fruta Seca", null},
+                {"Fruto-sec", null},
                 {"Pasas", null},
-                {"Ciruel-pasa", null},
-                {"Otras frut", null},
+                {"Ciruel-pas", null},
+                {"Otras-frut", null},
                 {"Coco", null},
                 {"Cereza", null},
                 {"Granada", null},
@@ -2020,7 +2028,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Sweet2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Dulce", null},
-                {"Azúcar Morena", null},
+                {"Azúcar-Mor", null},
                 {"Melaza", null},
                 {"Jarab-mapl", null},
                 {"Caramelo", null},
@@ -2050,7 +2058,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Floral2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Floral", null},
-                {"Té negro", null},
+                {"Té-Negro", null},
                 {"Manzanilla", null},
                 {"Rosa", null},
                 {"Jazmine", null}
@@ -2084,10 +2092,10 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Frambuesa", null},
                 {"Arándano", null},
                 {"Fresa", null},
-                {"Fruta Seca", null},
+                {"Fruto-sec", null},
                 {"Pasas", null},
-                {"Ciruel-pasa", null},
-                {"Otras frut", null},
+                {"Ciruel-pas", null},
+                {"Otras-frut", null},
                 {"Coco", null},
                 {"Cereza", null},
                 {"Granada", null},
@@ -2386,7 +2394,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Sweet3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Dulce", null},
-                {"Azúcar Morena", null},
+                {"Azúcar-Mor", null},
                 {"Melaza", null},
                 {"Jarab-mapl", null},
                 {"Caramelo", null},
@@ -2416,7 +2424,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Floral3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Floral", null},
-                {"Té negro", null},
+                {"Té-Negro", null},
                 {"Manzanilla", null},
                 {"Rosa", null},
                 {"Jazmine", null}
@@ -2450,10 +2458,10 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Frambuesa", null},
                 {"Arándano", null},
                 {"Fresa", null},
-                {"Fruta Seca", null},
+                {"Fruto-sec", null},
                 {"Pasas", null},
-                {"Ciruel-pasa", null},
-                {"Otras frut", null},
+                {"Ciruel-pas", null},
+                {"Otras-frut", null},
                 {"Coco", null},
                 {"Cereza", null},
                 {"Granada", null},
@@ -2752,7 +2760,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Sweet4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Dulce", null},
-                {"Azúcar Morena", null},
+                {"Azúcar-Mor", null},
                 {"Melaza", null},
                 {"Jarab-mapl", null},
                 {"Caramelo", null},
@@ -2782,7 +2790,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Floral4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Floral", null},
-                {"Té negro", null},
+                {"Té-Negro", null},
                 {"Manzanilla", null},
                 {"Rosa", null},
                 {"Jazmine", null}
@@ -2816,10 +2824,10 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Frambuesa", null},
                 {"Arándano", null},
                 {"Fresa", null},
-                {"Fruta Seca", null},
+                {"Fruto-sec", null},
                 {"Pasas", null},
-                {"Ciruel-pasa", null},
-                {"Otras frut", null},
+                {"Ciruel-pas", null},
+                {"Otras-frut", null},
                 {"Coco", null},
                 {"Cereza", null},
                 {"Granada", null},
@@ -3073,6 +3081,84 @@ public class jdCatacion2 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Acidez", jPanel15);
 
+        Body2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Ligero", null},
+                {"Medio", null},
+                {"Pesado", null},
+                {"Jarabe", null},
+                {"Aceitoso", null},
+                {"Suave", null}
+            },
+            new String [] {
+                "Cualidades", "Intensidad"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Body2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Body2KeyReleased(evt);
+            }
+        });
+        jScrollPane54.setViewportView(Body2);
+
+        Finish2.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Corto", null},
+                {"Medio", null},
+                {"Largo", null},
+                {"Seco", null},
+                {"Astringent", null}
+            },
+            new String [] {
+                "Cualidades", "Intensidad"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Finish2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Finish2KeyReleased(evt);
+            }
+        });
+        jScrollPane55.setViewportView(Finish2);
+
+        javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
+        jPanel16.setLayout(jPanel16Layout);
+        jPanel16Layout.setHorizontalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane54, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane55, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(772, Short.MAX_VALUE))
+        );
+        jPanel16Layout.setVerticalGroup(
+            jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane54, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane55, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(285, Short.MAX_VALUE))
+        );
+
+        jTabbedPane1.addTab("Cuerpo", jPanel16);
+
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel17.setText("Puntuación");
 
@@ -3112,6 +3198,10 @@ public class jdCatacion2 extends javax.swing.JFrame {
         jLabel34.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel34.setText("Sabores");
 
+        jLabel37.setText("Cuerpo");
+
+        lblCuerpo.setText("-");
+
         javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
         jPanel9.setLayout(jPanel9Layout);
         jPanel9Layout.setHorizontalGroup(
@@ -3119,29 +3209,28 @@ public class jdCatacion2 extends javax.swing.JFrame {
             .addGroup(jPanel9Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel62, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel61)
+                        .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jLabel59, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel58, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel24)
+                    .addComponent(jLabel34)
+                    .addComponent(jLabel37))
+                .addGap(18, 18, 18)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel62, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel61)
-                                .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                .addComponent(jLabel59, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel58, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(18, 18, 18)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(lblQuebrado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblMojado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblSeco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblSabor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblRemanente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblAcidez, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel24)
-                            .addComponent(jLabel34))
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addComponent(lblCuerpo)
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(lblQuebrado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblMojado, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblSeco, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblSabor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblRemanente, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(lblAcidez, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
         jPanel9Layout.setVerticalGroup(
@@ -3177,7 +3266,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
                         .addComponent(lblRemanente)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblAcidez)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel37)
+                    .addComponent(lblCuerpo))
+                .addContainerGap())
         );
 
         jLabel18.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -3236,7 +3329,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                         .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel4, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 0, Short.MAX_VALUE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
@@ -3562,33 +3655,467 @@ public class jdCatacion2 extends javax.swing.JFrame {
         formula();
     }//GEN-LAST:event_txtTazasCatKeyReleased
     String sSeco = "";
-    //String sabor = "", intensidad = "";
-    private void SweetKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SweetKeyReleased
+    String sMojado = "";
+    String sQuebrado = "";
+    String sSabor = "";
+    String sRemanente = "";
+    String sAcidez = "";
+    String sCuerpo = "";
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-//VALIDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR
-        String sabor = "", intensidad = "";
-        sabor = Sweet.getValueAt(Sweet.getSelectedRow(), 0) + "";
-        intensidad = Sweet.getValueAt(Sweet.getSelectedRow(), 1) + "";
+        guardar();
+    }//GEN-LAST:event_jButton1ActionPerformed
 
-        if (!intensidad.equals("") || intensidad != null) {
-            sSeco += sabor + intensidad + " ";
-        }
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_SweetKeyReleased
-
-    private void FloralKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FloralKeyReleased
+    private void SourFer5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer5KeyReleased
         // TODO add your handling code here:
         String sabor = "", intensidad = "";
-        sabor = Floral.getValueAt(Floral.getSelectedRow(), 0) + "";
-        intensidad = Floral.getValueAt(Floral.getSelectedRow(), 1) + "";
+        sabor = SourFer5.getValueAt(SourFer5.getSelectedRow(), 0) + "";
+        intensidad = SourFer5.getValueAt(SourFer5.getSelectedRow(), 1) + "";
 
-        if (!intensidad.equals("") || intensidad != null) {
-            sSeco += sabor + intensidad + " ";
-        }
+        sAcidez += sabor + intensidad + " ";
+
+        lblAcidez.setText(sAcidez);
+    }//GEN-LAST:event_SourFer5KeyReleased
+
+    private void Finish1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Finish1KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Finish1.getValueAt(Finish1.getSelectedRow(), 0) + "";
+        intensidad = Finish1.getValueAt(Finish1.getSelectedRow(), 1) + "";
+
+        sRemanente += sabor + intensidad + " ";
+
+        lblRemanente.setText(sRemanente);
+    }//GEN-LAST:event_Finish1KeyReleased
+
+    private void Body1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Body1KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Body1.getValueAt(Body1.getSelectedRow(), 0) + "";
+        intensidad = Body1.getValueAt(Body1.getSelectedRow(), 1) + "";
+
+        sRemanente += sabor + intensidad + " ";
+
+        lblRemanente.setText(sRemanente);
+    }//GEN-LAST:event_Body1KeyReleased
+
+    private void GreenVeg4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVeg4KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = GreenVeg4.getValueAt(GreenVeg4.getSelectedRow(), 0) + "";
+        intensidad = GreenVeg4.getValueAt(GreenVeg4.getSelectedRow(), 1) + "";
+
+        sRemanente += sabor + intensidad + " ";
+
+        lblRemanente.setText(sRemanente);
+    }//GEN-LAST:event_GreenVeg4KeyReleased
+
+    private void SourFer4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer4KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = SourFer4.getValueAt(SourFer4.getSelectedRow(), 0) + "";
+        intensidad = SourFer4.getValueAt(SourFer4.getSelectedRow(), 1) + "";
+
+        sRemanente += sabor + intensidad + " ";
+
+        lblRemanente.setText(sRemanente);
+    }//GEN-LAST:event_SourFer4KeyReleased
+
+    private void Fruit4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fruit4KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Fruit4.getValueAt(Fruit4.getSelectedRow(), 0) + "";
+        intensidad = Fruit4.getValueAt(Fruit4.getSelectedRow(), 1) + "";
+
+        sRemanente += sabor + intensidad + " ";
+
+        lblRemanente.setText(sRemanente);
+    }//GEN-LAST:event_Fruit4KeyReleased
+
+    private void Floral4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Floral4KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Floral4.getValueAt(Floral4.getSelectedRow(), 0) + "";
+        intensidad = Floral4.getValueAt(Floral4.getSelectedRow(), 1) + "";
+
+        sRemanente += sabor + intensidad + " ";
+
+        lblRemanente.setText(sRemanente);
+    }//GEN-LAST:event_Floral4KeyReleased
+
+    private void Sweet4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sweet4KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Sweet4.getValueAt(Sweet4.getSelectedRow(), 0) + "";
+        intensidad = Sweet4.getValueAt(Sweet4.getSelectedRow(), 1) + "";
+
+        sRemanente += sabor + intensidad + " ";
+
+        lblRemanente.setText(sRemanente);
+    }//GEN-LAST:event_Sweet4KeyReleased
+
+    private void Nutty3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nutty3KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Nutty3.getValueAt(Nutty3.getSelectedRow(), 0) + "";
+        intensidad = Nutty3.getValueAt(Nutty3.getSelectedRow(), 1) + "";
+
+        sSabor += sabor + intensidad + " ";
+
+        lblSabor.setText(sSabor);
+    }//GEN-LAST:event_Nutty3KeyReleased
+
+    private void Spices3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Spices3KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Spices3.getValueAt(Spices3.getSelectedRow(), 0) + "";
+        intensidad = Spices3.getValueAt(Spices3.getSelectedRow(), 1) + "";
+
+        sSabor += sabor + intensidad + " ";
+
+        lblSabor.setText(sSabor);
+    }//GEN-LAST:event_Spices3KeyReleased
+
+    private void Roasted3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Roasted3KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Roasted3.getValueAt(Roasted3.getSelectedRow(), 0) + "";
+        intensidad = Roasted3.getValueAt(Roasted3.getSelectedRow(), 1) + "";
+
+        sSabor += sabor + intensidad + " ";
+
+        lblSabor.setText(sSabor);
+    }//GEN-LAST:event_Roasted3KeyReleased
+
+    private void Other3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Other3KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Other3.getValueAt(Other3.getSelectedRow(), 0) + "";
+        intensidad = Other3.getValueAt(Other3.getSelectedRow(), 1) + "";
+
+        sSabor += sabor + intensidad + " ";
+
+        lblSabor.setText(sSabor);
+    }//GEN-LAST:event_Other3KeyReleased
+
+    private void GreenVeg3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVeg3KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = GreenVeg3.getValueAt(GreenVeg3.getSelectedRow(), 0) + "";
+        intensidad = GreenVeg3.getValueAt(GreenVeg3.getSelectedRow(), 1) + "";
+
+        sSabor += sabor + intensidad + " ";
+
+        lblSabor.setText(sSabor);
+    }//GEN-LAST:event_GreenVeg3KeyReleased
+
+    private void SourFer3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer3KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = SourFer3.getValueAt(SourFer3.getSelectedRow(), 0) + "";
+        intensidad = SourFer3.getValueAt(SourFer3.getSelectedRow(), 1) + "";
+
+        sSabor += sabor + intensidad + " ";
+
+        lblSabor.setText(sSabor);
+    }//GEN-LAST:event_SourFer3KeyReleased
+
+    private void Fruit3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fruit3KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Fruit3.getValueAt(Fruit3.getSelectedRow(), 0) + "";
+        intensidad = Fruit3.getValueAt(Fruit3.getSelectedRow(), 1) + "";
+
+        sSabor += sabor + intensidad + " ";
+
+        lblSabor.setText(sSabor);
+    }//GEN-LAST:event_Fruit3KeyReleased
+
+    private void Floral3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Floral3KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Floral3.getValueAt(Floral3.getSelectedRow(), 0) + "";
+        intensidad = Floral3.getValueAt(Floral3.getSelectedRow(), 1) + "";
+
+        sSabor += sabor + intensidad + " ";
+
+        lblSabor.setText(sSabor);
+    }//GEN-LAST:event_Floral3KeyReleased
+
+    private void Sweet3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sweet3KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Sweet3.getValueAt(Sweet3.getSelectedRow(), 0) + "";
+        intensidad = Sweet3.getValueAt(Sweet3.getSelectedRow(), 1) + "";
+
+        sSabor += sabor + intensidad + " ";
+
+        lblSabor.setText(sSabor);
+    }//GEN-LAST:event_Sweet3KeyReleased
+
+    private void Nutty2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nutty2KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Nutty2.getValueAt(Nutty2.getSelectedRow(), 0) + "";
+        intensidad = Nutty2.getValueAt(Nutty2.getSelectedRow(), 1) + "";
+
+        sQuebrado += sabor + intensidad + " ";
+
+        lblQuebrado.setText(sQuebrado);
+    }//GEN-LAST:event_Nutty2KeyReleased
+
+    private void Spices2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Spices2KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Spices2.getValueAt(Spices2.getSelectedRow(), 0) + "";
+        intensidad = Spices2.getValueAt(Spices2.getSelectedRow(), 1) + "";
+
+        sQuebrado += sabor + intensidad + " ";
+
+        lblQuebrado.setText(sQuebrado);
+    }//GEN-LAST:event_Spices2KeyReleased
+
+    private void Roasted2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Roasted2KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Roasted2.getValueAt(Roasted2.getSelectedRow(), 0) + "";
+        intensidad = Roasted2.getValueAt(Roasted2.getSelectedRow(), 1) + "";
+
+        sQuebrado += sabor + intensidad + " ";
+
+        lblQuebrado.setText(sQuebrado);
+    }//GEN-LAST:event_Roasted2KeyReleased
+
+    private void Other2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Other2KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Other2.getValueAt(Other2.getSelectedRow(), 0) + "";
+        intensidad = Other2.getValueAt(Other2.getSelectedRow(), 1) + "";
+
+        sQuebrado += sabor + intensidad + " ";
+
+        lblQuebrado.setText(sQuebrado);
+    }//GEN-LAST:event_Other2KeyReleased
+
+    private void GreenVeg2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVeg2KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = GreenVeg2.getValueAt(GreenVeg2.getSelectedRow(), 0) + "";
+        intensidad = GreenVeg2.getValueAt(GreenVeg2.getSelectedRow(), 1) + "";
+
+        sQuebrado += sabor + intensidad + " ";
+
+        lblQuebrado.setText(sQuebrado);
+    }//GEN-LAST:event_GreenVeg2KeyReleased
+
+    private void SourFer2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer2KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = SourFer2.getValueAt(SourFer2.getSelectedRow(), 0) + "";
+        intensidad = SourFer2.getValueAt(SourFer2.getSelectedRow(), 1) + "";
+
+        sQuebrado += sabor + intensidad + " ";
+
+        lblQuebrado.setText(sQuebrado);
+    }//GEN-LAST:event_SourFer2KeyReleased
+
+    private void Fruit2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fruit2KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Fruit2.getValueAt(Fruit2.getSelectedRow(), 0) + "";
+        intensidad = Fruit2.getValueAt(Fruit2.getSelectedRow(), 1) + "";
+
+        sQuebrado += sabor + intensidad + " ";
+
+        lblQuebrado.setText(sQuebrado);
+    }//GEN-LAST:event_Fruit2KeyReleased
+
+    private void Floral2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Floral2KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Floral2.getValueAt(Floral2.getSelectedRow(), 0) + "";
+        intensidad = Floral2.getValueAt(Floral2.getSelectedRow(), 1) + "";
+
+        sQuebrado += sabor + intensidad + " ";
+
+        lblQuebrado.setText(sQuebrado);
+    }//GEN-LAST:event_Floral2KeyReleased
+
+    private void Sweet2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sweet2KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Sweet2.getValueAt(Sweet2.getSelectedRow(), 0) + "";
+        intensidad = Sweet2.getValueAt(Sweet2.getSelectedRow(), 1) + "";
+
+        sQuebrado += sabor + intensidad + " ";
+
+        lblQuebrado.setText(sQuebrado);
+    }//GEN-LAST:event_Sweet2KeyReleased
+
+    private void Nutty1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nutty1KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Nutty1.getValueAt(Nutty1.getSelectedRow(), 0) + "";
+        intensidad = Nutty1.getValueAt(Nutty1.getSelectedRow(), 1) + "";
+
+        sMojado += sabor + intensidad + " ";
+
+        lblMojado.setText(sMojado);
+    }//GEN-LAST:event_Nutty1KeyReleased
+
+    private void Spices1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Spices1KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Spices1.getValueAt(Spices1.getSelectedRow(), 0) + "";
+        intensidad = Spices1.getValueAt(Spices1.getSelectedRow(), 1) + "";
+
+        sMojado += sabor + intensidad + " ";
+
+        lblMojado.setText(sMojado);
+    }//GEN-LAST:event_Spices1KeyReleased
+
+    private void Roasted1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Roasted1KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Roasted1.getValueAt(Roasted1.getSelectedRow(), 0) + "";
+        intensidad = Roasted1.getValueAt(Roasted1.getSelectedRow(), 1) + "";
+
+        sMojado += sabor + intensidad + " ";
+
+        lblMojado.setText(sMojado);
+    }//GEN-LAST:event_Roasted1KeyReleased
+
+    private void Other1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Other1KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Other1.getValueAt(Other1.getSelectedRow(), 0) + "";
+        intensidad = Other1.getValueAt(Other1.getSelectedRow(), 1) + "";
+
+        sMojado += sabor + intensidad + " ";
+
+        lblMojado.setText(sMojado);
+    }//GEN-LAST:event_Other1KeyReleased
+
+    private void GreenVeg1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVeg1KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = GreenVeg1.getValueAt(GreenVeg1.getSelectedRow(), 0) + "";
+        intensidad = GreenVeg1.getValueAt(GreenVeg1.getSelectedRow(), 1) + "";
+
+        sMojado += sabor + intensidad + " ";
+
+        lblMojado.setText(sMojado);
+    }//GEN-LAST:event_GreenVeg1KeyReleased
+
+    private void SourFer1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer1KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = SourFer1.getValueAt(SourFer1.getSelectedRow(), 0) + "";
+        intensidad = SourFer1.getValueAt(SourFer1.getSelectedRow(), 1) + "";
+
+        sMojado += sabor + intensidad + " ";
+
+        lblMojado.setText(sMojado);
+    }//GEN-LAST:event_SourFer1KeyReleased
+
+    private void Fruit1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fruit1KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Fruit1.getValueAt(Fruit1.getSelectedRow(), 0) + "";
+        intensidad = Fruit1.getValueAt(Fruit1.getSelectedRow(), 1) + "";
+
+        sMojado += sabor + intensidad + " ";
+
+        lblMojado.setText(sMojado);
+    }//GEN-LAST:event_Fruit1KeyReleased
+
+    private void Floral1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Floral1KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Floral1.getValueAt(Floral1.getSelectedRow(), 0) + "";
+        intensidad = Floral1.getValueAt(Floral1.getSelectedRow(), 1) + "";
+
+        sMojado += sabor + intensidad + " ";
+
+        lblMojado.setText(sMojado);
+    }//GEN-LAST:event_Floral1KeyReleased
+
+    private void Sweet1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sweet1KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Sweet1.getValueAt(Sweet1.getSelectedRow(), 0) + "";
+        intensidad = Sweet1.getValueAt(Sweet1.getSelectedRow(), 1) + "";
+
+        sMojado += sabor + intensidad + " ";
+
+        lblMojado.setText(sMojado);
+    }//GEN-LAST:event_Sweet1KeyReleased
+
+    private void NuttyKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NuttyKeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Nutty.getValueAt(Nutty.getSelectedRow(), 0) + "";
+        intensidad = Nutty.getValueAt(Nutty.getSelectedRow(), 1) + "";
+
+        sSeco += sabor + intensidad + " ";
 
         lblSeco.setText(sSeco);
-    }//GEN-LAST:event_FloralKeyReleased
+    }//GEN-LAST:event_NuttyKeyReleased
+
+    private void SpicesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SpicesKeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Spices.getValueAt(Spices.getSelectedRow(), 0) + "";
+        intensidad = Spices.getValueAt(Spices.getSelectedRow(), 1) + "";
+
+        sSeco += sabor + intensidad + " ";
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_SpicesKeyReleased
+
+    private void RoastedKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RoastedKeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Roasted.getValueAt(Roasted.getSelectedRow(), 0) + "";
+        intensidad = Roasted.getValueAt(Roasted.getSelectedRow(), 1) + "";
+
+        sSeco += sabor + intensidad + " ";
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_RoastedKeyReleased
+
+    private void OtherKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_OtherKeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Other.getValueAt(Other.getSelectedRow(), 0) + "";
+        intensidad = Other.getValueAt(Other.getSelectedRow(), 1) + "";
+
+        sSeco += sabor + intensidad + " ";
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_OtherKeyReleased
+
+    private void GreenVegKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVegKeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = GreenVeg.getValueAt(GreenVeg.getSelectedRow(), 0) + "";
+        intensidad = GreenVeg.getValueAt(GreenVeg.getSelectedRow(), 1) + "";
+
+        sSeco += sabor + intensidad + " ";
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_GreenVegKeyReleased
+
+    private void SourFerKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFerKeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = SourFer.getValueAt(SourFer.getSelectedRow(), 0) + "";
+        intensidad = SourFer.getValueAt(SourFer.getSelectedRow(), 1) + "";
+
+        sSeco += sabor + intensidad + " ";
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_SourFerKeyReleased
 
     private void FruitKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FruitKeyReleased
         // TODO add your handling code here:
@@ -3603,474 +4130,68 @@ public class jdCatacion2 extends javax.swing.JFrame {
         lblSeco.setText(sSeco);
     }//GEN-LAST:event_FruitKeyReleased
 
-    private void SourFerKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFerKeyReleased
+    private void FloralKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FloralKeyReleased
         // TODO add your handling code here:
         String sabor = "", intensidad = "";
-        sabor = SourFer.getValueAt(SourFer.getSelectedRow(), 0) + "";
-        intensidad = SourFer.getValueAt(SourFer.getSelectedRow(), 1) + "";
+        sabor = Floral.getValueAt(Floral.getSelectedRow(), 0) + "";
+        intensidad = Floral.getValueAt(Floral.getSelectedRow(), 1) + "";
 
-        sSeco += sabor + intensidad + " ";
+        if (!intensidad.equals("") || intensidad != null) {
+            sSeco += sabor + intensidad + " ";
+        }
 
         lblSeco.setText(sSeco);
-    }//GEN-LAST:event_SourFerKeyReleased
+    }//GEN-LAST:event_FloralKeyReleased
 
-    private void GreenVegKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVegKeyReleased
+    //String sabor = "", intensidad = "";
+    private void SweetKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SweetKeyReleased
         // TODO add your handling code here:
+        //VALIDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR
         String sabor = "", intensidad = "";
-        sabor = GreenVeg.getValueAt(GreenVeg.getSelectedRow(), 0) + "";
-        intensidad = GreenVeg.getValueAt(GreenVeg.getSelectedRow(), 1) + "";
+        sabor = Sweet.getValueAt(Sweet.getSelectedRow(), 0) + "";
+        intensidad = Sweet.getValueAt(Sweet.getSelectedRow(), 1) + "";
 
-        sSeco += sabor + intensidad + " ";
+        if (!intensidad.equals("") || intensidad != null) {
+            sSeco += sabor + intensidad + " ";
+        }
 
         lblSeco.setText(sSeco);
-    }//GEN-LAST:event_GreenVegKeyReleased
-
-    private void OtherKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_OtherKeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Other.getValueAt(Other.getSelectedRow(), 0) + "";
-        intensidad = Other.getValueAt(Other.getSelectedRow(), 1) + "";
-
-        sSeco += sabor + intensidad + " ";
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_OtherKeyReleased
-
-    private void RoastedKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RoastedKeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Roasted.getValueAt(Roasted.getSelectedRow(), 0) + "";
-        intensidad = Roasted.getValueAt(Roasted.getSelectedRow(), 1) + "";
-
-        sSeco += sabor + intensidad + " ";
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_RoastedKeyReleased
-
-    private void SpicesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SpicesKeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Spices.getValueAt(Spices.getSelectedRow(), 0) + "";
-        intensidad = Spices.getValueAt(Spices.getSelectedRow(), 1) + "";
-
-        sSeco += sabor + intensidad + " ";
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_SpicesKeyReleased
-
-    private void NuttyKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NuttyKeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Nutty.getValueAt(Nutty.getSelectedRow(), 0) + "";
-        intensidad = Nutty.getValueAt(Nutty.getSelectedRow(), 1) + "";
-
-        sSeco += sabor + intensidad + " ";
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_NuttyKeyReleased
-    String sMojado = "";
-    private void Sweet1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sweet1KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Sweet1.getValueAt(Sweet1.getSelectedRow(), 0) + "";
-        intensidad = Sweet1.getValueAt(Sweet1.getSelectedRow(), 1) + "";
-
-        sMojado += sabor + intensidad + " ";
-
-        lblMojado.setText(sMojado);
-    }//GEN-LAST:event_Sweet1KeyReleased
-
-    private void Floral1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Floral1KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Floral1.getValueAt(Floral1.getSelectedRow(), 0) + "";
-        intensidad = Floral1.getValueAt(Floral1.getSelectedRow(), 1) + "";
-
-        sMojado += sabor + intensidad + " ";
-
-        lblMojado.setText(sMojado);
-    }//GEN-LAST:event_Floral1KeyReleased
-
-    private void Fruit1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fruit1KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Fruit1.getValueAt(Fruit1.getSelectedRow(), 0) + "";
-        intensidad = Fruit1.getValueAt(Fruit1.getSelectedRow(), 1) + "";
-
-        sMojado += sabor + intensidad + " ";
-
-        lblMojado.setText(sMojado);
-    }//GEN-LAST:event_Fruit1KeyReleased
-
-    private void SourFer1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer1KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = SourFer1.getValueAt(SourFer1.getSelectedRow(), 0) + "";
-        intensidad = SourFer1.getValueAt(SourFer1.getSelectedRow(), 1) + "";
-
-        sMojado += sabor + intensidad + " ";
-
-        lblMojado.setText(sMojado);
-    }//GEN-LAST:event_SourFer1KeyReleased
-
-    private void GreenVeg1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVeg1KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = GreenVeg1.getValueAt(GreenVeg1.getSelectedRow(), 0) + "";
-        intensidad = GreenVeg1.getValueAt(GreenVeg1.getSelectedRow(), 1) + "";
-
-        sMojado += sabor + intensidad + " ";
-
-        lblMojado.setText(sMojado);
-    }//GEN-LAST:event_GreenVeg1KeyReleased
-
-    private void Other1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Other1KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Other1.getValueAt(Other1.getSelectedRow(), 0) + "";
-        intensidad = Other1.getValueAt(Other1.getSelectedRow(), 1) + "";
-
-        sMojado += sabor + intensidad + " ";
-
-        lblMojado.setText(sMojado);
-    }//GEN-LAST:event_Other1KeyReleased
-
-    private void Roasted1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Roasted1KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Roasted1.getValueAt(Roasted1.getSelectedRow(), 0) + "";
-        intensidad = Roasted1.getValueAt(Roasted1.getSelectedRow(), 1) + "";
-
-        sMojado += sabor + intensidad + " ";
-
-        lblMojado.setText(sMojado);
-    }//GEN-LAST:event_Roasted1KeyReleased
-
-    private void Spices1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Spices1KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Spices1.getValueAt(Spices1.getSelectedRow(), 0) + "";
-        intensidad = Spices1.getValueAt(Spices1.getSelectedRow(), 1) + "";
-
-        sMojado += sabor + intensidad + " ";
-
-        lblMojado.setText(sMojado);
-    }//GEN-LAST:event_Spices1KeyReleased
-
-    private void Nutty1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nutty1KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Nutty1.getValueAt(Nutty1.getSelectedRow(), 0) + "";
-        intensidad = Nutty1.getValueAt(Nutty1.getSelectedRow(), 1) + "";
-
-        sMojado += sabor + intensidad + " ";
-
-        lblMojado.setText(sMojado);
-    }//GEN-LAST:event_Nutty1KeyReleased
-    String sQuebrado = "";
-    private void Sweet2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sweet2KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Sweet2.getValueAt(Sweet2.getSelectedRow(), 0) + "";
-        intensidad = Sweet2.getValueAt(Sweet2.getSelectedRow(), 1) + "";
-
-        sQuebrado += sabor + intensidad + " ";
-
-        lblQuebrado.setText(sQuebrado);
-    }//GEN-LAST:event_Sweet2KeyReleased
-
-    private void Floral2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Floral2KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Floral2.getValueAt(Floral2.getSelectedRow(), 0) + "";
-        intensidad = Floral2.getValueAt(Floral2.getSelectedRow(), 1) + "";
-
-        sQuebrado += sabor + intensidad + " ";
-
-        lblQuebrado.setText(sQuebrado);
-    }//GEN-LAST:event_Floral2KeyReleased
-
-    private void Fruit2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fruit2KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Fruit2.getValueAt(Fruit2.getSelectedRow(), 0) + "";
-        intensidad = Fruit2.getValueAt(Fruit2.getSelectedRow(), 1) + "";
-
-        sQuebrado += sabor + intensidad + " ";
-
-        lblQuebrado.setText(sQuebrado);
-    }//GEN-LAST:event_Fruit2KeyReleased
-
-    private void SourFer2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer2KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = SourFer2.getValueAt(SourFer2.getSelectedRow(), 0) + "";
-        intensidad = SourFer2.getValueAt(SourFer2.getSelectedRow(), 1) + "";
-
-        sQuebrado += sabor + intensidad + " ";
-
-        lblQuebrado.setText(sQuebrado);
-    }//GEN-LAST:event_SourFer2KeyReleased
-
-    private void GreenVeg2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVeg2KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = GreenVeg2.getValueAt(GreenVeg2.getSelectedRow(), 0) + "";
-        intensidad = GreenVeg2.getValueAt(GreenVeg2.getSelectedRow(), 1) + "";
-
-        sQuebrado += sabor + intensidad + " ";
-
-        lblQuebrado.setText(sQuebrado);
-    }//GEN-LAST:event_GreenVeg2KeyReleased
-
-    private void Other2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Other2KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Other2.getValueAt(Other2.getSelectedRow(), 0) + "";
-        intensidad = Other2.getValueAt(Other2.getSelectedRow(), 1) + "";
-
-        sQuebrado += sabor + intensidad + " ";
-
-        lblQuebrado.setText(sQuebrado);
-    }//GEN-LAST:event_Other2KeyReleased
-
-    private void Roasted2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Roasted2KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Roasted2.getValueAt(Roasted2.getSelectedRow(), 0) + "";
-        intensidad = Roasted2.getValueAt(Roasted2.getSelectedRow(), 1) + "";
-
-        sQuebrado += sabor + intensidad + " ";
-
-        lblQuebrado.setText(sQuebrado);
-    }//GEN-LAST:event_Roasted2KeyReleased
-
-    private void Spices2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Spices2KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Spices2.getValueAt(Spices2.getSelectedRow(), 0) + "";
-        intensidad = Spices2.getValueAt(Spices2.getSelectedRow(), 1) + "";
-
-        sQuebrado += sabor + intensidad + " ";
-
-        lblQuebrado.setText(sQuebrado);
-    }//GEN-LAST:event_Spices2KeyReleased
-
-    private void Nutty2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nutty2KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Nutty2.getValueAt(Nutty2.getSelectedRow(), 0) + "";
-        intensidad = Nutty2.getValueAt(Nutty2.getSelectedRow(), 1) + "";
-
-        sQuebrado += sabor + intensidad + " ";
-
-        lblQuebrado.setText(sQuebrado);
-    }//GEN-LAST:event_Nutty2KeyReleased
-    String sSabor = "";
-    private void Sweet3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sweet3KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Sweet3.getValueAt(Sweet3.getSelectedRow(), 0) + "";
-        intensidad = Sweet3.getValueAt(Sweet3.getSelectedRow(), 1) + "";
-
-        sSabor += sabor + intensidad + " ";
-
-        lblSabor.setText(sSabor);
-    }//GEN-LAST:event_Sweet3KeyReleased
-
-    private void Floral3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Floral3KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Floral3.getValueAt(Floral3.getSelectedRow(), 0) + "";
-        intensidad = Floral3.getValueAt(Floral3.getSelectedRow(), 1) + "";
-
-        sSabor += sabor + intensidad + " ";
-
-        lblSabor.setText(sSabor);
-    }//GEN-LAST:event_Floral3KeyReleased
-
-    private void Fruit3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fruit3KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Fruit3.getValueAt(Fruit3.getSelectedRow(), 0) + "";
-        intensidad = Fruit3.getValueAt(Fruit3.getSelectedRow(), 1) + "";
-
-        sSabor += sabor + intensidad + " ";
-
-        lblSabor.setText(sSabor);
-    }//GEN-LAST:event_Fruit3KeyReleased
-
-    private void SourFer3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer3KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = SourFer3.getValueAt(SourFer3.getSelectedRow(), 0) + "";
-        intensidad = SourFer3.getValueAt(SourFer3.getSelectedRow(), 1) + "";
-
-        sSabor += sabor + intensidad + " ";
-
-        lblSabor.setText(sSabor);
-    }//GEN-LAST:event_SourFer3KeyReleased
-
-    private void GreenVeg3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVeg3KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = GreenVeg3.getValueAt(GreenVeg3.getSelectedRow(), 0) + "";
-        intensidad = GreenVeg3.getValueAt(GreenVeg3.getSelectedRow(), 1) + "";
-
-        sSabor += sabor + intensidad + " ";
-
-        lblSabor.setText(sSabor);
-    }//GEN-LAST:event_GreenVeg3KeyReleased
-
-    private void Other3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Other3KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Other3.getValueAt(Other3.getSelectedRow(), 0) + "";
-        intensidad = Other3.getValueAt(Other3.getSelectedRow(), 1) + "";
-
-        sSabor += sabor + intensidad + " ";
-
-        lblSabor.setText(sSabor);
-    }//GEN-LAST:event_Other3KeyReleased
-
-    private void Roasted3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Roasted3KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Roasted3.getValueAt(Roasted3.getSelectedRow(), 0) + "";
-        intensidad = Roasted3.getValueAt(Roasted3.getSelectedRow(), 1) + "";
-
-        sSabor += sabor + intensidad + " ";
-
-        lblSabor.setText(sSabor);
-    }//GEN-LAST:event_Roasted3KeyReleased
-
-    private void Spices3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Spices3KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Spices3.getValueAt(Spices3.getSelectedRow(), 0) + "";
-        intensidad = Spices3.getValueAt(Spices3.getSelectedRow(), 1) + "";
-
-        sSabor += sabor + intensidad + " ";
-
-        lblSabor.setText(sSabor);
-    }//GEN-LAST:event_Spices3KeyReleased
-
-    private void Nutty3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nutty3KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Nutty3.getValueAt(Nutty3.getSelectedRow(), 0) + "";
-        intensidad = Nutty3.getValueAt(Nutty3.getSelectedRow(), 1) + "";
-
-        sSabor += sabor + intensidad + " ";
-
-        lblSabor.setText(sSabor);
-    }//GEN-LAST:event_Nutty3KeyReleased
-    String sRemanente = "";
-    private void Sweet4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sweet4KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Sweet4.getValueAt(Sweet4.getSelectedRow(), 0) + "";
-        intensidad = Sweet4.getValueAt(Sweet4.getSelectedRow(), 1) + "";
-
-        sRemanente += sabor + intensidad + " ";
-
-        lblRemanente.setText(sRemanente);
-    }//GEN-LAST:event_Sweet4KeyReleased
-
-    private void Floral4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Floral4KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Floral4.getValueAt(Floral4.getSelectedRow(), 0) + "";
-        intensidad = Floral4.getValueAt(Floral4.getSelectedRow(), 1) + "";
-
-        sRemanente += sabor + intensidad + " ";
-
-        lblRemanente.setText(sRemanente);
-    }//GEN-LAST:event_Floral4KeyReleased
-
-    private void Fruit4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fruit4KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Fruit4.getValueAt(Fruit4.getSelectedRow(), 0) + "";
-        intensidad = Fruit4.getValueAt(Fruit4.getSelectedRow(), 1) + "";
-
-        sRemanente += sabor + intensidad + " ";
-
-        lblRemanente.setText(sRemanente);
-    }//GEN-LAST:event_Fruit4KeyReleased
-
-    private void SourFer4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer4KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = SourFer4.getValueAt(SourFer4.getSelectedRow(), 0) + "";
-        intensidad = SourFer4.getValueAt(SourFer4.getSelectedRow(), 1) + "";
-
-        sRemanente += sabor + intensidad + " ";
-
-        lblRemanente.setText(sRemanente);
-    }//GEN-LAST:event_SourFer4KeyReleased
-
-    private void GreenVeg4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVeg4KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = GreenVeg4.getValueAt(GreenVeg4.getSelectedRow(), 0) + "";
-        intensidad = GreenVeg4.getValueAt(GreenVeg4.getSelectedRow(), 1) + "";
-
-        sRemanente += sabor + intensidad + " ";
-
-        lblRemanente.setText(sRemanente);
-    }//GEN-LAST:event_GreenVeg4KeyReleased
-
-    private void Body1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Body1KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Body1.getValueAt(Body1.getSelectedRow(), 0) + "";
-        intensidad = Body1.getValueAt(Body1.getSelectedRow(), 1) + "";
-
-        sRemanente += sabor + intensidad + " ";
-
-        lblRemanente.setText(sRemanente);
-    }//GEN-LAST:event_Body1KeyReleased
-
-    private void Finish1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Finish1KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Finish1.getValueAt(Finish1.getSelectedRow(), 0) + "";
-        intensidad = Finish1.getValueAt(Finish1.getSelectedRow(), 1) + "";
-
-        sRemanente += sabor + intensidad + " ";
-
-        lblRemanente.setText(sRemanente);
-    }//GEN-LAST:event_Finish1KeyReleased
-    String sAcidez = "";
-    private void SourFer5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer5KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = SourFer5.getValueAt(SourFer5.getSelectedRow(), 0) + "";
-        intensidad = SourFer5.getValueAt(SourFer5.getSelectedRow(), 1) + "";
-
-        sAcidez += sabor + intensidad + " ";
-
-        lblAcidez.setText(sAcidez);
-    }//GEN-LAST:event_SourFer5KeyReleased
-
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        guardar();
-    }//GEN-LAST:event_jButton1ActionPerformed
+    }//GEN-LAST:event_SweetKeyReleased
 
     private void SweetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SweetMouseClicked
         // TODO add your handling code here:
-/*        sabor = Sweet.getValueAt(Sweet.getSelectedRow(), 0) + "";
+        /*        sabor = Sweet.getValueAt(Sweet.getSelectedRow(), 0) + "";
         intensidad = Sweet.getValueAt(Sweet.getSelectedRow(), 1) + "";*/
     }//GEN-LAST:event_SweetMouseClicked
+
+    private void Body2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Body2KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Body2.getValueAt(Body2.getSelectedRow(), 0) + "";
+        intensidad = Body2.getValueAt(Body2.getSelectedRow(), 1) + "";
+
+        sCuerpo += sabor + intensidad + " ";
+
+        lblCuerpo.setText(sCuerpo);
+    }//GEN-LAST:event_Body2KeyReleased
+
+    private void Finish2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Finish2KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Finish2.getValueAt(Finish2.getSelectedRow(), 0) + "";
+        intensidad = Finish2.getValueAt(Finish2.getSelectedRow(), 1) + "";
+
+        sCuerpo += sabor + intensidad + " ";
+
+        lblCuerpo.setText(sCuerpo);
+    }//GEN-LAST:event_Finish2KeyReleased
 
     String cadenaSabores = "", cadenaOlores = "";
 
     public void guardar() {
-        cadenaSabores = "Sabor: "+lblSabor.getText() + ", Sabor Remanente: " + lblRemanente.getText() + ", Acidez: " + lblAcidez.getText();
+        cadenaSabores = "Sabor: " + lblSabor.getText() + ", Sabor Remanente: " + lblRemanente.getText() + ", Acidez: " + lblAcidez.getText();
 
-        cadenaOlores = "Seco: "+lblSeco.getText() + ", Mojado: " + lblMojado.getText() + ", Quebrado: " + lblQuebrado.getText();
+        cadenaOlores = "Seco: " + lblSeco.getText() + ", Mojado: " + lblMojado.getText() + ", Quebrado: " + lblQuebrado.getText();
 
         JOptionPane.showMessageDialog(null, "Sabores: " + cadenaSabores + "\nOlores: " + cadenaOlores);
         String fecha = null;
@@ -4168,7 +4289,9 @@ public class jdCatacion2 extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Body1;
+    private javax.swing.JTable Body2;
     private javax.swing.JTable Finish1;
+    private javax.swing.JTable Finish2;
     private javax.swing.JTable Floral;
     private javax.swing.JTable Floral1;
     private javax.swing.JTable Floral2;
@@ -4264,6 +4387,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel34;
     private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel36;
+    private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel57;
@@ -4283,6 +4407,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
     private javax.swing.JPanel jPanel13;
     private javax.swing.JPanel jPanel14;
     private javax.swing.JPanel jPanel15;
+    private javax.swing.JPanel jPanel16;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
@@ -4330,6 +4455,8 @@ public class jdCatacion2 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane47;
     private javax.swing.JScrollPane jScrollPane48;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane54;
+    private javax.swing.JScrollPane jScrollPane55;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JScrollPane jScrollPane8;
@@ -4351,6 +4478,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
     private javax.swing.JLabel lblAcidez;
     private javax.swing.JLabel lblCSM;
     private javax.swing.JLabel lblComunidad;
+    private javax.swing.JLabel lblCuerpo;
     private javax.swing.JLabel lblDenTos;
     private javax.swing.JLabel lblFragancia;
     private javax.swing.JLabel lblMojado;

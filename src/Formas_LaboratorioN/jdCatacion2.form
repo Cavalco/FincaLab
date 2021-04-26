@@ -1446,7 +1446,7 @@
                               <Table columnCount="2" rowCount="7">
                                 <Column editable="false" title="1 Cualidad" type="java.lang.Object">
                                   <Data value="Dulce"/>
-                                  <Data value="Az&#xfa;car Morena"/>
+                                  <Data value="Az&#xfa;car-Mor"/>
                                   <Data value="Melaza"/>
                                   <Data value="Jarab-mapl"/>
                                   <Data value="Caramelo"/>
@@ -1455,6 +1455,20 @@
                                 </Column>
                                 <Column editable="true" title="Intensidad" type="java.lang.Object"/>
                               </Table>
+                            </Property>
+                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                              <TableColumnModel selectionModel="0">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                              </TableColumnModel>
                             </Property>
                             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
@@ -1483,7 +1497,7 @@
                               <Table columnCount="2" rowCount="5">
                                 <Column editable="false" title="2 Cualidad" type="java.lang.Object">
                                   <Data value="Floral"/>
-                                  <Data value="T&#xe9; negro"/>
+                                  <Data value="T&#xe9;-Negro"/>
                                   <Data value="Manzanilla"/>
                                   <Data value="Rosa"/>
                                   <Data value="Jazmine"/>
@@ -1525,10 +1539,10 @@
                                   <Data value="Frambuesa"/>
                                   <Data value="Ar&#xe1;ndano"/>
                                   <Data value="Fresa"/>
-                                  <Data value="Fruta Seca"/>
+                                  <Data value="Fruto-sec"/>
                                   <Data value="Pasas"/>
-                                  <Data value="Ciruel-pasa"/>
-                                  <Data value="Otras frut"/>
+                                  <Data value="Ciruel-pas"/>
+                                  <Data value="Otras-frut"/>
                                   <Data value="Coco"/>
                                   <Data value="Cereza"/>
                                   <Data value="Granada"/>
@@ -1744,11 +1758,11 @@
                                   <Data value="Especias"/>
                                   <Data value="Acre"/>
                                   <Data value="Pimienta"/>
-                                  <Data value="Especias marrones"/>
+                                  <Data value="Especias-mo"/>
                                   <Data value="Anis"/>
-                                  <Data value="Nuez moscada"/>
+                                  <Data value="Nuez-mosca"/>
                                   <Data value="Canela"/>
-                                  <Data value="Clavo de olor"/>
+                                  <Data value="Clavo-olor"/>
                                 </Column>
                                 <Column editable="true" title="Intensidad" type="java.lang.Object"/>
                               </Table>
@@ -1799,7 +1813,7 @@
                                   <Data value="Almendra"/>
                                   <Data value="Cacao"/>
                                   <Data value="Chocolate"/>
-                                  <Data value="Choc amargo"/>
+                                  <Data value="Choc-amarg"/>
                                 </Column>
                                 <Column editable="true" title="Intensidad" type="java.lang.Object"/>
                               </Table>
@@ -1918,7 +1932,7 @@
                               <Table columnCount="2" rowCount="7">
                                 <Column editable="false" title="1 Cualidades" type="java.lang.Object">
                                   <Data value="Dulce"/>
-                                  <Data value="Az&#xfa;car Morena"/>
+                                  <Data value="Az&#xfa;car-Mor"/>
                                   <Data value="Melaza"/>
                                   <Data value="Jarab-mapl"/>
                                   <Data value="Caramelo"/>
@@ -1954,7 +1968,7 @@
                               <Table columnCount="2" rowCount="5">
                                 <Column editable="false" title="2 Cualidades" type="java.lang.Object">
                                   <Data value="Floral"/>
-                                  <Data value="T&#xe9; negro"/>
+                                  <Data value="T&#xe9;-Negro"/>
                                   <Data value="Manzanilla"/>
                                   <Data value="Rosa"/>
                                   <Data value="Jazmine"/>
@@ -1996,10 +2010,10 @@
                                   <Data value="Frambuesa"/>
                                   <Data value="Ar&#xe1;ndano"/>
                                   <Data value="Fresa"/>
-                                  <Data value="Fruta Seca"/>
+                                  <Data value="Fruto-sec"/>
                                   <Data value="Pasas"/>
-                                  <Data value="Ciruel-pasa"/>
-                                  <Data value="Otras frut"/>
+                                  <Data value="Ciruel-pas"/>
+                                  <Data value="Otras-frut"/>
                                   <Data value="Coco"/>
                                   <Data value="Cereza"/>
                                   <Data value="Granada"/>
@@ -2389,7 +2403,7 @@
                               <Table columnCount="2" rowCount="7">
                                 <Column editable="false" title="1 Cualidades" type="java.lang.Object">
                                   <Data value="Dulce"/>
-                                  <Data value="Az&#xfa;car Morena"/>
+                                  <Data value="Az&#xfa;car-Mor"/>
                                   <Data value="Melaza"/>
                                   <Data value="Jarab-mapl"/>
                                   <Data value="Caramelo"/>
@@ -2425,7 +2439,7 @@
                               <Table columnCount="2" rowCount="5">
                                 <Column editable="false" title="2 Cualidades" type="java.lang.Object">
                                   <Data value="Floral"/>
-                                  <Data value="T&#xe9; negro"/>
+                                  <Data value="T&#xe9;-Negro"/>
                                   <Data value="Manzanilla"/>
                                   <Data value="Rosa"/>
                                   <Data value="Jazmine"/>
@@ -2467,10 +2481,10 @@
                                   <Data value="Frambuesa"/>
                                   <Data value="Ar&#xe1;ndano"/>
                                   <Data value="Fresa"/>
-                                  <Data value="Fruta Seca"/>
+                                  <Data value="Fruto-sec"/>
                                   <Data value="Pasas"/>
-                                  <Data value="Ciruel-pasa"/>
-                                  <Data value="Otras frut"/>
+                                  <Data value="Ciruel-pas"/>
+                                  <Data value="Otras-frut"/>
                                   <Data value="Coco"/>
                                   <Data value="Cereza"/>
                                   <Data value="Granada"/>
@@ -2860,7 +2874,7 @@
                               <Table columnCount="2" rowCount="7">
                                 <Column editable="false" title="1 Cualidades" type="java.lang.Object">
                                   <Data value="Dulce"/>
-                                  <Data value="Az&#xfa;car Morena"/>
+                                  <Data value="Az&#xfa;car-Mor"/>
                                   <Data value="Melaza"/>
                                   <Data value="Jarab-mapl"/>
                                   <Data value="Caramelo"/>
@@ -2896,7 +2910,7 @@
                               <Table columnCount="2" rowCount="5">
                                 <Column editable="false" title="2 Cualidades" type="java.lang.Object">
                                   <Data value="Floral"/>
-                                  <Data value="T&#xe9; negro"/>
+                                  <Data value="T&#xe9;-Negro"/>
                                   <Data value="Manzanilla"/>
                                   <Data value="Rosa"/>
                                   <Data value="Jazmine"/>
@@ -2938,10 +2952,10 @@
                                   <Data value="Frambuesa"/>
                                   <Data value="Ar&#xe1;ndano"/>
                                   <Data value="Fresa"/>
-                                  <Data value="Fruta Seca"/>
+                                  <Data value="Fruto-sec"/>
                                   <Data value="Pasas"/>
-                                  <Data value="Ciruel-pasa"/>
-                                  <Data value="Otras frut"/>
+                                  <Data value="Ciruel-pas"/>
+                                  <Data value="Otras-frut"/>
                                   <Data value="Coco"/>
                                   <Data value="Cereza"/>
                                   <Data value="Granada"/>
@@ -3315,7 +3329,7 @@
                               <Table columnCount="2" rowCount="7">
                                 <Column editable="false" title="1 Cualidades" type="java.lang.Object">
                                   <Data value="Dulce"/>
-                                  <Data value="Az&#xfa;car Morena"/>
+                                  <Data value="Az&#xfa;car-Mor"/>
                                   <Data value="Melaza"/>
                                   <Data value="Jarab-mapl"/>
                                   <Data value="Caramelo"/>
@@ -3351,7 +3365,7 @@
                               <Table columnCount="2" rowCount="5">
                                 <Column editable="false" title="2 Cualidades" type="java.lang.Object">
                                   <Data value="Floral"/>
-                                  <Data value="T&#xe9; negro"/>
+                                  <Data value="T&#xe9;-Negro"/>
                                   <Data value="Manzanilla"/>
                                   <Data value="Rosa"/>
                                   <Data value="Jazmine"/>
@@ -3393,10 +3407,10 @@
                                   <Data value="Frambuesa"/>
                                   <Data value="Ar&#xe1;ndano"/>
                                   <Data value="Fresa"/>
-                                  <Data value="Fruta Seca"/>
+                                  <Data value="Fruto-sec"/>
                                   <Data value="Pasas"/>
-                                  <Data value="Ciruel-pasa"/>
-                                  <Data value="Otras frut"/>
+                                  <Data value="Ciruel-pas"/>
+                                  <Data value="Otras-frut"/>
                                   <Data value="Coco"/>
                                   <Data value="Cereza"/>
                                   <Data value="Granada"/>
@@ -3672,6 +3686,134 @@
                     </Container>
                   </SubComponents>
                 </Container>
+                <Container class="javax.swing.JPanel" name="jPanel16">
+                  <Constraints>
+                    <Constraint layoutClass="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout" value="org.netbeans.modules.form.compat2.layouts.support.JTabbedPaneSupportLayout$JTabbedPaneConstraintsDescription">
+                      <JTabbedPaneConstraints tabName="Cuerpo">
+                        <Property name="tabTitle" type="java.lang.String" value="Cuerpo"/>
+                      </JTabbedPaneConstraints>
+                    </Constraint>
+                  </Constraints>
+
+                  <Layout>
+                    <DimensionLayout dim="0">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jScrollPane54" min="-2" pref="134" max="-2" attributes="0"/>
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Component id="jScrollPane55" min="-2" pref="143" max="-2" attributes="0"/>
+                              <EmptySpace pref="772" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                    <DimensionLayout dim="1">
+                      <Group type="103" groupAlignment="0" attributes="0">
+                          <Group type="102" alignment="0" attributes="0">
+                              <EmptySpace max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jScrollPane54" alignment="0" min="-2" pref="124" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane55" alignment="0" min="-2" pref="113" max="-2" attributes="0"/>
+                              </Group>
+                              <EmptySpace pref="285" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                    </DimensionLayout>
+                  </Layout>
+                  <SubComponents>
+                    <Container class="javax.swing.JScrollPane" name="jScrollPane54">
+                      <AuxValues>
+                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                      </AuxValues>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTable" name="Body2">
+                          <Properties>
+                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                              <Table columnCount="2" rowCount="6">
+                                <Column editable="false" title="Cualidades" type="java.lang.Object">
+                                  <Data value="Ligero"/>
+                                  <Data value="Medio"/>
+                                  <Data value="Pesado"/>
+                                  <Data value="Jarabe"/>
+                                  <Data value="Aceitoso"/>
+                                  <Data value="Suave"/>
+                                </Column>
+                                <Column editable="true" title="Intensidad" type="java.lang.Object"/>
+                              </Table>
+                            </Property>
+                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                              <TableColumnModel selectionModel="0">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                              </TableColumnModel>
+                            </Property>
+                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                            </Property>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Body2KeyReleased"/>
+                          </Events>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                    <Container class="javax.swing.JScrollPane" name="jScrollPane55">
+                      <AuxValues>
+                        <AuxValue name="autoScrollPane" type="java.lang.Boolean" value="true"/>
+                      </AuxValues>
+
+                      <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
+                      <SubComponents>
+                        <Component class="javax.swing.JTable" name="Finish2">
+                          <Properties>
+                            <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
+                              <Table columnCount="2" rowCount="5">
+                                <Column editable="false" title="Cualidades" type="java.lang.Object">
+                                  <Data value="Corto"/>
+                                  <Data value="Medio"/>
+                                  <Data value="Largo"/>
+                                  <Data value="Seco"/>
+                                  <Data value="Astringent"/>
+                                </Column>
+                                <Column editable="true" title="Intensidad" type="java.lang.Object"/>
+                              </Table>
+                            </Property>
+                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                              <TableColumnModel selectionModel="0">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                              </TableColumnModel>
+                            </Property>
+                            <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
+                              <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
+                            </Property>
+                          </Properties>
+                          <Events>
+                            <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="Finish2KeyReleased"/>
+                          </Events>
+                        </Component>
+                      </SubComponents>
+                    </Container>
+                  </SubComponents>
+                </Container>
               </SubComponents>
             </Container>
             <Component class="javax.swing.JLabel" name="jLabel17">
@@ -3708,36 +3850,32 @@
                       <Group type="102" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jLabel62" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel61" alignment="0" min="-2" max="-2" attributes="0"/>
-                                          <Component id="jLabel60" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
-                                      </Group>
-                                      <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
-                                          <Component id="jLabel59" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel58" alignment="0" max="32767" attributes="0"/>
-                                          <Component id="jLabel57" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
-                                      </Group>
-                                  </Group>
-                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="lblQuebrado" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="lblMojado" max="32767" attributes="0"/>
-                                      <Component id="lblSeco" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="lblSabor" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="lblRemanente" alignment="0" max="32767" attributes="0"/>
-                                      <Component id="lblAcidez" alignment="0" max="32767" attributes="0"/>
-                                  </Group>
+                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jLabel62" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLabel61" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel60" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
                               </Group>
+                              <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
+                                  <Component id="jLabel59" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLabel58" alignment="0" max="32767" attributes="0"/>
+                                  <Component id="jLabel57" alignment="0" min="-2" pref="48" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jLabel24" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel34" alignment="0" min="-2" max="-2" attributes="0"/>
+                              <Component id="jLabel37" alignment="0" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace type="separate" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
                               <Group type="102" attributes="0">
-                                  <Group type="103" groupAlignment="0" attributes="0">
-                                      <Component id="jLabel24" alignment="0" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel34" alignment="0" min="-2" max="-2" attributes="0"/>
-                                  </Group>
+                                  <Component id="lblCuerpo" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                               </Group>
+                              <Component id="lblQuebrado" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lblMojado" max="32767" attributes="0"/>
+                              <Component id="lblSeco" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lblSabor" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lblRemanente" alignment="0" max="32767" attributes="0"/>
+                              <Component id="lblAcidez" alignment="0" max="32767" attributes="0"/>
                           </Group>
                           <EmptySpace max="-2" attributes="0"/>
                       </Group>
@@ -3783,6 +3921,11 @@
                               </Group>
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
+                          <Group type="103" groupAlignment="3" attributes="0">
+                              <Component id="jLabel37" alignment="3" min="-2" max="-2" attributes="0"/>
+                              <Component id="lblCuerpo" alignment="3" min="-2" max="-2" attributes="0"/>
+                          </Group>
+                          <EmptySpace max="-2" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -3862,6 +4005,16 @@
                       <Font name="Tahoma" size="11" style="1"/>
                     </Property>
                     <Property name="text" type="java.lang.String" value="Sabores"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="jLabel37">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="Cuerpo"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JLabel" name="lblCuerpo">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="-"/>
                   </Properties>
                 </Component>
               </SubComponents>
