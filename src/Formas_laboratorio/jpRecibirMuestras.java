@@ -20,31 +20,33 @@ import javax.swing.table.TableRowSorter;
  * @author Contador
  */
 public class jpRecibirMuestras extends javax.swing.JPanel {
-Connection cn;
+
+    Connection cn;
     metodosLaboratorio mdb;
     DefaultTableModel modelo, modelo2;
-      Propiedades idioma;
+    Propiedades idioma;
     String Idioma;
-      JdNmuestra jdn;
+    JdNmuestra jdn;
+
     /**
      * Creates new form jpRecibirMuestras
      */
     public jpRecibirMuestras(Connection c, String Idioma) {
         initComponents();
         cn = c;
-         this.Idioma=Idioma;
-        mdb = new metodosLaboratorio(cn,Idioma);
+        this.Idioma = Idioma;
+        mdb = new metodosLaboratorio(cn, Idioma);
         modelo = (DefaultTableModel) tablaM.getModel();
-         modelo2 = (DefaultTableModel) tablaM1.getModel();
+        modelo2 = (DefaultTableModel) tablaM1.getModel();
         llenarTabla();
         tablaM.setRowSorter(new TableRowSorter(modelo));
         tablaM1.setRowSorter(new TableRowSorter(modelo2));
         jButton2.setEnabled(false);
         idioma = new Propiedades(Idioma);
-        
-         jButton1.setText(idioma.getProperty("RecibirMuestra"));
+
+        jButton1.setText(idioma.getProperty("RecibirMuestra"));
         jButton2.setText(idioma.getProperty("RecibirMuestra"));
-        
+
         tablaM.getColumnModel().getColumn(0).setHeaderValue(idioma.getProperty("Proceso"));
         tablaM.getColumnModel().getColumn(1).setHeaderValue(idioma.getProperty("Forma"));
         tablaM.getColumnModel().getColumn(2).setHeaderValue(idioma.getProperty("Beneficio"));
@@ -55,7 +57,7 @@ Connection cn;
         tablaM.getColumnModel().getColumn(7).setHeaderValue(idioma.getProperty("Sacos"));
         tablaM.getColumnModel().getColumn(8).setHeaderValue(idioma.getProperty("Comunidad"));
         tablaM.getColumnModel().getColumn(9).setHeaderValue(idioma.getProperty("MetodoSec"));
-         tablaM1.getColumnModel().getColumn(0).setHeaderValue(idioma.getProperty("Proceso"));
+        tablaM1.getColumnModel().getColumn(0).setHeaderValue(idioma.getProperty("Proceso"));
         tablaM1.getColumnModel().getColumn(1).setHeaderValue(idioma.getProperty("Forma"));
         tablaM1.getColumnModel().getColumn(2).setHeaderValue(idioma.getProperty("Beneficio"));
         tablaM1.getColumnModel().getColumn(3).setHeaderValue(idioma.getProperty("Dueño"));
@@ -130,11 +132,11 @@ Connection cn;
 
             },
             new String [] {
-                "Proceso", "Forma", "Beneficio", "Dueño", "#Sub Lote", "Certificacion", "Peso Kg", "# Sacos", "Comunidad", "Metodo secado"
+                "# CSM", "Proceso", "Forma", "Beneficio", "Dueño", "#Sub Lote", "Certificacion", "Peso Kg", "# Sacos", "Comunidad", "Metodo secado", "Fecha Recepcion Muestra", "Fecha Lote"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false
+                true, false, false, false, false, false, false, false, false, false, false, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -218,110 +220,114 @@ Connection cn;
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
-String dueño="",numsublote="",beneficio="",idlote="";
+String dueño = "", numsublote = "", beneficio = "", idlote = "";
     private void tablaMMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaMMouseClicked
         beneficio = tablaM.getValueAt(tablaM.getSelectedRow(), 2) + "";
         dueño = tablaM.getValueAt(tablaM.getSelectedRow(), 3) + "";
         numsublote = tablaM.getValueAt(tablaM.getSelectedRow(), 4) + "";
-   idlote=mdb.devuelveUnDato("select idlote from muestrasenviadas where dueño='"+dueño+"' and beneficio='"+beneficio+"' and lote='"+numsublote+"' ");
-        
-llenarTabla2();
- jButton2.setEnabled(false);
+        idlote = mdb.devuelveUnDato("select idlote from muestrasenviadas where dueño='" + dueño + "' and beneficio='" + beneficio + "' and lote='" + numsublote + "' ");
+
+        llenarTabla2();
+        jButton2.setEnabled(false);
 
     }//GEN-LAST:event_tablaMMouseClicked
-public void llenarTabla() {
+
+    public void llenarTabla() {
         limpiar(tablaM);
-      
-        mdb.cargarInformacion2(modelo, 10, "SELECT`tipocafe`, `forma`, `beneficio`, `dueño`, `lote`,`certificado`, `peso`, `sacos`, `comunidad`,`Metodosecado`FROM muestrasenviadas;");
-    
-}
-public void llenarTabla2() {
+        mdb.cargarInformacion2(modelo, 10, "SELECT tipocafe, forma, beneficio, dueño, lote,certificado, peso, sacos, comunidad,`Metodosecado`FROM muestrasenviadas;");
+    }
+
+    public void llenarTabla2() {
         limpiar(tablaM1);
-      
-        mdb.cargarInformacion2(modelo2, 10, "SELECT`tipocafe`, `forma`, `beneficio`, `dueño`,  `lote`,`certificado`, `peso`, `sacos`, `comunidad`,`Metodosecado`FROM bitacoralab where idlote=''and beneficio like'"+beneficio+"' and lote like'"+numsublote+"' and dueño like'"+dueño+"' ;");
-    String a="";
-   a= mdb.devuelveUnDato("SELECT `lote` FROM bitacoralab where idlote=''and beneficio like'"+beneficio+"' and lote like'"+numsublote+"' and dueño like'"+dueño+"' ;");
+
+        mdb.cargarInformacion2(modelo2, 13, "SELECT id_muestra,tipocafe, forma, beneficio, dueño,  lote,certificado, peso, sacos, comunidad,Metodosecado, fecha_llegada, fechalote FROM bitacoralab where idlote=''and beneficio like'" + beneficio + "' and lote like'" + numsublote + "' and dueño like'" + dueño + "' ;");
+        String a = "";
+        a = mdb.devuelveUnDato("SELECT lote FROM bitacoralab where idlote=''and beneficio like'" + beneficio + "' and lote like'" + numsublote + "' and dueño like'" + dueño + "' ;");
         if (!a.equals("")) {
-            System.out.println("jalo");
-             jButton1.setEnabled(false); 
-    }else {
-             jButton1.setEnabled(true); 
-             System.out.println("jalon't");
+            
+            jButton1.setEnabled(false);
+        } else {
+            jButton1.setEnabled(true);
+            
         }
-}
- private void limpiar(JTable tabla) {
+    }
+
+    private void limpiar(JTable tabla) {
         while (tabla.getRowCount() > 0) {
             ((DefaultTableModel) tabla.getModel()).removeRow(0);
         }
     }
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
- recibir();       // TODO add your handling code here:
+        recibir();       // TODO add your handling code here:
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-   unificar();     // TODO add your handling code here:
+        unificar();     // TODO add your handling code here:
     }//GEN-LAST:event_jButton2ActionPerformed
-String dueño2="",numsublote2="",beneficio2="",id="", id2="";
+    String dueño2 = "", numsublote2 = "", beneficio2 = "", id = "", id2 = "";
     private void tablaM1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaM1MouseClicked
-       jButton2.setEnabled(true); 
-        jButton1.setEnabled(false); 
-beneficio2 = tablaM1.getValueAt(tablaM1.getSelectedRow(), 2) + "";
+        jButton2.setEnabled(true);
+        jButton1.setEnabled(false);
+        beneficio2 = tablaM1.getValueAt(tablaM1.getSelectedRow(), 2) + "";
         dueño2 = tablaM1.getValueAt(tablaM1.getSelectedRow(), 3) + "";
         numsublote2 = tablaM1.getValueAt(tablaM1.getSelectedRow(), 4) + "";
-   id=mdb.devuelveUnDato("select id_bitacora from bitacoralab where dueño='"+dueño2+"' and beneficio='"+beneficio2+"' and lote='"+numsublote2+"' and idlote='' ");// TODO add your handling code here:
-   id2=mdb.devuelveUnDato("select id_muestrasE from muestrasenviadas where dueño='"+dueño+"' and beneficio='"+beneficio+"' and lote='"+numsublote+"' ");
+        id = mdb.devuelveUnDato("select id_bitacora from bitacoralab where dueño='" + dueño2 + "' and beneficio='" + beneficio2 + "' and lote='" + numsublote2 + "' and idlote='' ");// TODO add your handling code here:
+        id2 = mdb.devuelveUnDato("select id_muestrasE from muestrasenviadas where dueño='" + dueño + "' and beneficio='" + beneficio + "' and lote='" + numsublote + "' ");
     }//GEN-LAST:event_tablaM1MouseClicked
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        jdn = new JdNmuestra(null, true, cn,Idioma);
+        jdn = new JdNmuestra(null, true, cn, Idioma);
         jdn.jpna = this;
         jdn.setVisible(true);   // TODO add your handling code here:
     }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
-        jdNuevaMuestra jd = new jdNuevaMuestra(null,true);
+        jdNuevaMuestra jd = new jdNuevaMuestra(null, true);
         jd.setVisible(true);
-        
+
     }//GEN-LAST:event_jButton4ActionPerformed
-public void unificar(){
-    mdb.actualizarBasicos("update bitacoralab set idlote='"+idlote+"' where id_bitacora="+id+";");
-    mdb.eliminardato("DELETE FROM muestrasenviadas WHERE id_muestrasE="+id2+";");
-     JOptionPane.showMessageDialog(null, "se ha unificado la informacion");
-     llenarTabla();
-     limpiar(tablaM1);
-}
-    public void recibir(){
-    String fecha="";
-     String[] datos = mdb.devuelveUnRow("select * from muestrasenviadas where idlote='"+idlote+"'",23).split(",");
-     for (int i = 0; i < 23; i++) {
-         System.out.println(datos[i]+"   '"+i+"'");
-        
+    public void unificar() {
+        mdb.actualizarBasicos("update bitacoralab set idlote='" + idlote + "' where id_bitacora=" + id + ";");
+        mdb.eliminardato("DELETE FROM muestrasenviadas WHERE id_muestrasE=" + id2 + ";");
+        JOptionPane.showMessageDialog(null, "se ha unificado la informacion");
+        llenarTabla();
+        limpiar(tablaM1);
     }
-     JDateChooser jd = new JDateChooser();
-String message ="Escoge una fecha de llegada:\n";
-Object[] params = {message,jd};
-JOptionPane.showConfirmDialog(null,params,"Fecha de llegada", JOptionPane.PLAIN_MESSAGE);
-SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy");
-fecha=sdf.format(((JDateChooser)params[1]).getDate());
-     int csm;
+
+    public void recibir() {
+        String fecha = "";
+        String[] datos = mdb.devuelveUnRow("select * from muestrasenviadas where idlote='" + idlote + "'", 23).split(",");
+        for (int i = 0; i < 23; i++) {
+            System.out.println(datos[i] + "   '" + i + "'");
+
+        }
+        JDateChooser jd = new JDateChooser();
+        String message = "Escoge una fecha de llegada:\n";
+        Object[] params = {message, jd};
+        JOptionPane.showConfirmDialog(null, params, "Fecha de llegada", JOptionPane.PLAIN_MESSAGE);
+        SimpleDateFormat sdf = new SimpleDateFormat("dd-MMM-yyyy");
+        fecha = sdf.format(((JDateChooser) params[1]).getDate());
+        int csm;
         if (mdb.devuelveUnDato("select id_muestra from bitacoralab order by id_muestra desc limit 1").equals("")) {
-            csm=1;
-        }else { csm = Integer.parseInt(mdb.devuelveUnDato("select id_muestra from bitacoralab order by id_muestra desc limit 1"));
-        csm = csm + 1;}  
-     mdb.insertarBasicos("insert into bitacoralab (id_bitacora,id_muestra,fecha_llegada,tipocafe,forma,beneficio,dueño,"
-                                                                + "lote,peso,sacos,comunidad,estatus,taza,aspecto,mezasig,Metodosecado,calidadcereza,pesomuestra,ubicacioncafe"
-                                                                + ",nomlote,predio,productor,fechalote,terminosecado,tomademuestra,fechacosecha,tomadapor,recibidapor,transportadapor,"
-                                                                + "certificado,idlote) values(null," + csm + ",'" + fecha + "','" + datos[2] + "','" + datos[3] + "',"
-                                                                + "'" + datos[4] + "','" + dueño + "','" + datos[6] + "','" + datos[7]+ "'"
-                                                                + ",'" + datos[8] + "','" + datos[9] + "','L','0','0','0','" + datos[11] + "','" + datos[12] + ""
-                                                                + "','" + datos[13] + "','" + datos[14] + "','',''"
-                                                                + ",'','" + datos[15] + "','" + datos[16] + "','" + datos[17] + "','" + datos[18] + "','" + datos[19] + "','" + datos[20] + "','" + datos[21] + "','" + datos[22] + "','" + datos[1] + "')");
-mdb.eliminardato("DELETE FROM muestrasenviadas WHERE id_muestrasE="+datos[0]+";");
- JOptionPane.showMessageDialog(null, "se ha recibido la muestra");
-llenarTabla();
- 
-}
+            csm = 1;
+        } else {
+            csm = Integer.parseInt(mdb.devuelveUnDato("select id_muestra from bitacoralab order by id_muestra desc limit 1"));
+            csm = csm + 1;
+        }
+        mdb.insertarBasicos("insert into bitacoralab (id_bitacora,id_muestra,fecha_llegada,tipocafe,forma,beneficio,dueño,"
+                + "lote,peso,sacos,comunidad,estatus,taza,aspecto,mezasig,Metodosecado,calidadcereza,pesomuestra,ubicacioncafe"
+                + ",nomlote,predio,productor,fechalote,terminosecado,tomademuestra,fechacosecha,tomadapor,recibidapor,transportadapor,"
+                + "certificado,idlote) values(null," + csm + ",'" + fecha + "','" + datos[2] + "','" + datos[3] + "',"
+                + "'" + datos[4] + "','" + dueño + "','" + datos[6] + "','" + datos[7] + "'"
+                + ",'" + datos[8] + "','" + datos[9] + "','L','0','0','0','" + datos[11] + "','" + datos[12] + ""
+                + "','" + datos[13] + "','" + datos[14] + "','',''"
+                + ",'','" + datos[15] + "','" + datos[16] + "','" + datos[17] + "','" + datos[18] + "','" + datos[19] + "','" + datos[20] + "','" + datos[21] + "','" + datos[22] + "','" + datos[1] + "')");
+        mdb.eliminardato("DELETE FROM muestrasenviadas WHERE id_muestrasE=" + datos[0] + ";");
+        JOptionPane.showMessageDialog(null, "se ha recibido la muestra");
+        llenarTabla();
+
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton jButton1;

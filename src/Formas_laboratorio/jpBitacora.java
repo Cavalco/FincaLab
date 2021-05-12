@@ -279,11 +279,11 @@ public class jpBitacora extends javax.swing.JPanel {
 
             },
             new String [] {
-                "# CSM", "Fecha de Llegada", "Proceso", "Forma", "Beneficio", "Dueño", "#Sub Lote", "Certificacion", "Peso KG", "# Sacos", "Comunidad", "Estatus", "Eval Aspecto", "Eval Taza", "Mezcla"
+                "# CSM", "Fecha de Llegada", "Proceso", "Forma", "Beneficio", "Dueño", "#Sub Lote", "Certificacion", "Peso KG", "# Sacos", "Comunidad", "Estatus", "Eval Aspecto", "Eval Taza", "Mezcla", "Title 16", "Title 17"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, true, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, true
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

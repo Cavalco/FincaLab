@@ -70,7 +70,7 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
         String[] datos10 = ml.cargarCombos("select concat(p.Nombre,' ',p.ApellidoPaterno,' ',p.ApellidoMaterno)\n"
                 + "from asignacionespersona a\n"
                 + "left join personaf p on (a.id_persona=p.ID)\n"
-                + "where a.puesto='Encargado de Beneficio'").split("¬");
+                + "where a.puesto='Encargado de Beneficio Húmedo'").split("¬");
         cmbTomada.setModel(new DefaultComboBoxModel((Object[]) datos10));
     }
 
@@ -238,7 +238,7 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
 
         jLabel25.setText("Tomada Por");
 
-        cmbTomada.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione..", "Jose Avelino Chavez", "", "Persona 3" }));
+        cmbTomada.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         cmbRecibida.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione..", "Carlos Bustamante", "Jacob Donaghy", "Kala Wolfe" }));
 

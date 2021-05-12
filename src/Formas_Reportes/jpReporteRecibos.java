@@ -143,7 +143,7 @@ public class jpReporteRecibos extends javax.swing.JPanel {
 
     public void llenarTabla() {
         limpiar(tablaRecibos);
-        String[] bds = {"fincalab_cafesumex", "fincalab_basilio", "fincalab_procaa", "fincalab_caldio", "fincalab_astal", "fincalab_cafeico", "fincalab_cuerno", "fincalab_tambor"};
+        String[] bds = {"fincalab_basilio", "fincalab_procaa", "fincalab_caldio", "fincalab_astal", "fincalab_cuerno", "fincalab_malinal"};
         for (int i = 0; i < bds.length; i++) {
             cn = (new Conexion()).conectar(bds[i]);
             mdb = new metodosDatosBasicos(cn, Idioma);

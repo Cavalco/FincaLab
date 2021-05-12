@@ -14,6 +14,7 @@ import java.text.SimpleDateFormat;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import static java.lang.Integer.parseInt;
+import java.text.DecimalFormat;
 import javax.swing.JFrame;
 
 /**
@@ -31,6 +32,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
     Connection cn;
     String csm = "", comunindad = "", tipo = "", id, forma = "";
     jpBitacora jpDP;
+    DecimalFormat df;
 
     public jdEvaluacion(Connection cn, String id, String csm, String comunindad, String tipoc, String forma, String calcer, String idioma) {
         initComponents();
@@ -49,6 +51,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         lblForma.setText(forma);
         lblCalC.setText(calcer);
         mdb = new metodosLaboratorio(cn, "");
+
+        df = new DecimalFormat("#.00");
+
     }
 
     //Metodo para guardar la evaluación
@@ -59,15 +64,22 @@ public class jdEvaluacion extends javax.swing.JFrame {
         } //se extrae la fecha del calendario y se guarda en una variable 
         String g[] = new String[3];
         String estatus = "A";
-        g[0] = "insert into cribas values (null," + id + ",'19','" + A1.getText() + "," + B1.getText() + "," + C1.getText() + "," + D1.getText() + "," + E1.getText() + "," + F1.getText() + "," + G1.getText() + "," + H1.getText() + "," + I1.getText() + "," + J1.getText() + "," + K1.getText() + "," + L1.getText() + "," + M1.getText() + "," + N1.getText() + "," + O1.getText() + ","
-                + "" + P1.getText() + "," + Q1.getText() + "," + R1.getText() + "," + S1.getText() + "," + T1.getText() + "," + U1.getText() + "," + V1.getText() + "," + W1.getText() + "," + X1.getText() + "'),(null," + id + ",'18','" + A2.getText() + "," + B2.getText() + "," + C2.getText() + "," + D2.getText() + "," + E2.getText() + "," + F2.getText() + "," + G2.getText() + "," + H2.getText() + "," + I2.getText() + "," + J2.getText() + "," + K2.getText() + "," + L2.getText() + "," + M2.getText() + "," + N2.getText() + "," + O2.getText() + ","
-                + "" + P2.getText() + "," + Q2.getText() + "," + R2.getText() + "," + S2.getText() + "," + T2.getText() + "," + U2.getText() + "," + V2.getText() + "," + W2.getText() + "," + X2.getText() + "'),(null," + id + ",'17','" + A3.getText() + "," + B3.getText() + "," + C3.getText() + "," + D3.getText() + "," + E3.getText() + "," + F3.getText() + "," + G3.getText() + "," + H3.getText() + "," + I3.getText() + "," + J3.getText() + "," + K3.getText() + "," + L3.getText() + "," + M3.getText() + "," + N3.getText() + "," + O3.getText() + ","
-                + "" + P3.getText() + "," + Q3.getText() + "," + R3.getText() + "," + S3.getText() + "," + T3.getText() + "," + U3.getText() + "," + V3.getText() + "," + W3.getText() + "," + X3.getText() + "'),(null," + id + ",'16','" + A4.getText() + "," + B4.getText() + "," + C4.getText() + "," + D4.getText() + "," + E4.getText() + "," + F4.getText() + "," + G4.getText() + "," + H4.getText() + "," + I4.getText() + "," + J4.getText() + "," + K4.getText() + "," + L4.getText() + "," + M4.getText() + "," + N4.getText() + "," + O4.getText() + ","
-                + "" + P4.getText() + "," + Q4.getText() + "," + R4.getText() + "," + S4.getText() + "," + T4.getText() + "," + U4.getText() + "," + V4.getText() + "," + W4.getText() + "," + X4.getText() + "'),(null," + id + ",'15','" + A5.getText() + "," + B5.getText() + "," + C5.getText() + "," + D5.getText() + "," + E5.getText() + "," + F5.getText() + "," + G5.getText() + "," + H5.getText() + "," + I5.getText() + "," + J5.getText() + "," + K5.getText() + "," + L5.getText() + "," + M5.getText() + "," + N5.getText() + "," + O5.getText() + ","
-                + "" + P5.getText() + "," + Q5.getText() + "," + R5.getText() + "," + S5.getText() + "," + T5.getText() + "," + U5.getText() + "," + V5.getText() + "," + W5.getText() + "," + X5.getText() + "'),(null," + id + ",'F','" + A6.getText() + "," + B6.getText() + "," + C6.getText() + "," + D6.getText() + "," + E6.getText() + "," + F6.getText() + "," + G6.getText() + "," + H6.getText() + "," + I6.getText() + "," + J6.getText() + "," + K6.getText() + "," + L6.getText() + "," + M6.getText() + "," + N6.getText() + "," + O6.getText() + ","
-                + "" + P6.getText() + "," + Q6.getText() + "," + R6.getText() + "," + S6.getText() + "," + T6.getText() + "," + U6.getText() + "," + V6.getText() + "," + W6.getText() + "," + X6.getText() + "'),(null," + id + ",'TOTAL','" + AT.getText() + "," + BT.getText() + "," + CT.getText() + "," + DT.getText() + "," + ET.getText() + "," + FT.getText() + "," + GT.getText() + "," + HT.getText() + "," + IT.getText() + "," + JT.getText() + "," + KT.getText() + "," + LT.getText() + "," + MT.getText() + "," + NT.getText() + "," + OT.getText() + ","
+        g[0] = "insert into cribas values (null," + id + ",'19',"
+                + "'" + A1.getText() + "," + B1.getText() + "," + C1.getText() + "," + D1.getText() + "," + E1.getText() + "," + F1.getText() + "," + G1.getText() + "," + H1.getText() + "," + I1.getText() + ","+ O1.getText() + "," + J1.getText() + "," + K1.getText() + "," + L1.getText() + "," + M1.getText() + "," + N1.getText() + "," 
+                + "" + P1.getText() + "," + Q1.getText() + "," + R1.getText() + "," + S1.getText() + "," + T1.getText() + "," + U1.getText() + "," + V1.getText() + "," + W1.getText() + "," + X1.getText() + "'),(null," + id + ",'18','" + A2.getText() + "," + B2.getText() + "," + C2.getText() + "," + D2.getText() + "," + E2.getText() + "," + F2.getText() + "," + G2.getText() + "," + H2.getText() + "," + I2.getText() + ","+ O2.getText() + ","   + J2.getText() + "," + K2.getText() + "," + L2.getText() + "," + M2.getText() + "," + N2.getText() + "," 
+                + "" + P2.getText() + "," + Q2.getText() + "," + R2.getText() + "," + S2.getText() + "," + T2.getText() + "," + U2.getText() + "," + V2.getText() + "," + W2.getText() + "," + X2.getText() + "'),(null," + id + ",'17','" + A3.getText() + "," + B3.getText() + "," + C3.getText() + "," + D3.getText() + "," + E3.getText() + "," + F3.getText() + "," + G3.getText() + "," + H3.getText() + "," + I3.getText() + ","+ O3.getText() + "," + J3.getText() + "," + K3.getText() + "," + L3.getText() + "," + M3.getText() + "," + N3.getText() + "," 
+                + "" + P3.getText() + "," + Q3.getText() + "," + R3.getText() + "," + S3.getText() + "," + T3.getText() + "," + U3.getText() + "," + V3.getText() + "," + W3.getText() + "," + X3.getText() + "'),(null," + id + ",'16','" + A4.getText() + "," + B4.getText() + "," + C4.getText() + "," + D4.getText() + "," + E4.getText() + "," + F4.getText() + "," + G4.getText() + "," + H4.getText() + "," + I4.getText() + ","+ O4.getText() + "," + J4.getText() + "," + K4.getText() + "," + L4.getText() + "," + M4.getText() + "," + N4.getText() + "," 
+                + "" + P4.getText() + "," + Q4.getText() + "," + R4.getText() + "," + S4.getText() + "," + T4.getText() + "," + U4.getText() + "," + V4.getText() + "," + W4.getText() + "," + X4.getText() + "'),(null," + id + ",'15','" + A5.getText() + "," + B5.getText() + "," + C5.getText() + "," + D5.getText() + "," + E5.getText() + "," + F5.getText() + "," + G5.getText() + "," + H5.getText() + "," + I5.getText() + ","+ O5.getText() + "," + J5.getText() + "," + K5.getText() + "," + L5.getText() + "," + M5.getText() + "," + N5.getText() + "," 
+                + "" + P5.getText() + "," + Q5.getText() + "," + R5.getText() + "," + S5.getText() + "," + T5.getText() + "," + U5.getText() + "," + V5.getText() + "," + W5.getText() + "," + X5.getText() + "'),(null," + id + ",'F','" + A6.getText() + "," + B6.getText() + "," + C6.getText() + "," + D6.getText() + "," + E6.getText() + "," + F6.getText() + "," + G6.getText() + "," + H6.getText() + "," + I6.getText() + ","+ O6.getText() + "," + J6.getText() + "," + K6.getText() + "," + L6.getText() + "," + M6.getText() + "," + N6.getText() + "," 
+                + "" + P6.getText() + "," + Q6.getText() + "," + R6.getText() + "," + S6.getText() + "," + T6.getText() + "," + U6.getText() + "," + V6.getText() + "," + W6.getText() + "," + X6.getText() + "'),(null," + id + ",'TOTAL','" + AT.getText() + "," + BT.getText() + "," + CT.getText() + "," + DT.getText() + "," + ET.getText() + "," + FT.getText() + "," + GT.getText() + "," + HT.getText() + "," + IT.getText() + ","+ OT.getText() + "," + JT.getText() + "," + KT.getText() + "," + LT.getText() + "," + MT.getText() + "," + NT.getText() + "," 
                 + "" + PT.getText() + "," + QT.getText() + "," + RT.getText() + "," + ST.getText() + "," + TT.getText() + "," + UT.getText() + "," + VT.getText() + "," + WT.getText() + "," + XT.getText() + "')";
-        g[1] = "insert into datosev values (null," + id + ",'" + fecha + "'," + spUniOro.getValue() + ",'" + txtHumedadOro.getText() + "','" + txtHumedadCas.getText() + "'," + spColorOro.getValue() + ",'" + cbEvaluador.getSelectedItem() + "','" + lblPuntuacion.getText() + "'," + id + ",'" + txtPeso.getText() + "','" + txtDenOro.getText() + "')";
+
+        g[1] = "insert into datosev values (null," + id + ","
+                + "'" + fecha + "'," + spUniOro.getValue() + ","
+                + "'" + txtHumedadOro.getText() + "','" + txtHumedadCas.getText() + "',"
+                + "" + spColorOro.getValue() + ",'" + cbEvaluador.getSelectedItem() + "',"
+                + "'" + lblPuntuacion.getText() + "'," + id + ",'" + txtPeso.getText() + "',"
+                + "'" + txtDenOro.getText() + "','" + jLabel10.getText() + "' )";
         System.out.println(csm + " " + comunindad);
         String taza = mdb.devuelveUnDato("select taza from bitacoralab "
                 + "where (id_muestra='" + csm + "' and comunidad='" + comunindad + "')");
@@ -107,16 +119,17 @@ public class jdEvaluacion extends javax.swing.JFrame {
         v[0] = Integer.parseInt(BT.getText());
         v[1] = Integer.parseInt(CT.getText());
         v[2] = Integer.parseInt(DT.getText());
-        v[3] = Integer.parseInt(FT.getText());
-        v[4] = Integer.parseInt(GT.getText());
-        v[5] = Integer.parseInt(HT.getText());
-        v[6] = Integer.parseInt(IT.getText());
-        v[7] = Integer.parseInt(JT.getText());
-        v[8] = Integer.parseInt(KT.getText());
-        v[9] = Integer.parseInt(LT.getText());
-        v[10] = Integer.parseInt(MT.getText());
+        v[3] = Integer.parseInt(ET.getText());
+        v[4] = Integer.parseInt(FT.getText());
+        v[5] = Integer.parseInt(GT.getText());
+        v[6] = Integer.parseInt(HT.getText());
+        v[7] = Integer.parseInt(OT.getText());
+        v[8] = Integer.parseInt(JT.getText());
+        v[9] = Integer.parseInt(KT.getText());
+        v[10] = Integer.parseInt(LT.getText());
+        v[11] = Integer.parseInt(MT.getText());
         v[12] = Integer.parseInt(NT.getText());
-        v[13] = Integer.parseInt(OT.getText());
+        v[13] = Integer.parseInt(IT.getText());
         v[14] = Integer.parseInt(PT.getText());
         v[15] = Integer.parseInt(QT.getText());
         v[16] = Integer.parseInt(RT.getText());
@@ -143,11 +156,16 @@ public class jdEvaluacion extends javax.swing.JFrame {
         return Integer.parseInt(strnum.substring(0, indice));
     }
 
+    public void rendimiento() {
+        double rendimiento = (Double.parseDouble(AT.getText()) * 100) / Double.parseDouble(txtPeso.getText());
+        jLabel10.setText(df.format(rendimiento) + "");
+    }
+
     //Operacion con las cribas
     public void suma(int num) {
         try {
 
-            double formula, Pe, ad;
+            double formula, Pe, ad, suma;
             int v[] = new int[6], vt, res, av;
             Pe = Integer.parseInt(txtPeso.getText());
             switch (num) {
@@ -172,10 +190,14 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[5] = Integer.parseInt(B6.getText());
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    av = vt / 5;
-                    ad = 350 / Pe;
-                    System.out.println("av=" + av + "ad=" + ad);
-                    formula = (350 / Pe) * (vt / 5);
+
+                    suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
+                            + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
+
+                    formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
+
+                    formula = Double.parseDouble(df.format(formula)) / 5;
+
                     System.out.println(formula);
                     res = trunc(formula);
                     System.out.println(res);
@@ -198,7 +220,13 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                    formula = (350 / Pe) * (vt / 10);
+                    suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
+                            + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
+
+                    formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
+
+                    formula = formula / 10;
+
                     System.out.println("formula = " + formula);
                     res = trunc(formula);
                     System.out.println("res = " + res);
@@ -219,7 +247,15 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                    formula = (350 / Pe) * (vt / 1);
+                    suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
+                            + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
+
+                    formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
+
+                    formula = formula / 1;
+
+                    System.out.println("(350/" + AT.getText() + ") * (" + AT.getText() + "/" + suma + ") * " + vt);
+
                     res = trunc(formula);
                     if (res == 0) {
                         DT.setText("0");
@@ -238,7 +274,13 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                    formula = (350 / Pe) * (vt / 3);
+                    suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
+                            + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
+
+                    formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
+
+                    formula = formula / 3;
+
                     res = trunc(formula);
                     if (res == 0) {
                         ET.setText("0");
@@ -257,7 +299,13 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                    formula = (350 / Pe) * (vt / 1);
+                    suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
+                            + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
+
+                    formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
+
+                    formula = formula / 1;
+
                     res = trunc(formula);
                     if (res == 0) {
                         FT.setText("0");
@@ -278,7 +326,13 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                    formula = (350 / Pe) * (vt / 3);
+                    suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
+                            + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
+
+                    formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
+
+                    formula = formula / 3;
+
                     res = trunc(formula);
                     if (res == 0) {
                         GT.setText("0");
@@ -297,7 +351,13 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                    formula = (350 / Pe) * (vt / 5);
+                    suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
+                            + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
+
+                    formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
+
+                    formula = formula / 5;
+
                     res = trunc(formula);
                     if (res == 0) {
                         HT.setText("0");
@@ -316,7 +376,13 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                    formula = (350 / Pe) * (vt / 5);
+                    suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
+                            + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
+
+                    formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
+
+                    formula = formula / 5;
+
                     res = trunc(formula);
                     if (res == 0) {
                         IT.setText("0");
@@ -334,7 +400,14 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[5] = Integer.parseInt(J6.getText());
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    formula = (350 / Pe) * (vt / 3);
+
+                    suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
+                            + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
+
+                    formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
+
+                    formula = formula / 5;
+
                     res = trunc(formula);
                     if (res == 0) {
                         JT.setText("0");
@@ -353,7 +426,13 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                    formula = (350 / Pe) * (vt / 5);
+                    suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
+                            + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
+
+                    formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
+
+                    formula = formula / 5;
+
                     res = trunc(formula);
                     if (res == 0) {
                         KT.setText("0");
@@ -372,7 +451,13 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                    formula = (350 / Pe) * (vt / 5);
+                    suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
+                            + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
+
+                    formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
+
+                    formula = formula / 5;
+
                     res = trunc(formula);
                     if (res == 0) {
                         LT.setText("0");
@@ -391,7 +476,13 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                    formula = (350 / Pe) * (vt / 5);
+                    suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
+                            + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
+
+                    formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
+
+                    formula = formula / 5;
+
                     res = trunc(formula);
                     if (res == 0) {
                         MT.setText("0");
@@ -410,7 +501,13 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                    formula = (350 / Pe) * (vt / 5);
+                    suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
+                            + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
+
+                    formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
+
+                    formula = formula / 1;
+
                     res = trunc(formula);
                     if (res == 0) {
                         NT.setText("0");
@@ -428,7 +525,14 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[5] = Integer.parseInt(O6.getText());
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    formula = (350 / Pe) * (vt / 1);
+
+                    suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
+                            + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
+
+                    formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
+
+                    formula = formula / 3;
+
                     res = trunc(formula);
                     if (res == 0) {
                         OT.setText("0");
@@ -446,7 +550,14 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[5] = Integer.parseInt(P6.getText());
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    formula = (350 / Pe) * (vt / 5);
+
+                    suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
+                            + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
+
+                    formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
+
+                    formula = formula / 5;
+
                     res = trunc(formula);
                     if (res == 0) {
                         PT.setText("0");
@@ -464,7 +575,14 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[5] = Integer.parseInt(Q6.getText());
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    formula = (350 / Pe) * (vt / 5);
+
+                    suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
+                            + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
+
+                    formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
+
+                    formula = formula / 5;
+
                     res = trunc(formula);
                     if (res == 0) {
                         QT.setText("0");
@@ -482,7 +600,14 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[5] = Integer.parseInt(R6.getText());
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    formula = (350 / Pe) * (vt / 5);
+
+                    suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
+                            + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
+
+                    formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
+
+                    formula = formula / 5;
+
                     res = trunc(formula);
                     if (res == 0) {
                         RT.setText("0");
@@ -500,7 +625,14 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[5] = Integer.parseInt(S6.getText());
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    formula = (350 / Pe) * (vt / 5);
+
+                    suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
+                            + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
+
+                    formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
+
+                    formula = formula / 5;
+
                     res = trunc(formula);
                     if (res == 0) {
                         ST.setText("0");
@@ -519,7 +651,13 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                    formula = (350 / Pe) * (vt / 5);
+                    suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
+                            + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
+
+                    formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
+
+                    formula = formula / 5;
+
                     res = trunc(formula);
                     if (res == 0) {
                         TT.setText("0");
@@ -538,7 +676,13 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                    formula = (350 / Pe) * (vt / 5);
+                    suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
+                            + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
+
+                    formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
+
+                    formula = formula / 5;
+
                     res = trunc(formula);
                     if (res == 0) {
                         UT.setText("0");
@@ -557,7 +701,13 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                    formula = (350 / Pe) * (vt / 5);
+                    suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
+                            + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
+
+                    formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
+
+                    formula = formula / 5;
+
                     res = trunc(formula);
                     if (res == 0) {
                         VT.setText("0");
@@ -576,7 +726,13 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                    formula = (350 / Pe) * (vt / 5);
+                    suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
+                            + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
+
+                    formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
+
+                    formula = formula / 5;
+
                     res = trunc(formula);
                     if (res == 0) {
                         WT.setText("0");
@@ -595,7 +751,13 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                    formula = (350 / Pe) * (vt / 1);
+                    suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
+                            + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
+
+                    formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
+
+                    formula = formula / 1;
+
                     res = trunc(formula);
                     if (res == 0) {
                         XT.setText("0");
@@ -724,13 +886,6 @@ public class jdEvaluacion extends javax.swing.JFrame {
         H5 = new javax.swing.JTextField();
         H6 = new javax.swing.JTextField();
         HT = new javax.swing.JTextField();
-        O1 = new javax.swing.JTextField();
-        O2 = new javax.swing.JTextField();
-        O3 = new javax.swing.JTextField();
-        O4 = new javax.swing.JTextField();
-        O5 = new javax.swing.JTextField();
-        O6 = new javax.swing.JTextField();
-        OT = new javax.swing.JTextField();
         I1 = new javax.swing.JTextField();
         I2 = new javax.swing.JTextField();
         I3 = new javax.swing.JTextField();
@@ -738,6 +893,13 @@ public class jdEvaluacion extends javax.swing.JFrame {
         I5 = new javax.swing.JTextField();
         I6 = new javax.swing.JTextField();
         IT = new javax.swing.JTextField();
+        O1 = new javax.swing.JTextField();
+        O2 = new javax.swing.JTextField();
+        O3 = new javax.swing.JTextField();
+        O4 = new javax.swing.JTextField();
+        O5 = new javax.swing.JTextField();
+        O6 = new javax.swing.JTextField();
+        OT = new javax.swing.JTextField();
         J1 = new javax.swing.JTextField();
         J2 = new javax.swing.JTextField();
         J3 = new javax.swing.JTextField();
@@ -870,6 +1032,8 @@ public class jdEvaluacion extends javax.swing.JFrame {
         txtDenOro = new javax.swing.JTextField();
         jLabel14 = new javax.swing.JLabel();
         lblPuntuacion = new javax.swing.JLabel();
+        jLabel9 = new javax.swing.JLabel();
+        jLabel10 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -976,7 +1140,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             }
         });
 
+        AT.setEditable(false);
         AT.setText("0");
+        AT.setEnabled(false);
         AT.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 ATKeyReleased(evt);
@@ -1037,6 +1203,11 @@ public class jdEvaluacion extends javax.swing.JFrame {
         jLabel46.setText("Materia extra:");
 
         B1.setText("0");
+        B1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                B1ActionPerformed(evt);
+            }
+        });
         B1.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 B1KeyReleased(evt);
@@ -1078,7 +1249,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             }
         });
 
+        BT.setEditable(false);
         BT.setText("0");
+        BT.setEnabled(false);
 
         C1.setText("0");
         C1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1122,7 +1295,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             }
         });
 
+        CT.setEditable(false);
         CT.setText("0");
+        CT.setEnabled(false);
 
         D1.setText("0");
         D1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1166,7 +1341,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             }
         });
 
+        DT.setEditable(false);
         DT.setText("0");
+        DT.setEnabled(false);
 
         E1.setText("0");
         E1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1210,7 +1387,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             }
         });
 
+        ET.setEditable(false);
         ET.setText("0");
+        ET.setEnabled(false);
 
         F1.setText("0");
         F1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1254,7 +1433,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             }
         });
 
+        FT.setEditable(false);
         FT.setText("0");
+        FT.setEnabled(false);
 
         G1.setText("0");
         G1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1298,7 +1479,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             }
         });
 
+        GT.setEditable(false);
         GT.setText("0");
+        GT.setEnabled(false);
 
         H1.setText("0");
         H1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1342,51 +1525,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             }
         });
 
+        HT.setEditable(false);
         HT.setText("0");
-
-        O1.setText("0");
-        O1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                O1KeyReleased(evt);
-            }
-        });
-
-        O2.setText("0");
-        O2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                O2KeyReleased(evt);
-            }
-        });
-
-        O3.setText("0");
-        O3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                O3KeyReleased(evt);
-            }
-        });
-
-        O4.setText("0");
-        O4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                O4KeyReleased(evt);
-            }
-        });
-
-        O5.setText("0");
-        O5.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                O5KeyReleased(evt);
-            }
-        });
-
-        O6.setText("0");
-        O6.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                O6KeyReleased(evt);
-            }
-        });
-
-        OT.setText("0");
+        HT.setEnabled(false);
 
         I1.setText("0");
         I1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1430,7 +1571,55 @@ public class jdEvaluacion extends javax.swing.JFrame {
             }
         });
 
+        IT.setEditable(false);
         IT.setText("0");
+        IT.setEnabled(false);
+
+        O1.setText("0");
+        O1.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                O1KeyReleased(evt);
+            }
+        });
+
+        O2.setText("0");
+        O2.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                O2KeyReleased(evt);
+            }
+        });
+
+        O3.setText("0");
+        O3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                O3KeyReleased(evt);
+            }
+        });
+
+        O4.setText("0");
+        O4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                O4KeyReleased(evt);
+            }
+        });
+
+        O5.setText("0");
+        O5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                O5KeyReleased(evt);
+            }
+        });
+
+        O6.setText("0");
+        O6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                O6KeyReleased(evt);
+            }
+        });
+
+        OT.setEditable(false);
+        OT.setText("0");
+        OT.setEnabled(false);
 
         J1.setText("0");
         J1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1474,7 +1663,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             }
         });
 
+        JT.setEditable(false);
         JT.setText("0");
+        JT.setEnabled(false);
 
         K1.setText("0");
         K1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1518,7 +1709,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             }
         });
 
+        KT.setEditable(false);
         KT.setText("0");
+        KT.setEnabled(false);
 
         L1.setText("0");
         L1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1562,7 +1755,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             }
         });
 
+        LT.setEditable(false);
         LT.setText("0");
+        LT.setEnabled(false);
 
         M1.setText("0");
         M1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1606,7 +1801,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             }
         });
 
+        MT.setEditable(false);
         MT.setText("0");
+        MT.setEnabled(false);
 
         N1.setText("0");
         N1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1650,7 +1847,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             }
         });
 
+        NT.setEditable(false);
         NT.setText("0");
+        NT.setEnabled(false);
 
         P1.setText("0");
         P1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1694,7 +1893,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             }
         });
 
+        PT.setEditable(false);
         PT.setText("0");
+        PT.setEnabled(false);
 
         Q1.setText("0");
         Q1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1738,7 +1939,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             }
         });
 
+        QT.setEditable(false);
         QT.setText("0");
+        QT.setEnabled(false);
 
         R1.setText("0");
         R1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1782,7 +1985,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             }
         });
 
+        RT.setEditable(false);
         RT.setText("0");
+        RT.setEnabled(false);
 
         S1.setText("0");
         S1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1826,7 +2031,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             }
         });
 
+        ST.setEditable(false);
         ST.setText("0");
+        ST.setEnabled(false);
 
         T1.setText("0");
         T1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1870,7 +2077,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             }
         });
 
+        TT.setEditable(false);
         TT.setText("0");
+        TT.setEnabled(false);
 
         U1.setText("0");
         U1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1914,7 +2123,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             }
         });
 
+        UT.setEditable(false);
         UT.setText("0");
+        UT.setEnabled(false);
 
         V1.setText("0");
         V1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1958,7 +2169,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             }
         });
 
+        VT.setEditable(false);
         VT.setText("0");
+        VT.setEnabled(false);
 
         W1.setText("0");
         W1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -2002,7 +2215,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             }
         });
 
+        WT.setEditable(false);
         WT.setText("0");
+        WT.setEnabled(false);
 
         X1.setText("0");
         X1.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -2046,7 +2261,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             }
         });
 
+        XT.setEditable(false);
         XT.setText("0");
+        XT.setEnabled(false);
 
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
@@ -2055,7 +2272,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
             .addGroup(jPanel4Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jSeparator1, javax.swing.GroupLayout.DEFAULT_SIZE, 433, Short.MAX_VALUE)
+                    .addComponent(jSeparator1)
                     .addComponent(jSeparator10, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2098,18 +2315,6 @@ public class jdEvaluacion extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(J6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel4Layout.createSequentialGroup()
-                                        .addComponent(I1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(I2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(I3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(I4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(I5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addGap(18, 18, 18)
-                                        .addComponent(I6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addGroup(jPanel4Layout.createSequentialGroup()
                                         .addComponent(O1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(O2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2121,6 +2326,18 @@ public class jdEvaluacion extends javax.swing.JFrame {
                                         .addComponent(O5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(O6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(jPanel4Layout.createSequentialGroup()
+                                        .addComponent(I1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(I2, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(I3, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(I4, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(I5, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addGap(18, 18, 18)
+                                        .addComponent(I6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel4Layout.createSequentialGroup()
                                         .addComponent(H1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
@@ -2222,19 +2439,19 @@ public class jdEvaluacion extends javax.swing.JFrame {
                                                 .addComponent(F6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(DT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(CT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(ET, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(DT, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(CT, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(ET, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGroup(jPanel4Layout.createSequentialGroup()
                                         .addGap(1, 1, 1)
-                                        .addComponent(FT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                    .addComponent(JT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(IT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(OT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(GT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(HT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(KT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(BT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(FT, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(JT, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(OT, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(IT, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(GT, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(HT, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(KT, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(BT, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(jPanel4Layout.createSequentialGroup()
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2302,12 +2519,12 @@ public class jdEvaluacion extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(QT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(PT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(QT, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(PT, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                        .addComponent(NT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(MT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addComponent(LT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                                        .addComponent(NT, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(MT, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(LT, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                                 .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel4Layout.createSequentialGroup()
                                     .addComponent(T1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2322,7 +2539,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
                                     .addGap(18, 18, 18)
                                     .addComponent(T6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(18, 18, 18)
-                                    .addComponent(TT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(TT, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel4Layout.createSequentialGroup()
                                         .addComponent(R1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2337,7 +2554,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(R6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(RT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(RT, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel4Layout.createSequentialGroup()
                                         .addComponent(S1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
@@ -2351,7 +2568,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(S6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(ST, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(ST, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel4Layout.createSequentialGroup()
                                         .addComponent(U1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
@@ -2365,7 +2582,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(U6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(UT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(UT, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel4Layout.createSequentialGroup()
                                         .addComponent(V1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
@@ -2379,7 +2596,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(V6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(VT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(VT, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel4Layout.createSequentialGroup()
                                         .addComponent(W1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
@@ -2393,7 +2610,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(W6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(WT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                        .addComponent(WT, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel4Layout.createSequentialGroup()
                                         .addComponent(X1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
@@ -2407,7 +2624,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
                                         .addGap(18, 18, 18)
                                         .addComponent(X6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
-                                        .addComponent(XT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))))))
+                                        .addComponent(XT, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                     .addComponent(jLabel41)
                     .addComponent(jLabel43)
                     .addComponent(jLabel44)
@@ -2446,8 +2663,8 @@ public class jdEvaluacion extends javax.swing.JFrame {
                         .addGap(18, 18, 18)
                         .addComponent(A6, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(AT, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 14, Short.MAX_VALUE))
+                        .addComponent(AT, javax.swing.GroupLayout.PREFERRED_SIZE, 45, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 53, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2542,21 +2759,21 @@ public class jdEvaluacion extends javax.swing.JFrame {
                             .addComponent(jLabel30))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(O1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(O2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(O3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(O4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(O5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(O6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel31))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(I1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(I2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(I3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(I4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(I5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(I6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel31))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(O1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(O2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(O3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(O4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(O5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(O6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel32))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -2586,9 +2803,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(HT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(OT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(IT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(OT, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -2840,7 +3057,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
         jLabel12.setText("Evaluador");
 
-        cbEvaluador.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "James Kosalos", "Jacob Frankel", "Carlos bustamante", "Gigi Mengistu", "Tom Bennett" }));
+        cbEvaluador.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione..", "Carlos Bustamante", "Daniel Bustamante", "Kala Wolfe", "Jacob Daniel Donaghy" }));
 
         jLabel13.setText("Densidad En Oro");
 
@@ -2848,6 +3065,10 @@ public class jdEvaluacion extends javax.swing.JFrame {
         jLabel14.setText("Puntuación");
 
         lblPuntuacion.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+
+        jLabel9.setText("Rendimiento");
+
+        jLabel10.setText("-");
 
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
@@ -2885,9 +3106,13 @@ public class jdEvaluacion extends javax.swing.JFrame {
                             .addComponent(jLabel13))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel14)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel9))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblPuntuacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(lblPuntuacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -2935,7 +3160,11 @@ public class jdEvaluacion extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblPuntuacion, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel14))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jLabel10))
+                .addContainerGap())
         );
 
         jLabel56.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
@@ -2956,7 +3185,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jLabel50)
-                        .addContainerGap(619, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel8)
@@ -2966,14 +3195,13 @@ public class jdEvaluacion extends javax.swing.JFrame {
                                 .addComponent(jLabel56, javax.swing.GroupLayout.Alignment.LEADING)))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel7)
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel7)
-                                .addGap(409, 409, 409))
-                            .addComponent(jScrollPane1))
-                        .addGap(10, 10, 10))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addContainerGap())))
+                                .addGap(15, 15, 15)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 0, Short.MAX_VALUE))
+                    .addComponent(jPanel6, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -2990,11 +3218,11 @@ public class jdEvaluacion extends javax.swing.JFrame {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addGap(42, 42, 42)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 522, Short.MAX_VALUE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -3026,31 +3254,37 @@ public class jdEvaluacion extends javax.swing.JFrame {
     private void A1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A1KeyReleased
         // TODO add your handling code here:
         suma(1);
+        rendimiento();
     }//GEN-LAST:event_A1KeyReleased
 
     private void A2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A2KeyReleased
         // TODO add your handling code here:
         suma(1);
+        rendimiento();
     }//GEN-LAST:event_A2KeyReleased
 
     private void A3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A3KeyReleased
         // TODO add your handling code here:
         suma(1);
+        rendimiento();
     }//GEN-LAST:event_A3KeyReleased
 
     private void A4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A4KeyReleased
         // TODO add your handling code here:
         suma(1);
+        rendimiento();
     }//GEN-LAST:event_A4KeyReleased
 
     private void A5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A5KeyReleased
         // TODO add your handling code here:
         suma(1);
+        rendimiento();
     }//GEN-LAST:event_A5KeyReleased
 
     private void A6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A6KeyReleased
         // TODO add your handling code here:
         suma(1);
+        rendimiento();
     }//GEN-LAST:event_A6KeyReleased
 
     private void ATKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_ATKeyReleased
@@ -3272,36 +3506,6 @@ public class jdEvaluacion extends javax.swing.JFrame {
         suma(8);
     }//GEN-LAST:event_H6KeyReleased
 
-    private void O1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_O1KeyReleased
-        // TODO add your handling code here:
-        suma(9);
-    }//GEN-LAST:event_O1KeyReleased
-
-    private void O2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_O2KeyReleased
-        // TODO add your handling code here:
-        suma(9);
-    }//GEN-LAST:event_O2KeyReleased
-
-    private void O3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_O3KeyReleased
-        // TODO add your handling code here:
-        suma(9);
-    }//GEN-LAST:event_O3KeyReleased
-
-    private void O4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_O4KeyReleased
-        // TODO add your handling code here:
-        suma(9);
-    }//GEN-LAST:event_O4KeyReleased
-
-    private void O5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_O5KeyReleased
-        // TODO add your handling code here:
-        suma(9);
-    }//GEN-LAST:event_O5KeyReleased
-
-    private void O6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_O6KeyReleased
-        // TODO add your handling code here:
-        suma(9);
-    }//GEN-LAST:event_O6KeyReleased
-
     private void I1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_I1KeyReleased
         // TODO add your handling code here:
         suma(9);
@@ -3331,6 +3535,36 @@ public class jdEvaluacion extends javax.swing.JFrame {
         // TODO add your handling code here:
         suma(9);
     }//GEN-LAST:event_I6KeyReleased
+
+    private void O1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_O1KeyReleased
+        // TODO add your handling code here:
+        suma(15);
+    }//GEN-LAST:event_O1KeyReleased
+
+    private void O2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_O2KeyReleased
+        // TODO add your handling code here:
+        suma(15);
+    }//GEN-LAST:event_O2KeyReleased
+
+    private void O3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_O3KeyReleased
+        // TODO add your handling code here:
+        suma(15);
+    }//GEN-LAST:event_O3KeyReleased
+
+    private void O4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_O4KeyReleased
+        // TODO add your handling code here:
+        suma(15);
+    }//GEN-LAST:event_O4KeyReleased
+
+    private void O5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_O5KeyReleased
+        // TODO add your handling code here:
+        suma(15);
+    }//GEN-LAST:event_O5KeyReleased
+
+    private void O6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_O6KeyReleased
+        // TODO add your handling code here:
+        suma(15);
+    }//GEN-LAST:event_O6KeyReleased
 
     private void J1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_J1KeyReleased
         // TODO add your handling code here:
@@ -3364,92 +3598,92 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
     private void K1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_K1KeyReleased
         // TODO add your handling code here:
-        suma(11);
+//        suma(11);
     }//GEN-LAST:event_K1KeyReleased
 
     private void K2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_K2KeyReleased
         // TODO add your handling code here:
-        suma(11);
+ //       suma(11);
     }//GEN-LAST:event_K2KeyReleased
 
     private void K3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_K3KeyReleased
         // TODO add your handling code here:
-        suma(11);
+   //     suma(11);
     }//GEN-LAST:event_K3KeyReleased
 
     private void K4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_K4KeyReleased
         // TODO add your handling code here:
-        suma(11);
+    //    suma(11);
     }//GEN-LAST:event_K4KeyReleased
 
     private void K5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_K5KeyReleased
         // TODO add your handling code here:
-        suma(11);
+    //    suma(11);
     }//GEN-LAST:event_K5KeyReleased
 
     private void K6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_K6KeyReleased
         // TODO add your handling code here:
-        suma(11);
+    //    suma(11);
     }//GEN-LAST:event_K6KeyReleased
 
     private void L1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_L1KeyReleased
         // TODO add your handling code here:
-        suma(12);
+    //    suma(12);
     }//GEN-LAST:event_L1KeyReleased
 
     private void L2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_L2KeyReleased
         // TODO add your handling code here:
-        suma(12);
+  //      suma(12);
     }//GEN-LAST:event_L2KeyReleased
 
     private void L3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_L3KeyReleased
         // TODO add your handling code here:
-        suma(12);
+   //     suma(12);
     }//GEN-LAST:event_L3KeyReleased
 
     private void L4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_L4KeyReleased
         // TODO add your handling code here:
-        suma(12);
+ //       suma(12);
     }//GEN-LAST:event_L4KeyReleased
 
     private void L5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_L5KeyReleased
         // TODO add your handling code here:
-        suma(12);
+    //    suma(12);
     }//GEN-LAST:event_L5KeyReleased
 
     private void L6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_L6KeyReleased
         // TODO add your handling code here:
-        suma(12);
+      //  suma(12);
     }//GEN-LAST:event_L6KeyReleased
 
     private void M1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M1KeyReleased
         // TODO add your handling code here:
-        suma(13);
+    //    suma(13);
     }//GEN-LAST:event_M1KeyReleased
 
     private void M2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M2KeyReleased
         // TODO add your handling code here:
-        suma(13);
+     //   suma(13);
     }//GEN-LAST:event_M2KeyReleased
 
     private void M3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M3KeyReleased
         // TODO add your handling code here:
-        suma(13);
+     //   suma(13);
     }//GEN-LAST:event_M3KeyReleased
 
     private void M4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M4KeyReleased
         // TODO add your handling code here:
-        suma(13);
+     //   suma(13);
     }//GEN-LAST:event_M4KeyReleased
 
     private void M5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M5KeyReleased
         // TODO add your handling code here:
-        suma(13);
+     //   suma(13);
     }//GEN-LAST:event_M5KeyReleased
 
     private void M6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M6KeyReleased
         // TODO add your handling code here:
-        suma(13);
+     //   suma(13);
     }//GEN-LAST:event_M6KeyReleased
 
     private void N1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_N1KeyReleased
@@ -3514,32 +3748,32 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
     private void Q1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Q1KeyReleased
         // TODO add your handling code here:
-        suma(17);
+    //    suma(17);
     }//GEN-LAST:event_Q1KeyReleased
 
     private void Q2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Q2KeyReleased
         // TODO add your handling code here:
-        suma(17);
+     //   suma(17);
     }//GEN-LAST:event_Q2KeyReleased
 
     private void Q3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Q3KeyReleased
         // TODO add your handling code here:
-        suma(17);
+      //  suma(17);
     }//GEN-LAST:event_Q3KeyReleased
 
     private void Q4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Q4KeyReleased
         // TODO add your handling code here:
-        suma(17);
+     //   suma(17);
     }//GEN-LAST:event_Q4KeyReleased
 
     private void Q5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Q5KeyReleased
         // TODO add your handling code here:
-        suma(17);
+     //   suma(17);
     }//GEN-LAST:event_Q5KeyReleased
 
     private void Q6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Q6KeyReleased
         // TODO add your handling code here:
-        suma(17);
+     //   suma(17);
     }//GEN-LAST:event_Q6KeyReleased
 
     private void R1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_R1KeyReleased
@@ -3752,6 +3986,11 @@ public class jdEvaluacion extends javax.swing.JFrame {
         suma(24);
     }//GEN-LAST:event_X6KeyReleased
 
+    private void B1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_B1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_B1ActionPerformed
+
+    
     /**
      * @param args the command line arguments
      */
@@ -3961,6 +4200,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
     public javax.swing.JButton jButton1;
     public javax.swing.JButton jButton2;
     public javax.swing.JLabel jLabel1;
+    public javax.swing.JLabel jLabel10;
     public javax.swing.JLabel jLabel12;
     public javax.swing.JLabel jLabel13;
     public javax.swing.JLabel jLabel14;
@@ -4013,6 +4253,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel6;
     public javax.swing.JLabel jLabel7;
     public javax.swing.JLabel jLabel8;
+    public javax.swing.JLabel jLabel9;
     public javax.swing.JPanel jPanel1;
     public javax.swing.JPanel jPanel2;
     public javax.swing.JPanel jPanel4;

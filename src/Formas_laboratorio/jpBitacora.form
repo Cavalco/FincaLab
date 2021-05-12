@@ -276,7 +276,7 @@
             <Component class="javax.swing.JTable" name="tablabitacora">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="15" rowCount="0">
+                  <Table columnCount="17" rowCount="0">
                     <Column editable="false" title="# CSM" type="java.lang.Object"/>
                     <Column editable="false" title="Fecha de Llegada" type="java.lang.Object"/>
                     <Column editable="false" title="Proceso" type="java.lang.Object"/>
@@ -288,15 +288,27 @@
                     <Column editable="false" title="Peso KG" type="java.lang.Object"/>
                     <Column editable="false" title="# Sacos" type="java.lang.Object"/>
                     <Column editable="false" title="Comunidad" type="java.lang.Object"/>
-                    <Column editable="true" title="Estatus" type="java.lang.Object"/>
+                    <Column editable="false" title="Estatus" type="java.lang.Object"/>
                     <Column editable="false" title="Eval Aspecto" type="java.lang.Object"/>
                     <Column editable="false" title="Eval Taza" type="java.lang.Object"/>
                     <Column editable="false" title="Mezcla" type="java.lang.Object"/>
+                    <Column editable="true" title="Title 16" type="java.lang.Object"/>
+                    <Column editable="true" title="Title 17" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="autoResizeMode" type="int" value="0"/>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
                       <Title/>
                       <Editor/>

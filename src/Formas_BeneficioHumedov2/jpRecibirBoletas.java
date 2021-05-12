@@ -270,14 +270,18 @@ public class jpRecibirBoletas extends javax.swing.JPanel {
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         // TODO add your handling code here:
         jdBoletaEntradaBH jdBBH;
+        
         try {
+            JOptionPane.showMessageDialog(null,"Entre al try");
             if (!idBoleta.equals("")) {
 
                 String boletaMultiple = mbh.devuelveUnDato("select boletaMultiple from boletasalidareceptor where idBoleta='" + idBoleta + "'");
 
                 if (boletaMultiple.equals("1")) {
+                    JOptionPane.showMessageDialog(null,"Entre al if 1");
                     validarBoletaMultiple();
                 } else {
+                    JOptionPane.showMessageDialog(null, "Entre al else");
                     //JOptionPane.showMessageDialog(null, "No es multiple");
 //                    jdBBH = new jdBoletaEntradaBH(null, true, idBoleta, idSociedad, idBeneficio, "Nuevo","CortesRecibidos", cn);
                     //jdBBH.jp = this;

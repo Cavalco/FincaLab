@@ -80,7 +80,7 @@
                   <Group type="103" groupAlignment="0" attributes="0">
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="jLabel50" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="619" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
                       <Group type="102" alignment="0" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
@@ -93,19 +93,17 @@
                           </Group>
                           <EmptySpace max="32767" attributes="0"/>
                           <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
                               <Group type="102" attributes="0">
-                                  <Component id="jLabel7" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace min="-2" pref="409" max="-2" attributes="0"/>
+                                  <EmptySpace min="15" pref="15" max="-2" attributes="0"/>
+                                  <Component id="jScrollPane1" min="-2" max="-2" attributes="0"/>
                               </Group>
-                              <Component id="jScrollPane1" max="32767" attributes="0"/>
                           </Group>
-                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
+                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                       </Group>
-                      <Group type="102" attributes="0">
-                          <Component id="jPanel6" max="32767" attributes="0"/>
-                          <EmptySpace max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="jPanel6" max="32767" attributes="0"/>
                   </Group>
+                  <EmptySpace max="-2" attributes="0"/>
               </Group>
           </Group>
         </DimensionLayout>
@@ -125,12 +123,12 @@
                   <Group type="103" groupAlignment="0" max="-2" attributes="0">
                       <Group type="102" attributes="0">
                           <Component id="jPanel2" max="32767" attributes="0"/>
-                          <EmptySpace min="-2" pref="42" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
                           <Component id="jLabel8" min="-2" max="-2" attributes="0"/>
                           <EmptySpace max="-2" attributes="0"/>
                           <Component id="jPanel5" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <Component id="jScrollPane1" pref="0" max="32767" attributes="0"/>
+                      <Component id="jScrollPane1" pref="522" max="32767" attributes="0"/>
                   </Group>
                   <EmptySpace max="32767" attributes="0"/>
               </Group>
@@ -214,7 +212,7 @@
                       <Group type="102" alignment="0" attributes="0">
                           <EmptySpace max="-2" attributes="0"/>
                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Component id="jSeparator1" pref="433" max="32767" attributes="0"/>
+                              <Component id="jSeparator1" max="32767" attributes="0"/>
                               <Component id="jSeparator10" alignment="1" max="32767" attributes="0"/>
                               <Group type="102" alignment="0" attributes="0">
                                   <Group type="103" groupAlignment="0" attributes="0">
@@ -262,21 +260,8 @@
                                                   <Component id="J6" min="-2" pref="30" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="I1" min="-2" pref="30" max="-2" attributes="0"/>
-                                                  <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
-                                                  <Component id="I2" min="-2" pref="30" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="I3" min="-2" pref="30" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="I4" min="-2" pref="30" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="I5" min="-2" pref="30" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="I6" min="-2" pref="30" max="-2" attributes="0"/>
-                                              </Group>
-                                              <Group type="102" alignment="0" attributes="0">
                                                   <Component id="O1" min="-2" pref="30" max="-2" attributes="0"/>
-                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <EmptySpace min="18" pref="18" max="-2" attributes="0"/>
                                                   <Component id="O2" min="-2" pref="30" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                                   <Component id="O3" min="-2" pref="30" max="-2" attributes="0"/>
@@ -286,6 +271,19 @@
                                                   <Component id="O5" min="-2" pref="30" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                                   <Component id="O6" min="-2" pref="30" max="-2" attributes="0"/>
+                                              </Group>
+                                              <Group type="102" alignment="0" attributes="0">
+                                                  <Component id="I1" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="I2" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="I3" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="I4" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="I5" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <EmptySpace type="separate" max="-2" attributes="0"/>
+                                                  <Component id="I6" min="-2" pref="30" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="H1" min="-2" pref="30" max="-2" attributes="0"/>
@@ -399,20 +397,20 @@
                                           </Group>
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="0" attributes="0">
-                                              <Component id="DT" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
-                                              <Component id="CT" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
-                                              <Component id="ET" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                              <Component id="DT" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
+                                              <Component id="CT" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
+                                              <Component id="ET" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <EmptySpace min="1" pref="1" max="-2" attributes="0"/>
-                                                  <Component id="FT" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <Component id="FT" min="-2" pref="45" max="-2" attributes="0"/>
                                               </Group>
-                                              <Component id="JT" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
-                                              <Component id="IT" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
-                                              <Component id="OT" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
-                                              <Component id="GT" min="-2" pref="30" max="-2" attributes="0"/>
-                                              <Component id="HT" min="-2" pref="30" max="-2" attributes="0"/>
-                                              <Component id="KT" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
-                                              <Component id="BT" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                              <Component id="JT" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
+                                              <Component id="OT" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
+                                              <Component id="IT" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
+                                              <Component id="GT" min="-2" pref="45" max="-2" attributes="0"/>
+                                              <Component id="HT" min="-2" pref="45" max="-2" attributes="0"/>
+                                              <Component id="KT" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
+                                              <Component id="BT" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
                                           </Group>
                                       </Group>
                                       <Group type="102" attributes="0">
@@ -490,13 +488,13 @@
                                           <EmptySpace type="separate" max="-2" attributes="0"/>
                                           <Group type="103" groupAlignment="1" max="-2" attributes="0">
                                               <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                                  <Component id="QT" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
-                                                  <Component id="PT" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <Component id="QT" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
+                                                  <Component id="PT" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="103" alignment="1" groupAlignment="0" attributes="0">
-                                                  <Component id="NT" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
-                                                  <Component id="MT" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
-                                                  <Component id="LT" alignment="0" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <Component id="NT" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
+                                                  <Component id="MT" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
+                                                  <Component id="LT" alignment="0" min="-2" pref="45" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -514,7 +512,7 @@
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
                                               <Component id="T6" min="-2" pref="30" max="-2" attributes="0"/>
                                               <EmptySpace type="separate" max="-2" attributes="0"/>
-                                              <Component id="TT" min="-2" pref="30" max="-2" attributes="0"/>
+                                              <Component id="TT" min="-2" pref="45" max="-2" attributes="0"/>
                                           </Group>
                                           <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
@@ -530,7 +528,7 @@
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                                   <Component id="R6" min="-2" pref="30" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="RT" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <Component id="RT" min="-2" pref="45" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="S1" min="-2" pref="30" max="-2" attributes="0"/>
@@ -545,7 +543,7 @@
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                                   <Component id="S6" min="-2" pref="30" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="ST" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <Component id="ST" min="-2" pref="45" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="U1" min="-2" pref="30" max="-2" attributes="0"/>
@@ -560,7 +558,7 @@
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                                   <Component id="U6" min="-2" pref="30" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="UT" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <Component id="UT" min="-2" pref="45" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="V1" min="-2" pref="30" max="-2" attributes="0"/>
@@ -575,7 +573,7 @@
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                                   <Component id="V6" min="-2" pref="30" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="VT" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <Component id="VT" min="-2" pref="45" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="W1" min="-2" pref="30" max="-2" attributes="0"/>
@@ -590,7 +588,7 @@
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                                   <Component id="W6" min="-2" pref="30" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="WT" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <Component id="WT" min="-2" pref="45" max="-2" attributes="0"/>
                                               </Group>
                                               <Group type="102" alignment="0" attributes="0">
                                                   <Component id="X1" min="-2" pref="30" max="-2" attributes="0"/>
@@ -605,7 +603,7 @@
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
                                                   <Component id="X6" min="-2" pref="30" max="-2" attributes="0"/>
                                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                                  <Component id="XT" min="-2" pref="30" max="-2" attributes="0"/>
+                                                  <Component id="XT" min="-2" pref="45" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                       </Group>
@@ -650,10 +648,10 @@
                                   <EmptySpace min="-2" pref="18" max="-2" attributes="0"/>
                                   <Component id="A6" min="-2" pref="30" max="-2" attributes="0"/>
                                   <EmptySpace type="separate" max="-2" attributes="0"/>
-                                  <Component id="AT" min="-2" pref="30" max="-2" attributes="0"/>
+                                  <Component id="AT" min="-2" pref="45" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="14" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="53" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                 </DimensionLayout>
@@ -759,22 +757,22 @@
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="3" attributes="0">
-                                      <Component id="O1" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="O2" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="O3" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="O4" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="O5" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="O6" alignment="3" min="-2" max="-2" attributes="0"/>
-                                      <Component id="jLabel31" alignment="3" min="-2" max="-2" attributes="0"/>
-                                  </Group>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Group type="103" groupAlignment="3" attributes="0">
                                       <Component id="I1" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="I2" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="I3" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="I4" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="I5" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="I6" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="jLabel31" alignment="3" min="-2" max="-2" attributes="0"/>
+                                  </Group>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Group type="103" groupAlignment="3" attributes="0">
+                                      <Component id="O1" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="O2" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="O3" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="O4" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="O5" alignment="3" min="-2" max="-2" attributes="0"/>
+                                      <Component id="O6" alignment="3" min="-2" max="-2" attributes="0"/>
                                       <Component id="jLabel32" alignment="3" min="-2" max="-2" attributes="0"/>
                                   </Group>
                                   <EmptySpace max="-2" attributes="0"/>
@@ -808,9 +806,9 @@
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Component id="HT" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="OT" min="-2" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
                                   <Component id="IT" min="-2" max="-2" attributes="0"/>
+                                  <EmptySpace max="-2" attributes="0"/>
+                                  <Component id="OT" min="-2" max="-2" attributes="0"/>
                                   <EmptySpace max="-2" attributes="0"/>
                                   <Group type="103" groupAlignment="0" attributes="0">
                                       <Group type="103" alignment="0" groupAlignment="3" attributes="0">
@@ -1063,7 +1061,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="AT">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                   <Events>
                     <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="ATKeyReleased"/>
@@ -1199,6 +1199,7 @@
                     <Property name="text" type="java.lang.String" value="0"/>
                   </Properties>
                   <Events>
+                    <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="B1ActionPerformed"/>
                     <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="B1KeyReleased"/>
                   </Events>
                 </Component>
@@ -1244,7 +1245,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="BT">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="C1">
@@ -1297,7 +1300,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="CT">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="D1">
@@ -1350,7 +1355,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="DT">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="E1">
@@ -1403,7 +1410,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="ET">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="F1">
@@ -1456,7 +1465,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="FT">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="G1">
@@ -1509,7 +1520,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="GT">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="H1">
@@ -1562,60 +1575,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="HT">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="0"/>
-                  </Properties>
-                </Component>
-                <Component class="javax.swing.JTextField" name="O1">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="O1KeyReleased"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JTextField" name="O2">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="O2KeyReleased"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JTextField" name="O3">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="O3KeyReleased"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JTextField" name="O4">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="O4KeyReleased"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JTextField" name="O5">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="O5KeyReleased"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JTextField" name="O6">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
-                  </Properties>
-                  <Events>
-                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="O6KeyReleased"/>
-                  </Events>
-                </Component>
-                <Component class="javax.swing.JTextField" name="OT">
-                  <Properties>
-                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="I1">
@@ -1668,7 +1630,64 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="IT">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
+                  </Properties>
+                </Component>
+                <Component class="javax.swing.JTextField" name="O1">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="0"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="O1KeyReleased"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JTextField" name="O2">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="0"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="O2KeyReleased"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JTextField" name="O3">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="0"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="O3KeyReleased"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JTextField" name="O4">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="0"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="O4KeyReleased"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JTextField" name="O5">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="0"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="O5KeyReleased"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JTextField" name="O6">
+                  <Properties>
+                    <Property name="text" type="java.lang.String" value="0"/>
+                  </Properties>
+                  <Events>
+                    <EventHandler event="keyReleased" listener="java.awt.event.KeyListener" parameters="java.awt.event.KeyEvent" handler="O6KeyReleased"/>
+                  </Events>
+                </Component>
+                <Component class="javax.swing.JTextField" name="OT">
+                  <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
+                    <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="J1">
@@ -1721,7 +1740,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="JT">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="K1">
@@ -1774,7 +1795,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="KT">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="L1">
@@ -1827,7 +1850,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="LT">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="M1">
@@ -1880,7 +1905,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="MT">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="N1">
@@ -1933,7 +1960,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="NT">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="P1">
@@ -1986,7 +2015,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="PT">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="Q1">
@@ -2039,7 +2070,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="QT">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="R1">
@@ -2092,7 +2125,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="RT">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="S1">
@@ -2145,7 +2180,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="ST">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="T1">
@@ -2198,7 +2235,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="TT">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="U1">
@@ -2251,7 +2290,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="UT">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="V1">
@@ -2304,7 +2345,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="VT">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="W1">
@@ -2357,7 +2400,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="WT">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JTextField" name="X1">
@@ -2410,7 +2455,9 @@
                 </Component>
                 <Component class="javax.swing.JTextField" name="XT">
                   <Properties>
+                    <Property name="editable" type="boolean" value="false"/>
                     <Property name="text" type="java.lang.String" value="0"/>
+                    <Property name="enabled" type="boolean" value="false"/>
                   </Properties>
                 </Component>
               </SubComponents>
@@ -2609,9 +2656,15 @@
                               <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="0" attributes="0">
-                              <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="jLabel14" alignment="0" min="-2" max="-2" attributes="0"/>
+                                  <Component id="jLabel9" alignment="0" min="-2" max="-2" attributes="0"/>
+                              </Group>
                               <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                              <Component id="lblPuntuacion" max="32767" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Component id="lblPuntuacion" max="32767" attributes="0"/>
+                                  <Component id="jLabel10" max="32767" attributes="0"/>
+                              </Group>
                           </Group>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
@@ -2668,6 +2721,11 @@
                           <Component id="jLabel14" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="32767" attributes="0"/>
+                      <Group type="103" groupAlignment="3" attributes="0">
+                          <Component id="jLabel9" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="jLabel10" alignment="3" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -2757,11 +2815,11 @@
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
                   <StringArray count="5">
-                    <StringItem index="0" value="James Kosalos"/>
-                    <StringItem index="1" value="Jacob Frankel"/>
-                    <StringItem index="2" value="Carlos bustamante"/>
-                    <StringItem index="3" value="Gigi Mengistu"/>
-                    <StringItem index="4" value="Tom Bennett"/>
+                    <StringItem index="0" value="Seleccione.."/>
+                    <StringItem index="1" value="Carlos Bustamante"/>
+                    <StringItem index="2" value="Daniel Bustamante"/>
+                    <StringItem index="3" value="Kala Wolfe"/>
+                    <StringItem index="4" value="Jacob Daniel Donaghy"/>
                   </StringArray>
                 </Property>
               </Properties>
@@ -2786,6 +2844,16 @@
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Tahoma" size="14" style="1"/>
                 </Property>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel9">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="Rendimiento"/>
+              </Properties>
+            </Component>
+            <Component class="javax.swing.JLabel" name="jLabel10">
+              <Properties>
+                <Property name="text" type="java.lang.String" value="-"/>
               </Properties>
             </Component>
           </SubComponents>

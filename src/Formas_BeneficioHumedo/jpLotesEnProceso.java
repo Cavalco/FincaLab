@@ -429,7 +429,7 @@ inner join boletaentradabh be
 
     private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
         //Boton para confirmar que ya se secó el lote
-        jdMuestra jd = new jdMuestra(null, true, idSubLote, certificacion, proceso, metodo, idBeneficio, sociedad, cn);
+        jdMuestra jd = new jdMuestra(null, true, idSubLote, certificacion, proceso, metodo, idBeneficio, sociedad,forma, cn);
         jd.jp = this;
         jd.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed

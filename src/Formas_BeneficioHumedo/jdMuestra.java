@@ -21,12 +21,12 @@ public class jdMuestra extends javax.swing.JDialog {
      * Creates new form jdMuestra
      */
     Connection cn;
-    String idSubLote, idBeneficio, sociedad, certificacion, comunidad, metodo, proceso;
+    String idSubLote, idBeneficio, sociedad, certificacion, comunidad, metodo, proceso,forma, fechaSublote, calificacion;
     metodosBeneficioHumedo mbh;
     jpLotesEnProceso jp;
 
     public jdMuestra(java.awt.Frame parent, boolean modal, String idSubLote,
-            String certificacion, String proceso, String metodo, String idBeneficio, String sociedad, Connection cn) {
+            String certificacion, String proceso, String metodo, String idBeneficio, String sociedad, String forma, Connection cn) {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
@@ -38,6 +38,7 @@ public class jdMuestra extends javax.swing.JDialog {
         this.certificacion = certificacion;
         this.metodo = metodo;
         this.proceso = proceso;
+        this.forma=forma;
         mbh = new metodosBeneficioHumedo(cn);
 
         comunidad = mbh.devuelveUnDato("select l.Descripcion\n"
@@ -51,6 +52,7 @@ public class jdMuestra extends javax.swing.JDialog {
         metodoSecado.setText(metodo);
         lbBeneficio.setText(idBeneficio);
         lbSociedad.setText(sociedad);
+        lbForma.setText(forma);
 
         txtPesoMuestra.setEnabled(false);
         txtTomadaPor.setEnabled(false);
@@ -69,6 +71,10 @@ public class jdMuestra extends javax.swing.JDialog {
                 + "    ORDER BY id DESC LIMIT 1", 2).split("¬");
         txtHumedad.setText(datos[0]);
         txtTemperatura.setText(datos[1]);
+        
+        fechaSublote = mbh.devuelveUnDato("select fechacreacion from sublotesconfirmados where idLoteOrigen='"+idSubLote+"'");
+        calificacion = mbh.devuelveUnDato("SELECT idLote FROM recibos where idLote='"+idSubLote+"'");
+        //JOptionPane.showMessageDialog(null,fechaSublote);
 
         /*  jTextField1.setEnabled(false);
         jTextField2.setEnabled(false);
@@ -96,13 +102,13 @@ public class jdMuestra extends javax.swing.JDialog {
                 String fechaM = new SimpleDateFormat("yyyy-MM-dd").format(fechaMuestra.getDate());
 
                 mbh.insertarBoleta("insert into muestrasenviadas values "
-                        + "(null, '" + lbIdLote.getText() + "', 'Tipo Cafe', '" + lbForma.getText() + "', "
+                        + "(null, '" + lbIdLote.getText() + "', '"+jLabel6.getText()+"', '" + lbForma.getText() + "', "
                         + "'" + lbBeneficio.getText() + "', '" + lbSociedad.getText() + "', '" + lbIdLote.getText() + "', "
                         + "'" + txtKgFinales.getText() + "', '" + txtSacos.getText() + "', '" + comunidad + "', "
-                        + "'" + txtObservaciones.getText() + "', '" + metodoSecado.getText() + "', 'Calidad', "
-                        + "'" + txtPesoMuestra.getText() + "', 'Ubicacion', 'Fecha Lote', '" + fechaS + "', "
-                        + "'" + fechaM + "', 'Fecha Cosecha', '" + txtTomadaPor.getText() + "', "
-                        + "'Recibida Por', '" + txtTransportadaPor.getText() + "', '" + lbCertificado.getText() + "' )");
+                        + "'" + txtObservaciones.getText() + "', '" + metodoSecado.getText() + "', '"+calificacion+"', "
+                        + "'" + txtPesoMuestra.getText() + "', 'Ubicación', '"+fechaSublote+"', '" + fechaS + "', "
+                        + "'" + fechaM + "', 'AC', '" + txtTomadaPor.getText() + "', "
+                        + "'', '" + txtTransportadaPor.getText() + "', '" + lbCertificado.getText() + "' )");
             }
         } catch (Exception e) {
 

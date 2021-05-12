@@ -589,6 +589,8 @@ public class jpPersonas extends javax.swing.JPanel {
 
         jPanel5 = new javax.swing.JPanel();
         jPanel7 = new javax.swing.JPanel();
+        jScrollPane2 = new javax.swing.JScrollPane();
+        tablaPersonas = new javax.swing.JTable();
         jPanel8 = new javax.swing.JPanel();
         jLabel10 = new javax.swing.JLabel();
         comboSituacion = new javax.swing.JComboBox<>();
@@ -596,8 +598,6 @@ public class jpPersonas extends javax.swing.JPanel {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton1 = new javax.swing.JButton();
-        jScrollPane2 = new javax.swing.JScrollPane();
-        tablaPersonas = new javax.swing.JTable();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel6 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
@@ -617,6 +617,71 @@ public class jpPersonas extends javax.swing.JPanel {
 
         jPanel5.setBorder(javax.swing.BorderFactory.createEtchedBorder());
         jPanel5.setPreferredSize(new java.awt.Dimension(830, 570));
+
+        tablaPersonas.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+
+            },
+            new String [] {
+                "Nombre", "Apellido Paterno", "Apellido Materno", "Razon Social", "Direccion", "Codigo Postal", "Telefono Fijo", "Telefono Movil", "Pais", "Estado", "Municipio", "Localidad", "Colonia", "Sociedades"
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        tablaPersonas.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
+        tablaPersonas.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                tablaPersonasMouseClicked(evt);
+            }
+        });
+        jScrollPane2.setViewportView(tablaPersonas);
+        if (tablaPersonas.getColumnModel().getColumnCount() > 0) {
+            tablaPersonas.getColumnModel().getColumn(0).setMinWidth(150);
+            tablaPersonas.getColumnModel().getColumn(0).setPreferredWidth(150);
+            tablaPersonas.getColumnModel().getColumn(0).setMaxWidth(150);
+            tablaPersonas.getColumnModel().getColumn(1).setMinWidth(120);
+            tablaPersonas.getColumnModel().getColumn(1).setPreferredWidth(120);
+            tablaPersonas.getColumnModel().getColumn(1).setMaxWidth(120);
+            tablaPersonas.getColumnModel().getColumn(2).setMinWidth(120);
+            tablaPersonas.getColumnModel().getColumn(2).setPreferredWidth(120);
+            tablaPersonas.getColumnModel().getColumn(2).setMaxWidth(120);
+            tablaPersonas.getColumnModel().getColumn(3).setMinWidth(150);
+            tablaPersonas.getColumnModel().getColumn(3).setPreferredWidth(150);
+            tablaPersonas.getColumnModel().getColumn(3).setMaxWidth(150);
+            tablaPersonas.getColumnModel().getColumn(4).setMinWidth(150);
+            tablaPersonas.getColumnModel().getColumn(4).setPreferredWidth(150);
+            tablaPersonas.getColumnModel().getColumn(4).setMaxWidth(150);
+            tablaPersonas.getColumnModel().getColumn(5).setMinWidth(90);
+            tablaPersonas.getColumnModel().getColumn(5).setPreferredWidth(90);
+            tablaPersonas.getColumnModel().getColumn(5).setMaxWidth(90);
+            tablaPersonas.getColumnModel().getColumn(6).setMinWidth(90);
+            tablaPersonas.getColumnModel().getColumn(6).setPreferredWidth(90);
+            tablaPersonas.getColumnModel().getColumn(6).setMaxWidth(90);
+            tablaPersonas.getColumnModel().getColumn(7).setMinWidth(90);
+            tablaPersonas.getColumnModel().getColumn(7).setPreferredWidth(90);
+            tablaPersonas.getColumnModel().getColumn(7).setMaxWidth(90);
+            tablaPersonas.getColumnModel().getColumn(8).setMinWidth(90);
+            tablaPersonas.getColumnModel().getColumn(8).setPreferredWidth(90);
+            tablaPersonas.getColumnModel().getColumn(8).setMaxWidth(90);
+            tablaPersonas.getColumnModel().getColumn(9).setMinWidth(90);
+            tablaPersonas.getColumnModel().getColumn(9).setPreferredWidth(90);
+            tablaPersonas.getColumnModel().getColumn(9).setMaxWidth(90);
+            tablaPersonas.getColumnModel().getColumn(10).setMinWidth(90);
+            tablaPersonas.getColumnModel().getColumn(10).setPreferredWidth(90);
+            tablaPersonas.getColumnModel().getColumn(10).setMaxWidth(90);
+            tablaPersonas.getColumnModel().getColumn(11).setMinWidth(90);
+            tablaPersonas.getColumnModel().getColumn(11).setPreferredWidth(90);
+            tablaPersonas.getColumnModel().getColumn(11).setMaxWidth(90);
+            tablaPersonas.getColumnModel().getColumn(12).setMinWidth(90);
+            tablaPersonas.getColumnModel().getColumn(12).setPreferredWidth(90);
+            tablaPersonas.getColumnModel().getColumn(12).setMaxWidth(90);
+        }
 
         jLabel10.setText("Situacion");
 
@@ -682,77 +747,6 @@ public class jpPersonas extends javax.swing.JPanel {
                 .addContainerGap())
         );
 
-        tablaPersonas.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-
-            },
-            new String [] {
-                "Nombre", "Apellido Paterno", "Apellido Materno", "Razon Social", "Direccion", "Codigo Postal", "Telefono Fijo", "Telefono Movil", "Pais", "Estado", "Municipio", "Localidad", "Colonia", "Sociedades", "Socio", "Productor"
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        tablaPersonas.setAutoResizeMode(javax.swing.JTable.AUTO_RESIZE_OFF);
-        tablaPersonas.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tablaPersonasMouseClicked(evt);
-            }
-        });
-        jScrollPane2.setViewportView(tablaPersonas);
-        if (tablaPersonas.getColumnModel().getColumnCount() > 0) {
-            tablaPersonas.getColumnModel().getColumn(0).setMinWidth(150);
-            tablaPersonas.getColumnModel().getColumn(0).setPreferredWidth(150);
-            tablaPersonas.getColumnModel().getColumn(0).setMaxWidth(150);
-            tablaPersonas.getColumnModel().getColumn(1).setMinWidth(120);
-            tablaPersonas.getColumnModel().getColumn(1).setPreferredWidth(120);
-            tablaPersonas.getColumnModel().getColumn(1).setMaxWidth(120);
-            tablaPersonas.getColumnModel().getColumn(2).setMinWidth(120);
-            tablaPersonas.getColumnModel().getColumn(2).setPreferredWidth(120);
-            tablaPersonas.getColumnModel().getColumn(2).setMaxWidth(120);
-            tablaPersonas.getColumnModel().getColumn(3).setMinWidth(150);
-            tablaPersonas.getColumnModel().getColumn(3).setPreferredWidth(150);
-            tablaPersonas.getColumnModel().getColumn(3).setMaxWidth(150);
-            tablaPersonas.getColumnModel().getColumn(4).setMinWidth(150);
-            tablaPersonas.getColumnModel().getColumn(4).setPreferredWidth(150);
-            tablaPersonas.getColumnModel().getColumn(4).setMaxWidth(150);
-            tablaPersonas.getColumnModel().getColumn(5).setMinWidth(90);
-            tablaPersonas.getColumnModel().getColumn(5).setPreferredWidth(90);
-            tablaPersonas.getColumnModel().getColumn(5).setMaxWidth(90);
-            tablaPersonas.getColumnModel().getColumn(6).setMinWidth(90);
-            tablaPersonas.getColumnModel().getColumn(6).setPreferredWidth(90);
-            tablaPersonas.getColumnModel().getColumn(6).setMaxWidth(90);
-            tablaPersonas.getColumnModel().getColumn(7).setMinWidth(90);
-            tablaPersonas.getColumnModel().getColumn(7).setPreferredWidth(90);
-            tablaPersonas.getColumnModel().getColumn(7).setMaxWidth(90);
-            tablaPersonas.getColumnModel().getColumn(8).setMinWidth(90);
-            tablaPersonas.getColumnModel().getColumn(8).setPreferredWidth(90);
-            tablaPersonas.getColumnModel().getColumn(8).setMaxWidth(90);
-            tablaPersonas.getColumnModel().getColumn(9).setMinWidth(90);
-            tablaPersonas.getColumnModel().getColumn(9).setPreferredWidth(90);
-            tablaPersonas.getColumnModel().getColumn(9).setMaxWidth(90);
-            tablaPersonas.getColumnModel().getColumn(10).setMinWidth(90);
-            tablaPersonas.getColumnModel().getColumn(10).setPreferredWidth(90);
-            tablaPersonas.getColumnModel().getColumn(10).setMaxWidth(90);
-            tablaPersonas.getColumnModel().getColumn(11).setMinWidth(90);
-            tablaPersonas.getColumnModel().getColumn(11).setPreferredWidth(90);
-            tablaPersonas.getColumnModel().getColumn(11).setMaxWidth(90);
-            tablaPersonas.getColumnModel().getColumn(12).setMinWidth(90);
-            tablaPersonas.getColumnModel().getColumn(12).setPreferredWidth(90);
-            tablaPersonas.getColumnModel().getColumn(12).setMaxWidth(90);
-            tablaPersonas.getColumnModel().getColumn(14).setMinWidth(50);
-            tablaPersonas.getColumnModel().getColumn(14).setPreferredWidth(50);
-            tablaPersonas.getColumnModel().getColumn(14).setMaxWidth(50);
-            tablaPersonas.getColumnModel().getColumn(15).setMinWidth(50);
-            tablaPersonas.getColumnModel().getColumn(15).setPreferredWidth(50);
-            tablaPersonas.getColumnModel().getColumn(15).setMaxWidth(50);
-        }
-
         javax.swing.GroupLayout jPanel7Layout = new javax.swing.GroupLayout(jPanel7);
         jPanel7.setLayout(jPanel7Layout);
         jPanel7Layout.setHorizontalGroup(
@@ -768,9 +762,10 @@ public class jpPersonas extends javax.swing.JPanel {
             jPanel7Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel7Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 272, Short.MAX_VALUE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.DEFAULT_SIZE, 354, Short.MAX_VALUE)
+                .addGap(18, 18, 18)
+                .addComponent(jPanel8, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
         );
 
         jPanel6.setAutoscrolls(true);
@@ -900,9 +895,9 @@ public class jpPersonas extends javax.swing.JPanel {
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel5Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jPanel7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jPanel7, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
@@ -919,7 +914,7 @@ public class jpPersonas extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 447, Short.MAX_VALUE)
+                .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, 540, Short.MAX_VALUE)
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents

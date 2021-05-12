@@ -191,7 +191,8 @@
         <Component class="javax.swing.JTable" name="tablaM1">
           <Properties>
             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-              <Table columnCount="10" rowCount="0">
+              <Table columnCount="13" rowCount="0">
+                <Column editable="true" title="# CSM" type="java.lang.Object"/>
                 <Column editable="false" title="Proceso" type="java.lang.Object"/>
                 <Column editable="false" title="Forma" type="java.lang.Object"/>
                 <Column editable="false" title="Beneficio" type="java.lang.Object"/>
@@ -202,6 +203,8 @@
                 <Column editable="false" title="# Sacos" type="java.lang.Object"/>
                 <Column editable="false" title="Comunidad" type="java.lang.Object"/>
                 <Column editable="false" title="Metodo secado" type="java.lang.Object"/>
+                <Column editable="true" title="Fecha Recepcion Muestra" type="java.lang.Object"/>
+                <Column editable="true" title="Fecha Lote" type="java.lang.Object"/>
               </Table>
             </Property>
             <Property name="autoResizeMode" type="int" value="0"/>
