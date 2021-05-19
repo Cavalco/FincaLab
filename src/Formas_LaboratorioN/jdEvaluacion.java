@@ -151,6 +151,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
     //Truncar resultados
     public static int trunc(double num) {
+        //JOptionPane.showMessageDialog(null,"num: "+num);
         String strnum = num + "";
         int indice = strnum.indexOf(".");
         return Integer.parseInt(strnum.substring(0, indice));
@@ -492,6 +493,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     }
                     break;
                 case 14:
+                    //JOptionPane.showMessageDialog(null, "Entre");
                     v[0] = Integer.parseInt(N1.getText());
                     v[1] = Integer.parseInt(N2.getText());
                     v[2] = Integer.parseInt(N3.getText());
@@ -512,7 +514,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     if (res == 0) {
                         NT.setText("0");
                     } else {
-                        NT.setText("0");
+                        NT.setText(res + "");
                         puntuacion();
                     }
                     break;
