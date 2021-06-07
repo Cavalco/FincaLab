@@ -36,14 +36,14 @@ public class jdObservaciones extends javax.swing.JDialog {
         initComponents();
         setLocationRelativeTo(null);
 
-      /*  this.id = csm;
+        this.id = csm;
         this.ObservacionesC = ObservacionesC;
         cn = c;
         this.band = band;
         if (ObservacionesC.equals("null")) {
-            txtObservaciones.setText("");
+          //  txtObservaciones.setText("");
         } else {
-            txtObservaciones.setText(ObservacionesC);
+         //   txtObservaciones.setText(ObservacionesC);
         }
         if (band == 1) {
             this.setTitle("Observaciones");
@@ -65,7 +65,7 @@ public class jdObservaciones extends javax.swing.JDialog {
         this.Idioma = Idioma;
         idioma = new Propiedades(Idioma);
         mdb = new metodosLaboratorio(cn, Idioma);
-*/
+
     }
 
     public void tipoProceso() {
@@ -144,7 +144,7 @@ public class jdObservaciones extends javax.swing.JDialog {
 
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
-        jTextArea1.setText("Sabor: Manzanilla2\nRemanente: Citricos1\nAcidez: Acido-citr1\n\nSeco: Vainilla2 Coco1\nMojado: Miel1\nQuebrado: Melaza2\n");
+        jTextArea1.setText("\n");
         jScrollPane1.setViewportView(jTextArea1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);

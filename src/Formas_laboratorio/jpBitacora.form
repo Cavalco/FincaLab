@@ -126,15 +126,6 @@
               <Group type="102" alignment="0" attributes="0">
                   <EmptySpace max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="0" attributes="0">
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jComboBox1" min="-2" pref="135" max="-2" attributes="0"/>
-                          <EmptySpace max="32767" attributes="0"/>
-                          <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                      </Group>
-                      <Group type="102" alignment="0" attributes="0">
-                          <Component id="jScrollPane2" max="32767" attributes="0"/>
-                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
-                      </Group>
                       <Group type="102" attributes="0">
                           <Group type="103" groupAlignment="0" attributes="0">
                               <Component id="jLabel3" min="-2" max="-2" attributes="0"/>
@@ -144,7 +135,22 @@
                                   <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                               </Group>
                           </Group>
-                          <EmptySpace min="0" pref="147" max="32767" attributes="0"/>
+                          <EmptySpace min="0" pref="157" max="32767" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="1" attributes="0">
+                          <Group type="103" groupAlignment="1" attributes="0">
+                              <Group type="102" attributes="0">
+                                  <Component id="jComboBox1" min="-2" pref="135" max="-2" attributes="0"/>
+                                  <EmptySpace max="32767" attributes="0"/>
+                                  <Component id="jButton2" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Group type="102" attributes="0">
+                                  <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                                  <Component id="kgConfirmados" min="-2" max="-2" attributes="0"/>
+                              </Group>
+                              <Component id="jScrollPane2" max="32767" attributes="0"/>
+                          </Group>
+                          <EmptySpace min="-2" pref="10" max="-2" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -161,7 +167,9 @@
                       <Component id="jPanel3" max="32767" attributes="0"/>
                       <Component id="jPanel2" min="-2" max="-2" attributes="0"/>
                   </Group>
-                  <EmptySpace pref="39" max="32767" attributes="0"/>
+                  <EmptySpace pref="18" max="32767" attributes="0"/>
+                  <Component id="kgConfirmados" min="-2" max="-2" attributes="0"/>
+                  <EmptySpace max="-2" attributes="0"/>
                   <Component id="jScrollPane2" min="-2" pref="380" max="-2" attributes="0"/>
                   <EmptySpace min="-2" pref="11" max="-2" attributes="0"/>
                   <Group type="103" groupAlignment="3" attributes="0">
@@ -276,7 +284,7 @@
             <Component class="javax.swing.JTable" name="tablabitacora">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="17" rowCount="0">
+                  <Table columnCount="16" rowCount="0">
                     <Column editable="false" title="# CSM" type="java.lang.Object"/>
                     <Column editable="false" title="Fecha de Llegada" type="java.lang.Object"/>
                     <Column editable="false" title="Proceso" type="java.lang.Object"/>
@@ -286,14 +294,13 @@
                     <Column editable="false" title="#Sub Lote" type="java.lang.Object"/>
                     <Column editable="false" title="Certificacion" type="java.lang.Object"/>
                     <Column editable="false" title="Peso KG" type="java.lang.Object"/>
+                    <Column editable="false" title="Confirmados" type="java.lang.Object"/>
                     <Column editable="false" title="# Sacos" type="java.lang.Object"/>
                     <Column editable="false" title="Comunidad" type="java.lang.Object"/>
                     <Column editable="false" title="Estatus" type="java.lang.Object"/>
                     <Column editable="false" title="Eval Aspecto" type="java.lang.Object"/>
                     <Column editable="false" title="Eval Taza" type="java.lang.Object"/>
                     <Column editable="false" title="Mezcla" type="java.lang.Object"/>
-                    <Column editable="true" title="Title 16" type="java.lang.Object"/>
-                    <Column editable="true" title="Title 17" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="autoResizeMode" type="int" value="0"/>
@@ -532,6 +539,14 @@
               <Font name="Tahoma" size="11" style="1"/>
             </Property>
             <Property name="text" type="java.lang.String" value="Filtros"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="kgConfirmados">
+          <Properties>
+            <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
+              <Font name="Tahoma" size="12" style="1"/>
+            </Property>
+            <Property name="text" type="java.lang.String" value="-"/>
           </Properties>
         </Component>
       </SubComponents>

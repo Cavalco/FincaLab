@@ -371,4 +371,18 @@ public void cargarInformacionPruebaArray(DefaultTableModel modelo, int tamaño, 
             JOptionPane.showMessageDialog(null, "Error al Actualizar");
         }
     }
+  
+  
+  public void exportar(String sql) {
+        try {
+            System.out.println("EXPORTAR:\n " + sql);
+            PreparedStatement cmd = cn.prepareCall(sql);
+            cmd.execute();
+            cmd.close();
+            JOptionPane.showMessageDialog(null,"Exportación Exitosa");
+        }  
+        catch (Exception ex) {
+            System.out.println("Error en consulta exportar. " + ex.getMessage());
+        }
+    }
 }

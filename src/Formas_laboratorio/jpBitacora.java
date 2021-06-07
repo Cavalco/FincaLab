@@ -8,9 +8,12 @@ package Formas_laboratorio;
 import Formas_LaboratorioN.jdCatacion;
 import Formas_LaboratorioN.jdCatacion2;
 import Formas_LaboratorioN.jdEvaluacion;
+import Formas_Recepcion.jdRecibos;
 import Idioma.Propiedades;
 import Metodos_Configuraciones.metodosLaboratorio;
 import java.awt.Color;
+import java.awt.Desktop;
+import java.io.File;
 import java.sql.Connection;
 import java.util.ArrayList;
 import javax.swing.JTable;
@@ -21,7 +24,10 @@ import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.DefaultComboBoxModel;
+import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.filechooser.FileNameExtensionFilter;
 
 /**
  *
@@ -60,7 +66,7 @@ public class jpBitacora extends javax.swing.JPanel {
 
         jButton2.setText(idioma.getProperty("Imprimir"));
 
-        tablabitacora.getColumnModel().getColumn(1).setHeaderValue(idioma.getProperty("FechaLLegada"));
+        /*  tablabitacora.getColumnModel().getColumn(1).setHeaderValue(idioma.getProperty("FechaLLegada"));
         tablabitacora.getColumnModel().getColumn(2).setHeaderValue(idioma.getProperty("Proceso"));
         tablabitacora.getColumnModel().getColumn(3).setHeaderValue(idioma.getProperty("Forma"));
         tablabitacora.getColumnModel().getColumn(4).setHeaderValue(idioma.getProperty("Beneficio"));
@@ -73,8 +79,7 @@ public class jpBitacora extends javax.swing.JPanel {
         tablabitacora.getColumnModel().getColumn(11).setHeaderValue(idioma.getProperty("Estatus"));
         tablabitacora.getColumnModel().getColumn(12).setHeaderValue(idioma.getProperty("EvalAspecto"));
         tablabitacora.getColumnModel().getColumn(13).setHeaderValue(idioma.getProperty("EvalTaza"));
-        tablabitacora.getColumnModel().getColumn(14).setHeaderValue(idioma.getProperty("Mezcla"));
-
+        tablabitacora.getColumnModel().getColumn(14).setHeaderValue(idioma.getProperty("Mezcla"));*/
         Sinevaluar.setText(idioma.getProperty("SnEvaluar"));
         Aspecto.setText(idioma.getProperty("EvAspecto"));
         Catadas.setText(idioma.getProperty("CatLis"));
@@ -144,6 +149,7 @@ public class jpBitacora extends javax.swing.JPanel {
         jComboBox1 = new javax.swing.JComboBox<>();
         jButton2 = new javax.swing.JButton();
         jLabel3 = new javax.swing.JLabel();
+        kgConfirmados = new javax.swing.JLabel();
 
         jMenuItem1.setText("Reporte Individual");
         jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
@@ -279,11 +285,11 @@ public class jpBitacora extends javax.swing.JPanel {
 
             },
             new String [] {
-                "# CSM", "Fecha de Llegada", "Proceso", "Forma", "Beneficio", "Dueño", "#Sub Lote", "Certificacion", "Peso KG", "# Sacos", "Comunidad", "Estatus", "Eval Aspecto", "Eval Taza", "Mezcla", "Title 16", "Title 17"
+                "# CSM", "Fecha de Llegada", "Proceso", "Forma", "Beneficio", "Dueño", "#Sub Lote", "Certificacion", "Peso KG", "Confirmados", "# Sacos", "Comunidad", "Estatus", "Eval Aspecto", "Eval Taza", "Mezcla"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, true, true
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -377,6 +383,9 @@ public class jpBitacora extends javax.swing.JPanel {
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel3.setText("Filtros");
 
+        kgConfirmados.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
+        kgConfirmados.setText("-");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -385,20 +394,24 @@ public class jpBitacora extends javax.swing.JPanel {
                 .addContainerGap()
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(jButton2))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jScrollPane2)
-                        .addGap(10, 10, 10))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel3)
                             .addGroup(jPanel1Layout.createSequentialGroup()
                                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 147, Short.MAX_VALUE)))
+                        .addGap(0, 157, Short.MAX_VALUE))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 135, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(jButton2))
+                            .addGroup(jPanel1Layout.createSequentialGroup()
+                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addComponent(kgConfirmados))
+                            .addComponent(jScrollPane2))
+                        .addGap(10, 10, 10)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -410,7 +423,9 @@ public class jpBitacora extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 39, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addComponent(kgConfirmados)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
@@ -435,10 +450,11 @@ public class jpBitacora extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
-public void llenarTabla() {
+
+    public void llenarTabla() {
         limpiar(tablabitacora);
         //limpiar(tablaconsulta);
-        mdb.cargarInformacion2(modelo, 15, "SELECT b.id_muestra,b.fecha_llegada,b.tipocafe,b.forma,b.beneficio,b.dueño,b.lote,b.certificado,b.peso,b.sacos,\n"
+        mdb.cargarInformacion2(modelo, 16, "SELECT b.id_muestra,b.fecha_llegada,b.tipocafe,b.forma,b.beneficio,b.dueño,b.lote,b.certificado,b.peso,b.Kgconfirm,b.sacos,\n"
                 + "b.comunidad,b.estatus,d.puntuacion,c.Puntuacion,b.mezcla from bitacoralab b left join datosev d on b.id_bitacora=d.id_bitacora left join \n"
                 + " catacion c on b.id_bitacora=c.id_bitacora where estatus != 'Desactivada' order by b.id_muestra");
         /*   mdb.cargarInformacion2(modelo2, 21, " select b.estatus,b.id_muestra,b.beneficio,b.lote,b.tipocafe,b.forma,b.certificado,b.peso,b.Kgconfirm,\n"
@@ -521,7 +537,9 @@ public void llenarTabla() {
         String sql, sql2;
         System.out.println("SITUACION: " + Tipocafe);
         if (Tipocafe.equals(idioma.getProperty("Todos"))) {
-            sql = "SELECT b.id_muestra,b.fecha_llegada,b.tipocafe,b.forma,b.beneficio,b.dueño,b.lote,b.certificado,b.peso,b.sacos,\n"
+            sql = "SELECT b.id_muestra,b.fecha_llegada,b.tipocafe,b.forma,b.beneficio,b.dueño,b.lote,b.certificado,b.peso,"
+                    + "b.Kgconfirm,"
+                    + "b.sacos,\n"
                     + "b.comunidad,b.estatus,d.puntuacion,c.Puntuacion,b.mezcla from bitacoralab b left join datosev d on b.id_bitacora=d.id_bitacora left join \n"
                     + " catacion c on b.id_bitacora=c.id_bitacora where tipocafe !='z'" + busq + status + aspecto + taza + " order by b.id_muestra";
             sql2 = " select b.estatus,b.id_muestra,b.beneficio,b.lote,b.tipocafe,b.forma,b.certificado,b.peso,b.Kgconfirm,\n"
@@ -531,10 +549,13 @@ public void llenarTabla() {
             System.out.println(sql);
             System.out.println(sql2);
         } else {
-            sql = "SELECT b.id_muestra,b.fecha_llegada,b.tipocafe,b.forma,b.beneficio,b.dueño,b.lote,b.certificado,b.peso,b.sacos,\n"
+            sql = "SELECT b.id_muestra,b.fecha_llegada,b.tipocafe,b.forma,b.beneficio,b.dueño,b.lote,b.certificado,b.peso,"
+                    + "b.Kgconfirm"
+                    + ",b.sacos,\n"
                     + "b.comunidad,b.estatus,d.puntuacion,c.Puntuacion,b.mezcla from bitacoralab b left join datosev d on b.id_bitacora=d.id_bitacora left join \n"
                     + " catacion c on b.id_bitacora=c.id_bitacora where tipocafe='" + Tipocafe + "'" + busq + status + aspecto + taza + " order by b.id_muestra";
-            sql2 = " select b.estatus,b.id_muestra,b.beneficio,b.lote,b.tipocafe,b.forma,b.certificado,b.peso,b.Kgconfirm,\n"
+            sql2 = " select b.estatus,b.id_muestra,b.beneficio,b.lote,b.tipocafe,b.forma,b.certificado,b.peso,"
+                    + "b.Kgconfirm,\n"
                     + " b.sacos,b.comunidad,b.dueño,b.fechalote,c.Puntuacion,d.puntuacion,d.humedad_o,c.quakers,b.sabores,\n"
                     + " b.observaciones,d.Densidadoro,c.densidadtostado from  bitacoralab b left join   datosev d on b.id_bitacora=d.id_bitacora left join \n"
                     + " catacion c on b.id_bitacora=c.id_bitacora where tipocafe='" + Tipocafe + "'" + busq + status + aspecto + taza + " order by b.id_muestra";
@@ -543,16 +564,17 @@ public void llenarTabla() {
         }
         limpiar(tablabitacora);
 //        limpiar(tablaconsulta);
-        mdb.cargarInformacion2(modelo, 15, sql);
+        mdb.cargarInformacion2(modelo, 16, sql);
         //    mdb.cargarInformacion2(modelo2, 21, sql2);
     }
     String csm = "", comunindad = "", tipo = "", id, forma = "", estatus = "", taza = "", aspecto = "", mezasig = "", calcer = "", kgconfirm = "";
     private void tablabitacoraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablabitacoraMouseClicked
         csm = tablabitacora.getValueAt(tablabitacora.getSelectedRow(), 0) + "";
-        comunindad = tablabitacora.getValueAt(tablabitacora.getSelectedRow(), 10) + "";
         tipo = tablabitacora.getValueAt(tablabitacora.getSelectedRow(), 2) + "";
         forma = tablabitacora.getValueAt(tablabitacora.getSelectedRow(), 3) + "";
-        estatus = tablabitacora.getValueAt(tablabitacora.getSelectedRow(), 11) + "";
+        kgconfirm = tablabitacora.getValueAt(tablabitacora.getSelectedRow(), 9) + "";
+        comunindad = tablabitacora.getValueAt(tablabitacora.getSelectedRow(), 11) + "";
+        estatus = tablabitacora.getValueAt(tablabitacora.getSelectedRow(), 12) + "";
         aspecto = mdb.devuelveUnDato("select aspecto from bitacoralab "
                 + "where (id_muestra='" + csm + "' and comunidad='" + comunindad + "')");
         taza = mdb.devuelveUnDato("select taza from bitacoralab "
@@ -611,6 +633,15 @@ public void llenarTabla() {
         } else {
             sabores.setEnabled(false);
         }
+
+        if (kgconfirm.equals("1")) {
+            kgConfirmados.setText("Kg Confimados");
+            kgConfirmados.setForeground(Color.green);
+        } else {
+            kgConfirmados.setText("Kg No Confirmados");
+            kgConfirmados.setForeground(Color.red);
+        }
+
 
     }//GEN-LAST:event_tablabitacoraMouseClicked
     private void SinevaluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SinevaluarActionPerformed
@@ -719,9 +750,42 @@ public void llenarTabla() {
             jdo.setVisible(true);
         }        // TODO add your handling code here:
     }//GEN-LAST:event_mezclaActionPerformed
-
+    String rutaER;
+    private JPanel contentPane;
+    File fichero = null;
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-//        excel.imprimir(tablaconsulta, cn, Idioma);    // TODO add your handling code here:
+        //excel.imprimir(tablaconsulta, cn, Idioma);
+
+        /*   JFileChooser file = new JFileChooser();
+        FileNameExtensionFilter filtro = new FileNameExtensionFilter("*.csv", "csv");
+        file.setFileFilter(filtro);
+
+        int seleccion = file.showOpenDialog(contentPane);
+        //Si el usuario, pincha en aceptar
+        if (seleccion == JFileChooser.APPROVE_OPTION) {
+            //Seleccionamos el fichero
+            fichero = file.getSelectedFile();
+            //Ecribe la ruta del fichero seleccionado en el campo de texto
+            rutaER = fichero.getAbsolutePath();
+            rutaER = rutaER.replace('\\', '/');
+            //System.out.println(fichero.getName());
+            JOptionPane.showMessageDialog(null, rutaER);
+        }*/
+        mdb.exportar("SELECT b.id_muestra,b.fecha_llegada,b.tipocafe,b.forma,b.beneficio,b.dueño,b.lote,b.certificado,b.peso,b.Kgconfirm,b.sacos,\n"
+                + "b.comunidad,b.estatus,d.puntuacion,c.Puntuacion,b.mezcla from bitacoralab b left join datosev d on b.id_bitacora=d.id_bitacora left join \n"
+                + " catacion c on b.id_bitacora=c.id_bitacora where estatus != 'Desactivada' order by b.id_muestra "
+                + "INTO OUTFILE 'C:/Users/Cronos/Documents/AC_Bitacora210521.csv'\n"
+                + "FIELDS TERMINATED BY ','\n"
+                + "ENCLOSED BY '\\\"'\n"
+                + "LINES TERMINATED BY '\\r\\n'");
+
+        Desktop desktop = Desktop.getDesktop();
+        try {
+            desktop.open(new java.io.File("C:\\Users\\Cronos\\Documents\\AC_Bitacora210521.csv"));
+        } catch (IOException ex) {
+            Logger.getLogger(jdRecibos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void kgynActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kgynActionPerformed
@@ -764,11 +828,13 @@ public void llenarTabla() {
     public javax.swing.JPanel jPanel3;
     public javax.swing.JPopupMenu jPopupMenu1;
     public javax.swing.JScrollPane jScrollPane2;
+    public javax.swing.JLabel kgConfirmados;
     public javax.swing.JMenuItem kgyn;
     public javax.swing.JMenuItem mezcla;
     public javax.swing.JMenuItem sabores;
     public javax.swing.JTable tablabitacora;
     public javax.swing.JTextField txtBusqueda;
     // End of variables declaration//GEN-END:variables
-  excel excel = new excel();
+
+    excel excel = new excel();
 }
