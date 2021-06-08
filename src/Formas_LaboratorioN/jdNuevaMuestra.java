@@ -75,12 +75,13 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
     }
 
     public void Guardar2() {
-        String fechaLlegada = new SimpleDateFormat("dd-MMM-yyyy").format(dcFechaLlegada.getDate());
-        String fechaRecibo2 = new SimpleDateFormat("dd-MMM-yyyy").format(dcFechaLote.getDate());
-        String fechaRecibo3 = new SimpleDateFormat("dd-MMM-yyyy").format(dcFinSecado.getDate());
-        String fechaRecibo4 = new SimpleDateFormat("dd-MMM-yyyy").format(dcToma.getDate());
+        
         String Kg = "0";
         if (validar()) {
+            String fechaLlegada = new SimpleDateFormat("dd-MMM-yyyy").format(dcFechaLlegada.getDate());
+            String fechaRecibo2 = new SimpleDateFormat("dd-MMM-yyyy").format(dcFechaLote.getDate());
+            String fechaRecibo3 = new SimpleDateFormat("dd-MMM-yyyy").format(dcFinSecado.getDate());
+            String fechaRecibo4 = new SimpleDateFormat("dd-MMM-yyyy").format(dcToma.getDate());
             if (cbKg.isSelected()) {
                 Kg = "1";
             }
@@ -142,13 +143,16 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
         } else if (cmbTomada.getSelectedItem().equals("Seleccione..")) {
             JOptionPane.showMessageDialog(null, "Seleccione quien Tomó la muestra");
             return false;
-        /*} else if (cmbTransportada.getSelectedItem().equals("Seleccione..")) {
-            JOptionPane.showMessageDialog(null, "Seleccione quien Transportó la muestra");
-            return false;*/
         } else if (cmbRecibida.getSelectedItem().equals("Seleccione..")) {
             JOptionPane.showMessageDialog(null, "Seleccione quien Recibió la muestra");
             return false;
-        } else {
+        } else if (dcFechaLlegada.getDate() == null || dcFechaLote.getDate() == null || dcFinSecado.getDate() == null
+                || dcToma
+                        .getDate() == null){
+            JOptionPane.showMessageDialog(null, "Por favor, verifique campos de fecha");
+            return false;
+        }
+           else {
             return true;
         }
     }
