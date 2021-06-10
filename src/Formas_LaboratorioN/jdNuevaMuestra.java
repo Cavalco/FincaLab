@@ -75,7 +75,7 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
     }
 
     public void Guardar2() {
-        
+
         String Kg = "0";
         if (validar()) {
             String fechaLlegada = new SimpleDateFormat("dd-MMM-yyyy").format(dcFechaLlegada.getDate());
@@ -89,16 +89,15 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
                     + "lote,peso,sacos,comunidad,estatus,taza,aspecto,mezasig,Metodosecado,calidadcereza,pesomuestra,ubicacioncafe"
                     + ",fechalote,terminosecado,tomademuestra,fechacosecha,tomadapor,recibidapor,transportadapor,"
                     + "certificado,idlote,Kgconfirm) values(null,"
-                    + "" + txtNoCSM.getText() + 
-                    ",'" + fechaLlegada + "','" + cmbProceso.getSelectedItem() + "','" + cmbFormaCafe.getSelectedItem() + "','"
+                    + "" + txtNoCSM.getText()
+                    + ",'" + fechaLlegada + "','" + cmbProceso.getSelectedItem() + "','" + cmbFormaCafe.getSelectedItem() + "','"
                     + cmbBeneficio.getSelectedItem() + "','" + cmbDueno.getSelectedItem() + "','" + txtSublote.getText() + "','" + txtKilos.getText()
                     + "','" + txtCostales.getText() + "','" + cmbComunidad.getSelectedItem() + "','Activada','0','0','0','" + cmbMetodoSecado.getSelectedItem()
                     + "', '" + cmbCalidadCereza.getSelectedItem() + "' ,'" + txtPesoMuestra.getText() + "','" + cmbUbicacion.getSelectedItem()
                     + "', '" + fechaRecibo2 + "','" + fechaRecibo3 + "','" + fechaRecibo4 + "','" + txtTemporada.getText() + "','" + cmbTomada.getSelectedItem() + "','"
-                    + cmbRecibida.getSelectedItem() + "','" + txtTransportadaPor.getText() + "','" + cmbCertificacion.getSelectedItem() + "', '"+txtSublote.getText()
+                    + cmbRecibida.getSelectedItem() + "','" + txtTransportadaPor.getText() + "','" + cmbCertificacion.getSelectedItem() + "', '" + txtSublote.getText()
                     + "','" + Kg + "')";
-          
-         
+
             System.out.println(res);
             ml.insertarBasicos(res);
             JOptionPane.showMessageDialog(null, "Inserción Exitosa");
@@ -148,11 +147,10 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
             return false;
         } else if (dcFechaLlegada.getDate() == null || dcFechaLote.getDate() == null || dcFinSecado.getDate() == null
                 || dcToma
-                        .getDate() == null){
+                        .getDate() == null) {
             JOptionPane.showMessageDialog(null, "Por favor, verifique campos de fecha");
             return false;
-        }
-           else {
+        } else {
             return true;
         }
     }
@@ -750,7 +748,12 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        Guardar2();
+
+        if (validar()) {
+            Guardar2();
+        } else {
+
+        }
         /*String fechaLlegada = new SimpleDateFormat("yyyy-MM-dd").format(dcFechaLlegada.getDate());
         String fechaRecibo2 = new SimpleDateFormat("yyyy-MM-dd").format(dcFechaLote.getDate());
         String fechaRecibo3 = new SimpleDateFormat("yyyy-MM-dd").format(dcFinSecado.getDate());
@@ -815,7 +818,7 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
         txtTemporada.setText("");
         cmbTomada.setSelectedIndex(0);
         cmbRecibida.setSelectedIndex(0);
- //       cmbTransportada.setSelectedIndex(0);
+        //       cmbTransportada.setSelectedIndex(0);
     }
 
     /**

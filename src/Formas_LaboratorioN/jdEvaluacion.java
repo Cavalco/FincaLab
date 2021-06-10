@@ -66,13 +66,13 @@ public class jdEvaluacion extends javax.swing.JFrame {
         String g[] = new String[3];
         String estatus = "A";
         g[0] = "insert into cribas values (null," + id + ",'19',"
-                + "'" + A1.getText() + "," + B1.getText() + "," + C1.getText() + "," + D1.getText() + "," + E1.getText() + "," + F1.getText() + "," + G1.getText() + "," + H1.getText() + "," + I1.getText() + ","+ O1.getText() + "," + J1.getText() + "," + K1.getText() + "," + L1.getText() + "," + M1.getText() + "," + N1.getText() + "," 
-                + "" + P1.getText() + "," + Q1.getText() + "," + R1.getText() + "," + S1.getText() + "," + T1.getText() + "," + U1.getText() + "," + V1.getText() + "," + W1.getText() + "," + X1.getText() + "'),(null," + id + ",'18','" + A2.getText() + "," + B2.getText() + "," + C2.getText() + "," + D2.getText() + "," + E2.getText() + "," + F2.getText() + "," + G2.getText() + "," + H2.getText() + "," + I2.getText() + ","+ O2.getText() + ","   + J2.getText() + "," + K2.getText() + "," + L2.getText() + "," + M2.getText() + "," + N2.getText() + "," 
-                + "" + P2.getText() + "," + Q2.getText() + "," + R2.getText() + "," + S2.getText() + "," + T2.getText() + "," + U2.getText() + "," + V2.getText() + "," + W2.getText() + "," + X2.getText() + "'),(null," + id + ",'17','" + A3.getText() + "," + B3.getText() + "," + C3.getText() + "," + D3.getText() + "," + E3.getText() + "," + F3.getText() + "," + G3.getText() + "," + H3.getText() + "," + I3.getText() + ","+ O3.getText() + "," + J3.getText() + "," + K3.getText() + "," + L3.getText() + "," + M3.getText() + "," + N3.getText() + "," 
-                + "" + P3.getText() + "," + Q3.getText() + "," + R3.getText() + "," + S3.getText() + "," + T3.getText() + "," + U3.getText() + "," + V3.getText() + "," + W3.getText() + "," + X3.getText() + "'),(null," + id + ",'16','" + A4.getText() + "," + B4.getText() + "," + C4.getText() + "," + D4.getText() + "," + E4.getText() + "," + F4.getText() + "," + G4.getText() + "," + H4.getText() + "," + I4.getText() + ","+ O4.getText() + "," + J4.getText() + "," + K4.getText() + "," + L4.getText() + "," + M4.getText() + "," + N4.getText() + "," 
-                + "" + P4.getText() + "," + Q4.getText() + "," + R4.getText() + "," + S4.getText() + "," + T4.getText() + "," + U4.getText() + "," + V4.getText() + "," + W4.getText() + "," + X4.getText() + "'),(null," + id + ",'15','" + A5.getText() + "," + B5.getText() + "," + C5.getText() + "," + D5.getText() + "," + E5.getText() + "," + F5.getText() + "," + G5.getText() + "," + H5.getText() + "," + I5.getText() + ","+ O5.getText() + "," + J5.getText() + "," + K5.getText() + "," + L5.getText() + "," + M5.getText() + "," + N5.getText() + "," 
-                + "" + P5.getText() + "," + Q5.getText() + "," + R5.getText() + "," + S5.getText() + "," + T5.getText() + "," + U5.getText() + "," + V5.getText() + "," + W5.getText() + "," + X5.getText() + "'),(null," + id + ",'F','" + A6.getText() + "," + B6.getText() + "," + C6.getText() + "," + D6.getText() + "," + E6.getText() + "," + F6.getText() + "," + G6.getText() + "," + H6.getText() + "," + I6.getText() + ","+ O6.getText() + "," + J6.getText() + "," + K6.getText() + "," + L6.getText() + "," + M6.getText() + "," + N6.getText() + "," 
-                + "" + P6.getText() + "," + Q6.getText() + "," + R6.getText() + "," + S6.getText() + "," + T6.getText() + "," + U6.getText() + "," + V6.getText() + "," + W6.getText() + "," + X6.getText() + "'),(null," + id + ",'TOTAL','" + AT.getText() + "," + BT.getText() + "," + CT.getText() + "," + DT.getText() + "," + ET.getText() + "," + FT.getText() + "," + GT.getText() + "," + HT.getText() + "," + IT.getText() + ","+ OT.getText() + "," + JT.getText() + "," + KT.getText() + "," + LT.getText() + "," + MT.getText() + "," + NT.getText() + "," 
+                + "'" + A1.getText() + "," + B1.getText() + "," + C1.getText() + "," + D1.getText() + "," + E1.getText() + "," + F1.getText() + "," + G1.getText() + "," + H1.getText() + "," + I1.getText() + "," + O1.getText() + "," + J1.getText() + "," + K1.getText() + "," + L1.getText() + "," + M1.getText() + "," + N1.getText() + ","
+                + "" + P1.getText() + "," + Q1.getText() + "," + R1.getText() + "," + S1.getText() + "," + T1.getText() + "," + U1.getText() + "," + V1.getText() + "," + W1.getText() + "," + X1.getText() + "'),(null," + id + ",'18','" + A2.getText() + "," + B2.getText() + "," + C2.getText() + "," + D2.getText() + "," + E2.getText() + "," + F2.getText() + "," + G2.getText() + "," + H2.getText() + "," + I2.getText() + "," + O2.getText() + "," + J2.getText() + "," + K2.getText() + "," + L2.getText() + "," + M2.getText() + "," + N2.getText() + ","
+                + "" + P2.getText() + "," + Q2.getText() + "," + R2.getText() + "," + S2.getText() + "," + T2.getText() + "," + U2.getText() + "," + V2.getText() + "," + W2.getText() + "," + X2.getText() + "'),(null," + id + ",'17','" + A3.getText() + "," + B3.getText() + "," + C3.getText() + "," + D3.getText() + "," + E3.getText() + "," + F3.getText() + "," + G3.getText() + "," + H3.getText() + "," + I3.getText() + "," + O3.getText() + "," + J3.getText() + "," + K3.getText() + "," + L3.getText() + "," + M3.getText() + "," + N3.getText() + ","
+                + "" + P3.getText() + "," + Q3.getText() + "," + R3.getText() + "," + S3.getText() + "," + T3.getText() + "," + U3.getText() + "," + V3.getText() + "," + W3.getText() + "," + X3.getText() + "'),(null," + id + ",'16','" + A4.getText() + "," + B4.getText() + "," + C4.getText() + "," + D4.getText() + "," + E4.getText() + "," + F4.getText() + "," + G4.getText() + "," + H4.getText() + "," + I4.getText() + "," + O4.getText() + "," + J4.getText() + "," + K4.getText() + "," + L4.getText() + "," + M4.getText() + "," + N4.getText() + ","
+                + "" + P4.getText() + "," + Q4.getText() + "," + R4.getText() + "," + S4.getText() + "," + T4.getText() + "," + U4.getText() + "," + V4.getText() + "," + W4.getText() + "," + X4.getText() + "'),(null," + id + ",'15','" + A5.getText() + "," + B5.getText() + "," + C5.getText() + "," + D5.getText() + "," + E5.getText() + "," + F5.getText() + "," + G5.getText() + "," + H5.getText() + "," + I5.getText() + "," + O5.getText() + "," + J5.getText() + "," + K5.getText() + "," + L5.getText() + "," + M5.getText() + "," + N5.getText() + ","
+                + "" + P5.getText() + "," + Q5.getText() + "," + R5.getText() + "," + S5.getText() + "," + T5.getText() + "," + U5.getText() + "," + V5.getText() + "," + W5.getText() + "," + X5.getText() + "'),(null," + id + ",'F','" + A6.getText() + "," + B6.getText() + "," + C6.getText() + "," + D6.getText() + "," + E6.getText() + "," + F6.getText() + "," + G6.getText() + "," + H6.getText() + "," + I6.getText() + "," + O6.getText() + "," + J6.getText() + "," + K6.getText() + "," + L6.getText() + "," + M6.getText() + "," + N6.getText() + ","
+                + "" + P6.getText() + "," + Q6.getText() + "," + R6.getText() + "," + S6.getText() + "," + T6.getText() + "," + U6.getText() + "," + V6.getText() + "," + W6.getText() + "," + X6.getText() + "'),(null," + id + ",'TOTAL','" + AT.getText() + "," + BT.getText() + "," + CT.getText() + "," + DT.getText() + "," + ET.getText() + "," + FT.getText() + "," + GT.getText() + "," + HT.getText() + "," + IT.getText() + "," + OT.getText() + "," + JT.getText() + "," + KT.getText() + "," + LT.getText() + "," + MT.getText() + "," + NT.getText() + ","
                 + "" + PT.getText() + "," + QT.getText() + "," + RT.getText() + "," + ST.getText() + "," + TT.getText() + "," + UT.getText() + "," + VT.getText() + "," + WT.getText() + "," + XT.getText() + "')";
 
         g[1] = "insert into datosev values (null," + id + ","
@@ -112,6 +112,37 @@ public class jdEvaluacion extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(null, "¡Escribe cuanto peso esta siendo evaluado!");
         }
 
+    }
+
+    public Boolean validar() {
+
+        if (dcFechaE.getDate() == null) {
+            JOptionPane.showMessageDialog(null, "Por favor, verifique campos de fecha");
+            return false;
+        } else if (txtPeso.getText().length() <= 0) {
+            JOptionPane.showMessageDialog(null, "Ingrese Peso Evaluado");
+            return false;
+        } else if (txtHumedadOro.getText().length() <= 0) {
+            JOptionPane.showMessageDialog(null, "Ingrese Humedad Oro");
+            return false;
+        } else if (txtHumedadCas.getText().length() <= 0) {
+            JOptionPane.showMessageDialog(null, "Ingrese Humedad Cascara");
+            return false;
+        } else if (cbEvaluador.getSelectedItem().equals("Seleccione..")) {
+            JOptionPane.showMessageDialog(null, "Seleccione Evaluador");
+            return false;
+        } else if (txtDenOro.getText().length() <= 0) {
+            JOptionPane.showMessageDialog(null, "Ingrese Densidad Oro");
+            return false;
+        } else if (A1.getText().length() <= 0 || A2.getText().length() <= 0
+                || A3.getText().length() <= 0 || A4.getText().length() <= 0
+                || A5.getText().length() <= 0 || A6.getText().length() <= 0
+                || AT.getText().length() <= 0) {
+            JOptionPane.showMessageDialog(null, "Verifique Pesos de Cribas");
+            return false;
+        } else {
+            return true;
+        }
     }
 
     //Metodo para sacar la puntuacion
@@ -192,16 +223,16 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[5] = Integer.parseInt(B6.getText());
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    
-                    BT1.setText(vt+"");
-                    
+
+                    BT1.setText(vt + "");
+
                     suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
                             + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
 
                     formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
 
-                    BT2.setText(df.format(formula)+"");
-                    
+                    BT2.setText(df.format(formula) + "");
+
                     formula = Double.parseDouble(df.format(formula)) / 5;
 
                     System.out.println(formula);
@@ -226,15 +257,15 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                    CT1.setText(vt+"");
-                    
+                    CT1.setText(vt + "");
+
                     suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
                             + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
 
                     formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
 
-                    CT2.setText(df.format(formula)+"");
-                    
+                    CT2.setText(df.format(formula) + "");
+
                     formula = formula / 10;
 
                     System.out.println("formula = " + formula);
@@ -257,15 +288,15 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                    DT1.setText(vt+"");
-                    
+                    DT1.setText(vt + "");
+
                     suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
                             + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
 
                     formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
 
-                    DT2.setText(df.format(formula)+"");
-                    
+                    DT2.setText(df.format(formula) + "");
+
                     formula = formula / 1;
 
                     System.out.println("(350/" + AT.getText() + ") * (" + AT.getText() + "/" + suma + ") * " + vt);
@@ -288,15 +319,15 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
 
-                    ET1.setText(vt+"");
-                    
+                    ET1.setText(vt + "");
+
                     suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
                             + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
 
                     formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
 
-                    ET2.setText(df.format(formula)+"");
-                    
+                    ET2.setText(df.format(formula) + "");
+
                     formula = formula / 3;
 
                     res = trunc(formula);
@@ -316,16 +347,16 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[5] = Integer.parseInt(F6.getText());
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    
-                    FT1.setText(vt+"");
+
+                    FT1.setText(vt + "");
 
                     suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
                             + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
 
                     formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
 
-                    FT2.setText(df.format(formula)+"");
-                    
+                    FT2.setText(df.format(formula) + "");
+
                     formula = formula / 1;
 
                     res = trunc(formula);
@@ -347,16 +378,16 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[5] = Integer.parseInt(G6.getText());
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    
-                    GT1.setText(vt+"");
+
+                    GT1.setText(vt + "");
 
                     suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
                             + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
 
                     formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
 
-                    GT2.setText(df.format(formula)+"");
-                    
+                    GT2.setText(df.format(formula) + "");
+
                     formula = formula / 3;
 
                     res = trunc(formula);
@@ -376,16 +407,16 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[5] = Integer.parseInt(H6.getText());
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    
-                    HT1.setText(vt+"");
+
+                    HT1.setText(vt + "");
 
                     suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
                             + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
 
                     formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
 
-                    HT2.setText(df.format(formula)+"");
-                    
+                    HT2.setText(df.format(formula) + "");
+
                     formula = formula / 5;
 
                     res = trunc(formula);
@@ -405,16 +436,16 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[5] = Integer.parseInt(I6.getText());
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    
-                    IT1.setText(vt+"");
+
+                    IT1.setText(vt + "");
 
                     suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
                             + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
 
                     formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
 
-                    IT2.setText(df.format(formula)+"");
-                    
+                    IT2.setText(df.format(formula) + "");
+
                     formula = formula / 5;
 
                     res = trunc(formula);
@@ -434,16 +465,16 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[5] = Integer.parseInt(J6.getText());
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    
-                    JT1.setText(vt+"");
+
+                    JT1.setText(vt + "");
 
                     suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
                             + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
 
                     formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
 
-                    JT2.setText(df.format(formula)+"");
-                    
+                    JT2.setText(df.format(formula) + "");
+
                     formula = formula / 5;
 
                     res = trunc(formula);
@@ -463,16 +494,16 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[5] = Integer.parseInt(K6.getText());
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    
-                    KT1.setText(vt+"");
+
+                    KT1.setText(vt + "");
 
                     suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
                             + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
 
                     formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
 
-                    KT2.setText(df.format(formula)+"");
-                    
+                    KT2.setText(df.format(formula) + "");
+
                     formula = formula / 5;
 
                     res = trunc(formula);
@@ -492,16 +523,16 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[5] = Integer.parseInt(L6.getText());
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    
-                    LT1.setText(vt+"");
+
+                    LT1.setText(vt + "");
 
                     suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
                             + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
 
                     formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
 
-                    LT2.setText(df.format(formula)+"");
-                    
+                    LT2.setText(df.format(formula) + "");
+
                     formula = formula / 5;
 
                     res = trunc(formula);
@@ -521,16 +552,16 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[5] = Integer.parseInt(M6.getText());
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    
-                    MT1.setText(vt+"");
+
+                    MT1.setText(vt + "");
 
                     suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
                             + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
 
                     formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
 
-                    MT2.setText(df.format(formula)+"");
-                    
+                    MT2.setText(df.format(formula) + "");
+
                     formula = formula / 5;
 
                     res = trunc(formula);
@@ -551,16 +582,16 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[5] = Integer.parseInt(N6.getText());
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    
-                    NT1.setText(vt+"");
+
+                    NT1.setText(vt + "");
 
                     suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
                             + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
 
                     formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
 
-                    NT2.setText(df.format(formula)+"");
-                    
+                    NT2.setText(df.format(formula) + "");
+
                     formula = formula / 1;
 
                     res = trunc(formula);
@@ -580,8 +611,8 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[5] = Integer.parseInt(O6.getText());
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    
-                    OT1.setText(vt+"");
+
+                    OT1.setText(vt + "");
 
                     suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
                             + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
@@ -590,8 +621,8 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
                     formula = formula / 3;
 
-                    OT2.setText(df.format(formula)+"");
-                    
+                    OT2.setText(df.format(formula) + "");
+
                     res = trunc(formula);
                     if (res == 0) {
                         OT.setText("0");
@@ -609,16 +640,16 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[5] = Integer.parseInt(P6.getText());
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    
-                    PT1.setText(vt+"");
+
+                    PT1.setText(vt + "");
 
                     suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
                             + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
 
                     formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
 
-                    PT2.setText(df.format(formula)+"");
-                    
+                    PT2.setText(df.format(formula) + "");
+
                     formula = formula / 5;
 
                     res = trunc(formula);
@@ -638,16 +669,16 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[5] = Integer.parseInt(Q6.getText());
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    
-                    QT1.setText(vt+"");
+
+                    QT1.setText(vt + "");
 
                     suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
                             + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
 
                     formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
 
-                    QT2.setText(df.format(formula)+"");
-                    
+                    QT2.setText(df.format(formula) + "");
+
                     formula = formula / 5;
 
                     res = trunc(formula);
@@ -667,16 +698,16 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[5] = Integer.parseInt(R6.getText());
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    
-                    RT1.setText(vt+"");
+
+                    RT1.setText(vt + "");
 
                     suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
                             + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
 
                     formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
 
-                    RT2.setText(df.format(formula)+"");
-                    
+                    RT2.setText(df.format(formula) + "");
+
                     formula = formula / 5;
 
                     res = trunc(formula);
@@ -696,16 +727,16 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[5] = Integer.parseInt(S6.getText());
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    
-                    ST1.setText(vt+"");
+
+                    ST1.setText(vt + "");
 
                     suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
                             + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
 
                     formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
 
-                    ST2.setText(df.format(formula)+"");
-                    
+                    ST2.setText(df.format(formula) + "");
+
                     formula = formula / 5;
 
                     res = trunc(formula);
@@ -725,16 +756,16 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[5] = Integer.parseInt(T6.getText());
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    
-                    TT1.setText(vt+"");
+
+                    TT1.setText(vt + "");
 
                     suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
                             + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
 
                     formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
 
-                    TT2.setText(df.format(formula)+"");
-                    
+                    TT2.setText(df.format(formula) + "");
+
                     formula = formula / 5;
 
                     res = trunc(formula);
@@ -752,18 +783,18 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[3] = Integer.parseInt(U4.getText());
                     v[4] = Integer.parseInt(U5.getText());
                     v[5] = Integer.parseInt(U6.getText());
-                    
+
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    
-                    UT1.setText(vt+"");
+
+                    UT1.setText(vt + "");
 
                     suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
                             + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
 
                     formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
 
-                    UT2.setText(df.format(formula)+"");
-                    
+                    UT2.setText(df.format(formula) + "");
+
                     formula = formula / 5;
 
                     res = trunc(formula);
@@ -781,18 +812,18 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[3] = Integer.parseInt(V4.getText());
                     v[4] = Integer.parseInt(V5.getText());
                     v[5] = Integer.parseInt(V6.getText());
-                    
+
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    
-                    VT1.setText(vt+"");
+
+                    VT1.setText(vt + "");
 
                     suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
                             + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
 
                     formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
 
-                    VT2.setText(df.format(formula)+"");
-                    
+                    VT2.setText(df.format(formula) + "");
+
                     formula = formula / 5;
 
                     res = trunc(formula);
@@ -812,16 +843,16 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     v[5] = Integer.parseInt(W6.getText());
 
                     vt = v[0] + v[1] + v[2] + v[3] + v[4] + v[5];
-                    
-                    WT1.setText(vt+"");
+
+                    WT1.setText(vt + "");
 
                     suma = Double.parseDouble(A1.getText()) + Double.parseDouble(A2.getText())
                             + Double.parseDouble(A3.getText()) + Double.parseDouble(A4.getText());
 
                     formula = (350 / Double.parseDouble(AT.getText())) * (Double.parseDouble(AT.getText()) / suma) * vt;
 
-                    WT2.setText(df.format(formula)+"");
-                    
+                    WT2.setText(df.format(formula) + "");
+
                     formula = formula / 5;
 
                     res = trunc(formula);
@@ -863,17 +894,19 @@ public class jdEvaluacion extends javax.swing.JFrame {
         }
 
     }
-    
+
     //Metodo para quitar el 0 con el Focus
-    public void quitarCero(JTextField texto){
-        if(texto.getText().equals("0"))
+    public void quitarCero(JTextField texto) {
+        if (texto.getText().equals("0")) {
             texto.setText("");
+        }
     }
-    
+
     //Metodo para poner el 0 con perdida de Focus
-    public void ponerCero(JTextField texto){
-        if(texto.getText().equals(""))
+    public void ponerCero(JTextField texto) {
+        if (texto.getText().equals("")) {
             texto.setText("0");
+        }
     }
 
     /**
@@ -4725,6 +4758,11 @@ public class jdEvaluacion extends javax.swing.JFrame {
         jLabel53.setText("Humedad Café Oro");
 
         txtHumedadOro.setText("0");
+        txtHumedadOro.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtHumedadOroFocusLost(evt);
+            }
+        });
 
         jLabel48.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel48.setText("%");
@@ -4732,6 +4770,11 @@ public class jdEvaluacion extends javax.swing.JFrame {
         jLabel54.setText("Humedad Cascara");
 
         txtHumedadCas.setText("0");
+        txtHumedadCas.addFocusListener(new java.awt.event.FocusAdapter() {
+            public void focusLost(java.awt.event.FocusEvent evt) {
+                txtHumedadCasFocusLost(evt);
+            }
+        });
 
         jLabel49.setFont(new java.awt.Font("Tahoma", 1, 12)); // NOI18N
         jLabel49.setText("%");
@@ -4936,7 +4979,10 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        guardar();
+        if (validar()) {
+            guardar();
+        } else {
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void X6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_X6KeyReleased
@@ -7404,7 +7450,22 @@ public class jdEvaluacion extends javax.swing.JFrame {
         rendimiento();
     }//GEN-LAST:event_X6FocusLost
 
-    
+    private void txtHumedadOroFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtHumedadOroFocusLost
+        // TODO add your handling code here:
+        if (Double.parseDouble(txtHumedadOro.getText()) <= 9
+                || Double.parseDouble(txtHumedadOro.getText()) >= 12) {
+            JOptionPane.showMessageDialog(null, "Humedad Oro Fuera de Parametros");
+        }
+    }//GEN-LAST:event_txtHumedadOroFocusLost
+
+    private void txtHumedadCasFocusLost(java.awt.event.FocusEvent evt) {//GEN-FIRST:event_txtHumedadCasFocusLost
+        // TODO add your handling code here:
+        if (Double.parseDouble(txtHumedadCas.getText()) <= 9
+                || Double.parseDouble(txtHumedadCas.getText()) >= 12) {
+            JOptionPane.showMessageDialog(null, "Humedad Cascara Fuera de Parametros");
+        }
+    }//GEN-LAST:event_txtHumedadCasFocusLost
+
     /**
      * @param args the command line arguments
      */

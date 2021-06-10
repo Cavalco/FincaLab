@@ -122,7 +122,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         } else {
             l = 0;
         }
-        
+
         //Formula anterior que debe utilizarse de nuevo para coincidir con archivo Eval Green
         //total = a + b + c + d + e + f + ((10 / g) * h) + ((10 / g) * i) + ((10 / g) * j) + k - l;
         total = a + b + c + d + e + f + h + i + j + k - l;
@@ -130,6 +130,37 @@ public class jdCatacion2 extends javax.swing.JFrame {
         lblPuntuacion.setText(formato.format(total) + "");
 
         System.out.println("Puntuacion: " + a + " + " + b + " + " + c + " + " + d + " + " + e + " + " + f + " + ((10/" + g + ")  " + h + ") + ((10/g)  " + i + ") + ((10/" + g + ") * " + j + ") + " + k + " - 1");
+    }
+
+    public Boolean validar() {
+
+        if (txtFecha.getDate() == null) {
+            JOptionPane.showMessageDialog(null, "Por favor, verifique campos de fecha");
+            return false;
+        } else if (txtTazasCat.getText().length() <= 0) {
+            JOptionPane.showMessageDialog(null, "Ingrese Tazas Catadas");
+            return false;
+        } else if (txtUniTaza.getText().length() <= 0) {
+            JOptionPane.showMessageDialog(null, "Ingrese Uniformidad Taza");
+            return false;
+        } else if (txtTazaLim.getText().length() <= 0) {
+            JOptionPane.showMessageDialog(null, "Ingrese Taza Limpia");
+            return false;
+        } else if (txtDulzor.getText().length() <= 0) {
+            JOptionPane.showMessageDialog(null, "Ingrese Dulzor");
+            return false;
+        } else if (txtNoTazas.getText().length() <= 0) {
+            JOptionPane.showMessageDialog(null, "Ingrese Tazas Malas");
+            return false;
+        } else if (txtIntensidad.getText().length() <= 0) {
+            JOptionPane.showMessageDialog(null, "Ingrese Intensidad");
+            return false;
+        } else if (txtDefectos.getText().length() <= 0) {
+            JOptionPane.showMessageDialog(null, "Ingrese Defectos");
+            return false;
+        } else {
+            return true;
+        }
     }
 
     public void promedio() {
@@ -3663,7 +3694,10 @@ public class jdCatacion2 extends javax.swing.JFrame {
     String sCuerpo = "";
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        guardar();
+        if (validar()) {
+            guardar();
+        } else {
+        }
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void SourFer5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer5KeyReleased
@@ -4219,7 +4253,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                         + spCuerpoInt.getValue() + "','" + txtBalance.getText() + "','"
                         + txtCatador.getText() + "','Consenso','" + fecha + "','" + lblDenTos.getText() + "')");
 
-                mdb.actualizarBasicos("update bitacoralab set taza='1', "
+                mdb.actualizarBasicos("update bitacoralab set taza='1', estatus='" + estatus + "', "
                         + "sabores= '" + cadenaSabores + "', olores='" + cadenaOlores + "' where id_bitacora=" + id);
                 //jpCT.llenarTabla();
                 this.dispose();
