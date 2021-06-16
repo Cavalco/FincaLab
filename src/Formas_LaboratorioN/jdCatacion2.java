@@ -346,6 +346,10 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Spices = new javax.swing.JTable();
         jScrollPane14 = new javax.swing.JScrollPane();
         Nutty = new javax.swing.JTable();
+        jScrollPane56 = new javax.swing.JScrollPane();
+        Body3 = new javax.swing.JTable();
+        jScrollPane57 = new javax.swing.JScrollPane();
+        Finish3 = new javax.swing.JTable();
         jPanel11 = new javax.swing.JPanel();
         jScrollPane17 = new javax.swing.JScrollPane();
         Sweet1 = new javax.swing.JTable();
@@ -365,6 +369,10 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Spices1 = new javax.swing.JTable();
         jScrollPane22 = new javax.swing.JScrollPane();
         Nutty1 = new javax.swing.JTable();
+        jScrollPane58 = new javax.swing.JScrollPane();
+        Body4 = new javax.swing.JTable();
+        jScrollPane59 = new javax.swing.JScrollPane();
+        Finish4 = new javax.swing.JTable();
         jPanel12 = new javax.swing.JPanel();
         jScrollPane23 = new javax.swing.JScrollPane();
         Sweet2 = new javax.swing.JTable();
@@ -384,6 +392,10 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Spices2 = new javax.swing.JTable();
         jScrollPane31 = new javax.swing.JScrollPane();
         Nutty2 = new javax.swing.JTable();
+        jScrollPane60 = new javax.swing.JScrollPane();
+        Body5 = new javax.swing.JTable();
+        jScrollPane61 = new javax.swing.JScrollPane();
+        Finish5 = new javax.swing.JTable();
         jPanel13 = new javax.swing.JPanel();
         jScrollPane32 = new javax.swing.JScrollPane();
         Sweet3 = new javax.swing.JTable();
@@ -403,6 +415,10 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Spices3 = new javax.swing.JTable();
         jScrollPane40 = new javax.swing.JScrollPane();
         Nutty3 = new javax.swing.JTable();
+        jScrollPane62 = new javax.swing.JScrollPane();
+        Body6 = new javax.swing.JTable();
+        jScrollPane63 = new javax.swing.JScrollPane();
+        Finish6 = new javax.swing.JTable();
         jPanel14 = new javax.swing.JPanel();
         jScrollPane41 = new javax.swing.JScrollPane();
         Sweet4 = new javax.swing.JTable();
@@ -418,14 +434,60 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Body1 = new javax.swing.JTable();
         jScrollPane47 = new javax.swing.JScrollPane();
         Finish1 = new javax.swing.JTable();
+        jScrollPane49 = new javax.swing.JScrollPane();
+        Other4 = new javax.swing.JTable();
+        jScrollPane50 = new javax.swing.JScrollPane();
+        Roasted4 = new javax.swing.JTable();
+        jScrollPane51 = new javax.swing.JScrollPane();
+        Spices4 = new javax.swing.JTable();
+        jScrollPane52 = new javax.swing.JScrollPane();
+        Nutty4 = new javax.swing.JTable();
         jPanel15 = new javax.swing.JPanel();
         jScrollPane48 = new javax.swing.JScrollPane();
         SourFer5 = new javax.swing.JTable();
+        jScrollPane53 = new javax.swing.JScrollPane();
+        Sweet5 = new javax.swing.JTable();
+        jScrollPane64 = new javax.swing.JScrollPane();
+        Floral5 = new javax.swing.JTable();
+        jScrollPane65 = new javax.swing.JScrollPane();
+        Fruit5 = new javax.swing.JTable();
+        jScrollPane66 = new javax.swing.JScrollPane();
+        GreenVeg5 = new javax.swing.JTable();
+        jScrollPane67 = new javax.swing.JScrollPane();
+        Body7 = new javax.swing.JTable();
+        jScrollPane68 = new javax.swing.JScrollPane();
+        Finish7 = new javax.swing.JTable();
+        jScrollPane69 = new javax.swing.JScrollPane();
+        Other5 = new javax.swing.JTable();
+        jScrollPane70 = new javax.swing.JScrollPane();
+        Roasted5 = new javax.swing.JTable();
+        jScrollPane71 = new javax.swing.JScrollPane();
+        Spices5 = new javax.swing.JTable();
+        jScrollPane72 = new javax.swing.JScrollPane();
+        Nutty5 = new javax.swing.JTable();
         jPanel16 = new javax.swing.JPanel();
         jScrollPane54 = new javax.swing.JScrollPane();
         Body2 = new javax.swing.JTable();
         jScrollPane55 = new javax.swing.JScrollPane();
         Finish2 = new javax.swing.JTable();
+        jScrollPane73 = new javax.swing.JScrollPane();
+        Sweet6 = new javax.swing.JTable();
+        jScrollPane74 = new javax.swing.JScrollPane();
+        Floral6 = new javax.swing.JTable();
+        jScrollPane75 = new javax.swing.JScrollPane();
+        Fruit6 = new javax.swing.JTable();
+        jScrollPane76 = new javax.swing.JScrollPane();
+        SourFer6 = new javax.swing.JTable();
+        jScrollPane77 = new javax.swing.JScrollPane();
+        GreenVeg6 = new javax.swing.JTable();
+        jScrollPane78 = new javax.swing.JScrollPane();
+        Other6 = new javax.swing.JTable();
+        jScrollPane79 = new javax.swing.JScrollPane();
+        Roasted6 = new javax.swing.JTable();
+        jScrollPane80 = new javax.swing.JScrollPane();
+        Spices6 = new javax.swing.JTable();
+        jScrollPane81 = new javax.swing.JScrollPane();
+        Nutty6 = new javax.swing.JTable();
         jLabel17 = new javax.swing.JLabel();
         lblPuntuacion = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
@@ -1324,16 +1386,15 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Sweet.setBackground(new java.awt.Color(255, 102, 102));
         Sweet.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Dulce", null},
                 {"Azúcar-Mor", null},
-                {"Melaza", null},
-                {"Jarab-mapl", null},
-                {"Caramelo", null},
-                {"Miel", null},
+                {"  Melaza", null},
+                {"  Jarab-mapl", null},
+                {"  Caramelo", null},
+                {"  Miel", null},
                 {"Vainilla", null}
             },
             new String [] {
-                "1 Cualidad", "Intensidad"
+                "1 Dulce", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1359,14 +1420,14 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Floral.setBackground(new java.awt.Color(255, 153, 102));
         Floral.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Floral", null},
                 {"Té-Negro", null},
-                {"Manzanilla", null},
-                {"Rosa", null},
-                {"Jazmine", null}
+                {"Floral", null},
+                {"  Manzanilla", null},
+                {"  Rosa", null},
+                {"  Jazmine", null}
             },
             new String [] {
-                "2 Cualidad", "Intensidad"
+                "2 Floral", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1388,32 +1449,31 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Fruit.setBackground(new java.awt.Color(255, 204, 0));
         Fruit.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Frutas", null},
                 {"Bayas", null},
-                {"Moras", null},
-                {"Frambuesa", null},
-                {"Arándano", null},
-                {"Fresa", null},
+                {"  Moras", null},
+                {"  Frambuesa", null},
+                {"  Arándano", null},
+                {"  Fresa", null},
                 {"Fruto-sec", null},
-                {"Pasas", null},
-                {"Ciruel-pas", null},
+                {"  Pasas", null},
+                {"  Ciruel-pas", null},
                 {"Otras-frut", null},
-                {"Coco", null},
-                {"Cereza", null},
-                {"Granada", null},
-                {"Piña", null},
-                {"Uvas", null},
-                {"Manzana", null},
-                {"Durazno", null},
-                {"Pera", null},
+                {"  Coco", null},
+                {"  Cereza", null},
+                {"  Granada", null},
+                {"  Piña", null},
+                {"  Uvas", null},
+                {"  Manzana", null},
+                {"  Durazno", null},
+                {"  Pera", null},
                 {"Citricos", null},
-                {"Toronja", null},
-                {"Naranja", null},
-                {"Limon", null},
-                {"Lima", null}
+                {"  Toronja", null},
+                {"  Naranja", null},
+                {"  Limon", null},
+                {"  Lima", null}
             },
             new String [] {
-                "3 Cualidades", "Intensidad"
+                "3 Afrutado", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1435,20 +1495,20 @@ public class jdCatacion2 extends javax.swing.JFrame {
         SourFer.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Acido", null},
-                {"Arom-acido", null},
-                {"Acido-acét", null},
-                {"Acido-butí", null},
-                {"Acido-isoc", null},
-                {"Acido-cítr", null},
-                {"Acido-máli", null},
+                {"  Arom-acido", null},
+                {"  Acido-acét", null},
+                {"  Acido-butí", null},
+                {"  Acido-isoc", null},
+                {"  Acido-cítr", null},
+                {"  Acido-máli", null},
                 {"Alcoh/Ferm", null},
-                {"Vinoso", null},
-                {"Whisky", null},
-                {"Fermentado", null},
-                {"Super-madu", null}
+                {"  Vinoso", null},
+                {"  Whisky", null},
+                {"  Fermentado", null},
+                {"  Super-madu", null}
             },
             new String [] {
-                "4 Cualidades", "Intensidad"
+                "4 Acido/Fermentado", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1469,21 +1529,20 @@ public class jdCatacion2 extends javax.swing.JFrame {
         GreenVeg.setBackground(new java.awt.Color(102, 255, 102));
         GreenVeg.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Verde/Vegetal", null},
                 {"Aceit-Oliv", null},
                 {"Crudo", null},
                 {"Verde/Vege", null},
-                {"Inmaduro", null},
-                {"Vaina", null},
-                {"Fresco", null},
-                {"Verde-oscu", null},
-                {"Vegetal", null},
-                {"Paja", null},
-                {"Herbaceo", null},
+                {"  Inmaduro", null},
+                {"  Vaina", null},
+                {"  Fresco", null},
+                {"  Verde-oscu", null},
+                {"  Vegetal", null},
+                {"  Paja", null},
+                {"  Herbaceo", null},
                 {"Leguminoso", null}
             },
             new String [] {
-                "5 Cualidades", "Intensidad"
+                "5 Verde/Vegetal", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1504,28 +1563,27 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Other.setBackground(new java.awt.Color(51, 255, 255));
         Other.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Otros", null},
                 {"Papel/Hume", null},
-                {"Rancio", null},
-                {"Carton", null},
-                {"Papel", null},
-                {"Madera", null},
-                {"Mohoso", null},
-                {"Polvo-hume", null},
-                {"Tierra", null},
-                {"Cuero", null},
-                {"Carne/cald", null},
-                {"Fenolico", null},
+                {"  Rancio", null},
+                {"  Carton", null},
+                {"  Papel", null},
+                {"  Madera", null},
+                {"  Mohoso", null},
+                {"  Polvo-hume", null},
+                {"  Tierra", null},
+                {"  Cuero", null},
+                {"  Carne/cald", null},
+                {"  Fenolico", null},
                 {"Quimico", null},
-                {"Amargo", null},
-                {"Salado", null},
-                {"Medicinal", null},
-                {"Petroleo", null},
-                {"Zorrillo", null},
-                {"Goma", null}
+                {"  Amargo", null},
+                {"  Salado", null},
+                {"  Medicinal", null},
+                {"  Petroleo", null},
+                {"  Zorrillo", null},
+                {"  Goma", null}
             },
             new String [] {
-                "6 Cualidades", "Intensidad"
+                "6 Otros", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1546,20 +1604,19 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Roasted.setBackground(new java.awt.Color(0, 204, 255));
         Roasted.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Tostado", null},
                 {"Tabac-pipa", null},
                 {"Tabaco", null},
                 {"Quemado", null},
-                {"Acre", null},
-                {"Ceniza", null},
-                {"Humo", null},
-                {"Marrón/tos", null},
+                {"  Acre", null},
+                {"  Ceniza", null},
+                {"  Humo", null},
+                {"  Marrón/tos", null},
                 {"Cereal", null},
-                {"Grano", null},
-                {"Malta", null}
+                {"  Grano", null},
+                {"  Malta", null}
             },
             new String [] {
-                "7 Cualidades", "Intensidad"
+                "7 Tostado", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1580,17 +1637,16 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Spices.setBackground(new java.awt.Color(153, 153, 255));
         Spices.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Especias", null},
                 {"Acre", null},
                 {"Pimienta", null},
                 {"Especias-mo", null},
-                {"Anis", null},
-                {"Nuez-mosca", null},
-                {"Canela", null},
-                {"Clavo-olor", null}
+                {"  Anis", null},
+                {"  Nuez-mosca", null},
+                {"  Canela", null},
+                {"  Clavo-olor", null}
             },
             new String [] {
-                "8 Cualidades", "Intensidad"
+                "8 Especias", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1611,17 +1667,16 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Nutty.setBackground(new java.awt.Color(255, 102, 204));
         Nutty.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Nueces/Cacao", null},
                 {"Nueces", null},
-                {"Mani", null},
-                {"Avellana", null},
-                {"Almendra", null},
+                {"  Mani", null},
+                {"  Avellana", null},
+                {"  Almendra", null},
                 {"Cacao", null},
-                {"Chocolate", null},
-                {"Choc-amarg", null}
+                {"  Chocolate", null},
+                {"  Choc-amarg", null}
             },
             new String [] {
-                "9 Cualidades", "Intensidad"
+                "9 Nueces/Cacao", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1639,6 +1694,57 @@ public class jdCatacion2 extends javax.swing.JFrame {
         });
         jScrollPane14.setViewportView(Nutty);
 
+        Body3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Jarabe", null},
+                {"Aceitoso", null},
+                {"Suave", null}
+            },
+            new String [] {
+                "10 Cuerpo", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Body3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Body3KeyReleased(evt);
+            }
+        });
+        jScrollPane56.setViewportView(Body3);
+
+        Finish3.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Duración", null},
+                {"Seco", null},
+                {"Astringent", null},
+                {"Granoso", null}
+            },
+            new String [] {
+                "11 Sabor Rem.", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Finish3.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Finish3KeyReleased(evt);
+            }
+        });
+        jScrollPane57.setViewportView(Finish3);
+
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
         jPanel10Layout.setHorizontalGroup(
@@ -1651,9 +1757,15 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(jScrollPane56, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane57, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1669,21 +1781,26 @@ public class jdCatacion2 extends javax.swing.JFrame {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jScrollPane10, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
                     .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 160, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(18, 18, 18)
+                        .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane56, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane57, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(31, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Seco", jPanel10);
@@ -1691,16 +1808,15 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Sweet1.setBackground(new java.awt.Color(255, 102, 102));
         Sweet1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Dulce", null},
                 {"Azúcar-Mor", null},
-                {"Melaza", null},
-                {"Jarab-mapl", null},
-                {"Caramelo", null},
-                {"Miel", null},
+                {"  Melaza", null},
+                {"  Jarab-mapl", null},
+                {"  Caramelo", null},
+                {"  Miel", null},
                 {"Vainilla", null}
             },
             new String [] {
-                "1 Cualidades", "Intensidad"
+                "1 Dulce", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1721,14 +1837,14 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Floral1.setBackground(new java.awt.Color(255, 153, 102));
         Floral1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Floral", null},
                 {"Té-Negro", null},
-                {"Manzanilla", null},
-                {"Rosa", null},
-                {"Jazmine", null}
+                {"Floral", null},
+                {"  Manzanilla", null},
+                {"  Rosa", null},
+                {"  Jazmine", null}
             },
             new String [] {
-                "2 Cualidades", "Intensidad"
+                "2 Floral", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1750,32 +1866,31 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Fruit1.setBackground(new java.awt.Color(255, 204, 0));
         Fruit1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Frutas", null},
                 {"Bayas", null},
-                {"Moras", null},
-                {"Frambuesa", null},
-                {"Arándano", null},
-                {"Fresa", null},
+                {"  Moras", null},
+                {"  Frambuesa", null},
+                {"  Arándano", null},
+                {"  Fresa", null},
                 {"Fruto-sec", null},
-                {"Pasas", null},
-                {"Ciruel-pas", null},
+                {"  Pasas", null},
+                {"  Ciruel-pas", null},
                 {"Otras-frut", null},
-                {"Coco", null},
-                {"Cereza", null},
-                {"Granada", null},
-                {"Piña", null},
-                {"Uvas", null},
-                {"Manzana", null},
-                {"Durazno", null},
-                {"Pera", null},
+                {"  Coco", null},
+                {"  Cereza", null},
+                {"  Granada", null},
+                {"  Piña", null},
+                {"  Uvas", null},
+                {"  Manzana", null},
+                {"  Durazno", null},
+                {"  Pera", null},
                 {"Citricos", null},
-                {"Toronja", null},
-                {"Naranja", null},
-                {"Limon", null},
-                {"Lima", null}
+                {"  Toronja", null},
+                {"  Naranja", null},
+                {"  Limon", null},
+                {"  Lima", null}
             },
             new String [] {
-                "3 Cualidades", "Intensidad"
+                "3 Afrutado", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1797,20 +1912,20 @@ public class jdCatacion2 extends javax.swing.JFrame {
         SourFer1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Acido", null},
-                {"Arom-acido", null},
-                {"Acido-acét", null},
-                {"Acido-butí", null},
-                {"Acido-isoc", null},
-                {"Acido-cítr", null},
-                {"Acido-máli", null},
+                {"  Arom-acido", null},
+                {"  Acido-acét", null},
+                {"  Acido-butí", null},
+                {"  Acido-isoc", null},
+                {"  Acido-cítr", null},
+                {"  Acido-máli", null},
                 {"Alcoh/Ferm", null},
-                {"Vinoso", null},
-                {"Whisky", null},
-                {"Fermentado", null},
-                {"Super-madu", null}
+                {"  Vinoso", null},
+                {"  Whisky", null},
+                {"  Fermentado", null},
+                {"  Super-madu", null}
             },
             new String [] {
-                "4 Cualidades", "Intensidad"
+                "4 Acido/Fermentado", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1831,21 +1946,20 @@ public class jdCatacion2 extends javax.swing.JFrame {
         GreenVeg1.setBackground(new java.awt.Color(102, 255, 102));
         GreenVeg1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Verde/Vegetal", null},
                 {"Aceit-Oliv", null},
                 {"Crudo", null},
                 {"Verde/Vege", null},
-                {"Inmaduro", null},
-                {"Vaina", null},
-                {"Fresco", null},
-                {"Verde-oscu", null},
-                {"Vegetal", null},
-                {"Paja", null},
-                {"Herbaceo", null},
+                {"  Inmaduro", null},
+                {"  Vaina", null},
+                {"  Fresco", null},
+                {"  Verde-oscu", null},
+                {"  Vegetal", null},
+                {"  Paja", null},
+                {"  Herbaceo", null},
                 {"Leguminoso", null}
             },
             new String [] {
-                "5 Cualidades", "Intensidad"
+                "5 Verde/Vegetal", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1866,28 +1980,27 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Other1.setBackground(new java.awt.Color(51, 255, 255));
         Other1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Otros", null},
                 {"Papel/Hume", null},
-                {"Rancio", null},
-                {"Carton", null},
-                {"Papel", null},
-                {"Madera", null},
-                {"Mohoso", null},
-                {"Polvo-hume", null},
-                {"Tierra", null},
-                {"Cuero", null},
-                {"Carne/cald", null},
-                {"Fenolico", null},
+                {"  Rancio", null},
+                {"  Carton", null},
+                {"  Papel", null},
+                {"  Madera", null},
+                {"  Mohoso", null},
+                {"  Polvo-hume", null},
+                {"  Tierra", null},
+                {"  Cuero", null},
+                {"  Carne/cald", null},
+                {"  Fenolico", null},
                 {"Quimico", null},
-                {"Amargo", null},
-                {"Salado", null},
-                {"Medicinal", null},
-                {"Petroleo", null},
-                {"Zorrillo", null},
-                {"Goma", null}
+                {"  Amargo", null},
+                {"  Salado", null},
+                {"  Medicinal", null},
+                {"  Petroleo", null},
+                {"  Zorrillo", null},
+                {"  Goma", null}
             },
             new String [] {
-                "6 Cualidades", "Intensidad"
+                "6 Otros", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1908,20 +2021,19 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Roasted1.setBackground(new java.awt.Color(0, 204, 255));
         Roasted1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Tostado", null},
                 {"Tabac-pipa", null},
                 {"Tabaco", null},
                 {"Quemado", null},
-                {"Acre", null},
-                {"Ceniza", null},
-                {"Humo", null},
-                {"Marrón/tos", null},
+                {"  Acre", null},
+                {"  Ceniza", null},
+                {"  Humo", null},
+                {"  Marrón/tos", null},
                 {"Cereal", null},
-                {"Grano", null},
-                {"Malta", null}
+                {"  Grano", null},
+                {"  Malta", null}
             },
             new String [] {
-                "7 Cualidades", "Intensidad"
+                "7 Tostado", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1942,17 +2054,16 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Spices1.setBackground(new java.awt.Color(153, 153, 255));
         Spices1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Especias", null},
                 {"Acre", null},
                 {"Pimienta", null},
                 {"Especias marrones", null},
-                {"Anis", null},
-                {"Nuez moscada", null},
-                {"Canela", null},
-                {"Clavo de olor", null}
+                {"  Anis", null},
+                {"  Nuez moscada", null},
+                {"  Canela", null},
+                {"  Clavo de olor", null}
             },
             new String [] {
-                "8 Cualidades", "Intensidad"
+                "8 Especias", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1973,17 +2084,16 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Nutty1.setBackground(new java.awt.Color(255, 102, 204));
         Nutty1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Nueces/Cacao", null},
                 {"Nueces", null},
-                {"Mani", null},
-                {"Avellana", null},
-                {"Almendra", null},
+                {"  Mani", null},
+                {"  Avellana", null},
+                {"  Almendra", null},
                 {"Cacao", null},
-                {"Choocolate", null},
-                {"Choc amargo", null}
+                {"  Choocolate", null},
+                {"  Choc amargo", null}
             },
             new String [] {
-                "9 Cualidades", "Intensidad"
+                "9 Nueces/Cacao", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2001,17 +2111,75 @@ public class jdCatacion2 extends javax.swing.JFrame {
         });
         jScrollPane22.setViewportView(Nutty1);
 
+        Body4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Jarabe", null},
+                {"Aceitoso", null},
+                {"Suave", null}
+            },
+            new String [] {
+                "10 Cuerpo", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Body4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Body4KeyReleased(evt);
+            }
+        });
+        jScrollPane58.setViewportView(Body4);
+
+        Finish4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Duración", null},
+                {"Seco", null},
+                {"Astringent", null},
+                {"Granoso", null}
+            },
+            new String [] {
+                "11 Sabor Rem.", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Finish4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Finish4KeyReleased(evt);
+            }
+        });
+        jScrollPane59.setViewportView(Finish4);
+
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
         jPanel11Layout.setHorizontalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1065, Short.MAX_VALUE)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(152, 152, 152)
+                .addComponent(jScrollPane58, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane59, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 314, Short.MAX_VALUE)
+                .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel11Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jScrollPane17, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
-                        .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2023,33 +2191,38 @@ public class jdCatacion2 extends javax.swing.JFrame {
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jScrollPane21, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
-                        .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap()))
         );
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 419, Short.MAX_VALUE)
+            .addGroup(jPanel11Layout.createSequentialGroup()
+                .addGap(150, 150, 150)
+                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(164, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane58, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane59, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(80, 80, 80))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
+                        .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(114, 114, 114))))
             .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel11Layout.createSequentialGroup()
                     .addGap(12, 12, 12)
                     .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel11Layout.createSequentialGroup()
-                            .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jScrollPane18, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
-                            .addComponent(jScrollPane8, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                        .addGroup(jPanel11Layout.createSequentialGroup()
-                            .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(30, Short.MAX_VALUE)))
         );
 
         jTabbedPane1.addTab("Mojado", jPanel11);
@@ -2057,16 +2230,15 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Sweet2.setBackground(new java.awt.Color(255, 102, 102));
         Sweet2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Dulce", null},
                 {"Azúcar-Mor", null},
-                {"Melaza", null},
-                {"Jarab-mapl", null},
-                {"Caramelo", null},
-                {"Miel", null},
+                {"  Melaza", null},
+                {"  Jarab-mapl", null},
+                {"  Caramelo", null},
+                {"  Miel", null},
                 {"Vainilla", null}
             },
             new String [] {
-                "1 Cualidades", "Intensidad"
+                "1 Dulce", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2087,14 +2259,14 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Floral2.setBackground(new java.awt.Color(255, 153, 102));
         Floral2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Floral", null},
                 {"Té-Negro", null},
-                {"Manzanilla", null},
-                {"Rosa", null},
-                {"Jazmine", null}
+                {"Floral", null},
+                {"  Manzanilla", null},
+                {"  Rosa", null},
+                {"  Jazmine", null}
             },
             new String [] {
-                "2 Cualidades", "Intensidad"
+                "2 Flores", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2116,32 +2288,31 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Fruit2.setBackground(new java.awt.Color(255, 204, 0));
         Fruit2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Frutas", null},
                 {"Bayas", null},
-                {"Moras", null},
-                {"Frambuesa", null},
-                {"Arándano", null},
-                {"Fresa", null},
+                {"  Moras", null},
+                {"  Frambuesa", null},
+                {"  Arándano", null},
+                {"  Fresa", null},
                 {"Fruto-sec", null},
-                {"Pasas", null},
-                {"Ciruel-pas", null},
+                {"  Pasas", null},
+                {"  Ciruel-pas", null},
                 {"Otras-frut", null},
-                {"Coco", null},
-                {"Cereza", null},
-                {"Granada", null},
-                {"Piña", null},
-                {"Uvas", null},
-                {"Manzana", null},
-                {"Durazno", null},
-                {"Pera", null},
+                {"  Coco", null},
+                {"  Cereza", null},
+                {"  Granada", null},
+                {"  Piña", null},
+                {"  Uvas", null},
+                {"  Manzana", null},
+                {"  Durazno", null},
+                {"  Pera", null},
                 {"Citricos", null},
-                {"Toronja", null},
-                {"Naranja", null},
-                {"Limon", null},
-                {"Lima", null}
+                {"  Toronja", null},
+                {"  Naranja", null},
+                {"  Limon", null},
+                {"  Lima", null}
             },
             new String [] {
-                "3 Cualidades", "Intensidad"
+                "3 Afrutado", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2163,20 +2334,20 @@ public class jdCatacion2 extends javax.swing.JFrame {
         SourFer2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Acido", null},
-                {"Arom-acido", null},
-                {"Acido-acét", null},
-                {"Acido-butí", null},
-                {"Acido-isoc", null},
-                {"Acido-cítr", null},
-                {"Acido-máli", null},
+                {"  Arom-acido", null},
+                {"  Acido-acét", null},
+                {"  Acido-butí", null},
+                {"  Acido-isoc", null},
+                {"  Acido-cítr", null},
+                {"  Acido-máli", null},
                 {"Alcoh/Ferm", null},
-                {"Vinoso", null},
-                {"Whisky", null},
-                {"Fermentado", null},
-                {"Super-madu", null}
+                {"  Vinoso", null},
+                {"  Whisky", null},
+                {"  Fermentado", null},
+                {"  Super-madu", null}
             },
             new String [] {
-                "4 Cualidades", "Intensidad"
+                "4 Acido/Fermentado", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2197,21 +2368,20 @@ public class jdCatacion2 extends javax.swing.JFrame {
         GreenVeg2.setBackground(new java.awt.Color(102, 255, 102));
         GreenVeg2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Verde/Vegetal", null},
                 {"Aceit-Oliv", null},
                 {"Crudo", null},
                 {"Verde/Vege", null},
-                {"Inmaduro", null},
-                {"Vaina", null},
-                {"Fresco", null},
-                {"Verde-oscu", null},
-                {"Vegetal", null},
-                {"Paja", null},
-                {"Herbaceo", null},
+                {"  Inmaduro", null},
+                {"  Vaina", null},
+                {"  Fresco", null},
+                {"  Verde-oscu", null},
+                {"  Vegetal", null},
+                {"  Paja", null},
+                {"  Herbaceo", null},
                 {"Leguminoso", null}
             },
             new String [] {
-                "5 Cualidades", "Intensidad"
+                "5 Verde/vegetal", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2232,28 +2402,27 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Other2.setBackground(new java.awt.Color(51, 255, 255));
         Other2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Otros", null},
                 {"Papel/Hume", null},
-                {"Rancio", null},
-                {"Carton", null},
-                {"Papel", null},
-                {"Madera", null},
-                {"Mohoso", null},
-                {"Polvo-hume", null},
-                {"Tierra", null},
-                {"Cuero", null},
-                {"Carne/cald", null},
-                {"Fenolico", null},
+                {"  Rancio", null},
+                {"  Carton", null},
+                {"  Papel", null},
+                {"  Madera", null},
+                {"  Mohoso", null},
+                {"  Polvo-hume", null},
+                {"  Tierra", null},
+                {"  Cuero", null},
+                {"  Carne/cald", null},
+                {"  Fenolico", null},
                 {"Quimico", null},
-                {"Amargo", null},
-                {"Salado", null},
-                {"Medicinal", null},
-                {"Petroleo", null},
-                {"Zorrillo", null},
-                {"Goma", null}
+                {"  Amargo", null},
+                {"  Salado", null},
+                {"  Medicinal", null},
+                {"  Petroleo", null},
+                {"  Zorrillo", null},
+                {"  Goma", null}
             },
             new String [] {
-                "6 Cualidades", "Intensidad"
+                "6 Otros", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2274,20 +2443,19 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Roasted2.setBackground(new java.awt.Color(0, 204, 255));
         Roasted2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Tostado", null},
                 {"Tabac-pipa", null},
                 {"Tabaco", null},
                 {"Quemado", null},
-                {"Acre", null},
-                {"Ceniza", null},
-                {"Humo", null},
-                {"Marrón/tos", null},
+                {"  Acre", null},
+                {"  Ceniza", null},
+                {"  Humo", null},
+                {"  Marrón/tos", null},
                 {"Cereal", null},
-                {"Grano", null},
-                {"Malta", null}
+                {"  Grano", null},
+                {"  Malta", null}
             },
             new String [] {
-                "7 Cualidades", "Intensidad"
+                "7 Tostado", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2308,17 +2476,16 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Spices2.setBackground(new java.awt.Color(153, 153, 255));
         Spices2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Especias", null},
                 {"Acre", null},
                 {"Pimienta", null},
                 {"Especias marrones", null},
-                {"Anis", null},
-                {"Nuez moscada", null},
-                {"Canela", null},
-                {"Clavo de olor", null}
+                {"  Anis", null},
+                {"  Nuez moscada", null},
+                {"  Canela", null},
+                {"  Clavo de olor", null}
             },
             new String [] {
-                "8 Cualidades", "Intensidad"
+                "8 Especias", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2339,17 +2506,16 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Nutty2.setBackground(new java.awt.Color(255, 102, 204));
         Nutty2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Nueces/Cacao", null},
                 {"Nueces", null},
-                {"Mani", null},
-                {"Avellana", null},
-                {"Almendra", null},
+                {"  Mani", null},
+                {"  Avellana", null},
+                {"  Almendra", null},
                 {"Cacao", null},
-                {"Chocolate", null},
-                {"Choc amargo", null}
+                {"  Chocolate", null},
+                {"  Choc amargo", null}
             },
             new String [] {
-                "9 Cualidades", "Intensidad"
+                "9 Nueces/Cacao", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2367,17 +2533,75 @@ public class jdCatacion2 extends javax.swing.JFrame {
         });
         jScrollPane31.setViewportView(Nutty2);
 
+        Body5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Jarabe", null},
+                {"Aceitoso", null},
+                {"Suave", null}
+            },
+            new String [] {
+                "10 Cuerpo", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Body5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Body5KeyReleased(evt);
+            }
+        });
+        jScrollPane60.setViewportView(Body5);
+
+        Finish5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Duración", null},
+                {"Seco", null},
+                {"Astringent", null},
+                {"Granoso", null}
+            },
+            new String [] {
+                "11 Sabor Rem.", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Finish5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Finish5KeyReleased(evt);
+            }
+        });
+        jScrollPane61.setViewportView(Finish5);
+
         javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
         jPanel12.setLayout(jPanel12Layout);
         jPanel12Layout.setHorizontalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1065, Short.MAX_VALUE)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(153, 153, 153)
+                .addComponent(jScrollPane60, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane61, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 313, Short.MAX_VALUE)
+                .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel12Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jScrollPane23, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
-                        .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2389,33 +2613,37 @@ public class jdCatacion2 extends javax.swing.JFrame {
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jScrollPane30, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
-                        .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap()))
         );
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 419, Short.MAX_VALUE)
+            .addGroup(jPanel12Layout.createSequentialGroup()
+                .addContainerGap(159, Short.MAX_VALUE)
+                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                        .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(110, 110, 110))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                        .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(154, 154, 154))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane61, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane60, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(78, 78, 78))))
             .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel12Layout.createSequentialGroup()
                     .addGap(12, 12, 12)
                     .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel12Layout.createSequentialGroup()
-                            .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jScrollPane27, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
-                            .addComponent(jScrollPane26, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                        .addGroup(jPanel12Layout.createSequentialGroup()
-                            .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 161, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane26, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(29, Short.MAX_VALUE)))
         );
 
         jTabbedPane1.addTab("Quebrado", jPanel12);
@@ -2423,16 +2651,15 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Sweet3.setBackground(new java.awt.Color(255, 102, 102));
         Sweet3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Dulce", null},
                 {"Azúcar-Mor", null},
-                {"Melaza", null},
-                {"Jarab-mapl", null},
-                {"Caramelo", null},
-                {"Miel", null},
+                {"  Melaza", null},
+                {"  Jarab-mapl", null},
+                {"  Caramelo", null},
+                {"  Miel", null},
                 {"Vainilla", null}
             },
             new String [] {
-                "1 Cualidades", "Intensidad"
+                "1 Dulce", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2453,14 +2680,14 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Floral3.setBackground(new java.awt.Color(255, 153, 102));
         Floral3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Floral", null},
                 {"Té-Negro", null},
-                {"Manzanilla", null},
-                {"Rosa", null},
-                {"Jazmine", null}
+                {"Floral", null},
+                {"  Manzanilla", null},
+                {"  Rosa", null},
+                {"  Jazmine", null}
             },
             new String [] {
-                "2 Cualidades", "Intensidad"
+                "2 Floral", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2482,32 +2709,31 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Fruit3.setBackground(new java.awt.Color(255, 204, 0));
         Fruit3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Frutas", null},
                 {"Bayas", null},
-                {"Moras", null},
-                {"Frambuesa", null},
-                {"Arándano", null},
-                {"Fresa", null},
+                {"  Moras", null},
+                {"  Frambuesa", null},
+                {"  Arándano", null},
+                {"  Fresa", null},
                 {"Fruto-sec", null},
-                {"Pasas", null},
-                {"Ciruel-pas", null},
+                {"  Pasas", null},
+                {"  Ciruel-pas", null},
                 {"Otras-frut", null},
-                {"Coco", null},
-                {"Cereza", null},
-                {"Granada", null},
-                {"Piña", null},
-                {"Uvas", null},
-                {"Manzana", null},
-                {"Durazno", null},
-                {"Pera", null},
+                {"  Coco", null},
+                {"  Cereza", null},
+                {"  Granada", null},
+                {"  Piña", null},
+                {"  Uvas", null},
+                {"  Manzana", null},
+                {"  Durazno", null},
+                {"  Pera", null},
                 {"Citricos", null},
-                {"Toronja", null},
-                {"Naranja", null},
-                {"Limon", null},
-                {"Lima", null}
+                {"  Toronja", null},
+                {"  Naranja", null},
+                {"  Limon", null},
+                {"  Lima", null}
             },
             new String [] {
-                "3 Cualidades", "Intensidad"
+                "3 Afrutado", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2529,20 +2755,20 @@ public class jdCatacion2 extends javax.swing.JFrame {
         SourFer3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Acido", null},
-                {"Arom-acido", null},
-                {"Acido-acét", null},
-                {"Acido-butí", null},
-                {"Acido-isoc", null},
-                {"Acido-cítr", null},
-                {"Acido-máli", null},
+                {"  Arom-acido", null},
+                {"  Acido-acét", null},
+                {"  Acido-butí", null},
+                {"  Acido-isoc", null},
+                {"  Acido-cítr", null},
+                {"  Acido-máli", null},
                 {"Alcoh/Ferm", null},
-                {"Vinoso", null},
-                {"Whisky", null},
-                {"Fermentado", null},
-                {"Super-madu", null}
+                {"  Vinoso", null},
+                {"  Whisky", null},
+                {"  Fermentado", null},
+                {"  Super-madu", null}
             },
             new String [] {
-                "4 Cualidades", "Intensidad"
+                "4 Acido/Fermentado", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2563,21 +2789,20 @@ public class jdCatacion2 extends javax.swing.JFrame {
         GreenVeg3.setBackground(new java.awt.Color(102, 255, 102));
         GreenVeg3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Verde/Vegetal", null},
                 {"Aceit-Oliv", null},
                 {"Crudo", null},
                 {"Verde/Vege", null},
-                {"Inmaduro", null},
-                {"Vaina", null},
-                {"Fresco", null},
-                {"Verde-oscu", null},
-                {"Vegetal", null},
-                {"Paja", null},
-                {"Herbaceo", null},
+                {"  Inmaduro", null},
+                {"  Vaina", null},
+                {"  Fresco", null},
+                {"  Verde-oscu", null},
+                {"  Vegetal", null},
+                {"  Paja", null},
+                {"  Herbaceo", null},
                 {"Leguminoso", null}
             },
             new String [] {
-                "5 Cualidades", "Intensidad"
+                "5 Verde/Vegetal", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2598,28 +2823,27 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Other3.setBackground(new java.awt.Color(51, 255, 255));
         Other3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Otros", null},
                 {"Papel/Hume", null},
-                {"Rancio", null},
-                {"Carton", null},
-                {"Papel", null},
-                {"Madera", null},
-                {"Mohoso", null},
-                {"Polvo-hume", null},
-                {"Tierra", null},
-                {"Cuero", null},
-                {"Carne/cald", null},
-                {"Fenolico", null},
+                {"  Rancio", null},
+                {"  Carton", null},
+                {"  Papel", null},
+                {"  Madera", null},
+                {"  Mohoso", null},
+                {"  Polvo-hume", null},
+                {"  Tierra", null},
+                {"  Cuero", null},
+                {"  Carne/cald", null},
+                {"  Fenolico", null},
                 {"Quimico", null},
-                {"Amargo", null},
-                {"Salado", null},
-                {"Medicinal", null},
-                {"Petroleo", null},
-                {"Zorrillo", null},
-                {"Goma", null}
+                {"  Amargo", null},
+                {"  Salado", null},
+                {"  Medicinal", null},
+                {"  Petroleo", null},
+                {"  Zorrillo", null},
+                {"  Goma", null}
             },
             new String [] {
-                "6 Cualidades", "Intensidad"
+                "6 Otros", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2640,20 +2864,19 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Roasted3.setBackground(new java.awt.Color(0, 204, 255));
         Roasted3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Tostado", null},
                 {"Tabac-pipa", null},
                 {"Tabaco", null},
                 {"Quemado", null},
-                {"Acre", null},
-                {"Ceniza", null},
-                {"Humo", null},
-                {"Marrón/tos", null},
+                {"  Acre", null},
+                {"  Ceniza", null},
+                {"  Humo", null},
+                {"  Marrón/tos", null},
                 {"Cereal", null},
-                {"Grano", null},
-                {"Malta", null}
+                {"  Grano", null},
+                {"  Malta", null}
             },
             new String [] {
-                "7 Cualidades", "Intensidad"
+                "7 Tostado", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2674,17 +2897,16 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Spices3.setBackground(new java.awt.Color(153, 153, 255));
         Spices3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Especias", null},
                 {"Acre", null},
                 {"Pimienta", null},
                 {"Especias marrones", null},
-                {"Anis", null},
-                {"Nuez moscada", null},
-                {"Canela", null},
-                {"Clavo de olor", null}
+                {"  Anis", null},
+                {"  Nuez moscada", null},
+                {"  Canela", null},
+                {"  Clavo de olor", null}
             },
             new String [] {
-                "8 Cualidades", "Intensidad"
+                "8 Especias", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2705,17 +2927,16 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Nutty3.setBackground(new java.awt.Color(255, 102, 204));
         Nutty3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Nueces/Cacap", null},
                 {"Nueces", null},
-                {"Mani", null},
-                {"Avellana", null},
-                {"Almendra", null},
+                {"  Mani", null},
+                {"  Avellana", null},
+                {"  Almendra", null},
                 {"Cacao", null},
-                {"Chocolate", null},
-                {"Choc amargo", null}
+                {"  Chocolate", null},
+                {"  Choc amargo", null}
             },
             new String [] {
-                "9 Cualidades", "Intensidad"
+                "9 Nueces/Cacao", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2733,17 +2954,75 @@ public class jdCatacion2 extends javax.swing.JFrame {
         });
         jScrollPane40.setViewportView(Nutty3);
 
+        Body6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Jarabe", null},
+                {"Aceitoso", null},
+                {"Suave", null}
+            },
+            new String [] {
+                "10 Cuerpo", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Body6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Body6KeyReleased(evt);
+            }
+        });
+        jScrollPane62.setViewportView(Body6);
+
+        Finish6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Duración", null},
+                {"Seco", null},
+                {"Astringent", null},
+                {"Granoso", null}
+            },
+            new String [] {
+                "11 Sabor Rem.", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Finish6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Finish6KeyReleased(evt);
+            }
+        });
+        jScrollPane63.setViewportView(Finish6);
+
         javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
         jPanel13.setLayout(jPanel13Layout);
         jPanel13Layout.setHorizontalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 1065, Short.MAX_VALUE)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(152, 152, 152)
+                .addComponent(jScrollPane62, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane63, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 314, Short.MAX_VALUE)
+                .addComponent(jScrollPane40, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap())
             .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel13Layout.createSequentialGroup()
                     .addContainerGap()
-                    .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jScrollPane32, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
-                        .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(jScrollPane34, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -2755,33 +3034,38 @@ public class jdCatacion2 extends javax.swing.JFrame {
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(jScrollPane38, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jScrollPane39, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
-                        .addComponent(jScrollPane40, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
+                    .addComponent(jScrollPane39, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addContainerGap()))
         );
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 419, Short.MAX_VALUE)
+            .addGroup(jPanel13Layout.createSequentialGroup()
+                .addGap(151, 151, 151)
+                .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(162, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                        .addComponent(jScrollPane40, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(109, 109, 109))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane63, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane62, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(80, 80, 80))))
             .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel13Layout.createSequentialGroup()
                     .addGap(12, 12, 12)
                     .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addGroup(jPanel13Layout.createSequentialGroup()
-                            .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jScrollPane34, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addComponent(jScrollPane36, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 221, Short.MAX_VALUE)
-                            .addComponent(jScrollPane35, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                        .addGroup(jPanel13Layout.createSequentialGroup()
-                            .addComponent(jScrollPane39, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                            .addComponent(jScrollPane40, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addComponent(jScrollPane37, javax.swing.GroupLayout.PREFERRED_SIZE, 332, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane38, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane34, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane37, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane38, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane39, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(29, Short.MAX_VALUE)))
         );
 
         jTabbedPane1.addTab("Sabor", jPanel13);
@@ -2789,16 +3073,15 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Sweet4.setBackground(new java.awt.Color(255, 102, 102));
         Sweet4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Dulce", null},
                 {"Azúcar-Mor", null},
-                {"Melaza", null},
-                {"Jarab-mapl", null},
-                {"Caramelo", null},
-                {"Miel", null},
+                {"  Melaza", null},
+                {"  Jarab-mapl", null},
+                {"  Caramelo", null},
+                {"  Miel", null},
                 {"Vainilla", null}
             },
             new String [] {
-                "1 Cualidades", "Intensidad"
+                "1 Dulce", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2819,14 +3102,14 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Floral4.setBackground(new java.awt.Color(255, 153, 102));
         Floral4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Floral", null},
                 {"Té-Negro", null},
-                {"Manzanilla", null},
-                {"Rosa", null},
-                {"Jazmine", null}
+                {"Floral", null},
+                {"  Manzanilla", null},
+                {"  Rosa", null},
+                {"  Jazmine", null}
             },
             new String [] {
-                "2 Cualidades", "Intensidad"
+                "2 Floral", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2848,32 +3131,31 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Fruit4.setBackground(new java.awt.Color(255, 204, 0));
         Fruit4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Frutas", null},
                 {"Bayas", null},
-                {"Moras", null},
-                {"Frambuesa", null},
-                {"Arándano", null},
-                {"Fresa", null},
+                {"  Moras", null},
+                {"  Frambuesa", null},
+                {"  Arándano", null},
+                {"  Fresa", null},
                 {"Fruto-sec", null},
-                {"Pasas", null},
-                {"Ciruel-pas", null},
+                {"  Pasas", null},
+                {"  Ciruel-pas", null},
                 {"Otras-frut", null},
-                {"Coco", null},
-                {"Cereza", null},
-                {"Granada", null},
-                {"Piña", null},
-                {"Uvas", null},
-                {"Manzana", null},
-                {"Durazno", null},
-                {"Pera", null},
+                {"  Coco", null},
+                {"  Cereza", null},
+                {"  Granada", null},
+                {"  Piña", null},
+                {"  Uvas", null},
+                {"  Manzana", null},
+                {"  Durazno", null},
+                {"  Pera", null},
                 {"Citricos", null},
-                {"Toronja", null},
-                {"Naranja", null},
-                {"Limon", null},
-                {"Lima", null}
+                {"  Toronja", null},
+                {"  Naranja", null},
+                {"  Limon", null},
+                {"  Lima", null}
             },
             new String [] {
-                "3 Cualidades", "Intensidad"
+                "3 Afrutado", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2895,20 +3177,20 @@ public class jdCatacion2 extends javax.swing.JFrame {
         SourFer4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Acido", null},
-                {"Arom-acido", null},
-                {"Acido-acét", null},
-                {"Acido-butí", null},
-                {"Acido-isoc", null},
-                {"Acido-cítr", null},
-                {"Acido-máli", null},
+                {"  Arom-acido", null},
+                {"  Acido-acét", null},
+                {"  Acido-butí", null},
+                {"  Acido-isoc", null},
+                {"  Acido-cítr", null},
+                {"  Acido-máli", null},
                 {"Alcoh/Ferm", null},
-                {"Vinoso", null},
-                {"Whisky", null},
-                {"Fermentado", null},
-                {"Super-madu", null}
+                {"  Vinoso", null},
+                {"  Whisky", null},
+                {"  Fermentado", null},
+                {"  Super-madu", null}
             },
             new String [] {
-                "4 Cualidades", "Intensidad"
+                "4 Acido/Fermentado", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2929,21 +3211,20 @@ public class jdCatacion2 extends javax.swing.JFrame {
         GreenVeg4.setBackground(new java.awt.Color(102, 255, 102));
         GreenVeg4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Verde/Vegetal", null},
                 {"Aceit-Oliv", null},
                 {"Crudo", null},
                 {"Verde/Vege", null},
-                {"Inmaduro", null},
-                {"Vaina", null},
-                {"Fresco", null},
-                {"Verde-oscu", null},
-                {"Vegetal", null},
-                {"Paja", null},
-                {"Herbaceo", null},
+                {"  Inmaduro", null},
+                {"  Vaina", null},
+                {"  Fresco", null},
+                {"  Verde-oscu", null},
+                {"  Vegetal", null},
+                {"  Paja", null},
+                {"  Herbaceo", null},
                 {"Leguminoso", null}
             },
             new String [] {
-                "5 Cualidades", "Intensidad"
+                "5 Verde/Vegetal", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2963,15 +3244,12 @@ public class jdCatacion2 extends javax.swing.JFrame {
 
         Body1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Ligero", null},
-                {"Medio", null},
-                {"Pesado", null},
                 {"Jarabe", null},
                 {"Aceitoso", null},
                 {"Suave", null}
             },
             new String [] {
-                "Cualidades", "Intensidad"
+                "10 Cuerpo", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2991,14 +3269,13 @@ public class jdCatacion2 extends javax.swing.JFrame {
 
         Finish1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Corto", null},
-                {"Medio", null},
-                {"Largo", null},
+                {"Duración", null},
                 {"Seco", null},
-                {"Astringente", null}
+                {"Astringente", null},
+                {"Granoso", null}
             },
             new String [] {
-                "Cualidades", "Intensidad"
+                "11 Sabor Rem.", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -3016,6 +3293,140 @@ public class jdCatacion2 extends javax.swing.JFrame {
         });
         jScrollPane47.setViewportView(Finish1);
 
+        Other4.setBackground(new java.awt.Color(51, 255, 255));
+        Other4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Papel/Hume", null},
+                {"  Rancio", null},
+                {"  Carton", null},
+                {"  Papel", null},
+                {"  Madera", null},
+                {"  Mohoso", null},
+                {"  Polvo-hume", null},
+                {"  Tierra", null},
+                {"  Cuero", null},
+                {"  Carne/cald", null},
+                {"  Fenolico", null},
+                {"Quimico", null},
+                {"  Amargo", null},
+                {"  Salado", null},
+                {"  Medicinal", null},
+                {"  Petroleo", null},
+                {"  Zorrillo", null},
+                {"  Goma", null}
+            },
+            new String [] {
+                "6 Otros", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Other4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Other4KeyReleased(evt);
+            }
+        });
+        jScrollPane49.setViewportView(Other4);
+
+        Roasted4.setBackground(new java.awt.Color(0, 204, 255));
+        Roasted4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Tabac-pipa", null},
+                {"Tabaco", null},
+                {"Quemado", null},
+                {"  Acre", null},
+                {"  Ceniza", null},
+                {"  Humo", null},
+                {"  Marrón/tos", null},
+                {"Cereal", null},
+                {"  Grano", null},
+                {"  Malta", null}
+            },
+            new String [] {
+                "7 Tostado", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Roasted4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Roasted4KeyReleased(evt);
+            }
+        });
+        jScrollPane50.setViewportView(Roasted4);
+
+        Spices4.setBackground(new java.awt.Color(153, 153, 255));
+        Spices4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Acre", null},
+                {"Pimienta", null},
+                {"Especias marrones", null},
+                {"  Anis", null},
+                {"  Nuez moscada", null},
+                {"  Canela", null},
+                {"  Clavo de olor", null}
+            },
+            new String [] {
+                "8 Especias", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Spices4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Spices4KeyReleased(evt);
+            }
+        });
+        jScrollPane51.setViewportView(Spices4);
+
+        Nutty4.setBackground(new java.awt.Color(255, 102, 204));
+        Nutty4.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Nueces", null},
+                {"  Mani", null},
+                {"  Avellana", null},
+                {"  Almendra", null},
+                {"Cacao", null},
+                {"  Chocolate", null},
+                {"  Choc amargo", null}
+            },
+            new String [] {
+                "9 Nueces/Cacao", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Nutty4.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Nutty4KeyReleased(evt);
+            }
+        });
+        jScrollPane52.setViewportView(Nutty4);
+
         javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
         jPanel14.setLayout(jPanel14Layout);
         jPanel14Layout.setHorizontalGroup(
@@ -3028,31 +3439,50 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane43, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane44, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(jScrollPane44, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane45, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(jScrollPane46, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane47, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane49, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane45, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane50, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane46, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane47, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(181, Short.MAX_VALUE))
+                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane51, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane52, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel14Layout.setVerticalGroup(
             jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(14, Short.MAX_VALUE)
                 .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane46, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane47, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addComponent(jScrollPane45, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(jScrollPane44, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane49, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane50, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addComponent(jScrollPane41, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane51, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane52, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane44, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane45, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane46, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane47, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel14Layout.createSequentialGroup()
+                        .addComponent(jScrollPane41, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
                         .addComponent(jScrollPane42, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane43, javax.swing.GroupLayout.PREFERRED_SIZE, 396, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(11, 11, 11))
+                    .addComponent(jScrollPane43, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(27, 27, 27))
         );
 
         jTabbedPane1.addTab("Sabor Remanente", jPanel14);
@@ -3061,20 +3491,20 @@ public class jdCatacion2 extends javax.swing.JFrame {
         SourFer5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Acido", null},
-                {"Arom-acido", null},
-                {"Acido-acét", null},
-                {"Acido-butí", null},
-                {"Acido-isoc", null},
-                {"Acido-cítr", null},
-                {"Acido-máli", null},
+                {"  Arom-acido", null},
+                {"  Acido-acét", null},
+                {"  Acido-butí", null},
+                {"  Acido-isoc", null},
+                {"  Acido-cítr", null},
+                {"  Acido-máli", null},
                 {"Alcoh/Ferm", null},
-                {"Vinoso", null},
-                {"Whisky", null},
-                {"Fermentado", null},
-                {"Super-madu", null}
+                {"  Vinoso", null},
+                {"  Whisky", null},
+                {"  Fermentado", null},
+                {"  Super-madu", null}
             },
             new String [] {
-                "4 Cualidades", "Intensidad"
+                "4 Acido/Fermentado", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -3092,36 +3522,397 @@ public class jdCatacion2 extends javax.swing.JFrame {
         });
         jScrollPane48.setViewportView(SourFer5);
 
+        Sweet5.setBackground(new java.awt.Color(255, 102, 102));
+        Sweet5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Azúcar-Mor", null},
+                {"  Melaza", null},
+                {"  Jarab-mapl", null},
+                {"  Caramelo", null},
+                {"  Miel", null},
+                {"Vainilla", null}
+            },
+            new String [] {
+                "1 Dulce", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Sweet5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Sweet5KeyReleased(evt);
+            }
+        });
+        jScrollPane53.setViewportView(Sweet5);
+
+        Floral5.setBackground(new java.awt.Color(255, 153, 102));
+        Floral5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Té-Negro", null},
+                {"Floral", null},
+                {"  Manzanilla", null},
+                {"  Rosa", null},
+                {"  Jazmine", null}
+            },
+            new String [] {
+                "2 Floral", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Floral5.setPreferredSize(new java.awt.Dimension(175, 80));
+        Floral5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Floral5KeyReleased(evt);
+            }
+        });
+        jScrollPane64.setViewportView(Floral5);
+
+        Fruit5.setBackground(new java.awt.Color(255, 204, 0));
+        Fruit5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Bayas", null},
+                {"  Moras", null},
+                {"  Frambuesa", null},
+                {"  Arándano", null},
+                {"  Fresa", null},
+                {"Fruto-sec", null},
+                {"  Pasas", null},
+                {"  Ciruel-pas", null},
+                {"Otras-frut", null},
+                {"  Coco", null},
+                {"  Cereza", null},
+                {"  Granada", null},
+                {"  Piña", null},
+                {"  Uvas", null},
+                {"  Manzana", null},
+                {"  Durazno", null},
+                {"  Pera", null},
+                {"Citricos", null},
+                {"  Toronja", null},
+                {"  Naranja", null},
+                {"  Limon", null},
+                {"  Lima", null}
+            },
+            new String [] {
+                "3 Afrutado", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Fruit5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Fruit5KeyReleased(evt);
+            }
+        });
+        jScrollPane65.setViewportView(Fruit5);
+
+        GreenVeg5.setBackground(new java.awt.Color(102, 255, 102));
+        GreenVeg5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Aceit-Oliv", null},
+                {"Crudo", null},
+                {"Verde/Vege", null},
+                {"  Inmaduro", null},
+                {"  Vaina", null},
+                {"  Fresco", null},
+                {"  Verde-oscu", null},
+                {"  Vegetal", null},
+                {"  Paja", null},
+                {"  Herbaceo", null},
+                {"Leguminoso", null}
+            },
+            new String [] {
+                "5 Verde/Vegetal", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        GreenVeg5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                GreenVeg5KeyReleased(evt);
+            }
+        });
+        jScrollPane66.setViewportView(GreenVeg5);
+
+        Body7.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Jarabe", null},
+                {"Aceitoso", null},
+                {"Suave", null}
+            },
+            new String [] {
+                "10 Cuerpo", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Body7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Body7KeyReleased(evt);
+            }
+        });
+        jScrollPane67.setViewportView(Body7);
+
+        Finish7.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Duración", null},
+                {"Seco", null},
+                {"Astringente", null},
+                {"Granoso", null}
+            },
+            new String [] {
+                "11 Sabor Rem.", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Finish7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Finish7KeyReleased(evt);
+            }
+        });
+        jScrollPane68.setViewportView(Finish7);
+
+        Other5.setBackground(new java.awt.Color(51, 255, 255));
+        Other5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Papel/Hume", null},
+                {"  Rancio", null},
+                {"  Carton", null},
+                {"  Papel", null},
+                {"  Madera", null},
+                {"  Mohoso", null},
+                {"  Polvo-hume", null},
+                {"  Tierra", null},
+                {"  Cuero", null},
+                {"  Carne/cald", null},
+                {"  Fenolico", null},
+                {"Quimico", null},
+                {"  Amargo", null},
+                {"  Salado", null},
+                {"  Medicinal", null},
+                {"  Petroleo", null},
+                {"  Zorrillo", null},
+                {"  Goma", null}
+            },
+            new String [] {
+                "6 Otros", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Other5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Other5KeyReleased(evt);
+            }
+        });
+        jScrollPane69.setViewportView(Other5);
+
+        Roasted5.setBackground(new java.awt.Color(0, 204, 255));
+        Roasted5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Tabac-pipa", null},
+                {"Tabaco", null},
+                {"Quemado", null},
+                {"  Acre", null},
+                {"  Ceniza", null},
+                {"  Humo", null},
+                {"  Marrón/tos", null},
+                {"Cereal", null},
+                {"  Grano", null},
+                {"  Malta", null}
+            },
+            new String [] {
+                "7 Tostado", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Roasted5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Roasted5KeyReleased(evt);
+            }
+        });
+        jScrollPane70.setViewportView(Roasted5);
+
+        Spices5.setBackground(new java.awt.Color(153, 153, 255));
+        Spices5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Acre", null},
+                {"Pimienta", null},
+                {"Especias marrones", null},
+                {"  Anis", null},
+                {"  Nuez moscada", null},
+                {"  Canela", null},
+                {"  Clavo de olor", null}
+            },
+            new String [] {
+                "8 Especias", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Spices5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Spices5KeyReleased(evt);
+            }
+        });
+        jScrollPane71.setViewportView(Spices5);
+
+        Nutty5.setBackground(new java.awt.Color(255, 102, 204));
+        Nutty5.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Nueces", null},
+                {"  Mani", null},
+                {"  Avellana", null},
+                {"  Almendra", null},
+                {"Cacao", null},
+                {"  Chocolate", null},
+                {"  Choc amargo", null}
+            },
+            new String [] {
+                "9 Nueces/Cacao", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Nutty5.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Nutty5KeyReleased(evt);
+            }
+        });
+        jScrollPane72.setViewportView(Nutty5);
+
         javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
         jPanel15.setLayout(jPanel15Layout);
         jPanel15Layout.setHorizontalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane48, javax.swing.GroupLayout.DEFAULT_SIZE, 134, Short.MAX_VALUE)
-                .addGap(921, 921, 921))
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane53, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane64, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane65, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane67, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jScrollPane68, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addComponent(jScrollPane48, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane66, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jScrollPane69, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane70, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane71, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane72, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(23, 23, 23))
         );
         jPanel15Layout.setVerticalGroup(
             jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel15Layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane48, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addGap(188, 188, 188))
+                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane69, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane70, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addComponent(jScrollPane71, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jScrollPane72, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane66, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane48, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(29, 29, 29)
+                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane67, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane68, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                    .addGroup(jPanel15Layout.createSequentialGroup()
+                        .addComponent(jScrollPane53, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane64, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane65, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Acidez", jPanel15);
 
         Body2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Ligero", null},
-                {"Medio", null},
-                {"Pesado", null},
                 {"Jarabe", null},
                 {"Aceitoso", null},
                 {"Suave", null}
             },
             new String [] {
-                "Cualidades", "Intensidad"
+                "10 Cuerpo", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -3141,14 +3932,13 @@ public class jdCatacion2 extends javax.swing.JFrame {
 
         Finish2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Corto", null},
-                {"Medio", null},
-                {"Largo", null},
+                {"Duración", null},
                 {"Seco", null},
-                {"Astringent", null}
+                {"Astringent", null},
+                {"Granoso", null}
             },
             new String [] {
-                "Cualidades", "Intensidad"
+                "11 Sabor Rem.", "Inten."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -3166,25 +3956,370 @@ public class jdCatacion2 extends javax.swing.JFrame {
         });
         jScrollPane55.setViewportView(Finish2);
 
+        Sweet6.setBackground(new java.awt.Color(255, 102, 102));
+        Sweet6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Azúcar-Mor", null},
+                {"  Melaza", null},
+                {"  Jarab-mapl", null},
+                {"  Caramelo", null},
+                {"  Miel", null},
+                {"Vainilla", null}
+            },
+            new String [] {
+                "1 Dulce", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Sweet6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Sweet6KeyReleased(evt);
+            }
+        });
+        jScrollPane73.setViewportView(Sweet6);
+
+        Floral6.setBackground(new java.awt.Color(255, 153, 102));
+        Floral6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Té-Negro", null},
+                {"Floral", null},
+                {"  Manzanilla", null},
+                {"  Rosa", null},
+                {"  Jazmine", null}
+            },
+            new String [] {
+                "2 Floral", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Floral6.setPreferredSize(new java.awt.Dimension(175, 80));
+        Floral6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Floral6KeyReleased(evt);
+            }
+        });
+        jScrollPane74.setViewportView(Floral6);
+
+        Fruit6.setBackground(new java.awt.Color(255, 204, 0));
+        Fruit6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Bayas", null},
+                {"  Moras", null},
+                {"  Frambuesa", null},
+                {"  Arándano", null},
+                {"  Fresa", null},
+                {"Fruto-sec", null},
+                {"  Pasas", null},
+                {"  Ciruel-pas", null},
+                {"Otras-frut", null},
+                {"  Coco", null},
+                {"  Cereza", null},
+                {"  Granada", null},
+                {"  Piña", null},
+                {"  Uvas", null},
+                {"  Manzana", null},
+                {"  Durazno", null},
+                {"  Pera", null},
+                {"Citricos", null},
+                {"  Toronja", null},
+                {"  Naranja", null},
+                {"  Limon", null},
+                {"  Lima", null}
+            },
+            new String [] {
+                "3 Afrutado", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Fruit6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Fruit6KeyReleased(evt);
+            }
+        });
+        jScrollPane75.setViewportView(Fruit6);
+
+        SourFer6.setBackground(new java.awt.Color(255, 255, 153));
+        SourFer6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Acido", null},
+                {"  Arom-acido", null},
+                {"  Acido-acét", null},
+                {"  Acido-butí", null},
+                {"  Acido-isoc", null},
+                {"  Acido-cítr", null},
+                {"  Acido-máli", null},
+                {"Alcoh/Ferm", null},
+                {"  Vinoso", null},
+                {"  Whisky", null},
+                {"  Fermentado", null},
+                {"  Super-madu", null}
+            },
+            new String [] {
+                "4 Acido/Fermentado", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        SourFer6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                SourFer6KeyReleased(evt);
+            }
+        });
+        jScrollPane76.setViewportView(SourFer6);
+
+        GreenVeg6.setBackground(new java.awt.Color(102, 255, 102));
+        GreenVeg6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Aceit-Oliv", null},
+                {"Crudo", null},
+                {"Verde/Vege", null},
+                {"  Inmaduro", null},
+                {"  Vaina", null},
+                {"  Fresco", null},
+                {"  Verde-oscu", null},
+                {"  Vegetal", null},
+                {"  Paja", null},
+                {"  Herbaceo", null},
+                {"Leguminoso", null}
+            },
+            new String [] {
+                "5 Verde/Vegetal", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        GreenVeg6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                GreenVeg6KeyReleased(evt);
+            }
+        });
+        jScrollPane77.setViewportView(GreenVeg6);
+
+        Other6.setBackground(new java.awt.Color(51, 255, 255));
+        Other6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Papel/Hume", null},
+                {"  Rancio", null},
+                {"  Carton", null},
+                {"  Papel", null},
+                {"  Madera", null},
+                {"  Mohoso", null},
+                {"  Polvo-hume", null},
+                {"  Tierra", null},
+                {"  Cuero", null},
+                {"  Carne/cald", null},
+                {"  Fenolico", null},
+                {"Quimico", null},
+                {"  Amargo", null},
+                {"  Salado", null},
+                {"  Medicinal", null},
+                {"  Petroleo", null},
+                {"  Zorrillo", null},
+                {"  Goma", null}
+            },
+            new String [] {
+                "6 Otros", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Other6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Other6KeyReleased(evt);
+            }
+        });
+        jScrollPane78.setViewportView(Other6);
+
+        Roasted6.setBackground(new java.awt.Color(0, 204, 255));
+        Roasted6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Tabac-pipa", null},
+                {"Tabaco", null},
+                {"Quemado", null},
+                {"  Acre", null},
+                {"  Ceniza", null},
+                {"  Humo", null},
+                {"  Marrón/tos", null},
+                {"Cereal", null},
+                {"  Grano", null},
+                {"  Malta", null}
+            },
+            new String [] {
+                "7 Tostado", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Roasted6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Roasted6KeyReleased(evt);
+            }
+        });
+        jScrollPane79.setViewportView(Roasted6);
+
+        Spices6.setBackground(new java.awt.Color(153, 153, 255));
+        Spices6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Acre", null},
+                {"Pimienta", null},
+                {"Especias marrones", null},
+                {"  Anis", null},
+                {"  Nuez moscada", null},
+                {"  Canela", null},
+                {"  Clavo de olor", null}
+            },
+            new String [] {
+                "8 Especias", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Spices6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Spices6KeyReleased(evt);
+            }
+        });
+        jScrollPane80.setViewportView(Spices6);
+
+        Nutty6.setBackground(new java.awt.Color(255, 102, 204));
+        Nutty6.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Nueces", null},
+                {"  Mani", null},
+                {"  Avellana", null},
+                {"  Almendra", null},
+                {"Cacao", null},
+                {"  Chocolate", null},
+                {"  Choc amargo", null}
+            },
+            new String [] {
+                "9 Nueces/Cacao", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Nutty6.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Nutty6KeyReleased(evt);
+            }
+        });
+        jScrollPane81.setViewportView(Nutty6);
+
         javax.swing.GroupLayout jPanel16Layout = new javax.swing.GroupLayout(jPanel16);
         jPanel16.setLayout(jPanel16Layout);
         jPanel16Layout.setHorizontalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
-                .addContainerGap()
+                .addGap(313, 313, 313)
                 .addComponent(jScrollPane54, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane55, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(772, Short.MAX_VALUE))
+                .addContainerGap(469, Short.MAX_VALUE))
+            .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel16Layout.createSequentialGroup()
+                    .addGap(6, 6, 6)
+                    .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                        .addComponent(jScrollPane73, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane74, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jScrollPane75, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jScrollPane76, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addGap(18, 18, 18)
+                    .addComponent(jScrollPane77, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(jScrollPane78, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addComponent(jScrollPane79, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                    .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane80, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane81, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGap(6, 6, 6)))
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel16Layout.createSequentialGroup()
-                .addContainerGap()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                .addContainerGap(251, Short.MAX_VALUE)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane54, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane55, javax.swing.GroupLayout.PREFERRED_SIZE, 113, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(141, Short.MAX_VALUE))
+                    .addComponent(jScrollPane55, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane54, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(77, 77, 77))
+            .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel16Layout.createSequentialGroup()
+                    .addGap(20, 20, 20)
+                    .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addComponent(jScrollPane78, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane79, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel16Layout.createSequentialGroup()
+                            .addComponent(jScrollPane80, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                            .addComponent(jScrollPane81, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane77, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGroup(jPanel16Layout.createSequentialGroup()
+                            .addComponent(jScrollPane73, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGap(18, 18, 18)
+                            .addComponent(jScrollPane74, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane75, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane76, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addContainerGap(21, Short.MAX_VALUE)))
         );
 
         jTabbedPane1.addTab("Cuerpo", jPanel16);
@@ -3362,8 +4497,8 @@ public class jdCatacion2 extends javax.swing.JFrame {
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 304, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(35, Short.MAX_VALUE))
+                .addComponent(jTabbedPane1)
+                .addContainerGap())
         );
 
         jScrollPane1.setViewportView(jPanel1);
@@ -3381,324 +4516,34 @@ public class jdCatacion2 extends javax.swing.JFrame {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 880, Short.MAX_VALUE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 1044, Short.MAX_VALUE)
                 .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void slSecoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slSecoStateChanged
+    private void Finish2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Finish2KeyReleased
         // TODO add your handling code here:
-        //JOptionPane.showMessageDialog(this, slSeco.getValue());
-        Double valor = Double.parseDouble(slSeco.getValue() + "");
-        Double valor2 = valor / 100;
+        String sabor = "", intensidad = "";
+        sabor = Finish2.getValueAt(Finish2.getSelectedRow(), 0) + "";
+        intensidad = Finish2.getValueAt(Finish2.getSelectedRow(), 1) + "";
 
-        if (valor2 >= 4.0 && valor < 5.0) {
-            valor2 = 4.5;
-        }
-        if (valor2 >= 6.0 && valor < 6.5) {
-            valor2 = 6.0;
-        }
+        sCuerpo += sabor + intensidad + " ";
 
-        txtSeco.setText(valor2 + "");
-        promedio();
-    }//GEN-LAST:event_slSecoStateChanged
+        lblCuerpo.setText(sCuerpo);
+    }//GEN-LAST:event_Finish2KeyReleased
 
-    private void btnMenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenosActionPerformed
+    private void Body2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Body2KeyReleased
         // TODO add your handling code here:
-        slSeco.setValue(slSeco.getValue() - 50);
-        promedio();
-        formula();
-    }//GEN-LAST:event_btnMenosActionPerformed
+        String sabor = "", intensidad = "";
+        sabor = Body2.getValueAt(Body2.getSelectedRow(), 0) + "";
+        intensidad = Body2.getValueAt(Body2.getSelectedRow(), 1) + "";
 
-    private void btnMasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMasActionPerformed
-        // TODO add your handling code here:
-        slSeco.setValue(slSeco.getValue() + 50);
-        promedio();
-        formula();
-    }//GEN-LAST:event_btnMasActionPerformed
+        sCuerpo += sabor + intensidad + " ";
 
-    private void slMojadoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slMojadoStateChanged
-        // TODO add your handling code here:
-        Double valor = Double.parseDouble(slMojado.getValue() + "");
-        Double valor2 = valor / 100;
-        txtMojado.setText(valor2 + "");
-        promedio();
-    }//GEN-LAST:event_slMojadoStateChanged
-
-    private void slQuebradoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slQuebradoStateChanged
-        // TODO add your handling code here:
-        Double valor = Double.parseDouble(slQuebrado.getValue() + "");
-        Double valor2 = valor / 100;
-        txtQuebrado.setText(valor2 + "");
-        promedio();
-    }//GEN-LAST:event_slQuebradoStateChanged
-
-    private void btnMenos2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenos2ActionPerformed
-        // TODO add your handling code here:
-        slMojado.setValue(slMojado.getValue() - 50);
-        promedio();
-        formula();
-    }//GEN-LAST:event_btnMenos2ActionPerformed
-
-    private void btnMas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMas2ActionPerformed
-        // TODO add your handling code here:
-        slMojado.setValue(slMojado.getValue() + 50);
-        promedio();
-        formula();
-    }//GEN-LAST:event_btnMas2ActionPerformed
-
-    private void btnMenos3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenos3ActionPerformed
-        // TODO add your handling code here:
-        slQuebrado.setValue(slQuebrado.getValue() - 50);
-        promedio();
-        formula();
-    }//GEN-LAST:event_btnMenos3ActionPerformed
-
-    private void btnMas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMas3ActionPerformed
-        // TODO add your handling code here:
-        slQuebrado.setValue(slQuebrado.getValue() + 50);
-        promedio();
-        formula();
-    }//GEN-LAST:event_btnMas3ActionPerformed
-
-    private void slSaborStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slSaborStateChanged
-        // TODO add your handling code here:
-        Double valor = Double.parseDouble(slSabor.getValue() + "");
-        Double valor2 = valor / 100;
-        txtSabor.setText(valor2 + "");
-    }//GEN-LAST:event_slSaborStateChanged
-
-    private void slAftertasteStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slAftertasteStateChanged
-        // TODO add your handling code here:
-        Double valor = Double.parseDouble(slAftertaste.getValue() + "");
-        Double valor2 = valor / 100;
-        txtAftertaste.setText(valor2 + "");
-    }//GEN-LAST:event_slAftertasteStateChanged
-
-    private void slAcidezStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slAcidezStateChanged
-        // TODO add your handling code here:
-        Double valor = Double.parseDouble(slAcidez.getValue() + "");
-        Double valor2 = valor / 100;
-        txtAcidez.setText(valor2 + "");
-    }//GEN-LAST:event_slAcidezStateChanged
-
-    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
-        // TODO add your handling code here:
-        slSabor.setValue(slSabor.getValue() - 50);
-        promedio();
-        formula();
-    }//GEN-LAST:event_jButton10ActionPerformed
-
-    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
-        // TODO add your handling code here:
-        slSabor.setValue(slSabor.getValue() + 50);
-        promedio();
-        formula();
-    }//GEN-LAST:event_jButton11ActionPerformed
-
-    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
-        // TODO add your handling code here:
-        slAftertaste.setValue(slAftertaste.getValue() - 50);
-        promedio();
-        formula();
-    }//GEN-LAST:event_jButton12ActionPerformed
-
-    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
-        // TODO add your handling code here:
-        slAftertaste.setValue(slAftertaste.getValue() + 50);
-        promedio();
-        formula();
-    }//GEN-LAST:event_jButton13ActionPerformed
-
-    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
-        // TODO add your handling code here:
-        slAcidez.setValue(slAcidez.getValue() - 50);
-        promedio();
-        formula();
-    }//GEN-LAST:event_jButton14ActionPerformed
-
-    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
-        // TODO add your handling code here:
-        slAcidez.setValue(slAcidez.getValue() + 50);
-        promedio();
-        formula();
-    }//GEN-LAST:event_jButton15ActionPerformed
-
-    private void slCuerpoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slCuerpoStateChanged
-        // TODO add your handling code here:
-        Double valor = Double.parseDouble(slCuerpo.getValue() + "");
-        Double valor2 = valor / 100;
-        txtCuerpo.setText(valor2 + "");
-    }//GEN-LAST:event_slCuerpoStateChanged
-
-    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
-        // TODO add your handling code here:
-        slCuerpo.setValue(slCuerpo.getValue() - 50);
-        promedio();
-        formula();
-    }//GEN-LAST:event_jButton16ActionPerformed
-
-    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
-        // TODO add your handling code here:
-        slCuerpo.setValue(slCuerpo.getValue() + 50);
-        promedio();
-        formula();
-    }//GEN-LAST:event_jButton17ActionPerformed
-
-    private void slBalanceStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slBalanceStateChanged
-        // TODO add your handling code here:
-        Double valor = Double.parseDouble(slBalance.getValue() + "");
-        Double valor2 = valor / 100;
-        txtBalance.setText(valor2 + "");
-    }//GEN-LAST:event_slBalanceStateChanged
-
-    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
-        // TODO add your handling code here:
-        slBalance.setValue(slBalance.getValue() - 50);
-        promedio();
-        formula();
-    }//GEN-LAST:event_jButton18ActionPerformed
-
-    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
-        // TODO add your handling code here:
-        slBalance.setValue(slBalance.getValue() + 50);
-        promedio();
-        formula();
-    }//GEN-LAST:event_jButton19ActionPerformed
-
-    private void slCatadorStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slCatadorStateChanged
-        // TODO add your handling code here:
-        Double valor = Double.parseDouble(slCatador.getValue() + "");
-        Double valor2 = valor / 100;
-        txtCatador.setText(valor2 + "");
-    }//GEN-LAST:event_slCatadorStateChanged
-
-    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
-        // TODO add your handling code here:
-        slCatador.setValue(slCatador.getValue() - 50);
-        promedio();
-        formula();
-    }//GEN-LAST:event_jButton20ActionPerformed
-
-    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
-        // TODO add your handling code here:
-        slCatador.setValue(slCatador.getValue() + 50);
-        promedio();
-        formula();
-    }//GEN-LAST:event_jButton21ActionPerformed
-
-    private void txtNoTazasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNoTazasKeyTyped
-        // TODO add your handling code here:
-        char m = evt.getKeyChar();
-        if (Character.isAlphabetic(m)) {
-            getToolkit().beep();
-            evt.consume();
-        }
-    }//GEN-LAST:event_txtNoTazasKeyTyped
-
-    private void txtUniTazaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUniTazaKeyTyped
-        // TODO add your handling code here:
-        char m = evt.getKeyChar();
-        if (Character.isAlphabetic(m)) {
-            getToolkit().beep();
-            evt.consume();
-        }
-    }//GEN-LAST:event_txtUniTazaKeyTyped
-
-    private void txtTazaLimKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTazaLimKeyTyped
-        // TODO add your handling code here:
-        char m = evt.getKeyChar();
-        if (Character.isAlphabetic(m)) {
-            getToolkit().beep();
-            evt.consume();
-        }
-    }//GEN-LAST:event_txtTazaLimKeyTyped
-
-    private void txtDulzorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDulzorKeyTyped
-        // TODO add your handling code here:
-        char m = evt.getKeyChar();
-        if (Character.isAlphabetic(m)) {
-            getToolkit().beep();
-            evt.consume();
-        }
-    }//GEN-LAST:event_txtDulzorKeyTyped
-
-    private void txtIntensidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIntensidadKeyTyped
-        // TODO add your handling code here:
-        char m = evt.getKeyChar();
-        if (Character.isAlphabetic(m)) {
-            getToolkit().beep();
-            evt.consume();
-        }
-    }//GEN-LAST:event_txtIntensidadKeyTyped
-
-    private void txtNoTazasKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNoTazasKeyReleased
-        // TODO add your handling code here:
-        l1 = Integer.parseInt(txtNoTazas.getText());
-        l2 = Integer.parseInt(txtIntensidad.getText());
-        totalD = l1 * l2;
-        txtDefectos.setText(formato.format(totalD) + "");
-
-    }//GEN-LAST:event_txtNoTazasKeyReleased
-
-    private void txtIntensidadKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIntensidadKeyReleased
-        // TODO add your handling code here:
-        l1 = Integer.parseInt(txtNoTazas.getText());
-        l2 = Integer.parseInt(txtIntensidad.getText());
-        totalD = l1 * l2;
-        txtDefectos.setText(formato.format(totalD) + "");
-    }//GEN-LAST:event_txtIntensidadKeyReleased
-
-    private void txtUniTazaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUniTazaKeyReleased
-        // TODO add your handling code here:
-        formula();
-    }//GEN-LAST:event_txtUniTazaKeyReleased
-
-    private void txtTazaLimKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTazaLimKeyReleased
-        // TODO add your handling code here:
-        formula();
-    }//GEN-LAST:event_txtTazaLimKeyReleased
-
-    private void txtDulzorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDulzorKeyReleased
-        // TODO add your handling code here:
-        formula();
-    }//GEN-LAST:event_txtDulzorKeyReleased
-
-    private void slNivelTostadoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slNivelTostadoStateChanged
-        // TODO add your handling code here:
-        System.out.println(slNivelTostado.getValue());
-    }//GEN-LAST:event_slNivelTostadoStateChanged
-
-    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
-        // TODO add your handling code here:
-        guardar();
-    }//GEN-LAST:event_jButton1MouseClicked
-
-    private void txtDefectosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDefectosKeyReleased
-        // TODO add your handling code here:
-        formula();
-    }//GEN-LAST:event_txtDefectosKeyReleased
-
-    private void txtTazasCatKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTazasCatKeyReleased
-        // TODO add your handling code here:
-        formula();
-    }//GEN-LAST:event_txtTazasCatKeyReleased
-    String sSeco = "";
-    String sMojado = "";
-    String sQuebrado = "";
-    String sSabor = "";
-    String sRemanente = "";
-    String sAcidez = "";
-    String sCuerpo = "";
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-        if (validar()) {
-            guardar();
-        } else {
-        }
-    }//GEN-LAST:event_jButton1ActionPerformed
+        lblCuerpo.setText(sCuerpo);
+    }//GEN-LAST:event_Body2KeyReleased
 
     private void SourFer5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer5KeyReleased
         // TODO add your handling code here:
@@ -4176,8 +5021,671 @@ public class jdCatacion2 extends javax.swing.JFrame {
 
         lblSeco.setText(sSeco);
     }//GEN-LAST:event_FloralKeyReleased
+                 
+    private void SweetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SweetMouseClicked
+        // TODO add your handling code here:
+        /*        sabor = Sweet.getValueAt(Sweet.getSelectedRow(), 0) + "";
+        intensidad = Sweet.getValueAt(Sweet.getSelectedRow(), 1) + "";*/
+    }//GEN-LAST:event_SweetMouseClicked
 
-    //String sabor = "", intensidad = "";
+    private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
+        // TODO add your handling code here:
+        slCatador.setValue(slCatador.getValue() + 50);
+        promedio();
+        formula();
+    }//GEN-LAST:event_jButton21ActionPerformed
+
+    private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
+        // TODO add your handling code here:
+        slCatador.setValue(slCatador.getValue() - 50);
+        promedio();
+        formula();
+    }//GEN-LAST:event_jButton20ActionPerformed
+
+    private void slCatadorStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slCatadorStateChanged
+        // TODO add your handling code here:
+        Double valor = Double.parseDouble(slCatador.getValue() + "");
+        Double valor2 = valor / 100;
+        txtCatador.setText(valor2 + "");
+    }//GEN-LAST:event_slCatadorStateChanged
+
+    private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
+        // TODO add your handling code here:
+        slBalance.setValue(slBalance.getValue() + 50);
+        promedio();
+        formula();
+    }//GEN-LAST:event_jButton19ActionPerformed
+
+    private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
+        // TODO add your handling code here:
+        slBalance.setValue(slBalance.getValue() - 50);
+        promedio();
+        formula();
+    }//GEN-LAST:event_jButton18ActionPerformed
+
+    private void slBalanceStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slBalanceStateChanged
+        // TODO add your handling code here:
+        Double valor = Double.parseDouble(slBalance.getValue() + "");
+        Double valor2 = valor / 100;
+        txtBalance.setText(valor2 + "");
+    }//GEN-LAST:event_slBalanceStateChanged
+
+    private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
+        // TODO add your handling code here:
+        slCuerpo.setValue(slCuerpo.getValue() + 50);
+        promedio();
+        formula();
+    }//GEN-LAST:event_jButton17ActionPerformed
+
+    private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
+        // TODO add your handling code here:
+        slCuerpo.setValue(slCuerpo.getValue() - 50);
+        promedio();
+        formula();
+    }//GEN-LAST:event_jButton16ActionPerformed
+
+    private void slCuerpoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slCuerpoStateChanged
+        // TODO add your handling code here:
+        Double valor = Double.parseDouble(slCuerpo.getValue() + "");
+        Double valor2 = valor / 100;
+        txtCuerpo.setText(valor2 + "");
+    }//GEN-LAST:event_slCuerpoStateChanged
+
+    private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
+        // TODO add your handling code here:
+        slAcidez.setValue(slAcidez.getValue() + 50);
+        promedio();
+        formula();
+    }//GEN-LAST:event_jButton15ActionPerformed
+
+    private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
+        // TODO add your handling code here:
+        slAcidez.setValue(slAcidez.getValue() - 50);
+        promedio();
+        formula();
+    }//GEN-LAST:event_jButton14ActionPerformed
+
+    private void slAcidezStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slAcidezStateChanged
+        // TODO add your handling code here:
+        Double valor = Double.parseDouble(slAcidez.getValue() + "");
+        Double valor2 = valor / 100;
+        txtAcidez.setText(valor2 + "");
+    }//GEN-LAST:event_slAcidezStateChanged
+
+    private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
+        // TODO add your handling code here:
+        slAftertaste.setValue(slAftertaste.getValue() + 50);
+        promedio();
+        formula();
+    }//GEN-LAST:event_jButton13ActionPerformed
+
+    private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
+        // TODO add your handling code here:
+        slAftertaste.setValue(slAftertaste.getValue() - 50);
+        promedio();
+        formula();
+    }//GEN-LAST:event_jButton12ActionPerformed
+
+    private void slAftertasteStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slAftertasteStateChanged
+        // TODO add your handling code here:
+        Double valor = Double.parseDouble(slAftertaste.getValue() + "");
+        Double valor2 = valor / 100;
+        txtAftertaste.setText(valor2 + "");
+    }//GEN-LAST:event_slAftertasteStateChanged
+
+    private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
+        // TODO add your handling code here:
+        slSabor.setValue(slSabor.getValue() + 50);
+        promedio();
+        formula();
+    }//GEN-LAST:event_jButton11ActionPerformed
+
+    private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
+        // TODO add your handling code here:
+        slSabor.setValue(slSabor.getValue() - 50);
+        promedio();
+        formula();
+    }//GEN-LAST:event_jButton10ActionPerformed
+
+    private void slSaborStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slSaborStateChanged
+        // TODO add your handling code here:
+        Double valor = Double.parseDouble(slSabor.getValue() + "");
+        Double valor2 = valor / 100;
+        txtSabor.setText(valor2 + "");
+    }//GEN-LAST:event_slSaborStateChanged
+
+    private void btnMas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMas3ActionPerformed
+        // TODO add your handling code here:
+        slQuebrado.setValue(slQuebrado.getValue() + 50);
+        promedio();
+        formula();
+    }//GEN-LAST:event_btnMas3ActionPerformed
+
+    private void btnMenos3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenos3ActionPerformed
+        // TODO add your handling code here:
+        slQuebrado.setValue(slQuebrado.getValue() - 50);
+        promedio();
+        formula();
+    }//GEN-LAST:event_btnMenos3ActionPerformed
+
+    private void slQuebradoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slQuebradoStateChanged
+        // TODO add your handling code here:
+        Double valor = Double.parseDouble(slQuebrado.getValue() + "");
+        Double valor2 = valor / 100;
+        txtQuebrado.setText(valor2 + "");
+        promedio();
+    }//GEN-LAST:event_slQuebradoStateChanged
+
+    private void btnMas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMas2ActionPerformed
+        // TODO add your handling code here:
+        slMojado.setValue(slMojado.getValue() + 50);
+        promedio();
+        formula();
+    }//GEN-LAST:event_btnMas2ActionPerformed
+
+    private void btnMenos2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenos2ActionPerformed
+        // TODO add your handling code here:
+        slMojado.setValue(slMojado.getValue() - 50);
+        promedio();
+        formula();
+    }//GEN-LAST:event_btnMenos2ActionPerformed
+
+    private void slMojadoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slMojadoStateChanged
+        // TODO add your handling code here:
+        Double valor = Double.parseDouble(slMojado.getValue() + "");
+        Double valor2 = valor / 100;
+        txtMojado.setText(valor2 + "");
+        promedio();
+    }//GEN-LAST:event_slMojadoStateChanged
+
+    private void btnMasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMasActionPerformed
+        // TODO add your handling code here:
+        slSeco.setValue(slSeco.getValue() + 50);
+        promedio();
+        formula();
+    }//GEN-LAST:event_btnMasActionPerformed
+
+    private void btnMenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenosActionPerformed
+        // TODO add your handling code here:
+        slSeco.setValue(slSeco.getValue() - 50);
+        promedio();
+        formula();
+    }//GEN-LAST:event_btnMenosActionPerformed
+
+    private void slSecoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slSecoStateChanged
+        // TODO add your handling code here:
+        //JOptionPane.showMessageDialog(this, slSeco.getValue());
+        Double valor = Double.parseDouble(slSeco.getValue() + "");
+        Double valor2 = valor / 100;
+
+        if (valor2 >= 4.0 && valor < 5.0) {
+            valor2 = 4.5;
+        }
+        if (valor2 >= 6.0 && valor < 6.5) {
+            valor2 = 6.0;
+        }
+
+        txtSeco.setText(valor2 + "");
+        promedio();
+    }//GEN-LAST:event_slSecoStateChanged
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+        // TODO add your handling code here:
+        if (validar()) {
+            guardar();
+        } else {
+        }
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
+        // TODO add your handling code here:
+        guardar();
+    }//GEN-LAST:event_jButton1MouseClicked
+
+    private void txtTazasCatKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTazasCatKeyReleased
+        // TODO add your handling code here:
+        formula();
+    }//GEN-LAST:event_txtTazasCatKeyReleased
+
+    private void txtIntensidadKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIntensidadKeyTyped
+        // TODO add your handling code here:
+        char m = evt.getKeyChar();
+        if (Character.isAlphabetic(m)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtIntensidadKeyTyped
+
+    private void txtIntensidadKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtIntensidadKeyReleased
+        // TODO add your handling code here:
+        l1 = Integer.parseInt(txtNoTazas.getText());
+        l2 = Integer.parseInt(txtIntensidad.getText());
+        totalD = l1 * l2;
+        txtDefectos.setText(formato.format(totalD) + "");
+    }//GEN-LAST:event_txtIntensidadKeyReleased
+
+    private void txtNoTazasKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNoTazasKeyTyped
+        // TODO add your handling code here:
+        char m = evt.getKeyChar();
+        if (Character.isAlphabetic(m)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtNoTazasKeyTyped
+
+    private void txtNoTazasKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtNoTazasKeyReleased
+        // TODO add your handling code here:
+        l1 = Integer.parseInt(txtNoTazas.getText());
+        l2 = Integer.parseInt(txtIntensidad.getText());
+        totalD = l1 * l2;
+        txtDefectos.setText(formato.format(totalD) + "");
+    }//GEN-LAST:event_txtNoTazasKeyReleased
+
+    private void txtDefectosKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDefectosKeyReleased
+        // TODO add your handling code here:
+        formula();
+    }//GEN-LAST:event_txtDefectosKeyReleased
+
+    private void txtDulzorKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDulzorKeyTyped
+        // TODO add your handling code here:
+        char m = evt.getKeyChar();
+        if (Character.isAlphabetic(m)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtDulzorKeyTyped
+
+    private void txtDulzorKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtDulzorKeyReleased
+        // TODO add your handling code here:
+        formula();
+    }//GEN-LAST:event_txtDulzorKeyReleased
+
+    private void txtTazaLimKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTazaLimKeyTyped
+        // TODO add your handling code here:
+        char m = evt.getKeyChar();
+        if (Character.isAlphabetic(m)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtTazaLimKeyTyped
+
+    private void txtTazaLimKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTazaLimKeyReleased
+        // TODO add your handling code here:
+        formula();
+    }//GEN-LAST:event_txtTazaLimKeyReleased
+
+    private void txtUniTazaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUniTazaKeyTyped
+        // TODO add your handling code here:
+        char m = evt.getKeyChar();
+        if (Character.isAlphabetic(m)) {
+            getToolkit().beep();
+            evt.consume();
+        }
+    }//GEN-LAST:event_txtUniTazaKeyTyped
+
+    private void txtUniTazaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUniTazaKeyReleased
+        // TODO add your handling code here:
+        formula();
+    }//GEN-LAST:event_txtUniTazaKeyReleased
+
+    private void slNivelTostadoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slNivelTostadoStateChanged
+        // TODO add your handling code here:
+        System.out.println(slNivelTostado.getValue());
+    }//GEN-LAST:event_slNivelTostadoStateChanged
+
+    private void Body3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Body3KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Body3.getValueAt(Body3.getSelectedRow(), 0) + "";
+        intensidad = Body3.getValueAt(Body3.getSelectedRow(), 1) + "";
+
+        sCuerpo += sabor + intensidad + " ";
+
+        lblCuerpo.setText(sCuerpo);
+    }//GEN-LAST:event_Body3KeyReleased
+
+    private void Finish3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Finish3KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Finish3.getValueAt(Finish3.getSelectedRow(), 0) + "";
+        intensidad = Finish3.getValueAt(Finish3.getSelectedRow(), 1) + "";
+
+        sCuerpo += sabor + intensidad + " ";
+
+        lblCuerpo.setText(sCuerpo);
+    }//GEN-LAST:event_Finish3KeyReleased
+
+    private void Body4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Body4KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Body4.getValueAt(Body4.getSelectedRow(), 0) + "";
+        intensidad = Body4.getValueAt(Body4.getSelectedRow(), 1) + "";
+
+        sCuerpo += sabor + intensidad + " ";
+
+        lblCuerpo.setText(sCuerpo);
+    }//GEN-LAST:event_Body4KeyReleased
+
+    private void Finish4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Finish4KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Finish4.getValueAt(Finish4.getSelectedRow(), 0) + "";
+        intensidad = Finish4.getValueAt(Finish4.getSelectedRow(), 1) + "";
+
+        sCuerpo += sabor + intensidad + " ";
+
+        lblCuerpo.setText(sCuerpo);
+    }//GEN-LAST:event_Finish4KeyReleased
+
+    private void Body5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Body5KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Body5.getValueAt(Body5.getSelectedRow(), 0) + "";
+        intensidad = Body5.getValueAt(Body5.getSelectedRow(), 1) + "";
+
+        sCuerpo += sabor + intensidad + " ";
+
+        lblCuerpo.setText(sCuerpo);
+    }//GEN-LAST:event_Body5KeyReleased
+
+    private void Finish5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Finish5KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Finish5.getValueAt(Finish5.getSelectedRow(), 0) + "";
+        intensidad = Finish5.getValueAt(Finish5.getSelectedRow(), 1) + "";
+
+        sCuerpo += sabor + intensidad + " ";
+
+        lblCuerpo.setText(sCuerpo);
+    }//GEN-LAST:event_Finish5KeyReleased
+
+    private void Body6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Body6KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Body6.getValueAt(Body6.getSelectedRow(), 0) + "";
+        intensidad = Body6.getValueAt(Body6.getSelectedRow(), 1) + "";
+
+        sCuerpo += sabor + intensidad + " ";
+
+        lblCuerpo.setText(sCuerpo);
+    }//GEN-LAST:event_Body6KeyReleased
+
+    private void Finish6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Finish6KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Finish6.getValueAt(Finish6.getSelectedRow(), 0) + "";
+        intensidad = Finish6.getValueAt(Finish6.getSelectedRow(), 1) + "";
+
+        sCuerpo += sabor + intensidad + " ";
+
+        lblCuerpo.setText(sCuerpo);
+    }//GEN-LAST:event_Finish6KeyReleased
+
+    private void Other4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Other4KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Other4.getValueAt(Other4.getSelectedRow(), 0) + "";
+        intensidad = Other4.getValueAt(Other4.getSelectedRow(), 1) + "";
+
+        sSeco += sabor + intensidad + " ";
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_Other4KeyReleased
+
+    private void Roasted4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Roasted4KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Roasted4.getValueAt(Roasted4.getSelectedRow(), 0) + "";
+        intensidad = Roasted4.getValueAt(Roasted4.getSelectedRow(), 1) + "";
+
+        sSeco += sabor + intensidad + " ";
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_Roasted4KeyReleased
+
+    private void Spices4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Spices4KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Spices4.getValueAt(Spices4.getSelectedRow(), 0) + "";
+        intensidad = Spices4.getValueAt(Spices4.getSelectedRow(), 1) + "";
+
+        sSeco += sabor + intensidad + " ";
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_Spices4KeyReleased
+
+    private void Nutty4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nutty4KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Nutty4.getValueAt(Nutty4.getSelectedRow(), 0) + "";
+        intensidad = Nutty4.getValueAt(Nutty4.getSelectedRow(), 1) + "";
+
+        sSeco += sabor + intensidad + " ";
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_Nutty4KeyReleased
+
+    private void Sweet5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sweet5KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Sweet5.getValueAt(Sweet5.getSelectedRow(), 0) + "";
+        intensidad = Sweet5.getValueAt(Sweet5.getSelectedRow(), 1) + "";
+
+        if (!intensidad.equals("") || intensidad != null) {
+            sSeco += sabor + intensidad + " ";
+        }
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_Sweet5KeyReleased
+
+    private void Floral5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Floral5KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Floral5.getValueAt(Floral5.getSelectedRow(), 0) + "";
+        intensidad = Floral5.getValueAt(Floral5.getSelectedRow(), 1) + "";
+
+        if (!intensidad.equals("") || intensidad != null) {
+            sSeco += sabor + intensidad + " ";
+        }
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_Floral5KeyReleased
+
+    private void Fruit5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fruit5KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Fruit5.getValueAt(Fruit5.getSelectedRow(), 0) + "";
+        intensidad = Fruit5.getValueAt(Fruit5.getSelectedRow(), 1) + "";
+
+        if (!intensidad.equals("") || intensidad != null) {
+            sSeco += sabor + intensidad + " ";
+        }
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_Fruit5KeyReleased
+
+    private void GreenVeg5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVeg5KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = GreenVeg5.getValueAt(GreenVeg5.getSelectedRow(), 0) + "";
+        intensidad = GreenVeg5.getValueAt(GreenVeg5.getSelectedRow(), 1) + "";
+
+        sSeco += sabor + intensidad + " ";
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_GreenVeg5KeyReleased
+
+    private void Body7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Body7KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Body7.getValueAt(Body7.getSelectedRow(), 0) + "";
+        intensidad = Body7.getValueAt(Body7.getSelectedRow(), 1) + "";
+
+        sCuerpo += sabor + intensidad + " ";
+
+        lblCuerpo.setText(sCuerpo);
+    }//GEN-LAST:event_Body7KeyReleased
+
+    private void Finish7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Finish7KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Finish7.getValueAt(Finish7.getSelectedRow(), 0) + "";
+        intensidad = Finish7.getValueAt(Finish7.getSelectedRow(), 1) + "";
+
+        sCuerpo += sabor + intensidad + " ";
+
+        lblCuerpo.setText(sCuerpo);
+    }//GEN-LAST:event_Finish7KeyReleased
+
+    private void Other5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Other5KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Other5.getValueAt(Other5.getSelectedRow(), 0) + "";
+        intensidad = Other5.getValueAt(Other5.getSelectedRow(), 1) + "";
+
+        sSeco += sabor + intensidad + " ";
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_Other5KeyReleased
+
+    private void Roasted5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Roasted5KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Roasted5.getValueAt(Roasted5.getSelectedRow(), 0) + "";
+        intensidad = Roasted5.getValueAt(Roasted5.getSelectedRow(), 1) + "";
+
+        sSeco += sabor + intensidad + " ";
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_Roasted5KeyReleased
+
+    private void Spices5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Spices5KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Spices5.getValueAt(Spices5.getSelectedRow(), 0) + "";
+        intensidad = Spices5.getValueAt(Spices5.getSelectedRow(), 1) + "";
+
+        sSeco += sabor + intensidad + " ";
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_Spices5KeyReleased
+
+    private void Nutty5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nutty5KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Nutty5.getValueAt(Nutty5.getSelectedRow(), 0) + "";
+        intensidad = Nutty5.getValueAt(Nutty5.getSelectedRow(), 1) + "";
+
+        sSeco += sabor + intensidad + " ";
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_Nutty5KeyReleased
+
+    private void Sweet6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sweet6KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Sweet6.getValueAt(Sweet6.getSelectedRow(), 0) + "";
+        intensidad = Sweet6.getValueAt(Sweet6.getSelectedRow(), 1) + "";
+
+        if (!intensidad.equals("") || intensidad != null) {
+            sSeco += sabor + intensidad + " ";
+        }
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_Sweet6KeyReleased
+
+    private void Floral6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Floral6KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Floral6.getValueAt(Floral6.getSelectedRow(), 0) + "";
+        intensidad = Floral6.getValueAt(Floral6.getSelectedRow(), 1) + "";
+
+        if (!intensidad.equals("") || intensidad != null) {
+            sSeco += sabor + intensidad + " ";
+        }
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_Floral6KeyReleased
+
+    private void Fruit6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fruit6KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Fruit6.getValueAt(Fruit6.getSelectedRow(), 0) + "";
+        intensidad = Fruit6.getValueAt(Fruit6.getSelectedRow(), 1) + "";
+
+        if (!intensidad.equals("") || intensidad != null) {
+            sSeco += sabor + intensidad + " ";
+        }
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_Fruit6KeyReleased
+
+    private void SourFer6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer6KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = SourFer6.getValueAt(SourFer6.getSelectedRow(), 0) + "";
+        intensidad = SourFer6.getValueAt(SourFer6.getSelectedRow(), 1) + "";
+
+        sSeco += sabor + intensidad + " ";
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_SourFer6KeyReleased
+
+    private void GreenVeg6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVeg6KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = GreenVeg6.getValueAt(GreenVeg6.getSelectedRow(), 0) + "";
+        intensidad = GreenVeg6.getValueAt(GreenVeg6.getSelectedRow(), 1) + "";
+
+        sSeco += sabor + intensidad + " ";
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_GreenVeg6KeyReleased
+
+    private void Other6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Other6KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Other6.getValueAt(Other6.getSelectedRow(), 0) + "";
+        intensidad = Other6.getValueAt(Other6.getSelectedRow(), 1) + "";
+
+        sSeco += sabor + intensidad + " ";
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_Other6KeyReleased
+
+    private void Roasted6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Roasted6KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Roasted6.getValueAt(Roasted6.getSelectedRow(), 0) + "";
+        intensidad = Roasted6.getValueAt(Roasted6.getSelectedRow(), 1) + "";
+
+        sSeco += sabor + intensidad + " ";
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_Roasted6KeyReleased
+
+    private void Spices6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Spices6KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Spices6.getValueAt(Spices6.getSelectedRow(), 0) + "";
+        intensidad = Spices6.getValueAt(Spices6.getSelectedRow(), 1) + "";
+
+        sSeco += sabor + intensidad + " ";
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_Spices6KeyReleased
+
+    private void Nutty6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nutty6KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Nutty6.getValueAt(Nutty6.getSelectedRow(), 0) + "";
+        intensidad = Nutty6.getValueAt(Nutty6.getSelectedRow(), 1) + "";
+
+        sSeco += sabor + intensidad + " ";
+
+        lblSeco.setText(sSeco);
+    }//GEN-LAST:event_Nutty6KeyReleased
+
     private void SweetKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SweetKeyReleased
         // TODO add your handling code here:
         //VALIDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR
@@ -4189,37 +5697,16 @@ public class jdCatacion2 extends javax.swing.JFrame {
             sSeco += sabor + intensidad + " ";
         }
 
-        lblSeco.setText(sSeco);
+        lblSeco.setText(sSeco);        
     }//GEN-LAST:event_SweetKeyReleased
 
-    private void SweetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SweetMouseClicked
-        // TODO add your handling code here:
-        /*        sabor = Sweet.getValueAt(Sweet.getSelectedRow(), 0) + "";
-        intensidad = Sweet.getValueAt(Sweet.getSelectedRow(), 1) + "";*/
-    }//GEN-LAST:event_SweetMouseClicked
-
-    private void Body2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Body2KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Body2.getValueAt(Body2.getSelectedRow(), 0) + "";
-        intensidad = Body2.getValueAt(Body2.getSelectedRow(), 1) + "";
-
-        sCuerpo += sabor + intensidad + " ";
-
-        lblCuerpo.setText(sCuerpo);
-    }//GEN-LAST:event_Body2KeyReleased
-
-    private void Finish2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Finish2KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Finish2.getValueAt(Finish2.getSelectedRow(), 0) + "";
-        intensidad = Finish2.getValueAt(Finish2.getSelectedRow(), 1) + "";
-
-        sCuerpo += sabor + intensidad + " ";
-
-        lblCuerpo.setText(sCuerpo);
-    }//GEN-LAST:event_Finish2KeyReleased
-
+   String sSeco = "";
+    String sMojado = "";
+    String sQuebrado = "";
+    String sSabor = "";
+    String sRemanente = "";
+    String sAcidez = "";
+    String sCuerpo = "";
     String cadenaSabores = "", cadenaOlores = "";
 
     public void guardar() {
@@ -4324,52 +5811,83 @@ public class jdCatacion2 extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTable Body1;
     private javax.swing.JTable Body2;
+    private javax.swing.JTable Body3;
+    private javax.swing.JTable Body4;
+    private javax.swing.JTable Body5;
+    private javax.swing.JTable Body6;
+    private javax.swing.JTable Body7;
     private javax.swing.JTable Finish1;
     private javax.swing.JTable Finish2;
+    private javax.swing.JTable Finish3;
+    private javax.swing.JTable Finish4;
+    private javax.swing.JTable Finish5;
+    private javax.swing.JTable Finish6;
+    private javax.swing.JTable Finish7;
     private javax.swing.JTable Floral;
     private javax.swing.JTable Floral1;
     private javax.swing.JTable Floral2;
     private javax.swing.JTable Floral3;
     private javax.swing.JTable Floral4;
+    private javax.swing.JTable Floral5;
+    private javax.swing.JTable Floral6;
     private javax.swing.JTable Fruit;
     private javax.swing.JTable Fruit1;
     private javax.swing.JTable Fruit2;
     private javax.swing.JTable Fruit3;
     private javax.swing.JTable Fruit4;
+    private javax.swing.JTable Fruit5;
+    private javax.swing.JTable Fruit6;
     private javax.swing.JTable GreenVeg;
     private javax.swing.JTable GreenVeg1;
     private javax.swing.JTable GreenVeg2;
     private javax.swing.JTable GreenVeg3;
     private javax.swing.JTable GreenVeg4;
+    private javax.swing.JTable GreenVeg5;
+    private javax.swing.JTable GreenVeg6;
     private javax.swing.JTable Nutty;
     private javax.swing.JTable Nutty1;
     private javax.swing.JTable Nutty2;
     private javax.swing.JTable Nutty3;
+    private javax.swing.JTable Nutty4;
+    private javax.swing.JTable Nutty5;
+    private javax.swing.JTable Nutty6;
     private javax.swing.JTable Other;
     private javax.swing.JTable Other1;
     private javax.swing.JTable Other2;
     private javax.swing.JTable Other3;
+    private javax.swing.JTable Other4;
+    private javax.swing.JTable Other5;
+    private javax.swing.JTable Other6;
     private javax.swing.JTextField Quakers;
     private javax.swing.JTextField Quakers1;
     private javax.swing.JTable Roasted;
     private javax.swing.JTable Roasted1;
     private javax.swing.JTable Roasted2;
     private javax.swing.JTable Roasted3;
+    private javax.swing.JTable Roasted4;
+    private javax.swing.JTable Roasted5;
+    private javax.swing.JTable Roasted6;
     private javax.swing.JTable SourFer;
     private javax.swing.JTable SourFer1;
     private javax.swing.JTable SourFer2;
     private javax.swing.JTable SourFer3;
     private javax.swing.JTable SourFer4;
     private javax.swing.JTable SourFer5;
+    private javax.swing.JTable SourFer6;
     private javax.swing.JTable Spices;
     private javax.swing.JTable Spices1;
     private javax.swing.JTable Spices2;
     private javax.swing.JTable Spices3;
+    private javax.swing.JTable Spices4;
+    private javax.swing.JTable Spices5;
+    private javax.swing.JTable Spices6;
     private javax.swing.JTable Sweet;
     private javax.swing.JTable Sweet1;
     private javax.swing.JTable Sweet2;
     private javax.swing.JTable Sweet3;
     private javax.swing.JTable Sweet4;
+    private javax.swing.JTable Sweet5;
+    private javax.swing.JTable Sweet6;
     private javax.swing.JButton btnMas;
     private javax.swing.JButton btnMas2;
     private javax.swing.JButton btnMas3;
@@ -4487,12 +6005,43 @@ public class jdCatacion2 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane46;
     private javax.swing.JScrollPane jScrollPane47;
     private javax.swing.JScrollPane jScrollPane48;
+    private javax.swing.JScrollPane jScrollPane49;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane50;
+    private javax.swing.JScrollPane jScrollPane51;
+    private javax.swing.JScrollPane jScrollPane52;
+    private javax.swing.JScrollPane jScrollPane53;
     private javax.swing.JScrollPane jScrollPane54;
     private javax.swing.JScrollPane jScrollPane55;
+    private javax.swing.JScrollPane jScrollPane56;
+    private javax.swing.JScrollPane jScrollPane57;
+    private javax.swing.JScrollPane jScrollPane58;
+    private javax.swing.JScrollPane jScrollPane59;
     private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane60;
+    private javax.swing.JScrollPane jScrollPane61;
+    private javax.swing.JScrollPane jScrollPane62;
+    private javax.swing.JScrollPane jScrollPane63;
+    private javax.swing.JScrollPane jScrollPane64;
+    private javax.swing.JScrollPane jScrollPane65;
+    private javax.swing.JScrollPane jScrollPane66;
+    private javax.swing.JScrollPane jScrollPane67;
+    private javax.swing.JScrollPane jScrollPane68;
+    private javax.swing.JScrollPane jScrollPane69;
     private javax.swing.JScrollPane jScrollPane7;
+    private javax.swing.JScrollPane jScrollPane70;
+    private javax.swing.JScrollPane jScrollPane71;
+    private javax.swing.JScrollPane jScrollPane72;
+    private javax.swing.JScrollPane jScrollPane73;
+    private javax.swing.JScrollPane jScrollPane74;
+    private javax.swing.JScrollPane jScrollPane75;
+    private javax.swing.JScrollPane jScrollPane76;
+    private javax.swing.JScrollPane jScrollPane77;
+    private javax.swing.JScrollPane jScrollPane78;
+    private javax.swing.JScrollPane jScrollPane79;
     private javax.swing.JScrollPane jScrollPane8;
+    private javax.swing.JScrollPane jScrollPane80;
+    private javax.swing.JScrollPane jScrollPane81;
     private javax.swing.JScrollPane jScrollPane9;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
