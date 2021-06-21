@@ -8,6 +8,7 @@ package Formas_laboratorio;
 import Formas_LaboratorioN.jdCatacion;
 import Formas_LaboratorioN.jdCatacion2;
 import Formas_LaboratorioN.jdEvaluacion;
+import Formas_LaboratorioN.jdReporteIndividual;
 import Formas_Recepcion.jdRecibos;
 import Idioma.Propiedades;
 import Metodos_Configuraciones.metodosLaboratorio;
@@ -642,6 +643,7 @@ public class jpBitacora extends javax.swing.JPanel {
             kgConfirmados.setForeground(Color.red);
         }
 
+        
 
     }//GEN-LAST:event_tablabitacoraMouseClicked
     private void SinevaluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SinevaluarActionPerformed
@@ -720,13 +722,16 @@ public class jpBitacora extends javax.swing.JPanel {
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-        id = mdb.devuelveUnDato("select id_bitacora from bitacoralab "
+       /* id = mdb.devuelveUnDato("select id_bitacora from bitacoralab "
                 + "where (id_muestra='" + csm + "' and comunidad='" + comunindad + "')");
         try {
             excel.datos(cn, csm, id, taza, Idioma);      // TODO add your handling code here:
         } catch (IOException ex) {
             Logger.getLogger(jpBitacora.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
+       
+       jdReporteIndividual jdR = new jdReporteIndividual(null,true, csm,cn);
+       jdR.setVisible(true);
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void saboresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saboresActionPerformed
