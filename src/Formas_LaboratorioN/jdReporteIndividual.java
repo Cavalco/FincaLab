@@ -41,7 +41,7 @@ public class jdReporteIndividual extends javax.swing.JDialog {
         mlb = new metodosLaboratorio(cn, "");
         modelo = (DefaultTableModel) tablaDefectos.getModel();
         cargarDatos();
-        prueba();
+        //prueba();
         //modelo = (DefaultTableModel) tablabitacora.getModel();
 
     }
@@ -200,6 +200,9 @@ public class jdReporteIndividual extends javax.swing.JDialog {
                 + "'" + mlb.devuelveUnDato("select id_bitacora from bitacoralab where id_muestra='" + csm + "'") + "' "
                 + "and criba=19").split(",");
 
+        JOptionPane.showMessageDialog(null,cadenaC);
+        System.out.println(cadenaC);
+        
         String criba = cadenaC[0];
         String peso = cadenaC[1];
         String brocaS = cadenaC[2];
@@ -219,7 +222,7 @@ public class jdReporteIndividual extends javax.swing.JDialog {
         String inmaduro = cadenaC[16];
         String sobresecado = cadenaC[17];
         String arrugado = cadenaC[18];
-        String humedo = cadenaC[19];
+        //String humedo = cadenaC[19];
         String quebrad = cadenaC[20];
         String cerezaS = cadenaC[21];
         String pergamino = cadenaC[22];
@@ -229,7 +232,7 @@ public class jdReporteIndividual extends javax.swing.JDialog {
         modelo.addRow(new Object[]{criba, peso, brocaS, broca, negro,
             negroP, agrio, agrioP, aplastado, daño,
             dañoAgrio, blanco, elefante, concha, malformado,
-            hongos, inmaduro, sobresecado, arrugado, humedo,
+            hongos, inmaduro, sobresecado, arrugado,
             quebrad, cerezaS, pergamino, cascara, materia});
 
         cadenaC = mlb.devuelveUnDato("SELECT Concat(criba,',',datos)\n"
@@ -257,7 +260,7 @@ public class jdReporteIndividual extends javax.swing.JDialog {
         inmaduro = cadenaC[16];
         sobresecado = cadenaC[17];
         arrugado = cadenaC[18];
-        humedo = cadenaC[19];
+        //humedo = cadenaC[19];
         quebrad = cadenaC[20];
         cerezaS = cadenaC[21];
         pergamino = cadenaC[22];
@@ -267,7 +270,7 @@ public class jdReporteIndividual extends javax.swing.JDialog {
         modelo.addRow(new Object[]{criba, peso, brocaS, broca, negro,
             negroP, agrio, agrioP, aplastado, daño,
             dañoAgrio, blanco, elefante, concha, malformado,
-            hongos, inmaduro, sobresecado, arrugado, humedo,
+            hongos, inmaduro, sobresecado, arrugado,
             quebrad, cerezaS, pergamino, cascara, materia});
 
         cadenaC = mlb.devuelveUnDato("SELECT Concat(criba,',',datos)\n"
@@ -295,7 +298,7 @@ public class jdReporteIndividual extends javax.swing.JDialog {
         inmaduro = cadenaC[16];
         sobresecado = cadenaC[17];
         arrugado = cadenaC[18];
-        humedo = cadenaC[19];
+        //humedo = cadenaC[19];
         quebrad = cadenaC[20];
         cerezaS = cadenaC[21];
         pergamino = cadenaC[22];
@@ -305,7 +308,7 @@ public class jdReporteIndividual extends javax.swing.JDialog {
         modelo.addRow(new Object[]{criba, peso, brocaS, broca, negro,
             negroP, agrio, agrioP, aplastado, daño,
             dañoAgrio, blanco, elefante, concha, malformado,
-            hongos, inmaduro, sobresecado, arrugado, humedo,
+            hongos, inmaduro, sobresecado, arrugado,
             quebrad, cerezaS, pergamino, cascara, materia});
 
         cadenaC = mlb.devuelveUnDato("SELECT Concat(criba,',',datos)\n"
@@ -333,17 +336,16 @@ public class jdReporteIndividual extends javax.swing.JDialog {
         inmaduro = cadenaC[16];
         sobresecado = cadenaC[17];
         arrugado = cadenaC[18];
-        humedo = cadenaC[19];
+        //humedo = cadenaC[19];
         quebrad = cadenaC[20];
         cerezaS = cadenaC[21];
         pergamino = cadenaC[22];
         cascara = cadenaC[23];
         materia = cadenaC[24];
-
         modelo.addRow(new Object[]{criba, peso, brocaS, broca, negro,
             negroP, agrio, agrioP, aplastado, daño,
             dañoAgrio, blanco, elefante, concha, malformado,
-            hongos, inmaduro, sobresecado, arrugado, humedo,
+            hongos, inmaduro, sobresecado, arrugado,
             quebrad, cerezaS, pergamino, cascara, materia});
 
         cadenaC = mlb.devuelveUnDato("SELECT Concat(criba,',',datos)\n"
@@ -371,7 +373,7 @@ public class jdReporteIndividual extends javax.swing.JDialog {
         inmaduro = cadenaC[16];
         sobresecado = cadenaC[17];
         arrugado = cadenaC[18];
-        humedo = cadenaC[19];
+        //humedo = cadenaC[19];
         quebrad = cadenaC[20];
         cerezaS = cadenaC[21];
         pergamino = cadenaC[22];
@@ -381,7 +383,7 @@ public class jdReporteIndividual extends javax.swing.JDialog {
         modelo.addRow(new Object[]{criba, peso, brocaS, broca, negro,
             negroP, agrio, agrioP, aplastado, daño,
             dañoAgrio, blanco, elefante, concha, malformado,
-            hongos, inmaduro, sobresecado, arrugado, humedo,
+            hongos, inmaduro, sobresecado, arrugado,
             quebrad, cerezaS, pergamino, cascara, materia});
 
         cadenaC = mlb.devuelveUnDato("SELECT Concat(criba,',',datos)\n"
@@ -409,7 +411,7 @@ public class jdReporteIndividual extends javax.swing.JDialog {
         inmaduro = cadenaC[16];
         sobresecado = cadenaC[17];
         arrugado = cadenaC[18];
-        humedo = cadenaC[19];
+        //humedo = cadenaC[19];
         quebrad = cadenaC[20];
         cerezaS = cadenaC[21];
         pergamino = cadenaC[22];
@@ -419,7 +421,7 @@ public class jdReporteIndividual extends javax.swing.JDialog {
         modelo.addRow(new Object[]{criba, peso, brocaS, broca, negro,
             negroP, agrio, agrioP, aplastado, daño,
             dañoAgrio, blanco, elefante, concha, malformado,
-            hongos, inmaduro, sobresecado, arrugado, humedo,
+            hongos, inmaduro, sobresecado, arrugado,
             quebrad, cerezaS, pergamino, cascara, materia});
 
         cadenaC = mlb.devuelveUnDato("SELECT Concat(criba,',',datos)\n"
@@ -447,7 +449,7 @@ public class jdReporteIndividual extends javax.swing.JDialog {
         inmaduro = cadenaC[16];
         sobresecado = cadenaC[17];
         arrugado = cadenaC[18];
-        humedo = cadenaC[19];
+        //humedo = cadenaC[19];
         quebrad = cadenaC[20];
         cerezaS = cadenaC[21];
         pergamino = cadenaC[22];
@@ -457,7 +459,7 @@ public class jdReporteIndividual extends javax.swing.JDialog {
         modelo.addRow(new Object[]{criba, peso, brocaS, broca, negro,
             negroP, agrio, agrioP, aplastado, daño,
             dañoAgrio, blanco, elefante, concha, malformado,
-            hongos, inmaduro, sobresecado, arrugado, humedo,
+            hongos, inmaduro, sobresecado, arrugado,
             quebrad, cerezaS, pergamino, cascara, materia});
 
         /*for (int i = 0; i >= cadenaC.length; i++) {
