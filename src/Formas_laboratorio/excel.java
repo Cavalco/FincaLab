@@ -37,13 +37,13 @@ public class excel {
 
     metodosLaboratorio mdb;
     Connection cn;
-     Propiedades idioma;
-      String Idioma;
+    Propiedades idioma;
+    String Idioma;
 
-    public void datos(Connection cn, String id, String idb,String taza, String Idioma) throws IOException {
+    public void datos(Connection cn, String id, String idb, String taza, String Idioma) throws IOException {
         this.cn = cn;
-          this.Idioma=Idioma;
-        mdb = new metodosLaboratorio(cn,Idioma);
+        this.Idioma = Idioma;
+        mdb = new metodosLaboratorio(cn, Idioma);
         SimpleDateFormat formatter = new SimpleDateFormat("yyyyMMMdHHmm");
         Date date = new Date(System.currentTimeMillis());
         System.out.println(formatter.format(date));
@@ -62,46 +62,45 @@ public class excel {
         String[] datos6 = mdb.devuelveUnDato("SELECT datos FROM cribas where id_bitacora=" + idb + " and criba=15;").split(",");
         String[] datos7 = mdb.devuelveUnDato("SELECT datos FROM cribas where id_bitacora=" + idb + " and criba='F';").split(",");
 
-           
         String[] datos8;
         datos8 = mdb.devuelveUnDato("select sabores from bitacoralab where id_bitacora=" + idb + ";").split(";");
-        String[] sab1=new String[2];
-    
-        String[] sab2=new String[2];
-   
-        String[] sab3=new String[2];
-      
-        String[] sab4=new String[2];
-   
-        String[] sab5=new String[2];
-      
-        String[] sab6=new String[2];
-        
-        String[] sab7=new String[2];
-     
-            if (taza.equals("1")) {
-                    sab1 = datos8[0].split(":");
-                         sab2 = datos8[1].split(":");
-                           sab3 = datos8[2].split(":");
-                                sab4 = datos8[3].split(":");
-                                  sab5 = datos8[4].split(":");
-                                  sab6 = datos8[5].split(":");
-                                     sab7 = datos8[6].split(":");
-        System.out.println(sab1[0]);
-        System.out.println(sab1[1]);//1 dry flavor
-        System.out.println(sab2[0]);
-        System.out.println(sab2[1]);//1 wet flavor
-        System.out.println(sab3[0]);
-        System.out.println(sab3[1]);//1 break flavor
-        System.out.println(sab4[0]);
-        System.out.println(sab4[1]);//1 flavor flavors
-        System.out.println(sab5[0]);
-        System.out.println(sab5[1]);//1 after taste flavor
-        System.out.println(sab6[0]);
-        System.out.println(sab6[1]);//1 acidity flavors
-        System.out.println(sab7[0]);
-        System.out.println(sab7[1]);//1 body
-            }
+        String[] sab1 = new String[2];
+
+        String[] sab2 = new String[2];
+
+        String[] sab3 = new String[2];
+
+        String[] sab4 = new String[2];
+
+        String[] sab5 = new String[2];
+
+        String[] sab6 = new String[2];
+
+        String[] sab7 = new String[2];
+
+        if (taza.equals("1")) {
+            sab1 = datos8[0].split(":");
+            sab2 = datos8[1].split(":");
+            sab3 = datos8[2].split(":");
+            sab4 = datos8[3].split(":");
+            sab5 = datos8[4].split(":");
+            sab6 = datos8[5].split(":");
+            sab7 = datos8[6].split(":");
+            System.out.println(sab1[0]);
+            System.out.println(sab1[1]);//1 dry flavor
+            System.out.println(sab2[0]);
+            System.out.println(sab2[1]);//1 wet flavor
+            System.out.println(sab3[0]);
+            System.out.println(sab3[1]);//1 break flavor
+            System.out.println(sab4[0]);
+            System.out.println(sab4[1]);//1 flavor flavors
+            System.out.println(sab5[0]);
+            System.out.println(sab5[1]);//1 after taste flavor
+            System.out.println(sab6[0]);
+            System.out.println(sab6[1]);//1 acidity flavors
+            System.out.println(sab7[0]);
+            System.out.println(sab7[1]);//1 body
+        }
         XSSFWorkbook my_xlsx_workbook;
 
 //obtener el nombre y la ruta del archivo a modificar
@@ -1213,44 +1212,44 @@ public class excel {
             c181 = my_worksheet.getRow(28).createCell(28);
         }
         c181.setCellValue(datos7[22]);
-         if (taza.equals("1")) {
-        //sabores
-        c182 = my_worksheet.getRow(13).getCell(10);
-        if (c182 == null) {
-            c182 = my_worksheet.getRow(13).createCell(10);
-        } //sabores sabor
-        c182.setCellValue(sab4[1]);
+        if (taza.equals("1")) {
+            //sabores
+            c182 = my_worksheet.getRow(13).getCell(10);
+            if (c182 == null) {
+                c182 = my_worksheet.getRow(13).createCell(10);
+            } //sabores sabor
+            c182.setCellValue(sab4[1]);
 
-        c183 = my_worksheet.getRow(13).getCell(16);
-        if (c183 == null) {
-            c183 = my_worksheet.getRow(13).createCell(16);
-        }//sabores acidez
-        c183.setCellValue(sab6[1]);
+            c183 = my_worksheet.getRow(13).getCell(16);
+            if (c183 == null) {
+                c183 = my_worksheet.getRow(13).createCell(16);
+            }//sabores acidez
+            c183.setCellValue(sab6[1]);
 
-        c184 = my_worksheet.getRow(16).getCell(4);
-        if (c184 == null) {
-            c184 = my_worksheet.getRow(16).createCell(4);
-        } // sabores seco
-        c184.setCellValue(sab1[1]);
+            c184 = my_worksheet.getRow(16).getCell(4);
+            if (c184 == null) {
+                c184 = my_worksheet.getRow(16).createCell(4);
+            } // sabores seco
+            c184.setCellValue(sab1[1]);
 
-        c185 = my_worksheet.getRow(16).getCell(10);
-        if (c185 == null) {
-            c185 = my_worksheet.getRow(16).createCell(10);
-        } // sabores aftertaste
-        c185.setCellValue(sab5[1]);
+            c185 = my_worksheet.getRow(16).getCell(10);
+            if (c185 == null) {
+                c185 = my_worksheet.getRow(16).createCell(10);
+            } // sabores aftertaste
+            c185.setCellValue(sab5[1]);
 
-        c186 = my_worksheet.getRow(17).getCell(16);
-        if (c186 == null) {
-            c186 = my_worksheet.getRow(17).createCell(16);
-        } //sabores body
-        c186.setCellValue(sab7[1]);
+            c186 = my_worksheet.getRow(17).getCell(16);
+            if (c186 == null) {
+                c186 = my_worksheet.getRow(17).createCell(16);
+            } //sabores body
+            c186.setCellValue(sab7[1]);
 
-        c187 = my_worksheet.getRow(18).getCell(4);
-        if (c187 == null) {
-            c187 = my_worksheet.getRow(18).createCell(4);
-        }//sabores espuma y mojado
-        c187.setCellValue(datos8[1] + "," + datos8[2]);
-  }
+            c187 = my_worksheet.getRow(18).getCell(4);
+            if (c187 == null) {
+                c187 = my_worksheet.getRow(18).createCell(4);
+            }//sabores espuma y mojado
+            c187.setCellValue(datos8[1] + "," + datos8[2]);
+        }
         //selecciona el nombre y la ruta para el archivo de salida Users\\Jacob Frankel\\Desktop\\
         FileOutputStream output_file = new FileOutputStream(new File("C:\\" + nombre + ".xlsx"));
         //escribe los datos
@@ -1258,231 +1257,244 @@ public class excel {
         //cierra el archivo abierto
         output_file.close();
         JOptionPane.showMessageDialog(null, "reporte creado: " + nombre + ".xlsx en C:");
-       
+
     }
-    public void imprimir(JTable modelo2,Connection cn, String Idioma){
-     this.cn = cn;
-       this.Idioma=Idioma;
-        mdb = new metodosLaboratorio(cn,Idioma);
+
+    public void imprimir(JTable modelo2, Connection cn, String Idioma) {
+        this.cn = cn;
+        this.Idioma = Idioma;
+        mdb = new metodosLaboratorio(cn, Idioma);
         DecimalFormat formato = new DecimalFormat("#.##");
-        String array[]= new String[26];
-        String a1="",a2="",a3="";
-     int a4;
-        
+        String array[] = new String[26];
+        String a1 = "", a2 = "", a3 = "";
+        int a4;
+
         //Access the workbook
-         XSSFWorkbook my_xlsx_workbook;
-         //Blank workbook
-      XSSFWorkbook workbook = new XSSFWorkbook();
-      //Create a blank sheet
-      XSSFSheet sheet = workbook.createSheet("Reporte General");
-      //This data needs to be written (Object[])
+        XSSFWorkbook my_xlsx_workbook;
+        //Blank workbook
+        XSSFWorkbook workbook = new XSSFWorkbook();
+        //Create a blank sheet
+        XSSFSheet sheet = workbook.createSheet("Reporte General");
+        //This data needs to be written (Object[])
         Map<String, Object[]> data = new TreeMap<String, Object[]>();
-         data.put("0", new Object[] {"% F", "Estado Mezcla", "CSM","Beneficio", "Lote", "Proceso","Forma Cafe", "Certificacion", "Kilogramos","Conf", "Sacos", "Comunidad",
-             "Dueño", "Fec. Lote", "Taza","Aspecto", "H. Oro", "Broca Severa","Rendimiento", "Quakers", "Sabores (Seco)", "Sabores (Sabor)", "Sabores (Post Gusto)", "Sabores (Finish)", "Sabores (cuerpo)","Observaciones", "Densidad Oro", "Densidad Tostado"});
-         a4= modelo2.getRowCount();
-      for (int i = 0; i <a4; i++) {
-          String id="",taza="";
-          array[0]= modelo2.getValueAt(i, 0)+"";
-                   String[] sab1=new String[2];
-        String[] datos81 =new String[15];
-        String[] sab2=new String[2];
-   
-        String[] sab3=new String[2];
-      
-        String[] sab4=new String[2];
-   
-        String[] sab5=new String[2];
-      
-        String[] sab6=new String[2];
-        
-        String[] sab7=new String[2];
-         String[] sab8=new String[2];
-      String[] sab9=new String[2];
-          System.out.println(array[0]);
-          if ( array[0].equals("null")) {
-             array[0]="";  
-          }
-            array[1]= modelo2.getValueAt(i, 1)+"";System.out.println(array[1]);
-               if ( array[1].equals("null")) {
-             array[1]="";  
-          }
-            array[2]= modelo2.getValueAt(i, 2)+"";System.out.println(array[2]);
-               if ( array[2].equals("null")) {
-             array[2]="";  
-          }
-            array[3]= modelo2.getValueAt(i, 3)+"";System.out.println(array[3]);
-               if ( array[3].equals("null")) {
-             array[3]="";  
-          }
-            array[4]= modelo2.getValueAt(i, 4)+"";System.out.println(array[4]);
-               if ( array[4].equals("null")) {
-             array[4]="";  
-          }
-            array[5]= modelo2.getValueAt(i, 5)+"";System.out.println(array[5]);
-               if ( array[5].equals("null")) {
-             array[5]="";  
-          }
-            array[6]= modelo2.getValueAt(i, 6)+"";System.out.println(array[6]);
-               if ( array[6].equals("null")) {
-             array[6]="";  
-          }
-            array[7]= modelo2.getValueAt(i, 7)+"";System.out.println(array[7]);
-               if ( array[7].equals("null")) {
-             array[7]="";  
-          }
-            array[8]= modelo2.getValueAt(i, 8)+"";System.out.println(array[8]);
-               if ( array[8].equals("null")) {
-             array[8]="";  
-          }else if (array[8].equals("1")) {
-              array[8]="S";
-          }else{array[8]="N";}
-            array[9]= modelo2.getValueAt(i, 9)+"";System.out.println(array[9]);
-               if ( array[9].equals("null")) {
-             array[9]="";  
-          }
-            array[10]= modelo2.getValueAt(i, 10)+"";System.out.println(array[10]);
-               if ( array[10].equals("null")) {
-             array[10]="";  
-          }
-            array[11]= modelo2.getValueAt(i, 11)+"";System.out.println(array[11]);
-             if ( array[11].equals("null")) {
-             array[11]="";  
-          }
-            array[12]= modelo2.getValueAt(i, 12)+"";System.out.println(array[12]);
-             if ( array[12].equals("null")) {
-             array[12]="";  
-          }
-            array[13]= modelo2.getValueAt(i, 13)+"";System.out.println(array[13]);
-             if ( array[13].equals("null")) {
-             array[13]="";  
-          }
-            array[14]= modelo2.getValueAt(i, 14)+"";System.out.println(array[14]);
-             if ( array[14].equals("null")) {
-             array[14]="";  
-          }
-            array[15]= modelo2.getValueAt(i, 15)+"";System.out.println(array[15]);
-             if ( array[15].equals("null")) {
-             array[15]="";  
-          }
-            array[16]= modelo2.getValueAt(i, 16)+"";System.out.println(array[16]);
-             if ( array[16].equals("null")) {
-             array[16]="";  
-          }
-            array[17]= modelo2.getValueAt(i, 17)+"";System.out.println(array[17]);
-             if ( array[17].equals("null")) {
-             array[17]="";  
-             datos81[0]="";
-             datos81[1]="";
-             datos81[2]="";
-          }else{
-              
-            
-             datos81= array[17].split(";");
-        
-          
-                   
-                         
-                         
-                                sab4 = datos81[3].split(":");
-                                  sab5 = datos81[4].split(":");
-                                  sab6 = datos81[5].split(":");
-                                     sab7 = datos81[6].split(":");
-                                     sab8=sab5[1].split("-");
-                                   sab9=sab8[1].split("=");
-        System.out.println(sab1[0]);
-        System.out.println(datos81[0]);//1 dry flavor
-        System.out.println(sab2[0]);
-        System.out.println(datos81[1]);//1 wet flavor
-        System.out.println(sab3[0]);
-        System.out.println(datos81[2]);//1 break flavor
-        System.out.println(sab4[0]);
-        System.out.println(sab4[1]);//1 flavor flavors
-        System.out.println(sab5[0]);
-        System.out.println(sab8[0]);//1 after taste flavor
-        System.out.println(sab9[1]);//finish flavor 
-        System.out.println(sab6[0]);
-        System.out.println(sab6[1]);//1 acidity flavors
-        System.out.println(sab7[0]);
-        System.out.println(sab7[1]);//1 body
+        data.put("0", new Object[]{"% F", "Estado Mezcla", "CSM", "Beneficio", "Lote", "Proceso", "Forma Cafe", "Certificacion", "Kilogramos", "Conf", "Sacos", "Comunidad",
+            "Dueño", "Fec. Lote", "Taza", "Aspecto", "H. Oro", "Broca Severa", "Rendimiento", "Quakers", "Sabores (Seco)", "Sabores (Sabor)", "Sabores (Post Gusto)", "Sabores (Finish)", "Sabores (cuerpo)", "Observaciones", "Densidad Oro", "Densidad Tostado"});
+        a4 = modelo2.getRowCount();
+        for (int i = 0; i < a4; i++) {
+            String id = "", taza = "";
+            array[0] = modelo2.getValueAt(i, 0) + "";
+            String[] sab1 = new String[2];
+            String[] datos81 = new String[15];
+            String[] sab2 = new String[2];
+
+            String[] sab3 = new String[2];
+
+            String[] sab4 = new String[2];
+
+            String[] sab5 = new String[2];
+
+            String[] sab6 = new String[2];
+
+            String[] sab7 = new String[2];
+            String[] sab8 = new String[2];
+            String[] sab9 = new String[2];
+            System.out.println(array[0]);
+            if (array[0].equals("null")) {
+                array[0] = "";
             }
-            array[18]= modelo2.getValueAt(i, 18)+"";System.out.println(array[18]);
-             if ( array[18].equals("null")) {
-             array[18]="";  
-          }
-            array[19]= modelo2.getValueAt(i, 19)+"";System.out.println(array[19]);
-             if ( array[19].equals("null")) {
-             array[19]="";  
-          }
-            array[20]= modelo2.getValueAt(i, 20)+"";System.out.println(array[20]);
-             if ( array[20].equals("null")) {
-             array[20]="";  
-          }
-            array[21]= modelo2.getValueAt(i, 21)+"";System.out.println(array[21]);
-             if ( array[21].equals("null")) {
-             array[21]="";  
-          }
-             id = mdb.comprobarExistencia("select id_bitacora from bitacoralab "
+            array[1] = modelo2.getValueAt(i, 1) + "";
+            System.out.println(array[1]);
+            if (array[1].equals("null")) {
+                array[1] = "";
+            }
+            array[2] = modelo2.getValueAt(i, 2) + "";
+            System.out.println(array[2]);
+            if (array[2].equals("null")) {
+                array[2] = "";
+            }
+            array[3] = modelo2.getValueAt(i, 3) + "";
+            System.out.println(array[3]);
+            if (array[3].equals("null")) {
+                array[3] = "";
+            }
+            array[4] = modelo2.getValueAt(i, 4) + "";
+            System.out.println(array[4]);
+            if (array[4].equals("null")) {
+                array[4] = "";
+            }
+            array[5] = modelo2.getValueAt(i, 5) + "";
+            System.out.println(array[5]);
+            if (array[5].equals("null")) {
+                array[5] = "";
+            }
+            array[6] = modelo2.getValueAt(i, 6) + "";
+            System.out.println(array[6]);
+            if (array[6].equals("null")) {
+                array[6] = "";
+            }
+            array[7] = modelo2.getValueAt(i, 7) + "";
+            System.out.println(array[7]);
+            if (array[7].equals("null")) {
+                array[7] = "";
+            }
+            array[8] = modelo2.getValueAt(i, 8) + "";
+            System.out.println(array[8]);
+            if (array[8].equals("null")) {
+                array[8] = "";
+            } else if (array[8].equals("1")) {
+                array[8] = "S";
+            } else {
+                array[8] = "N";
+            }
+            array[9] = modelo2.getValueAt(i, 9) + "";
+            System.out.println(array[9]);
+            if (array[9].equals("null")) {
+                array[9] = "";
+            }
+            array[10] = modelo2.getValueAt(i, 10) + "";
+            System.out.println(array[10]);
+            if (array[10].equals("null")) {
+                array[10] = "";
+            }
+            array[11] = modelo2.getValueAt(i, 11) + "";
+            System.out.println(array[11]);
+            if (array[11].equals("null")) {
+                array[11] = "";
+            }
+            array[12] = modelo2.getValueAt(i, 12) + "";
+            System.out.println(array[12]);
+            if (array[12].equals("null")) {
+                array[12] = "";
+            }
+            array[13] = modelo2.getValueAt(i, 13) + "";
+            System.out.println(array[13]);
+            if (array[13].equals("null")) {
+                array[13] = "";
+            }
+            array[14] = modelo2.getValueAt(i, 14) + "";
+            System.out.println(array[14]);
+            if (array[14].equals("null")) {
+                array[14] = "";
+            }
+            array[15] = modelo2.getValueAt(i, 15) + "";
+            System.out.println(array[15]);
+            if (array[15].equals("null")) {
+                array[15] = "";
+            }
+            array[16] = modelo2.getValueAt(i, 16) + "";
+            System.out.println(array[16]);
+            if (array[16].equals("null")) {
+                array[16] = "";
+            }
+            array[17] = modelo2.getValueAt(i, 17) + "";
+            System.out.println(array[17]);
+            if (array[17].equals("null")) {
+                array[17] = "";
+                datos81[0] = "";
+                datos81[1] = "";
+                datos81[2] = "";
+            } else {
+
+                datos81 = array[17].split(";");
+
+                sab4 = datos81[3].split(":");
+                sab5 = datos81[4].split(":");
+                sab6 = datos81[5].split(":");
+                sab7 = datos81[6].split(":");
+                sab8 = sab5[1].split("-");
+                sab9 = sab8[1].split("=");
+                System.out.println(sab1[0]);
+                System.out.println(datos81[0]);//1 dry flavor
+                System.out.println(sab2[0]);
+                System.out.println(datos81[1]);//1 wet flavor
+                System.out.println(sab3[0]);
+                System.out.println(datos81[2]);//1 break flavor
+                System.out.println(sab4[0]);
+                System.out.println(sab4[1]);//1 flavor flavors
+                System.out.println(sab5[0]);
+                System.out.println(sab8[0]);//1 after taste flavor
+                System.out.println(sab9[1]);//finish flavor 
+                System.out.println(sab6[0]);
+                System.out.println(sab6[1]);//1 acidity flavors
+                System.out.println(sab7[0]);
+                System.out.println(sab7[1]);//1 body
+            }
+            array[18] = modelo2.getValueAt(i, 18) + "";
+            System.out.println(array[18]);
+            if (array[18].equals("null")) {
+                array[18] = "";
+            }
+            array[19] = modelo2.getValueAt(i, 19) + "";
+            System.out.println(array[19]);
+            if (array[19].equals("null")) {
+                array[19] = "";
+            }
+            array[20] = modelo2.getValueAt(i, 20) + "";
+            System.out.println(array[20]);
+            if (array[20].equals("null")) {
+                array[20] = "";
+            }
+            array[21] = modelo2.getValueAt(i, 21) + "";
+            System.out.println(array[21]);
+            if (array[21].equals("null")) {
+                array[21] = "";
+            }
+            id = mdb.comprobarExistencia("select id_bitacora from bitacoralab "
                     + "where (id_muestra='" + array[1] + "' and comunidad='" + array[10] + "')");
-             taza=mdb.devuelveUnDato("select aspecto from bitacoralab "
-                + "where (id_muestra='" +  array[1]  + "' and comunidad='" + array[10] + "')");
-             if (taza.equals("1")) {
-               
-             a2 = mdb.devuelveUnDato("select PesoEv from datosev "
-                    + "where (id_bitacora='" + id+ "')");
-            String[] datos7 = mdb.devuelveUnDato("SELECT datos FROM cribas where id_bitacora=" + id + " and criba='F';").split(",");
-            String[] datos8 = mdb.devuelveUnDato("SELECT datos FROM cribas where id_bitacora=" + id + " and criba='TOTAL';").split(",");
-          a1=formato.format(100*Integer.parseInt(datos7[0])/Integer.parseInt(datos8[0]))+"%";
-             a3=formato.format(100*Integer.parseInt(datos8[0])/Integer.parseInt(a2))+"%";
-          array[22]= a1;//de aqui para abajo no hay valor
-            array[23]=datos8[1];
-            array[24]= a3;
-          }else{array[22]= "";//de aqui para abajo no hay valor
-            array[23]="";
-            array[24]="";}
-            
-        
-      data.put(""+i+1+"", new Object[] {array[22],array[0],array[1], array[2],array[3],array[4],array[5],array[6],array[7],array[8],array[9],array[10],array[11], array[12],array[13],array[14],array[15],array[23],array[24],array[16],datos81[0]+" "+datos81[1]+" "+datos81[2],sab4[1],sab8[0],sab9[1],sab7[1],array[18],array[19],array[20],array[21] });        }
-      
-    
-      
-     
- 
-      //Iterate over data and write to sheet
-      Set<String> keyset = data.keySet();
-      int rownum = 0;
-      for (String key : keyset)
-      {
-      Row row = sheet.createRow(rownum++);
-      Object [] objArr = data.get(key);
-      int cellnum = 0;
-      for (Object obj : objArr)
-      {
-      Cell cell = row.createCell(cellnum++);
-      if(obj instanceof String)
-      cell.setCellValue((String)obj);
-      else if(obj instanceof Integer)
-      cell.setCellValue((Integer)obj);
-      }
-      }
-      try
-      {
-      //Write the workbook in file system Users\\Jacob Frankel\\Desktop\\
-             SimpleDateFormat formatter = new SimpleDateFormat("yyyy_MMM_d_HHmm");
-        Date date = new Date(System.currentTimeMillis());
-        System.out.println(formatter.format(date));
-        String nombre = "Reporte_CSM_" + formatter.format(date);
-      FileOutputStream out = new FileOutputStream(new File("C:\\" + nombre + ".xlsx"));
-      workbook.write(out);
-      out.close();
-        
-          JOptionPane.showMessageDialog(null, "reporte creado: " + nombre + ".xlsx en C:");
-    
-      }
-      catch (Exception e)
-      {
-      e.printStackTrace();
-      }
-       }
+            taza = mdb.devuelveUnDato("select aspecto from bitacoralab "
+                    + "where (id_muestra='" + array[1] + "' and comunidad='" + array[10] + "')");
+            if (taza.equals("1")) {
+
+                a2 = mdb.devuelveUnDato("select PesoEv from datosev "
+                        + "where (id_bitacora='" + id + "')");
+                String[] datos7 = mdb.devuelveUnDato("SELECT datos FROM cribas where id_bitacora=" + id + " and criba='F';").split(",");
+                String[] datos8 = mdb.devuelveUnDato("SELECT datos FROM cribas where id_bitacora=" + id + " and criba='TOTAL';").split(",");
+                a1 = formato.format(100 * Integer.parseInt(datos7[0]) / Integer.parseInt(datos8[0])) + "%";
+                a3 = formato.format(100 * Integer.parseInt(datos8[0]) / Integer.parseInt(a2)) + "%";
+                array[22] = a1;//de aqui para abajo no hay valor
+                array[23] = datos8[1];
+                array[24] = a3;
+            } else {
+                array[22] = "";//de aqui para abajo no hay valor
+                array[23] = "";
+                array[24] = "";
+            }
+
+            data.put("" + i + 1 + "", new Object[]{array[22], array[0], array[1], array[2], array[3], array[4], array[5], array[6], array[7], array[8], array[9], array[10], array[11], array[12], array[13], array[14], array[15], array[23], array[24], array[16], datos81[0] + " " + datos81[1] + " " + datos81[2], sab4[1], sab8[0], sab9[1], sab7[1], array[18], array[19], array[20], array[21]});
+        }
+
+        //Iterate over data and write to sheet
+        Set<String> keyset = data.keySet();
+        int rownum = 0;
+        for (String key : keyset) {
+            Row row = sheet.createRow(rownum++);
+            Object[] objArr = data.get(key);
+            int cellnum = 0;
+            for (Object obj : objArr) {
+                Cell cell = row.createCell(cellnum++);
+                if (obj instanceof String) {
+                    cell.setCellValue((String) obj);
+                } else if (obj instanceof Integer) {
+                    cell.setCellValue((Integer) obj);
+                }
+            }
+        }
+        try {
+            //Write the workbook in file system Users\\Jacob Frankel\\Desktop\\
+            SimpleDateFormat formatter = new SimpleDateFormat("yyyy_MMM_d_HHmm");
+            Date date = new Date(System.currentTimeMillis());
+            System.out.println(formatter.format(date));
+            String nombre = "Reporte_CSM_" + formatter.format(date);
+            FileOutputStream out = new FileOutputStream(new File("C:\\" + nombre + ".xlsx"));
+            workbook.write(out);
+            out.close();
+
+            JOptionPane.showMessageDialog(null, "reporte creado: " + nombre + ".xlsx en C:");
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+    }
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
 
