@@ -396,13 +396,13 @@ public class jdRutasProcesos extends javax.swing.JDialog {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         String image_string = "NO";
-        JOptionPane.showMessageDialog(null, "Entre al boton");
+        //JOptionPane.showMessageDialog(null, "Entre al boton");
         String idProceso = mdb.devuelveUnDato("select id from procesocafe where descripcion='" + comboProcesos.getSelectedItem() + "'");
         if (mdb.insertarBasicosComprobacion("insert into rutabeneficiohumedo values(null, '" + idBeneficio + "', "
                 + "" + idProceso + ", "
                 + "'" + txtNombreRuta.getText() + "' )")) {
             
-            JOptionPane.showMessageDialog(this, "Entre a insertar ruta beneficio y triunfe");
+            JOptionPane.showMessageDialog(this, "Inserción exitosa");
             
             String idRuta = mdb.devuelveUnDato("select id from rutabeneficiohumedo where nombreRuta='" + txtNombreRuta.getText() + "'");
             
@@ -429,7 +429,7 @@ public class jdRutasProcesos extends javax.swing.JDialog {
             jdA.cargarCombo();
             this.dispose();
         } else {
-            JOptionPane.showMessageDialog(this, "Entre a insertar ruta beneficio y valio verga");
+            JOptionPane.showMessageDialog(this, "Error, Consultar OUTPUT");
         }
         
 
