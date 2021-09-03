@@ -61,6 +61,9 @@ public class Visual extends javax.swing.JFrame {
             abrir_pdf(ruta_archivo);
             this.img.disminuir();
             this.img.disminuir();
+            this.img.disminuir();
+            this.img.disminuir();
+            
 
       /*  } else {
             //JOptionPane.showMessageDialog(null, "No selecciono");
@@ -79,26 +82,23 @@ public class Visual extends javax.swing.JFrame {
         jPanel2 = new javax.swing.JPanel();
         jPanel1 = new javax.swing.JPanel();
         jButton7 = new javax.swing.JButton();
-        jButton2 = new javax.swing.JButton();
-        p = new javax.swing.JLabel();
         jButton3 = new javax.swing.JButton();
-        btnabrir = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
         jButton6 = new javax.swing.JButton();
         sc = new javax.swing.JScrollPane();
         img = new mivisorpdf.CuadroImagen();
 
-        setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Visor PDFJava");
 
         jPanel2.setBackground(new java.awt.Color(255, 255, 255));
 
-        jPanel1.setBackground(new java.awt.Color(115, 84, 11));
+        jPanel1.setBackground(new java.awt.Color(102, 102, 255));
         jPanel1.setLayout(new java.awt.GridBagLayout());
 
         jButton7.setBackground(new java.awt.Color(255, 255, 255));
-        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/salir.png"))); // NOI18N
+        jButton7.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/E.png"))); // NOI18N
         jButton7.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton7ActionPerformed(evt);
@@ -106,22 +106,8 @@ public class Visual extends javax.swing.JFrame {
         });
         jPanel1.add(jButton7, new java.awt.GridBagConstraints());
 
-        jButton2.setBackground(new java.awt.Color(255, 255, 255));
-        jButton2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/anterior.png"))); // NOI18N
-        jButton2.setBorderPainted(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
-            }
-        });
-        jPanel1.add(jButton2, new java.awt.GridBagConstraints());
-
-        p.setFont(new java.awt.Font("Arial Black", 0, 14)); // NOI18N
-        p.setText("Pag.");
-        jPanel1.add(p, new java.awt.GridBagConstraints());
-
         jButton3.setBackground(new java.awt.Color(255, 255, 255));
-        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/siguiente.png"))); // NOI18N
+        jButton3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/P.png"))); // NOI18N
         jButton3.setBorderPainted(false);
         jButton3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -130,19 +116,8 @@ public class Visual extends javax.swing.JFrame {
         });
         jPanel1.add(jButton3, new java.awt.GridBagConstraints());
 
-        btnabrir.setBackground(new java.awt.Color(255, 255, 255));
-        btnabrir.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
-        btnabrir.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/pdf.png"))); // NOI18N
-        btnabrir.setText("Abrir archivo PDF");
-        btnabrir.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnabrirActionPerformed(evt);
-            }
-        });
-        jPanel1.add(btnabrir, new java.awt.GridBagConstraints());
-
         jButton4.setBackground(new java.awt.Color(255, 255, 255));
-        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/mas.png"))); // NOI18N
+        jButton4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/Az.png"))); // NOI18N
         jButton4.setBorderPainted(false);
         jButton4.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -152,7 +127,7 @@ public class Visual extends javax.swing.JFrame {
         jPanel1.add(jButton4, new java.awt.GridBagConstraints());
 
         jButton5.setBackground(new java.awt.Color(255, 255, 255));
-        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/menos.png"))); // NOI18N
+        jButton5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/Dz.png"))); // NOI18N
         jButton5.setBorderPainted(false);
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -162,7 +137,9 @@ public class Visual extends javax.swing.JFrame {
         jPanel1.add(jButton5, new java.awt.GridBagConstraints());
 
         jButton6.setBackground(new java.awt.Color(255, 255, 255));
-        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/ampliar.png"))); // NOI18N
+        jButton6.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Iconos/A.png"))); // NOI18N
+        jButton6.setBorderPainted(false);
+        jButton6.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
         jButton6.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton6ActionPerformed(evt);
@@ -176,11 +153,11 @@ public class Visual extends javax.swing.JFrame {
         img.setLayout(imgLayout);
         imgLayout.setHorizontalGroup(
             imgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 727, Short.MAX_VALUE)
+            .addGap(0, 977, Short.MAX_VALUE)
         );
         imgLayout.setVerticalGroup(
             imgLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 662, Short.MAX_VALUE)
+            .addGap(0, 634, Short.MAX_VALUE)
         );
 
         sc.setViewportView(img);
@@ -190,14 +167,14 @@ public class Visual extends javax.swing.JFrame {
         jPanel2Layout.setHorizontalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(jPanel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addComponent(sc, javax.swing.GroupLayout.DEFAULT_SIZE, 729, Short.MAX_VALUE)
+            .addComponent(sc, javax.swing.GroupLayout.DEFAULT_SIZE, 979, Short.MAX_VALUE)
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel2Layout.createSequentialGroup()
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(sc, javax.swing.GroupLayout.DEFAULT_SIZE, 664, Short.MAX_VALUE))
+                .addComponent(sc, javax.swing.GroupLayout.DEFAULT_SIZE, 636, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -214,89 +191,6 @@ public class Visual extends javax.swing.JFrame {
         pack();
         setLocationRelativeTo(null);
     }// </editor-fold>//GEN-END:initComponents
-
-    private void btnabrirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnabrirActionPerformed
-        //Metodo para buscar y abrir el PDF
-        JFileChooser j = new JFileChooser(ruta_archivo);
-        FileNameExtensionFilter fi = new FileNameExtensionFilter("pdf", "pdf");
-        j.setFileFilter(fi);
-        int se = j.showOpenDialog(this);
-        if (se == 0) {
-            ruta_archivo = j.getSelectedFile().getAbsolutePath();
-            //----------------
-            //Usamos el metodo abrir pdf para mostrarlo
-            abrir_pdf(ruta_archivo);
-            this.img.disminuir();
-            this.img.disminuir();
-
-        } else {
-            //JOptionPane.showMessageDialog(null, "No selecciono");
-        }
-    }//GEN-LAST:event_btnabrirActionPerformed
-
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        //Metodo usado para retroceder pagina
-        //El if para comprobar que haya paginas
-        if (ruta_archivo.trim().length() != 0) {
-            //if para que comprueba si la pagina es 1 entonces se ira a la ultima pagina
-            this.numImg -= 1;
-            if (paginas == 1) {
-                paginas = totalp;
-                p.setText(String.valueOf("Pag. " + paginas));
-            } else {
-                paginas = paginas - 1;
-                p.setText(String.valueOf("Pag. " + paginas));
-            }
-            //Aplicamos la pagina respectiva para mostrarlo
-            if (this.numImg < 0) {
-                this.numImg = (this.ListaComponente.size() - 1);
-            }
-            ArchivosVO pi = new ArchivosVO();
-            for (int i = 0; i < ListaComponente.size(); i++) {
-                pi = ListaComponente.get(numImg);
-                break;
-            }
-            //Con este metodo mostramos la imagen
-            this.img.setImagen(pi.getArchivos());
-            //Este metodo adapta el zoom a la pantalla
-            adaptar_vista();
-
-        } else {
-            JOptionPane.showMessageDialog(null, "Abrir un documento PDF primero");
-        }
-    }//GEN-LAST:event_jButton2ActionPerformed
-
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
-        //Este metodo pasa la pagina hacia adelante
-        //Verifica que haya paginas
-        if (ruta_archivo.trim().length() != 0) {
-            //Este if comprueba si la pagina esta en el ultimo
-            //O si esta en el primero pasara a la siguiente pagina
-            this.numImg += 1;
-            if (paginas == totalp) {
-                paginas = 1;
-                p.setText(String.valueOf("Pag. " + paginas));
-            } else {
-                paginas = paginas + 1;
-                p.setText(String.valueOf("Pag. " + paginas));
-            }
-            //Aplica los cambios de la pagina que corresponde
-            if (this.numImg >= this.ListaComponente.size()) {
-                this.numImg = 0;
-            }
-            ArchivosVO pi = new ArchivosVO();
-            for (int i = 0; i < ListaComponente.size(); i++) {
-                pi = ListaComponente.get(numImg);
-                break;
-            }
-            //Muestra la pagina que corresponde
-            this.img.setImagen(pi.getArchivos());
-            //adapta la pagina a la pantalla
-            adaptar_vista();
-        } else {
-            JOptionPane.showMessageDialog(null, "Abrir un documento PDF primero");
-        }
-    }//GEN-LAST:event_jButton3ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
         //Este metodo comprueba que haya paginas
@@ -323,13 +217,45 @@ public class Visual extends javax.swing.JFrame {
 
     private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
         //Salir
-        System.exit(0);
+        this.dispose();
     }//GEN-LAST:event_jButton7ActionPerformed
 
     private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
         //Maximizar ventana
         this.setExtendedState(MAXIMIZED_BOTH);
     }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        //Este metodo pasa la pagina hacia adelante
+        //Verifica que haya paginas
+        if (ruta_archivo.trim().length() != 0) {
+            //Este if comprueba si la pagina esta en el ultimo
+            //O si esta en el primero pasara a la siguiente pagina
+            this.numImg += 1;
+            if (paginas == totalp) {
+                paginas = 1;
+//                p.setText(String.valueOf("Pag. " + paginas));
+            } else {
+                paginas = paginas + 1;
+             //   p.setText(String.valueOf("Pag. " + paginas));
+            }
+            //Aplica los cambios de la pagina que corresponde
+            if (this.numImg >= this.ListaComponente.size()) {
+                this.numImg = 0;
+            }
+            ArchivosVO pi = new ArchivosVO();
+            for (int i = 0; i < ListaComponente.size(); i++) {
+                pi = ListaComponente.get(numImg);
+                break;
+            }
+            //Muestra la pagina que corresponde
+            this.img.setImagen(pi.getArchivos());
+            //adapta la pagina a la pantalla
+            adaptar_vista();
+        } else {
+            JOptionPane.showMessageDialog(null, "Abrir un documento PDF primero");
+        }
+    }//GEN-LAST:event_jButton3ActionPerformed
 
     //Metodo abrir documento PDF
     public void abrir_pdf(String url) {
@@ -344,10 +270,10 @@ public class Visual extends javax.swing.JFrame {
         }
         //Pagina 1 lo muestra en la pantalla
         paginas = 1;
-        p.setText(String.valueOf("Pag. " + paginas));
+        //p.setText(String.valueOf("Pag. " + paginas));
         totalp = ListaComponente.size();
         //Titulo del pdf
-        this.setTitle("Visor PDFJava; Total Paginas: " + String.valueOf(totalp));
+        this.setTitle("Reporte Individual");
         //tp.setText(String.valueOf(totalp));
         //Mostramos la primera pagina
         ArchivosVO pi = new ArchivosVO();
@@ -411,9 +337,7 @@ public class Visual extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnabrir;
     private mivisorpdf.CuadroImagen img;
-    private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
@@ -421,7 +345,6 @@ public class Visual extends javax.swing.JFrame {
     private javax.swing.JButton jButton7;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
-    private javax.swing.JLabel p;
     private javax.swing.JScrollPane sc;
     // End of variables declaration//GEN-END:variables
 }

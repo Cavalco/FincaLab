@@ -5,6 +5,7 @@
  */
 package Formas_laboratorio;
 
+import Formas_LaboratorioN.Barra_progreso;
 import Formas_LaboratorioN.jdCatacion;
 import Formas_LaboratorioN.jdCatacion2;
 import Formas_LaboratorioN.jdEvaluacion;
@@ -12,9 +13,17 @@ import Formas_LaboratorioN.jdReporteIndividual;
 import Formas_Recepcion.jdRecibos;
 import Idioma.Propiedades;
 import Metodos_Configuraciones.metodosLaboratorio;
+import Visual.Visual;
+import com.spire.xls.FileFormat;
+import com.spire.xls.Workbook;
+import com.spire.xls.Worksheet;
 import java.awt.Color;
 import java.awt.Desktop;
+import java.awt.image.BufferedImage;
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.sql.Connection;
 import java.util.ArrayList;
 import javax.swing.JTable;
@@ -22,13 +31,23 @@ import javax.swing.table.DefaultTableModel;
 import javax.swing.table.TableRowSorter;
 //import Formas_laboratorio.excel;
 import java.io.IOException;
+import java.io.InputStream;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.imageio.ImageIO;
 import javax.swing.DefaultComboBoxModel;
 import javax.swing.JFileChooser;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.filechooser.FileNameExtensionFilter;
+import javax.xml.transform.Result;
+import javax.xml.transform.Source;
+import javax.xml.transform.TransformerFactory;
+import javax.xml.transform.dom.DOMSource;
+import javax.xml.transform.stream.StreamResult;
+import mivisorpdf.MiVisorPDF;
+import org.apache.poi.ss.usermodel.Cell;
+import org.apache.poi.xssf.usermodel.XSSFSheet;
 
 /**
  *
@@ -643,7 +662,6 @@ public class jpBitacora extends javax.swing.JPanel {
             kgConfirmados.setForeground(Color.red);
         }
 
-        
 
     }//GEN-LAST:event_tablabitacoraMouseClicked
     private void SinevaluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SinevaluarActionPerformed
@@ -722,16 +740,32 @@ public class jpBitacora extends javax.swing.JPanel {
     }//GEN-LAST:event_jMenuItem5ActionPerformed
 
     private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
-       /* id = mdb.devuelveUnDato("select id_bitacora from bitacoralab "
+        id = mdb.devuelveUnDato("select id_bitacora from bitacoralab "
                 + "where (id_muestra='" + csm + "' and comunidad='" + comunindad + "')");
         try {
             excel.datos(cn, csm, id, taza, Idioma);      // TODO add your handling code here:
         } catch (IOException ex) {
             Logger.getLogger(jpBitacora.class.getName()).log(Level.SEVERE, null, ex);
-        }*/
-       
-       jdReporteIndividual jdR = new jdReporteIndividual(null,true, csm,cn);
-       jdR.setVisible(true);
+        }
+        
+        Barra_progreso b = new Barra_progreso();
+        b.setVisible(true);
+        
+     /*            // Cargar documento de Excel
+        Workbook wb = new Workbook();
+        wb.loadFromFile("C:\\fincalab\\reporteLaboratorio.xlsx");
+ 
+                 // Obtenga la segunda hoja de trabajo
+        Worksheet sheet = wb.getWorksheets().get(0);
+ 
+                 // Método de llamada para guardar en formato PDF
+        sheet.saveToPdf("C:\\fincalab\\ReporteIndividual.pdf");
+        
+        Visual v = new Visual("C:\\fincalab\\ReporteIndividual.pdf");
+        v.setVisible(true);
+*/
+        /*   jdReporteIndividual jdR = new jdReporteIndividual(null,true, csm,cn);
+       jdR.setVisible(true);*/
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 
     private void saboresActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_saboresActionPerformed
@@ -759,15 +793,28 @@ public class jpBitacora extends javax.swing.JPanel {
     private JPanel contentPane;
     File fichero = null;
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
-        //excel.imprimir(tablaconsulta, cn, Idioma);
 
-        /*   JFileChooser file = new JFileChooser();
-        FileNameExtensionFilter filtro = new FileNameExtensionFilter("*.csv", "csv");
-        file.setFileFilter(filtro);
-
-        int seleccion = file.showOpenDialog(contentPane);
-        //Si el usuario, pincha en aceptar
-        if (seleccion == JFileChooser.APPROVE_OPTION) {
+        /*   String inputFile = "C:\\fincalab\\reporteLaboratorio.xlsx";
+        String outputFile = "C:\\fincalab\\ToPDF_out.png";
+ 
+                         // Cargar documento de Excel
+        Workbook wb = new Workbook();
+        wb.loadFromFile("C:\\fincalab\\reporteLaboratorio.xlsx");
+ 
+                 // Obtenga la segunda hoja de trabajo
+        Worksheet sheet = wb.getWorksheets().get(0);
+ 
+                 // Método de llamada para guardar en formato PDF
+        sheet.saveToPdf("C:\\fincalab\\ToPDF2.pdf");*/
+ /*     excel.imprimir(tablabitacora, cn, Idioma);
+            
+            JFileChooser file = new JFileChooser();
+            FileNameExtensionFilter filtro = new FileNameExtensionFilter("*.csv", "csv");
+            file.setFileFilter(filtro);
+            
+            int seleccion = file.showOpenDialog(contentPane);
+            //Si el usuario, pincha en aceptar
+            if (seleccion == JFileChooser.APPROVE_OPTION) {
             //Seleccionamos el fichero
             fichero = file.getSelectedFile();
             //Ecribe la ruta del fichero seleccionado en el campo de texto
@@ -775,7 +822,7 @@ public class jpBitacora extends javax.swing.JPanel {
             rutaER = rutaER.replace('\\', '/');
             //System.out.println(fichero.getName());
             JOptionPane.showMessageDialog(null, rutaER);
-        }*/
+            }*/
         mdb.exportar("SELECT b.id_muestra,b.fecha_llegada,b.tipocafe,b.forma,b.beneficio,b.dueño,b.lote,b.certificado,b.peso,b.Kgconfirm,b.sacos,\n"
                 + "b.comunidad,b.estatus,d.puntuacion,c.Puntuacion,b.mezcla from bitacoralab b left join datosev d on b.id_bitacora=d.id_bitacora left join \n"
                 + " catacion c on b.id_bitacora=c.id_bitacora where estatus != 'Desactivada' order by b.id_muestra "
@@ -792,6 +839,7 @@ public class jpBitacora extends javax.swing.JPanel {
         }
 
     }//GEN-LAST:event_jButton2ActionPerformed
+
 
     private void kgynActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_kgynActionPerformed
         if (!csm.equals("")) {
@@ -842,4 +890,5 @@ public class jpBitacora extends javax.swing.JPanel {
     // End of variables declaration//GEN-END:variables
 
     excel excel = new excel();
+//    ReporteExcel re = new ReporteExcel();
 }
