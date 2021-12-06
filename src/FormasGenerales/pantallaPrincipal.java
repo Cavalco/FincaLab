@@ -94,6 +94,7 @@ import Formas_BeneficioHumedov2.jpProcesosBH;
 import Formas_BeneficioHumedov2.jpRecibirBoletas;
 import Formas_Exportar_Importar.jpExportar_Importar;
 import Formas_Exportar_Importar.jpImportar;
+import Formas_LaboratorioN.jpBitacoraUnaVista;
 import Formas_Reportes.jpAcopioProductor;
 import Formas_Reportes.jpBoletasSalidaRecepcion;
 import Formas_Reportes.jpEvaluacionRecepcion;
@@ -754,8 +755,9 @@ public class pantallaPrincipal extends javax.swing.JFrame {
             panelPrincipal.revalidate();
             panelPrincipal.repaint();
         } else if (idioma.getProperty("CortesConfirmados").equals(tipo)) {
-            jpLotesConfirmados jpLC = new jpLotesConfirmados(beneficio, Idioma, cn);
+            //jpLotesConfirmados jpLC = new jpLotesConfirmados(beneficio, Idioma, cn);
             //jpProcesosBH jpLC = new jpProcesosBH(beneficio, cn);
+            jpBitacoraUnaVista jpLC = new jpBitacoraUnaVista(beneficio, Idioma, cn);
             jpLC.setSize(size);
             jpLC.setLocation(0, 0);
             panelPrincipal.removeAll();

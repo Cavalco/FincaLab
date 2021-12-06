@@ -30,22 +30,25 @@ public class jpRecibirMuestras extends javax.swing.JPanel {
         ml = new metodosLaboratorio(cn, "");
         modelo = (DefaultTableModel) tablaRegistroManual.getModel();
         modelo2 = (DefaultTableModel) tablaMRecibidas.getModel();
-        cargarDatos();
+       // cargarDatos();
         cargarDatos2();
     }
 
     //muestrasenviadas
     public void cargarDatos() {
         limpiar(tablaMRecibidas);
-       /*ml.cargarInformacion2(modelo2, 10, "SELECT`tipocafe`, `forma`, `beneficio`, `dueño`,  `lote`,`certificado`, "
+       /* ml.cargarInformacion2(modelo2, 10, "SELECT`tipocafe`, `forma`, `beneficio`, `dueño`,  `lote`,`certificado`, "
                 + "`peso`, `sacos`, `comunidad`,`Metodosecado`FROM bitacoralab");*/
     }
 
     //bitacora
     public void cargarDatos2() {
-        limpiar(tablaRegistroManual);   
-         ml.cargarInformacion2(modelo, 13, "SELECT id_muestra,tipocafe, forma, beneficio, dueño,  lote,certificado, peso, sacos, comunidad,Metodosecado, fecha_llegada, fechalote FROM bitacoralab");
-       
+        limpiar(tablaRegistroManual);
+        limpiar(tablaMRecibidas);
+        ml.cargarInformacion2(modelo, 13, "SELECT id_muestra,tipocafe, forma, beneficio, dueño,  lote,certificado, peso, sacos, comunidad,Metodosecado, fecha_llegada, fechalote FROM bitacoralab");
+        ml.cargarInformacion2(modelo2, 10, "select tipocafe, forma, beneficio,dueño,idlote,certificado,peso,sacos,comunidad,Metodosecado\n"
+                + "from muestrasenviadas");
+
     }
 
     private void limpiar(JTable tabla) {
