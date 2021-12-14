@@ -94,7 +94,7 @@ import Formas_BeneficioHumedov2.jpProcesosBH;
 import Formas_BeneficioHumedov2.jpRecibirBoletas;
 import Formas_Exportar_Importar.jpExportar_Importar;
 import Formas_Exportar_Importar.jpImportar;
-import Formas_LaboratorioN.jpBitacoraUnaVista;
+import Formas_BeneficioHumedov2.jpBitacoraUnaVista;
 import Formas_Reportes.jpAcopioProductor;
 import Formas_Reportes.jpBoletasSalidaRecepcion;
 import Formas_Reportes.jpEvaluacionRecepcion;

@@ -400,7 +400,7 @@ public class jpLotesConfirmados extends javax.swing.JPanel {
         // TODO add your handling code here:
         if (!idLote.equals("")) {
             jdAsignarProceso jd = new jdAsignarProceso(null, true, idBeneficio, idLote, tipo, cert, Idioma, cn);
-            jd.jp = this;
+            //jd.jp = this;
             jd.setVisible(true);
         } else {
             JOptionPane.showMessageDialog(null, "Selecciona un Lote");

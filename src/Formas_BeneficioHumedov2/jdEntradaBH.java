@@ -58,6 +58,8 @@ public class jdEntradaBH extends javax.swing.JDialog {
         this.idBeneficio = idBeneficio;
         this.tipoOrigen = tipoOrigen;
         this.ventanaOrigen = ventanaOrigen;
+        
+        //JOptionPane.showMessageDialog(this,"Esta");
 
         mbh = new metodosBeneficioHumedo(cn);
         pdf = new creacionPDF(cn, "");

@@ -38,7 +38,7 @@ public class jdBoletaEntradaBH extends javax.swing.JDialog {
     /**
      * Creates new form jdBoletaEntradaBH
      */
-    String idBoleta, idSociedad, idBeneficio, tipoOrigen, ventanaOrigen,Idioma;
+    String idBoleta, idSociedad, idBeneficio, tipoOrigen, ventanaOrigen, Idioma;
     Connection cn;
     metodosBeneficioHumedo mbh;
     DefaultTableModel modelo;
@@ -57,8 +57,9 @@ public class jdBoletaEntradaBH extends javax.swing.JDialog {
         this.idBeneficio = idBeneficio;
         this.tipoOrigen = tipoOrigen;
         this.ventanaOrigen = ventanaOrigen;
-        this.Idioma=Idioma;
+        this.Idioma = Idioma;
 
+        //JOptionPane.showMessageDialog(this,"Segunda");
         mbh = new metodosBeneficioHumedo(cn);
         pdf = new creacionPDF(cn, "");
         modelo = (DefaultTableModel) jTable1.getModel();
@@ -343,24 +344,34 @@ public class jdBoletaEntradaBH extends javax.swing.JDialog {
                     //JOptionPane.showMessageDialog(null,"Vuelta: "+i);
 
                     if (mbh.insertarEnCiclo("insert into boletaentradabh values"
-                            + " (null,'" + idBeneficio + "', '" + idBoleta + "', '" + jTable1.getValueAt(i, 0) + "', '" + boletaManual + "','" + fechaBoletaManual + "', "
-                            + " '" + fechaEntrada + "','" + jTable1.getValueAt(i, 6) + "','" + jTable1.getValueAt(i, 5) + "', "
-                            + "'" + jTable1.getValueAt(i, 4) + "', '1'  )")) {
+                            + " (null,'" + idBeneficio + "', '" + idBoleta + "', '" + jTable1.getValueAt(i, 0) + "', "
+                            + "'" + boletaManual + "','" + fechaBoletaManual + "', "
+                            + " '" + fechaEntrada + "','" + jTable1.getValueAt(i, 6) + "', "
+                            + "'" + jTable1.getValueAt(i, 5) + "', '" + jTable1.getValueAt(i, 4) + "', '1'  )")) {
 
                         //JOptionPane.showMessageDialog(null,"Si voy a insertar");
-                        
+                        //id, idloteOrigen, idSublote, 
+                        //idBeneficio, fechaCreacion, formaEntrada, 
+                        //certificacion, estadoEntrada, kgRecibidos, 
+                        //costalesRecibidos, rutaDespulpe, rutaSecado, 
+                        //humedad, temperatura, kilosFinales, 
+                        //costalesFinales, formaFinal, procesoFinal, 
+                        //estadfinal, boletaSalida, estatus
                         mbh.insertarEnCiclo("insert into sublotesconfirmados values("
-                                + "null, '" + jTable1.getValueAt(i, 0) + "', '" + jTable1.getValueAt(i, 0) + "', '" + idBeneficio + "', "
-                                + "'" + fechaEntrada + "', '" + jTable1.getValueAt(i, 1) + "',"
+                                + "null, '" + jTable1.getValueAt(i, 0) + "', '" + jTable1.getValueAt(i, 0) + "', "
+                                + "'" + idBeneficio + "', '" + fechaEntrada + "', '" + jTable1.getValueAt(i, 1) + "',"
                                 + "'" + mbh.devuelveUnDato("select certificacion\n"
                                         + "from cortesdeldia\n"
-                                        + "where idLote='"+jTable1.getValueAt(i, 0)+"' ") + "' , '" + jTable1.getValueAt(i, 4) + "', '" + jTable1.getValueAt(i, 6) + "', '1' )");
+                                        + "where idLote='" + jTable1.getValueAt(i, 0) + "' ") + "' , '" + jTable1.getValueAt(i, 4) + "', '" + jTable1.getValueAt(i, 6) + "', "
+                                + "'" + jTable1.getValueAt(i, 5) + "', '', '', "
+                                + "'', '', '', "
+                                + "'', '', '', '', '', 'Act' )");
 
-                         mbh.actualizarBoleta("update boletasalidareceptor set estatus=2 where idBoleta='" + idBoleta + "'");
+                        mbh.actualizarBoleta("update boletasalidareceptor set estatus=2 where idBoleta='" + idBoleta + "'");
                     }
                 }
-                
-                JOptionPane.showMessageDialog(null,"Entrada Exitosa");
+
+                JOptionPane.showMessageDialog(null, "Entrada Exitosa");
             } else {
                 JOptionPane.showMessageDialog(null, "Revisar Kilos y Sacos Recibidos");
             }
@@ -405,7 +416,7 @@ public class jdBoletaEntradaBH extends javax.swing.JDialog {
         }
         return contenido;
     }
-    
+
     private void limpiar(JTable tabla) {
         while (tabla.getRowCount() > 0) {
             ((DefaultTableModel) tabla.getModel()).removeRow(0);
@@ -904,7 +915,7 @@ public class jdBoletaEntradaBH extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         crearBoletaEntrada();
-        
+
         Object[][] contenido = obtenerContenidoTabla(modelo);
         creacionPDF pdf = new creacionPDF(cn, Idioma);
         try {

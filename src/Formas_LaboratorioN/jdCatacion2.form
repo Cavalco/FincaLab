@@ -1417,11 +1417,6 @@
                           <Group type="102" alignment="0" attributes="0">
                               <EmptySpace max="-2" attributes="0"/>
                               <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" alignment="0" attributes="0">
-                                      <Component id="jScrollPane9" min="-2" pref="123" max="-2" attributes="0"/>
-                                      <EmptySpace type="separate" max="-2" attributes="0"/>
-                                      <Component id="jScrollPane3" min="-2" pref="107" max="-2" attributes="0"/>
-                                  </Group>
                                   <Component id="jScrollPane12" alignment="0" min="-2" pref="188" max="-2" attributes="0"/>
                                   <Component id="jScrollPane4" alignment="0" min="-2" pref="379" max="-2" attributes="0"/>
                                   <Group type="102" alignment="0" attributes="0">
@@ -1441,6 +1436,11 @@
                                       <Component id="jScrollPane14" min="-2" pref="139" max="-2" attributes="0"/>
                                   </Group>
                                   <Component id="jScrollPane11" alignment="0" min="-2" pref="315" max="-2" attributes="0"/>
+                                  <Group type="102" attributes="0">
+                                      <Component id="jScrollPane9" min="-2" pref="171" max="-2" attributes="0"/>
+                                      <EmptySpace type="separate" max="-2" attributes="0"/>
+                                      <Component id="jScrollPane3" min="-2" pref="107" max="-2" attributes="0"/>
+                                  </Group>
                               </Group>
                               <EmptySpace pref="31" max="32767" attributes="0"/>
                           </Group>
@@ -1461,16 +1461,29 @@
                               <Color blue="66" green="66" red="ff" type="rgb"/>
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                              <Table columnCount="2" rowCount="6">
-                                <Column editable="false" title="1 Dulce" type="java.lang.Object">
-                                  <Data value="Az&#xfa;car-Mor"/>
-                                  <Data value="  Melaza"/>
-                                  <Data value="  Jarab-mapl"/>
-                                  <Data value="  Caramelo"/>
-                                  <Data value="  Miel"/>
+                              <Table columnCount="2" rowCount="9">
+                                <Column editable="true" title="1 Dulce" type="java.lang.Object">
+                                  <Data value="Az&#xfa;car Morena"/>
+                                  <Data value="   Melaza"/>
+                                  <Data value="   Jarabe de Arce"/>
+                                  <Data value="   Caramelizado"/>
+                                  <Data value="   Miel"/>
                                   <Data value="Vainilla"/>
+                                  <Data value="Aroma de Vainilla"/>
+                                  <Data value="Dulce General"/>
+                                  <Data value="Arom&#xe1;ticas Dulces"/>
                                 </Column>
-                                <Column editable="true" title="Inten." type="java.lang.Object"/>
+                                <Column editable="true" title="Inten." type="java.lang.Object">
+                                  <Data value=""/>
+                                  <Data value=""/>
+                                  <Data value="null"/>
+                                  <Data value="null"/>
+                                  <Data value="null"/>
+                                  <Data value="null"/>
+                                  <Data value="null"/>
+                                  <Data value="null"/>
+                                  <Data value="null"/>
+                                </Column>
                               </Table>
                             </Property>
                             <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
@@ -1512,15 +1525,29 @@
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="5">
-                                <Column editable="false" title="2 Floral" type="java.lang.Object">
+                                <Column editable="true" title="2 Floral" type="java.lang.Object">
                                   <Data value="T&#xe9;-Negro"/>
                                   <Data value="Floral"/>
-                                  <Data value="  Manzanilla"/>
-                                  <Data value="  Rosa"/>
-                                  <Data value="  Jazmine"/>
+                                  <Data value="   Manzanilla"/>
+                                  <Data value="   Rosa"/>
+                                  <Data value="   Jazmine"/>
                                 </Column>
                                 <Column editable="true" title="Inten." type="java.lang.Object"/>
                               </Table>
+                            </Property>
+                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                              <TableColumnModel selectionModel="0">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                              </TableColumnModel>
                             </Property>
                             <Property name="preferredSize" type="java.awt.Dimension" editor="org.netbeans.beaninfo.editors.DimensionEditor">
                               <Dimension value="[175, 80]"/>
@@ -1549,32 +1576,46 @@
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="22">
-                                <Column editable="false" title="3 Afrutado" type="java.lang.Object">
+                                <Column editable="true" title="3 Afrutado" type="java.lang.Object">
                                   <Data value="Bayas"/>
-                                  <Data value="  Moras"/>
-                                  <Data value="  Frambuesa"/>
-                                  <Data value="  Ar&#xe1;ndano"/>
-                                  <Data value="  Fresa"/>
-                                  <Data value="Fruto-sec"/>
-                                  <Data value="  Pasas"/>
-                                  <Data value="  Ciruel-pas"/>
-                                  <Data value="Otras-frut"/>
-                                  <Data value="  Coco"/>
-                                  <Data value="  Cereza"/>
-                                  <Data value="  Granada"/>
-                                  <Data value="  Pi&#xf1;a"/>
-                                  <Data value="  Uvas"/>
-                                  <Data value="  Manzana"/>
-                                  <Data value="  Durazno"/>
-                                  <Data value="  Pera"/>
+                                  <Data value="   Moras"/>
+                                  <Data value="   Frambuesa"/>
+                                  <Data value="   Ar&#xe1;ndano"/>
+                                  <Data value="   Fresa"/>
+                                  <Data value="Frutos Secos"/>
+                                  <Data value="   Pasas de Uva"/>
+                                  <Data value="   Pasas de Ciruela"/>
+                                  <Data value="Otras frutas"/>
+                                  <Data value="   Coco"/>
+                                  <Data value="   Cereza"/>
+                                  <Data value="   Granada"/>
+                                  <Data value="   Pi&#xf1;as Anan&#xe1;s"/>
+                                  <Data value="   Uva"/>
+                                  <Data value="   Manzana"/>
+                                  <Data value="   Durazno"/>
+                                  <Data value="   Pera"/>
                                   <Data value="Citricos"/>
-                                  <Data value="  Toronja"/>
-                                  <Data value="  Naranja"/>
-                                  <Data value="  Limon"/>
-                                  <Data value="  Lima"/>
+                                  <Data value="   Pomelo"/>
+                                  <Data value="   Naranja"/>
+                                  <Data value="   Lim&#xf3;n"/>
+                                  <Data value="   Lima"/>
                                 </Column>
                                 <Column editable="true" title="Inten." type="java.lang.Object"/>
                               </Table>
+                            </Property>
+                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                              <TableColumnModel selectionModel="0">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                              </TableColumnModel>
                             </Property>
                             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
@@ -1600,22 +1641,36 @@
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="12">
-                                <Column editable="false" title="4 Acido/Fermentado" type="java.lang.Object">
+                                <Column editable="true" title="4 Acido/Fermentado" type="java.lang.Object">
                                   <Data value="Acido"/>
-                                  <Data value="  Arom-acido"/>
-                                  <Data value="  Acido-ac&#xe9;t"/>
-                                  <Data value="  Acido-but&#xed;"/>
-                                  <Data value="  Acido-isoc"/>
-                                  <Data value="  Acido-c&#xed;tr"/>
-                                  <Data value="  Acido-m&#xe1;li"/>
-                                  <Data value="Alcoh/Ferm"/>
-                                  <Data value="  Vinoso"/>
-                                  <Data value="  Whisky"/>
-                                  <Data value="  Fermentado"/>
-                                  <Data value="  Super-madu"/>
+                                  <Data value="   Arom&#xe1;tico Acidos"/>
+                                  <Data value="   Acido ac&#xe9;tico"/>
+                                  <Data value="   Acido but&#xed;rico"/>
+                                  <Data value="   Acido isocalorico"/>
+                                  <Data value="   Acido c&#xed;trico"/>
+                                  <Data value="   Acido m&#xe1;lico"/>
+                                  <Data value="Alcohol/Fermentado"/>
+                                  <Data value="   Vinoso"/>
+                                  <Data value="   Whisky"/>
+                                  <Data value="   Fermentado"/>
+                                  <Data value="   Super-maduro"/>
                                 </Column>
                                 <Column editable="true" title="Inten." type="java.lang.Object"/>
                               </Table>
+                            </Property>
+                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                              <TableColumnModel selectionModel="0">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                              </TableColumnModel>
                             </Property>
                             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
@@ -1641,21 +1696,47 @@
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="11">
-                                <Column editable="false" title="5 Verde/Vegetal" type="java.lang.Object">
-                                  <Data value="Aceit-Oliv"/>
+                                <Column editable="true" title="5 Verde/Vegetal" type="java.lang.Object">
+                                  <Data value="Aceite de oliva"/>
                                   <Data value="Crudo"/>
-                                  <Data value="Verde/Vege"/>
-                                  <Data value="  Inmaduro"/>
-                                  <Data value="  Vaina"/>
-                                  <Data value="  Fresco"/>
-                                  <Data value="  Verde-oscu"/>
-                                  <Data value="  Vegetal"/>
-                                  <Data value="  Paja"/>
-                                  <Data value="  Herbaceo"/>
+                                  <Data value="Verde/Vegetal"/>
+                                  <Data value="   Inmaduro"/>
+                                  <Data value="   Vaina"/>
+                                  <Data value="   Fresco"/>
+                                  <Data value="   Verde oscuro"/>
+                                  <Data value="   Vegetal"/>
+                                  <Data value="   Heno"/>
+                                  <Data value="   Herbaceo"/>
                                   <Data value="Leguminoso"/>
                                 </Column>
-                                <Column editable="true" title="Inten." type="java.lang.Object"/>
+                                <Column editable="true" title="Inten." type="java.lang.Object">
+                                  <Data value="null"/>
+                                  <Data value="null"/>
+                                  <Data value=""/>
+                                  <Data value="null"/>
+                                  <Data value="null"/>
+                                  <Data value="null"/>
+                                  <Data value="null"/>
+                                  <Data value="null"/>
+                                  <Data value="null"/>
+                                  <Data value="null"/>
+                                  <Data value="null"/>
+                                </Column>
                               </Table>
+                            </Property>
+                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                              <TableColumnModel selectionModel="0">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                              </TableColumnModel>
                             </Property>
                             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
@@ -1681,28 +1762,42 @@
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="18">
-                                <Column editable="false" title="6 Otros" type="java.lang.Object">
-                                  <Data value="Papel/Hume"/>
-                                  <Data value="  Rancio"/>
-                                  <Data value="  Carton"/>
-                                  <Data value="  Papel"/>
-                                  <Data value="  Madera"/>
-                                  <Data value="  Mohoso"/>
-                                  <Data value="  Polvo-hume"/>
-                                  <Data value="  Tierra"/>
-                                  <Data value="  Cuero"/>
-                                  <Data value="  Carne/cald"/>
-                                  <Data value="  Fenolico"/>
+                                <Column editable="true" title="6 Otros" type="java.lang.Object">
+                                  <Data value="Papel/Humedad"/>
+                                  <Data value="   Rancio"/>
+                                  <Data value="   Cart&#xf3;n"/>
+                                  <Data value="   Papel"/>
+                                  <Data value="   Madera"/>
+                                  <Data value="   Mohoso/Humedo"/>
+                                  <Data value="   Rancio/Polvo"/>
+                                  <Data value="   Rancio/Tierra"/>
+                                  <Data value="   Animal"/>
+                                  <Data value="   Carne/Caldo"/>
+                                  <Data value="   Fenolico"/>
                                   <Data value="Quimico"/>
-                                  <Data value="  Amargo"/>
-                                  <Data value="  Salado"/>
-                                  <Data value="  Medicinal"/>
-                                  <Data value="  Petroleo"/>
-                                  <Data value="  Zorrillo"/>
-                                  <Data value="  Goma"/>
+                                  <Data value="   Amargo"/>
+                                  <Data value="   Salado"/>
+                                  <Data value="   Medicinal"/>
+                                  <Data value="   Petroleo"/>
+                                  <Data value="   Zorrillo"/>
+                                  <Data value="   Goma"/>
                                 </Column>
                                 <Column editable="true" title="Inten." type="java.lang.Object"/>
                               </Table>
+                            </Property>
+                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                              <TableColumnModel selectionModel="0">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                              </TableColumnModel>
                             </Property>
                             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
@@ -1728,20 +1823,34 @@
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="10">
-                                <Column editable="false" title="7 Tostado" type="java.lang.Object">
-                                  <Data value="Tabac-pipa"/>
+                                <Column editable="true" title="7 Tostado" type="java.lang.Object">
+                                  <Data value="Tabaco de pipa"/>
                                   <Data value="Tabaco"/>
                                   <Data value="Quemado"/>
-                                  <Data value="  Acre"/>
-                                  <Data value="  Ceniza"/>
-                                  <Data value="  Humo"/>
-                                  <Data value="  Marr&#xf3;n/tos"/>
+                                  <Data value="   Acre"/>
+                                  <Data value="   Ceniza"/>
+                                  <Data value="   Humo"/>
+                                  <Data value="   Marr&#xf3;n/Tostado"/>
                                   <Data value="Cereal"/>
-                                  <Data value="  Grano"/>
-                                  <Data value="  Malta"/>
+                                  <Data value="   Grano"/>
+                                  <Data value="   Malta"/>
                                 </Column>
                                 <Column editable="true" title="Inten." type="java.lang.Object"/>
                               </Table>
+                            </Property>
+                            <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                              <TableColumnModel selectionModel="0">
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                                <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                                  <Title/>
+                                  <Editor/>
+                                  <Renderer/>
+                                </Column>
+                              </TableColumnModel>
                             </Property>
                             <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                               <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
@@ -1767,14 +1876,14 @@
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="7">
-                                <Column editable="false" title="8 Especias" type="java.lang.Object">
+                                <Column editable="true" title="8 Especias" type="java.lang.Object">
                                   <Data value="Acre"/>
                                   <Data value="Pimienta"/>
-                                  <Data value="Especias-mo"/>
-                                  <Data value="  Anis"/>
-                                  <Data value="  Nuez-mosca"/>
-                                  <Data value="  Canela"/>
-                                  <Data value="  Clavo-olor"/>
+                                  <Data value="Especias marrones"/>
+                                  <Data value="   Anis"/>
+                                  <Data value="   Nuez moscada"/>
+                                  <Data value="   Canela"/>
+                                  <Data value="   Clavo de olor"/>
                                 </Column>
                                 <Column editable="true" title="Inten." type="java.lang.Object"/>
                               </Table>
@@ -1817,14 +1926,14 @@
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="7">
-                                <Column editable="false" title="9 Nueces/Cacao" type="java.lang.Object">
+                                <Column editable="true" title="9 Nueces/Cacao" type="java.lang.Object">
                                   <Data value="Nueces"/>
-                                  <Data value="  Mani"/>
-                                  <Data value="  Avellana"/>
-                                  <Data value="  Almendra"/>
+                                  <Data value="   Man&#xed;"/>
+                                  <Data value="   Avellana"/>
+                                  <Data value="   Almendra"/>
                                   <Data value="Cacao"/>
-                                  <Data value="  Chocolate"/>
-                                  <Data value="  Choc-amarg"/>
+                                  <Data value="   Chocolate"/>
+                                  <Data value="   Choc amargo"/>
                                 </Column>
                                 <Column editable="true" title="Inten." type="java.lang.Object"/>
                               </Table>
@@ -1864,7 +1973,7 @@
                           <Properties>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="3">
-                                <Column editable="false" title="10 Cuerpo" type="java.lang.Object">
+                                <Column editable="true" title="10 Cuerpo" type="java.lang.Object">
                                   <Data value="Jarabe"/>
                                   <Data value="Aceitoso"/>
                                   <Data value="Suave"/>

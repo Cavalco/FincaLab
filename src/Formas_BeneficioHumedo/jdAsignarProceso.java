@@ -5,6 +5,7 @@
  */
 package Formas_BeneficioHumedo;
 
+import Formas_BeneficioHumedov2.jpBitacoraUnaVista;
 import Metodos_Configuraciones.metodosBeneficioHumedo;
 import java.sql.Connection;
 import java.text.SimpleDateFormat;
@@ -24,21 +25,22 @@ public class jdAsignarProceso extends javax.swing.JDialog {
      * Creates new form jdAsignarProceso
      */
     Connection cn;
-    String Idioma, idBeneficio, idLote, tipo,cert;
+    String Idioma, idBeneficio, idLoteC, tipo, cert;
     metodosBeneficioHumedo mbh;
     DefaultTableModel modelo;
-    jpLotesConfirmados jp;
+    // jpBitacoraUnaVista jp;
+    //jpLotesConfirmados jp;
 
-    public jdAsignarProceso(java.awt.Frame parent, boolean modal, String idBeneficio, String idLote, String tipo, String cert,String Idioma, Connection cn) {
+    public jdAsignarProceso(java.awt.Frame parent, boolean modal, String idBeneficio, String idLoteC, String tipo, String cert, String Idioma, Connection cn) {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
 
         this.cn = cn;
         this.Idioma = Idioma;
-        this.idLote = idLote;
+        this.idLoteC = idLoteC;
         this.tipo = tipo;
-        this.cert=cert;
+        this.cert = cert;
         this.idBeneficio = idBeneficio;
 
         mbh = new metodosBeneficioHumedo(cn);
@@ -50,11 +52,34 @@ public class jdAsignarProceso extends javax.swing.JDialog {
         setTitle("Asignación Ruta de Procesos");
         cargarCombo();
         infoLote();
-        
+
         jButton4.setVisible(false);
     }
 
     public void infoLote() {
+        String datos[] = mbh.devolverLineaDatos("SELECT\n"
+                + "    idSubLote,\n"
+                + "    formaEntrada,\n"
+                + "    estadoEntrada,\n"
+                + "    costalesRecibidos,\n"
+                + "    kgRecibidos,\n"
+                + "    idLoteOrigen "
+                + "FROM\n"
+                + "    sublotesconfirmados b\n"
+                + "WHERE\n"
+                + "    id = '" + idLoteC + "'", 6).split("¬");
+
+        jLabel2.setText(datos[0]);
+        jLabel8.setText(datos[1]);
+        jLabel9.setText(datos[2]);
+        jLabel10.setText(datos[3]);
+        jLabel15.setText(datos[5]);
+        jLabel11.setText(datos[4]);
+        labelCerti.setText(cert);
+
+    }
+
+    /*   public void infoLote() {
         if (tipo.equals("Lote")) {
 
             String datos[] = mbh.devolverLineaDatos("SELECT\n"
@@ -97,8 +122,7 @@ public class jdAsignarProceso extends javax.swing.JDialog {
         } else {
             JOptionPane.showMessageDialog(null, "Revisar Tipo");
         }
-    }
-
+    }*/
     public void cargarCombo() {
         String datos[] = mbh.cargarCombos("select nombreRuta from rutabeneficiohumedo group by nombreRuta").split("¬");
         jComboBox1.setModel(new DefaultComboBoxModel((Object[]) datos));
@@ -145,7 +169,7 @@ public class jdAsignarProceso extends javax.swing.JDialog {
         }
     }*/
     public void acutalizarTabla() {
-        jp.llenarTabla();
+        //  jp.llenarTabla();
         this.dispose();
     }
 
@@ -431,7 +455,7 @@ public class jdAsignarProceso extends javax.swing.JDialog {
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        jdRutasProcesos jdR = new jdRutasProcesos(null, true, idBeneficio, idLote, Idioma, cn);
+        jdRutasProcesos jdR = new jdRutasProcesos(null, true, idBeneficio, idLoteC, Idioma, cn);
         jdR.jdA = this;
         jdR.setVisible(true);
     }//GEN-LAST:event_jButton2ActionPerformed
@@ -446,7 +470,7 @@ public class jdAsignarProceso extends javax.swing.JDialog {
         String formaSalida = tablaProceso.getValueAt(numeroRegistros, 5) + "";
 
         if (comprobarSobrantes()) {
-            jdAsignarSobrantes jdS = new jdAsignarSobrantes(null, true, modelo, idBeneficio, idLote, "", idRuta, jComboBox1.getSelectedItem() + "", jLabel12.getText(), tipo, cert, formaSalida, cn);
+            jdAsignarSobrantes jdS = new jdAsignarSobrantes(null, true, modelo, idBeneficio, idLoteC, "", idRuta, jComboBox1.getSelectedItem() + "", jLabel12.getText(), tipo, cert, formaSalida, cn);
             jdS.jdA = this;
             jdS.setVisible(true);
         } else {

@@ -3,10 +3,12 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Formas_LaboratorioN;
+package Formas_BeneficioHumedov2;
 
+import Formas_BeneficioHumedo.jdAsignarProceso;
 import Metodos_Configuraciones.metodosBeneficioHumedo;
 import java.sql.Connection;
+import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
@@ -22,7 +24,7 @@ public class jpBitacoraUnaVista extends javax.swing.JPanel {
     Connection cn;
     metodosBeneficioHumedo mbh;
     DefaultTableModel modelo;
-    String Idioma, idLote = "", idBeneficio;
+    String Idioma, idBeneficio;
 
     public jpBitacoraUnaVista(String idBeneficio, String Idioma, Connection cn) {
         initComponents();
@@ -39,20 +41,16 @@ public class jpBitacoraUnaVista extends javax.swing.JPanel {
         limpiar(jTable1);
 
         //CHECAR LO DE AGREGAR EL BENEFICIO EN LA TABLA SUBLOTESCONFIRMADOS
-        mbh.cargarInformacion(modelo, 7, "SELECT\n"
-                + "    sc.id,\n"
-                + "    bh.fechaEntrada,\n"
-                + "    bh.KgRecibidos,\n"
-                + "    sc.costales,\n"
-                + "    sc.formaCafe,\n"
-                + "    sc.estadoCafe,\n"
-                + "    sc.certificacion\n"
-                + "FROM\n"
-                + "    sublotesconfirmados sc\n"
-                + "LEFT JOIN boletaentradabh bh ON\n"
-                + "    (sc.idLoteOrigen = bh.idBoleta)");
+        mbh.cargarInformacion(modelo, 19, "SELECT "
+                + "id, idSubLote, fechaCreacion, "
+                + "kgRecibidos, costalesRecibidos, formaEntrada, "
+                + "estadoEntrada, certificacion, rutaDespulpe,"
+                + "rutaSecado, humedad, temperatura, kilosFinales, "
+                + "costalesFinales, formaFinal, procesoFinal, "
+                + "estadoFinal, boletaSalida, estatus \n"
+                + "FROM sublotesconfirmados ");
 
-        cambiarMesLetra(jTable1);
+        //cambiarMesLetra(jTable1);
     }
 
     public void cambiarMesLetra(JTable tabla) {
@@ -179,26 +177,24 @@ public class jpBitacoraUnaVista extends javax.swing.JPanel {
 
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Sublote", "Boleta Entrada", "Fecha", "Confirmacion", "Kilos", "Costales", "Forma", "Estado", "Certificación", "Origen", "Id Corte", "Fecha Corte", "Sociedad", "Localidad", "Status", ""
+                "Id", "Sublote", "Fecha", "Kilos", "Costales", "Forma", "Estado", "Certificación", "Ruta Despulpe", "Ruta Secado", "Humedad", "Temperatura", "Kilos", "Costales", "Forma", "Proceso", "Estado", "Boleta Salida", "Estatus"
             }
-        ) {
-            Class[] types = new Class [] {
-                java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Object.class, java.lang.Boolean.class
-            };
-
-            public Class getColumnClass(int columnIndex) {
-                return types [columnIndex];
+        ));
+        jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                jTable1MouseClicked(evt);
             }
         });
         jScrollPane1.setViewportView(jTable1);
         if (jTable1.getColumnModel().getColumnCount() > 0) {
-            jTable1.getColumnModel().getColumn(0).setPreferredWidth(45);
+            jTable1.getColumnModel().getColumn(0).setPreferredWidth(40);
+            jTable1.getColumnModel().getColumn(18).setPreferredWidth(50);
         }
 
         jButton1.setText("Exportar CSV");
@@ -209,7 +205,12 @@ public class jpBitacoraUnaVista extends javax.swing.JPanel {
 
         jButton4.setText("Mezclar");
 
-        jButton5.setText("Recibir");
+        jButton5.setText("Proceso");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -227,7 +228,7 @@ public class jpBitacoraUnaVista extends javax.swing.JPanel {
                         .addComponent(jButton1)
                         .addGap(18, 18, 18)
                         .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 415, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 409, Short.MAX_VALUE)
                         .addComponent(jButton3)
                         .addGap(18, 18, 18)
                         .addComponent(jButton4)
@@ -271,6 +272,37 @@ public class jpBitacoraUnaVista extends javax.swing.JPanel {
                 .addContainerGap())
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+         if (!idLoteC.equals("")) {
+            jdAsignarProceso jd = new jdAsignarProceso(null, true, idBeneficio, idLoteC, "Lote", cert, Idioma, cn);
+           // jd.jp = this;
+            jd.setVisible(true);
+        } else {
+            JOptionPane.showMessageDialog(null, "Selecciona un Lote");
+        }
+    }//GEN-LAST:event_jButton5ActionPerformed
+ String idLoteC = "", cert="", subLote="", forma="", estado="", kilos="", fechaEntradaSub="";
+    private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
+        // TODO add your handling code here:
+        
+        idLoteC = jTable1.getValueAt(jTable1.getSelectedRow(), 0) + "";
+        subLote = jTable1.getValueAt(jTable1.getSelectedRow(), 1) + "";
+        fechaEntradaSub = jTable1.getValueAt(jTable1.getSelectedRow(), 2) + "";
+        kilos = jTable1.getValueAt(jTable1.getSelectedRow(), 3) + "";
+        forma = jTable1.getValueAt(jTable1.getSelectedRow(), 5) + "";
+        estado = jTable1.getValueAt(jTable1.getSelectedRow(), 6) + "";
+        cert = jTable1.getValueAt(jTable1.getSelectedRow(), 7) + "";
+
+       /* if (idLote.contains("SLot")) {
+            tipo = "SubLote";
+            //JOptionPane.showMessageDialog(null,tipo);
+        } else {
+            tipo = "Lote";
+            //JOptionPane.showMessageDialog(null,tipo);
+        }*/
+    }//GEN-LAST:event_jTable1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

@@ -59,7 +59,7 @@
                           <Component id="jButton1" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jButton2" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace pref="415" max="32767" attributes="0"/>
+                          <EmptySpace pref="409" max="32767" attributes="0"/>
                           <Component id="jButton3" min="-2" max="-2" attributes="0"/>
                           <EmptySpace type="separate" max="-2" attributes="0"/>
                           <Component id="jButton4" min="-2" max="-2" attributes="0"/>
@@ -176,28 +176,31 @@
             <Component class="javax.swing.JTable" name="jTable1">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
-                  <Table columnCount="16" rowCount="4">
+                  <Table columnCount="19" rowCount="4">
+                    <Column editable="true" title="Id" type="java.lang.Object"/>
                     <Column editable="true" title="Sublote" type="java.lang.Object"/>
-                    <Column editable="true" title="Boleta Entrada" type="java.lang.Object"/>
                     <Column editable="true" title="Fecha" type="java.lang.Object"/>
-                    <Column editable="true" title="Confirmacion" type="java.lang.Object"/>
                     <Column editable="true" title="Kilos" type="java.lang.Object"/>
                     <Column editable="true" title="Costales" type="java.lang.Object"/>
                     <Column editable="true" title="Forma" type="java.lang.Object"/>
                     <Column editable="true" title="Estado" type="java.lang.Object"/>
                     <Column editable="true" title="Certificaci&#xf3;n" type="java.lang.Object"/>
-                    <Column editable="true" title="Origen" type="java.lang.Object"/>
-                    <Column editable="true" title="Id Corte" type="java.lang.Object"/>
-                    <Column editable="true" title="Fecha Corte" type="java.lang.Object"/>
-                    <Column editable="true" title="Sociedad" type="java.lang.Object"/>
-                    <Column editable="true" title="Localidad" type="java.lang.Object"/>
-                    <Column editable="true" title="Status" type="java.lang.Object"/>
-                    <Column editable="true" title="" type="java.lang.Boolean"/>
+                    <Column editable="true" title="Ruta Despulpe" type="java.lang.Object"/>
+                    <Column editable="true" title="Ruta Secado" type="java.lang.Object"/>
+                    <Column editable="true" title="Humedad" type="java.lang.Object"/>
+                    <Column editable="true" title="Temperatura" type="java.lang.Object"/>
+                    <Column editable="true" title="Kilos" type="java.lang.Object"/>
+                    <Column editable="true" title="Costales" type="java.lang.Object"/>
+                    <Column editable="true" title="Forma" type="java.lang.Object"/>
+                    <Column editable="true" title="Proceso" type="java.lang.Object"/>
+                    <Column editable="true" title="Estado" type="java.lang.Object"/>
+                    <Column editable="true" title="Boleta Salida" type="java.lang.Object"/>
+                    <Column editable="true" title="Estatus" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
                   <TableColumnModel selectionModel="0">
-                    <Column maxWidth="-1" minWidth="-1" prefWidth="45" resizable="true">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="40" resizable="true">
                       <Title/>
                       <Editor/>
                       <Renderer/>
@@ -273,6 +276,21 @@
                       <Renderer/>
                     </Column>
                     <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="50" resizable="true">
                       <Title/>
                       <Editor/>
                       <Renderer/>
@@ -283,6 +301,9 @@
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
                 </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="jTable1MouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>
@@ -308,8 +329,11 @@
         </Component>
         <Component class="javax.swing.JButton" name="jButton5">
           <Properties>
-            <Property name="text" type="java.lang.String" value="Recibir"/>
+            <Property name="text" type="java.lang.String" value="Proceso"/>
           </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jButton5ActionPerformed"/>
+          </Events>
         </Component>
       </SubComponents>
     </Container>

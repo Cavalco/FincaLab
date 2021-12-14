@@ -1386,25 +1386,20 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Sweet.setBackground(new java.awt.Color(255, 102, 102));
         Sweet.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Azúcar-Mor", null},
-                {"  Melaza", null},
-                {"  Jarab-mapl", null},
-                {"  Caramelo", null},
-                {"  Miel", null},
-                {"Vainilla", null}
+                {"Azúcar Morena", ""},
+                {"   Melaza", ""},
+                {"   Jarabe de Arce", null},
+                {"   Caramelizado", null},
+                {"   Miel", null},
+                {"Vainilla", null},
+                {"Aroma de Vainilla", null},
+                {"Dulce General", null},
+                {"Aromáticas Dulces", null}
             },
             new String [] {
                 "1 Dulce", "Inten."
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         Sweet.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SweetMouseClicked(evt);
@@ -1422,22 +1417,14 @@ public class jdCatacion2 extends javax.swing.JFrame {
             new Object [][] {
                 {"Té-Negro", null},
                 {"Floral", null},
-                {"  Manzanilla", null},
-                {"  Rosa", null},
-                {"  Jazmine", null}
+                {"   Manzanilla", null},
+                {"   Rosa", null},
+                {"   Jazmine", null}
             },
             new String [] {
                 "2 Floral", "Inten."
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         Floral.setPreferredSize(new java.awt.Dimension(175, 80));
         Floral.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
@@ -1450,40 +1437,32 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Fruit.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Bayas", null},
-                {"  Moras", null},
-                {"  Frambuesa", null},
-                {"  Arándano", null},
-                {"  Fresa", null},
-                {"Fruto-sec", null},
-                {"  Pasas", null},
-                {"  Ciruel-pas", null},
-                {"Otras-frut", null},
-                {"  Coco", null},
-                {"  Cereza", null},
-                {"  Granada", null},
-                {"  Piña", null},
-                {"  Uvas", null},
-                {"  Manzana", null},
-                {"  Durazno", null},
-                {"  Pera", null},
+                {"   Moras", null},
+                {"   Frambuesa", null},
+                {"   Arándano", null},
+                {"   Fresa", null},
+                {"Frutos Secos", null},
+                {"   Pasas de Uva", null},
+                {"   Pasas de Ciruela", null},
+                {"Otras frutas", null},
+                {"   Coco", null},
+                {"   Cereza", null},
+                {"   Granada", null},
+                {"   Piñas Ananás", null},
+                {"   Uva", null},
+                {"   Manzana", null},
+                {"   Durazno", null},
+                {"   Pera", null},
                 {"Citricos", null},
-                {"  Toronja", null},
-                {"  Naranja", null},
-                {"  Limon", null},
-                {"  Lima", null}
+                {"   Pomelo", null},
+                {"   Naranja", null},
+                {"   Limón", null},
+                {"   Lima", null}
             },
             new String [] {
                 "3 Afrutado", "Inten."
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         Fruit.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 FruitKeyReleased(evt);
@@ -1495,30 +1474,22 @@ public class jdCatacion2 extends javax.swing.JFrame {
         SourFer.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Acido", null},
-                {"  Arom-acido", null},
-                {"  Acido-acét", null},
-                {"  Acido-butí", null},
-                {"  Acido-isoc", null},
-                {"  Acido-cítr", null},
-                {"  Acido-máli", null},
-                {"Alcoh/Ferm", null},
-                {"  Vinoso", null},
-                {"  Whisky", null},
-                {"  Fermentado", null},
-                {"  Super-madu", null}
+                {"   Aromático Acidos", null},
+                {"   Acido acético", null},
+                {"   Acido butírico", null},
+                {"   Acido isocalorico", null},
+                {"   Acido cítrico", null},
+                {"   Acido málico", null},
+                {"Alcohol/Fermentado", null},
+                {"   Vinoso", null},
+                {"   Whisky", null},
+                {"   Fermentado", null},
+                {"   Super-maduro", null}
             },
             new String [] {
                 "4 Acido/Fermentado", "Inten."
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         SourFer.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 SourFerKeyReleased(evt);
@@ -1529,30 +1500,22 @@ public class jdCatacion2 extends javax.swing.JFrame {
         GreenVeg.setBackground(new java.awt.Color(102, 255, 102));
         GreenVeg.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Aceit-Oliv", null},
+                {"Aceite de oliva", null},
                 {"Crudo", null},
-                {"Verde/Vege", null},
-                {"  Inmaduro", null},
-                {"  Vaina", null},
-                {"  Fresco", null},
-                {"  Verde-oscu", null},
-                {"  Vegetal", null},
-                {"  Paja", null},
-                {"  Herbaceo", null},
+                {"Verde/Vegetal", ""},
+                {"   Inmaduro", null},
+                {"   Vaina", null},
+                {"   Fresco", null},
+                {"   Verde oscuro", null},
+                {"   Vegetal", null},
+                {"   Heno", null},
+                {"   Herbaceo", null},
                 {"Leguminoso", null}
             },
             new String [] {
                 "5 Verde/Vegetal", "Inten."
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         GreenVeg.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 GreenVegKeyReleased(evt);
@@ -1563,37 +1526,29 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Other.setBackground(new java.awt.Color(51, 255, 255));
         Other.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Papel/Hume", null},
-                {"  Rancio", null},
-                {"  Carton", null},
-                {"  Papel", null},
-                {"  Madera", null},
-                {"  Mohoso", null},
-                {"  Polvo-hume", null},
-                {"  Tierra", null},
-                {"  Cuero", null},
-                {"  Carne/cald", null},
-                {"  Fenolico", null},
+                {"Papel/Humedad", null},
+                {"   Rancio", null},
+                {"   Cartón", null},
+                {"   Papel", null},
+                {"   Madera", null},
+                {"   Mohoso/Humedo", null},
+                {"   Rancio/Polvo", null},
+                {"   Rancio/Tierra", null},
+                {"   Animal", null},
+                {"   Carne/Caldo", null},
+                {"   Fenolico", null},
                 {"Quimico", null},
-                {"  Amargo", null},
-                {"  Salado", null},
-                {"  Medicinal", null},
-                {"  Petroleo", null},
-                {"  Zorrillo", null},
-                {"  Goma", null}
+                {"   Amargo", null},
+                {"   Salado", null},
+                {"   Medicinal", null},
+                {"   Petroleo", null},
+                {"   Zorrillo", null},
+                {"   Goma", null}
             },
             new String [] {
                 "6 Otros", "Inten."
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         Other.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 OtherKeyReleased(evt);
@@ -1604,29 +1559,21 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Roasted.setBackground(new java.awt.Color(0, 204, 255));
         Roasted.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Tabac-pipa", null},
+                {"Tabaco de pipa", null},
                 {"Tabaco", null},
                 {"Quemado", null},
-                {"  Acre", null},
-                {"  Ceniza", null},
-                {"  Humo", null},
-                {"  Marrón/tos", null},
+                {"   Acre", null},
+                {"   Ceniza", null},
+                {"   Humo", null},
+                {"   Marrón/Tostado", null},
                 {"Cereal", null},
-                {"  Grano", null},
-                {"  Malta", null}
+                {"   Grano", null},
+                {"   Malta", null}
             },
             new String [] {
                 "7 Tostado", "Inten."
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         Roasted.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 RoastedKeyReleased(evt);
@@ -1639,24 +1586,16 @@ public class jdCatacion2 extends javax.swing.JFrame {
             new Object [][] {
                 {"Acre", null},
                 {"Pimienta", null},
-                {"Especias-mo", null},
-                {"  Anis", null},
-                {"  Nuez-mosca", null},
-                {"  Canela", null},
-                {"  Clavo-olor", null}
+                {"Especias marrones", null},
+                {"   Anis", null},
+                {"   Nuez moscada", null},
+                {"   Canela", null},
+                {"   Clavo de olor", null}
             },
             new String [] {
                 "8 Especias", "Inten."
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         Spices.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 SpicesKeyReleased(evt);
@@ -1668,25 +1607,17 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Nutty.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Nueces", null},
-                {"  Mani", null},
-                {"  Avellana", null},
-                {"  Almendra", null},
+                {"   Maní", null},
+                {"   Avellana", null},
+                {"   Almendra", null},
                 {"Cacao", null},
-                {"  Chocolate", null},
-                {"  Choc-amarg", null}
+                {"   Chocolate", null},
+                {"   Choc amargo", null}
             },
             new String [] {
                 "9 Nueces/Cacao", "Inten."
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         Nutty.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 NuttyKeyReleased(evt);
@@ -1703,15 +1634,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
             new String [] {
                 "10 Cuerpo", "Inten."
             }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
+        ));
         Body3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Body3KeyReleased(evt);
@@ -1781,10 +1704,6 @@ public class jdCatacion2 extends javax.swing.JFrame {
             .addGroup(jPanel10Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel10Layout.createSequentialGroup()
@@ -1799,7 +1718,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
                         .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel10Layout.createSequentialGroup()
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap(31, Short.MAX_VALUE))
         );
 
