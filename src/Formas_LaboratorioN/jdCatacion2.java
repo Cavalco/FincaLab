@@ -1386,15 +1386,15 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Sweet.setBackground(new java.awt.Color(255, 102, 102));
         Sweet.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Azúcar Morena", ""},
+                {"Azúcar-Mor", ""},
                 {"   Melaza", ""},
-                {"   Jarabe de Arce", null},
-                {"   Caramelizado", null},
+                {"   Jarab-mapl", null},
+                {"   Caramelo", null},
                 {"   Miel", null},
                 {"Vainilla", null},
-                {"Aroma de Vainilla", null},
-                {"Dulce General", null},
-                {"Aromáticas Dulces", null}
+                {"Vanilina", null},
+                {"Dulce-Gene", null},
+                {"Arom-dulce", null}
             },
             new String [] {
                 "1 Dulce", "Inten."
