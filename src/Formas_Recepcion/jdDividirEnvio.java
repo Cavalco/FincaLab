@@ -325,7 +325,7 @@ public class jdDividirEnvio extends javax.swing.JDialog {
         }
 
         if (contador == 0) {
-            jdB.insertarBoletaDivision(modelo);
+//            jdB.insertarBoletaDivision(modelo);
         } else {
             JOptionPane.showMessageDialog(null, "Selecciona Transporte");
         }

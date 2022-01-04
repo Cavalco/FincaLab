@@ -38,7 +38,7 @@ public class jdBoletaEntradaBH extends javax.swing.JDialog {
     /**
      * Creates new form jdBoletaEntradaBH
      */
-    String idBoleta, idSociedad, idBeneficio, tipoOrigen, ventanaOrigen, Idioma;
+    String idBoleta, idSociedadBH, idBeneficio, tipoOrigen, ventanaOrigen, Idioma, idSociedadLote;
     Connection cn;
     metodosBeneficioHumedo mbh;
     DefaultTableModel modelo;
@@ -53,12 +53,12 @@ public class jdBoletaEntradaBH extends javax.swing.JDialog {
 
         this.cn = cn;
         this.idBoleta = idBoleta;
-        this.idSociedad = idSociedad;
+        this.idSociedadBH = idSociedad;
         this.idBeneficio = idBeneficio;
         this.tipoOrigen = tipoOrigen;
         this.ventanaOrigen = ventanaOrigen;
         this.Idioma = Idioma;
-
+        //ESTA ES LA UTILIZADA
         //JOptionPane.showMessageDialog(this,"Segunda");
         mbh = new metodosBeneficioHumedo(cn);
         pdf = new creacionPDF(cn, "");
@@ -111,7 +111,7 @@ public class jdBoletaEntradaBH extends javax.swing.JDialog {
                     + "    v.Placas,\n"
                     + "    v.Responsable, "
                     + "    horaactual, "
-                    + "    horaBoletaManual "
+                    + "    horaBoletaManual, r.idSociedad "
                     + "FROM\n"
                     + "    boletasalidareceptor b\n"
                     + "LEFT JOIN vehiculo v ON\n"
@@ -123,7 +123,7 @@ public class jdBoletaEntradaBH extends javax.swing.JDialog {
                     + "WHERE\n"
                     + "    idBoleta = '" + idBoleta + "'\n"
                     + "GROUP BY\n"
-                    + "    idBoleta", 15).split("¬");
+                    + "    idBoleta", 16).split("¬");
 
             /*SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
         Date fechaDate = null;
@@ -146,6 +146,7 @@ public class jdBoletaEntradaBH extends javax.swing.JDialog {
             txtChofer.setText(datos[12]);
             jLabel14.setText(datos[13]);
             jLabel7.setText(datos[14]);
+            idSociedadLote = datos[15];
             //txtObservaciones.setText(datos[8]);
             if (datos[9].equals("1")) {
                 checkSi.setSelected(true);
@@ -160,7 +161,7 @@ public class jdBoletaEntradaBH extends javax.swing.JDialog {
 
     public String idBoletaEntrada() {
 
-        String ultimoIdBoleta = mbh.devuelveUnDato("select idBoleta from boletaentradabh where idSociedad=" + idSociedad + " order by id desc limit 1");
+        String ultimoIdBoleta = mbh.devuelveUnDato("select idBoleta from boletaentradabh where idSociedad=" + idSociedadBH + " order by id desc limit 1");
         int numeroConsecutivo = 0;
 
         if (ultimoIdBoleta.equals("") || ultimoIdBoleta == null) {
@@ -170,7 +171,7 @@ public class jdBoletaEntradaBH extends javax.swing.JDialog {
             numeroConsecutivo = Integer.parseInt(datos[4]) + 1;
         }
 
-        return "BOL-" + mbh.devuelveUnDato("select clavecorte from personam where id='" + idSociedad + "'") + "-0-0-" + numeroConsecutivo;
+        return "BOL-" + mbh.devuelveUnDato("select clavecorte from personam where id='" + idSociedadBH + "'") + "-0-0-" + numeroConsecutivo;
     }
 
     public void sumar() {
@@ -344,14 +345,14 @@ public class jdBoletaEntradaBH extends javax.swing.JDialog {
                     //JOptionPane.showMessageDialog(null,"Vuelta: "+i);
 
                     if (mbh.insertarEnCiclo("insert into boletaentradabh values"
-                            + " (null,'" + idBeneficio + "', '" + idBoleta + "', '" + jTable1.getValueAt(i, 0) + "', "
+                            + " (null,'" + idBeneficio + "', '" + idBoleta + "',"+idSociedadLote+", '" + jTable1.getValueAt(i, 0) + "', "
                             + "'" + boletaManual + "','" + fechaBoletaManual + "', "
                             + " '" + fechaEntrada + "','" + jTable1.getValueAt(i, 6) + "', "
-                            + "'" + jTable1.getValueAt(i, 5) + "', '" + jTable1.getValueAt(i, 4) + "', '1'  )")) {
+                            + "'" + jTable1.getValueAt(i, 5) + "', '"+jTable1.getValueAt(i, 1)+"','" + jTable1.getValueAt(i, 4) + "', '1'  )")) {
 
                         //JOptionPane.showMessageDialog(null,"Si voy a insertar");
                         //id, idloteOrigen, idSublote, 
-                        //idBeneficio, fechaCreacion, formaEntrada, 
+                        //idBeneficio, idSociedadLote, fechaCreacion, formaEntrada, 
                         //certificacion, estadoEntrada, kgRecibidos, 
                         //costalesRecibidos, rutaDespulpe, rutaSecado, 
                         //humedad, temperatura, kilosFinales, 
@@ -359,13 +360,13 @@ public class jdBoletaEntradaBH extends javax.swing.JDialog {
                         //estadfinal, boletaSalida, estatus
                         mbh.insertarEnCiclo("insert into sublotesconfirmados values("
                                 + "null, '" + jTable1.getValueAt(i, 0) + "', '" + jTable1.getValueAt(i, 0) + "', "
-                                + "'" + idBeneficio + "', '" + fechaEntrada + "', '" + jTable1.getValueAt(i, 1) + "',"
+                                + "'" + idBeneficio + "', '"+idSociedadLote+"', '" + fechaEntrada + "', '" + jTable1.getValueAt(i, 1) + "',"
                                 + "'" + mbh.devuelveUnDato("select certificacion\n"
                                         + "from cortesdeldia\n"
                                         + "where idLote='" + jTable1.getValueAt(i, 0) + "' ") + "' , '" + jTable1.getValueAt(i, 4) + "', '" + jTable1.getValueAt(i, 6) + "', "
-                                + "'" + jTable1.getValueAt(i, 5) + "', '', '', "
+                                + "'" + jTable1.getValueAt(i, 5) + "','0', '', '', "
                                 + "'', '', '', "
-                                + "'', '', '', '', '', 'Act' )");
+                                + "'', '', '', '','', '', 'Act' )");
 
                         mbh.actualizarBoleta("update boletasalidareceptor set estatus=2 where idBoleta='" + idBoleta + "'");
                     }

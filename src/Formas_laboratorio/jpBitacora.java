@@ -747,11 +747,28 @@ public class jpBitacora extends javax.swing.JPanel {
         } catch (IOException ex) {
             Logger.getLogger(jpBitacora.class.getName()).log(Level.SEVERE, null, ex);
         }
+
+         Workbook wb = new Workbook();
+                    wb.loadFromFile("C:\\fincalab\\reporteLaboratorio.xlsx");
+
+                    // Obtenga la segunda hoja de trabajo
+                    Worksheet sheet = wb.getWorksheets().get(0);
+
+                    // Método de llamada para guardar en formato PDF
+                    sheet.saveToPdf("C:\\fincalab\\ReporteIndividual.pdf");
         
-        Barra_progreso b = new Barra_progreso();
-        b.setVisible(true);
         
-     /*            // Cargar documento de Excel
+        Desktop desktop = Desktop.getDesktop();
+        try {
+            desktop.open(new java.io.File("C:\\fincalab\\ReporteIndividual.pdf"));
+        } catch (IOException ex) {
+            Logger.getLogger(jdRecibos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+      /*  Barra_progreso b = new Barra_progreso();
+        b.setVisible(true);*/
+
+        /*            // Cargar documento de Excel
         Workbook wb = new Workbook();
         wb.loadFromFile("C:\\fincalab\\reporteLaboratorio.xlsx");
  
@@ -763,8 +780,8 @@ public class jpBitacora extends javax.swing.JPanel {
         
         Visual v = new Visual("C:\\fincalab\\ReporteIndividual.pdf");
         v.setVisible(true);
-*/
-        /*   jdReporteIndividual jdR = new jdReporteIndividual(null,true, csm,cn);
+         */
+ /*   jdReporteIndividual jdR = new jdReporteIndividual(null,true, csm,cn);
        jdR.setVisible(true);*/
     }//GEN-LAST:event_jMenuItem1ActionPerformed
 

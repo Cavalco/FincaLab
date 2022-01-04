@@ -88,6 +88,7 @@ import Formas_Almacen.jdSeleccionAlmacen;
 import Formas_Almacen.jpSubLotesRecibidosAlmacen;
 import Formas_Almacen.jpSubLotesActivosAlmacen;
 import Formas_Almacen.jpSubLotesEnviadosAlmacen;
+import Formas_BeneficioHumedo.jpMuestras;
 import Formas_BeneficioHumedov2.jdEntradaBH;
 import Formas_BeneficioHumedov2.jpAnalisis;
 import Formas_BeneficioHumedov2.jpProcesosBH;
@@ -167,8 +168,8 @@ public class pantallaPrincipal extends javax.swing.JFrame {
         mdb = new metodosDatosBasicos(cn, Idioma);
         setTitle(idioma.getProperty("TituloVentanaPrincipal"));
 
-        JOptionPane.showMessageDialog(null,"Bienvenido a FincaLab");
-        
+        JOptionPane.showMessageDialog(null, "Bienvenido a FincaLab");
+
         validarModulos();
         cambiarIdioma();
 
@@ -746,7 +747,7 @@ public class pantallaPrincipal extends javax.swing.JFrame {
             panelPrincipal.revalidate();
             panelPrincipal.repaint();
         } else if (idioma.getProperty("CortesRecibidos").equals(tipo)) {
-            jpCortesRecibidos jpCR = new jpCortesRecibidos(beneficio, cn,Idioma);
+            jpCortesRecibidos jpCR = new jpCortesRecibidos(beneficio, cn, Idioma);
             //jpRecibirBoletas jpCR = new jpRecibirBoletas(beneficio, cn);
             jpCR.setSize(size);
             jpCR.setLocation(0, 0);
@@ -754,7 +755,7 @@ public class pantallaPrincipal extends javax.swing.JFrame {
             panelPrincipal.add(jpCR);
             panelPrincipal.revalidate();
             panelPrincipal.repaint();
-        } else if (idioma.getProperty("CortesConfirmados").equals(tipo)) {
+        } else if (idioma.getProperty("Bitacora").equals(tipo)) {
             //jpLotesConfirmados jpLC = new jpLotesConfirmados(beneficio, Idioma, cn);
             //jpProcesosBH jpLC = new jpProcesosBH(beneficio, cn);
             jpBitacoraUnaVista jpLC = new jpBitacoraUnaVista(beneficio, Idioma, cn);
@@ -790,7 +791,7 @@ public class pantallaPrincipal extends javax.swing.JFrame {
             panelPrincipal.revalidate();
             panelPrincipal.repaint();
 
-        } else if (idioma.getProperty("Bitacora").equals(tipo)) {
+        } else if (idioma.getProperty("BitacoraLaboratorio").equals(tipo)) {
             jpBitacora jpCPre = new jpBitacora(cn, Idioma);
             jpCPre.setSize(size);
             jpCPre.setLocation(0, 0);
@@ -834,7 +835,14 @@ public class pantallaPrincipal extends javax.swing.JFrame {
             panelPrincipal.add(jpAn);
             panelPrincipal.revalidate();
             panelPrincipal.repaint();
-
+        } else if (idioma.getProperty("Muestras").equals(tipo)) {
+            jpMuestras jpM = new jpMuestras(beneficio, cn);
+            jpM.setSize(size);
+            jpM.setLocation(0, 0);
+            panelPrincipal.removeAll();
+            panelPrincipal.add(jpM);
+            panelPrincipal.revalidate();
+            panelPrincipal.repaint();
         } else if (idioma.getProperty("SubLotesEnviados").equals(tipo)) {
             jpSubLotesEnviadosAlmacen jpSLE = new jpSubLotesEnviadosAlmacen(almacen, Idioma, cn);
             jpSLE.setSize(size);
@@ -1620,6 +1628,8 @@ public class pantallaPrincipal extends javax.swing.JFrame {
         javax.swing.tree.DefaultMutableTreeNode treeNode5 = new javax.swing.tree.DefaultMutableTreeNode("SubLotes Secos");
         //javax.swing.tree.DefaultMutableTreeNode treeNode6 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("SubLotesEnviados"));
         javax.swing.tree.DefaultMutableTreeNode treeNode7 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("Analisis"));
+        javax.swing.tree.DefaultMutableTreeNode treeNode8 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("Bitacora"));
+        javax.swing.tree.DefaultMutableTreeNode treeNode9 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("Muestras"));
 
         //        javax.swing.tree.DefaultMutableTreeNode treeNode7 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("ConsumoAgua"));
 //        javax.swing.tree.DefaultMutableTreeNode treeNode8 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("EntregaCascarilla"));
@@ -1629,11 +1639,13 @@ public class pantallaPrincipal extends javax.swing.JFrame {
 //        javax.swing.tree.DefaultMutableTreeNode treeNode12 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("EvaluacionMaquinaria"));
         //    javax.swing.tree.DefaultMutableTreeNode treeNode13 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("SubLotesSecos"));
         treeNode1.add(treeNode2);
-        treeNode1.add(treeNode3);
-        treeNode1.add(treeNode4);
+        //treeNode1.add(treeNode3);
+        //treeNode1.add(treeNode4);
         //     treeNode1.add(treeNode4);
-        treeNode1.add(treeNode5);
+        // treeNode1.add(treeNode5);
         //treeNode1.add(treeNode6);
+        treeNode1.add(treeNode8);
+        treeNode1.add(treeNode9);
         treeNode1.add(treeNode7);
 //        treeNode1.add(treeNode8);
 //        treeNode1.add(treeNode9);
@@ -2380,7 +2392,7 @@ public class pantallaPrincipal extends javax.swing.JFrame {
     String beneficio = "";
     private void btnBHActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBHActionPerformed
         // TODO add your handling code here:
-        jdSeleccionBeneficio jdSBH = new jdSeleccionBeneficio(null, true,Idioma, jLabel4.getText(), cn);
+        jdSeleccionBeneficio jdSBH = new jdSeleccionBeneficio(null, true, Idioma, jLabel4.getText(), cn);
         jdSBH.pPrin = this;
         jdSBH.setVisible(true);
     }//GEN-LAST:event_btnBHActionPerformed
@@ -2393,7 +2405,7 @@ public class pantallaPrincipal extends javax.swing.JFrame {
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("ModuloLaboratorio"));
         javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("MuestrasRecibidas"));
-        javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("Bitacora"));
+        javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("BitacoraLaboratorio"));
         javax.swing.tree.DefaultMutableTreeNode treeNode4 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("MuestrasExternas"));
         treeNode1.add(treeNode2);
         treeNode1.add(treeNode3);

@@ -26,13 +26,13 @@ public class jdAsignarSobrantes extends javax.swing.JDialog {
     metodosBeneficioHumedo mbh;
     DefaultTableModel modelo, modelo2;
     jdAsignarProceso jdA;
-    String idLote, idBeneficio, idRuta, ruta, proceso, idSociedad, tipo, formaSalida,cert;
+    String idLote, idBeneficio, idRuta, ruta, proceso, idSociedad, tipo, formaSalida, cert, cadenaRuta, idSociedadLote;
     Connection cn;
     float totalKilos = 0;
 
     public jdAsignarSobrantes(java.awt.Frame parent, boolean modal, DefaultTableModel modelo,
             String idBeneficio, String idLote, String Idioma, String idRuta, String ruta,
-            String proceso, String tipo, String cert, String formaSalida, Connection cn) {
+            String proceso, String tipo, String cert, String formaSalida, String cadenaRuta,String idSociedadLote, Connection cn) {
         super(parent, modal);
         initComponents();
 
@@ -48,7 +48,11 @@ public class jdAsignarSobrantes extends javax.swing.JDialog {
         this.idRuta = idRuta;
         this.idBeneficio = idBeneficio;
         this.formaSalida = formaSalida;
-        this.cert=cert;
+        this.cert = cert;
+        this.cadenaRuta=cadenaRuta;
+        this.idSociedadLote=idSociedadLote;
+        
+        JOptionPane.showMessageDialog(null,formaSalida);
 
         mbh = new metodosBeneficioHumedo(cn);
 
@@ -64,7 +68,7 @@ public class jdAsignarSobrantes extends javax.swing.JDialog {
         //JOptionPane.showMessageDialog(null,"Entre a Validar maquinaria");
         for (int i = 0; i < modelo.getRowCount(); i++) {
             String maquinaria = modelo.getValueAt(i, 3) + "";
-             //JOptionPane.showMessageDialog(null,i);
+            //JOptionPane.showMessageDialog(null,i);
             mbh.cargarInformacion(modelo2, 4, "select a.actividad, m.nombre, s.Nombre, '0.00' \n"
                     + "from maquinariabh m\n"
                     + "left join actividadesbh a on (m.idActividad=a.ID)\n"
@@ -90,6 +94,25 @@ public class jdAsignarSobrantes extends javax.swing.JDialog {
     }
 
     public void infoLote() {
+
+        String datos2[] = mbh.devolverLineaDatos("select idSubLote, formaEntrada, estadoEntrada, idLoteOrigen, kgRecibidos \n"
+                + "from sublotesconfirmados b\n"
+                + "where id=" + idLote, 5).split("¬");
+
+        lblIdLote.setText(datos2[0]);
+        lblFormaCafe.setText(datos2[1]);
+        lblEstadoCafe.setText(datos2[2]);
+        // lblSacos.setText(datos2[3]);
+        lblKilos.setText(datos2[4]);
+        lblRuta.setText(ruta);
+        lblProceso.setText(proceso);
+        jLabel5.setText(datos2[3]);
+        labelCertificacion.setText(cert);
+
+    }
+
+
+    /*  public void infoLote() {
 
         switch (tipo) {
 
@@ -128,9 +151,9 @@ public class jdAsignarSobrantes extends javax.swing.JDialog {
                 break;
         }
 
-    }
+    }*/
 
-    /*
+ /*
         Mezcla.- Lot-CP-BH-1-Mix-151
 
         Fragmentación.- Lot-CP-BH-1-Frg-151
@@ -169,7 +192,6 @@ public class jdAsignarSobrantes extends javax.swing.JDialog {
                     + "LIMIT 1").split("-");
 
             //JOptionPane.showMessageDialog(null,ultimoIdSubLote);
-            
             if (mbh.devuelveUnDato("SELECT\n"
                     + "    idSublote\n"
                     + "FROM\n"
@@ -185,10 +207,10 @@ public class jdAsignarSobrantes extends javax.swing.JDialog {
                     + "    id\n"
                     + "DESC\n"
                     + "LIMIT 1").equals(" ")) {
-                 nuevoConsecutivo = 1;
+                nuevoConsecutivo = 1;
             } else {
                 //idNuevoSubLote = ultimoIdSubLote[3];
-                idNuevoSubLote= mbh.devuelveUnDato("SELECT COUNT(id) FROM sublotesconfirmados");
+                idNuevoSubLote = mbh.devuelveUnDato("SELECT COUNT(id) FROM sublotesconfirmados");
                 nuevoConsecutivo = (Integer.parseInt(idNuevoSubLote) + 1) + i;
             }
             //int idConsecutivo = (Integer.parseInt(numRegistros) + 1) + i;
@@ -534,17 +556,21 @@ public class jdAsignarSobrantes extends javax.swing.JDialog {
         Date date = new Date();
         String fechaActual = new SimpleDateFormat("yyyy-MM-dd").format(date);
         //Insertando idLote ruta original
-        String loteOrigen =  jLabel5.getText();
+        String loteOrigen = jLabel5.getText();
+        String idRuta = mbh.devuelveUnDato("select id from rutabeneficiohumedo where nombreRuta='" + lblRuta.getText() + "' ");
         
+         
+        mbh.actualizarBoleta("update sublotesconfirmados set kgRecibidos='"+lblKilos.getText()+"' ,rutaDespulpe='" + ruta + "', idRuta=" + idRuta + ","
+                + "formaFinal='" + formaSalida + "', procesoFinal='" + lblProceso.getText() + "' where id=" + idLote);
+
         if (mbh.insertarBoleta("insert into lotesprocesosecado "
                 + "values(null, '" + loteOrigen + "', '" + idBeneficio + "', '" + lblIdLote.getText() + "', "
                 + "" + idRuta + ", '" + fechaActual + "', '" + lblFormaCafe.getText() + "', '" + lblEstadoCafe.getText() + "', "
                 + "'" + lblKilos.getText() + "', '" + formaSalida + "','0',' ', 1  )")) {
-            
-           mbh.insertarBoleta("insert into historialsublotes values('" + jLabel5.getText() + "', '" + lblIdLote.getText() + "', "
+
+            mbh.insertarBoleta("insert into historialsublotes values('" + jLabel5.getText() + "', '" + lblIdLote.getText() + "', "
                     + "'" + lblFormaCafe.getText() + "', '" + lblEstadoCafe.getText() + "', " + lblKilos.getText() + ",'" + fechaActual + "','1'  ) ");
 
-            
         }
 
         //Insertando idSubLotes generados sobrantes
@@ -565,22 +591,26 @@ public class jdAsignarSobrantes extends javax.swing.JDialog {
             }
 
             if (mbh.insertarBoleta("insert into sublotesconfirmados values("
-                    + "null, '" + jLabel5.getText() + "', '" + tablaLotes.getValueAt(i, 1) + "', '" + idBeneficio + "',"
-                    + "'" + fechaActual + "', '" + forma + "', '"+cert+"', '" + estado + "' ,'" + tablaLotes.getValueAt(i, 2) + "','1' )")) {
+                    + "null, '" + jLabel5.getText() + "', '" + tablaLotes.getValueAt(i, 1) + "', "
+                    + "'" + idBeneficio + "', '"+idSociedadLote+"', '" + fechaActual + "', '" + forma + "',"
+                    + "'" + labelCertificacion.getText() + "' , '" + estado + "', '" + tablaLotes.getValueAt(i, 2) + "', "
+                    + "'0',"+idRuta+", '', '', "
+                    + "'', '', '', "
+                    + "'', '', '', '','', '', 'Act' )")) {
             } else {
                 JOptionPane.showMessageDialog(null, "Error Almacenando SubLotes Automaticos");
             }
         }
 
-        if (tipo.equals("Lote")) {
-            mbh.actualizarBoleta("update sublotesconfirmados set estatus='0' where idSublote='"+lblIdLote.getText()+"'");
+     /*   if (tipo.equals("Lote")) {
+            mbh.actualizarBoleta("update sublotesconfirmados set estatus='0' where idSublote='" + lblIdLote.getText() + "'");
         } else if (tipo.equals("SubLote")) {
             mbh.actualizarBoleta("update sublotesconfirmados set estatus='0' "
                     + "where idSubLote='" + lblIdLote.getText() + "'");
-        }
+        }*/
 
         this.dispose();
-        jdA.acutalizarTabla();
+       // jdA.acutalizarTabla();
     }//GEN-LAST:event_jButton1ActionPerformed
 
     private void tablaLotesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_tablaLotesKeyReleased

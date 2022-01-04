@@ -6,8 +6,21 @@
 package Formas_BeneficioHumedov2;
 
 import Formas_BeneficioHumedo.jdAsignarProceso;
+import Formas_BeneficioHumedo.jdMuestra;
+import Formas_BeneficioHumedo.jdRastreo;
+import Formas_BeneficioHumedo.jdTemperatura;
+import Formas_BeneficioHumedo.jdTipoSecado;
+import Formas_Recepcion.jdRecibos;
 import Metodos_Configuraciones.metodosBeneficioHumedo;
+import Reportes.creacionPDF;
+import com.itextpdf.text.DocumentException;
+import java.awt.Desktop;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.sql.Connection;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -39,16 +52,24 @@ public class jpBitacoraUnaVista extends javax.swing.JPanel {
 
     public void llenarTabla() {
         limpiar(jTable1);
+        String estatus = "";
+        if (jRadioButton2.isSelected()) {
+            estatus = "where estatus='Act'";
+        } else if (jRadioButton1.isSelected()) {
+            estatus = "where estatus='Ter'";
+        } else {
+            estatus = "";
+        }
 
         //CHECAR LO DE AGREGAR EL BENEFICIO EN LA TABLA SUBLOTESCONFIRMADOS
         mbh.cargarInformacion(modelo, 19, "SELECT "
                 + "id, idSubLote, fechaCreacion, "
-                + "kgRecibidos, costalesRecibidos, formaEntrada, "
+                + "kgRecibidos, formaEntrada, "
                 + "estadoEntrada, certificacion, rutaDespulpe,"
                 + "rutaSecado, humedad, temperatura, kilosFinales, "
                 + "costalesFinales, formaFinal, procesoFinal, "
-                + "estadoFinal, boletaSalida, estatus \n"
-                + "FROM sublotesconfirmados ");
+                + "estadoFinal,'', boletaSalida, estatus \n"
+                + "FROM sublotesconfirmados " + estatus);
 
         //cambiarMesLetra(jTable1);
     }
@@ -125,12 +146,19 @@ public class jpBitacoraUnaVista extends javax.swing.JPanel {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jPopupMenu1 = new javax.swing.JPopupMenu();
+        jMenuItem1 = new javax.swing.JMenuItem();
+        jMenuItem2 = new javax.swing.JMenuItem();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jPanel2 = new javax.swing.JPanel();
         jLabel2 = new javax.swing.JLabel();
         jComboBox1 = new javax.swing.JComboBox<>();
         jTextField1 = new javax.swing.JTextField();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jRadioButton3 = new javax.swing.JRadioButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTable1 = new javax.swing.JTable();
         jButton1 = new javax.swing.JButton();
@@ -138,6 +166,19 @@ public class jpBitacoraUnaVista extends javax.swing.JPanel {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jButton6 = new javax.swing.JButton();
+        jButton7 = new javax.swing.JButton();
+
+        jMenuItem1.setText("Añadir Metodo Secado");
+        jMenuItem1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem1ActionPerformed(evt);
+            }
+        });
+        jPopupMenu1.add(jMenuItem1);
+
+        jMenuItem2.setText("Abrir Boleta");
+        jPopupMenu1.add(jMenuItem2);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
@@ -151,6 +192,31 @@ public class jpBitacoraUnaVista extends javax.swing.JPanel {
 
         jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Corte", "Certificado", "Sociedad" }));
 
+        buttonGroup1.add(jRadioButton1);
+        jRadioButton1.setText("Secos");
+        jRadioButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton1ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(jRadioButton2);
+        jRadioButton2.setSelected(true);
+        jRadioButton2.setText("En Proceso");
+        jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton2ActionPerformed(evt);
+            }
+        });
+
+        buttonGroup1.add(jRadioButton3);
+        jRadioButton3.setText("Todos");
+        jRadioButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jRadioButton3ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -161,8 +227,14 @@ public class jpBitacoraUnaVista extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, 105, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(jRadioButton2)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jRadioButton1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(jRadioButton3)
+                .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -171,7 +243,10 @@ public class jpBitacoraUnaVista extends javax.swing.JPanel {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
                     .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jRadioButton1)
+                    .addComponent(jRadioButton2)
+                    .addComponent(jRadioButton3))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -183,9 +258,18 @@ public class jpBitacoraUnaVista extends javax.swing.JPanel {
                 {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Id", "Sublote", "Fecha", "Kilos", "Costales", "Forma", "Estado", "Certificación", "Ruta Despulpe", "Ruta Secado", "Humedad", "Temperatura", "Kilos", "Costales", "Forma", "Proceso", "Estado", "Boleta Salida", "Estatus"
+                "Id", "Sublote", "Fecha", "Kilos", "Forma", "Estado", "Certificación", "Ruta Despulpe", "Ruta Secado", "Humedad", "Temperatura", "Kilos", "Costales", "Forma", "Proceso", "Estado", "Rendimiento", "Boleta Salida", "Estatus"
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        jTable1.setComponentPopupMenu(jPopupMenu1);
         jTable1.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 jTable1MouseClicked(evt);
@@ -202,13 +286,32 @@ public class jpBitacoraUnaVista extends javax.swing.JPanel {
         jButton2.setText("Rend Envios");
 
         jButton3.setText("Rastreo");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("Mezclar");
 
-        jButton5.setText("Proceso");
+        jButton5.setText("Asignar Proceso");
         jButton5.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton5ActionPerformed(evt);
+            }
+        });
+
+        jButton6.setText("Humedad/Temperatura");
+        jButton6.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton6ActionPerformed(evt);
+            }
+        });
+
+        jButton7.setText("Confirmar Secado");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
             }
         });
 
@@ -225,15 +328,19 @@ public class jpBitacoraUnaVista extends javax.swing.JPanel {
                         .addComponent(jLabel1)
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addComponent(jButton1)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton2)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 409, Short.MAX_VALUE)
-                        .addComponent(jButton3)
-                        .addGap(18, 18, 18)
+                        .addComponent(jButton5)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton6)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton4)
-                        .addGap(18, 18, 18)
-                        .addComponent(jButton5)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton7)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 149, Short.MAX_VALUE)
+                        .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton2)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton1)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -251,7 +358,9 @@ public class jpBitacoraUnaVista extends javax.swing.JPanel {
                     .addComponent(jButton2)
                     .addComponent(jButton3)
                     .addComponent(jButton4)
-                    .addComponent(jButton5))
+                    .addComponent(jButton5)
+                    .addComponent(jButton6)
+                    .addComponent(jButton7))
                 .addContainerGap())
         );
 
@@ -275,27 +384,46 @@ public class jpBitacoraUnaVista extends javax.swing.JPanel {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-         if (!idLoteC.equals("")) {
-            jdAsignarProceso jd = new jdAsignarProceso(null, true, idBeneficio, idLoteC, "Lote", cert, Idioma, cn);
-           // jd.jp = this;
+        /* if (!idLoteC.equals("")) {
+            jdAsignarProceso jd = new jdAsignarProceso(null, true, idBeneficio, idLoteC, "Lote", cert, Idioma, idSociedadLote, cn);
+            // jd.jp = this;
             jd.setVisible(true);
         } else {
             JOptionPane.showMessageDialog(null, "Selecciona un Lote");
+        }*/
+
+        if (idLoteC.equals("")) {
+            JOptionPane.showMessageDialog(null, "Seleccione un Lote");
+        } else if (!rutaDesp.equals("")) {
+            JOptionPane.showMessageDialog(null, "Ruta de Despulpe Asignada");
+        } else if (rutaDesp.equals("")) {
+            jdAsignarProceso jd = new jdAsignarProceso(null, true, idBeneficio, idLoteC, "Lote", cert, Idioma, idSociedadLote, cn);
+            // jd.jp = this;
+            jd.setVisible(true);
         }
+
     }//GEN-LAST:event_jButton5ActionPerformed
- String idLoteC = "", cert="", subLote="", forma="", estado="", kilos="", fechaEntradaSub="";
+    String idLoteC = "", cert = "", subLote = "", forma = "", estado = "", temperatura = "", rutaDesp = "",
+            kilos = "", fechaEntradaSub = "", formaFinal = "", metodoSecado = "", proceso = "", idSociedadLote = "";
     private void jTable1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jTable1MouseClicked
-        // TODO add your handling code here:
-        
+        // TODO add your handling code here:        
         idLoteC = jTable1.getValueAt(jTable1.getSelectedRow(), 0) + "";
+        idBeneficio = mbh.devuelveUnDato("select idBeneficio from sublotesconfirmados where id=" + idLoteC);
         subLote = jTable1.getValueAt(jTable1.getSelectedRow(), 1) + "";
         fechaEntradaSub = jTable1.getValueAt(jTable1.getSelectedRow(), 2) + "";
         kilos = jTable1.getValueAt(jTable1.getSelectedRow(), 3) + "";
-        forma = jTable1.getValueAt(jTable1.getSelectedRow(), 5) + "";
-        estado = jTable1.getValueAt(jTable1.getSelectedRow(), 6) + "";
-        cert = jTable1.getValueAt(jTable1.getSelectedRow(), 7) + "";
+        forma = jTable1.getValueAt(jTable1.getSelectedRow(), 4) + "";
+        estado = jTable1.getValueAt(jTable1.getSelectedRow(), 5) + "";
+        cert = jTable1.getValueAt(jTable1.getSelectedRow(), 6) + "";
+        rutaDesp = jTable1.getValueAt(jTable1.getSelectedRow(), 7) + "";
+        metodoSecado = jTable1.getValueAt(jTable1.getSelectedRow(), 8) + "";
+        temperatura = jTable1.getValueAt(jTable1.getSelectedRow(), 9) + "";
+        formaFinal = jTable1.getValueAt(jTable1.getSelectedRow(), 13) + "";
+        proceso = jTable1.getValueAt(jTable1.getSelectedRow(), 14) + "";
 
-       /* if (idLote.contains("SLot")) {
+        idSociedadLote = mbh.devuelveUnDato("select idSociedadLote from sublotesconfirmados "
+                + "where id=" + idLoteC);
+        /* if (idLote.contains("SLot")) {
             tipo = "SubLote";
             //JOptionPane.showMessageDialog(null,tipo);
         } else {
@@ -304,18 +432,96 @@ public class jpBitacoraUnaVista extends javax.swing.JPanel {
         }*/
     }//GEN-LAST:event_jTable1MouseClicked
 
+    private void jButton6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton6ActionPerformed
+        // TODO add your handling code here:
+        if (subLote.equals("")) {
+            JOptionPane.showMessageDialog(null, "Seleccionar SubLote");
+        } else {
+            jdTemperatura jdT = new jdTemperatura(null, true, subLote, "", cn);
+            jdT.setVisible(true);
+            subLote = "";
+        }
+    }//GEN-LAST:event_jButton6ActionPerformed
+
+    private void jMenuItem1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem1ActionPerformed
+        // TODO add your handling code here:
+        jdTipoSecado jdTS = new jdTipoSecado(null, true, subLote, "", cn);
+        //jdTS.jp = this;
+        jdTS.setVisible(true);
+    }//GEN-LAST:event_jMenuItem1ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        // TODO add your handling code here:
+        if (metodoSecado.equals("")) {
+            JOptionPane.showMessageDialog(null, "Asigne Metodo de Secado");
+        } else if (temperatura.equals("")) {
+            JOptionPane.showMessageDialog(null, "Registre Historial de Temperatura");
+        }
+        {
+            jdMuestra jd = new jdMuestra(null, true, subLote, cert, proceso, metodoSecado, idBeneficio, idSociedadLote, formaFinal, kilos, cn);
+            //jd.jp = this;
+            jd.setVisible(true);
+        }
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jRadioButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton2ActionPerformed
+        // TODO add your handling code here:
+        llenarTabla();
+    }//GEN-LAST:event_jRadioButton2ActionPerformed
+
+    private void jRadioButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton1ActionPerformed
+        // TODO add your handling code here:
+        llenarTabla();
+    }//GEN-LAST:event_jRadioButton1ActionPerformed
+
+    private void jRadioButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jRadioButton3ActionPerformed
+        // TODO add your handling code here:
+        llenarTabla();
+    }//GEN-LAST:event_jRadioButton3ActionPerformed
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        // TODO add your handling code here:
+        //Object[][] contenido = obtenerContenidoTabla(modelo);
+        /*   creacionPDF pdf = new creacionPDF(cn, Idioma);
+        
+        try {
+            pdf.pdfReporteBH(idLoteC);
+        } catch (DocumentException | FileNotFoundException e) {
+
+        }
+
+        Desktop desktop = Desktop.getDesktop();
+        try {
+            desktop.open(new java.io.File("C:\\fincalab\\reporteBH.pdf"));
+        } catch (IOException ex) {
+            Logger.getLogger(jdRecibos.class.getName()).log(Level.SEVERE, null, ex);
+        }*/
+
+        jdRastreo jdR = new jdRastreo(subLote, cn);
+        jdR.setVisible(true);
+    }//GEN-LAST:event_jButton3ActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton6;
+    private javax.swing.JButton jButton7;
     private javax.swing.JComboBox<String> jComboBox1;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
+    private javax.swing.JMenuItem jMenuItem1;
+    private javax.swing.JMenuItem jMenuItem2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPopupMenu jPopupMenu1;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable jTable1;
     private javax.swing.JTextField jTextField1;

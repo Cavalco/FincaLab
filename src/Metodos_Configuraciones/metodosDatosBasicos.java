@@ -282,7 +282,7 @@ public class metodosDatosBasicos {
                 }
             }
             cmd.close();
-            //System.out.println(a);
+            System.out.println("Lo hicimos");
             return a;
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(null, "Error - Cargar Combos \n" + ex);

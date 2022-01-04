@@ -175,8 +175,9 @@ public class jdTipoSecado extends javax.swing.JDialog {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:      
          String fecha = new SimpleDateFormat("yyyy-MM-dd").format(jDateChooser1.getDate());
+         mbh.actualizarBoleta("update sublotesconfirmados set rutaSecado='"+lugarSecado+"' where idSublote='"+idSubLote+"' ");
         mbh.actualizarBoleta("update lotesprocesosecado set lugarSecado='" + lugarSecado + "', fechaInicioSecado='"+fecha+"' where idSubLote='" + idSubLote + "' ");
-        jp.llenarTabla();
+//        jp.llenarTabla();
         JOptionPane.showMessageDialog(null,"Metodo Asignado");
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
@@ -186,7 +187,7 @@ public class jdTipoSecado extends javax.swing.JDialog {
         String dato[];
         lugarSecado = jComboBox1.getSelectedItem() + "";
         dato = lugarSecado.split(", ");
-        lugarSecado = dato[1];
+        lugarSecado = dato[0];
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     /**

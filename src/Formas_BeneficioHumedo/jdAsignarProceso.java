@@ -25,13 +25,14 @@ public class jdAsignarProceso extends javax.swing.JDialog {
      * Creates new form jdAsignarProceso
      */
     Connection cn;
-    String Idioma, idBeneficio, idLoteC, tipo, cert;
+    String Idioma, idBeneficio, idLoteC, tipo, cert,idSociedadLote;
     metodosBeneficioHumedo mbh;
     DefaultTableModel modelo;
     // jpBitacoraUnaVista jp;
     //jpLotesConfirmados jp;
 
-    public jdAsignarProceso(java.awt.Frame parent, boolean modal, String idBeneficio, String idLoteC, String tipo, String cert, String Idioma, Connection cn) {
+    public jdAsignarProceso(java.awt.Frame parent, boolean modal, String idBeneficio, String idLoteC, 
+            String tipo, String cert, String Idioma,String idSociedadLote, Connection cn) {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
@@ -42,6 +43,7 @@ public class jdAsignarProceso extends javax.swing.JDialog {
         this.tipo = tipo;
         this.cert = cert;
         this.idBeneficio = idBeneficio;
+        this.idSociedadLote=idSociedadLote;
 
         mbh = new metodosBeneficioHumedo(cn);
         modelo = (DefaultTableModel) tablaProceso.getModel();
@@ -214,6 +216,7 @@ public class jdAsignarProceso extends javax.swing.JDialog {
         jButton4 = new javax.swing.JButton();
         labelCerti = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
+        lblCadenaRuta = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
@@ -320,6 +323,8 @@ public class jdAsignarProceso extends javax.swing.JDialog {
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel17.setText("Certificacion");
 
+        lblCadenaRuta.setText("-");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -331,9 +336,11 @@ public class jdAsignarProceso extends javax.swing.JDialog {
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 834, Short.MAX_VALUE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addComponent(jButton3)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(lblCadenaRuta, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton4)
-                        .addGap(108, 108, 108)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(jButton1))
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -374,7 +381,7 @@ public class jdAsignarProceso extends javax.swing.JDialog {
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jLabel15)
                             .addComponent(jLabel14))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -419,11 +426,11 @@ public class jdAsignarProceso extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 301, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton1)
-                        .addComponent(jButton3)))
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jButton1)
+                    .addComponent(jButton3)
+                    .addComponent(lblCadenaRuta)
+                    .addComponent(jButton4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap())
         );
 
@@ -465,31 +472,28 @@ public class jdAsignarProceso extends javax.swing.JDialog {
         Date date = new Date();
         String fechaActual = new SimpleDateFormat("yyyy-MM-dd").format(date);
         String idRuta = mbh.devuelveUnDato("select id from rutabeneficiohumedo where nombreRuta='" + jComboBox1.getSelectedItem() + "' ");
-
         int numeroRegistros = tablaProceso.getRowCount() - 1;
         String formaSalida = tablaProceso.getValueAt(numeroRegistros, 5) + "";
+        JOptionPane.showMessageDialog(null,formaSalida);
 
         if (comprobarSobrantes()) {
-            jdAsignarSobrantes jdS = new jdAsignarSobrantes(null, true, modelo, idBeneficio, idLoteC, "", idRuta, jComboBox1.getSelectedItem() + "", jLabel12.getText(), tipo, cert, formaSalida, cn);
+            jdAsignarSobrantes jdS = new jdAsignarSobrantes(null, true, modelo, idBeneficio, idLoteC, "", idRuta, 
+                    jComboBox1.getSelectedItem() + "", jLabel12.getText(), tipo, cert, formaSalida, lblCadenaRuta.getText(),idSociedadLote, cn);
             jdS.jdA = this;
             jdS.setVisible(true);
         } else {
 
-            if (mbh.insertarBoleta("insert into lotesprocesosecado "
-                    + "values(null, '" + jLabel15.getText() + "', '" + idBeneficio + "', '" + jLabel2.getText() + "', "
-                    + "" + idRuta + ", '" + fechaActual + "', '" + jLabel8.getText() + "', '" + jLabel9.getText() + "', "
-                    + "'" + jLabel11.getText() + "', '" + formaSalida + "', '0',1  )")) {
+            mbh.actualizarBoleta("update sublotesconfirmados set rutaDespulpe='" + jComboBox1.getSelectedItem() + "', idRuta=" + idRuta + ","
+                    + "formaFinal='" + formaSalida + "', procesoFinal='" + jLabel12.getText() + "' where id=" + idLoteC);
 
-                if (tipo.equals("Lote")) {
+            /*if (tipo.equals("Lote")) {
                     mbh.actualizarBoleta("update boletaentradabh set estatus='0' "
                             + "where idLote='" + jLabel2.getText() + "' "
                             + "and idBoleta='" + mbh.devuelveUnDato("select idBoleta from boletaentradabh where idLote='" + jLabel15.getText() + "'") + "'");
                 } else {
                     mbh.actualizarBoleta("update sublotesconfirmados set estatus='0' "
                             + "where idSubLote='" + jLabel2.getText() + "'");
-                }
-            }
-
+                }*/
         }
 
 
@@ -529,6 +533,13 @@ public class jdAsignarProceso extends javax.swing.JDialog {
                 + "where r.nombreRuta='" + jComboBox1.getSelectedItem() + "'"));
         jLabel13.setVisible(true);
 
+        String cadenaRuta = "";
+        for (int i = 0; i < modelo.getRowCount(); i++) {
+            cadenaRuta += modelo.getValueAt(i, 3) + ",";
+        }
+        cadenaRuta = cadenaRuta.substring(0, cadenaRuta.length() - 1);
+        lblCadenaRuta.setText(cadenaRuta);
+        cadenaRuta = "";
     }//GEN-LAST:event_jComboBox1ActionPerformed
 
     private void jButton4ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton4ActionPerformed
@@ -607,6 +618,7 @@ public class jdAsignarProceso extends javax.swing.JDialog {
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel labelCerti;
+    private javax.swing.JLabel lblCadenaRuta;
     private javax.swing.JTable tablaProceso;
     // End of variables declaration//GEN-END:variables
 }

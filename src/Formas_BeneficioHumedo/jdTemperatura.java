@@ -55,10 +55,12 @@ public class jdTemperatura extends javax.swing.JDialog {
     public void guardarRegistro() {
         String fecha = new SimpleDateFormat("yyyy-MM-dd").format(jDateChooser1.getDate());
 
-            mbh.insertarBoleta("insert into temperaturaprocesosecado values(null, '" + idSubLote + "',"
+        mbh.insertarBoleta("insert into temperaturaprocesosecado values(null, '" + idSubLote + "',"
                 + " '" + jTextField1.getText() + "', '" + jTextField2.getText() + "', '" + fecha + "', "
                 + "'" + labelHora.getText() + "', '" + jTextField4.getText() + "' )");
-         
+        mbh.actualizarBoleta("update sublotesconfirmados "
+                + "set humedad='" + jTextField1.getText() + "', temperatura='" + jTextField2.getText() + "' where idSubLote='" + idSubLote + "'");
+
         jTextField1.setText("");
         jTextField2.setText("");
         //jTextField3.setText("");
@@ -419,14 +421,14 @@ public class jdTemperatura extends javax.swing.JDialog {
             radioAM.setSelected(false);
         }
 
-         if (Integer.parseInt(jSpinner2.getValue().toString()) >= 0
+        if (Integer.parseInt(jSpinner2.getValue().toString()) >= 0
                 && Integer.parseInt(jSpinner2.getValue().toString()) < 10) {
             minutos = "0" + Integer.parseInt(jSpinner2.getValue().toString());
         } else {
             minutos = jSpinner2.getValue().toString();
         }
 
-        labelHora.setText(jSpinner1.getValue().toString() + " : " + minutos );
+        labelHora.setText(jSpinner1.getValue().toString() + " : " + minutos);
     }//GEN-LAST:event_jSpinner1StateChanged
 
     private void jSpinner2StateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_jSpinner2StateChanged
@@ -438,7 +440,7 @@ public class jdTemperatura extends javax.swing.JDialog {
             minutos = jSpinner2.getValue().toString();
         }
 
-        labelHora.setText(jSpinner1.getValue().toString() + " : " + minutos );
+        labelHora.setText(jSpinner1.getValue().toString() + " : " + minutos);
     }//GEN-LAST:event_jSpinner2StateChanged
 
     private void radioAMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_radioAMActionPerformed

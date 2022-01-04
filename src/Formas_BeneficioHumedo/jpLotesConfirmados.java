@@ -399,9 +399,9 @@ public class jpLotesConfirmados extends javax.swing.JPanel {
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
         if (!idLote.equals("")) {
-            jdAsignarProceso jd = new jdAsignarProceso(null, true, idBeneficio, idLote, tipo, cert, Idioma, cn);
+        //    jdAsignarProceso jd = new jdAsignarProceso(null, true, idBeneficio, idLote, tipo, cert, Idioma, cn);
             //jd.jp = this;
-            jd.setVisible(true);
+           // jd.setVisible(true);
         } else {
             JOptionPane.showMessageDialog(null, "Selecciona un Lote");
         }

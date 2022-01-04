@@ -5,10 +5,17 @@
  */
 package Formas_BeneficioHumedo;
 
+import Formas_Recepcion.jdRecibos;
 import Metodos_Configuraciones.metodosBeneficioHumedo;
+import Reportes.creacionPDF;
+import java.awt.Desktop;
+import java.io.IOException;
 import java.sql.Connection;
+import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.JOptionPane;
 
 /**
@@ -21,12 +28,12 @@ public class jdMuestra extends javax.swing.JDialog {
      * Creates new form jdMuestra
      */
     Connection cn;
-    String idSubLote, idBeneficio, sociedad, certificacion, comunidad, metodo, proceso,forma, fechaSublote, calificacion;
+    String idSubLote, idBeneficio, sociedad, certificacion, comunidad, metodo, proceso, forma, fechaSublote, calificacion, kilosEntrada;
     metodosBeneficioHumedo mbh;
     jpLotesEnProceso jp;
 
     public jdMuestra(java.awt.Frame parent, boolean modal, String idSubLote,
-            String certificacion, String proceso, String metodo, String idBeneficio, String sociedad, String forma, Connection cn) {
+            String certificacion, String proceso, String metodo, String idBeneficio, String sociedad, String forma, String kilosEntrada, Connection cn) {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
@@ -38,13 +45,17 @@ public class jdMuestra extends javax.swing.JDialog {
         this.certificacion = certificacion;
         this.metodo = metodo;
         this.proceso = proceso;
-        this.forma=forma;
+        this.forma = forma;
+        this.kilosEntrada = kilosEntrada;
+
         mbh = new metodosBeneficioHumedo(cn);
 
         comunidad = mbh.devuelveUnDato("select l.Descripcion\n"
                 + "from personam p\n"
                 + "left join localidad l on (l.ID=p.ID_Localidad)\n"
                 + "where p.NombreCorto='" + sociedad + "'");
+
+        sociedad = mbh.devuelveUnDato("select nombrecorto from personam where id=" + sociedad);
 
         lbIdLote.setText(idSubLote);
         lbCertificado.setText(certificacion);
@@ -53,6 +64,7 @@ public class jdMuestra extends javax.swing.JDialog {
         lbBeneficio.setText(idBeneficio);
         lbSociedad.setText(sociedad);
         lbForma.setText(forma);
+        lblKilosEntrada.setText(kilosEntrada);
 
         txtPesoMuestra.setEnabled(false);
         txtTomadaPor.setEnabled(false);
@@ -71,9 +83,9 @@ public class jdMuestra extends javax.swing.JDialog {
                 + "    ORDER BY id DESC LIMIT 1", 2).split("¬");
         txtHumedad.setText(datos[0]);
         txtTemperatura.setText(datos[1]);
-        
-        fechaSublote = mbh.devuelveUnDato("select fechacreacion from sublotesconfirmados where idLoteOrigen='"+idSubLote+"'");
-        calificacion = mbh.devuelveUnDato("SELECT idLote FROM recibos where idLote='"+idSubLote+"'");
+
+        fechaSublote = mbh.devuelveUnDato("select fechacreacion from sublotesconfirmados where idLoteOrigen='" + idSubLote + "'");
+        calificacion = mbh.devuelveUnDato("SELECT idLote FROM recibos where idLote='" + idSubLote + "'");
         //JOptionPane.showMessageDialog(null,fechaSublote);
 
         /*  jTextField1.setEnabled(false);
@@ -92,21 +104,24 @@ public class jdMuestra extends javax.swing.JDialog {
                     + "'" + certificacion + "', "
                     + "'" + mbh.devuelveUnDato("select formaSalidaFinal from lotesprocesosecado where idSubLote='" + lbIdLote.getText() + "'") + "',"
                     + "'" + metodo + "','" + proceso + "','" + txtSacos.getText() + "', '" + txtKgFinales.getText() + "', "
-                    + "'" + txtHumedad.getText() + "', '" + txtTemperatura.getText() + "', '" + txtPesoMuestra.getText() + "','Fecha','" + txtTomadaPor.getText() + "', '1' ) ")) {
+                    + "'" + txtHumedad.getText() + "', '" + txtTemperatura.getText() + "', '1' ) ")) {
 
                 mbh.actualizarBoleta("update lotesprocesosecado set estatus=0 where idSubLote='" + lbIdLote.getText() + "'");
 
+                mbh.actualizarBoleta("update sublotesconfirmados set kilosFinales='" + txtKgFinales.getText() + "', "
+                        + "costalesFinales='" + txtSacos.getText() + "', estadoFinal='Seco', rendimiento='" + txtRendimiento.getText() + "', estatus='Ter' "
+                        + "WHERE idSubLote='" + lbIdLote.getText() + "'");
             }
 
             if (checkMuestra.isSelected()) {
                 String fechaM = new SimpleDateFormat("yyyy-MM-dd").format(fechaMuestra.getDate());
 
                 mbh.insertarBoleta("insert into muestrasenviadas values "
-                        + "(null, '" + lbIdLote.getText() + "', '"+jLabel6.getText()+"', '" + lbForma.getText() + "', "
+                        + "(null, '" + lbIdLote.getText() + "', '" + jLabel6.getText() + "', '" + lbForma.getText() + "', "
                         + "'" + lbBeneficio.getText() + "', '" + lbSociedad.getText() + "', '" + lbIdLote.getText() + "', "
                         + "'" + txtKgFinales.getText() + "', '" + txtSacos.getText() + "', '" + comunidad + "', "
-                        + "'" + txtObservaciones.getText() + "', '" + metodoSecado.getText() + "', '"+calificacion+"', "
-                        + "'" + txtPesoMuestra.getText() + "', 'Ubicación', '"+fechaSublote+"', '" + fechaS + "', "
+                        + "'" + txtObservaciones.getText() + "', '" + metodoSecado.getText() + "', '" + calificacion + "', "
+                        + "'" + txtPesoMuestra.getText() + "', 'Ubicación', '" + fechaSublote + "', '" + fechaS + "', "
                         + "'" + fechaM + "', 'AC', '" + txtTomadaPor.getText() + "', "
                         + "'', '" + txtTransportadaPor.getText() + "', '" + lbCertificado.getText() + "' )");
             }
@@ -115,6 +130,45 @@ public class jdMuestra extends javax.swing.JDialog {
         }
     }
 
+    /* public void crearBoletaSalida() {
+        // String estadoCafe = jTable1.getValueAt(0, 4) + "";
+        try {
+            Date date = new Date();
+            String fechaBoletaManual = "", boletaManual = "";
+            String fechaEntrada = new SimpleDateFormat("yyyy-MM-dd").format(date);
+
+            for (int i = 0; i < jTable1.getRowCount(); i++) {
+                //JOptionPane.showMessageDialog(null,"Vuelta: "+i);
+
+                if (mbh.insertarEnCiclo("insert into boletaentradabh values"
+                        + " (null,'" + idBeneficio + "', '" + idBoleta + "'," + idSociedadLote + ", '" + jTable1.getValueAt(i, 0) + "', "
+                        + "'" + boletaManual + "','" + fechaBoletaManual + "', "
+                        + " '" + fechaEntrada + "','" + jTable1.getValueAt(i, 6) + "', "
+                        + "'" + jTable1.getValueAt(i, 5) + "', '" + jTable1.getValueAt(i, 1) + "','" + jTable1.getValueAt(i, 4) + "', '1'  )")) {
+
+                    mbh.insertarEnCiclo("insert into sublotesconfirmados values("
+                            + "null, '" + jTable1.getValueAt(i, 0) + "', '" + jTable1.getValueAt(i, 0) + "', "
+                            + "'" + idBeneficio + "', '" + idSociedadLote + "', '" + fechaEntrada + "', '" + jTable1.getValueAt(i, 1) + "',"
+                            + "'" + mbh.devuelveUnDato("select certificacion\n"
+                                    + "from cortesdeldia\n"
+                                    + "where idLote='" + jTable1.getValueAt(i, 0) + "' ") + "' , '" + jTable1.getValueAt(i, 4) + "', '" + jTable1.getValueAt(i, 6) + "', "
+                            + "'" + jTable1.getValueAt(i, 5) + "','0', '', '', "
+                            + "'', '', '', "
+                            + "'', '', '', '','', '', 'Act' )");
+
+                    mbh.actualizarBoleta("update boletasalidareceptor set estatus=2 where idBoleta='" + idBoleta + "'");
+                }
+            }
+
+            JOptionPane.showMessageDialog(null, "Entrada Exitosa");
+
+            this.dispose();
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Error, Entrada BH\n" + e);
+
+        }
+
+    }*/
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -141,6 +195,8 @@ public class jdMuestra extends javax.swing.JDialog {
         lbSociedad = new javax.swing.JLabel();
         jLabel23 = new javax.swing.JLabel();
         lbForma = new javax.swing.JLabel();
+        jLabel2 = new javax.swing.JLabel();
+        lblKilosEntrada = new javax.swing.JLabel();
         jPanel3 = new javax.swing.JPanel();
         jLabel17 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
@@ -168,6 +224,10 @@ public class jdMuestra extends javax.swing.JDialog {
         txtHumedad = new javax.swing.JTextField();
         jLabel22 = new javax.swing.JLabel();
         txtTemperatura = new javax.swing.JTextField();
+        jLabel26 = new javax.swing.JLabel();
+        txtRendimiento = new javax.swing.JTextField();
+        jLabel4 = new javax.swing.JLabel();
+        jButton5 = new javax.swing.JButton();
         checkMuestra = new javax.swing.JCheckBox();
 
         jButton1.setText("jButton1");
@@ -214,6 +274,11 @@ public class jdMuestra extends javax.swing.JDialog {
 
         lbForma.setText("jLabel2");
 
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel2.setText("Kilos Entrada");
+
+        lblKilosEntrada.setText("jLabel4");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -245,9 +310,13 @@ public class jdMuestra extends javax.swing.JDialog {
                     .addComponent(jLabel13))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(lbForma)
-                    .addComponent(jLabel23))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(jLabel23)
+                    .addComponent(lbForma))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(lblKilosEntrada)
+                    .addComponent(jLabel2))
+                .addContainerGap(167, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -255,9 +324,13 @@ public class jdMuestra extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
-                        .addComponent(jLabel23)
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel23)
+                            .addComponent(jLabel2))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lbForma))
+                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(lbForma)
+                            .addComponent(lblKilosEntrada)))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addComponent(jLabel8)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -393,7 +466,7 @@ public class jdMuestra extends javax.swing.JDialog {
                         .addComponent(jLabel25)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtTransportadaPor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(14, Short.MAX_VALUE))))
+                        .addContainerGap(19, Short.MAX_VALUE))))
         );
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Información Secado"));
@@ -403,6 +476,15 @@ public class jdMuestra extends javax.swing.JDialog {
 
         jLabel15.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel15.setText("Sacos Finales");
+
+        txtKgFinales.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyPressed(java.awt.event.KeyEvent evt) {
+                txtKgFinalesKeyPressed(evt);
+            }
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                txtKgFinalesKeyReleased(evt);
+            }
+        });
 
         fechaSecado.setDateFormatString("d/MMM/yyyy");
 
@@ -421,6 +503,21 @@ public class jdMuestra extends javax.swing.JDialog {
         txtTemperatura.setEditable(false);
         txtTemperatura.setEnabled(false);
 
+        jLabel26.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel26.setText("Rendimiento");
+
+        txtRendimiento.setEditable(false);
+        txtRendimiento.setEnabled(false);
+
+        jLabel4.setText("%");
+
+        jButton5.setText("Transportista");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout jPanel4Layout = new javax.swing.GroupLayout(jPanel4);
         jPanel4.setLayout(jPanel4Layout);
         jPanel4Layout.setHorizontalGroup(
@@ -429,24 +526,35 @@ public class jdMuestra extends javax.swing.JDialog {
                 .addContainerGap()
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel10)
-                    .addComponent(txtKgFinales, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(txtKgFinales, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel15)
-                    .addComponent(txtSacos, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(txtSacos, javax.swing.GroupLayout.PREFERRED_SIZE, 100, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel16)
-                    .addComponent(fechaSecado, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(fechaSecado, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel21, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtHumedad, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jLabel22, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(txtTemperatura, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel21)
-                    .addComponent(txtHumedad, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel22)
-                    .addComponent(txtTemperatura, javax.swing.GroupLayout.PREFERRED_SIZE, 120, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(jLabel26, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addGap(28, 28, 28))
+                    .addGroup(jPanel4Layout.createSequentialGroup()
+                        .addComponent(txtRendimiento, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jLabel4)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jButton5)
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -458,9 +566,15 @@ public class jdMuestra extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtHumedad, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(jPanel4Layout.createSequentialGroup()
-                        .addComponent(jLabel22)
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jLabel22)
+                            .addComponent(jLabel26))
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(txtTemperatura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(txtTemperatura, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtRendimiento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jLabel4)
+                            .addComponent(jButton5)))
                     .addGroup(jPanel4Layout.createSequentialGroup()
                         .addComponent(jLabel15)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -535,6 +649,21 @@ public class jdMuestra extends javax.swing.JDialog {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         confirmarSecado();
+
+        creacionPDF pdf = new creacionPDF(cn, "");
+        try {
+//            pdf.pdfBoletaSalidaBH(mbh.devuelveUnDato("select idBoleta from boletaentradabh order by id desc limit 1"), contenido, txtObservaciones.getText());
+        } catch (Exception e) {
+
+        }
+
+        Desktop desktop = Desktop.getDesktop();
+        try {
+            desktop.open(new java.io.File("C:\\fincalab\\pruebaBoleta.pdf"));
+        } catch (IOException ex) {
+            Logger.getLogger(jdRecibos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
         this.dispose();
     }//GEN-LAST:event_jButton2ActionPerformed
 
@@ -557,6 +686,23 @@ public class jdMuestra extends javax.swing.JDialog {
             txtObservaciones.setEnabled(false);
         }
     }//GEN-LAST:event_checkMuestraActionPerformed
+
+    private void txtKgFinalesKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtKgFinalesKeyPressed
+        // TODO add your handling code here:
+
+    }//GEN-LAST:event_txtKgFinalesKeyPressed
+
+    private void txtKgFinalesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtKgFinalesKeyReleased
+        // TODO add your handling code here:
+        DecimalFormat df = new DecimalFormat("#.00");
+        float rendimiento = (Float.parseFloat(txtKgFinales.getText()) / Float.parseFloat(lblKilosEntrada.getText())) * 100;
+        txtRendimiento.setText(df.format(rendimiento));
+    }//GEN-LAST:event_txtKgFinalesKeyReleased
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        // TODO add your handling code here:
+       
+    }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
      * @param args the command line arguments
@@ -607,6 +753,7 @@ public class jdMuestra extends javax.swing.JDialog {
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
+    private javax.swing.JButton jButton5;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel12;
@@ -616,13 +763,16 @@ public class jdMuestra extends javax.swing.JDialog {
     private javax.swing.JLabel jLabel17;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel20;
     private javax.swing.JLabel jLabel21;
     private javax.swing.JLabel jLabel22;
     private javax.swing.JLabel jLabel23;
     private javax.swing.JLabel jLabel24;
     private javax.swing.JLabel jLabel25;
+    private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel8;
@@ -637,11 +787,13 @@ public class jdMuestra extends javax.swing.JDialog {
     private javax.swing.JLabel lbForma;
     private javax.swing.JLabel lbIdLote;
     private javax.swing.JLabel lbSociedad;
+    private javax.swing.JLabel lblKilosEntrada;
     private javax.swing.JLabel metodoSecado;
     private javax.swing.JTextField txtHumedad;
     private javax.swing.JTextField txtKgFinales;
     private javax.swing.JTextArea txtObservaciones;
     private javax.swing.JTextField txtPesoMuestra;
+    private javax.swing.JTextField txtRendimiento;
     private javax.swing.JTextField txtSacos;
     private javax.swing.JTextField txtTemperatura;
     private javax.swing.JTextField txtTomadaPor;
