@@ -74,7 +74,7 @@ public class pantallaLogin extends javax.swing.JFrame {
                 bd = "fincalab_tambor";
                 break;
             case "Procaa":
-                bd = "fincalab2019_procca";
+                bd = "fincalab_procaa";
                 break;
             case "Cuerno":
                 bd = "fincalab_cuerno";

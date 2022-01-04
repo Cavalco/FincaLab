@@ -1392,14 +1392,15 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"   Caramelo", null},
                 {"   Miel", null},
                 {"Vainilla", null},
-                {"Vanilina", null},
+                {"Arom-Vaini", null},
                 {"Dulce-Gene", null},
                 {"Arom-dulce", null}
             },
             new String [] {
-                "1 Dulce", "Inten."
+                "1 Dulce", "Int."
             }
         ));
+        Sweet.setPreferredSize(new java.awt.Dimension(90, 144));
         Sweet.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 SweetMouseClicked(evt);
@@ -1411,6 +1412,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane9.setViewportView(Sweet);
+        if (Sweet.getColumnModel().getColumnCount() > 0) {
+            Sweet.getColumnModel().getColumn(0).setResizable(false);
+            Sweet.getColumnModel().getColumn(1).setResizable(false);
+            Sweet.getColumnModel().getColumn(1).setPreferredWidth(7);
+        }
 
         Floral.setBackground(new java.awt.Color(255, 153, 102));
         Floral.setModel(new javax.swing.table.DefaultTableModel(
@@ -1422,16 +1428,21 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"   Jazmine", null}
             },
             new String [] {
-                "2 Floral", "Inten."
+                "2 Floral", "Int."
             }
         ));
-        Floral.setPreferredSize(new java.awt.Dimension(175, 80));
+        Floral.setPreferredSize(new java.awt.Dimension(90, 80));
         Floral.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 FloralKeyReleased(evt);
             }
         });
         jScrollPane3.setViewportView(Floral);
+        if (Floral.getColumnModel().getColumnCount() > 0) {
+            Floral.getColumnModel().getColumn(0).setResizable(false);
+            Floral.getColumnModel().getColumn(1).setResizable(false);
+            Floral.getColumnModel().getColumn(1).setPreferredWidth(7);
+        }
 
         Fruit.setBackground(new java.awt.Color(255, 204, 0));
         Fruit.setModel(new javax.swing.table.DefaultTableModel(
@@ -1441,53 +1452,58 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"   Frambuesa", null},
                 {"   Arándano", null},
                 {"   Fresa", null},
-                {"Frutos Secos", null},
-                {"   Pasas de Uva", null},
-                {"   Pasas de Ciruela", null},
-                {"Otras frutas", null},
+                {"Frutos Sec", null},
+                {"   Pasas", null},
+                {"   Ciruel-pas", null},
+                {"Otras frut", null},
                 {"   Coco", null},
                 {"   Cereza", null},
                 {"   Granada", null},
-                {"   Piñas Ananás", null},
+                {"   Piñas", null},
                 {"   Uva", null},
                 {"   Manzana", null},
                 {"   Durazno", null},
                 {"   Pera", null},
                 {"Citricos", null},
-                {"   Pomelo", null},
+                {"   Toronja", null},
                 {"   Naranja", null},
                 {"   Limón", null},
                 {"   Lima", null}
             },
             new String [] {
-                "3 Afrutado", "Inten."
+                "3 Afrutado", "Int."
             }
         ));
+        Fruit.setPreferredSize(new java.awt.Dimension(90, 352));
         Fruit.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 FruitKeyReleased(evt);
             }
         });
         jScrollPane4.setViewportView(Fruit);
+        if (Fruit.getColumnModel().getColumnCount() > 0) {
+            Fruit.getColumnModel().getColumn(1).setResizable(false);
+            Fruit.getColumnModel().getColumn(1).setPreferredWidth(7);
+        }
 
         SourFer.setBackground(new java.awt.Color(255, 255, 153));
         SourFer.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Acido", null},
-                {"   Aromático Acidos", null},
-                {"   Acido acético", null},
-                {"   Acido butírico", null},
-                {"   Acido isocalorico", null},
-                {"   Acido cítrico", null},
-                {"   Acido málico", null},
-                {"Alcohol/Fermentado", null},
+                {"   Arom-acido", null},
+                {"   Acido-acét", null},
+                {"   Acido-butí", null},
+                {"   Acido-isoc", null},
+                {"   Acidocítr", null},
+                {"   Acido-máli", null},
+                {"Alcoh/Ferm", null},
                 {"   Vinoso", null},
                 {"   Whisky", null},
                 {"   Fermentado", null},
-                {"   Super-maduro", null}
+                {"   Super-madu", null}
             },
             new String [] {
-                "4 Acido/Fermentado", "Inten."
+                "4 Acido/Fermentado", "Int."
             }
         ));
         SourFer.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1496,24 +1512,29 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane5.setViewportView(SourFer);
+        if (SourFer.getColumnModel().getColumnCount() > 0) {
+            SourFer.getColumnModel().getColumn(0).setResizable(false);
+            SourFer.getColumnModel().getColumn(1).setResizable(false);
+            SourFer.getColumnModel().getColumn(1).setPreferredWidth(7);
+        }
 
         GreenVeg.setBackground(new java.awt.Color(102, 255, 102));
         GreenVeg.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Aceite de oliva", null},
+                {"Aceit-Oliv", null},
                 {"Crudo", null},
-                {"Verde/Vegetal", ""},
+                {"Verde/Vege", ""},
                 {"   Inmaduro", null},
                 {"   Vaina", null},
                 {"   Fresco", null},
-                {"   Verde oscuro", null},
+                {"   Verde-oscu", null},
                 {"   Vegetal", null},
-                {"   Heno", null},
+                {"   Paja", null},
                 {"   Herbaceo", null},
                 {"Leguminoso", null}
             },
             new String [] {
-                "5 Verde/Vegetal", "Inten."
+                "5 Verde/Vegetal", "Int."
             }
         ));
         GreenVeg.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1522,20 +1543,25 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane10.setViewportView(GreenVeg);
+        if (GreenVeg.getColumnModel().getColumnCount() > 0) {
+            GreenVeg.getColumnModel().getColumn(0).setResizable(false);
+            GreenVeg.getColumnModel().getColumn(1).setResizable(false);
+            GreenVeg.getColumnModel().getColumn(1).setPreferredWidth(7);
+        }
 
         Other.setBackground(new java.awt.Color(51, 255, 255));
         Other.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Papel/Humedad", null},
+                {"Papel/Hume", null},
                 {"   Rancio", null},
                 {"   Cartón", null},
                 {"   Papel", null},
                 {"   Madera", null},
-                {"   Mohoso/Humedo", null},
-                {"   Rancio/Polvo", null},
-                {"   Rancio/Tierra", null},
-                {"   Animal", null},
-                {"   Carne/Caldo", null},
+                {"   Mohoso", null},
+                {"   Polvo-hume", null},
+                {"   Tierra", null},
+                {"   Cuero", null},
+                {"   Carne/Cald", null},
                 {"   Fenolico", null},
                 {"Quimico", null},
                 {"   Amargo", null},
@@ -1546,7 +1572,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"   Goma", null}
             },
             new String [] {
-                "6 Otros", "Inten."
+                "6 Otros", "Int."
             }
         ));
         Other.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1555,23 +1581,27 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane11.setViewportView(Other);
+        if (Other.getColumnModel().getColumnCount() > 0) {
+            Other.getColumnModel().getColumn(1).setResizable(false);
+            Other.getColumnModel().getColumn(1).setPreferredWidth(7);
+        }
 
         Roasted.setBackground(new java.awt.Color(0, 204, 255));
         Roasted.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {"Tabaco de pipa", null},
+                {"Tabac-pipa", null},
                 {"Tabaco", null},
                 {"Quemado", null},
                 {"   Acre", null},
                 {"   Ceniza", null},
                 {"   Humo", null},
-                {"   Marrón/Tostado", null},
+                {"   Marrón/Tos", null},
                 {"Cereal", null},
                 {"   Grano", null},
                 {"   Malta", null}
             },
             new String [] {
-                "7 Tostado", "Inten."
+                "7 Tostado", "Int."
             }
         ));
         Roasted.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1580,20 +1610,25 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane12.setViewportView(Roasted);
+        if (Roasted.getColumnModel().getColumnCount() > 0) {
+            Roasted.getColumnModel().getColumn(0).setResizable(false);
+            Roasted.getColumnModel().getColumn(1).setResizable(false);
+            Roasted.getColumnModel().getColumn(1).setPreferredWidth(7);
+        }
 
         Spices.setBackground(new java.awt.Color(153, 153, 255));
         Spices.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Acre", null},
                 {"Pimienta", null},
-                {"Especias marrones", null},
+                {"Especia-mo", null},
                 {"   Anis", null},
-                {"   Nuez moscada", null},
+                {"   Nuez-mosca", null},
                 {"   Canela", null},
-                {"   Clavo de olor", null}
+                {"   Clavo-olor", null}
             },
             new String [] {
-                "8 Especias", "Inten."
+                "8 Especias", "Int."
             }
         ));
         Spices.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1602,6 +1637,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane13.setViewportView(Spices);
+        if (Spices.getColumnModel().getColumnCount() > 0) {
+            Spices.getColumnModel().getColumn(0).setResizable(false);
+            Spices.getColumnModel().getColumn(1).setResizable(false);
+            Spices.getColumnModel().getColumn(1).setPreferredWidth(7);
+        }
 
         Nutty.setBackground(new java.awt.Color(255, 102, 204));
         Nutty.setModel(new javax.swing.table.DefaultTableModel(
@@ -1612,10 +1652,10 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"   Almendra", null},
                 {"Cacao", null},
                 {"   Chocolate", null},
-                {"   Choc amargo", null}
+                {"   Choc-amarg", null}
             },
             new String [] {
-                "9 Nueces/Cacao", "Inten."
+                "9 Nueces/Cacao", "Int."
             }
         ));
         Nutty.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1624,6 +1664,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane14.setViewportView(Nutty);
+        if (Nutty.getColumnModel().getColumnCount() > 0) {
+            Nutty.getColumnModel().getColumn(0).setResizable(false);
+            Nutty.getColumnModel().getColumn(1).setResizable(false);
+            Nutty.getColumnModel().getColumn(1).setPreferredWidth(7);
+        }
 
         Body3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1632,7 +1677,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Suave", null}
             },
             new String [] {
-                "10 Cuerpo", "Inten."
+                "10 Cuerpo", "Int."
             }
         ));
         Body3.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -1641,6 +1686,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane56.setViewportView(Body3);
+        if (Body3.getColumnModel().getColumnCount() > 0) {
+            Body3.getColumnModel().getColumn(0).setResizable(false);
+            Body3.getColumnModel().getColumn(1).setResizable(false);
+            Body3.getColumnModel().getColumn(1).setPreferredWidth(7);
+        }
 
         Finish3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -1650,7 +1700,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Granoso", null}
             },
             new String [] {
-                "11 Sabor Rem.", "Inten."
+                "11 Sabor Rem.", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1667,6 +1717,10 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane57.setViewportView(Finish3);
+        if (Finish3.getColumnModel().getColumnCount() > 0) {
+            Finish3.getColumnModel().getColumn(1).setResizable(false);
+            Finish3.getColumnModel().getColumn(1).setPreferredWidth(7);
+        }
 
         javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
         jPanel10.setLayout(jPanel10Layout);
@@ -1705,25 +1759,25 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel10Layout.createSequentialGroup()
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(18, 18, 18)
                         .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane56, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane57, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                            .addComponent(jScrollPane56, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane57, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(31, Short.MAX_VALUE))
+                        .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(30, Short.MAX_VALUE))
         );
 
         jTabbedPane1.addTab("Seco", jPanel10);
@@ -1732,14 +1786,17 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Sweet1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Azúcar-Mor", null},
-                {"  Melaza", null},
-                {"  Jarab-mapl", null},
-                {"  Caramelo", null},
-                {"  Miel", null},
-                {"Vainilla", null}
+                {"   Melaza", null},
+                {"   Jarab-mapl", null},
+                {"   Caramelo", null},
+                {"   Miel", null},
+                {"Vainilla", null},
+                {"Arom-Vaini", null},
+                {"Dulce-Gene", null},
+                {"Arom-dulce", null}
             },
             new String [] {
-                "1 Dulce", "Inten."
+                "1 Dulce", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1756,18 +1813,23 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane17.setViewportView(Sweet1);
+        if (Sweet1.getColumnModel().getColumnCount() > 0) {
+            Sweet1.getColumnModel().getColumn(0).setResizable(false);
+            Sweet1.getColumnModel().getColumn(1).setResizable(false);
+            Sweet1.getColumnModel().getColumn(1).setPreferredWidth(7);
+        }
 
         Floral1.setBackground(new java.awt.Color(255, 153, 102));
         Floral1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Té-Negro", null},
                 {"Floral", null},
-                {"  Manzanilla", null},
-                {"  Rosa", null},
-                {"  Jazmine", null}
+                {"   Manzanilla", null},
+                {"   Rosa", null},
+                {"   Jazmine", null}
             },
             new String [] {
-                "2 Floral", "Inten."
+                "2 Floral", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1785,35 +1847,39 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane6.setViewportView(Floral1);
+        if (Floral1.getColumnModel().getColumnCount() > 0) {
+            Floral1.getColumnModel().getColumn(1).setResizable(false);
+            Floral1.getColumnModel().getColumn(1).setPreferredWidth(7);
+        }
 
         Fruit1.setBackground(new java.awt.Color(255, 204, 0));
         Fruit1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Bayas", null},
-                {"  Moras", null},
-                {"  Frambuesa", null},
-                {"  Arándano", null},
-                {"  Fresa", null},
+                {"   Moras", null},
+                {"   Frambuesa", null},
+                {"   Arándano", null},
+                {"   Fresa", null},
                 {"Fruto-sec", null},
-                {"  Pasas", null},
-                {"  Ciruel-pas", null},
+                {"   Pasas", null},
+                {"   Ciruel-pas", null},
                 {"Otras-frut", null},
-                {"  Coco", null},
-                {"  Cereza", null},
-                {"  Granada", null},
-                {"  Piña", null},
-                {"  Uvas", null},
-                {"  Manzana", null},
-                {"  Durazno", null},
-                {"  Pera", null},
+                {"   Coco", null},
+                {"   Cereza", null},
+                {"   Granada", null},
+                {"   Piña", null},
+                {"   Uvas", null},
+                {"   Manzana", null},
+                {"   Durazno", null},
+                {"   Pera", null},
                 {"Citricos", null},
-                {"  Toronja", null},
-                {"  Naranja", null},
-                {"  Limon", null},
-                {"  Lima", null}
+                {"   Toronja", null},
+                {"   Naranja", null},
+                {"   Limon", null},
+                {"   Lima", null}
             },
             new String [] {
-                "3 Afrutado", "Inten."
+                "3 Afrutado", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1830,25 +1896,29 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane7.setViewportView(Fruit1);
+        if (Fruit1.getColumnModel().getColumnCount() > 0) {
+            Fruit1.getColumnModel().getColumn(1).setResizable(false);
+            Fruit1.getColumnModel().getColumn(1).setPreferredWidth(7);
+        }
 
         SourFer1.setBackground(new java.awt.Color(255, 255, 153));
         SourFer1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Acido", null},
-                {"  Arom-acido", null},
-                {"  Acido-acét", null},
-                {"  Acido-butí", null},
-                {"  Acido-isoc", null},
-                {"  Acido-cítr", null},
-                {"  Acido-máli", null},
+                {"   Arom-acido", null},
+                {"   Acido-acét", null},
+                {"   Acido-butí", null},
+                {"   Acido-isoc", null},
+                {"   Acido-cítr", null},
+                {"   Acido-máli", null},
                 {"Alcoh/Ferm", null},
-                {"  Vinoso", null},
-                {"  Whisky", null},
-                {"  Fermentado", null},
-                {"  Super-madu", null}
+                {"   Vinoso", null},
+                {"   Whisky", null},
+                {"   Fermentado", null},
+                {"   Super-madu", null}
             },
             new String [] {
-                "4 Acido/Fermentado", "Inten."
+                "4 Acido/Fermentado", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1865,6 +1935,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane8.setViewportView(SourFer1);
+        if (SourFer1.getColumnModel().getColumnCount() > 0) {
+            SourFer1.getColumnModel().getColumn(0).setResizable(false);
+            SourFer1.getColumnModel().getColumn(1).setResizable(false);
+            SourFer1.getColumnModel().getColumn(1).setPreferredWidth(7);
+        }
 
         GreenVeg1.setBackground(new java.awt.Color(102, 255, 102));
         GreenVeg1.setModel(new javax.swing.table.DefaultTableModel(
@@ -1872,17 +1947,17 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Aceit-Oliv", null},
                 {"Crudo", null},
                 {"Verde/Vege", null},
-                {"  Inmaduro", null},
-                {"  Vaina", null},
-                {"  Fresco", null},
-                {"  Verde-oscu", null},
-                {"  Vegetal", null},
-                {"  Paja", null},
-                {"  Herbaceo", null},
+                {"   Inmaduro", null},
+                {"   Vaina", null},
+                {"   Fresco", null},
+                {"   Verde-oscu", null},
+                {"   Vegetal", null},
+                {"   Paja", null},
+                {"   Herbaceo", null},
                 {"Leguminoso", null}
             },
             new String [] {
-                "5 Verde/Vegetal", "Inten."
+                "5 Verde/Vegetal", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1899,31 +1974,36 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane18.setViewportView(GreenVeg1);
+        if (GreenVeg1.getColumnModel().getColumnCount() > 0) {
+            GreenVeg1.getColumnModel().getColumn(0).setResizable(false);
+            GreenVeg1.getColumnModel().getColumn(1).setResizable(false);
+            GreenVeg1.getColumnModel().getColumn(1).setPreferredWidth(7);
+        }
 
         Other1.setBackground(new java.awt.Color(51, 255, 255));
         Other1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Papel/Hume", null},
-                {"  Rancio", null},
-                {"  Carton", null},
-                {"  Papel", null},
-                {"  Madera", null},
-                {"  Mohoso", null},
-                {"  Polvo-hume", null},
-                {"  Tierra", null},
-                {"  Cuero", null},
-                {"  Carne/cald", null},
-                {"  Fenolico", null},
+                {"   Rancio", null},
+                {"   Carton", null},
+                {"   Papel", null},
+                {"   Madera", null},
+                {"   Mohoso", null},
+                {"   Polvo-hume", null},
+                {"   Tierra", null},
+                {"   Cuero", null},
+                {"   Carne/cald", null},
+                {"   Fenolico", null},
                 {"Quimico", null},
-                {"  Amargo", null},
-                {"  Salado", null},
-                {"  Medicinal", null},
-                {"  Petroleo", null},
-                {"  Zorrillo", null},
-                {"  Goma", null}
+                {"   Amargo", null},
+                {"   Salado", null},
+                {"   Medicinal", null},
+                {"   Petroleo", null},
+                {"   Zorrillo", null},
+                {"   Goma", null}
             },
             new String [] {
-                "6 Otros", "Inten."
+                "6 Otros", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1940,6 +2020,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane19.setViewportView(Other1);
+        if (Other1.getColumnModel().getColumnCount() > 0) {
+            Other1.getColumnModel().getColumn(0).setResizable(false);
+            Other1.getColumnModel().getColumn(1).setResizable(false);
+            Other1.getColumnModel().getColumn(1).setPreferredWidth(7);
+        }
 
         Roasted1.setBackground(new java.awt.Color(0, 204, 255));
         Roasted1.setModel(new javax.swing.table.DefaultTableModel(
@@ -1947,16 +2032,16 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Tabac-pipa", null},
                 {"Tabaco", null},
                 {"Quemado", null},
-                {"  Acre", null},
-                {"  Ceniza", null},
-                {"  Humo", null},
-                {"  Marrón/tos", null},
+                {"   Acre", null},
+                {"   Ceniza", null},
+                {"   Humo", null},
+                {"   Marrón/tos", null},
                 {"Cereal", null},
-                {"  Grano", null},
-                {"  Malta", null}
+                {"   Grano", null},
+                {"   Malta", null}
             },
             new String [] {
-                "7 Tostado", "Inten."
+                "7 Tostado", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -1973,20 +2058,25 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane20.setViewportView(Roasted1);
+        if (Roasted1.getColumnModel().getColumnCount() > 0) {
+            Roasted1.getColumnModel().getColumn(0).setResizable(false);
+            Roasted1.getColumnModel().getColumn(1).setResizable(false);
+            Roasted1.getColumnModel().getColumn(1).setPreferredWidth(7);
+        }
 
         Spices1.setBackground(new java.awt.Color(153, 153, 255));
         Spices1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Acre", null},
                 {"Pimienta", null},
-                {"Especias marrones", null},
-                {"  Anis", null},
-                {"  Nuez moscada", null},
-                {"  Canela", null},
-                {"  Clavo de olor", null}
+                {"Especias-mo", null},
+                {"   Anis", null},
+                {"   Nuez-mosca", null},
+                {"   Canela", null},
+                {"   Clavo-olor", null}
             },
             new String [] {
-                "8 Especias", "Inten."
+                "8 Especias", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2003,20 +2093,25 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane21.setViewportView(Spices1);
+        if (Spices1.getColumnModel().getColumnCount() > 0) {
+            Spices1.getColumnModel().getColumn(0).setResizable(false);
+            Spices1.getColumnModel().getColumn(1).setResizable(false);
+            Spices1.getColumnModel().getColumn(1).setPreferredWidth(7);
+        }
 
         Nutty1.setBackground(new java.awt.Color(255, 102, 204));
         Nutty1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Nueces", null},
-                {"  Mani", null},
-                {"  Avellana", null},
-                {"  Almendra", null},
+                {"   Mani", null},
+                {"   Avellana", null},
+                {"   Almendra", null},
                 {"Cacao", null},
-                {"  Choocolate", null},
-                {"  Choc amargo", null}
+                {"   Choocolate", null},
+                {"   Choc-amarg", null}
             },
             new String [] {
-                "9 Nueces/Cacao", "Inten."
+                "9 Nueces/Cacao", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2033,6 +2128,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane22.setViewportView(Nutty1);
+        if (Nutty1.getColumnModel().getColumnCount() > 0) {
+            Nutty1.getColumnModel().getColumn(0).setResizable(false);
+            Nutty1.getColumnModel().getColumn(1).setResizable(false);
+            Nutty1.getColumnModel().getColumn(1).setPreferredWidth(7);
+        }
 
         Body4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2041,7 +2141,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Suave", null}
             },
             new String [] {
-                "10 Cuerpo", "Inten."
+                "10 Cuerpo", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2058,6 +2158,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane58.setViewportView(Body4);
+        if (Body4.getColumnModel().getColumnCount() > 0) {
+            Body4.getColumnModel().getColumn(0).setResizable(false);
+            Body4.getColumnModel().getColumn(1).setResizable(false);
+            Body4.getColumnModel().getColumn(1).setPreferredWidth(7);
+        }
 
         Finish4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -2067,7 +2172,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Granoso", null}
             },
             new String [] {
-                "11 Sabor Rem.", "Inten."
+                "11 Sabor Rem.", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -2084,6 +2189,10 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane59.setViewportView(Finish4);
+        if (Finish4.getColumnModel().getColumnCount() > 0) {
+            Finish4.getColumnModel().getColumn(1).setResizable(false);
+            Finish4.getColumnModel().getColumn(1).setPreferredWidth(7);
+        }
 
         javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
         jPanel11.setLayout(jPanel11Layout);
@@ -2120,16 +2229,16 @@ public class jdCatacion2 extends javax.swing.JFrame {
         jPanel11Layout.setVerticalGroup(
             jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel11Layout.createSequentialGroup()
-                .addGap(150, 150, 150)
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(164, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(168, Short.MAX_VALUE)
                 .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane58, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane59, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(jScrollPane58, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jScrollPane59, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel11Layout.createSequentialGroup()
+                                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(16, 16, 16)))
                         .addGap(80, 80, 80))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
                         .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2138,13 +2247,13 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 .addGroup(jPanel11Layout.createSequentialGroup()
                     .addGap(12, 12, 12)
                     .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 123, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addContainerGap(30, Short.MAX_VALUE)))
         );
 
@@ -2154,11 +2263,14 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Sweet2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Azúcar-Mor", null},
-                {"  Melaza", null},
-                {"  Jarab-mapl", null},
-                {"  Caramelo", null},
-                {"  Miel", null},
-                {"Vainilla", null}
+                {"   Melaza", null},
+                {"   Jarab-mapl", null},
+                {"   Caramelo", null},
+                {"   Miel", null},
+                {"Vainilla", null},
+                {"Arom-Vaini", null},
+                {"Dulce-Gene", null},
+                {"Arom-dulce", null}
             },
             new String [] {
                 "1 Dulce", "Inten."
@@ -2184,9 +2296,9 @@ public class jdCatacion2 extends javax.swing.JFrame {
             new Object [][] {
                 {"Té-Negro", null},
                 {"Floral", null},
-                {"  Manzanilla", null},
-                {"  Rosa", null},
-                {"  Jazmine", null}
+                {"   Manzanilla", null},
+                {"   Rosa", null},
+                {"   Jazmine", null}
             },
             new String [] {
                 "2 Flores", "Inten."
@@ -2212,27 +2324,27 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Fruit2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Bayas", null},
-                {"  Moras", null},
-                {"  Frambuesa", null},
-                {"  Arándano", null},
-                {"  Fresa", null},
+                {"   Moras", null},
+                {"   Frambuesa", null},
+                {"   Arándano", null},
+                {"   Fresa", null},
                 {"Fruto-sec", null},
-                {"  Pasas", null},
-                {"  Ciruel-pas", null},
+                {"   Pasas", null},
+                {"   Ciruel-pas", null},
                 {"Otras-frut", null},
-                {"  Coco", null},
-                {"  Cereza", null},
-                {"  Granada", null},
-                {"  Piña", null},
-                {"  Uvas", null},
-                {"  Manzana", null},
-                {"  Durazno", null},
-                {"  Pera", null},
+                {"   Coco", null},
+                {"   Cereza", null},
+                {"   Granada", null},
+                {"   Piña", null},
+                {"   Uvas", null},
+                {"   Manzana", null},
+                {"   Durazno", null},
+                {"   Pera", null},
                 {"Citricos", null},
-                {"  Toronja", null},
-                {"  Naranja", null},
-                {"  Limon", null},
-                {"  Lima", null}
+                {"   Toronja", null},
+                {"   Naranja", null},
+                {"   Limon", null},
+                {"   Lima", null}
             },
             new String [] {
                 "3 Afrutado", "Inten."
@@ -2257,17 +2369,17 @@ public class jdCatacion2 extends javax.swing.JFrame {
         SourFer2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Acido", null},
-                {"  Arom-acido", null},
-                {"  Acido-acét", null},
-                {"  Acido-butí", null},
-                {"  Acido-isoc", null},
-                {"  Acido-cítr", null},
-                {"  Acido-máli", null},
+                {"   Arom-acido", null},
+                {"   Acido-acét", null},
+                {"   Acido-butí", null},
+                {"   Acido-isoc", null},
+                {"   Acido-cítr", null},
+                {"   Acido-máli", null},
                 {"Alcoh/Ferm", null},
-                {"  Vinoso", null},
-                {"  Whisky", null},
-                {"  Fermentado", null},
-                {"  Super-madu", null}
+                {"   Vinoso", null},
+                {"   Whisky", null},
+                {"   Fermentado", null},
+                {"   Super-madu", null}
             },
             new String [] {
                 "4 Acido/Fermentado", "Inten."
@@ -2294,13 +2406,13 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Aceit-Oliv", null},
                 {"Crudo", null},
                 {"Verde/Vege", null},
-                {"  Inmaduro", null},
-                {"  Vaina", null},
-                {"  Fresco", null},
-                {"  Verde-oscu", null},
-                {"  Vegetal", null},
-                {"  Paja", null},
-                {"  Herbaceo", null},
+                {"   Inmaduro", null},
+                {"   Vaina", null},
+                {"   Fresco", null},
+                {"   Verde-oscu", null},
+                {"   Vegetal", null},
+                {"   Paja", null},
+                {"   Herbaceo", null},
                 {"Leguminoso", null}
             },
             new String [] {
@@ -2326,23 +2438,23 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Other2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Papel/Hume", null},
-                {"  Rancio", null},
-                {"  Carton", null},
-                {"  Papel", null},
-                {"  Madera", null},
-                {"  Mohoso", null},
-                {"  Polvo-hume", null},
-                {"  Tierra", null},
-                {"  Cuero", null},
-                {"  Carne/cald", null},
-                {"  Fenolico", null},
+                {"   Rancio", null},
+                {"   Carton", null},
+                {"   Papel", null},
+                {"   Madera", null},
+                {"   Mohoso", null},
+                {"   Polvo-hume", null},
+                {"   Tierra", null},
+                {"   Cuero", null},
+                {"   Carne/cald", null},
+                {"   Fenolico", null},
                 {"Quimico", null},
-                {"  Amargo", null},
-                {"  Salado", null},
-                {"  Medicinal", null},
-                {"  Petroleo", null},
-                {"  Zorrillo", null},
-                {"  Goma", null}
+                {"   Amargo", null},
+                {"   Salado", null},
+                {"   Medicinal", null},
+                {"   Petroleo", null},
+                {"   Zorrillo", null},
+                {"   Goma", null}
             },
             new String [] {
                 "6 Otros", "Inten."
@@ -2369,13 +2481,13 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Tabac-pipa", null},
                 {"Tabaco", null},
                 {"Quemado", null},
-                {"  Acre", null},
-                {"  Ceniza", null},
-                {"  Humo", null},
-                {"  Marrón/tos", null},
+                {"   Acre", null},
+                {"   Ceniza", null},
+                {"   Humo", null},
+                {"   Marrón/tos", null},
                 {"Cereal", null},
-                {"  Grano", null},
-                {"  Malta", null}
+                {"   Grano", null},
+                {"   Malta", null}
             },
             new String [] {
                 "7 Tostado", "Inten."
@@ -2401,11 +2513,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
             new Object [][] {
                 {"Acre", null},
                 {"Pimienta", null},
-                {"Especias marrones", null},
-                {"  Anis", null},
-                {"  Nuez moscada", null},
-                {"  Canela", null},
-                {"  Clavo de olor", null}
+                {"Especias-mo", null},
+                {"   Anis", null},
+                {"   Nuez-mosca", null},
+                {"   Canela", null},
+                {"   Clavo-olor", null}
             },
             new String [] {
                 "8 Especias", "Inten."
@@ -2430,12 +2542,12 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Nutty2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Nueces", null},
-                {"  Mani", null},
-                {"  Avellana", null},
-                {"  Almendra", null},
+                {"   Mani", null},
+                {"   Avellana", null},
+                {"   Almendra", null},
                 {"Cacao", null},
-                {"  Chocolate", null},
-                {"  Choc amargo", null}
+                {"   Chocolate", null},
+                {"   Choc-amarg", null}
             },
             new String [] {
                 "9 Nueces/Cacao", "Inten."
@@ -2542,19 +2654,19 @@ public class jdCatacion2 extends javax.swing.JFrame {
         jPanel12Layout.setVerticalGroup(
             jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap(159, Short.MAX_VALUE)
+                .addContainerGap(171, Short.MAX_VALUE)
                 .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
                         .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(110, 110, 110))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
-                        .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(154, 154, 154))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
                         .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane61, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane60, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(78, 78, 78))))
+                        .addGap(78, 78, 78))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
+                        .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(114, 114, 114))))
             .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel12Layout.createSequentialGroup()
                     .addGap(12, 12, 12)
@@ -2562,10 +2674,10 @@ public class jdCatacion2 extends javax.swing.JFrame {
                         .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jScrollPane26, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addContainerGap(29, Short.MAX_VALUE)))
         );
 
@@ -2575,11 +2687,14 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Sweet3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Azúcar-Mor", null},
-                {"  Melaza", null},
-                {"  Jarab-mapl", null},
-                {"  Caramelo", null},
-                {"  Miel", null},
-                {"Vainilla", null}
+                {"   Melaza", null},
+                {"   Jarab-mapl", null},
+                {"   Caramelo", null},
+                {"   Miel", null},
+                {"Vainilla", null},
+                {"Arom-Vaini", null},
+                {"Dulce-Gene", null},
+                {"Arom-dulce", null}
             },
             new String [] {
                 "1 Dulce", "Inten."
@@ -2605,9 +2720,9 @@ public class jdCatacion2 extends javax.swing.JFrame {
             new Object [][] {
                 {"Té-Negro", null},
                 {"Floral", null},
-                {"  Manzanilla", null},
-                {"  Rosa", null},
-                {"  Jazmine", null}
+                {"   Manzanilla", null},
+                {"   Rosa", null},
+                {"   Jazmine", null}
             },
             new String [] {
                 "2 Floral", "Inten."
@@ -2633,27 +2748,27 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Fruit3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Bayas", null},
-                {"  Moras", null},
-                {"  Frambuesa", null},
-                {"  Arándano", null},
-                {"  Fresa", null},
+                {"   Moras", null},
+                {"   Frambuesa", null},
+                {"   Arándano", null},
+                {"   Fresa", null},
                 {"Fruto-sec", null},
-                {"  Pasas", null},
-                {"  Ciruel-pas", null},
+                {"   Pasas", null},
+                {"   Ciruel-pas", null},
                 {"Otras-frut", null},
-                {"  Coco", null},
-                {"  Cereza", null},
-                {"  Granada", null},
-                {"  Piña", null},
-                {"  Uvas", null},
-                {"  Manzana", null},
-                {"  Durazno", null},
-                {"  Pera", null},
+                {"   Coco", null},
+                {"   Cereza", null},
+                {"   Granada", null},
+                {"   Piña", null},
+                {"   Uvas", null},
+                {"   Manzana", null},
+                {"   Durazno", null},
+                {"   Pera", null},
                 {"Citricos", null},
-                {"  Toronja", null},
-                {"  Naranja", null},
-                {"  Limon", null},
-                {"  Lima", null}
+                {"   Toronja", null},
+                {"   Naranja", null},
+                {"   Limon", null},
+                {"   Lima", null}
             },
             new String [] {
                 "3 Afrutado", "Inten."
@@ -2678,17 +2793,17 @@ public class jdCatacion2 extends javax.swing.JFrame {
         SourFer3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Acido", null},
-                {"  Arom-acido", null},
-                {"  Acido-acét", null},
-                {"  Acido-butí", null},
-                {"  Acido-isoc", null},
-                {"  Acido-cítr", null},
-                {"  Acido-máli", null},
+                {"   Arom-acido", null},
+                {"   Acido-acét", null},
+                {"   Acido-butí", null},
+                {"   Acido-isoc", null},
+                {"   Acido-cítr", null},
+                {"   Acido-máli", null},
                 {"Alcoh/Ferm", null},
-                {"  Vinoso", null},
-                {"  Whisky", null},
-                {"  Fermentado", null},
-                {"  Super-madu", null}
+                {"   Vinoso", null},
+                {"   Whisky", null},
+                {"   Fermentado", null},
+                {"   Super-madu", null}
             },
             new String [] {
                 "4 Acido/Fermentado", "Inten."
@@ -2715,13 +2830,13 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Aceit-Oliv", null},
                 {"Crudo", null},
                 {"Verde/Vege", null},
-                {"  Inmaduro", null},
-                {"  Vaina", null},
-                {"  Fresco", null},
-                {"  Verde-oscu", null},
-                {"  Vegetal", null},
-                {"  Paja", null},
-                {"  Herbaceo", null},
+                {"   Inmaduro", null},
+                {"   Vaina", null},
+                {"   Fresco", null},
+                {"   Verde-oscu", null},
+                {"   Vegetal", null},
+                {"   Paja", null},
+                {"   Herbaceo", null},
                 {"Leguminoso", null}
             },
             new String [] {
@@ -2747,23 +2862,23 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Other3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Papel/Hume", null},
-                {"  Rancio", null},
-                {"  Carton", null},
-                {"  Papel", null},
-                {"  Madera", null},
-                {"  Mohoso", null},
-                {"  Polvo-hume", null},
-                {"  Tierra", null},
-                {"  Cuero", null},
-                {"  Carne/cald", null},
-                {"  Fenolico", null},
+                {"   Rancio", null},
+                {"   Carton", null},
+                {"   Papel", null},
+                {"   Madera", null},
+                {"   Mohoso", null},
+                {"   Polvo-hume", null},
+                {"   Tierra", null},
+                {"   Cuero", null},
+                {"   Carne/cald", null},
+                {"   Fenolico", null},
                 {"Quimico", null},
-                {"  Amargo", null},
-                {"  Salado", null},
-                {"  Medicinal", null},
-                {"  Petroleo", null},
-                {"  Zorrillo", null},
-                {"  Goma", null}
+                {"   Amargo", null},
+                {"   Salado", null},
+                {"   Medicinal", null},
+                {"   Petroleo", null},
+                {"   Zorrillo", null},
+                {"   Goma", null}
             },
             new String [] {
                 "6 Otros", "Inten."
@@ -2790,13 +2905,13 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Tabac-pipa", null},
                 {"Tabaco", null},
                 {"Quemado", null},
-                {"  Acre", null},
-                {"  Ceniza", null},
-                {"  Humo", null},
-                {"  Marrón/tos", null},
+                {"   Acre", null},
+                {"   Ceniza", null},
+                {"   Humo", null},
+                {"   Marrón/tos", null},
                 {"Cereal", null},
-                {"  Grano", null},
-                {"  Malta", null}
+                {"   Grano", null},
+                {"   Malta", null}
             },
             new String [] {
                 "7 Tostado", "Inten."
@@ -2822,11 +2937,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
             new Object [][] {
                 {"Acre", null},
                 {"Pimienta", null},
-                {"Especias marrones", null},
-                {"  Anis", null},
-                {"  Nuez moscada", null},
-                {"  Canela", null},
-                {"  Clavo de olor", null}
+                {"Especias-mo", null},
+                {"   Anis", null},
+                {"   Nuez-mosca", null},
+                {"   Canela", null},
+                {"   Clavo-olor", null}
             },
             new String [] {
                 "8 Especias", "Inten."
@@ -2851,12 +2966,12 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Nutty3.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Nueces", null},
-                {"  Mani", null},
-                {"  Avellana", null},
-                {"  Almendra", null},
+                {"   Mani", null},
+                {"   Avellana", null},
+                {"   Almendra", null},
                 {"Cacao", null},
-                {"  Chocolate", null},
-                {"  Choc amargo", null}
+                {"   Chocolate", null},
+                {"   Choc-amarg", null}
             },
             new String [] {
                 "9 Nueces/Cacao", "Inten."
@@ -2963,11 +3078,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         jPanel13Layout.setVerticalGroup(
             jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel13Layout.createSequentialGroup()
-                .addGap(151, 151, 151)
-                .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(162, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap(172, Short.MAX_VALUE)
                 .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
                         .addComponent(jScrollPane40, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -2976,18 +3087,21 @@ public class jdCatacion2 extends javax.swing.JFrame {
                         .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(jScrollPane63, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane62, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(80, 80, 80))))
+                        .addGap(80, 80, 80))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
+                        .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(106, 106, 106))))
             .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel13Layout.createSequentialGroup()
                     .addGap(12, 12, 12)
                     .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jScrollPane34, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jScrollPane37, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jScrollPane38, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane39, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane39, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addContainerGap(29, Short.MAX_VALUE)))
         );
 
@@ -2997,11 +3111,14 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Sweet4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Azúcar-Mor", null},
-                {"  Melaza", null},
-                {"  Jarab-mapl", null},
-                {"  Caramelo", null},
-                {"  Miel", null},
-                {"Vainilla", null}
+                {"   Melaza", null},
+                {"   Jarab-mapl", null},
+                {"   Caramelo", null},
+                {"   Miel", null},
+                {"Vainilla", null},
+                {"Arom-Vaini", null},
+                {"Dulce-Gene", null},
+                {"Arom-dulce", null}
             },
             new String [] {
                 "1 Dulce", "Inten."
@@ -3027,9 +3144,9 @@ public class jdCatacion2 extends javax.swing.JFrame {
             new Object [][] {
                 {"Té-Negro", null},
                 {"Floral", null},
-                {"  Manzanilla", null},
-                {"  Rosa", null},
-                {"  Jazmine", null}
+                {"   Manzanilla", null},
+                {"   Rosa", null},
+                {"   Jazmine", null}
             },
             new String [] {
                 "2 Floral", "Inten."
@@ -3055,27 +3172,27 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Fruit4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Bayas", null},
-                {"  Moras", null},
-                {"  Frambuesa", null},
-                {"  Arándano", null},
-                {"  Fresa", null},
+                {"   Moras", null},
+                {"   Frambuesa", null},
+                {"   Arándano", null},
+                {"   Fresa", null},
                 {"Fruto-sec", null},
-                {"  Pasas", null},
-                {"  Ciruel-pas", null},
+                {"   Pasas", null},
+                {"   Ciruel-pas", null},
                 {"Otras-frut", null},
-                {"  Coco", null},
-                {"  Cereza", null},
-                {"  Granada", null},
-                {"  Piña", null},
-                {"  Uvas", null},
-                {"  Manzana", null},
-                {"  Durazno", null},
-                {"  Pera", null},
+                {"   Coco", null},
+                {"   Cereza", null},
+                {"   Granada", null},
+                {"   Piña", null},
+                {"   Uvas", null},
+                {"   Manzana", null},
+                {"   Durazno", null},
+                {"   Pera", null},
                 {"Citricos", null},
-                {"  Toronja", null},
-                {"  Naranja", null},
-                {"  Limon", null},
-                {"  Lima", null}
+                {"   Toronja", null},
+                {"   Naranja", null},
+                {"   Limon", null},
+                {"   Lima", null}
             },
             new String [] {
                 "3 Afrutado", "Inten."
@@ -3137,13 +3254,13 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Aceit-Oliv", null},
                 {"Crudo", null},
                 {"Verde/Vege", null},
-                {"  Inmaduro", null},
-                {"  Vaina", null},
-                {"  Fresco", null},
-                {"  Verde-oscu", null},
-                {"  Vegetal", null},
-                {"  Paja", null},
-                {"  Herbaceo", null},
+                {"   Inmaduro", null},
+                {"   Vaina", null},
+                {"   Fresco", null},
+                {"   Verde-oscu", null},
+                {"   Vegetal", null},
+                {"   Paja", null},
+                {"   Herbaceo", null},
                 {"Leguminoso", null}
             },
             new String [] {
@@ -3220,23 +3337,23 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Other4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Papel/Hume", null},
-                {"  Rancio", null},
-                {"  Carton", null},
-                {"  Papel", null},
-                {"  Madera", null},
-                {"  Mohoso", null},
-                {"  Polvo-hume", null},
-                {"  Tierra", null},
-                {"  Cuero", null},
-                {"  Carne/cald", null},
-                {"  Fenolico", null},
+                {"   Rancio", null},
+                {"   Carton", null},
+                {"   Papel", null},
+                {"   Madera", null},
+                {"   Mohoso", null},
+                {"   Polvo-hume", null},
+                {"   Tierra", null},
+                {"   Cuero", null},
+                {"   Carne/cald", null},
+                {"   Fenolico", null},
                 {"Quimico", null},
-                {"  Amargo", null},
-                {"  Salado", null},
-                {"  Medicinal", null},
-                {"  Petroleo", null},
-                {"  Zorrillo", null},
-                {"  Goma", null}
+                {"   Amargo", null},
+                {"   Salado", null},
+                {"   Medicinal", null},
+                {"   Petroleo", null},
+                {"   Zorrillo", null},
+                {"   Goma", null}
             },
             new String [] {
                 "6 Otros", "Inten."
@@ -3263,13 +3380,13 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Tabac-pipa", null},
                 {"Tabaco", null},
                 {"Quemado", null},
-                {"  Acre", null},
-                {"  Ceniza", null},
-                {"  Humo", null},
-                {"  Marrón/tos", null},
+                {"   Acre", null},
+                {"   Ceniza", null},
+                {"   Humo", null},
+                {"   Marrón/tos", null},
                 {"Cereal", null},
-                {"  Grano", null},
-                {"  Malta", null}
+                {"   Grano", null},
+                {"   Malta", null}
             },
             new String [] {
                 "7 Tostado", "Inten."
@@ -3295,11 +3412,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
             new Object [][] {
                 {"Acre", null},
                 {"Pimienta", null},
-                {"Especias marrones", null},
-                {"  Anis", null},
-                {"  Nuez moscada", null},
-                {"  Canela", null},
-                {"  Clavo de olor", null}
+                {"Especias-mo", null},
+                {"   Anis", null},
+                {"   Nuez-mosca", null},
+                {"   Canela", null},
+                {"   Clavo-olor", null}
             },
             new String [] {
                 "8 Especias", "Inten."
@@ -3324,12 +3441,12 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Nutty4.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Nueces", null},
-                {"  Mani", null},
-                {"  Avellana", null},
-                {"  Almendra", null},
+                {"   Mani", null},
+                {"   Avellana", null},
+                {"   Almendra", null},
                 {"Cacao", null},
-                {"  Chocolate", null},
-                {"  Choc amargo", null}
+                {"   Chocolate", null},
+                {"   Choc-amarg", null}
             },
             new String [] {
                 "9 Nueces/Cacao", "Inten."
@@ -3401,7 +3518,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                             .addComponent(jScrollPane46, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane47, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addComponent(jScrollPane41, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane41, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane42, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane43, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -3414,17 +3531,17 @@ public class jdCatacion2 extends javax.swing.JFrame {
         SourFer5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Acido", null},
-                {"  Arom-acido", null},
-                {"  Acido-acét", null},
-                {"  Acido-butí", null},
-                {"  Acido-isoc", null},
-                {"  Acido-cítr", null},
-                {"  Acido-máli", null},
+                {"   Arom-acido", null},
+                {"   Acido-acét", null},
+                {"   Acido-butí", null},
+                {"   Acido-isoc", null},
+                {"   Acido-cítr", null},
+                {"   Acido-máli", null},
                 {"Alcoh/Ferm", null},
-                {"  Vinoso", null},
-                {"  Whisky", null},
-                {"  Fermentado", null},
-                {"  Super-madu", null}
+                {"   Vinoso", null},
+                {"   Whisky", null},
+                {"   Fermentado", null},
+                {"   Super-madu", null}
             },
             new String [] {
                 "4 Acido/Fermentado", "Inten."
@@ -3449,11 +3566,14 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Sweet5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Azúcar-Mor", null},
-                {"  Melaza", null},
-                {"  Jarab-mapl", null},
-                {"  Caramelo", null},
-                {"  Miel", null},
-                {"Vainilla", null}
+                {"   Melaza", null},
+                {"   Jarab-mapl", null},
+                {"   Caramelo", null},
+                {"   Miel", null},
+                {"Vainilla", null},
+                {"Arom-Vaini", null},
+                {"Dulce-Gene", null},
+                {"Arom-dulce", null}
             },
             new String [] {
                 "1 Dulce", "Inten."
@@ -3479,9 +3599,9 @@ public class jdCatacion2 extends javax.swing.JFrame {
             new Object [][] {
                 {"Té-Negro", null},
                 {"Floral", null},
-                {"  Manzanilla", null},
-                {"  Rosa", null},
-                {"  Jazmine", null}
+                {"   Manzanilla", null},
+                {"   Rosa", null},
+                {"   Jazmine", null}
             },
             new String [] {
                 "2 Floral", "Inten."
@@ -3507,27 +3627,27 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Fruit5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Bayas", null},
-                {"  Moras", null},
-                {"  Frambuesa", null},
-                {"  Arándano", null},
-                {"  Fresa", null},
+                {"   Moras", null},
+                {"   Frambuesa", null},
+                {"   Arándano", null},
+                {"   Fresa", null},
                 {"Fruto-sec", null},
-                {"  Pasas", null},
-                {"  Ciruel-pas", null},
+                {"   Pasas", null},
+                {"   Ciruel-pas", null},
                 {"Otras-frut", null},
-                {"  Coco", null},
-                {"  Cereza", null},
-                {"  Granada", null},
-                {"  Piña", null},
-                {"  Uvas", null},
-                {"  Manzana", null},
-                {"  Durazno", null},
-                {"  Pera", null},
+                {"   Coco", null},
+                {"   Cereza", null},
+                {"   Granada", null},
+                {"   Piña", null},
+                {"   Uvas", null},
+                {"   Manzana", null},
+                {"   Durazno", null},
+                {"   Pera", null},
                 {"Citricos", null},
-                {"  Toronja", null},
-                {"  Naranja", null},
-                {"  Limon", null},
-                {"  Lima", null}
+                {"   Toronja", null},
+                {"   Naranja", null},
+                {"   Limon", null},
+                {"   Lima", null}
             },
             new String [] {
                 "3 Afrutado", "Inten."
@@ -3554,13 +3674,13 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Aceit-Oliv", null},
                 {"Crudo", null},
                 {"Verde/Vege", null},
-                {"  Inmaduro", null},
-                {"  Vaina", null},
-                {"  Fresco", null},
-                {"  Verde-oscu", null},
-                {"  Vegetal", null},
-                {"  Paja", null},
-                {"  Herbaceo", null},
+                {"   Inmaduro", null},
+                {"   Vaina", null},
+                {"   Fresco", null},
+                {"   Verde-oscu", null},
+                {"   Vegetal", null},
+                {"   Paja", null},
+                {"   Herbaceo", null},
                 {"Leguminoso", null}
             },
             new String [] {
@@ -3637,23 +3757,23 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Other5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Papel/Hume", null},
-                {"  Rancio", null},
-                {"  Carton", null},
-                {"  Papel", null},
-                {"  Madera", null},
-                {"  Mohoso", null},
-                {"  Polvo-hume", null},
-                {"  Tierra", null},
-                {"  Cuero", null},
-                {"  Carne/cald", null},
-                {"  Fenolico", null},
+                {"   Rancio", null},
+                {"   Carton", null},
+                {"   Papel", null},
+                {"   Madera", null},
+                {"   Mohoso", null},
+                {"   Polvo-hume", null},
+                {"   Tierra", null},
+                {"   Cuero", null},
+                {"   Carne/cald", null},
+                {"   Fenolico", null},
                 {"Quimico", null},
-                {"  Amargo", null},
-                {"  Salado", null},
-                {"  Medicinal", null},
-                {"  Petroleo", null},
-                {"  Zorrillo", null},
-                {"  Goma", null}
+                {"   Amargo", null},
+                {"   Salado", null},
+                {"   Medicinal", null},
+                {"   Petroleo", null},
+                {"   Zorrillo", null},
+                {"   Goma", null}
             },
             new String [] {
                 "6 Otros", "Inten."
@@ -3680,13 +3800,13 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Tabac-pipa", null},
                 {"Tabaco", null},
                 {"Quemado", null},
-                {"  Acre", null},
-                {"  Ceniza", null},
-                {"  Humo", null},
-                {"  Marrón/tos", null},
+                {"   Acre", null},
+                {"   Ceniza", null},
+                {"   Humo", null},
+                {"   Marrón/tos", null},
                 {"Cereal", null},
-                {"  Grano", null},
-                {"  Malta", null}
+                {"   Grano", null},
+                {"   Malta", null}
             },
             new String [] {
                 "7 Tostado", "Inten."
@@ -3712,11 +3832,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
             new Object [][] {
                 {"Acre", null},
                 {"Pimienta", null},
-                {"Especias marrones", null},
-                {"  Anis", null},
-                {"  Nuez moscada", null},
-                {"  Canela", null},
-                {"  Clavo de olor", null}
+                {"Especias-mo", null},
+                {"   Anis", null},
+                {"   Nuez-mosca", null},
+                {"   Canela", null},
+                {"   Clavo-olor", null}
             },
             new String [] {
                 "8 Especias", "Inten."
@@ -3741,12 +3861,12 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Nutty5.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Nueces", null},
-                {"  Mani", null},
-                {"  Avellana", null},
-                {"  Almendra", null},
+                {"   Mani", null},
+                {"   Avellana", null},
+                {"   Almendra", null},
                 {"Cacao", null},
-                {"  Chocolate", null},
-                {"  Choc amargo", null}
+                {"   Chocolate", null},
+                {"   Choc-amarg", null}
             },
             new String [] {
                 "9 Nueces/Cacao", "Inten."
@@ -3819,7 +3939,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                             .addComponent(jScrollPane67, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jScrollPane68, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addComponent(jScrollPane53, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane53, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane64, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jScrollPane65, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -3883,11 +4003,14 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Sweet6.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Azúcar-Mor", null},
-                {"  Melaza", null},
-                {"  Jarab-mapl", null},
-                {"  Caramelo", null},
-                {"  Miel", null},
-                {"Vainilla", null}
+                {"   Melaza", null},
+                {"   Jarab-mapl", null},
+                {"   Caramelo", null},
+                {"   Miel", null},
+                {"Vainilla", null},
+                {"Arom-Vaini", null},
+                {"Dulce-Gene", null},
+                {"Arom-dulce", null}
             },
             new String [] {
                 "1 Dulce", "Inten."
@@ -3913,9 +4036,9 @@ public class jdCatacion2 extends javax.swing.JFrame {
             new Object [][] {
                 {"Té-Negro", null},
                 {"Floral", null},
-                {"  Manzanilla", null},
-                {"  Rosa", null},
-                {"  Jazmine", null}
+                {"   Manzanilla", null},
+                {"   Rosa", null},
+                {"   Jazmine", null}
             },
             new String [] {
                 "2 Floral", "Inten."
@@ -3941,27 +4064,27 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Fruit6.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Bayas", null},
-                {"  Moras", null},
-                {"  Frambuesa", null},
-                {"  Arándano", null},
-                {"  Fresa", null},
+                {"   Moras", null},
+                {"   Frambuesa", null},
+                {"   Arándano", null},
+                {"   Fresa", null},
                 {"Fruto-sec", null},
-                {"  Pasas", null},
-                {"  Ciruel-pas", null},
+                {"   Pasas", null},
+                {"   Ciruel-pas", null},
                 {"Otras-frut", null},
-                {"  Coco", null},
-                {"  Cereza", null},
-                {"  Granada", null},
-                {"  Piña", null},
-                {"  Uvas", null},
-                {"  Manzana", null},
-                {"  Durazno", null},
-                {"  Pera", null},
+                {"   Coco", null},
+                {"   Cereza", null},
+                {"   Granada", null},
+                {"   Piña", null},
+                {"   Uvas", null},
+                {"   Manzana", null},
+                {"   Durazno", null},
+                {"   Pera", null},
                 {"Citricos", null},
-                {"  Toronja", null},
-                {"  Naranja", null},
-                {"  Limon", null},
-                {"  Lima", null}
+                {"   Toronja", null},
+                {"   Naranja", null},
+                {"   Limon", null},
+                {"   Lima", null}
             },
             new String [] {
                 "3 Afrutado", "Inten."
@@ -3986,17 +4109,17 @@ public class jdCatacion2 extends javax.swing.JFrame {
         SourFer6.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Acido", null},
-                {"  Arom-acido", null},
-                {"  Acido-acét", null},
-                {"  Acido-butí", null},
-                {"  Acido-isoc", null},
-                {"  Acido-cítr", null},
-                {"  Acido-máli", null},
+                {"   Arom-acido", null},
+                {"   Acido-acét", null},
+                {"   Acido-butí", null},
+                {"   Acido-isoc", null},
+                {"   Acido-cítr", null},
+                {"   Acido-máli", null},
                 {"Alcoh/Ferm", null},
-                {"  Vinoso", null},
-                {"  Whisky", null},
-                {"  Fermentado", null},
-                {"  Super-madu", null}
+                {"   Vinoso", null},
+                {"   Whisky", null},
+                {"   Fermentado", null},
+                {"   Super-madu", null}
             },
             new String [] {
                 "4 Acido/Fermentado", "Inten."
@@ -4023,13 +4146,13 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Aceit-Oliv", null},
                 {"Crudo", null},
                 {"Verde/Vege", null},
-                {"  Inmaduro", null},
-                {"  Vaina", null},
-                {"  Fresco", null},
-                {"  Verde-oscu", null},
-                {"  Vegetal", null},
-                {"  Paja", null},
-                {"  Herbaceo", null},
+                {"   Inmaduro", null},
+                {"   Vaina", null},
+                {"   Fresco", null},
+                {"   Verde-oscu", null},
+                {"   Vegetal", null},
+                {"   Paja", null},
+                {"   Herbaceo", null},
                 {"Leguminoso", null}
             },
             new String [] {
@@ -4055,23 +4178,23 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Other6.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Papel/Hume", null},
-                {"  Rancio", null},
-                {"  Carton", null},
-                {"  Papel", null},
-                {"  Madera", null},
-                {"  Mohoso", null},
-                {"  Polvo-hume", null},
-                {"  Tierra", null},
-                {"  Cuero", null},
-                {"  Carne/cald", null},
-                {"  Fenolico", null},
+                {"   Rancio", null},
+                {"   Carton", null},
+                {"   Papel", null},
+                {"   Madera", null},
+                {"   Mohoso", null},
+                {"   Polvo-hume", null},
+                {"   Tierra", null},
+                {"   Cuero", null},
+                {"   Carne/cald", null},
+                {"   Fenolico", null},
                 {"Quimico", null},
-                {"  Amargo", null},
-                {"  Salado", null},
-                {"  Medicinal", null},
-                {"  Petroleo", null},
-                {"  Zorrillo", null},
-                {"  Goma", null}
+                {"   Amargo", null},
+                {"   Salado", null},
+                {"   Medicinal", null},
+                {"   Petroleo", null},
+                {"   Zorrillo", null},
+                {"   Goma", null}
             },
             new String [] {
                 "6 Otros", "Inten."
@@ -4098,13 +4221,13 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Tabac-pipa", null},
                 {"Tabaco", null},
                 {"Quemado", null},
-                {"  Acre", null},
-                {"  Ceniza", null},
-                {"  Humo", null},
-                {"  Marrón/tos", null},
+                {"   Acre", null},
+                {"   Ceniza", null},
+                {"   Humo", null},
+                {"   Marrón/tos", null},
                 {"Cereal", null},
-                {"  Grano", null},
-                {"  Malta", null}
+                {"   Grano", null},
+                {"   Malta", null}
             },
             new String [] {
                 "7 Tostado", "Inten."
@@ -4130,11 +4253,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
             new Object [][] {
                 {"Acre", null},
                 {"Pimienta", null},
-                {"Especias marrones", null},
-                {"  Anis", null},
-                {"  Nuez moscada", null},
-                {"  Canela", null},
-                {"  Clavo de olor", null}
+                {"Especias-mo", null},
+                {"   Anis", null},
+                {"   Nuez-mosca", null},
+                {"   Canela", null},
+                {"   Clavo-olor", null}
             },
             new String [] {
                 "8 Especias", "Inten."
@@ -4159,12 +4282,12 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Nutty6.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Nueces", null},
-                {"  Mani", null},
-                {"  Avellana", null},
-                {"  Almendra", null},
+                {"   Mani", null},
+                {"   Avellana", null},
+                {"   Almendra", null},
                 {"Cacao", null},
-                {"  Chocolate", null},
-                {"  Choc amargo", null}
+                {"   Chocolate", null},
+                {"   Choc-amarg", null}
             },
             new String [] {
                 "9 Nueces/Cacao", "Inten."
@@ -4190,7 +4313,9 @@ public class jdCatacion2 extends javax.swing.JFrame {
         jPanel16Layout.setHorizontalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel16Layout.createSequentialGroup()
-                .addGap(313, 313, 313)
+                .addContainerGap()
+                .addComponent(jScrollPane74, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(152, 152, 152)
                 .addComponent(jScrollPane54, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jScrollPane55, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -4198,9 +4323,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
             .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel16Layout.createSequentialGroup()
                     .addGap(6, 6, 6)
-                    .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jScrollPane73, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addComponent(jScrollPane74, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jScrollPane73, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                     .addComponent(jScrollPane75, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -4219,12 +4342,17 @@ public class jdCatacion2 extends javax.swing.JFrame {
         );
         jPanel16Layout.setVerticalGroup(
             jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
-                .addContainerGap(251, Short.MAX_VALUE)
+            .addGroup(jPanel16Layout.createSequentialGroup()
+                .addContainerGap(208, Short.MAX_VALUE)
                 .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane55, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane54, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(77, 77, 77))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                        .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane55, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(jScrollPane54, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addGap(77, 77, 77))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel16Layout.createSequentialGroup()
+                        .addComponent(jScrollPane74, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(106, 106, 106))))
             .addGroup(jPanel16Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                 .addGroup(jPanel16Layout.createSequentialGroup()
                     .addGap(20, 20, 20)
@@ -4236,12 +4364,9 @@ public class jdCatacion2 extends javax.swing.JFrame {
                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                             .addComponent(jScrollPane81, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jScrollPane77, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGroup(jPanel16Layout.createSequentialGroup()
-                            .addComponent(jScrollPane73, javax.swing.GroupLayout.PREFERRED_SIZE, 124, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addGap(18, 18, 18)
-                            .addComponent(jScrollPane74, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addComponent(jScrollPane75, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane76, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jScrollPane76, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(jScrollPane73, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addContainerGap(21, Short.MAX_VALUE)))
         );
 
