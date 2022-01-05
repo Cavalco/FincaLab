@@ -1594,82 +1594,51 @@ public class creacionPDF {
 
         return table;
     }
-    
-    
-    
-    
-    /********************* BOLETA SALIDA BH ************************/
-    
-     public void pdfBoletaSalidaBH(String idBoleta, Object[][] contenido, String observaciones)
+
+    /**
+     * ******************* BOLETA SALIDA BH ***********************
+     */
+    public void pdfBoletaSalidaBH(String idBoleta)
             throws FileNotFoundException, DocumentException, SQLException {
 
         //JOptionPane.showMessageDialog(null, "Estoy en pfg boleta bh");
         String[] datos = mdb.devolverLineaDatos("SELECT\n"
-                + "    r.nombrecorto,\n"
-                + "    bh.nombrecorto,\n"
-                + "    b.fecha,\n"
-                + "    b.fechaBoletaManual,\n"
-                + "    b.idBoletaManual,\n"
+                + "    b.id,\n"
+                + "    b.idBeneficio,\n"
+                + "    b.idSociedad,\n"
+                + "    b.idLote,\n"
                 + "    b.idBoleta,\n"
-                + "    b.totalSacos,\n"
-                + "    b.totalKg,\n"
-                + "    b.descripcion,\n"
-                + "    b.transporteLimpio,\n"
                 + "    v.Nombre,\n"
                 + "    v.Placas,\n"
                 + "    v.Responsable,\n"
-                + "    b.horaactual,\n"
-                + "    b.horaBoletaManual,\n"
-                + "    be.idBoletaManual,\n"
-                + "    be.fechaBoletaManual,\n"
-                + "    be.fechaEntrada,\n"
-                + "    be.kgRecibidos,\n"
-                + "    be.costalesRecibidos,\n"
-                + "    pm.NombreCorto,\n"
-                + "    pm.razonsocial,\n"
-                + "    bh.telefono,\n"
-                + "    bh.domicilio,\n"
-                + "    l.Descripcion,\n"
-                + "    r.idRecepcion,\n"
-                + "    bh.nombre \n"
+                + "    b.fechaBoleta,\n"
+                + "    b.horaBoleta,\n"
+                + "    b.origen,\n"
+                + "    b.destino,\n"
+                + "    b.sacosEnviados,\n"
+                + "    b.kgEnviados\n"
                 + "FROM\n"
-                + "    boletaentradabh be\n"
-                + "LEFT JOIN boletasalidareceptor b ON\n"
-                + "    (b.idBoleta = be.idBoleta)\n"
-                + "LEFT JOIN vehiculo v ON\n"
-                + "    (v.ID = b.idTransporte)\n"
-                + "LEFT JOIN recepciones r ON\n"
-                + "    (r.idRecepcion = b.origen)\n"
-                + "LEFT JOIN beneficioshumedos bh ON\n"
-                + "    (bh.nombre = b.destino)\n"
-                + "LEFT JOIN personam pm ON\n"
-                + "    (pm.ID = bh.idSociedad)\n"
-                + "LEFT JOIN localidad l ON\n"
-                + "    (bh.idLocalidad = l.ID)\n"
+                + "    boletasalidabh b\n"
+                + "    LEFT JOIN vehiculo v ON (v.ID = b.idTransporte)\n"
                 + "WHERE\n"
-                + "    be.idBoleta = '" + idBoleta + "'\n"
-                + "GROUP BY\n"
-                + "    be.idBoleta", 27).split("¬");
+                + "    idBoleta = '" + idBoleta + "' ", 14).split("¬");
 
         JOptionPane.showMessageDialog(null, datos);
 
-        String nombreRecepcion = datos[0];
-        String nombreBeneficio = datos[1];
-        String totalSacos = datos[6];
-        String totalKilos = datos[7];
-        String vehiculo = datos[10];
-        String placas = datos[11];
-        String transportista = datos[12];
-        String fechaEntrada = datos[17];
-        String kgRecibidos = datos[18];
-        String costalesRecibidos = datos[19];
-        String sociedad = datos[20];
-        String razonSocial = datos[21];
-        String telefono = datos[22];
-        String domicilio = datos[23];
-        String localidad = datos[24];
-        String idRecepcion = datos[25];
-        String idBeneficio = datos[26];
+        String id = datos[0];
+        String idBeneficio = datos[1];
+        String idSociedad = datos[2];
+        String idLote = datos[3];
+        String idBoletaBD = datos[4];
+        String transporte = datos[5];
+        String placas = datos[6];
+        String responsable = datos[7];
+        String fechaBoleta = datos[8];
+        String horaBoleta = datos[9];
+        String origen = datos[10];
+        String destino = datos[11];
+        String sacos = datos[12];
+        String kg = datos[13];
 
         String capturista = mdb.devuelveUnDato("select CONCAT(pf.Nombre,' ',pf.ApellidoPaterno,' ',pf.ApellidoMaterno) \n"
                 + "from beneficioshumedos b\n"
@@ -1695,19 +1664,19 @@ public class creacionPDF {
         fuente2.setSize(9);
         fuente3.setSize(7);
 
-        Paragraph titulo = new Paragraph(razonSocial, fuente);
+        Paragraph titulo = new Paragraph("Productores Del Campo Café Aguacate Y Mas, S.P.R. De R.L", fuente);
         titulo.setAlignment(Element.ALIGN_CENTER);
         documento.add(titulo);
 
-        Paragraph ubicacion = new Paragraph(domicilio + " " + localidad, fuente2);
+        Paragraph ubicacion = new Paragraph("Conocido S/N El Cuarenteño, ", fuente2);
         ubicacion.setAlignment(Element.ALIGN_CENTER);
         documento.add(ubicacion);
 
-        Paragraph tel = new Paragraph(idioma.getProperty("Telefono") + " " + telefono, fuente2);
+        Paragraph tel = new Paragraph(idioma.getProperty("Telefono") + " " , fuente2);
         tel.setAlignment(Element.ALIGN_CENTER);
         documento.add(tel);
 
-        Paragraph horarioBoleta = new Paragraph(idioma.getProperty("Fecha") + " " + fechaEntrada, fuente2);
+        Paragraph horarioBoleta = new Paragraph(idioma.getProperty("Fecha") + " " + fechaBoleta, fuente2);
         horarioBoleta.setAlignment(Element.ALIGN_RIGHT);
         documento.add(horarioBoleta);
 
@@ -1719,25 +1688,101 @@ public class creacionPDF {
         numBoleta.setAlignment(Element.ALIGN_CENTER);
         documento.add(numBoleta);
 
-        Paragraph origenDestino = new Paragraph(idioma.getProperty("Origen") + " / " + nombreRecepcion + " " + idRecepcion + "\n" + idioma.getProperty("Destino") + " " + nombreBeneficio + " / " + idBeneficio, fuente2);
+        Paragraph origenDestino = new Paragraph(idioma.getProperty("Origen") + " / " + origen +  "\n" + idioma.getProperty("Destino") + " / " + destino , fuente2);
         origenDestino.setAlignment(Element.ALIGN_LEFT);
         documento.add(origenDestino);
 
         documento.add(new Paragraph("\n"));
-        documento.add(tablaBoletaEntradaBH(contenido, totalSacos, totalKilos));
+        documento.add(tablaBoletaSalidaBH(idLote, idSociedad,sacos, kg));
         documento.add(new Paragraph("\n"));
 
-        documento.add(tablaObservaciones(observaciones));
-
-        documento.add(new Paragraph("\n"));
-
-        documento.add(tablaTransporteSalida(vehiculo, placas, transportista, ""));
+        documento.add(tablaObservaciones("Las obervaciones se mostraran en este apartado."));
 
         documento.add(new Paragraph("\n"));
 
-        documento.add(tablaFirmasBH(transportista, capturista, encargado));
+        documento.add(tablaTransporteSalida(transporte, placas, responsable, ""));
+
+        documento.add(new Paragraph("\n"));
+
+        documento.add(tablaFirmasBH(responsable, capturista, encargado));
 
         documento.close();
     }
 
+    
+    public PdfPTable tablaBoletaSalidaBH(String idLote, String idSociedad, String sacos, String kg) throws SQLException {
+        Font fuente2 = new Font();
+        fuente2.setSize(7);
+
+        PdfPTable table = new PdfPTable(4);
+        table.setHorizontalAlignment(Element.ALIGN_CENTER);
+        table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
+
+        table.getDefaultCell().setBackgroundColor(new GrayColor(0.75f));
+
+        Paragraph columna1 = new Paragraph(idioma.getProperty("IdLote"));
+        Paragraph columna2 = new Paragraph(idioma.getProperty("Sociedad"));
+        Paragraph columna3 = new Paragraph(idioma.getProperty("Sacos"));
+        Paragraph columna4 = new Paragraph(idioma.getProperty("Kilos"));
+
+        columna1.getFont().setStyle(Font.BOLD);
+        columna1.getFont().setSize(7);
+
+        columna2.getFont().setStyle(Font.BOLD);
+        columna2.getFont().setSize(7);
+
+        columna3.getFont().setStyle(Font.BOLD);
+        columna3.getFont().setSize(7);
+
+        columna4.getFont().setStyle(Font.BOLD);
+        columna4.getFont().setSize(7);
+  
+        table.addCell(columna1);
+        table.addCell(columna2);
+        table.addCell(columna3);
+        table.addCell(columna4);
+
+        table.setHeaderRows(1);
+        table.getDefaultCell().setBackgroundColor(GrayColor.GRAYWHITE);
+        table.getDefaultCell().setHorizontalAlignment(Element.ALIGN_CENTER);
+        table.getDefaultCell().setBorder(Rectangle.NO_BORDER);
+        table.setWidthPercentage(100);
+
+       
+            //Paragraph col0 = new Paragraph(String.valueOf(counter + 1), fuente2);
+            // table.addCell(col0);
+            Paragraph col1 = new Paragraph(idLote+ "", fuente2);
+            //JOptionPane.showMessageDialog(null,"Dato "+contenido[counter][0]);
+            table.addCell(col1);
+
+            Paragraph col2 = new Paragraph(idSociedad+ "", fuente2);
+            // JOptionPane.showMessageDialog(null,"Dato "+contenido[counter][1]);
+            table.addCell(col2);
+
+            Paragraph col3 = new Paragraph(sacos + "", fuente2);
+            // JOptionPane.showMessageDialog(null,"Dato "+contenido[counter][2]);
+            table.addCell(col3);
+
+            Paragraph col4 = new Paragraph(kg + "", fuente2);
+            // JOptionPane.showMessageDialog(null,"Dato "+contenido[counter][3]);
+            table.addCell(col4);
+
+        
+       
+        /*Paragraph totales = new Paragraph("Totales", fuente2);
+        Paragraph totalSacos = new Paragraph(sacos, fuente2);
+        Paragraph totalKg = new Paragraph(kg, fuente2);
+*/
+        /*table.addCell("");
+        table.addCell("");
+        table.addCell("");
+        table.addCell("");
+        table.addCell(totales);
+        table.addCell(totalSacos);
+        table.addCell(totalKg);
+*/
+        return table;
+    }
+    
+    
 }

@@ -69,7 +69,12 @@
                       <Component id="jPanel3" alignment="0" max="32767" attributes="0"/>
                       <Group type="102" alignment="0" attributes="0">
                           <Component id="checkMuestra" min="-2" max="-2" attributes="0"/>
-                          <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
+                          <EmptySpace min="-2" pref="234" max="-2" attributes="0"/>
+                          <Component id="txtTransporte" min="-2" pref="111" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="txtPlacas" min="-2" pref="65" max="-2" attributes="0"/>
+                          <EmptySpace type="unrelated" max="-2" attributes="0"/>
+                          <Component id="txtTransportista" max="32767" attributes="0"/>
                       </Group>
                   </Group>
                   <EmptySpace max="-2" attributes="0"/>
@@ -84,7 +89,12 @@
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jPanel4" min="-2" max="-2" attributes="0"/>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                  <Component id="checkMuestra" min="-2" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="3" attributes="0">
+                      <Component id="checkMuestra" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtTransporte" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtPlacas" alignment="3" min="-2" max="-2" attributes="0"/>
+                      <Component id="txtTransportista" alignment="3" min="-2" max="-2" attributes="0"/>
+                  </Group>
                   <EmptySpace type="unrelated" max="-2" attributes="0"/>
                   <Component id="jPanel3" max="32767" attributes="0"/>
                   <EmptySpace max="-2" attributes="0"/>
@@ -146,7 +156,7 @@
                           <Component id="lblKilosEntrada" min="-2" max="-2" attributes="0"/>
                           <Component id="jLabel2" min="-2" max="-2" attributes="0"/>
                       </Group>
-                      <EmptySpace pref="167" max="32767" attributes="0"/>
+                      <EmptySpace max="32767" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
@@ -410,7 +420,7 @@
                               <Component id="jLabel25" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="txtTransportadaPor" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace pref="19" max="32767" attributes="0"/>
+                              <EmptySpace pref="22" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
@@ -711,6 +721,21 @@
           <Events>
             <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="checkMuestraActionPerformed"/>
           </Events>
+        </Component>
+        <Component class="javax.swing.JLabel" name="txtTransporte">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="-"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="txtPlacas">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="-"/>
+          </Properties>
+        </Component>
+        <Component class="javax.swing.JLabel" name="txtTransportista">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="-"/>
+          </Properties>
         </Component>
       </SubComponents>
     </Container>

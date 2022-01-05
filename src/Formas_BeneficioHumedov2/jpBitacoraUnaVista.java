@@ -68,7 +68,7 @@ public class jpBitacoraUnaVista extends javax.swing.JPanel {
                 + "estadoEntrada, certificacion, rutaDespulpe,"
                 + "rutaSecado, humedad, temperatura, kilosFinales, "
                 + "costalesFinales, formaFinal, procesoFinal, "
-                + "estadoFinal,'', boletaSalida, estatus \n"
+                + "estadoFinal,rendimiento, boletaSalida, estatus \n"
                 + "FROM sublotesconfirmados " + estatus);
 
         //cambiarMesLetra(jTable1);
@@ -178,6 +178,11 @@ public class jpBitacoraUnaVista extends javax.swing.JPanel {
         jPopupMenu1.add(jMenuItem1);
 
         jMenuItem2.setText("Abrir Boleta");
+        jMenuItem2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jMenuItem2ActionPerformed(evt);
+            }
+        });
         jPopupMenu1.add(jMenuItem2);
 
         jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -500,6 +505,24 @@ public class jpBitacoraUnaVista extends javax.swing.JPanel {
         jdRastreo jdR = new jdRastreo(subLote, cn);
         jdR.setVisible(true);
     }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jMenuItem2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem2ActionPerformed
+        // TODO add your handling code here:
+
+        creacionPDF pdf = new creacionPDF(cn, "Español");
+        try {
+            pdf.pdfBoletaSalidaBH(mbh.devuelveUnDato("select idBoleta from boletasalidabh where idLote ='" + subLote + "'"));
+        } catch (Exception e) {
+
+        }
+
+        Desktop desktop = Desktop.getDesktop();
+        try {
+            desktop.open(new java.io.File("C:\\fincalab\\pruebaBoleta.pdf"));
+        } catch (IOException ex) {
+            Logger.getLogger(jdRecibos.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }//GEN-LAST:event_jMenuItem2ActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

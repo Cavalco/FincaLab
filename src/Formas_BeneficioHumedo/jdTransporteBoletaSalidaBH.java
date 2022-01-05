@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package Formas_Recepcion;
+package Formas_BeneficioHumedo;
 
 import Formas_Recepcion.jdBoletaSalidaReceptor;
 import Idioma.Propiedades;
@@ -17,7 +17,7 @@ import javax.swing.table.DefaultTableModel;
  *
  * @author USUARIO
  */
-public class jdTransporteBoletaSalida extends javax.swing.JDialog {
+public class jdTransporteBoletaSalidaBH extends javax.swing.JDialog {
 
     /**
      * Creates new form jdTransporteBoletaSalida
@@ -25,11 +25,11 @@ public class jdTransporteBoletaSalida extends javax.swing.JDialog {
     Connection cn;
     metodosDatosBasicos mdb;
     DefaultTableModel modelo;
-    jdBoletaSalidaReceptor jdB;
+    jdMuestra jdM;
     String Idioma;
     Propiedades idioma;
 
-    public jdTransporteBoletaSalida(java.awt.Frame parent, boolean modal, String Idioma, Connection cn) {
+    public jdTransporteBoletaSalidaBH(java.awt.Frame parent, boolean modal, String Idioma, Connection cn) {
         super(parent, modal);
         initComponents();
         setLocationRelativeTo(null);
@@ -438,14 +438,14 @@ public class jdTransporteBoletaSalida extends javax.swing.JDialog {
     String vehiculo = "", placas = "", chofer = "";
     private void tablaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaMouseClicked
         // TODO add your handling code here: Retenciones
-        vehiculo = modelo.getValueAt(tabla.getSelectedRow(), 0) + "";
+          vehiculo = modelo.getValueAt(tabla.getSelectedRow(), 0) + "";
         placas = modelo.getValueAt(tabla.getSelectedRow(), 2) + "";
         chofer = modelo.getValueAt(tabla.getSelectedRow(), 3) + "";
         if (evt.getClickCount() == 1) {
             System.out.println("1 Clic");
         }
         if (evt.getClickCount() == 2) {
-            jdB.datosTransporte(vehiculo, placas, chofer);
+            jdM.datosTransporte(vehiculo, placas, chofer);
             this.dispose();
         }
     }//GEN-LAST:event_tablaMouseClicked
@@ -456,14 +456,14 @@ public class jdTransporteBoletaSalida extends javax.swing.JDialog {
 
     private void comboSituacionActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_comboSituacionActionPerformed
         // TODO add your handling code here:
-       busqueda();
+        busqueda();
     }//GEN-LAST:event_comboSituacionActionPerformed
 
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
-        /*   jdR = new jdVehiculo(null, true, "1",Nombre, Capacidad, TxTvar,Responable, cn);
-        jdR.jp = this;
-        jdR.setVisible(true);*/
+     /*   jdR = new jdVehiculo(null, true, "1", Nombre, Capacidad, TxTvar, Responable, cn);
+        jdM.jp = this;
+        jdM.setVisible(true);*/
     }//GEN-LAST:event_jButton2ActionPerformed
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
@@ -478,7 +478,7 @@ public class jdTransporteBoletaSalida extends javax.swing.JDialog {
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
-        jdB.datosTransporte(vehiculo, placas, chofer);
+        jdM.datosTransporte(vehiculo, placas, chofer);
         this.dispose();
     }//GEN-LAST:event_jButton1ActionPerformed
 
@@ -499,13 +499,13 @@ public class jdTransporteBoletaSalida extends javax.swing.JDialog {
                 }
             }
         } catch (ClassNotFoundException ex) {
-            java.util.logging.Logger.getLogger(jdTransporteBoletaSalida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(jdTransporteBoletaSalidaBH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (InstantiationException ex) {
-            java.util.logging.Logger.getLogger(jdTransporteBoletaSalida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(jdTransporteBoletaSalidaBH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (IllegalAccessException ex) {
-            java.util.logging.Logger.getLogger(jdTransporteBoletaSalida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(jdTransporteBoletaSalidaBH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         } catch (javax.swing.UnsupportedLookAndFeelException ex) {
-            java.util.logging.Logger.getLogger(jdTransporteBoletaSalida.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
+            java.util.logging.Logger.getLogger(jdTransporteBoletaSalidaBH.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
         //</editor-fold>
 

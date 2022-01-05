@@ -85,10 +85,10 @@ import Formas_Sociedades.jpRecepcion;
 import Formas_laboratorio.jpBitacora;
 import Formas_LaboratorioN.jpRecibirMuestras;
 import Formas_Almacen.jdSeleccionAlmacen;
+import Formas_Almacen.jpMuestras;
 import Formas_Almacen.jpSubLotesRecibidosAlmacen;
 import Formas_Almacen.jpSubLotesActivosAlmacen;
 import Formas_Almacen.jpSubLotesEnviadosAlmacen;
-import Formas_BeneficioHumedo.jpMuestras;
 import Formas_BeneficioHumedov2.jdEntradaBH;
 import Formas_BeneficioHumedov2.jpAnalisis;
 import Formas_BeneficioHumedov2.jpProcesosBH;
@@ -836,7 +836,7 @@ public class pantallaPrincipal extends javax.swing.JFrame {
             panelPrincipal.revalidate();
             panelPrincipal.repaint();
         } else if (idioma.getProperty("Muestras").equals(tipo)) {
-            jpMuestras jpM = new jpMuestras(beneficio, cn);
+            jpMuestras jpM = new jpMuestras(cn, Idioma);
             jpM.setSize(size);
             jpM.setLocation(0, 0);
             panelPrincipal.removeAll();
@@ -1687,9 +1687,12 @@ public class pantallaPrincipal extends javax.swing.JFrame {
         javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("SubLotesRecibidos"));
         javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("SubLotesActivos"));
         javax.swing.tree.DefaultMutableTreeNode treeNode4 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("SubLotesEnviados"));
+        javax.swing.tree.DefaultMutableTreeNode treeNode5 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("Muestras"));
+
         treeNode1.add(treeNode2);
         treeNode1.add(treeNode3);
         treeNode1.add(treeNode4);
+        treeNode1.add(treeNode5);
 
         jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
 

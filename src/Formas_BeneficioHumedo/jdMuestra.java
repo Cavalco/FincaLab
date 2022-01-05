@@ -11,6 +11,7 @@ import Reportes.creacionPDF;
 import java.awt.Desktop;
 import java.io.IOException;
 import java.sql.Connection;
+import java.text.DateFormat;
 import java.text.DecimalFormat;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -130,45 +131,55 @@ public class jdMuestra extends javax.swing.JDialog {
         }
     }
 
-    /* public void crearBoletaSalida() {
+    public void datosTransporte(String vehiculo, String placas, String chofer) {
+        txtTransporte.setText(vehiculo);
+        txtPlacas.setText(placas);
+        txtTransportista.setText(chofer);
+    }
+
+    public String idBoletaSalida() {
+
+        String ultimoIdBoleta = mbh.devuelveUnDato("select idBoleta from boletasalidabh order by id desc limit 1");
+        int numeroConsecutivo = 0;
+
+        if (ultimoIdBoleta.equals("") || ultimoIdBoleta.equals("null")) {
+            numeroConsecutivo = 1;
+        } else {
+            String[] datos = ultimoIdBoleta.split("-");
+            numeroConsecutivo = Integer.parseInt(datos[4]) + 1;
+        }
+
+        return "BOL-" + mbh.devuelveUnDato("select clavecorte from personam where nombrecorto='" + sociedad + "'") + "-BH-0-" + numeroConsecutivo;
+    }
+
+    public void crearBoletaSalida() {
         // String estadoCafe = jTable1.getValueAt(0, 4) + "";
         try {
+
+            String idTransporte
+                    = mbh.devuelveUnDato("select id from vehiculo where nombre='" + txtTransporte.getText() + "' and placas = '" + txtPlacas.getText() + "' and responsable='" + txtTransportista.getText() + "'  ");
+            String idBoletaSalida = idBoletaSalida();;
             Date date = new Date();
-            String fechaBoletaManual = "", boletaManual = "";
-            String fechaEntrada = new SimpleDateFormat("yyyy-MM-dd").format(date);
+            String fechaBoleta = new SimpleDateFormat("yyyy-MM-dd").format(date);
 
-            for (int i = 0; i < jTable1.getRowCount(); i++) {
-                //JOptionPane.showMessageDialog(null,"Vuelta: "+i);
+            Date date2 = new Date();
+            DateFormat hourFormat = new SimpleDateFormat("HH:mm:ss");
+            String horaActual = hourFormat.format(date2);
 
-                if (mbh.insertarEnCiclo("insert into boletaentradabh values"
-                        + " (null,'" + idBeneficio + "', '" + idBoleta + "'," + idSociedadLote + ", '" + jTable1.getValueAt(i, 0) + "', "
-                        + "'" + boletaManual + "','" + fechaBoletaManual + "', "
-                        + " '" + fechaEntrada + "','" + jTable1.getValueAt(i, 6) + "', "
-                        + "'" + jTable1.getValueAt(i, 5) + "', '" + jTable1.getValueAt(i, 1) + "','" + jTable1.getValueAt(i, 4) + "', '1'  )")) {
+            mbh.insertarBoleta("insert into boletasalidabh values (null, '" + lbBeneficio.getText() + "', '" + lbSociedad.getText() + "', "
+                    + "'" + lbIdLote.getText() + "', '" + idBoletaSalida + "', '" + idTransporte + "', "
+                    + "'" + fechaBoleta + "', '" + horaActual + "', "
+                    + "'" + lbBeneficio.getText() + "', 'AL-AI-12', '" + txtSacos.getText() + "', '" + txtKgFinales.getText() + "', '1'  )");
 
-                    mbh.insertarEnCiclo("insert into sublotesconfirmados values("
-                            + "null, '" + jTable1.getValueAt(i, 0) + "', '" + jTable1.getValueAt(i, 0) + "', "
-                            + "'" + idBeneficio + "', '" + idSociedadLote + "', '" + fechaEntrada + "', '" + jTable1.getValueAt(i, 1) + "',"
-                            + "'" + mbh.devuelveUnDato("select certificacion\n"
-                                    + "from cortesdeldia\n"
-                                    + "where idLote='" + jTable1.getValueAt(i, 0) + "' ") + "' , '" + jTable1.getValueAt(i, 4) + "', '" + jTable1.getValueAt(i, 6) + "', "
-                            + "'" + jTable1.getValueAt(i, 5) + "','0', '', '', "
-                            + "'', '', '', "
-                            + "'', '', '', '','', '', 'Act' )");
+            JOptionPane.showMessageDialog(null, "Boleta Registrada");
 
-                    mbh.actualizarBoleta("update boletasalidareceptor set estatus=2 where idBoleta='" + idBoleta + "'");
-                }
-            }
-
-            JOptionPane.showMessageDialog(null, "Entrada Exitosa");
-
-            this.dispose();
         } catch (Exception e) {
-            JOptionPane.showMessageDialog(null, "Error, Entrada BH\n" + e);
+            JOptionPane.showMessageDialog(null, "Error, Salida Boleta BH\n" + e);
 
         }
 
-    }*/
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -229,6 +240,9 @@ public class jdMuestra extends javax.swing.JDialog {
         jLabel4 = new javax.swing.JLabel();
         jButton5 = new javax.swing.JButton();
         checkMuestra = new javax.swing.JCheckBox();
+        txtTransporte = new javax.swing.JLabel();
+        txtPlacas = new javax.swing.JLabel();
+        txtTransportista = new javax.swing.JLabel();
 
         jButton1.setText("jButton1");
 
@@ -316,7 +330,7 @@ public class jdMuestra extends javax.swing.JDialog {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(lblKilosEntrada)
                     .addComponent(jLabel2))
-                .addContainerGap(167, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -466,7 +480,7 @@ public class jdMuestra extends javax.swing.JDialog {
                         .addComponent(jLabel25)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(txtTransportadaPor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addContainerGap(19, Short.MAX_VALUE))))
+                        .addContainerGap(22, Short.MAX_VALUE))))
         );
 
         jPanel4.setBorder(javax.swing.BorderFactory.createTitledBorder("Información Secado"));
@@ -597,6 +611,12 @@ public class jdMuestra extends javax.swing.JDialog {
             }
         });
 
+        txtTransporte.setText("-");
+
+        txtPlacas.setText("-");
+
+        txtTransportista.setText("-");
+
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -609,7 +629,12 @@ public class jdMuestra extends javax.swing.JDialog {
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addComponent(checkMuestra)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addGap(234, 234, 234)
+                        .addComponent(txtTransporte, javax.swing.GroupLayout.PREFERRED_SIZE, 111, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtPlacas, javax.swing.GroupLayout.PREFERRED_SIZE, 65, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(txtTransportista, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         jPanel1Layout.setVerticalGroup(
@@ -620,7 +645,11 @@ public class jdMuestra extends javax.swing.JDialog {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(checkMuestra)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(checkMuestra)
+                    .addComponent(txtTransporte)
+                    .addComponent(txtPlacas)
+                    .addComponent(txtTransportista))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
@@ -649,10 +678,10 @@ public class jdMuestra extends javax.swing.JDialog {
     private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
         // TODO add your handling code here:
         confirmarSecado();
-
-        creacionPDF pdf = new creacionPDF(cn, "");
+        crearBoletaSalida();
+        creacionPDF pdf = new creacionPDF(cn, "Español");
         try {
-//            pdf.pdfBoletaSalidaBH(mbh.devuelveUnDato("select idBoleta from boletaentradabh order by id desc limit 1"), contenido, txtObservaciones.getText());
+            pdf.pdfBoletaSalidaBH(mbh.devuelveUnDato("select idBoleta from boletasalidabh order by id desc limit 1"));
         } catch (Exception e) {
 
         }
@@ -701,7 +730,9 @@ public class jdMuestra extends javax.swing.JDialog {
 
     private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
         // TODO add your handling code here:
-       
+        jdTransporteBoletaSalidaBH jTBH = new jdTransporteBoletaSalidaBH(null, true, "Español", cn);
+        jTBH.jdM = this;
+        jTBH.setVisible(true);
     }//GEN-LAST:event_jButton5ActionPerformed
 
     /**
@@ -793,10 +824,13 @@ public class jdMuestra extends javax.swing.JDialog {
     private javax.swing.JTextField txtKgFinales;
     private javax.swing.JTextArea txtObservaciones;
     private javax.swing.JTextField txtPesoMuestra;
+    private javax.swing.JLabel txtPlacas;
     private javax.swing.JTextField txtRendimiento;
     private javax.swing.JTextField txtSacos;
     private javax.swing.JTextField txtTemperatura;
     private javax.swing.JTextField txtTomadaPor;
     private javax.swing.JTextField txtTransportadaPor;
+    private javax.swing.JLabel txtTransporte;
+    private javax.swing.JLabel txtTransportista;
     // End of variables declaration//GEN-END:variables
 }

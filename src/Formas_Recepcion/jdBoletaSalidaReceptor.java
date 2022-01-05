@@ -286,7 +286,9 @@ public class jdBoletaSalidaReceptor extends javax.swing.JDialog {
             //Entra aqui si no esta bien validado
         }
 
-    }
+    } 
+            
+            
     //REVISAR POR QUE SE ELIMINO METODO
     //public void insertarBoletaDivision(DefaultTableModel modelo2) 
 
