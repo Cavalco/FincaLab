@@ -748,7 +748,7 @@ public class jpBitacora extends javax.swing.JPanel {
             Logger.getLogger(jpBitacora.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-         Workbook wb = new Workbook();
+    /*     Workbook wb = new Workbook();
                     wb.loadFromFile("C:\\fincalab\\reporteLaboratorio.xlsx");
 
                     // Obtenga la segunda hoja de trabajo
@@ -763,10 +763,10 @@ public class jpBitacora extends javax.swing.JPanel {
             desktop.open(new java.io.File("C:\\fincalab\\ReporteIndividual.pdf"));
         } catch (IOException ex) {
             Logger.getLogger(jdRecibos.class.getName()).log(Level.SEVERE, null, ex);
-        }
+        }*/
 
-      /*  Barra_progreso b = new Barra_progreso();
-        b.setVisible(true);*/
+        Barra_progreso b = new Barra_progreso();
+        b.setVisible(true);
 
         /*            // Cargar documento de Excel
         Workbook wb = new Workbook();

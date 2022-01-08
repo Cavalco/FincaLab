@@ -56,7 +56,7 @@ public class pantallaLogin extends javax.swing.JFrame {
         switch (comboBaseDatos.getSelectedItem() + "") {
             case "Seleccione":
                 
-                bd = "prueba_bh";
+                bd = "fincalab_laboratorio";
                 break;
             case "Astal":
                 bd = "fincalab_astal";
