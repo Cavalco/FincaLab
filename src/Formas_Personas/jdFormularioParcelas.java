@@ -103,9 +103,9 @@ public class jdFormularioParcelas extends javax.swing.JDialog {
         //dc = mp.devuelveUnDato("select descripcion from ejidocolonia where id = " + co);
 
         comboPais.setSelectedIndex(pa);
-        comboEstado.setSelectedIndex(es);
+        /*comboEstado.setSelectedIndex(es);
         comboMunicipio.setSelectedIndex(mu);
-        comboLocalidad.setSelectedItem(dl);
+        comboLocalidad.setSelectedItem(dl);*/
         // fin sección para sugerir el país, estado, municipio, localidad
         // de el productor seleccionado
     }

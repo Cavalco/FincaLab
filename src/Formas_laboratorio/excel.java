@@ -44,8 +44,8 @@ public class excel {
 
     public void datos(Connection cn, String id, String idb, String taza, String Idioma) throws IOException {
 
-        try {
-
+        //try {
+            //JOptionPane.showMessageDialog(null,"CSM "+id+ " - "+idb);
             this.cn = cn;
             this.Idioma = Idioma;
             mdb = new metodosLaboratorio(cn, Idioma);
@@ -123,7 +123,7 @@ public class excel {
             XSSFWorkbook my_xlsx_workbook;
 
 //obtener el nombre y la ruta del archivo a modificar
-            FileInputStream input_document = new FileInputStream(new File("C:\\fincalab\\plantilla.xlsx"));
+            FileInputStream input_document = new FileInputStream(new File("C:\\fincalab\\reporteLaboratorio.xlsx"));
             //acceso al libro
             my_xlsx_workbook = new XSSFWorkbook(input_document);
             //Acceso a la hoja del libro a modificar 
@@ -1288,9 +1288,9 @@ public class excel {
             //output_file.flush();
             output_file.close();
             //JOptionPane.showMessageDialog(null, "Reporte Creado");
-        } catch (Exception e) {
-
-        }
+/*        } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Revisar Datos Bitacora BD");
+        }*/
 
     }
 

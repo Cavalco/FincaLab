@@ -354,10 +354,10 @@ public class jdFormularioPersonas extends javax.swing.JDialog {
             dc = mdb.devuelveUnDato("select descripcion from ejidocolonia where id = " + c);
 
             comboPais.setSelectedIndex(p);
-            comboEstado.setSelectedIndex(e);
+            /*comboEstado.setSelectedIndex(e);
             comboMunicipio.setSelectedIndex(m);
             comboLocalidad.setSelectedItem(dl);
-            comboColonia.setSelectedItem(dc);
+            comboColonia.setSelectedItem(dc);*/
             // fin sección para sugerir el país, estado, municipio, localidad y colonia/ejido
             // de la última persona capturada
         }
