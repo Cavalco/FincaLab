@@ -327,144 +327,6 @@ public class jdCatacion2 extends javax.swing.JFrame {
         jSeparator9 = new javax.swing.JSeparator();
         jLabel33 = new javax.swing.JLabel();
         jTabbedPane1 = new javax.swing.JTabbedPane();
-        jPanel10 = new javax.swing.JPanel();
-        jScrollPane9 = new javax.swing.JScrollPane();
-        Sweet = new javax.swing.JTable();
-        jScrollPane3 = new javax.swing.JScrollPane();
-        Floral = new javax.swing.JTable();
-        jScrollPane4 = new javax.swing.JScrollPane();
-        Fruit = new javax.swing.JTable();
-        jScrollPane5 = new javax.swing.JScrollPane();
-        SourFer = new javax.swing.JTable();
-        jScrollPane10 = new javax.swing.JScrollPane();
-        GreenVeg = new javax.swing.JTable();
-        jScrollPane11 = new javax.swing.JScrollPane();
-        Other = new javax.swing.JTable();
-        jScrollPane12 = new javax.swing.JScrollPane();
-        Roasted = new javax.swing.JTable();
-        jScrollPane13 = new javax.swing.JScrollPane();
-        Spices = new javax.swing.JTable();
-        jScrollPane14 = new javax.swing.JScrollPane();
-        Nutty = new javax.swing.JTable();
-        jScrollPane56 = new javax.swing.JScrollPane();
-        Body3 = new javax.swing.JTable();
-        jScrollPane57 = new javax.swing.JScrollPane();
-        Finish3 = new javax.swing.JTable();
-        jPanel11 = new javax.swing.JPanel();
-        jScrollPane17 = new javax.swing.JScrollPane();
-        Sweet1 = new javax.swing.JTable();
-        jScrollPane6 = new javax.swing.JScrollPane();
-        Floral1 = new javax.swing.JTable();
-        jScrollPane7 = new javax.swing.JScrollPane();
-        Fruit1 = new javax.swing.JTable();
-        jScrollPane8 = new javax.swing.JScrollPane();
-        SourFer1 = new javax.swing.JTable();
-        jScrollPane18 = new javax.swing.JScrollPane();
-        GreenVeg1 = new javax.swing.JTable();
-        jScrollPane19 = new javax.swing.JScrollPane();
-        Other1 = new javax.swing.JTable();
-        jScrollPane20 = new javax.swing.JScrollPane();
-        Roasted1 = new javax.swing.JTable();
-        jScrollPane21 = new javax.swing.JScrollPane();
-        Spices1 = new javax.swing.JTable();
-        jScrollPane22 = new javax.swing.JScrollPane();
-        Nutty1 = new javax.swing.JTable();
-        jScrollPane58 = new javax.swing.JScrollPane();
-        Body4 = new javax.swing.JTable();
-        jScrollPane59 = new javax.swing.JScrollPane();
-        Finish4 = new javax.swing.JTable();
-        jPanel12 = new javax.swing.JPanel();
-        jScrollPane23 = new javax.swing.JScrollPane();
-        Sweet2 = new javax.swing.JTable();
-        jScrollPane24 = new javax.swing.JScrollPane();
-        Floral2 = new javax.swing.JTable();
-        jScrollPane25 = new javax.swing.JScrollPane();
-        Fruit2 = new javax.swing.JTable();
-        jScrollPane26 = new javax.swing.JScrollPane();
-        SourFer2 = new javax.swing.JTable();
-        jScrollPane27 = new javax.swing.JScrollPane();
-        GreenVeg2 = new javax.swing.JTable();
-        jScrollPane28 = new javax.swing.JScrollPane();
-        Other2 = new javax.swing.JTable();
-        jScrollPane29 = new javax.swing.JScrollPane();
-        Roasted2 = new javax.swing.JTable();
-        jScrollPane30 = new javax.swing.JScrollPane();
-        Spices2 = new javax.swing.JTable();
-        jScrollPane31 = new javax.swing.JScrollPane();
-        Nutty2 = new javax.swing.JTable();
-        jScrollPane60 = new javax.swing.JScrollPane();
-        Body5 = new javax.swing.JTable();
-        jScrollPane61 = new javax.swing.JScrollPane();
-        Finish5 = new javax.swing.JTable();
-        jPanel13 = new javax.swing.JPanel();
-        jScrollPane32 = new javax.swing.JScrollPane();
-        Sweet3 = new javax.swing.JTable();
-        jScrollPane33 = new javax.swing.JScrollPane();
-        Floral3 = new javax.swing.JTable();
-        jScrollPane34 = new javax.swing.JScrollPane();
-        Fruit3 = new javax.swing.JTable();
-        jScrollPane35 = new javax.swing.JScrollPane();
-        SourFer3 = new javax.swing.JTable();
-        jScrollPane36 = new javax.swing.JScrollPane();
-        GreenVeg3 = new javax.swing.JTable();
-        jScrollPane37 = new javax.swing.JScrollPane();
-        Other3 = new javax.swing.JTable();
-        jScrollPane38 = new javax.swing.JScrollPane();
-        Roasted3 = new javax.swing.JTable();
-        jScrollPane39 = new javax.swing.JScrollPane();
-        Spices3 = new javax.swing.JTable();
-        jScrollPane40 = new javax.swing.JScrollPane();
-        Nutty3 = new javax.swing.JTable();
-        jScrollPane62 = new javax.swing.JScrollPane();
-        Body6 = new javax.swing.JTable();
-        jScrollPane63 = new javax.swing.JScrollPane();
-        Finish6 = new javax.swing.JTable();
-        jPanel14 = new javax.swing.JPanel();
-        jScrollPane41 = new javax.swing.JScrollPane();
-        Sweet4 = new javax.swing.JTable();
-        jScrollPane42 = new javax.swing.JScrollPane();
-        Floral4 = new javax.swing.JTable();
-        jScrollPane43 = new javax.swing.JScrollPane();
-        Fruit4 = new javax.swing.JTable();
-        jScrollPane44 = new javax.swing.JScrollPane();
-        SourFer4 = new javax.swing.JTable();
-        jScrollPane45 = new javax.swing.JScrollPane();
-        GreenVeg4 = new javax.swing.JTable();
-        jScrollPane46 = new javax.swing.JScrollPane();
-        Body1 = new javax.swing.JTable();
-        jScrollPane47 = new javax.swing.JScrollPane();
-        Finish1 = new javax.swing.JTable();
-        jScrollPane49 = new javax.swing.JScrollPane();
-        Other4 = new javax.swing.JTable();
-        jScrollPane50 = new javax.swing.JScrollPane();
-        Roasted4 = new javax.swing.JTable();
-        jScrollPane51 = new javax.swing.JScrollPane();
-        Spices4 = new javax.swing.JTable();
-        jScrollPane52 = new javax.swing.JScrollPane();
-        Nutty4 = new javax.swing.JTable();
-        jPanel15 = new javax.swing.JPanel();
-        jScrollPane48 = new javax.swing.JScrollPane();
-        SourFer5 = new javax.swing.JTable();
-        jScrollPane53 = new javax.swing.JScrollPane();
-        Sweet5 = new javax.swing.JTable();
-        jScrollPane64 = new javax.swing.JScrollPane();
-        Floral5 = new javax.swing.JTable();
-        jScrollPane65 = new javax.swing.JScrollPane();
-        Fruit5 = new javax.swing.JTable();
-        jScrollPane66 = new javax.swing.JScrollPane();
-        GreenVeg5 = new javax.swing.JTable();
-        jScrollPane67 = new javax.swing.JScrollPane();
-        Body7 = new javax.swing.JTable();
-        jScrollPane68 = new javax.swing.JScrollPane();
-        Finish7 = new javax.swing.JTable();
-        jScrollPane69 = new javax.swing.JScrollPane();
-        Other5 = new javax.swing.JTable();
-        jScrollPane70 = new javax.swing.JScrollPane();
-        Roasted5 = new javax.swing.JTable();
-        jScrollPane71 = new javax.swing.JScrollPane();
-        Spices5 = new javax.swing.JTable();
-        jScrollPane72 = new javax.swing.JScrollPane();
-        Nutty5 = new javax.swing.JTable();
         jPanel16 = new javax.swing.JPanel();
         jScrollPane54 = new javax.swing.JScrollPane();
         Body2 = new javax.swing.JTable();
@@ -488,14 +350,127 @@ public class jdCatacion2 extends javax.swing.JFrame {
         Spices6 = new javax.swing.JTable();
         jScrollPane81 = new javax.swing.JScrollPane();
         Nutty6 = new javax.swing.JTable();
+        jPanel17 = new javax.swing.JPanel();
+        jScrollPane82 = new javax.swing.JScrollPane();
+        Body8 = new javax.swing.JTable();
+        jScrollPane83 = new javax.swing.JScrollPane();
+        Finish8 = new javax.swing.JTable();
+        jScrollPane84 = new javax.swing.JScrollPane();
+        Sweet7 = new javax.swing.JTable();
+        jScrollPane85 = new javax.swing.JScrollPane();
+        Floral7 = new javax.swing.JTable();
+        jScrollPane86 = new javax.swing.JScrollPane();
+        Fruit7 = new javax.swing.JTable();
+        jScrollPane87 = new javax.swing.JScrollPane();
+        SourFer7 = new javax.swing.JTable();
+        jScrollPane88 = new javax.swing.JScrollPane();
+        GreenVeg7 = new javax.swing.JTable();
+        jScrollPane89 = new javax.swing.JScrollPane();
+        Other7 = new javax.swing.JTable();
+        jScrollPane90 = new javax.swing.JScrollPane();
+        Roasted7 = new javax.swing.JTable();
+        jScrollPane91 = new javax.swing.JScrollPane();
+        Spices7 = new javax.swing.JTable();
+        jScrollPane92 = new javax.swing.JScrollPane();
+        Nutty7 = new javax.swing.JTable();
+        jPanel18 = new javax.swing.JPanel();
+        jScrollPane93 = new javax.swing.JScrollPane();
+        Body9 = new javax.swing.JTable();
+        jScrollPane94 = new javax.swing.JScrollPane();
+        Finish9 = new javax.swing.JTable();
+        jScrollPane95 = new javax.swing.JScrollPane();
+        Sweet8 = new javax.swing.JTable();
+        jScrollPane96 = new javax.swing.JScrollPane();
+        Floral8 = new javax.swing.JTable();
+        jScrollPane97 = new javax.swing.JScrollPane();
+        Fruit8 = new javax.swing.JTable();
+        jScrollPane98 = new javax.swing.JScrollPane();
+        SourFer8 = new javax.swing.JTable();
+        jScrollPane99 = new javax.swing.JScrollPane();
+        GreenVeg8 = new javax.swing.JTable();
+        jScrollPane100 = new javax.swing.JScrollPane();
+        Other8 = new javax.swing.JTable();
+        jScrollPane101 = new javax.swing.JScrollPane();
+        Roasted8 = new javax.swing.JTable();
+        jScrollPane102 = new javax.swing.JScrollPane();
+        Spices8 = new javax.swing.JTable();
+        jScrollPane103 = new javax.swing.JScrollPane();
+        Nutty8 = new javax.swing.JTable();
+        jPanel19 = new javax.swing.JPanel();
+        jScrollPane104 = new javax.swing.JScrollPane();
+        Body10 = new javax.swing.JTable();
+        jScrollPane105 = new javax.swing.JScrollPane();
+        Finish10 = new javax.swing.JTable();
+        jScrollPane106 = new javax.swing.JScrollPane();
+        Sweet9 = new javax.swing.JTable();
+        jScrollPane107 = new javax.swing.JScrollPane();
+        Floral9 = new javax.swing.JTable();
+        jScrollPane108 = new javax.swing.JScrollPane();
+        Fruit9 = new javax.swing.JTable();
+        jScrollPane109 = new javax.swing.JScrollPane();
+        SourFer9 = new javax.swing.JTable();
+        jScrollPane110 = new javax.swing.JScrollPane();
+        GreenVeg9 = new javax.swing.JTable();
+        jScrollPane111 = new javax.swing.JScrollPane();
+        Other9 = new javax.swing.JTable();
+        jScrollPane112 = new javax.swing.JScrollPane();
+        Roasted9 = new javax.swing.JTable();
+        jScrollPane113 = new javax.swing.JScrollPane();
+        Spices9 = new javax.swing.JTable();
+        jScrollPane114 = new javax.swing.JScrollPane();
+        Nutty9 = new javax.swing.JTable();
+        jPanel20 = new javax.swing.JPanel();
+        jScrollPane115 = new javax.swing.JScrollPane();
+        Body11 = new javax.swing.JTable();
+        jScrollPane116 = new javax.swing.JScrollPane();
+        Finish11 = new javax.swing.JTable();
+        jScrollPane117 = new javax.swing.JScrollPane();
+        Sweet10 = new javax.swing.JTable();
+        jScrollPane118 = new javax.swing.JScrollPane();
+        Floral10 = new javax.swing.JTable();
+        jScrollPane119 = new javax.swing.JScrollPane();
+        Fruit10 = new javax.swing.JTable();
+        jScrollPane120 = new javax.swing.JScrollPane();
+        SourFer10 = new javax.swing.JTable();
+        jScrollPane121 = new javax.swing.JScrollPane();
+        GreenVeg10 = new javax.swing.JTable();
+        jScrollPane122 = new javax.swing.JScrollPane();
+        Other10 = new javax.swing.JTable();
+        jScrollPane123 = new javax.swing.JScrollPane();
+        Roasted10 = new javax.swing.JTable();
+        jScrollPane124 = new javax.swing.JScrollPane();
+        Spices10 = new javax.swing.JTable();
+        jScrollPane125 = new javax.swing.JScrollPane();
+        Nutty10 = new javax.swing.JTable();
+        jPanel22 = new javax.swing.JPanel();
+        jScrollPane137 = new javax.swing.JScrollPane();
+        Body13 = new javax.swing.JTable();
+        jScrollPane138 = new javax.swing.JScrollPane();
+        Finish13 = new javax.swing.JTable();
+        jScrollPane139 = new javax.swing.JScrollPane();
+        Sweet12 = new javax.swing.JTable();
+        jScrollPane140 = new javax.swing.JScrollPane();
+        Floral12 = new javax.swing.JTable();
+        jScrollPane141 = new javax.swing.JScrollPane();
+        Fruit12 = new javax.swing.JTable();
+        jScrollPane142 = new javax.swing.JScrollPane();
+        SourFer12 = new javax.swing.JTable();
+        jScrollPane143 = new javax.swing.JScrollPane();
+        GreenVeg12 = new javax.swing.JTable();
+        jScrollPane144 = new javax.swing.JScrollPane();
+        Other12 = new javax.swing.JTable();
+        jScrollPane145 = new javax.swing.JScrollPane();
+        Roasted12 = new javax.swing.JTable();
+        jScrollPane146 = new javax.swing.JScrollPane();
+        Spices12 = new javax.swing.JTable();
+        jScrollPane147 = new javax.swing.JScrollPane();
+        Nutty12 = new javax.swing.JTable();
         jLabel17 = new javax.swing.JLabel();
         lblPuntuacion = new javax.swing.JLabel();
         jPanel9 = new javax.swing.JPanel();
         jLabel57 = new javax.swing.JLabel();
         jLabel58 = new javax.swing.JLabel();
-        jLabel59 = new javax.swing.JLabel();
         lblSeco = new javax.swing.JLabel();
-        lblMojado = new javax.swing.JLabel();
         lblQuebrado = new javax.swing.JLabel();
         jLabel60 = new javax.swing.JLabel();
         lblSabor = new javax.swing.JLabel();
@@ -1383,2572 +1358,6 @@ public class jdCatacion2 extends javax.swing.JFrame {
 
         jLabel33.setText("Información");
 
-        Sweet.setBackground(new java.awt.Color(255, 102, 102));
-        Sweet.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Azúcar-Mor", ""},
-                {"   Melaza", ""},
-                {"   Jarab-mapl", null},
-                {"   Caramelo", null},
-                {"   Miel", null},
-                {"Vainilla", null},
-                {"Arom-Vaini", null},
-                {"Dulce-Gene", null},
-                {"Arom-dulce", null}
-            },
-            new String [] {
-                "1 Dulce", "Int."
-            }
-        ));
-        Sweet.setPreferredSize(new java.awt.Dimension(90, 144));
-        Sweet.addMouseListener(new java.awt.event.MouseAdapter() {
-            public void mouseClicked(java.awt.event.MouseEvent evt) {
-                SweetMouseClicked(evt);
-            }
-        });
-        Sweet.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                SweetKeyReleased(evt);
-            }
-        });
-        jScrollPane9.setViewportView(Sweet);
-        if (Sweet.getColumnModel().getColumnCount() > 0) {
-            Sweet.getColumnModel().getColumn(0).setResizable(false);
-            Sweet.getColumnModel().getColumn(1).setResizable(false);
-            Sweet.getColumnModel().getColumn(1).setPreferredWidth(7);
-        }
-
-        Floral.setBackground(new java.awt.Color(255, 153, 102));
-        Floral.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Té-Negro", null},
-                {"Floral", null},
-                {"   Manzanilla", null},
-                {"   Rosa", null},
-                {"   Jazmine", null}
-            },
-            new String [] {
-                "2 Floral", "Int."
-            }
-        ));
-        Floral.setPreferredSize(new java.awt.Dimension(90, 80));
-        Floral.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                FloralKeyReleased(evt);
-            }
-        });
-        jScrollPane3.setViewportView(Floral);
-        if (Floral.getColumnModel().getColumnCount() > 0) {
-            Floral.getColumnModel().getColumn(0).setResizable(false);
-            Floral.getColumnModel().getColumn(1).setResizable(false);
-            Floral.getColumnModel().getColumn(1).setPreferredWidth(7);
-        }
-
-        Fruit.setBackground(new java.awt.Color(255, 204, 0));
-        Fruit.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Bayas", null},
-                {"   Moras", null},
-                {"   Frambuesa", null},
-                {"   Arándano", null},
-                {"   Fresa", null},
-                {"Frutos Sec", null},
-                {"   Pasas", null},
-                {"   Ciruel-pas", null},
-                {"Otras frut", null},
-                {"   Coco", null},
-                {"   Cereza", null},
-                {"   Granada", null},
-                {"   Piñas", null},
-                {"   Uva", null},
-                {"   Manzana", null},
-                {"   Durazno", null},
-                {"   Pera", null},
-                {"Citricos", null},
-                {"   Toronja", null},
-                {"   Naranja", null},
-                {"   Limón", null},
-                {"   Lima", null}
-            },
-            new String [] {
-                "3 Afrutado", "Int."
-            }
-        ));
-        Fruit.setPreferredSize(new java.awt.Dimension(90, 352));
-        Fruit.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                FruitKeyReleased(evt);
-            }
-        });
-        jScrollPane4.setViewportView(Fruit);
-        if (Fruit.getColumnModel().getColumnCount() > 0) {
-            Fruit.getColumnModel().getColumn(1).setResizable(false);
-            Fruit.getColumnModel().getColumn(1).setPreferredWidth(7);
-        }
-
-        SourFer.setBackground(new java.awt.Color(255, 255, 153));
-        SourFer.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Acido", null},
-                {"   Arom-acido", null},
-                {"   Acido-acét", null},
-                {"   Acido-butí", null},
-                {"   Acido-isoc", null},
-                {"   Acidocítr", null},
-                {"   Acido-máli", null},
-                {"Alcoh/Ferm", null},
-                {"   Vinoso", null},
-                {"   Whisky", null},
-                {"   Fermentado", null},
-                {"   Super-madu", null}
-            },
-            new String [] {
-                "4 Acido/Fermentado", "Int."
-            }
-        ));
-        SourFer.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                SourFerKeyReleased(evt);
-            }
-        });
-        jScrollPane5.setViewportView(SourFer);
-        if (SourFer.getColumnModel().getColumnCount() > 0) {
-            SourFer.getColumnModel().getColumn(0).setResizable(false);
-            SourFer.getColumnModel().getColumn(1).setResizable(false);
-            SourFer.getColumnModel().getColumn(1).setPreferredWidth(7);
-        }
-
-        GreenVeg.setBackground(new java.awt.Color(102, 255, 102));
-        GreenVeg.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Aceit-Oliv", null},
-                {"Crudo", null},
-                {"Verde/Vege", ""},
-                {"   Inmaduro", null},
-                {"   Vaina", null},
-                {"   Fresco", null},
-                {"   Verde-oscu", null},
-                {"   Vegetal", null},
-                {"   Paja", null},
-                {"   Herbaceo", null},
-                {"Leguminoso", null}
-            },
-            new String [] {
-                "5 Verde/Vegetal", "Int."
-            }
-        ));
-        GreenVeg.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                GreenVegKeyReleased(evt);
-            }
-        });
-        jScrollPane10.setViewportView(GreenVeg);
-        if (GreenVeg.getColumnModel().getColumnCount() > 0) {
-            GreenVeg.getColumnModel().getColumn(0).setResizable(false);
-            GreenVeg.getColumnModel().getColumn(1).setResizable(false);
-            GreenVeg.getColumnModel().getColumn(1).setPreferredWidth(7);
-        }
-
-        Other.setBackground(new java.awt.Color(51, 255, 255));
-        Other.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Papel/Hume", null},
-                {"   Rancio", null},
-                {"   Cartón", null},
-                {"   Papel", null},
-                {"   Madera", null},
-                {"   Mohoso", null},
-                {"   Polvo-hume", null},
-                {"   Tierra", null},
-                {"   Cuero", null},
-                {"   Carne/Cald", null},
-                {"   Fenolico", null},
-                {"Quimico", null},
-                {"   Amargo", null},
-                {"   Salado", null},
-                {"   Medicinal", null},
-                {"   Petroleo", null},
-                {"   Zorrillo", null},
-                {"   Goma", null}
-            },
-            new String [] {
-                "6 Otros", "Int."
-            }
-        ));
-        Other.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                OtherKeyReleased(evt);
-            }
-        });
-        jScrollPane11.setViewportView(Other);
-        if (Other.getColumnModel().getColumnCount() > 0) {
-            Other.getColumnModel().getColumn(1).setResizable(false);
-            Other.getColumnModel().getColumn(1).setPreferredWidth(7);
-        }
-
-        Roasted.setBackground(new java.awt.Color(0, 204, 255));
-        Roasted.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Tabac-pipa", null},
-                {"Tabaco", null},
-                {"Quemado", null},
-                {"   Acre", null},
-                {"   Ceniza", null},
-                {"   Humo", null},
-                {"   Marrón/Tos", null},
-                {"Cereal", null},
-                {"   Grano", null},
-                {"   Malta", null}
-            },
-            new String [] {
-                "7 Tostado", "Int."
-            }
-        ));
-        Roasted.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                RoastedKeyReleased(evt);
-            }
-        });
-        jScrollPane12.setViewportView(Roasted);
-        if (Roasted.getColumnModel().getColumnCount() > 0) {
-            Roasted.getColumnModel().getColumn(0).setResizable(false);
-            Roasted.getColumnModel().getColumn(1).setResizable(false);
-            Roasted.getColumnModel().getColumn(1).setPreferredWidth(7);
-        }
-
-        Spices.setBackground(new java.awt.Color(153, 153, 255));
-        Spices.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Acre", null},
-                {"Pimienta", null},
-                {"Especia-mo", null},
-                {"   Anis", null},
-                {"   Nuez-mosca", null},
-                {"   Canela", null},
-                {"   Clavo-olor", null}
-            },
-            new String [] {
-                "8 Especias", "Int."
-            }
-        ));
-        Spices.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                SpicesKeyReleased(evt);
-            }
-        });
-        jScrollPane13.setViewportView(Spices);
-        if (Spices.getColumnModel().getColumnCount() > 0) {
-            Spices.getColumnModel().getColumn(0).setResizable(false);
-            Spices.getColumnModel().getColumn(1).setResizable(false);
-            Spices.getColumnModel().getColumn(1).setPreferredWidth(7);
-        }
-
-        Nutty.setBackground(new java.awt.Color(255, 102, 204));
-        Nutty.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Nueces", null},
-                {"   Maní", null},
-                {"   Avellana", null},
-                {"   Almendra", null},
-                {"Cacao", null},
-                {"   Chocolate", null},
-                {"   Choc-amarg", null}
-            },
-            new String [] {
-                "9 Nueces/Cacao", "Int."
-            }
-        ));
-        Nutty.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                NuttyKeyReleased(evt);
-            }
-        });
-        jScrollPane14.setViewportView(Nutty);
-        if (Nutty.getColumnModel().getColumnCount() > 0) {
-            Nutty.getColumnModel().getColumn(0).setResizable(false);
-            Nutty.getColumnModel().getColumn(1).setResizable(false);
-            Nutty.getColumnModel().getColumn(1).setPreferredWidth(7);
-        }
-
-        Body3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Jarabe", null},
-                {"Aceitoso", null},
-                {"Suave", null}
-            },
-            new String [] {
-                "10 Cuerpo", "Int."
-            }
-        ));
-        Body3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Body3KeyReleased(evt);
-            }
-        });
-        jScrollPane56.setViewportView(Body3);
-        if (Body3.getColumnModel().getColumnCount() > 0) {
-            Body3.getColumnModel().getColumn(0).setResizable(false);
-            Body3.getColumnModel().getColumn(1).setResizable(false);
-            Body3.getColumnModel().getColumn(1).setPreferredWidth(7);
-        }
-
-        Finish3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Duración", null},
-                {"Seco", null},
-                {"Astringent", null},
-                {"Granoso", null}
-            },
-            new String [] {
-                "11 Sabor Rem.", "Int."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Finish3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Finish3KeyReleased(evt);
-            }
-        });
-        jScrollPane57.setViewportView(Finish3);
-        if (Finish3.getColumnModel().getColumnCount() > 0) {
-            Finish3.getColumnModel().getColumn(1).setResizable(false);
-            Finish3.getColumnModel().getColumn(1).setPreferredWidth(7);
-        }
-
-        javax.swing.GroupLayout jPanel10Layout = new javax.swing.GroupLayout(jPanel10);
-        jPanel10.setLayout(jPanel10Layout);
-        jPanel10Layout.setHorizontalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel10Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane9, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE)
-                    .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(jScrollPane56, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane57, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane13, javax.swing.GroupLayout.DEFAULT_SIZE, 145, Short.MAX_VALUE)
-                    .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel10Layout.setVerticalGroup(
-            jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel10Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane12, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(jScrollPane9, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane3, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane4, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel10Layout.createSequentialGroup()
-                        .addComponent(jScrollPane13, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane14, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane11, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel10Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel10Layout.createSequentialGroup()
-                            .addComponent(jScrollPane5, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(jScrollPane56, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel10Layout.createSequentialGroup()
-                            .addComponent(jScrollPane10, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                            .addComponent(jScrollPane57, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                .addContainerGap(58, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Seco", jPanel10);
-
-        Sweet1.setBackground(new java.awt.Color(255, 102, 102));
-        Sweet1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Azúcar-Mor", null},
-                {"   Melaza", null},
-                {"   Jarab-mapl", null},
-                {"   Caramelo", null},
-                {"   Miel", null},
-                {"Vainilla", null},
-                {"Arom-Vaini", null},
-                {"Dulce-Gene", null},
-                {"Arom-dulce", null}
-            },
-            new String [] {
-                "1 Dulce", "Int."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Sweet1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Sweet1KeyReleased(evt);
-            }
-        });
-        jScrollPane17.setViewportView(Sweet1);
-        if (Sweet1.getColumnModel().getColumnCount() > 0) {
-            Sweet1.getColumnModel().getColumn(0).setResizable(false);
-            Sweet1.getColumnModel().getColumn(1).setResizable(false);
-            Sweet1.getColumnModel().getColumn(1).setPreferredWidth(7);
-        }
-
-        Floral1.setBackground(new java.awt.Color(255, 153, 102));
-        Floral1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Té-Negro", null},
-                {"Floral", null},
-                {"   Manzanilla", null},
-                {"   Rosa", null},
-                {"   Jazmine", null}
-            },
-            new String [] {
-                "2 Floral", "Int."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Floral1.setPreferredSize(new java.awt.Dimension(175, 80));
-        Floral1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Floral1KeyReleased(evt);
-            }
-        });
-        jScrollPane6.setViewportView(Floral1);
-        if (Floral1.getColumnModel().getColumnCount() > 0) {
-            Floral1.getColumnModel().getColumn(1).setResizable(false);
-            Floral1.getColumnModel().getColumn(1).setPreferredWidth(7);
-        }
-
-        Fruit1.setBackground(new java.awt.Color(255, 204, 0));
-        Fruit1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Bayas", null},
-                {"   Moras", null},
-                {"   Frambuesa", null},
-                {"   Arándano", null},
-                {"   Fresa", null},
-                {"Fruto-sec", null},
-                {"   Pasas", null},
-                {"   Ciruel-pas", null},
-                {"Otras-frut", null},
-                {"   Coco", null},
-                {"   Cereza", null},
-                {"   Granada", null},
-                {"   Piña", null},
-                {"   Uvas", null},
-                {"   Manzana", null},
-                {"   Durazno", null},
-                {"   Pera", null},
-                {"Citricos", null},
-                {"   Toronja", null},
-                {"   Naranja", null},
-                {"   Limon", null},
-                {"   Lima", null}
-            },
-            new String [] {
-                "3 Afrutado", "Int."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Fruit1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Fruit1KeyReleased(evt);
-            }
-        });
-        jScrollPane7.setViewportView(Fruit1);
-        if (Fruit1.getColumnModel().getColumnCount() > 0) {
-            Fruit1.getColumnModel().getColumn(1).setResizable(false);
-            Fruit1.getColumnModel().getColumn(1).setPreferredWidth(7);
-        }
-
-        SourFer1.setBackground(new java.awt.Color(255, 255, 153));
-        SourFer1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Acido", null},
-                {"   Arom-acido", null},
-                {"   Acido-acét", null},
-                {"   Acido-butí", null},
-                {"   Acido-isoc", null},
-                {"   Acido-cítr", null},
-                {"   Acido-máli", null},
-                {"Alcoh/Ferm", null},
-                {"   Vinoso", null},
-                {"   Whisky", null},
-                {"   Fermentado", null},
-                {"   Super-madu", null}
-            },
-            new String [] {
-                "4 Acido/Fermentado", "Int."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        SourFer1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                SourFer1KeyReleased(evt);
-            }
-        });
-        jScrollPane8.setViewportView(SourFer1);
-        if (SourFer1.getColumnModel().getColumnCount() > 0) {
-            SourFer1.getColumnModel().getColumn(0).setResizable(false);
-            SourFer1.getColumnModel().getColumn(1).setResizable(false);
-            SourFer1.getColumnModel().getColumn(1).setPreferredWidth(7);
-        }
-
-        GreenVeg1.setBackground(new java.awt.Color(102, 255, 102));
-        GreenVeg1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Aceit-Oliv", null},
-                {"Crudo", null},
-                {"Verde/Vege", null},
-                {"   Inmaduro", null},
-                {"   Vaina", null},
-                {"   Fresco", null},
-                {"   Verde-oscu", null},
-                {"   Vegetal", null},
-                {"   Paja", null},
-                {"   Herbaceo", null},
-                {"Leguminoso", null}
-            },
-            new String [] {
-                "5 Verde/Vegetal", "Int."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        GreenVeg1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                GreenVeg1KeyReleased(evt);
-            }
-        });
-        jScrollPane18.setViewportView(GreenVeg1);
-        if (GreenVeg1.getColumnModel().getColumnCount() > 0) {
-            GreenVeg1.getColumnModel().getColumn(0).setResizable(false);
-            GreenVeg1.getColumnModel().getColumn(1).setResizable(false);
-            GreenVeg1.getColumnModel().getColumn(1).setPreferredWidth(7);
-        }
-
-        Other1.setBackground(new java.awt.Color(51, 255, 255));
-        Other1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Papel/Hume", null},
-                {"   Rancio", null},
-                {"   Carton", null},
-                {"   Papel", null},
-                {"   Madera", null},
-                {"   Mohoso", null},
-                {"   Polvo-hume", null},
-                {"   Tierra", null},
-                {"   Cuero", null},
-                {"   Carne/cald", null},
-                {"   Fenolico", null},
-                {"Quimico", null},
-                {"   Amargo", null},
-                {"   Salado", null},
-                {"   Medicinal", null},
-                {"   Petroleo", null},
-                {"   Zorrillo", null},
-                {"   Goma", null}
-            },
-            new String [] {
-                "6 Otros", "Int."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Other1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Other1KeyReleased(evt);
-            }
-        });
-        jScrollPane19.setViewportView(Other1);
-        if (Other1.getColumnModel().getColumnCount() > 0) {
-            Other1.getColumnModel().getColumn(0).setResizable(false);
-            Other1.getColumnModel().getColumn(1).setResizable(false);
-            Other1.getColumnModel().getColumn(1).setPreferredWidth(7);
-        }
-
-        Roasted1.setBackground(new java.awt.Color(0, 204, 255));
-        Roasted1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Tabac-pipa", null},
-                {"Tabaco", null},
-                {"Quemado", null},
-                {"   Acre", null},
-                {"   Ceniza", null},
-                {"   Humo", null},
-                {"   Marrón/tos", null},
-                {"Cereal", null},
-                {"   Grano", null},
-                {"   Malta", null}
-            },
-            new String [] {
-                "7 Tostado", "Int."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Roasted1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Roasted1KeyReleased(evt);
-            }
-        });
-        jScrollPane20.setViewportView(Roasted1);
-        if (Roasted1.getColumnModel().getColumnCount() > 0) {
-            Roasted1.getColumnModel().getColumn(0).setResizable(false);
-            Roasted1.getColumnModel().getColumn(1).setResizable(false);
-            Roasted1.getColumnModel().getColumn(1).setPreferredWidth(7);
-        }
-
-        Spices1.setBackground(new java.awt.Color(153, 153, 255));
-        Spices1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Acre", null},
-                {"Pimienta", null},
-                {"Especias-mo", null},
-                {"   Anis", null},
-                {"   Nuez-mosca", null},
-                {"   Canela", null},
-                {"   Clavo-olor", null}
-            },
-            new String [] {
-                "8 Especias", "Int."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Spices1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Spices1KeyReleased(evt);
-            }
-        });
-        jScrollPane21.setViewportView(Spices1);
-        if (Spices1.getColumnModel().getColumnCount() > 0) {
-            Spices1.getColumnModel().getColumn(0).setResizable(false);
-            Spices1.getColumnModel().getColumn(1).setResizable(false);
-            Spices1.getColumnModel().getColumn(1).setPreferredWidth(7);
-        }
-
-        Nutty1.setBackground(new java.awt.Color(255, 102, 204));
-        Nutty1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Nueces", null},
-                {"   Mani", null},
-                {"   Avellana", null},
-                {"   Almendra", null},
-                {"Cacao", null},
-                {"   Choocolate", null},
-                {"   Choc-amarg", null}
-            },
-            new String [] {
-                "9 Nueces/Cacao", "Int."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Nutty1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Nutty1KeyReleased(evt);
-            }
-        });
-        jScrollPane22.setViewportView(Nutty1);
-        if (Nutty1.getColumnModel().getColumnCount() > 0) {
-            Nutty1.getColumnModel().getColumn(0).setResizable(false);
-            Nutty1.getColumnModel().getColumn(1).setResizable(false);
-            Nutty1.getColumnModel().getColumn(1).setPreferredWidth(7);
-        }
-
-        Body4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Jarabe", null},
-                {"Aceitoso", null},
-                {"Suave", null}
-            },
-            new String [] {
-                "10 Cuerpo", "Int."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Body4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Body4KeyReleased(evt);
-            }
-        });
-        jScrollPane58.setViewportView(Body4);
-        if (Body4.getColumnModel().getColumnCount() > 0) {
-            Body4.getColumnModel().getColumn(0).setResizable(false);
-            Body4.getColumnModel().getColumn(1).setResizable(false);
-            Body4.getColumnModel().getColumn(1).setPreferredWidth(7);
-        }
-
-        Finish4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Duración", null},
-                {"Seco", null},
-                {"Astringent", null},
-                {"Granoso", null}
-            },
-            new String [] {
-                "11 Sabor Rem.", "Int."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Finish4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Finish4KeyReleased(evt);
-            }
-        });
-        jScrollPane59.setViewportView(Finish4);
-        if (Finish4.getColumnModel().getColumnCount() > 0) {
-            Finish4.getColumnModel().getColumn(1).setResizable(false);
-            Finish4.getColumnModel().getColumn(1).setPreferredWidth(7);
-        }
-
-        javax.swing.GroupLayout jPanel11Layout = new javax.swing.GroupLayout(jPanel11);
-        jPanel11.setLayout(jPanel11Layout);
-        jPanel11Layout.setHorizontalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(152, 152, 152)
-                .addComponent(jScrollPane58, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane59, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 314, Short.MAX_VALUE)
-                .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel11Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane8, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane18, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
-        );
-        jPanel11Layout.setVerticalGroup(
-            jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel11Layout.createSequentialGroup()
-                .addContainerGap(196, Short.MAX_VALUE)
-                .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                        .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                .addComponent(jScrollPane58, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addComponent(jScrollPane59, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel11Layout.createSequentialGroup()
-                                .addComponent(jScrollPane6, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(16, 16, 16)))
-                        .addGap(80, 80, 80))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel11Layout.createSequentialGroup()
-                        .addComponent(jScrollPane22, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(114, 114, 114))))
-            .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel11Layout.createSequentialGroup()
-                    .addGap(12, 12, 12)
-                    .addGroup(jPanel11Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane7, javax.swing.GroupLayout.PREFERRED_SIZE, 379, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane8, javax.swing.GroupLayout.PREFERRED_SIZE, 219, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane18, javax.swing.GroupLayout.PREFERRED_SIZE, 203, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane20, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane19, javax.swing.GroupLayout.PREFERRED_SIZE, 315, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane21, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane17, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(58, Short.MAX_VALUE)))
-        );
-
-        jTabbedPane1.addTab("Mojado", jPanel11);
-
-        Sweet2.setBackground(new java.awt.Color(255, 102, 102));
-        Sweet2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Azúcar-Mor", null},
-                {"   Melaza", null},
-                {"   Jarab-mapl", null},
-                {"   Caramelo", null},
-                {"   Miel", null},
-                {"Vainilla", null},
-                {"Arom-Vaini", null},
-                {"Dulce-Gene", null},
-                {"Arom-dulce", null}
-            },
-            new String [] {
-                "1 Dulce", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Sweet2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Sweet2KeyReleased(evt);
-            }
-        });
-        jScrollPane23.setViewportView(Sweet2);
-
-        Floral2.setBackground(new java.awt.Color(255, 153, 102));
-        Floral2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Té-Negro", null},
-                {"Floral", null},
-                {"   Manzanilla", null},
-                {"   Rosa", null},
-                {"   Jazmine", null}
-            },
-            new String [] {
-                "2 Flores", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Floral2.setPreferredSize(new java.awt.Dimension(175, 80));
-        Floral2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Floral2KeyReleased(evt);
-            }
-        });
-        jScrollPane24.setViewportView(Floral2);
-
-        Fruit2.setBackground(new java.awt.Color(255, 204, 0));
-        Fruit2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Bayas", null},
-                {"   Moras", null},
-                {"   Frambuesa", null},
-                {"   Arándano", null},
-                {"   Fresa", null},
-                {"Fruto-sec", null},
-                {"   Pasas", null},
-                {"   Ciruel-pas", null},
-                {"Otras-frut", null},
-                {"   Coco", null},
-                {"   Cereza", null},
-                {"   Granada", null},
-                {"   Piña", null},
-                {"   Uvas", null},
-                {"   Manzana", null},
-                {"   Durazno", null},
-                {"   Pera", null},
-                {"Citricos", null},
-                {"   Toronja", null},
-                {"   Naranja", null},
-                {"   Limon", null},
-                {"   Lima", null}
-            },
-            new String [] {
-                "3 Afrutado", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Fruit2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Fruit2KeyReleased(evt);
-            }
-        });
-        jScrollPane25.setViewportView(Fruit2);
-
-        SourFer2.setBackground(new java.awt.Color(255, 255, 153));
-        SourFer2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Acido", null},
-                {"   Arom-acido", null},
-                {"   Acido-acét", null},
-                {"   Acido-butí", null},
-                {"   Acido-isoc", null},
-                {"   Acido-cítr", null},
-                {"   Acido-máli", null},
-                {"Alcoh/Ferm", null},
-                {"   Vinoso", null},
-                {"   Whisky", null},
-                {"   Fermentado", null},
-                {"   Super-madu", null}
-            },
-            new String [] {
-                "4 Acido/Fermentado", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        SourFer2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                SourFer2KeyReleased(evt);
-            }
-        });
-        jScrollPane26.setViewportView(SourFer2);
-
-        GreenVeg2.setBackground(new java.awt.Color(102, 255, 102));
-        GreenVeg2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Aceit-Oliv", null},
-                {"Crudo", null},
-                {"Verde/Vege", null},
-                {"   Inmaduro", null},
-                {"   Vaina", null},
-                {"   Fresco", null},
-                {"   Verde-oscu", null},
-                {"   Vegetal", null},
-                {"   Paja", null},
-                {"   Herbaceo", null},
-                {"Leguminoso", null}
-            },
-            new String [] {
-                "5 Verde/vegetal", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        GreenVeg2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                GreenVeg2KeyReleased(evt);
-            }
-        });
-        jScrollPane27.setViewportView(GreenVeg2);
-
-        Other2.setBackground(new java.awt.Color(51, 255, 255));
-        Other2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Papel/Hume", null},
-                {"   Rancio", null},
-                {"   Carton", null},
-                {"   Papel", null},
-                {"   Madera", null},
-                {"   Mohoso", null},
-                {"   Polvo-hume", null},
-                {"   Tierra", null},
-                {"   Cuero", null},
-                {"   Carne/cald", null},
-                {"   Fenolico", null},
-                {"Quimico", null},
-                {"   Amargo", null},
-                {"   Salado", null},
-                {"   Medicinal", null},
-                {"   Petroleo", null},
-                {"   Zorrillo", null},
-                {"   Goma", null}
-            },
-            new String [] {
-                "6 Otros", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Other2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Other2KeyReleased(evt);
-            }
-        });
-        jScrollPane28.setViewportView(Other2);
-
-        Roasted2.setBackground(new java.awt.Color(0, 204, 255));
-        Roasted2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Tabac-pipa", null},
-                {"Tabaco", null},
-                {"Quemado", null},
-                {"   Acre", null},
-                {"   Ceniza", null},
-                {"   Humo", null},
-                {"   Marrón/tos", null},
-                {"Cereal", null},
-                {"   Grano", null},
-                {"   Malta", null}
-            },
-            new String [] {
-                "7 Tostado", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Roasted2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Roasted2KeyReleased(evt);
-            }
-        });
-        jScrollPane29.setViewportView(Roasted2);
-
-        Spices2.setBackground(new java.awt.Color(153, 153, 255));
-        Spices2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Acre", null},
-                {"Pimienta", null},
-                {"Especias-mo", null},
-                {"   Anis", null},
-                {"   Nuez-mosca", null},
-                {"   Canela", null},
-                {"   Clavo-olor", null}
-            },
-            new String [] {
-                "8 Especias", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Spices2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Spices2KeyReleased(evt);
-            }
-        });
-        jScrollPane30.setViewportView(Spices2);
-
-        Nutty2.setBackground(new java.awt.Color(255, 102, 204));
-        Nutty2.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Nueces", null},
-                {"   Mani", null},
-                {"   Avellana", null},
-                {"   Almendra", null},
-                {"Cacao", null},
-                {"   Chocolate", null},
-                {"   Choc-amarg", null}
-            },
-            new String [] {
-                "9 Nueces/Cacao", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Nutty2.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Nutty2KeyReleased(evt);
-            }
-        });
-        jScrollPane31.setViewportView(Nutty2);
-
-        Body5.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Jarabe", null},
-                {"Aceitoso", null},
-                {"Suave", null}
-            },
-            new String [] {
-                "10 Cuerpo", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Body5.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Body5KeyReleased(evt);
-            }
-        });
-        jScrollPane60.setViewportView(Body5);
-
-        Finish5.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Duración", null},
-                {"Seco", null},
-                {"Astringent", null},
-                {"Granoso", null}
-            },
-            new String [] {
-                "11 Sabor Rem.", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Finish5.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Finish5KeyReleased(evt);
-            }
-        });
-        jScrollPane61.setViewportView(Finish5);
-
-        javax.swing.GroupLayout jPanel12Layout = new javax.swing.GroupLayout(jPanel12);
-        jPanel12.setLayout(jPanel12Layout);
-        jPanel12Layout.setHorizontalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(153, 153, 153)
-                .addComponent(jScrollPane60, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane61, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 313, Short.MAX_VALUE)
-                .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel12Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane26, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane27, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
-        );
-        jPanel12Layout.setVerticalGroup(
-            jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel12Layout.createSequentialGroup()
-                .addContainerGap(199, Short.MAX_VALUE)
-                .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
-                        .addComponent(jScrollPane31, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(110, 110, 110))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
-                        .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane61, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane60, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(78, 78, 78))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel12Layout.createSequentialGroup()
-                        .addComponent(jScrollPane24, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(114, 114, 114))))
-            .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel12Layout.createSequentialGroup()
-                    .addGap(12, 12, 12)
-                    .addGroup(jPanel12Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane28, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane29, javax.swing.GroupLayout.PREFERRED_SIZE, 187, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane25, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane26, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane27, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane30, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane23, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(57, Short.MAX_VALUE)))
-        );
-
-        jTabbedPane1.addTab("Quebrado", jPanel12);
-
-        Sweet3.setBackground(new java.awt.Color(255, 102, 102));
-        Sweet3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Azúcar-Mor", null},
-                {"   Melaza", null},
-                {"   Jarab-mapl", null},
-                {"   Caramelo", null},
-                {"   Miel", null},
-                {"Vainilla", null},
-                {"Arom-Vaini", null},
-                {"Dulce-Gene", null},
-                {"Arom-dulce", null}
-            },
-            new String [] {
-                "1 Dulce", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Sweet3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Sweet3KeyReleased(evt);
-            }
-        });
-        jScrollPane32.setViewportView(Sweet3);
-
-        Floral3.setBackground(new java.awt.Color(255, 153, 102));
-        Floral3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Té-Negro", null},
-                {"Floral", null},
-                {"   Manzanilla", null},
-                {"   Rosa", null},
-                {"   Jazmine", null}
-            },
-            new String [] {
-                "2 Floral", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Floral3.setPreferredSize(new java.awt.Dimension(175, 80));
-        Floral3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Floral3KeyReleased(evt);
-            }
-        });
-        jScrollPane33.setViewportView(Floral3);
-
-        Fruit3.setBackground(new java.awt.Color(255, 204, 0));
-        Fruit3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Bayas", null},
-                {"   Moras", null},
-                {"   Frambuesa", null},
-                {"   Arándano", null},
-                {"   Fresa", null},
-                {"Fruto-sec", null},
-                {"   Pasas", null},
-                {"   Ciruel-pas", null},
-                {"Otras-frut", null},
-                {"   Coco", null},
-                {"   Cereza", null},
-                {"   Granada", null},
-                {"   Piña", null},
-                {"   Uvas", null},
-                {"   Manzana", null},
-                {"   Durazno", null},
-                {"   Pera", null},
-                {"Citricos", null},
-                {"   Toronja", null},
-                {"   Naranja", null},
-                {"   Limon", null},
-                {"   Lima", null}
-            },
-            new String [] {
-                "3 Afrutado", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Fruit3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Fruit3KeyReleased(evt);
-            }
-        });
-        jScrollPane34.setViewportView(Fruit3);
-
-        SourFer3.setBackground(new java.awt.Color(255, 255, 153));
-        SourFer3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Acido", null},
-                {"   Arom-acido", null},
-                {"   Acido-acét", null},
-                {"   Acido-butí", null},
-                {"   Acido-isoc", null},
-                {"   Acido-cítr", null},
-                {"   Acido-máli", null},
-                {"Alcoh/Ferm", null},
-                {"   Vinoso", null},
-                {"   Whisky", null},
-                {"   Fermentado", null},
-                {"   Super-madu", null}
-            },
-            new String [] {
-                "4 Acido/Fermentado", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        SourFer3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                SourFer3KeyReleased(evt);
-            }
-        });
-        jScrollPane35.setViewportView(SourFer3);
-
-        GreenVeg3.setBackground(new java.awt.Color(102, 255, 102));
-        GreenVeg3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Aceit-Oliv", null},
-                {"Crudo", null},
-                {"Verde/Vege", null},
-                {"   Inmaduro", null},
-                {"   Vaina", null},
-                {"   Fresco", null},
-                {"   Verde-oscu", null},
-                {"   Vegetal", null},
-                {"   Paja", null},
-                {"   Herbaceo", null},
-                {"Leguminoso", null}
-            },
-            new String [] {
-                "5 Verde/Vegetal", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        GreenVeg3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                GreenVeg3KeyReleased(evt);
-            }
-        });
-        jScrollPane36.setViewportView(GreenVeg3);
-
-        Other3.setBackground(new java.awt.Color(51, 255, 255));
-        Other3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Papel/Hume", null},
-                {"   Rancio", null},
-                {"   Carton", null},
-                {"   Papel", null},
-                {"   Madera", null},
-                {"   Mohoso", null},
-                {"   Polvo-hume", null},
-                {"   Tierra", null},
-                {"   Cuero", null},
-                {"   Carne/cald", null},
-                {"   Fenolico", null},
-                {"Quimico", null},
-                {"   Amargo", null},
-                {"   Salado", null},
-                {"   Medicinal", null},
-                {"   Petroleo", null},
-                {"   Zorrillo", null},
-                {"   Goma", null}
-            },
-            new String [] {
-                "6 Otros", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Other3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Other3KeyReleased(evt);
-            }
-        });
-        jScrollPane37.setViewportView(Other3);
-
-        Roasted3.setBackground(new java.awt.Color(0, 204, 255));
-        Roasted3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Tabac-pipa", null},
-                {"Tabaco", null},
-                {"Quemado", null},
-                {"   Acre", null},
-                {"   Ceniza", null},
-                {"   Humo", null},
-                {"   Marrón/tos", null},
-                {"Cereal", null},
-                {"   Grano", null},
-                {"   Malta", null}
-            },
-            new String [] {
-                "7 Tostado", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Roasted3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Roasted3KeyReleased(evt);
-            }
-        });
-        jScrollPane38.setViewportView(Roasted3);
-
-        Spices3.setBackground(new java.awt.Color(153, 153, 255));
-        Spices3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Acre", null},
-                {"Pimienta", null},
-                {"Especias-mo", null},
-                {"   Anis", null},
-                {"   Nuez-mosca", null},
-                {"   Canela", null},
-                {"   Clavo-olor", null}
-            },
-            new String [] {
-                "8 Especias", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Spices3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Spices3KeyReleased(evt);
-            }
-        });
-        jScrollPane39.setViewportView(Spices3);
-
-        Nutty3.setBackground(new java.awt.Color(255, 102, 204));
-        Nutty3.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Nueces", null},
-                {"   Mani", null},
-                {"   Avellana", null},
-                {"   Almendra", null},
-                {"Cacao", null},
-                {"   Chocolate", null},
-                {"   Choc-amarg", null}
-            },
-            new String [] {
-                "9 Nueces/Cacao", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Nutty3.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Nutty3KeyReleased(evt);
-            }
-        });
-        jScrollPane40.setViewportView(Nutty3);
-
-        Body6.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Jarabe", null},
-                {"Aceitoso", null},
-                {"Suave", null}
-            },
-            new String [] {
-                "10 Cuerpo", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Body6.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Body6KeyReleased(evt);
-            }
-        });
-        jScrollPane62.setViewportView(Body6);
-
-        Finish6.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Duración", null},
-                {"Seco", null},
-                {"Astringent", null},
-                {"Granoso", null}
-            },
-            new String [] {
-                "11 Sabor Rem.", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Finish6.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Finish6KeyReleased(evt);
-            }
-        });
-        jScrollPane63.setViewportView(Finish6);
-
-        javax.swing.GroupLayout jPanel13Layout = new javax.swing.GroupLayout(jPanel13);
-        jPanel13.setLayout(jPanel13Layout);
-        jPanel13Layout.setHorizontalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(152, 152, 152)
-                .addComponent(jScrollPane62, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane63, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 314, Short.MAX_VALUE)
-                .addComponent(jScrollPane40, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
-            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel13Layout.createSequentialGroup()
-                    .addContainerGap()
-                    .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane34, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane35, javax.swing.GroupLayout.DEFAULT_SIZE, 135, Short.MAX_VALUE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane36, javax.swing.GroupLayout.DEFAULT_SIZE, 142, Short.MAX_VALUE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane37, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane38, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                    .addComponent(jScrollPane39, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addContainerGap()))
-        );
-        jPanel13Layout.setVerticalGroup(
-            jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel13Layout.createSequentialGroup()
-                .addContainerGap(200, Short.MAX_VALUE)
-                .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addComponent(jScrollPane40, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(109, 109, 109))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane63, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane62, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(80, 80, 80))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel13Layout.createSequentialGroup()
-                        .addComponent(jScrollPane33, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(106, 106, 106))))
-            .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                .addGroup(jPanel13Layout.createSequentialGroup()
-                    .addGap(12, 12, 12)
-                    .addGroup(jPanel13Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jScrollPane34, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane35, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane36, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane37, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane38, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane39, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jScrollPane32, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addContainerGap(57, Short.MAX_VALUE)))
-        );
-
-        jTabbedPane1.addTab("Sabor", jPanel13);
-
-        Sweet4.setBackground(new java.awt.Color(255, 102, 102));
-        Sweet4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Azúcar-Mor", null},
-                {"   Melaza", null},
-                {"   Jarab-mapl", null},
-                {"   Caramelo", null},
-                {"   Miel", null},
-                {"Vainilla", null},
-                {"Arom-Vaini", null},
-                {"Dulce-Gene", null},
-                {"Arom-dulce", null}
-            },
-            new String [] {
-                "1 Dulce", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Sweet4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Sweet4KeyReleased(evt);
-            }
-        });
-        jScrollPane41.setViewportView(Sweet4);
-
-        Floral4.setBackground(new java.awt.Color(255, 153, 102));
-        Floral4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Té-Negro", null},
-                {"Floral", null},
-                {"   Manzanilla", null},
-                {"   Rosa", null},
-                {"   Jazmine", null}
-            },
-            new String [] {
-                "2 Floral", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Floral4.setPreferredSize(new java.awt.Dimension(175, 80));
-        Floral4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Floral4KeyReleased(evt);
-            }
-        });
-        jScrollPane42.setViewportView(Floral4);
-
-        Fruit4.setBackground(new java.awt.Color(255, 204, 0));
-        Fruit4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Bayas", null},
-                {"   Moras", null},
-                {"   Frambuesa", null},
-                {"   Arándano", null},
-                {"   Fresa", null},
-                {"Fruto-sec", null},
-                {"   Pasas", null},
-                {"   Ciruel-pas", null},
-                {"Otras-frut", null},
-                {"   Coco", null},
-                {"   Cereza", null},
-                {"   Granada", null},
-                {"   Piña", null},
-                {"   Uvas", null},
-                {"   Manzana", null},
-                {"   Durazno", null},
-                {"   Pera", null},
-                {"Citricos", null},
-                {"   Toronja", null},
-                {"   Naranja", null},
-                {"   Limon", null},
-                {"   Lima", null}
-            },
-            new String [] {
-                "3 Afrutado", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Fruit4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Fruit4KeyReleased(evt);
-            }
-        });
-        jScrollPane43.setViewportView(Fruit4);
-
-        SourFer4.setBackground(new java.awt.Color(255, 255, 153));
-        SourFer4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Acido", null},
-                {"  Arom-acido", null},
-                {"  Acido-acét", null},
-                {"  Acido-butí", null},
-                {"  Acido-isoc", null},
-                {"  Acido-cítr", null},
-                {"  Acido-máli", null},
-                {"Alcoh/Ferm", null},
-                {"  Vinoso", null},
-                {"  Whisky", null},
-                {"  Fermentado", null},
-                {"  Super-madu", null}
-            },
-            new String [] {
-                "4 Acido/Fermentado", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        SourFer4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                SourFer4KeyReleased(evt);
-            }
-        });
-        jScrollPane44.setViewportView(SourFer4);
-
-        GreenVeg4.setBackground(new java.awt.Color(102, 255, 102));
-        GreenVeg4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Aceit-Oliv", null},
-                {"Crudo", null},
-                {"Verde/Vege", null},
-                {"   Inmaduro", null},
-                {"   Vaina", null},
-                {"   Fresco", null},
-                {"   Verde-oscu", null},
-                {"   Vegetal", null},
-                {"   Paja", null},
-                {"   Herbaceo", null},
-                {"Leguminoso", null}
-            },
-            new String [] {
-                "5 Verde/Vegetal", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        GreenVeg4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                GreenVeg4KeyReleased(evt);
-            }
-        });
-        jScrollPane45.setViewportView(GreenVeg4);
-
-        Body1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Jarabe", null},
-                {"Aceitoso", null},
-                {"Suave", null}
-            },
-            new String [] {
-                "10 Cuerpo", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Body1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Body1KeyReleased(evt);
-            }
-        });
-        jScrollPane46.setViewportView(Body1);
-
-        Finish1.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Duración", null},
-                {"Seco", null},
-                {"Astringente", null},
-                {"Granoso", null}
-            },
-            new String [] {
-                "11 Sabor Rem.", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Finish1.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Finish1KeyReleased(evt);
-            }
-        });
-        jScrollPane47.setViewportView(Finish1);
-
-        Other4.setBackground(new java.awt.Color(51, 255, 255));
-        Other4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Papel/Hume", null},
-                {"   Rancio", null},
-                {"   Carton", null},
-                {"   Papel", null},
-                {"   Madera", null},
-                {"   Mohoso", null},
-                {"   Polvo-hume", null},
-                {"   Tierra", null},
-                {"   Cuero", null},
-                {"   Carne/cald", null},
-                {"   Fenolico", null},
-                {"Quimico", null},
-                {"   Amargo", null},
-                {"   Salado", null},
-                {"   Medicinal", null},
-                {"   Petroleo", null},
-                {"   Zorrillo", null},
-                {"   Goma", null}
-            },
-            new String [] {
-                "6 Otros", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Other4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Other4KeyReleased(evt);
-            }
-        });
-        jScrollPane49.setViewportView(Other4);
-
-        Roasted4.setBackground(new java.awt.Color(0, 204, 255));
-        Roasted4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Tabac-pipa", null},
-                {"Tabaco", null},
-                {"Quemado", null},
-                {"   Acre", null},
-                {"   Ceniza", null},
-                {"   Humo", null},
-                {"   Marrón/tos", null},
-                {"Cereal", null},
-                {"   Grano", null},
-                {"   Malta", null}
-            },
-            new String [] {
-                "7 Tostado", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Roasted4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Roasted4KeyReleased(evt);
-            }
-        });
-        jScrollPane50.setViewportView(Roasted4);
-
-        Spices4.setBackground(new java.awt.Color(153, 153, 255));
-        Spices4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Acre", null},
-                {"Pimienta", null},
-                {"Especias-mo", null},
-                {"   Anis", null},
-                {"   Nuez-mosca", null},
-                {"   Canela", null},
-                {"   Clavo-olor", null}
-            },
-            new String [] {
-                "8 Especias", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Spices4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Spices4KeyReleased(evt);
-            }
-        });
-        jScrollPane51.setViewportView(Spices4);
-
-        Nutty4.setBackground(new java.awt.Color(255, 102, 204));
-        Nutty4.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Nueces", null},
-                {"   Mani", null},
-                {"   Avellana", null},
-                {"   Almendra", null},
-                {"Cacao", null},
-                {"   Chocolate", null},
-                {"   Choc-amarg", null}
-            },
-            new String [] {
-                "9 Nueces/Cacao", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Nutty4.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Nutty4KeyReleased(evt);
-            }
-        });
-        jScrollPane52.setViewportView(Nutty4);
-
-        javax.swing.GroupLayout jPanel14Layout = new javax.swing.GroupLayout(jPanel14);
-        jPanel14.setLayout(jPanel14Layout);
-        jPanel14Layout.setHorizontalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel14Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane41, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jScrollPane42, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane43, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addComponent(jScrollPane44, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane45, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addComponent(jScrollPane46, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane47, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane49, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane50, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane51, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane52, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel14Layout.setVerticalGroup(
-            jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel14Layout.createSequentialGroup()
-                .addContainerGap(42, Short.MAX_VALUE)
-                .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane49, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane50, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addComponent(jScrollPane51, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane52, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane44, javax.swing.GroupLayout.PREFERRED_SIZE, 221, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane45, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel14Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane46, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane47, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel14Layout.createSequentialGroup()
-                        .addComponent(jScrollPane41, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane42, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane43, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(27, 27, 27))
-        );
-
-        jTabbedPane1.addTab("Sabor Remanente", jPanel14);
-
-        SourFer5.setBackground(new java.awt.Color(255, 255, 153));
-        SourFer5.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Acido", null},
-                {"   Arom-acido", null},
-                {"   Acido-acét", null},
-                {"   Acido-butí", null},
-                {"   Acido-isoc", null},
-                {"   Acido-cítr", null},
-                {"   Acido-máli", null},
-                {"Alcoh/Ferm", null},
-                {"   Vinoso", null},
-                {"   Whisky", null},
-                {"   Fermentado", null},
-                {"   Super-madu", null}
-            },
-            new String [] {
-                "4 Acido/Fermentado", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        SourFer5.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                SourFer5KeyReleased(evt);
-            }
-        });
-        jScrollPane48.setViewportView(SourFer5);
-
-        Sweet5.setBackground(new java.awt.Color(255, 102, 102));
-        Sweet5.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Azúcar-Mor", null},
-                {"   Melaza", null},
-                {"   Jarab-mapl", null},
-                {"   Caramelo", null},
-                {"   Miel", null},
-                {"Vainilla", null},
-                {"Arom-Vaini", null},
-                {"Dulce-Gene", null},
-                {"Arom-dulce", null}
-            },
-            new String [] {
-                "1 Dulce", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Sweet5.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Sweet5KeyReleased(evt);
-            }
-        });
-        jScrollPane53.setViewportView(Sweet5);
-
-        Floral5.setBackground(new java.awt.Color(255, 153, 102));
-        Floral5.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Té-Negro", null},
-                {"Floral", null},
-                {"   Manzanilla", null},
-                {"   Rosa", null},
-                {"   Jazmine", null}
-            },
-            new String [] {
-                "2 Floral", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Floral5.setPreferredSize(new java.awt.Dimension(175, 80));
-        Floral5.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Floral5KeyReleased(evt);
-            }
-        });
-        jScrollPane64.setViewportView(Floral5);
-
-        Fruit5.setBackground(new java.awt.Color(255, 204, 0));
-        Fruit5.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Bayas", null},
-                {"   Moras", null},
-                {"   Frambuesa", null},
-                {"   Arándano", null},
-                {"   Fresa", null},
-                {"Fruto-sec", null},
-                {"   Pasas", null},
-                {"   Ciruel-pas", null},
-                {"Otras-frut", null},
-                {"   Coco", null},
-                {"   Cereza", null},
-                {"   Granada", null},
-                {"   Piña", null},
-                {"   Uvas", null},
-                {"   Manzana", null},
-                {"   Durazno", null},
-                {"   Pera", null},
-                {"Citricos", null},
-                {"   Toronja", null},
-                {"   Naranja", null},
-                {"   Limon", null},
-                {"   Lima", null}
-            },
-            new String [] {
-                "3 Afrutado", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Fruit5.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Fruit5KeyReleased(evt);
-            }
-        });
-        jScrollPane65.setViewportView(Fruit5);
-
-        GreenVeg5.setBackground(new java.awt.Color(102, 255, 102));
-        GreenVeg5.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Aceit-Oliv", null},
-                {"Crudo", null},
-                {"Verde/Vege", null},
-                {"   Inmaduro", null},
-                {"   Vaina", null},
-                {"   Fresco", null},
-                {"   Verde-oscu", null},
-                {"   Vegetal", null},
-                {"   Paja", null},
-                {"   Herbaceo", null},
-                {"Leguminoso", null}
-            },
-            new String [] {
-                "5 Verde/Vegetal", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        GreenVeg5.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                GreenVeg5KeyReleased(evt);
-            }
-        });
-        jScrollPane66.setViewportView(GreenVeg5);
-
-        Body7.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Jarabe", null},
-                {"Aceitoso", null},
-                {"Suave", null}
-            },
-            new String [] {
-                "10 Cuerpo", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Body7.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Body7KeyReleased(evt);
-            }
-        });
-        jScrollPane67.setViewportView(Body7);
-
-        Finish7.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Duración", null},
-                {"Seco", null},
-                {"Astringente", null},
-                {"Granoso", null}
-            },
-            new String [] {
-                "11 Sabor Rem.", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Finish7.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Finish7KeyReleased(evt);
-            }
-        });
-        jScrollPane68.setViewportView(Finish7);
-
-        Other5.setBackground(new java.awt.Color(51, 255, 255));
-        Other5.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Papel/Hume", null},
-                {"   Rancio", null},
-                {"   Carton", null},
-                {"   Papel", null},
-                {"   Madera", null},
-                {"   Mohoso", null},
-                {"   Polvo-hume", null},
-                {"   Tierra", null},
-                {"   Cuero", null},
-                {"   Carne/cald", null},
-                {"   Fenolico", null},
-                {"Quimico", null},
-                {"   Amargo", null},
-                {"   Salado", null},
-                {"   Medicinal", null},
-                {"   Petroleo", null},
-                {"   Zorrillo", null},
-                {"   Goma", null}
-            },
-            new String [] {
-                "6 Otros", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Other5.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Other5KeyReleased(evt);
-            }
-        });
-        jScrollPane69.setViewportView(Other5);
-
-        Roasted5.setBackground(new java.awt.Color(0, 204, 255));
-        Roasted5.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Tabac-pipa", null},
-                {"Tabaco", null},
-                {"Quemado", null},
-                {"   Acre", null},
-                {"   Ceniza", null},
-                {"   Humo", null},
-                {"   Marrón/tos", null},
-                {"Cereal", null},
-                {"   Grano", null},
-                {"   Malta", null}
-            },
-            new String [] {
-                "7 Tostado", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Roasted5.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Roasted5KeyReleased(evt);
-            }
-        });
-        jScrollPane70.setViewportView(Roasted5);
-
-        Spices5.setBackground(new java.awt.Color(153, 153, 255));
-        Spices5.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Acre", null},
-                {"Pimienta", null},
-                {"Especias-mo", null},
-                {"   Anis", null},
-                {"   Nuez-mosca", null},
-                {"   Canela", null},
-                {"   Clavo-olor", null}
-            },
-            new String [] {
-                "8 Especias", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Spices5.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Spices5KeyReleased(evt);
-            }
-        });
-        jScrollPane71.setViewportView(Spices5);
-
-        Nutty5.setBackground(new java.awt.Color(255, 102, 204));
-        Nutty5.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Nueces", null},
-                {"   Mani", null},
-                {"   Avellana", null},
-                {"   Almendra", null},
-                {"Cacao", null},
-                {"   Chocolate", null},
-                {"   Choc-amarg", null}
-            },
-            new String [] {
-                "9 Nueces/Cacao", "Inten."
-            }
-        ) {
-            boolean[] canEdit = new boolean [] {
-                false, true
-            };
-
-            public boolean isCellEditable(int rowIndex, int columnIndex) {
-                return canEdit [columnIndex];
-            }
-        });
-        Nutty5.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Nutty5KeyReleased(evt);
-            }
-        });
-        jScrollPane72.setViewportView(Nutty5);
-
-        javax.swing.GroupLayout jPanel15Layout = new javax.swing.GroupLayout(jPanel15);
-        jPanel15.setLayout(jPanel15Layout);
-        jPanel15Layout.setHorizontalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel15Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane53, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(jScrollPane64, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane65, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addComponent(jScrollPane67, javax.swing.GroupLayout.PREFERRED_SIZE, 134, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(jScrollPane68, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addComponent(jScrollPane48, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane66, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jScrollPane69, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane70, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane71, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane72, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addGap(23, 23, 23))
-        );
-        jPanel15Layout.setVerticalGroup(
-            jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel15Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jScrollPane69, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jScrollPane70, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addComponent(jScrollPane71, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(jScrollPane72, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane66, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane48, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addGap(29, 29, 29)
-                        .addGroup(jPanel15Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jScrollPane67, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jScrollPane68, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                    .addGroup(jPanel15Layout.createSequentialGroup()
-                        .addComponent(jScrollPane53, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(jScrollPane64, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(jScrollPane65, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(58, Short.MAX_VALUE))
-        );
-
-        jTabbedPane1.addTab("Acidez", jPanel15);
-
         Body2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Jarabe", null},
@@ -4014,7 +1423,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Arom-dulce", null}
             },
             new String [] {
-                "1 Dulce", "Inten."
+                "1 Dulce", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -4031,6 +1440,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane73.setViewportView(Sweet6);
+        if (Sweet6.getColumnModel().getColumnCount() > 0) {
+            Sweet6.getColumnModel().getColumn(1).setMinWidth(30);
+            Sweet6.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Sweet6.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
 
         Floral6.setBackground(new java.awt.Color(255, 153, 102));
         Floral6.setModel(new javax.swing.table.DefaultTableModel(
@@ -4042,7 +1456,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"   Jazmine", null}
             },
             new String [] {
-                "2 Floral", "Inten."
+                "2 Floral", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -4059,6 +1473,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane74.setViewportView(Floral6);
+        if (Floral6.getColumnModel().getColumnCount() > 0) {
+            Floral6.getColumnModel().getColumn(1).setMinWidth(30);
+            Floral6.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Floral6.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
 
         Fruit6.setBackground(new java.awt.Color(255, 204, 0));
         Fruit6.setModel(new javax.swing.table.DefaultTableModel(
@@ -4370,7 +1789,2175 @@ public class jdCatacion2 extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
-        jTabbedPane1.addTab("Cuerpo", jPanel16);
+        jTabbedPane1.addTab("Seco", jPanel16);
+
+        Body8.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Jarabe", null},
+                {"Aceitoso", null},
+                {"Suave", null}
+            },
+            new String [] {
+                "10 Cuerpo", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Body8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Body8KeyReleased(evt);
+            }
+        });
+        jScrollPane82.setViewportView(Body8);
+
+        Finish8.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Duración", null},
+                {"Seco", null},
+                {"Astringent", null},
+                {"Granoso", null}
+            },
+            new String [] {
+                "11 Sabor Rem.", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Finish8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Finish8KeyReleased(evt);
+            }
+        });
+        jScrollPane83.setViewportView(Finish8);
+
+        Sweet7.setBackground(new java.awt.Color(255, 102, 102));
+        Sweet7.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Azúcar-Mor", null},
+                {"   Melaza", null},
+                {"   Jarab-mapl", null},
+                {"   Caramelo", null},
+                {"   Miel", null},
+                {"Vainilla", null},
+                {"Arom-Vaini", null},
+                {"Dulce-Gene", null},
+                {"Arom-dulce", null}
+            },
+            new String [] {
+                "1 Dulce", "Int."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Sweet7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Sweet7KeyReleased(evt);
+            }
+        });
+        jScrollPane84.setViewportView(Sweet7);
+        if (Sweet7.getColumnModel().getColumnCount() > 0) {
+            Sweet7.getColumnModel().getColumn(1).setMinWidth(30);
+            Sweet7.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Sweet7.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
+
+        Floral7.setBackground(new java.awt.Color(255, 153, 102));
+        Floral7.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Té-Negro", null},
+                {"Floral", null},
+                {"   Manzanilla", null},
+                {"   Rosa", null},
+                {"   Jazmine", null}
+            },
+            new String [] {
+                "2 Floral", "Int."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Floral7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Floral7KeyReleased(evt);
+            }
+        });
+        jScrollPane85.setViewportView(Floral7);
+        if (Floral7.getColumnModel().getColumnCount() > 0) {
+            Floral7.getColumnModel().getColumn(1).setMinWidth(30);
+            Floral7.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Floral7.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
+
+        Fruit7.setBackground(new java.awt.Color(255, 204, 0));
+        Fruit7.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Bayas", null},
+                {"   Moras", null},
+                {"   Frambuesa", null},
+                {"   Arándano", null},
+                {"   Fresa", null},
+                {"Fruto-sec", null},
+                {"   Pasas", null},
+                {"   Ciruel-pas", null},
+                {"Otras-frut", null},
+                {"   Coco", null},
+                {"   Cereza", null},
+                {"   Granada", null},
+                {"   Piña", null},
+                {"   Uvas", null},
+                {"   Manzana", null},
+                {"   Durazno", null},
+                {"   Pera", null},
+                {"Citricos", null},
+                {"   Toronja", null},
+                {"   Naranja", null},
+                {"   Limon", null},
+                {"   Lima", null}
+            },
+            new String [] {
+                "3 Afrutado", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Fruit7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Fruit7KeyReleased(evt);
+            }
+        });
+        jScrollPane86.setViewportView(Fruit7);
+
+        SourFer7.setBackground(new java.awt.Color(255, 255, 153));
+        SourFer7.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Acido", null},
+                {"   Arom-acido", null},
+                {"   Acido-acét", null},
+                {"   Acido-butí", null},
+                {"   Acido-isoc", null},
+                {"   Acido-cítr", null},
+                {"   Acido-máli", null},
+                {"Alcoh/Ferm", null},
+                {"   Vinoso", null},
+                {"   Whisky", null},
+                {"   Fermentado", null},
+                {"   Super-madu", null}
+            },
+            new String [] {
+                "4 Acido/Fermentado", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        SourFer7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                SourFer7KeyReleased(evt);
+            }
+        });
+        jScrollPane87.setViewportView(SourFer7);
+
+        GreenVeg7.setBackground(new java.awt.Color(102, 255, 102));
+        GreenVeg7.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Aceit-Oliv", null},
+                {"Crudo", null},
+                {"Verde/Vege", null},
+                {"   Inmaduro", null},
+                {"   Vaina", null},
+                {"   Fresco", null},
+                {"   Verde-oscu", null},
+                {"   Vegetal", null},
+                {"   Paja", null},
+                {"   Herbaceo", null},
+                {"Leguminoso", null}
+            },
+            new String [] {
+                "5 Verde/Vegetal", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        GreenVeg7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                GreenVeg7KeyReleased(evt);
+            }
+        });
+        jScrollPane88.setViewportView(GreenVeg7);
+
+        Other7.setBackground(new java.awt.Color(51, 255, 255));
+        Other7.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Papel/Hume", null},
+                {"   Rancio", null},
+                {"   Carton", null},
+                {"   Papel", null},
+                {"   Madera", null},
+                {"   Mohoso", null},
+                {"   Polvo-hume", null},
+                {"   Tierra", null},
+                {"   Cuero", null},
+                {"   Carne/cald", null},
+                {"   Fenolico", null},
+                {"Quimico", null},
+                {"   Amargo", null},
+                {"   Salado", null},
+                {"   Medicinal", null},
+                {"   Petroleo", null},
+                {"   Zorrillo", null},
+                {"   Goma", null}
+            },
+            new String [] {
+                "6 Otros", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Other7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Other7KeyReleased(evt);
+            }
+        });
+        jScrollPane89.setViewportView(Other7);
+
+        Roasted7.setBackground(new java.awt.Color(0, 204, 255));
+        Roasted7.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Tabac-pipa", null},
+                {"Tabaco", null},
+                {"Quemado", null},
+                {"   Acre", null},
+                {"   Ceniza", null},
+                {"   Humo", null},
+                {"   Marrón/tos", null},
+                {"Cereal", null},
+                {"   Grano", null},
+                {"   Malta", null}
+            },
+            new String [] {
+                "7 Tostado", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Roasted7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Roasted7KeyReleased(evt);
+            }
+        });
+        jScrollPane90.setViewportView(Roasted7);
+
+        Spices7.setBackground(new java.awt.Color(153, 153, 255));
+        Spices7.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Acre", null},
+                {"Pimienta", null},
+                {"Especias-mo", null},
+                {"   Anis", null},
+                {"   Nuez-mosca", null},
+                {"   Canela", null},
+                {"   Clavo-olor", null}
+            },
+            new String [] {
+                "8 Especias", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Spices7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Spices7KeyReleased(evt);
+            }
+        });
+        jScrollPane91.setViewportView(Spices7);
+
+        Nutty7.setBackground(new java.awt.Color(255, 102, 204));
+        Nutty7.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Nueces", null},
+                {"   Mani", null},
+                {"   Avellana", null},
+                {"   Almendra", null},
+                {"Cacao", null},
+                {"   Chocolate", null},
+                {"   Choc-amarg", null}
+            },
+            new String [] {
+                "9 Nueces/Cacao", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Nutty7.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Nutty7KeyReleased(evt);
+            }
+        });
+        jScrollPane92.setViewportView(Nutty7);
+
+        javax.swing.GroupLayout jPanel17Layout = new javax.swing.GroupLayout(jPanel17);
+        jPanel17.setLayout(jPanel17Layout);
+        jPanel17Layout.setHorizontalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane85, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane84, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane86, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane87, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane88, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane89, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane91, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane90, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane92, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jScrollPane82, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane83, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel17Layout.setVerticalGroup(
+            jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel17Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane86, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel17Layout.createSequentialGroup()
+                                .addComponent(jScrollPane90, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane91, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane87, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel17Layout.createSequentialGroup()
+                                .addComponent(jScrollPane84, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane85, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 58, Short.MAX_VALUE))
+                    .addGroup(jPanel17Layout.createSequentialGroup()
+                        .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel17Layout.createSequentialGroup()
+                                .addGroup(jPanel17Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel17Layout.createSequentialGroup()
+                                        .addComponent(jScrollPane92, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jScrollPane82, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jScrollPane88, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane83, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane89, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+
+        jTabbedPane1.addTab("Mojado/Quebrado", jPanel17);
+
+        Body9.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Jarabe", null},
+                {"Aceitoso", null},
+                {"Suave", null}
+            },
+            new String [] {
+                "10 Cuerpo", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Body9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Body9KeyReleased(evt);
+            }
+        });
+        jScrollPane93.setViewportView(Body9);
+
+        Finish9.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Duración", null},
+                {"Seco", null},
+                {"Astringent", null},
+                {"Granoso", null}
+            },
+            new String [] {
+                "11 Sabor Rem.", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Finish9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Finish9KeyReleased(evt);
+            }
+        });
+        jScrollPane94.setViewportView(Finish9);
+
+        Sweet8.setBackground(new java.awt.Color(255, 102, 102));
+        Sweet8.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Azúcar-Mor", null},
+                {"   Melaza", null},
+                {"   Jarab-mapl", null},
+                {"   Caramelo", null},
+                {"   Miel", null},
+                {"Vainilla", null},
+                {"Arom-Vaini", null},
+                {"Dulce-Gene", null},
+                {"Arom-dulce", null}
+            },
+            new String [] {
+                "1 Dulce", "Int."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Sweet8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Sweet8KeyReleased(evt);
+            }
+        });
+        jScrollPane95.setViewportView(Sweet8);
+        if (Sweet8.getColumnModel().getColumnCount() > 0) {
+            Sweet8.getColumnModel().getColumn(1).setMinWidth(30);
+            Sweet8.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Sweet8.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
+
+        Floral8.setBackground(new java.awt.Color(255, 153, 102));
+        Floral8.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Té-Negro", null},
+                {"Floral", null},
+                {"   Manzanilla", null},
+                {"   Rosa", null},
+                {"   Jazmine", null}
+            },
+            new String [] {
+                "2 Floral", "Int."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Floral8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Floral8KeyReleased(evt);
+            }
+        });
+        jScrollPane96.setViewportView(Floral8);
+        if (Floral8.getColumnModel().getColumnCount() > 0) {
+            Floral8.getColumnModel().getColumn(1).setMinWidth(30);
+            Floral8.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Floral8.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
+
+        Fruit8.setBackground(new java.awt.Color(255, 204, 0));
+        Fruit8.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Bayas", null},
+                {"   Moras", null},
+                {"   Frambuesa", null},
+                {"   Arándano", null},
+                {"   Fresa", null},
+                {"Fruto-sec", null},
+                {"   Pasas", null},
+                {"   Ciruel-pas", null},
+                {"Otras-frut", null},
+                {"   Coco", null},
+                {"   Cereza", null},
+                {"   Granada", null},
+                {"   Piña", null},
+                {"   Uvas", null},
+                {"   Manzana", null},
+                {"   Durazno", null},
+                {"   Pera", null},
+                {"Citricos", null},
+                {"   Toronja", null},
+                {"   Naranja", null},
+                {"   Limon", null},
+                {"   Lima", null}
+            },
+            new String [] {
+                "3 Afrutado", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Fruit8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Fruit8KeyReleased(evt);
+            }
+        });
+        jScrollPane97.setViewportView(Fruit8);
+
+        SourFer8.setBackground(new java.awt.Color(255, 255, 153));
+        SourFer8.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Acido", null},
+                {"   Arom-acido", null},
+                {"   Acido-acét", null},
+                {"   Acido-butí", null},
+                {"   Acido-isoc", null},
+                {"   Acido-cítr", null},
+                {"   Acido-máli", null},
+                {"Alcoh/Ferm", null},
+                {"   Vinoso", null},
+                {"   Whisky", null},
+                {"   Fermentado", null},
+                {"   Super-madu", null}
+            },
+            new String [] {
+                "4 Acido/Fermentado", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        SourFer8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                SourFer8KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                SourFer8KeyTyped(evt);
+            }
+        });
+        jScrollPane98.setViewportView(SourFer8);
+
+        GreenVeg8.setBackground(new java.awt.Color(102, 255, 102));
+        GreenVeg8.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Aceit-Oliv", null},
+                {"Crudo", null},
+                {"Verde/Vege", null},
+                {"   Inmaduro", null},
+                {"   Vaina", null},
+                {"   Fresco", null},
+                {"   Verde-oscu", null},
+                {"   Vegetal", null},
+                {"   Paja", null},
+                {"   Herbaceo", null},
+                {"Leguminoso", null}
+            },
+            new String [] {
+                "5 Verde/Vegetal", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        GreenVeg8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                GreenVeg8KeyReleased(evt);
+            }
+        });
+        jScrollPane99.setViewportView(GreenVeg8);
+
+        Other8.setBackground(new java.awt.Color(51, 255, 255));
+        Other8.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Papel/Hume", null},
+                {"   Rancio", null},
+                {"   Carton", null},
+                {"   Papel", null},
+                {"   Madera", null},
+                {"   Mohoso", null},
+                {"   Polvo-hume", null},
+                {"   Tierra", null},
+                {"   Cuero", null},
+                {"   Carne/cald", null},
+                {"   Fenolico", null},
+                {"Quimico", null},
+                {"   Amargo", null},
+                {"   Salado", null},
+                {"   Medicinal", null},
+                {"   Petroleo", null},
+                {"   Zorrillo", null},
+                {"   Goma", null}
+            },
+            new String [] {
+                "6 Otros", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Other8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Other8KeyReleased(evt);
+            }
+        });
+        jScrollPane100.setViewportView(Other8);
+
+        Roasted8.setBackground(new java.awt.Color(0, 204, 255));
+        Roasted8.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Tabac-pipa", null},
+                {"Tabaco", null},
+                {"Quemado", null},
+                {"   Acre", null},
+                {"   Ceniza", null},
+                {"   Humo", null},
+                {"   Marrón/tos", null},
+                {"Cereal", null},
+                {"   Grano", null},
+                {"   Malta", null}
+            },
+            new String [] {
+                "7 Tostado", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Roasted8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Roasted8KeyReleased(evt);
+            }
+        });
+        jScrollPane101.setViewportView(Roasted8);
+
+        Spices8.setBackground(new java.awt.Color(153, 153, 255));
+        Spices8.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Acre", null},
+                {"Pimienta", null},
+                {"Especias-mo", null},
+                {"   Anis", null},
+                {"   Nuez-mosca", null},
+                {"   Canela", null},
+                {"   Clavo-olor", null}
+            },
+            new String [] {
+                "8 Especias", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Spices8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Spices8KeyReleased(evt);
+            }
+        });
+        jScrollPane102.setViewportView(Spices8);
+
+        Nutty8.setBackground(new java.awt.Color(255, 102, 204));
+        Nutty8.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Nueces", null},
+                {"   Mani", null},
+                {"   Avellana", null},
+                {"   Almendra", null},
+                {"Cacao", null},
+                {"   Chocolate", null},
+                {"   Choc-amarg", null}
+            },
+            new String [] {
+                "9 Nueces/Cacao", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Nutty8.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Nutty8KeyReleased(evt);
+            }
+        });
+        jScrollPane103.setViewportView(Nutty8);
+
+        javax.swing.GroupLayout jPanel18Layout = new javax.swing.GroupLayout(jPanel18);
+        jPanel18.setLayout(jPanel18Layout);
+        jPanel18Layout.setHorizontalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane96, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane95, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane97, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane98, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane99, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane100, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane102, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane101, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane103, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jScrollPane93, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane94, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel18Layout.setVerticalGroup(
+            jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel18Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel18Layout.createSequentialGroup()
+                        .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane97, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel18Layout.createSequentialGroup()
+                                .addComponent(jScrollPane101, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane102, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane98, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel18Layout.createSequentialGroup()
+                                .addComponent(jScrollPane95, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane96, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 58, Short.MAX_VALUE))
+                    .addGroup(jPanel18Layout.createSequentialGroup()
+                        .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel18Layout.createSequentialGroup()
+                                .addGroup(jPanel18Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel18Layout.createSequentialGroup()
+                                        .addComponent(jScrollPane103, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jScrollPane93, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jScrollPane99, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane94, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane100, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+
+        jTabbedPane1.addTab("Sabor", jPanel18);
+
+        Body10.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Jarabe", null},
+                {"Aceitoso", null},
+                {"Suave", null}
+            },
+            new String [] {
+                "10 Cuerpo", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Body10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Body10KeyReleased(evt);
+            }
+        });
+        jScrollPane104.setViewportView(Body10);
+
+        Finish10.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Duración", null},
+                {"Seco", null},
+                {"Astringent", null},
+                {"Granoso", null}
+            },
+            new String [] {
+                "11 Sabor Rem.", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Finish10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Finish10KeyReleased(evt);
+            }
+        });
+        jScrollPane105.setViewportView(Finish10);
+
+        Sweet9.setBackground(new java.awt.Color(255, 102, 102));
+        Sweet9.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Azúcar-Mor", null},
+                {"   Melaza", null},
+                {"   Jarab-mapl", null},
+                {"   Caramelo", null},
+                {"   Miel", null},
+                {"Vainilla", null},
+                {"Arom-Vaini", null},
+                {"Dulce-Gene", null},
+                {"Arom-dulce", null}
+            },
+            new String [] {
+                "1 Dulce", "Int."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Sweet9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Sweet9KeyReleased(evt);
+            }
+        });
+        jScrollPane106.setViewportView(Sweet9);
+        if (Sweet9.getColumnModel().getColumnCount() > 0) {
+            Sweet9.getColumnModel().getColumn(1).setMinWidth(30);
+            Sweet9.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Sweet9.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
+
+        Floral9.setBackground(new java.awt.Color(255, 153, 102));
+        Floral9.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Té-Negro", null},
+                {"Floral", null},
+                {"   Manzanilla", null},
+                {"   Rosa", null},
+                {"   Jazmine", null}
+            },
+            new String [] {
+                "2 Floral", "Int."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Floral9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Floral9KeyReleased(evt);
+            }
+        });
+        jScrollPane107.setViewportView(Floral9);
+        if (Floral9.getColumnModel().getColumnCount() > 0) {
+            Floral9.getColumnModel().getColumn(1).setMinWidth(30);
+            Floral9.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Floral9.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
+
+        Fruit9.setBackground(new java.awt.Color(255, 204, 0));
+        Fruit9.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Bayas", null},
+                {"   Moras", null},
+                {"   Frambuesa", null},
+                {"   Arándano", null},
+                {"   Fresa", null},
+                {"Fruto-sec", null},
+                {"   Pasas", null},
+                {"   Ciruel-pas", null},
+                {"Otras-frut", null},
+                {"   Coco", null},
+                {"   Cereza", null},
+                {"   Granada", null},
+                {"   Piña", null},
+                {"   Uvas", null},
+                {"   Manzana", null},
+                {"   Durazno", null},
+                {"   Pera", null},
+                {"Citricos", null},
+                {"   Toronja", null},
+                {"   Naranja", null},
+                {"   Limon", null},
+                {"   Lima", null}
+            },
+            new String [] {
+                "3 Afrutado", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Fruit9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Fruit9KeyReleased(evt);
+            }
+        });
+        jScrollPane108.setViewportView(Fruit9);
+
+        SourFer9.setBackground(new java.awt.Color(255, 255, 153));
+        SourFer9.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Acido", null},
+                {"   Arom-acido", null},
+                {"   Acido-acét", null},
+                {"   Acido-butí", null},
+                {"   Acido-isoc", null},
+                {"   Acido-cítr", null},
+                {"   Acido-máli", null},
+                {"Alcoh/Ferm", null},
+                {"   Vinoso", null},
+                {"   Whisky", null},
+                {"   Fermentado", null},
+                {"   Super-madu", null}
+            },
+            new String [] {
+                "4 Acido/Fermentado", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        SourFer9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                SourFer9KeyReleased(evt);
+            }
+        });
+        jScrollPane109.setViewportView(SourFer9);
+
+        GreenVeg9.setBackground(new java.awt.Color(102, 255, 102));
+        GreenVeg9.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Aceit-Oliv", null},
+                {"Crudo", null},
+                {"Verde/Vege", null},
+                {"   Inmaduro", null},
+                {"   Vaina", null},
+                {"   Fresco", null},
+                {"   Verde-oscu", null},
+                {"   Vegetal", null},
+                {"   Paja", null},
+                {"   Herbaceo", null},
+                {"Leguminoso", null}
+            },
+            new String [] {
+                "5 Verde/Vegetal", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        GreenVeg9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                GreenVeg9KeyReleased(evt);
+            }
+        });
+        jScrollPane110.setViewportView(GreenVeg9);
+
+        Other9.setBackground(new java.awt.Color(51, 255, 255));
+        Other9.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Papel/Hume", null},
+                {"   Rancio", null},
+                {"   Carton", null},
+                {"   Papel", null},
+                {"   Madera", null},
+                {"   Mohoso", null},
+                {"   Polvo-hume", null},
+                {"   Tierra", null},
+                {"   Cuero", null},
+                {"   Carne/cald", null},
+                {"   Fenolico", null},
+                {"Quimico", null},
+                {"   Amargo", null},
+                {"   Salado", null},
+                {"   Medicinal", null},
+                {"   Petroleo", null},
+                {"   Zorrillo", null},
+                {"   Goma", null}
+            },
+            new String [] {
+                "6 Otros", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Other9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Other9KeyReleased(evt);
+            }
+        });
+        jScrollPane111.setViewportView(Other9);
+
+        Roasted9.setBackground(new java.awt.Color(0, 204, 255));
+        Roasted9.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Tabac-pipa", null},
+                {"Tabaco", null},
+                {"Quemado", null},
+                {"   Acre", null},
+                {"   Ceniza", null},
+                {"   Humo", null},
+                {"   Marrón/tos", null},
+                {"Cereal", null},
+                {"   Grano", null},
+                {"   Malta", null}
+            },
+            new String [] {
+                "7 Tostado", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Roasted9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Roasted9KeyReleased(evt);
+            }
+        });
+        jScrollPane112.setViewportView(Roasted9);
+
+        Spices9.setBackground(new java.awt.Color(153, 153, 255));
+        Spices9.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Acre", null},
+                {"Pimienta", null},
+                {"Especias-mo", null},
+                {"   Anis", null},
+                {"   Nuez-mosca", null},
+                {"   Canela", null},
+                {"   Clavo-olor", null}
+            },
+            new String [] {
+                "8 Especias", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Spices9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Spices9KeyReleased(evt);
+            }
+        });
+        jScrollPane113.setViewportView(Spices9);
+
+        Nutty9.setBackground(new java.awt.Color(255, 102, 204));
+        Nutty9.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Nueces", null},
+                {"   Mani", null},
+                {"   Avellana", null},
+                {"   Almendra", null},
+                {"Cacao", null},
+                {"   Chocolate", null},
+                {"   Choc-amarg", null}
+            },
+            new String [] {
+                "9 Nueces/Cacao", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Nutty9.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Nutty9KeyReleased(evt);
+            }
+        });
+        jScrollPane114.setViewportView(Nutty9);
+
+        javax.swing.GroupLayout jPanel19Layout = new javax.swing.GroupLayout(jPanel19);
+        jPanel19.setLayout(jPanel19Layout);
+        jPanel19Layout.setHorizontalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane107, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane106, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane108, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane109, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane110, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane111, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane113, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane112, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane114, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jScrollPane104, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane105, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel19Layout.setVerticalGroup(
+            jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel19Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel19Layout.createSequentialGroup()
+                        .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane108, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel19Layout.createSequentialGroup()
+                                .addComponent(jScrollPane112, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane113, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane109, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel19Layout.createSequentialGroup()
+                                .addComponent(jScrollPane106, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane107, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 58, Short.MAX_VALUE))
+                    .addGroup(jPanel19Layout.createSequentialGroup()
+                        .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel19Layout.createSequentialGroup()
+                                .addGroup(jPanel19Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel19Layout.createSequentialGroup()
+                                        .addComponent(jScrollPane114, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jScrollPane104, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jScrollPane110, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane105, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane111, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+
+        jTabbedPane1.addTab("Sabor Remanente", jPanel19);
+
+        Body11.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Jarabe", null},
+                {"Aceitoso", null},
+                {"Suave", null}
+            },
+            new String [] {
+                "10 Cuerpo", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Body11.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Body11KeyReleased(evt);
+            }
+        });
+        jScrollPane115.setViewportView(Body11);
+
+        Finish11.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Duración", null},
+                {"Seco", null},
+                {"Astringent", null},
+                {"Granoso", null}
+            },
+            new String [] {
+                "11 Sabor Rem.", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Finish11.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Finish11KeyReleased(evt);
+            }
+        });
+        jScrollPane116.setViewportView(Finish11);
+
+        Sweet10.setBackground(new java.awt.Color(255, 102, 102));
+        Sweet10.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Azúcar-Mor", null},
+                {"   Melaza", null},
+                {"   Jarab-mapl", null},
+                {"   Caramelo", null},
+                {"   Miel", null},
+                {"Vainilla", null},
+                {"Arom-Vaini", null},
+                {"Dulce-Gene", null},
+                {"Arom-dulce", null}
+            },
+            new String [] {
+                "1 Dulce", "Int."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Sweet10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Sweet10KeyReleased(evt);
+            }
+        });
+        jScrollPane117.setViewportView(Sweet10);
+        if (Sweet10.getColumnModel().getColumnCount() > 0) {
+            Sweet10.getColumnModel().getColumn(1).setMinWidth(30);
+            Sweet10.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Sweet10.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
+
+        Floral10.setBackground(new java.awt.Color(255, 153, 102));
+        Floral10.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Té-Negro", null},
+                {"Floral", null},
+                {"   Manzanilla", null},
+                {"   Rosa", null},
+                {"   Jazmine", null}
+            },
+            new String [] {
+                "2 Floral", "Int."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Floral10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Floral10KeyReleased(evt);
+            }
+        });
+        jScrollPane118.setViewportView(Floral10);
+        if (Floral10.getColumnModel().getColumnCount() > 0) {
+            Floral10.getColumnModel().getColumn(1).setMinWidth(30);
+            Floral10.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Floral10.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
+
+        Fruit10.setBackground(new java.awt.Color(255, 204, 0));
+        Fruit10.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Bayas", null},
+                {"   Moras", null},
+                {"   Frambuesa", null},
+                {"   Arándano", null},
+                {"   Fresa", null},
+                {"Fruto-sec", null},
+                {"   Pasas", null},
+                {"   Ciruel-pas", null},
+                {"Otras-frut", null},
+                {"   Coco", null},
+                {"   Cereza", null},
+                {"   Granada", null},
+                {"   Piña", null},
+                {"   Uvas", null},
+                {"   Manzana", null},
+                {"   Durazno", null},
+                {"   Pera", null},
+                {"Citricos", null},
+                {"   Toronja", null},
+                {"   Naranja", null},
+                {"   Limon", null},
+                {"   Lima", null}
+            },
+            new String [] {
+                "3 Afrutado", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Fruit10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Fruit10KeyReleased(evt);
+            }
+        });
+        jScrollPane119.setViewportView(Fruit10);
+
+        SourFer10.setBackground(new java.awt.Color(255, 255, 153));
+        SourFer10.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Acido", null},
+                {"   Arom-acido", null},
+                {"   Acido-acét", null},
+                {"   Acido-butí", null},
+                {"   Acido-isoc", null},
+                {"   Acido-cítr", null},
+                {"   Acido-máli", null},
+                {"Alcoh/Ferm", null},
+                {"   Vinoso", null},
+                {"   Whisky", null},
+                {"   Fermentado", null},
+                {"   Super-madu", null}
+            },
+            new String [] {
+                "4 Acido/Fermentado", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        SourFer10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                SourFer10KeyReleased(evt);
+            }
+        });
+        jScrollPane120.setViewportView(SourFer10);
+
+        GreenVeg10.setBackground(new java.awt.Color(102, 255, 102));
+        GreenVeg10.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Aceit-Oliv", null},
+                {"Crudo", null},
+                {"Verde/Vege", null},
+                {"   Inmaduro", null},
+                {"   Vaina", null},
+                {"   Fresco", null},
+                {"   Verde-oscu", null},
+                {"   Vegetal", null},
+                {"   Paja", null},
+                {"   Herbaceo", null},
+                {"Leguminoso", null}
+            },
+            new String [] {
+                "5 Verde/Vegetal", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        GreenVeg10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                GreenVeg10KeyReleased(evt);
+            }
+        });
+        jScrollPane121.setViewportView(GreenVeg10);
+
+        Other10.setBackground(new java.awt.Color(51, 255, 255));
+        Other10.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Papel/Hume", null},
+                {"   Rancio", null},
+                {"   Carton", null},
+                {"   Papel", null},
+                {"   Madera", null},
+                {"   Mohoso", null},
+                {"   Polvo-hume", null},
+                {"   Tierra", null},
+                {"   Cuero", null},
+                {"   Carne/cald", null},
+                {"   Fenolico", null},
+                {"Quimico", null},
+                {"   Amargo", null},
+                {"   Salado", null},
+                {"   Medicinal", null},
+                {"   Petroleo", null},
+                {"   Zorrillo", null},
+                {"   Goma", null}
+            },
+            new String [] {
+                "6 Otros", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Other10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Other10KeyReleased(evt);
+            }
+        });
+        jScrollPane122.setViewportView(Other10);
+
+        Roasted10.setBackground(new java.awt.Color(0, 204, 255));
+        Roasted10.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Tabac-pipa", null},
+                {"Tabaco", null},
+                {"Quemado", null},
+                {"   Acre", null},
+                {"   Ceniza", null},
+                {"   Humo", null},
+                {"   Marrón/tos", null},
+                {"Cereal", null},
+                {"   Grano", null},
+                {"   Malta", null}
+            },
+            new String [] {
+                "7 Tostado", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Roasted10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Roasted10KeyReleased(evt);
+            }
+        });
+        jScrollPane123.setViewportView(Roasted10);
+
+        Spices10.setBackground(new java.awt.Color(153, 153, 255));
+        Spices10.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Acre", null},
+                {"Pimienta", null},
+                {"Especias-mo", null},
+                {"   Anis", null},
+                {"   Nuez-mosca", null},
+                {"   Canela", null},
+                {"   Clavo-olor", null}
+            },
+            new String [] {
+                "8 Especias", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Spices10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Spices10KeyReleased(evt);
+            }
+        });
+        jScrollPane124.setViewportView(Spices10);
+
+        Nutty10.setBackground(new java.awt.Color(255, 102, 204));
+        Nutty10.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Nueces", null},
+                {"   Mani", null},
+                {"   Avellana", null},
+                {"   Almendra", null},
+                {"Cacao", null},
+                {"   Chocolate", null},
+                {"   Choc-amarg", null}
+            },
+            new String [] {
+                "9 Nueces/Cacao", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Nutty10.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Nutty10KeyReleased(evt);
+            }
+        });
+        jScrollPane125.setViewportView(Nutty10);
+
+        javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
+        jPanel20.setLayout(jPanel20Layout);
+        jPanel20Layout.setHorizontalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel20Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane118, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane117, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane119, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane120, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane121, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane122, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane124, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane123, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane125, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jScrollPane115, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane116, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel20Layout.setVerticalGroup(
+            jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel20Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel20Layout.createSequentialGroup()
+                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane119, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel20Layout.createSequentialGroup()
+                                .addComponent(jScrollPane123, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane124, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane120, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel20Layout.createSequentialGroup()
+                                .addComponent(jScrollPane117, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane118, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 58, Short.MAX_VALUE))
+                    .addGroup(jPanel20Layout.createSequentialGroup()
+                        .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel20Layout.createSequentialGroup()
+                                .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel20Layout.createSequentialGroup()
+                                        .addComponent(jScrollPane125, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jScrollPane115, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jScrollPane121, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane116, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane122, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+
+        jTabbedPane1.addTab("Acidez", jPanel20);
+
+        Body13.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Jarabe", null},
+                {"Aceitoso", null},
+                {"Suave", null}
+            },
+            new String [] {
+                "10 Cuerpo", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Body13.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Body13KeyReleased(evt);
+            }
+        });
+        jScrollPane137.setViewportView(Body13);
+
+        Finish13.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Duración", null},
+                {"Seco", null},
+                {"Astringent", null},
+                {"Granoso", null}
+            },
+            new String [] {
+                "11 Sabor Rem.", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Finish13.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Finish13KeyReleased(evt);
+            }
+        });
+        jScrollPane138.setViewportView(Finish13);
+
+        Sweet12.setBackground(new java.awt.Color(255, 102, 102));
+        Sweet12.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Azúcar-Mor", null},
+                {"   Melaza", null},
+                {"   Jarab-mapl", null},
+                {"   Caramelo", null},
+                {"   Miel", null},
+                {"Vainilla", null},
+                {"Arom-Vaini", null},
+                {"Dulce-Gene", null},
+                {"Arom-dulce", null}
+            },
+            new String [] {
+                "1 Dulce", "Int."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Sweet12.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Sweet12KeyReleased(evt);
+            }
+        });
+        jScrollPane139.setViewportView(Sweet12);
+        if (Sweet12.getColumnModel().getColumnCount() > 0) {
+            Sweet12.getColumnModel().getColumn(1).setMinWidth(30);
+            Sweet12.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Sweet12.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
+
+        Floral12.setBackground(new java.awt.Color(255, 153, 102));
+        Floral12.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Té-Negro", null},
+                {"Floral", null},
+                {"   Manzanilla", null},
+                {"   Rosa", null},
+                {"   Jazmine", null}
+            },
+            new String [] {
+                "2 Floral", "Int."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Floral12.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Floral12KeyReleased(evt);
+            }
+        });
+        jScrollPane140.setViewportView(Floral12);
+        if (Floral12.getColumnModel().getColumnCount() > 0) {
+            Floral12.getColumnModel().getColumn(1).setMinWidth(30);
+            Floral12.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Floral12.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
+
+        Fruit12.setBackground(new java.awt.Color(255, 204, 0));
+        Fruit12.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Bayas", null},
+                {"   Moras", null},
+                {"   Frambuesa", null},
+                {"   Arándano", null},
+                {"   Fresa", null},
+                {"Fruto-sec", null},
+                {"   Pasas", null},
+                {"   Ciruel-pas", null},
+                {"Otras-frut", null},
+                {"   Coco", null},
+                {"   Cereza", null},
+                {"   Granada", null},
+                {"   Piña", null},
+                {"   Uvas", null},
+                {"   Manzana", null},
+                {"   Durazno", null},
+                {"   Pera", null},
+                {"Citricos", null},
+                {"   Toronja", null},
+                {"   Naranja", null},
+                {"   Limon", null},
+                {"   Lima", null}
+            },
+            new String [] {
+                "3 Afrutado", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Fruit12.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Fruit12KeyReleased(evt);
+            }
+        });
+        jScrollPane141.setViewportView(Fruit12);
+
+        SourFer12.setBackground(new java.awt.Color(255, 255, 153));
+        SourFer12.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Acido", null},
+                {"   Arom-acido", null},
+                {"   Acido-acét", null},
+                {"   Acido-butí", null},
+                {"   Acido-isoc", null},
+                {"   Acido-cítr", null},
+                {"   Acido-máli", null},
+                {"Alcoh/Ferm", null},
+                {"   Vinoso", null},
+                {"   Whisky", null},
+                {"   Fermentado", null},
+                {"   Super-madu", null}
+            },
+            new String [] {
+                "4 Acido/Fermentado", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        SourFer12.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                SourFer12KeyReleased(evt);
+            }
+        });
+        jScrollPane142.setViewportView(SourFer12);
+
+        GreenVeg12.setBackground(new java.awt.Color(102, 255, 102));
+        GreenVeg12.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Aceit-Oliv", null},
+                {"Crudo", null},
+                {"Verde/Vege", null},
+                {"   Inmaduro", null},
+                {"   Vaina", null},
+                {"   Fresco", null},
+                {"   Verde-oscu", null},
+                {"   Vegetal", null},
+                {"   Paja", null},
+                {"   Herbaceo", null},
+                {"Leguminoso", null}
+            },
+            new String [] {
+                "5 Verde/Vegetal", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        GreenVeg12.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                GreenVeg12KeyReleased(evt);
+            }
+        });
+        jScrollPane143.setViewportView(GreenVeg12);
+
+        Other12.setBackground(new java.awt.Color(51, 255, 255));
+        Other12.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Papel/Hume", null},
+                {"   Rancio", null},
+                {"   Carton", null},
+                {"   Papel", null},
+                {"   Madera", null},
+                {"   Mohoso", null},
+                {"   Polvo-hume", null},
+                {"   Tierra", null},
+                {"   Cuero", null},
+                {"   Carne/cald", null},
+                {"   Fenolico", null},
+                {"Quimico", null},
+                {"   Amargo", null},
+                {"   Salado", null},
+                {"   Medicinal", null},
+                {"   Petroleo", null},
+                {"   Zorrillo", null},
+                {"   Goma", null}
+            },
+            new String [] {
+                "6 Otros", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Other12.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Other12KeyReleased(evt);
+            }
+        });
+        jScrollPane144.setViewportView(Other12);
+
+        Roasted12.setBackground(new java.awt.Color(0, 204, 255));
+        Roasted12.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Tabac-pipa", null},
+                {"Tabaco", null},
+                {"Quemado", null},
+                {"   Acre", null},
+                {"   Ceniza", null},
+                {"   Humo", null},
+                {"   Marrón/tos", null},
+                {"Cereal", null},
+                {"   Grano", null},
+                {"   Malta", null}
+            },
+            new String [] {
+                "7 Tostado", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Roasted12.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Roasted12KeyReleased(evt);
+            }
+        });
+        jScrollPane145.setViewportView(Roasted12);
+
+        Spices12.setBackground(new java.awt.Color(153, 153, 255));
+        Spices12.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Acre", null},
+                {"Pimienta", null},
+                {"Especias-mo", null},
+                {"   Anis", null},
+                {"   Nuez-mosca", null},
+                {"   Canela", null},
+                {"   Clavo-olor", null}
+            },
+            new String [] {
+                "8 Especias", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Spices12.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Spices12KeyReleased(evt);
+            }
+        });
+        jScrollPane146.setViewportView(Spices12);
+
+        Nutty12.setBackground(new java.awt.Color(255, 102, 204));
+        Nutty12.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Nueces", null},
+                {"   Mani", null},
+                {"   Avellana", null},
+                {"   Almendra", null},
+                {"Cacao", null},
+                {"   Chocolate", null},
+                {"   Choc-amarg", null}
+            },
+            new String [] {
+                "9 Nueces/Cacao", "Inten."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Nutty12.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Nutty12KeyReleased(evt);
+            }
+        });
+        jScrollPane147.setViewportView(Nutty12);
+
+        javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
+        jPanel22.setLayout(jPanel22Layout);
+        jPanel22Layout.setHorizontalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane140, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jScrollPane139, javax.swing.GroupLayout.PREFERRED_SIZE, 151, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane141, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane142, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane143, javax.swing.GroupLayout.PREFERRED_SIZE, 143, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jScrollPane144, javax.swing.GroupLayout.PREFERRED_SIZE, 146, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(jScrollPane146, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                    .addComponent(jScrollPane145, javax.swing.GroupLayout.DEFAULT_SIZE, 151, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane147, javax.swing.GroupLayout.PREFERRED_SIZE, 145, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                        .addComponent(jScrollPane137, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
+                        .addComponent(jScrollPane138, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, 143, Short.MAX_VALUE)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        jPanel22Layout.setVerticalGroup(
+            jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jPanel22Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jScrollPane141, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel22Layout.createSequentialGroup()
+                                .addComponent(jScrollPane145, javax.swing.GroupLayout.PREFERRED_SIZE, 188, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane146, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane142, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addGroup(jPanel22Layout.createSequentialGroup()
+                                .addComponent(jScrollPane139, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jScrollPane140, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(0, 58, Short.MAX_VALUE))
+                    .addGroup(jPanel22Layout.createSequentialGroup()
+                        .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel22Layout.createSequentialGroup()
+                                .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel22Layout.createSequentialGroup()
+                                        .addComponent(jScrollPane147, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(jScrollPane137, javax.swing.GroupLayout.PREFERRED_SIZE, 75, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addComponent(jScrollPane143, javax.swing.GroupLayout.PREFERRED_SIZE, 204, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jScrollPane138, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(jScrollPane144, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+        );
+
+        jTabbedPane1.addTab("Cuerpo 2", jPanel22);
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel17.setText("Puntuación");
@@ -4385,14 +3972,9 @@ public class jdCatacion2 extends javax.swing.JFrame {
         jLabel57.setText("Seco");
 
         jLabel58.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel58.setText("Mojado");
-
-        jLabel59.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
-        jLabel59.setText("Quebrado");
+        jLabel58.setText("Mojado/Quebrado");
 
         lblSeco.setText("-");
-
-        lblMojado.setText("-");
 
         lblQuebrado.setText("-");
 
@@ -4434,12 +4016,8 @@ public class jdCatacion2 extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addComponent(lblSeco)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel58, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblMojado)
+                        .addComponent(jLabel58)
                         .addGap(18, 18, 18)
-                        .addComponent(jLabel59)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(lblQuebrado))
                     .addComponent(jLabel34)
                     .addGroup(jPanel9Layout.createSequentialGroup()
@@ -4471,8 +4049,6 @@ public class jdCatacion2 extends javax.swing.JFrame {
                     .addComponent(jLabel57)
                     .addComponent(lblSeco)
                     .addComponent(jLabel58)
-                    .addComponent(lblMojado)
-                    .addComponent(jLabel59)
                     .addComponent(lblQuebrado))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel34)
@@ -4570,511 +4146,6 @@ public class jdCatacion2 extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void Finish2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Finish2KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Finish2.getValueAt(Finish2.getSelectedRow(), 0) + "";
-        intensidad = Finish2.getValueAt(Finish2.getSelectedRow(), 1) + "";
-
-        sCuerpo += sabor + intensidad + " ";
-
-        lblCuerpo.setText(sCuerpo);
-    }//GEN-LAST:event_Finish2KeyReleased
-
-    private void Body2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Body2KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Body2.getValueAt(Body2.getSelectedRow(), 0) + "";
-        intensidad = Body2.getValueAt(Body2.getSelectedRow(), 1) + "";
-
-        sCuerpo += sabor + intensidad + " ";
-
-        lblCuerpo.setText(sCuerpo);
-    }//GEN-LAST:event_Body2KeyReleased
-
-    private void SourFer5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer5KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = SourFer5.getValueAt(SourFer5.getSelectedRow(), 0) + "";
-        intensidad = SourFer5.getValueAt(SourFer5.getSelectedRow(), 1) + "";
-
-        sAcidez += sabor + intensidad + " ";
-
-        lblAcidez.setText(sAcidez);
-    }//GEN-LAST:event_SourFer5KeyReleased
-
-    private void Finish1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Finish1KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Finish1.getValueAt(Finish1.getSelectedRow(), 0) + "";
-        intensidad = Finish1.getValueAt(Finish1.getSelectedRow(), 1) + "";
-
-        sRemanente += sabor + intensidad + " ";
-
-        lblRemanente.setText(sRemanente);
-    }//GEN-LAST:event_Finish1KeyReleased
-
-    private void Body1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Body1KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Body1.getValueAt(Body1.getSelectedRow(), 0) + "";
-        intensidad = Body1.getValueAt(Body1.getSelectedRow(), 1) + "";
-
-        sRemanente += sabor + intensidad + " ";
-
-        lblRemanente.setText(sRemanente);
-    }//GEN-LAST:event_Body1KeyReleased
-
-    private void GreenVeg4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVeg4KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = GreenVeg4.getValueAt(GreenVeg4.getSelectedRow(), 0) + "";
-        intensidad = GreenVeg4.getValueAt(GreenVeg4.getSelectedRow(), 1) + "";
-
-        sRemanente += sabor + intensidad + " ";
-
-        lblRemanente.setText(sRemanente);
-    }//GEN-LAST:event_GreenVeg4KeyReleased
-
-    private void SourFer4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer4KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = SourFer4.getValueAt(SourFer4.getSelectedRow(), 0) + "";
-        intensidad = SourFer4.getValueAt(SourFer4.getSelectedRow(), 1) + "";
-
-        sRemanente += sabor + intensidad + " ";
-
-        lblRemanente.setText(sRemanente);
-    }//GEN-LAST:event_SourFer4KeyReleased
-
-    private void Fruit4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fruit4KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Fruit4.getValueAt(Fruit4.getSelectedRow(), 0) + "";
-        intensidad = Fruit4.getValueAt(Fruit4.getSelectedRow(), 1) + "";
-
-        sRemanente += sabor + intensidad + " ";
-
-        lblRemanente.setText(sRemanente);
-    }//GEN-LAST:event_Fruit4KeyReleased
-
-    private void Floral4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Floral4KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Floral4.getValueAt(Floral4.getSelectedRow(), 0) + "";
-        intensidad = Floral4.getValueAt(Floral4.getSelectedRow(), 1) + "";
-
-        sRemanente += sabor + intensidad + " ";
-
-        lblRemanente.setText(sRemanente);
-    }//GEN-LAST:event_Floral4KeyReleased
-
-    private void Sweet4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sweet4KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Sweet4.getValueAt(Sweet4.getSelectedRow(), 0) + "";
-        intensidad = Sweet4.getValueAt(Sweet4.getSelectedRow(), 1) + "";
-
-        sRemanente += sabor + intensidad + " ";
-
-        lblRemanente.setText(sRemanente);
-    }//GEN-LAST:event_Sweet4KeyReleased
-
-    private void Nutty3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nutty3KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Nutty3.getValueAt(Nutty3.getSelectedRow(), 0) + "";
-        intensidad = Nutty3.getValueAt(Nutty3.getSelectedRow(), 1) + "";
-
-        sSabor += sabor + intensidad + " ";
-
-        lblSabor.setText(sSabor);
-    }//GEN-LAST:event_Nutty3KeyReleased
-
-    private void Spices3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Spices3KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Spices3.getValueAt(Spices3.getSelectedRow(), 0) + "";
-        intensidad = Spices3.getValueAt(Spices3.getSelectedRow(), 1) + "";
-
-        sSabor += sabor + intensidad + " ";
-
-        lblSabor.setText(sSabor);
-    }//GEN-LAST:event_Spices3KeyReleased
-
-    private void Roasted3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Roasted3KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Roasted3.getValueAt(Roasted3.getSelectedRow(), 0) + "";
-        intensidad = Roasted3.getValueAt(Roasted3.getSelectedRow(), 1) + "";
-
-        sSabor += sabor + intensidad + " ";
-
-        lblSabor.setText(sSabor);
-    }//GEN-LAST:event_Roasted3KeyReleased
-
-    private void Other3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Other3KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Other3.getValueAt(Other3.getSelectedRow(), 0) + "";
-        intensidad = Other3.getValueAt(Other3.getSelectedRow(), 1) + "";
-
-        sSabor += sabor + intensidad + " ";
-
-        lblSabor.setText(sSabor);
-    }//GEN-LAST:event_Other3KeyReleased
-
-    private void GreenVeg3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVeg3KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = GreenVeg3.getValueAt(GreenVeg3.getSelectedRow(), 0) + "";
-        intensidad = GreenVeg3.getValueAt(GreenVeg3.getSelectedRow(), 1) + "";
-
-        sSabor += sabor + intensidad + " ";
-
-        lblSabor.setText(sSabor);
-    }//GEN-LAST:event_GreenVeg3KeyReleased
-
-    private void SourFer3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer3KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = SourFer3.getValueAt(SourFer3.getSelectedRow(), 0) + "";
-        intensidad = SourFer3.getValueAt(SourFer3.getSelectedRow(), 1) + "";
-
-        sSabor += sabor + intensidad + " ";
-
-        lblSabor.setText(sSabor);
-    }//GEN-LAST:event_SourFer3KeyReleased
-
-    private void Fruit3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fruit3KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Fruit3.getValueAt(Fruit3.getSelectedRow(), 0) + "";
-        intensidad = Fruit3.getValueAt(Fruit3.getSelectedRow(), 1) + "";
-
-        sSabor += sabor + intensidad + " ";
-
-        lblSabor.setText(sSabor);
-    }//GEN-LAST:event_Fruit3KeyReleased
-
-    private void Floral3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Floral3KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Floral3.getValueAt(Floral3.getSelectedRow(), 0) + "";
-        intensidad = Floral3.getValueAt(Floral3.getSelectedRow(), 1) + "";
-
-        sSabor += sabor + intensidad + " ";
-
-        lblSabor.setText(sSabor);
-    }//GEN-LAST:event_Floral3KeyReleased
-
-    private void Sweet3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sweet3KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Sweet3.getValueAt(Sweet3.getSelectedRow(), 0) + "";
-        intensidad = Sweet3.getValueAt(Sweet3.getSelectedRow(), 1) + "";
-
-        sSabor += sabor + intensidad + " ";
-
-        lblSabor.setText(sSabor);
-    }//GEN-LAST:event_Sweet3KeyReleased
-
-    private void Nutty2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nutty2KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Nutty2.getValueAt(Nutty2.getSelectedRow(), 0) + "";
-        intensidad = Nutty2.getValueAt(Nutty2.getSelectedRow(), 1) + "";
-
-        sQuebrado += sabor + intensidad + " ";
-
-        lblQuebrado.setText(sQuebrado);
-    }//GEN-LAST:event_Nutty2KeyReleased
-
-    private void Spices2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Spices2KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Spices2.getValueAt(Spices2.getSelectedRow(), 0) + "";
-        intensidad = Spices2.getValueAt(Spices2.getSelectedRow(), 1) + "";
-
-        sQuebrado += sabor + intensidad + " ";
-
-        lblQuebrado.setText(sQuebrado);
-    }//GEN-LAST:event_Spices2KeyReleased
-
-    private void Roasted2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Roasted2KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Roasted2.getValueAt(Roasted2.getSelectedRow(), 0) + "";
-        intensidad = Roasted2.getValueAt(Roasted2.getSelectedRow(), 1) + "";
-
-        sQuebrado += sabor + intensidad + " ";
-
-        lblQuebrado.setText(sQuebrado);
-    }//GEN-LAST:event_Roasted2KeyReleased
-
-    private void Other2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Other2KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Other2.getValueAt(Other2.getSelectedRow(), 0) + "";
-        intensidad = Other2.getValueAt(Other2.getSelectedRow(), 1) + "";
-
-        sQuebrado += sabor + intensidad + " ";
-
-        lblQuebrado.setText(sQuebrado);
-    }//GEN-LAST:event_Other2KeyReleased
-
-    private void GreenVeg2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVeg2KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = GreenVeg2.getValueAt(GreenVeg2.getSelectedRow(), 0) + "";
-        intensidad = GreenVeg2.getValueAt(GreenVeg2.getSelectedRow(), 1) + "";
-
-        sQuebrado += sabor + intensidad + " ";
-
-        lblQuebrado.setText(sQuebrado);
-    }//GEN-LAST:event_GreenVeg2KeyReleased
-
-    private void SourFer2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer2KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = SourFer2.getValueAt(SourFer2.getSelectedRow(), 0) + "";
-        intensidad = SourFer2.getValueAt(SourFer2.getSelectedRow(), 1) + "";
-
-        sQuebrado += sabor + intensidad + " ";
-
-        lblQuebrado.setText(sQuebrado);
-    }//GEN-LAST:event_SourFer2KeyReleased
-
-    private void Fruit2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fruit2KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Fruit2.getValueAt(Fruit2.getSelectedRow(), 0) + "";
-        intensidad = Fruit2.getValueAt(Fruit2.getSelectedRow(), 1) + "";
-
-        sQuebrado += sabor + intensidad + " ";
-
-        lblQuebrado.setText(sQuebrado);
-    }//GEN-LAST:event_Fruit2KeyReleased
-
-    private void Floral2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Floral2KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Floral2.getValueAt(Floral2.getSelectedRow(), 0) + "";
-        intensidad = Floral2.getValueAt(Floral2.getSelectedRow(), 1) + "";
-
-        sQuebrado += sabor + intensidad + " ";
-
-        lblQuebrado.setText(sQuebrado);
-    }//GEN-LAST:event_Floral2KeyReleased
-
-    private void Sweet2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sweet2KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Sweet2.getValueAt(Sweet2.getSelectedRow(), 0) + "";
-        intensidad = Sweet2.getValueAt(Sweet2.getSelectedRow(), 1) + "";
-
-        sQuebrado += sabor + intensidad + " ";
-
-        lblQuebrado.setText(sQuebrado);
-    }//GEN-LAST:event_Sweet2KeyReleased
-
-    private void Nutty1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nutty1KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Nutty1.getValueAt(Nutty1.getSelectedRow(), 0) + "";
-        intensidad = Nutty1.getValueAt(Nutty1.getSelectedRow(), 1) + "";
-
-        sMojado += sabor + intensidad + " ";
-
-        lblMojado.setText(sMojado);
-    }//GEN-LAST:event_Nutty1KeyReleased
-
-    private void Spices1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Spices1KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Spices1.getValueAt(Spices1.getSelectedRow(), 0) + "";
-        intensidad = Spices1.getValueAt(Spices1.getSelectedRow(), 1) + "";
-
-        sMojado += sabor + intensidad + " ";
-
-        lblMojado.setText(sMojado);
-    }//GEN-LAST:event_Spices1KeyReleased
-
-    private void Roasted1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Roasted1KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Roasted1.getValueAt(Roasted1.getSelectedRow(), 0) + "";
-        intensidad = Roasted1.getValueAt(Roasted1.getSelectedRow(), 1) + "";
-
-        sMojado += sabor + intensidad + " ";
-
-        lblMojado.setText(sMojado);
-    }//GEN-LAST:event_Roasted1KeyReleased
-
-    private void Other1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Other1KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Other1.getValueAt(Other1.getSelectedRow(), 0) + "";
-        intensidad = Other1.getValueAt(Other1.getSelectedRow(), 1) + "";
-
-        sMojado += sabor + intensidad + " ";
-
-        lblMojado.setText(sMojado);
-    }//GEN-LAST:event_Other1KeyReleased
-
-    private void GreenVeg1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVeg1KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = GreenVeg1.getValueAt(GreenVeg1.getSelectedRow(), 0) + "";
-        intensidad = GreenVeg1.getValueAt(GreenVeg1.getSelectedRow(), 1) + "";
-
-        sMojado += sabor + intensidad + " ";
-
-        lblMojado.setText(sMojado);
-    }//GEN-LAST:event_GreenVeg1KeyReleased
-
-    private void SourFer1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer1KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = SourFer1.getValueAt(SourFer1.getSelectedRow(), 0) + "";
-        intensidad = SourFer1.getValueAt(SourFer1.getSelectedRow(), 1) + "";
-
-        sMojado += sabor + intensidad + " ";
-
-        lblMojado.setText(sMojado);
-    }//GEN-LAST:event_SourFer1KeyReleased
-
-    private void Fruit1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fruit1KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Fruit1.getValueAt(Fruit1.getSelectedRow(), 0) + "";
-        intensidad = Fruit1.getValueAt(Fruit1.getSelectedRow(), 1) + "";
-
-        sMojado += sabor + intensidad + " ";
-
-        lblMojado.setText(sMojado);
-    }//GEN-LAST:event_Fruit1KeyReleased
-
-    private void Floral1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Floral1KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Floral1.getValueAt(Floral1.getSelectedRow(), 0) + "";
-        intensidad = Floral1.getValueAt(Floral1.getSelectedRow(), 1) + "";
-
-        sMojado += sabor + intensidad + " ";
-
-        lblMojado.setText(sMojado);
-    }//GEN-LAST:event_Floral1KeyReleased
-
-    private void Sweet1KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sweet1KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Sweet1.getValueAt(Sweet1.getSelectedRow(), 0) + "";
-        intensidad = Sweet1.getValueAt(Sweet1.getSelectedRow(), 1) + "";
-
-        sMojado += sabor + intensidad + " ";
-
-        lblMojado.setText(sMojado);
-    }//GEN-LAST:event_Sweet1KeyReleased
-
-    private void NuttyKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_NuttyKeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Nutty.getValueAt(Nutty.getSelectedRow(), 0) + "";
-        intensidad = Nutty.getValueAt(Nutty.getSelectedRow(), 1) + "";
-
-        sSeco += sabor + intensidad + " ";
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_NuttyKeyReleased
-
-    private void SpicesKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SpicesKeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Spices.getValueAt(Spices.getSelectedRow(), 0) + "";
-        intensidad = Spices.getValueAt(Spices.getSelectedRow(), 1) + "";
-
-        sSeco += sabor + intensidad + " ";
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_SpicesKeyReleased
-
-    private void RoastedKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_RoastedKeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Roasted.getValueAt(Roasted.getSelectedRow(), 0) + "";
-        intensidad = Roasted.getValueAt(Roasted.getSelectedRow(), 1) + "";
-
-        sSeco += sabor + intensidad + " ";
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_RoastedKeyReleased
-
-    private void OtherKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_OtherKeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Other.getValueAt(Other.getSelectedRow(), 0) + "";
-        intensidad = Other.getValueAt(Other.getSelectedRow(), 1) + "";
-
-        sSeco += sabor + intensidad + " ";
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_OtherKeyReleased
-
-    private void GreenVegKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVegKeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = GreenVeg.getValueAt(GreenVeg.getSelectedRow(), 0) + "";
-        intensidad = GreenVeg.getValueAt(GreenVeg.getSelectedRow(), 1) + "";
-
-        sSeco += sabor + intensidad + " ";
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_GreenVegKeyReleased
-
-    private void SourFerKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFerKeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = SourFer.getValueAt(SourFer.getSelectedRow(), 0) + "";
-        intensidad = SourFer.getValueAt(SourFer.getSelectedRow(), 1) + "";
-
-        sSeco += sabor + intensidad + " ";
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_SourFerKeyReleased
-
-    private void FruitKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FruitKeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Fruit.getValueAt(Fruit.getSelectedRow(), 0) + "";
-        intensidad = Fruit.getValueAt(Fruit.getSelectedRow(), 1) + "";
-
-        if (!intensidad.equals("") || intensidad != null) {
-            sSeco += sabor + intensidad + " ";
-        }
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_FruitKeyReleased
-
-    private void FloralKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_FloralKeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Floral.getValueAt(Floral.getSelectedRow(), 0) + "";
-        intensidad = Floral.getValueAt(Floral.getSelectedRow(), 1) + "";
-
-        if (!intensidad.equals("") || intensidad != null) {
-            sSeco += sabor + intensidad + " ";
-        }
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_FloralKeyReleased
-
-    private void SweetMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_SweetMouseClicked
-        // TODO add your handling code here:
-        /*        sabor = Sweet.getValueAt(Sweet.getSelectedRow(), 0) + "";
-        intensidad = Sweet.getValueAt(Sweet.getSelectedRow(), 1) + "";*/
-    }//GEN-LAST:event_SweetMouseClicked
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
         // TODO add your handling code here:
@@ -5381,336 +4452,19 @@ public class jdCatacion2 extends javax.swing.JFrame {
         System.out.println(slNivelTostado.getValue());
     }//GEN-LAST:event_slNivelTostadoStateChanged
 
-    private void Body3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Body3KeyReleased
+    private void Nutty6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nutty6KeyReleased
         // TODO add your handling code here:
         String sabor = "", intensidad = "";
-        sabor = Body3.getValueAt(Body3.getSelectedRow(), 0) + "";
-        intensidad = Body3.getValueAt(Body3.getSelectedRow(), 1) + "";
+        sabor = Nutty6.getValueAt(Nutty6.getSelectedRow(), 0) + "";
+        intensidad = Nutty6.getValueAt(Nutty6.getSelectedRow(), 1) + "";
 
-        sCuerpo += sabor + intensidad + " ";
-
-        lblCuerpo.setText(sCuerpo);
-    }//GEN-LAST:event_Body3KeyReleased
-
-    private void Finish3KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Finish3KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Finish3.getValueAt(Finish3.getSelectedRow(), 0) + "";
-        intensidad = Finish3.getValueAt(Finish3.getSelectedRow(), 1) + "";
-
-        sCuerpo += sabor + intensidad + " ";
-
-        lblCuerpo.setText(sCuerpo);
-    }//GEN-LAST:event_Finish3KeyReleased
-
-    private void Body4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Body4KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Body4.getValueAt(Body4.getSelectedRow(), 0) + "";
-        intensidad = Body4.getValueAt(Body4.getSelectedRow(), 1) + "";
-
-        sCuerpo += sabor + intensidad + " ";
-
-        lblCuerpo.setText(sCuerpo);
-    }//GEN-LAST:event_Body4KeyReleased
-
-    private void Finish4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Finish4KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Finish4.getValueAt(Finish4.getSelectedRow(), 0) + "";
-        intensidad = Finish4.getValueAt(Finish4.getSelectedRow(), 1) + "";
-
-        sCuerpo += sabor + intensidad + " ";
-
-        lblCuerpo.setText(sCuerpo);
-    }//GEN-LAST:event_Finish4KeyReleased
-
-    private void Body5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Body5KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Body5.getValueAt(Body5.getSelectedRow(), 0) + "";
-        intensidad = Body5.getValueAt(Body5.getSelectedRow(), 1) + "";
-
-        sCuerpo += sabor + intensidad + " ";
-
-        lblCuerpo.setText(sCuerpo);
-    }//GEN-LAST:event_Body5KeyReleased
-
-    private void Finish5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Finish5KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Finish5.getValueAt(Finish5.getSelectedRow(), 0) + "";
-        intensidad = Finish5.getValueAt(Finish5.getSelectedRow(), 1) + "";
-
-        sCuerpo += sabor + intensidad + " ";
-
-        lblCuerpo.setText(sCuerpo);
-    }//GEN-LAST:event_Finish5KeyReleased
-
-    private void Body6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Body6KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Body6.getValueAt(Body6.getSelectedRow(), 0) + "";
-        intensidad = Body6.getValueAt(Body6.getSelectedRow(), 1) + "";
-
-        sCuerpo += sabor + intensidad + " ";
-
-        lblCuerpo.setText(sCuerpo);
-    }//GEN-LAST:event_Body6KeyReleased
-
-    private void Finish6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Finish6KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Finish6.getValueAt(Finish6.getSelectedRow(), 0) + "";
-        intensidad = Finish6.getValueAt(Finish6.getSelectedRow(), 1) + "";
-
-        sCuerpo += sabor + intensidad + " ";
-
-        lblCuerpo.setText(sCuerpo);
-    }//GEN-LAST:event_Finish6KeyReleased
-
-    private void Other4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Other4KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Other4.getValueAt(Other4.getSelectedRow(), 0) + "";
-        intensidad = Other4.getValueAt(Other4.getSelectedRow(), 1) + "";
-
-        sSeco += sabor + intensidad + " ";
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_Other4KeyReleased
-
-    private void Roasted4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Roasted4KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Roasted4.getValueAt(Roasted4.getSelectedRow(), 0) + "";
-        intensidad = Roasted4.getValueAt(Roasted4.getSelectedRow(), 1) + "";
-
-        sSeco += sabor + intensidad + " ";
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_Roasted4KeyReleased
-
-    private void Spices4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Spices4KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Spices4.getValueAt(Spices4.getSelectedRow(), 0) + "";
-        intensidad = Spices4.getValueAt(Spices4.getSelectedRow(), 1) + "";
-
-        sSeco += sabor + intensidad + " ";
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_Spices4KeyReleased
-
-    private void Nutty4KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nutty4KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Nutty4.getValueAt(Nutty4.getSelectedRow(), 0) + "";
-        intensidad = Nutty4.getValueAt(Nutty4.getSelectedRow(), 1) + "";
-
-        sSeco += sabor + intensidad + " ";
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_Nutty4KeyReleased
-
-    private void Sweet5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sweet5KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Sweet5.getValueAt(Sweet5.getSelectedRow(), 0) + "";
-        intensidad = Sweet5.getValueAt(Sweet5.getSelectedRow(), 1) + "";
-
-        if (!intensidad.equals("") || intensidad != null) {
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sSeco += sabor + intensidad + " ";
+            lblSeco.setText(sSeco);
+        } else {
+            Nutty6.setValueAt("", Nutty6.getSelectedRow(), 1);
         }
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_Sweet5KeyReleased
-
-    private void Floral5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Floral5KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Floral5.getValueAt(Floral5.getSelectedRow(), 0) + "";
-        intensidad = Floral5.getValueAt(Floral5.getSelectedRow(), 1) + "";
-
-        if (!intensidad.equals("") || intensidad != null) {
-            sSeco += sabor + intensidad + " ";
-        }
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_Floral5KeyReleased
-
-    private void Fruit5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fruit5KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Fruit5.getValueAt(Fruit5.getSelectedRow(), 0) + "";
-        intensidad = Fruit5.getValueAt(Fruit5.getSelectedRow(), 1) + "";
-
-        if (!intensidad.equals("") || intensidad != null) {
-            sSeco += sabor + intensidad + " ";
-        }
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_Fruit5KeyReleased
-
-    private void GreenVeg5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVeg5KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = GreenVeg5.getValueAt(GreenVeg5.getSelectedRow(), 0) + "";
-        intensidad = GreenVeg5.getValueAt(GreenVeg5.getSelectedRow(), 1) + "";
-
-        sSeco += sabor + intensidad + " ";
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_GreenVeg5KeyReleased
-
-    private void Body7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Body7KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Body7.getValueAt(Body7.getSelectedRow(), 0) + "";
-        intensidad = Body7.getValueAt(Body7.getSelectedRow(), 1) + "";
-
-        sCuerpo += sabor + intensidad + " ";
-
-        lblCuerpo.setText(sCuerpo);
-    }//GEN-LAST:event_Body7KeyReleased
-
-    private void Finish7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Finish7KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Finish7.getValueAt(Finish7.getSelectedRow(), 0) + "";
-        intensidad = Finish7.getValueAt(Finish7.getSelectedRow(), 1) + "";
-
-        sCuerpo += sabor + intensidad + " ";
-
-        lblCuerpo.setText(sCuerpo);
-    }//GEN-LAST:event_Finish7KeyReleased
-
-    private void Other5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Other5KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Other5.getValueAt(Other5.getSelectedRow(), 0) + "";
-        intensidad = Other5.getValueAt(Other5.getSelectedRow(), 1) + "";
-
-        sSeco += sabor + intensidad + " ";
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_Other5KeyReleased
-
-    private void Roasted5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Roasted5KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Roasted5.getValueAt(Roasted5.getSelectedRow(), 0) + "";
-        intensidad = Roasted5.getValueAt(Roasted5.getSelectedRow(), 1) + "";
-
-        sSeco += sabor + intensidad + " ";
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_Roasted5KeyReleased
-
-    private void Spices5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Spices5KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Spices5.getValueAt(Spices5.getSelectedRow(), 0) + "";
-        intensidad = Spices5.getValueAt(Spices5.getSelectedRow(), 1) + "";
-
-        sSeco += sabor + intensidad + " ";
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_Spices5KeyReleased
-
-    private void Nutty5KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nutty5KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Nutty5.getValueAt(Nutty5.getSelectedRow(), 0) + "";
-        intensidad = Nutty5.getValueAt(Nutty5.getSelectedRow(), 1) + "";
-
-        sSeco += sabor + intensidad + " ";
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_Nutty5KeyReleased
-
-    private void Sweet6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sweet6KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Sweet6.getValueAt(Sweet6.getSelectedRow(), 0) + "";
-        intensidad = Sweet6.getValueAt(Sweet6.getSelectedRow(), 1) + "";
-
-        if (!intensidad.equals("") || intensidad != null) {
-            sSeco += sabor + intensidad + " ";
-        }
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_Sweet6KeyReleased
-
-    private void Floral6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Floral6KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Floral6.getValueAt(Floral6.getSelectedRow(), 0) + "";
-        intensidad = Floral6.getValueAt(Floral6.getSelectedRow(), 1) + "";
-
-        if (!intensidad.equals("") || intensidad != null) {
-            sSeco += sabor + intensidad + " ";
-        }
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_Floral6KeyReleased
-
-    private void Fruit6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fruit6KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Fruit6.getValueAt(Fruit6.getSelectedRow(), 0) + "";
-        intensidad = Fruit6.getValueAt(Fruit6.getSelectedRow(), 1) + "";
-
-        if (!intensidad.equals("") || intensidad != null) {
-            sSeco += sabor + intensidad + " ";
-        }
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_Fruit6KeyReleased
-
-    private void SourFer6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer6KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = SourFer6.getValueAt(SourFer6.getSelectedRow(), 0) + "";
-        intensidad = SourFer6.getValueAt(SourFer6.getSelectedRow(), 1) + "";
-
-        sSeco += sabor + intensidad + " ";
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_SourFer6KeyReleased
-
-    private void GreenVeg6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVeg6KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = GreenVeg6.getValueAt(GreenVeg6.getSelectedRow(), 0) + "";
-        intensidad = GreenVeg6.getValueAt(GreenVeg6.getSelectedRow(), 1) + "";
-
-        sSeco += sabor + intensidad + " ";
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_GreenVeg6KeyReleased
-
-    private void Other6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Other6KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Other6.getValueAt(Other6.getSelectedRow(), 0) + "";
-        intensidad = Other6.getValueAt(Other6.getSelectedRow(), 1) + "";
-
-        sSeco += sabor + intensidad + " ";
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_Other6KeyReleased
-
-    private void Roasted6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Roasted6KeyReleased
-        // TODO add your handling code here:
-        String sabor = "", intensidad = "";
-        sabor = Roasted6.getValueAt(Roasted6.getSelectedRow(), 0) + "";
-        intensidad = Roasted6.getValueAt(Roasted6.getSelectedRow(), 1) + "";
-
-        sSeco += sabor + intensidad + " ";
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_Roasted6KeyReleased
+    }//GEN-LAST:event_Nutty6KeyReleased
 
     private void Spices6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Spices6KeyReleased
         // TODO add your handling code here:
@@ -5718,39 +4472,736 @@ public class jdCatacion2 extends javax.swing.JFrame {
         sabor = Spices6.getValueAt(Spices6.getSelectedRow(), 0) + "";
         intensidad = Spices6.getValueAt(Spices6.getSelectedRow(), 1) + "";
 
-        sSeco += sabor + intensidad + " ";
-
-        lblSeco.setText(sSeco);
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sSeco += sabor + intensidad + " ";
+            lblSeco.setText(sSeco);
+        } else {
+            Spices6.setValueAt("", Spices6.getSelectedRow(), 1);
+        }
     }//GEN-LAST:event_Spices6KeyReleased
 
-    private void Nutty6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nutty6KeyReleased
+    private void Roasted6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Roasted6KeyReleased
         // TODO add your handling code here:
         String sabor = "", intensidad = "";
-        sabor = Nutty6.getValueAt(Nutty6.getSelectedRow(), 0) + "";
-        intensidad = Nutty6.getValueAt(Nutty6.getSelectedRow(), 1) + "";
+        sabor = Roasted6.getValueAt(Roasted6.getSelectedRow(), 0) + "";
+        intensidad = Roasted6.getValueAt(Roasted6.getSelectedRow(), 1) + "";
 
-        sSeco += sabor + intensidad + " ";
-
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_Nutty6KeyReleased
-
-    private void SweetKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SweetKeyReleased
-        // TODO add your handling code here:
-        //VALIDAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAR
-        String sabor = "", intensidad = "";
-        sabor = Sweet.getValueAt(Sweet.getSelectedRow(), 0) + "";
-        intensidad = Sweet.getValueAt(Sweet.getSelectedRow(), 1) + "";
-
-        if (!intensidad.equals("") || intensidad != null) {
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sSeco += sabor + intensidad + " ";
+            lblSeco.setText(sSeco);
+        } else {
+            Roasted6.setValueAt("", Roasted6.getSelectedRow(), 1);
         }
+    }//GEN-LAST:event_Roasted6KeyReleased
 
-        lblSeco.setText(sSeco);
-    }//GEN-LAST:event_SweetKeyReleased
+    private void Other6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Other6KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Other6.getValueAt(Other6.getSelectedRow(), 0) + "";
+        intensidad = Other6.getValueAt(Other6.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sSeco += sabor + intensidad + " ";
+            lblSeco.setText(sSeco);
+        } else {
+            Other6.setValueAt("", Other6.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Other6KeyReleased
+
+    private void GreenVeg6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVeg6KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = GreenVeg6.getValueAt(GreenVeg6.getSelectedRow(), 0) + "";
+        intensidad = GreenVeg6.getValueAt(GreenVeg6.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sSeco += sabor + intensidad + " ";
+            lblSeco.setText(sSeco);
+        } else {
+            GreenVeg6.setValueAt("", GreenVeg6.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_GreenVeg6KeyReleased
+
+    private void SourFer6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer6KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = SourFer6.getValueAt(SourFer6.getSelectedRow(), 0) + "";
+        intensidad = SourFer6.getValueAt(SourFer6.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sSeco += sabor + intensidad + " ";
+            lblSeco.setText(sSeco);
+        } else {
+            SourFer6.setValueAt("", SourFer6.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_SourFer6KeyReleased
+
+    private void Fruit6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fruit6KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Fruit6.getValueAt(Fruit6.getSelectedRow(), 0) + "";
+        intensidad = Fruit6.getValueAt(Fruit6.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sSeco += sabor + intensidad + " ";
+            lblSeco.setText(sSeco);
+        } else {
+            Fruit6.setValueAt("", Fruit6.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Fruit6KeyReleased
+
+    private void Floral6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Floral6KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Floral6.getValueAt(Floral6.getSelectedRow(), 0) + "";
+        intensidad = Floral6.getValueAt(Floral6.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sSeco += sabor + intensidad + " ";
+            lblSeco.setText(sSeco);
+        } else {
+            Floral6.setValueAt("", Floral6.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Floral6KeyReleased
+
+    private void Sweet6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sweet6KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Sweet6.getValueAt(Sweet6.getSelectedRow(), 0) + "";
+        intensidad = Sweet6.getValueAt(Sweet6.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sSeco += sabor + intensidad + " ";
+            lblSeco.setText(sSeco);
+        } else {
+            Sweet6.setValueAt("", Sweet6.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Sweet6KeyReleased
+
+    private void Finish2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Finish2KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Finish2.getValueAt(Finish2.getSelectedRow(), 0) + "";
+        intensidad = Finish2.getValueAt(Finish2.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sSeco += sabor + intensidad + " ";
+            lblSeco.setText(sSeco);
+        } else {
+            Finish2.setValueAt("", Finish2.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Finish2KeyReleased
+
+    private void Body2KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Body2KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Body2.getValueAt(Body2.getSelectedRow(), 0) + "";
+        intensidad = Body2.getValueAt(Body2.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sSeco += sabor + intensidad + " ";
+            lblSeco.setText(sSeco);
+        } else {
+            Body2.setValueAt("", Body2.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Body2KeyReleased
+
+    private void Body8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Body8KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Body8.getValueAt(Body8.getSelectedRow(), 0) + "";
+        intensidad = Body8.getValueAt(Body8.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sMojadoQuebrado += sabor + intensidad + " ";
+            lblQuebrado.setText(sMojadoQuebrado);
+        } else {
+            Body8.setValueAt("", Body8.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Body8KeyReleased
+
+    private void Finish8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Finish8KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Finish8.getValueAt(Finish8.getSelectedRow(), 0) + "";
+        intensidad = Finish8.getValueAt(Finish8.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sMojadoQuebrado += sabor + intensidad + " ";
+            lblQuebrado.setText(sMojadoQuebrado);
+        } else {
+            Finish8.setValueAt("", Finish8.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Finish8KeyReleased
+
+    private void Sweet7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sweet7KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Sweet6.getValueAt(Sweet6.getSelectedRow(), 0) + "";
+        intensidad = Sweet6.getValueAt(Sweet6.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sMojadoQuebrado += sabor + intensidad + " ";
+            lblQuebrado.setText(sMojadoQuebrado);
+        } else {
+            Sweet6.setValueAt("", Sweet6.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Sweet7KeyReleased
+
+    private void Floral7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Floral7KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Floral7.getValueAt(Floral7.getSelectedRow(), 0) + "";
+        intensidad = Floral7.getValueAt(Floral7.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sMojadoQuebrado += sabor + intensidad + " ";
+            lblQuebrado.setText(sMojadoQuebrado);
+        } else {
+            Floral7.setValueAt("", Floral7.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Floral7KeyReleased
+
+    private void Fruit7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fruit7KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Fruit7.getValueAt(Fruit7.getSelectedRow(), 0) + "";
+        intensidad = Fruit7.getValueAt(Fruit7.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sMojadoQuebrado += sabor + intensidad + " ";
+            lblQuebrado.setText(sMojadoQuebrado);
+        } else {
+            Fruit7.setValueAt("", Fruit7.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Fruit7KeyReleased
+
+    private void SourFer7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer7KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = SourFer7.getValueAt(SourFer7.getSelectedRow(), 0) + "";
+        intensidad = SourFer7.getValueAt(SourFer7.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sMojadoQuebrado += sabor + intensidad + " ";
+            lblQuebrado.setText(sMojadoQuebrado);
+        } else {
+            SourFer7.setValueAt("", SourFer7.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_SourFer7KeyReleased
+
+    private void GreenVeg7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVeg7KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = GreenVeg7.getValueAt(GreenVeg7.getSelectedRow(), 0) + "";
+        intensidad = GreenVeg7.getValueAt(GreenVeg7.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sMojadoQuebrado += sabor + intensidad + " ";
+            lblQuebrado.setText(sMojadoQuebrado);
+        } else {
+            GreenVeg7.setValueAt("", GreenVeg7.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_GreenVeg7KeyReleased
+
+    private void Other7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Other7KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Other7.getValueAt(Other7.getSelectedRow(), 0) + "";
+        intensidad = Other7.getValueAt(Other7.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sMojadoQuebrado += sabor + intensidad + " ";
+            lblQuebrado.setText(sMojadoQuebrado);
+        } else {
+            Other7.setValueAt("", Other7.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Other7KeyReleased
+
+    private void Roasted7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Roasted7KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Roasted7.getValueAt(Roasted7.getSelectedRow(), 0) + "";
+        intensidad = Roasted7.getValueAt(Roasted7.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sMojadoQuebrado += sabor + intensidad + " ";
+            lblQuebrado.setText(sMojadoQuebrado);
+        } else {
+            Roasted7.setValueAt("", Roasted7.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Roasted7KeyReleased
+
+    private void Spices7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Spices7KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Spices7.getValueAt(Spices7.getSelectedRow(), 0) + "";
+        intensidad = Spices7.getValueAt(Spices7.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sMojadoQuebrado += sabor + intensidad + " ";
+            lblQuebrado.setText(sMojadoQuebrado);
+        } else {
+            Spices7.setValueAt("", Spices7.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Spices7KeyReleased
+
+    private void Nutty7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nutty7KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Nutty7.getValueAt(Nutty7.getSelectedRow(), 0) + "";
+        intensidad = Nutty7.getValueAt(Nutty7.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sMojadoQuebrado += sabor + intensidad + " ";
+            lblQuebrado.setText(sMojadoQuebrado);
+        } else {
+            Nutty7.setValueAt("", Nutty7.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Nutty7KeyReleased
+
+    private void Body10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Body10KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Body10.getValueAt(Body10.getSelectedRow(), 0) + "";
+        intensidad = Body10.getValueAt(Body10.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sRemanente += sabor + intensidad + " ";
+            lblRemanente.setText(sRemanente);
+        } else {
+            Body10.setValueAt("", Body10.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Body10KeyReleased
+
+    private void Finish10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Finish10KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Finish10.getValueAt(Finish10.getSelectedRow(), 0) + "";
+        intensidad = Finish10.getValueAt(Finish10.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sRemanente += sabor + intensidad + " ";
+            lblRemanente.setText(sRemanente);
+        } else {
+            Finish10.setValueAt("", Finish10.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Finish10KeyReleased
+
+    private void Sweet9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sweet9KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Sweet9.getValueAt(Sweet9.getSelectedRow(), 0) + "";
+        intensidad = Sweet9.getValueAt(Sweet9.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sRemanente += sabor + intensidad + " ";
+            lblRemanente.setText(sRemanente);
+        } else {
+            Sweet9.setValueAt("", Sweet9.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Sweet9KeyReleased
+
+    private void Floral9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Floral9KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Floral9.getValueAt(Floral9.getSelectedRow(), 0) + "";
+        intensidad = Floral9.getValueAt(Floral9.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sRemanente += sabor + intensidad + " ";
+            lblRemanente.setText(sRemanente);
+        } else {
+            Floral9.setValueAt("", Floral9.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Floral9KeyReleased
+
+    private void Fruit9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fruit9KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Fruit9.getValueAt(Fruit9.getSelectedRow(), 0) + "";
+        intensidad = Fruit9.getValueAt(Fruit9.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sRemanente += sabor + intensidad + " ";
+            lblRemanente.setText(sRemanente);
+        } else {
+            Fruit9.setValueAt("", Fruit9.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Fruit9KeyReleased
+
+    private void SourFer9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer9KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = SourFer9.getValueAt(SourFer9.getSelectedRow(), 0) + "";
+        intensidad = SourFer9.getValueAt(SourFer9.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sRemanente += sabor + intensidad + " ";
+            lblRemanente.setText(sRemanente);
+        } else {
+            SourFer9.setValueAt("", SourFer9.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_SourFer9KeyReleased
+
+    private void GreenVeg9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVeg9KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = GreenVeg9.getValueAt(GreenVeg9.getSelectedRow(), 0) + "";
+        intensidad = GreenVeg9.getValueAt(GreenVeg9.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sRemanente += sabor + intensidad + " ";
+            lblRemanente.setText(sRemanente);
+        } else {
+            GreenVeg9.setValueAt("", GreenVeg9.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_GreenVeg9KeyReleased
+
+    private void Other9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Other9KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Other9.getValueAt(Other9.getSelectedRow(), 0) + "";
+        intensidad = Other9.getValueAt(Other9.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sRemanente += sabor + intensidad + " ";
+            lblRemanente.setText(sRemanente);
+        } else {
+            Other9.setValueAt("", Other9.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Other9KeyReleased
+
+    private void Roasted9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Roasted9KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Roasted9.getValueAt(Roasted9.getSelectedRow(), 0) + "";
+        intensidad = Roasted9.getValueAt(Roasted9.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sRemanente += sabor + intensidad + " ";
+            lblRemanente.setText(sRemanente);
+        } else {
+            Roasted9.setValueAt("", Roasted9.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Roasted9KeyReleased
+
+    private void Spices9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Spices9KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Spices9.getValueAt(Spices9.getSelectedRow(), 0) + "";
+        intensidad = Spices9.getValueAt(Spices9.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sRemanente += sabor + intensidad + " ";
+            lblRemanente.setText(sRemanente);
+        } else {
+            Spices9.setValueAt("", Spices9.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Spices9KeyReleased
+
+    private void Nutty9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nutty9KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Nutty9.getValueAt(Nutty9.getSelectedRow(), 0) + "";
+        intensidad = Nutty9.getValueAt(Nutty9.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sRemanente += sabor + intensidad + " ";
+            lblRemanente.setText(sRemanente);
+        } else {
+            Nutty9.setValueAt("", Nutty9.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Nutty9KeyReleased
+
+    private void Body11KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Body11KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Body11KeyReleased
+
+    private void Finish11KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Finish11KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Finish11KeyReleased
+
+    private void Sweet10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sweet10KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Sweet10.getValueAt(Sweet10.getSelectedRow(), 0) + "";
+        intensidad = Sweet10.getValueAt(Sweet10.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sAcidez += sabor + intensidad + " ";
+            lblAcidez.setText(sAcidez);
+        } else {
+            Sweet10.setValueAt("", Sweet10.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Sweet10KeyReleased
+
+    private void Floral10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Floral10KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Floral10.getValueAt(Floral10.getSelectedRow(), 0) + "";
+        intensidad = Floral10.getValueAt(Floral10.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sAcidez += sabor + intensidad + " ";
+            lblAcidez.setText(sAcidez);
+        } else {
+            Floral10.setValueAt("", Floral10.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Floral10KeyReleased
+
+    private void Fruit10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fruit10KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Fruit10.getValueAt(Fruit10.getSelectedRow(), 0) + "";
+        intensidad = Fruit10.getValueAt(Fruit10.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sAcidez += sabor + intensidad + " ";
+            lblAcidez.setText(sAcidez);
+        } else {
+            Fruit10.setValueAt("", Fruit10.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Fruit10KeyReleased
+
+    private void SourFer10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer10KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = SourFer10.getValueAt(SourFer10.getSelectedRow(), 0) + "";
+        intensidad = SourFer10.getValueAt(SourFer10.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sAcidez += sabor + intensidad + " ";
+            lblAcidez.setText(sAcidez);
+        } else {
+            SourFer10.setValueAt("", SourFer10.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_SourFer10KeyReleased
+
+    private void GreenVeg10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVeg10KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_GreenVeg10KeyReleased
+
+    private void Other10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Other10KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Other10KeyReleased
+
+    private void Roasted10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Roasted10KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Roasted10KeyReleased
+
+    private void Spices10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Spices10KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Spices10KeyReleased
+
+    private void Nutty10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nutty10KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Nutty10KeyReleased
+
+    private void Body13KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Body13KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Body13KeyReleased
+
+    private void Finish13KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Finish13KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Finish13KeyReleased
+
+    private void Sweet12KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sweet12KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Sweet12KeyReleased
+
+    private void Floral12KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Floral12KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Floral12KeyReleased
+
+    private void Fruit12KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fruit12KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Fruit12KeyReleased
+
+    private void SourFer12KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer12KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SourFer12KeyReleased
+
+    private void GreenVeg12KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVeg12KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_GreenVeg12KeyReleased
+
+    private void Other12KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Other12KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Other12KeyReleased
+
+    private void Roasted12KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Roasted12KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Roasted12KeyReleased
+
+    private void Spices12KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Spices12KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Spices12KeyReleased
+
+    private void Nutty12KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nutty12KeyReleased
+        // TODO add your handling code here:
+    }//GEN-LAST:event_Nutty12KeyReleased
+
+    private void Nutty8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nutty8KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Nutty8.getValueAt(Nutty8.getSelectedRow(), 0) + "";
+        intensidad = Nutty8.getValueAt(Nutty8.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sSabor += sabor + intensidad + " ";
+            lblSabor.setText(sSabor);
+        } else {
+            Nutty8.setValueAt("", Nutty8.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Nutty8KeyReleased
+
+    private void Spices8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Spices8KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Spices8.getValueAt(Spices8.getSelectedRow(), 0) + "";
+        intensidad = Spices8.getValueAt(Spices8.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sSabor += sabor + intensidad + " ";
+            lblSabor.setText(sSabor);
+        } else {
+            Spices8.setValueAt("", Spices8.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Spices8KeyReleased
+
+    private void Roasted8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Roasted8KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Roasted8.getValueAt(Roasted8.getSelectedRow(), 0) + "";
+        intensidad = Roasted8.getValueAt(Roasted8.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sSabor += sabor + intensidad + " ";
+            lblSabor.setText(sSabor);
+        } else {
+            Roasted8.setValueAt("", Roasted8.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Roasted8KeyReleased
+
+    private void Other8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Other8KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Other8.getValueAt(Other8.getSelectedRow(), 0) + "";
+        intensidad = Other8.getValueAt(Other8.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sSabor += sabor + intensidad + " ";
+            lblSabor.setText(sSabor);
+        } else {
+            Other8.setValueAt("", Other8.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Other8KeyReleased
+
+    private void GreenVeg8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVeg8KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = GreenVeg8.getValueAt(GreenVeg8.getSelectedRow(), 0) + "";
+        intensidad = GreenVeg8.getValueAt(GreenVeg8.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sSabor += sabor + intensidad + " ";
+            lblSabor.setText(sSabor);
+        } else {
+            GreenVeg8.setValueAt("", GreenVeg8.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_GreenVeg8KeyReleased
+
+    private void SourFer8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer8KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = SourFer8.getValueAt(SourFer8.getSelectedRow(), 0) + "";
+        intensidad = SourFer8.getValueAt(SourFer8.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sSabor += sabor + intensidad + " ";
+            lblSabor.setText(sSabor);
+        } else {
+            SourFer8.setValueAt("", SourFer8.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_SourFer8KeyReleased
+
+    private void Fruit8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fruit8KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Fruit8.getValueAt(Fruit8.getSelectedRow(), 0) + "";
+        intensidad = Fruit8.getValueAt(Fruit8.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sSabor += sabor + intensidad + " ";
+            lblSabor.setText(sSabor);
+        } else {
+            Fruit8.setValueAt("", Fruit8.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Fruit8KeyReleased
+
+    private void Floral8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Floral8KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Floral8.getValueAt(Floral8.getSelectedRow(), 0) + "";
+        intensidad = Floral8.getValueAt(Floral8.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sSabor += sabor + intensidad + " ";
+            lblSabor.setText(sSabor);
+        } else {
+            Floral8.setValueAt("", Floral8.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Floral8KeyReleased
+
+    private void Sweet8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sweet8KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Sweet8.getValueAt(Sweet8.getSelectedRow(), 0) + "";
+        intensidad = Sweet8.getValueAt(Sweet8.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sSabor += sabor + intensidad + " ";
+            lblSabor.setText(sSabor);
+        } else {
+            Sweet8.setValueAt("", Sweet8.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Sweet8KeyReleased
+
+    private void Finish9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Finish9KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Finish9.getValueAt(Finish9.getSelectedRow(), 0) + "";
+        intensidad = Finish9.getValueAt(Finish9.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sSabor += sabor + intensidad + " ";
+            lblSabor.setText(sSabor);
+        } else {
+            Finish9.setValueAt("", Finish9.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Finish9KeyReleased
+
+    private void Body9KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Body9KeyReleased
+        // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Body9.getValueAt(Body9.getSelectedRow(), 0) + "";
+        intensidad = Body9.getValueAt(Body9.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sSabor += sabor + intensidad + " ";
+            lblSabor.setText(sSabor);
+        } else {
+            Body9.setValueAt("", Body9.getSelectedRow(), 1);
+        }
+    }//GEN-LAST:event_Body9KeyReleased
+
+    private void SourFer8KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer8KeyTyped
+        // TODO add your handling code here:
+    }//GEN-LAST:event_SourFer8KeyTyped
 
     String sSeco = "";
-    String sMojado = "";
-    String sQuebrado = "";
+    String sMojadoQuebrado = "";
     String sSabor = "";
     String sRemanente = "";
     String sAcidez = "";
@@ -5760,7 +5211,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
     public void guardar() {
         cadenaSabores = "Sabor: " + lblSabor.getText() + ", Sabor Remanente: " + lblRemanente.getText() + ", Acidez: " + lblAcidez.getText();
 
-        cadenaOlores = "Seco: " + lblSeco.getText() + ", Mojado: " + lblMojado.getText() + ", Quebrado: " + lblQuebrado.getText();
+        cadenaOlores = "Seco: " + lblSeco.getText() + ", Mojado/Quebrado: " + lblQuebrado.getText();
 
         JOptionPane.showMessageDialog(null, "Sabores: " + cadenaSabores + "\nOlores: " + cadenaOlores);
         String fecha = null;
@@ -5857,85 +5308,74 @@ public class jdCatacion2 extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTable Body1;
+    private javax.swing.JTable Body10;
+    private javax.swing.JTable Body11;
+    private javax.swing.JTable Body13;
     private javax.swing.JTable Body2;
-    private javax.swing.JTable Body3;
-    private javax.swing.JTable Body4;
-    private javax.swing.JTable Body5;
-    private javax.swing.JTable Body6;
-    private javax.swing.JTable Body7;
-    private javax.swing.JTable Finish1;
+    private javax.swing.JTable Body8;
+    private javax.swing.JTable Body9;
+    private javax.swing.JTable Finish10;
+    private javax.swing.JTable Finish11;
+    private javax.swing.JTable Finish13;
     private javax.swing.JTable Finish2;
-    private javax.swing.JTable Finish3;
-    private javax.swing.JTable Finish4;
-    private javax.swing.JTable Finish5;
-    private javax.swing.JTable Finish6;
-    private javax.swing.JTable Finish7;
-    private javax.swing.JTable Floral;
-    private javax.swing.JTable Floral1;
-    private javax.swing.JTable Floral2;
-    private javax.swing.JTable Floral3;
-    private javax.swing.JTable Floral4;
-    private javax.swing.JTable Floral5;
+    private javax.swing.JTable Finish8;
+    private javax.swing.JTable Finish9;
+    private javax.swing.JTable Floral10;
+    private javax.swing.JTable Floral12;
     private javax.swing.JTable Floral6;
-    private javax.swing.JTable Fruit;
-    private javax.swing.JTable Fruit1;
-    private javax.swing.JTable Fruit2;
-    private javax.swing.JTable Fruit3;
-    private javax.swing.JTable Fruit4;
-    private javax.swing.JTable Fruit5;
+    private javax.swing.JTable Floral7;
+    private javax.swing.JTable Floral8;
+    private javax.swing.JTable Floral9;
+    private javax.swing.JTable Fruit10;
+    private javax.swing.JTable Fruit12;
     private javax.swing.JTable Fruit6;
-    private javax.swing.JTable GreenVeg;
-    private javax.swing.JTable GreenVeg1;
-    private javax.swing.JTable GreenVeg2;
-    private javax.swing.JTable GreenVeg3;
-    private javax.swing.JTable GreenVeg4;
-    private javax.swing.JTable GreenVeg5;
+    private javax.swing.JTable Fruit7;
+    private javax.swing.JTable Fruit8;
+    private javax.swing.JTable Fruit9;
+    private javax.swing.JTable GreenVeg10;
+    private javax.swing.JTable GreenVeg12;
     private javax.swing.JTable GreenVeg6;
-    private javax.swing.JTable Nutty;
-    private javax.swing.JTable Nutty1;
-    private javax.swing.JTable Nutty2;
-    private javax.swing.JTable Nutty3;
-    private javax.swing.JTable Nutty4;
-    private javax.swing.JTable Nutty5;
+    private javax.swing.JTable GreenVeg7;
+    private javax.swing.JTable GreenVeg8;
+    private javax.swing.JTable GreenVeg9;
+    private javax.swing.JTable Nutty10;
+    private javax.swing.JTable Nutty12;
     private javax.swing.JTable Nutty6;
-    private javax.swing.JTable Other;
-    private javax.swing.JTable Other1;
-    private javax.swing.JTable Other2;
-    private javax.swing.JTable Other3;
-    private javax.swing.JTable Other4;
-    private javax.swing.JTable Other5;
+    private javax.swing.JTable Nutty7;
+    private javax.swing.JTable Nutty8;
+    private javax.swing.JTable Nutty9;
+    private javax.swing.JTable Other10;
+    private javax.swing.JTable Other12;
     private javax.swing.JTable Other6;
+    private javax.swing.JTable Other7;
+    private javax.swing.JTable Other8;
+    private javax.swing.JTable Other9;
     private javax.swing.JTextField Quakers;
     private javax.swing.JTextField Quakers1;
-    private javax.swing.JTable Roasted;
-    private javax.swing.JTable Roasted1;
-    private javax.swing.JTable Roasted2;
-    private javax.swing.JTable Roasted3;
-    private javax.swing.JTable Roasted4;
-    private javax.swing.JTable Roasted5;
+    private javax.swing.JTable Roasted10;
+    private javax.swing.JTable Roasted12;
     private javax.swing.JTable Roasted6;
-    private javax.swing.JTable SourFer;
-    private javax.swing.JTable SourFer1;
-    private javax.swing.JTable SourFer2;
-    private javax.swing.JTable SourFer3;
-    private javax.swing.JTable SourFer4;
-    private javax.swing.JTable SourFer5;
+    private javax.swing.JTable Roasted7;
+    private javax.swing.JTable Roasted8;
+    private javax.swing.JTable Roasted9;
+    private javax.swing.JTable SourFer10;
+    private javax.swing.JTable SourFer12;
     private javax.swing.JTable SourFer6;
-    private javax.swing.JTable Spices;
-    private javax.swing.JTable Spices1;
-    private javax.swing.JTable Spices2;
-    private javax.swing.JTable Spices3;
-    private javax.swing.JTable Spices4;
-    private javax.swing.JTable Spices5;
+    private javax.swing.JTable SourFer7;
+    private javax.swing.JTable SourFer8;
+    private javax.swing.JTable SourFer9;
+    private javax.swing.JTable Spices10;
+    private javax.swing.JTable Spices12;
     private javax.swing.JTable Spices6;
-    private javax.swing.JTable Sweet;
-    private javax.swing.JTable Sweet1;
-    private javax.swing.JTable Sweet2;
-    private javax.swing.JTable Sweet3;
-    private javax.swing.JTable Sweet4;
-    private javax.swing.JTable Sweet5;
+    private javax.swing.JTable Spices7;
+    private javax.swing.JTable Spices8;
+    private javax.swing.JTable Spices9;
+    private javax.swing.JTable Sweet10;
+    private javax.swing.JTable Sweet12;
     private javax.swing.JTable Sweet6;
+    private javax.swing.JTable Sweet7;
+    private javax.swing.JTable Sweet8;
+    private javax.swing.JTable Sweet9;
     private javax.swing.JButton btnMas;
     private javax.swing.JButton btnMas2;
     private javax.swing.JButton btnMas3;
@@ -5991,7 +5431,6 @@ public class jdCatacion2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel57;
     private javax.swing.JLabel jLabel58;
-    private javax.swing.JLabel jLabel59;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel60;
     private javax.swing.JLabel jLabel61;
@@ -6000,86 +5439,58 @@ public class jdCatacion2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel8;
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
-    private javax.swing.JPanel jPanel10;
-    private javax.swing.JPanel jPanel11;
-    private javax.swing.JPanel jPanel12;
-    private javax.swing.JPanel jPanel13;
-    private javax.swing.JPanel jPanel14;
-    private javax.swing.JPanel jPanel15;
     private javax.swing.JPanel jPanel16;
+    private javax.swing.JPanel jPanel17;
+    private javax.swing.JPanel jPanel18;
+    private javax.swing.JPanel jPanel19;
     private javax.swing.JPanel jPanel2;
+    private javax.swing.JPanel jPanel20;
+    private javax.swing.JPanel jPanel22;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JPanel jPanel6;
     private javax.swing.JPanel jPanel9;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JScrollPane jScrollPane10;
-    private javax.swing.JScrollPane jScrollPane11;
-    private javax.swing.JScrollPane jScrollPane12;
-    private javax.swing.JScrollPane jScrollPane13;
-    private javax.swing.JScrollPane jScrollPane14;
-    private javax.swing.JScrollPane jScrollPane17;
-    private javax.swing.JScrollPane jScrollPane18;
-    private javax.swing.JScrollPane jScrollPane19;
-    private javax.swing.JScrollPane jScrollPane20;
-    private javax.swing.JScrollPane jScrollPane21;
-    private javax.swing.JScrollPane jScrollPane22;
-    private javax.swing.JScrollPane jScrollPane23;
-    private javax.swing.JScrollPane jScrollPane24;
-    private javax.swing.JScrollPane jScrollPane25;
-    private javax.swing.JScrollPane jScrollPane26;
-    private javax.swing.JScrollPane jScrollPane27;
-    private javax.swing.JScrollPane jScrollPane28;
-    private javax.swing.JScrollPane jScrollPane29;
-    private javax.swing.JScrollPane jScrollPane3;
-    private javax.swing.JScrollPane jScrollPane30;
-    private javax.swing.JScrollPane jScrollPane31;
-    private javax.swing.JScrollPane jScrollPane32;
-    private javax.swing.JScrollPane jScrollPane33;
-    private javax.swing.JScrollPane jScrollPane34;
-    private javax.swing.JScrollPane jScrollPane35;
-    private javax.swing.JScrollPane jScrollPane36;
-    private javax.swing.JScrollPane jScrollPane37;
-    private javax.swing.JScrollPane jScrollPane38;
-    private javax.swing.JScrollPane jScrollPane39;
-    private javax.swing.JScrollPane jScrollPane4;
-    private javax.swing.JScrollPane jScrollPane40;
-    private javax.swing.JScrollPane jScrollPane41;
-    private javax.swing.JScrollPane jScrollPane42;
-    private javax.swing.JScrollPane jScrollPane43;
-    private javax.swing.JScrollPane jScrollPane44;
-    private javax.swing.JScrollPane jScrollPane45;
-    private javax.swing.JScrollPane jScrollPane46;
-    private javax.swing.JScrollPane jScrollPane47;
-    private javax.swing.JScrollPane jScrollPane48;
-    private javax.swing.JScrollPane jScrollPane49;
-    private javax.swing.JScrollPane jScrollPane5;
-    private javax.swing.JScrollPane jScrollPane50;
-    private javax.swing.JScrollPane jScrollPane51;
-    private javax.swing.JScrollPane jScrollPane52;
-    private javax.swing.JScrollPane jScrollPane53;
+    private javax.swing.JScrollPane jScrollPane100;
+    private javax.swing.JScrollPane jScrollPane101;
+    private javax.swing.JScrollPane jScrollPane102;
+    private javax.swing.JScrollPane jScrollPane103;
+    private javax.swing.JScrollPane jScrollPane104;
+    private javax.swing.JScrollPane jScrollPane105;
+    private javax.swing.JScrollPane jScrollPane106;
+    private javax.swing.JScrollPane jScrollPane107;
+    private javax.swing.JScrollPane jScrollPane108;
+    private javax.swing.JScrollPane jScrollPane109;
+    private javax.swing.JScrollPane jScrollPane110;
+    private javax.swing.JScrollPane jScrollPane111;
+    private javax.swing.JScrollPane jScrollPane112;
+    private javax.swing.JScrollPane jScrollPane113;
+    private javax.swing.JScrollPane jScrollPane114;
+    private javax.swing.JScrollPane jScrollPane115;
+    private javax.swing.JScrollPane jScrollPane116;
+    private javax.swing.JScrollPane jScrollPane117;
+    private javax.swing.JScrollPane jScrollPane118;
+    private javax.swing.JScrollPane jScrollPane119;
+    private javax.swing.JScrollPane jScrollPane120;
+    private javax.swing.JScrollPane jScrollPane121;
+    private javax.swing.JScrollPane jScrollPane122;
+    private javax.swing.JScrollPane jScrollPane123;
+    private javax.swing.JScrollPane jScrollPane124;
+    private javax.swing.JScrollPane jScrollPane125;
+    private javax.swing.JScrollPane jScrollPane137;
+    private javax.swing.JScrollPane jScrollPane138;
+    private javax.swing.JScrollPane jScrollPane139;
+    private javax.swing.JScrollPane jScrollPane140;
+    private javax.swing.JScrollPane jScrollPane141;
+    private javax.swing.JScrollPane jScrollPane142;
+    private javax.swing.JScrollPane jScrollPane143;
+    private javax.swing.JScrollPane jScrollPane144;
+    private javax.swing.JScrollPane jScrollPane145;
+    private javax.swing.JScrollPane jScrollPane146;
+    private javax.swing.JScrollPane jScrollPane147;
     private javax.swing.JScrollPane jScrollPane54;
     private javax.swing.JScrollPane jScrollPane55;
-    private javax.swing.JScrollPane jScrollPane56;
-    private javax.swing.JScrollPane jScrollPane57;
-    private javax.swing.JScrollPane jScrollPane58;
-    private javax.swing.JScrollPane jScrollPane59;
-    private javax.swing.JScrollPane jScrollPane6;
-    private javax.swing.JScrollPane jScrollPane60;
-    private javax.swing.JScrollPane jScrollPane61;
-    private javax.swing.JScrollPane jScrollPane62;
-    private javax.swing.JScrollPane jScrollPane63;
-    private javax.swing.JScrollPane jScrollPane64;
-    private javax.swing.JScrollPane jScrollPane65;
-    private javax.swing.JScrollPane jScrollPane66;
-    private javax.swing.JScrollPane jScrollPane67;
-    private javax.swing.JScrollPane jScrollPane68;
-    private javax.swing.JScrollPane jScrollPane69;
-    private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JScrollPane jScrollPane70;
-    private javax.swing.JScrollPane jScrollPane71;
-    private javax.swing.JScrollPane jScrollPane72;
     private javax.swing.JScrollPane jScrollPane73;
     private javax.swing.JScrollPane jScrollPane74;
     private javax.swing.JScrollPane jScrollPane75;
@@ -6087,10 +5498,26 @@ public class jdCatacion2 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane77;
     private javax.swing.JScrollPane jScrollPane78;
     private javax.swing.JScrollPane jScrollPane79;
-    private javax.swing.JScrollPane jScrollPane8;
     private javax.swing.JScrollPane jScrollPane80;
     private javax.swing.JScrollPane jScrollPane81;
-    private javax.swing.JScrollPane jScrollPane9;
+    private javax.swing.JScrollPane jScrollPane82;
+    private javax.swing.JScrollPane jScrollPane83;
+    private javax.swing.JScrollPane jScrollPane84;
+    private javax.swing.JScrollPane jScrollPane85;
+    private javax.swing.JScrollPane jScrollPane86;
+    private javax.swing.JScrollPane jScrollPane87;
+    private javax.swing.JScrollPane jScrollPane88;
+    private javax.swing.JScrollPane jScrollPane89;
+    private javax.swing.JScrollPane jScrollPane90;
+    private javax.swing.JScrollPane jScrollPane91;
+    private javax.swing.JScrollPane jScrollPane92;
+    private javax.swing.JScrollPane jScrollPane93;
+    private javax.swing.JScrollPane jScrollPane94;
+    private javax.swing.JScrollPane jScrollPane95;
+    private javax.swing.JScrollPane jScrollPane96;
+    private javax.swing.JScrollPane jScrollPane97;
+    private javax.swing.JScrollPane jScrollPane98;
+    private javax.swing.JScrollPane jScrollPane99;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JSeparator jSeparator4;
@@ -6111,7 +5538,6 @@ public class jdCatacion2 extends javax.swing.JFrame {
     private javax.swing.JLabel lblCuerpo;
     private javax.swing.JLabel lblDenTos;
     private javax.swing.JLabel lblFragancia;
-    private javax.swing.JLabel lblMojado;
     private javax.swing.JLabel lblProceso;
     private javax.swing.JLabel lblPuntuacion;
     private javax.swing.JLabel lblQuebrado;
