@@ -124,8 +124,8 @@ public class jdCatacion2 extends javax.swing.JFrame {
         }
 
         //Formula anterior que debe utilizarse de nuevo para coincidir con archivo Eval Green
-        //total = a + b + c + d + e + f + ((10 / g) * h) + ((10 / g) * i) + ((10 / g) * j) + k - l;
-        total = a + b + c + d + e + f + h + i + j + k - l;
+        total = a + b + c + d + e + f + ((10 / g) * h) + ((10 / g) * i) + ((10 / g) * j) + k - l;
+        //total = a + b + c + d + e + f + h + i + j + k - l;
 
         lblPuntuacion.setText(formato.format(total) + "");
 
@@ -482,6 +482,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         jLabel34 = new javax.swing.JLabel();
         jLabel37 = new javax.swing.JLabel();
         lblCuerpo = new javax.swing.JLabel();
+        jSeparator3 = new javax.swing.JSeparator();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Evaluaciòn Taza");
@@ -3957,7 +3958,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                         .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
 
-        jTabbedPane1.addTab("Cuerpo 2", jPanel22);
+        jTabbedPane1.addTab("Cuerpo", jPanel22);
 
         jLabel17.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
         jLabel17.setText("Puntuación");
@@ -3967,104 +3968,58 @@ public class jdCatacion2 extends javax.swing.JFrame {
         lblPuntuacion.setText("0.00");
 
         jPanel9.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+        jPanel9.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel57.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel57.setText("Seco");
+        jPanel9.add(jLabel57, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 33, 48, -1));
 
         jLabel58.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel58.setText("Mojado/Quebrado");
+        jPanel9.add(jLabel58, new org.netbeans.lib.awtextra.AbsoluteConstraints(435, 33, -1, -1));
 
         lblSeco.setText("-");
+        jPanel9.add(lblSeco, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 33, 355, -1));
 
         lblQuebrado.setText("-");
+        jPanel9.add(lblQuebrado, new org.netbeans.lib.awtextra.AbsoluteConstraints(556, 33, 322, -1));
 
         jLabel60.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel60.setText("Sabor");
+        jPanel9.add(jLabel60, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 73, 48, -1));
 
         lblSabor.setText("-");
+        jPanel9.add(lblSabor, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 73, 248, -1));
 
         jLabel61.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel61.setText("Remanente");
+        jPanel9.add(jLabel61, new org.netbeans.lib.awtextra.AbsoluteConstraints(336, 73, -1, -1));
 
         lblRemanente.setText("-");
+        jPanel9.add(lblRemanente, new org.netbeans.lib.awtextra.AbsoluteConstraints(412, 73, 187, -1));
 
         jLabel62.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel62.setText("Acidez");
+        jPanel9.add(jLabel62, new org.netbeans.lib.awtextra.AbsoluteConstraints(608, 73, 55, -1));
 
         lblAcidez.setText("-");
+        jPanel9.add(lblAcidez, new org.netbeans.lib.awtextra.AbsoluteConstraints(669, 73, 209, -1));
 
         jLabel24.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel24.setText("Olores");
+        jPanel9.add(jLabel24, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, -1, -1));
 
         jLabel34.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel34.setText("Sabores");
+        jPanel9.add(jLabel34, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 53, -1, -1));
 
         jLabel37.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel37.setText("Cuerpo");
+        jPanel9.add(jLabel37, new org.netbeans.lib.awtextra.AbsoluteConstraints(12, 93, -1, -1));
 
         lblCuerpo.setText("-");
-
-        javax.swing.GroupLayout jPanel9Layout = new javax.swing.GroupLayout(jPanel9);
-        jPanel9.setLayout(jPanel9Layout);
-        jPanel9Layout.setHorizontalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel9Layout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addComponent(jLabel57, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblSeco)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel58)
-                        .addGap(18, 18, 18)
-                        .addComponent(lblQuebrado))
-                    .addComponent(jLabel34)
-                    .addGroup(jPanel9Layout.createSequentialGroup()
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel60, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jLabel24)
-                            .addComponent(jLabel37))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(lblCuerpo, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addComponent(lblSabor, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel61)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addComponent(lblRemanente)
-                        .addGap(18, 18, 18)
-                        .addComponent(jLabel62, javax.swing.GroupLayout.PREFERRED_SIZE, 55, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addComponent(lblAcidez)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-        );
-        jPanel9Layout.setVerticalGroup(
-            jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel9Layout.createSequentialGroup()
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jLabel24)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel57)
-                    .addComponent(lblSeco)
-                    .addComponent(jLabel58)
-                    .addComponent(lblQuebrado))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel34)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel60)
-                    .addComponent(lblSabor)
-                    .addComponent(jLabel61)
-                    .addComponent(lblRemanente)
-                    .addComponent(jLabel62)
-                    .addComponent(lblAcidez))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel9Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel37)
-                    .addComponent(lblCuerpo)))
-        );
+        jPanel9.add(lblCuerpo, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 93, -1, -1));
+        jPanel9.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 60, 810, -1));
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -4114,7 +4069,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(6, 6, 6)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGap(78, 78, 78)
@@ -4459,7 +4414,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Nutty6.getValueAt(Nutty6.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sSeco += sabor + intensidad + " ";
+            sSeco += sabor.trim() + intensidad + " ";
             lblSeco.setText(sSeco);
         } else {
             Nutty6.setValueAt("", Nutty6.getSelectedRow(), 1);
@@ -4473,7 +4428,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Spices6.getValueAt(Spices6.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sSeco += sabor + intensidad + " ";
+            sSeco += sabor.trim() + intensidad + " ";
             lblSeco.setText(sSeco);
         } else {
             Spices6.setValueAt("", Spices6.getSelectedRow(), 1);
@@ -4487,7 +4442,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Roasted6.getValueAt(Roasted6.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sSeco += sabor + intensidad + " ";
+            sSeco += sabor.trim() + intensidad + " ";
             lblSeco.setText(sSeco);
         } else {
             Roasted6.setValueAt("", Roasted6.getSelectedRow(), 1);
@@ -4501,7 +4456,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Other6.getValueAt(Other6.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sSeco += sabor + intensidad + " ";
+            sSeco += sabor.trim() + intensidad + " ";
             lblSeco.setText(sSeco);
         } else {
             Other6.setValueAt("", Other6.getSelectedRow(), 1);
@@ -4515,7 +4470,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = GreenVeg6.getValueAt(GreenVeg6.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sSeco += sabor + intensidad + " ";
+            sSeco += sabor.trim() + intensidad + " ";
             lblSeco.setText(sSeco);
         } else {
             GreenVeg6.setValueAt("", GreenVeg6.getSelectedRow(), 1);
@@ -4529,7 +4484,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = SourFer6.getValueAt(SourFer6.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sSeco += sabor + intensidad + " ";
+            sSeco += sabor.trim() + intensidad + " ";
             lblSeco.setText(sSeco);
         } else {
             SourFer6.setValueAt("", SourFer6.getSelectedRow(), 1);
@@ -4543,7 +4498,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Fruit6.getValueAt(Fruit6.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sSeco += sabor + intensidad + " ";
+            sSeco += sabor.trim() + intensidad + " ";
             lblSeco.setText(sSeco);
         } else {
             Fruit6.setValueAt("", Fruit6.getSelectedRow(), 1);
@@ -4557,7 +4512,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Floral6.getValueAt(Floral6.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sSeco += sabor + intensidad + " ";
+            sSeco += sabor.trim() + intensidad + " ";
             lblSeco.setText(sSeco);
         } else {
             Floral6.setValueAt("", Floral6.getSelectedRow(), 1);
@@ -4571,7 +4526,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Sweet6.getValueAt(Sweet6.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sSeco += sabor + intensidad + " ";
+            sSeco += sabor.trim() + intensidad + " ";
             lblSeco.setText(sSeco);
         } else {
             Sweet6.setValueAt("", Sweet6.getSelectedRow(), 1);
@@ -4585,7 +4540,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Finish2.getValueAt(Finish2.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sSeco += sabor + intensidad + " ";
+            sSeco += sabor.trim() + intensidad + " ";
             lblSeco.setText(sSeco);
         } else {
             Finish2.setValueAt("", Finish2.getSelectedRow(), 1);
@@ -4599,7 +4554,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Body2.getValueAt(Body2.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sSeco += sabor + intensidad + " ";
+            sSeco += sabor.trim() + intensidad + " ";
             lblSeco.setText(sSeco);
         } else {
             Body2.setValueAt("", Body2.getSelectedRow(), 1);
@@ -4613,7 +4568,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Body8.getValueAt(Body8.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sMojadoQuebrado += sabor + intensidad + " ";
+            sMojadoQuebrado += sabor.trim() + intensidad + " ";
             lblQuebrado.setText(sMojadoQuebrado);
         } else {
             Body8.setValueAt("", Body8.getSelectedRow(), 1);
@@ -4627,7 +4582,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Finish8.getValueAt(Finish8.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sMojadoQuebrado += sabor + intensidad + " ";
+            sMojadoQuebrado += sabor.trim() + intensidad + " ";
             lblQuebrado.setText(sMojadoQuebrado);
         } else {
             Finish8.setValueAt("", Finish8.getSelectedRow(), 1);
@@ -4637,14 +4592,14 @@ public class jdCatacion2 extends javax.swing.JFrame {
     private void Sweet7KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sweet7KeyReleased
         // TODO add your handling code here:
         String sabor = "", intensidad = "";
-        sabor = Sweet6.getValueAt(Sweet6.getSelectedRow(), 0) + "";
-        intensidad = Sweet6.getValueAt(Sweet6.getSelectedRow(), 1) + "";
+        sabor = Sweet7.getValueAt(Sweet7.getSelectedRow(), 0) + "";
+        intensidad = Sweet7.getValueAt(Sweet7.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sMojadoQuebrado += sabor + intensidad + " ";
+            sMojadoQuebrado += sabor.trim() + intensidad + " ";
             lblQuebrado.setText(sMojadoQuebrado);
         } else {
-            Sweet6.setValueAt("", Sweet6.getSelectedRow(), 1);
+            Sweet7.setValueAt("", Sweet7.getSelectedRow(), 1);
         }
     }//GEN-LAST:event_Sweet7KeyReleased
 
@@ -4655,7 +4610,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Floral7.getValueAt(Floral7.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sMojadoQuebrado += sabor + intensidad + " ";
+            sMojadoQuebrado += sabor.trim() + intensidad + " ";
             lblQuebrado.setText(sMojadoQuebrado);
         } else {
             Floral7.setValueAt("", Floral7.getSelectedRow(), 1);
@@ -4669,7 +4624,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Fruit7.getValueAt(Fruit7.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sMojadoQuebrado += sabor + intensidad + " ";
+            sMojadoQuebrado += sabor.trim() + intensidad + " ";
             lblQuebrado.setText(sMojadoQuebrado);
         } else {
             Fruit7.setValueAt("", Fruit7.getSelectedRow(), 1);
@@ -4683,7 +4638,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = SourFer7.getValueAt(SourFer7.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sMojadoQuebrado += sabor + intensidad + " ";
+            sMojadoQuebrado += sabor.trim() + intensidad + " ";
             lblQuebrado.setText(sMojadoQuebrado);
         } else {
             SourFer7.setValueAt("", SourFer7.getSelectedRow(), 1);
@@ -4697,7 +4652,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = GreenVeg7.getValueAt(GreenVeg7.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sMojadoQuebrado += sabor + intensidad + " ";
+            sMojadoQuebrado += sabor.trim() + intensidad + " ";
             lblQuebrado.setText(sMojadoQuebrado);
         } else {
             GreenVeg7.setValueAt("", GreenVeg7.getSelectedRow(), 1);
@@ -4711,7 +4666,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Other7.getValueAt(Other7.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sMojadoQuebrado += sabor + intensidad + " ";
+            sMojadoQuebrado += sabor.trim() + intensidad + " ";
             lblQuebrado.setText(sMojadoQuebrado);
         } else {
             Other7.setValueAt("", Other7.getSelectedRow(), 1);
@@ -4725,7 +4680,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Roasted7.getValueAt(Roasted7.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sMojadoQuebrado += sabor + intensidad + " ";
+            sMojadoQuebrado += sabor.trim() + intensidad + " ";
             lblQuebrado.setText(sMojadoQuebrado);
         } else {
             Roasted7.setValueAt("", Roasted7.getSelectedRow(), 1);
@@ -4739,7 +4694,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Spices7.getValueAt(Spices7.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sMojadoQuebrado += sabor + intensidad + " ";
+            sMojadoQuebrado += sabor.trim() + intensidad + " ";
             lblQuebrado.setText(sMojadoQuebrado);
         } else {
             Spices7.setValueAt("", Spices7.getSelectedRow(), 1);
@@ -4753,7 +4708,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Nutty7.getValueAt(Nutty7.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sMojadoQuebrado += sabor + intensidad + " ";
+            sMojadoQuebrado += sabor.trim() + intensidad + " ";
             lblQuebrado.setText(sMojadoQuebrado);
         } else {
             Nutty7.setValueAt("", Nutty7.getSelectedRow(), 1);
@@ -4767,7 +4722,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Body10.getValueAt(Body10.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sRemanente += sabor + intensidad + " ";
+            sRemanente += sabor.trim() + intensidad + " ";
             lblRemanente.setText(sRemanente);
         } else {
             Body10.setValueAt("", Body10.getSelectedRow(), 1);
@@ -4781,7 +4736,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Finish10.getValueAt(Finish10.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sRemanente += sabor + intensidad + " ";
+            sRemanente += sabor.trim() + intensidad + " ";
             lblRemanente.setText(sRemanente);
         } else {
             Finish10.setValueAt("", Finish10.getSelectedRow(), 1);
@@ -4795,7 +4750,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Sweet9.getValueAt(Sweet9.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sRemanente += sabor + intensidad + " ";
+            sRemanente += sabor.trim() + intensidad + " ";
             lblRemanente.setText(sRemanente);
         } else {
             Sweet9.setValueAt("", Sweet9.getSelectedRow(), 1);
@@ -4809,7 +4764,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Floral9.getValueAt(Floral9.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sRemanente += sabor + intensidad + " ";
+            sRemanente += sabor.trim() + intensidad + " ";
             lblRemanente.setText(sRemanente);
         } else {
             Floral9.setValueAt("", Floral9.getSelectedRow(), 1);
@@ -4823,7 +4778,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Fruit9.getValueAt(Fruit9.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sRemanente += sabor + intensidad + " ";
+            sRemanente += sabor.trim() + intensidad + " ";
             lblRemanente.setText(sRemanente);
         } else {
             Fruit9.setValueAt("", Fruit9.getSelectedRow(), 1);
@@ -4837,7 +4792,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = SourFer9.getValueAt(SourFer9.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sRemanente += sabor + intensidad + " ";
+            sRemanente += sabor.trim() + intensidad + " ";
             lblRemanente.setText(sRemanente);
         } else {
             SourFer9.setValueAt("", SourFer9.getSelectedRow(), 1);
@@ -4851,7 +4806,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = GreenVeg9.getValueAt(GreenVeg9.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sRemanente += sabor + intensidad + " ";
+            sRemanente += sabor.trim() + intensidad + " ";
             lblRemanente.setText(sRemanente);
         } else {
             GreenVeg9.setValueAt("", GreenVeg9.getSelectedRow(), 1);
@@ -4865,7 +4820,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Other9.getValueAt(Other9.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sRemanente += sabor + intensidad + " ";
+            sRemanente += sabor.trim() + intensidad + " ";
             lblRemanente.setText(sRemanente);
         } else {
             Other9.setValueAt("", Other9.getSelectedRow(), 1);
@@ -4879,7 +4834,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Roasted9.getValueAt(Roasted9.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sRemanente += sabor + intensidad + " ";
+            sRemanente += sabor.trim() + intensidad + " ";
             lblRemanente.setText(sRemanente);
         } else {
             Roasted9.setValueAt("", Roasted9.getSelectedRow(), 1);
@@ -4893,7 +4848,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Spices9.getValueAt(Spices9.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sRemanente += sabor + intensidad + " ";
+            sRemanente += sabor.trim() + intensidad + " ";
             lblRemanente.setText(sRemanente);
         } else {
             Spices9.setValueAt("", Spices9.getSelectedRow(), 1);
@@ -4907,7 +4862,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Nutty9.getValueAt(Nutty9.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sRemanente += sabor + intensidad + " ";
+            sRemanente += sabor.trim() + intensidad + " ";
             lblRemanente.setText(sRemanente);
         } else {
             Nutty9.setValueAt("", Nutty9.getSelectedRow(), 1);
@@ -4916,10 +4871,30 @@ public class jdCatacion2 extends javax.swing.JFrame {
 
     private void Body11KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Body11KeyReleased
         // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Body11.getValueAt(Body11.getSelectedRow(), 0) + "";
+        intensidad = Body11.getValueAt(Body11.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sAcidez += sabor.trim() + intensidad + " ";
+            lblAcidez.setText(sAcidez);
+        } else {
+            Body11.setValueAt("", Body11.getSelectedRow(), 1);
+        }
     }//GEN-LAST:event_Body11KeyReleased
 
     private void Finish11KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Finish11KeyReleased
         // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Finish11.getValueAt(Finish11.getSelectedRow(), 0) + "";
+        intensidad = Finish11.getValueAt(Finish11.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sAcidez += sabor.trim() + intensidad + " ";
+            lblAcidez.setText(sAcidez);
+        } else {
+            Finish11.setValueAt("", Finish11.getSelectedRow(), 1);
+        }
     }//GEN-LAST:event_Finish11KeyReleased
 
     private void Sweet10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sweet10KeyReleased
@@ -4929,7 +4904,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Sweet10.getValueAt(Sweet10.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sAcidez += sabor + intensidad + " ";
+            sAcidez += sabor.trim() + intensidad + " ";
             lblAcidez.setText(sAcidez);
         } else {
             Sweet10.setValueAt("", Sweet10.getSelectedRow(), 1);
@@ -4943,7 +4918,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Floral10.getValueAt(Floral10.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sAcidez += sabor + intensidad + " ";
+            sAcidez += sabor.trim() + intensidad + " ";
             lblAcidez.setText(sAcidez);
         } else {
             Floral10.setValueAt("", Floral10.getSelectedRow(), 1);
@@ -4957,7 +4932,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Fruit10.getValueAt(Fruit10.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sAcidez += sabor + intensidad + " ";
+            sAcidez += sabor.trim() + intensidad + " ";
             lblAcidez.setText(sAcidez);
         } else {
             Fruit10.setValueAt("", Fruit10.getSelectedRow(), 1);
@@ -4971,7 +4946,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = SourFer10.getValueAt(SourFer10.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sAcidez += sabor + intensidad + " ";
+            sAcidez += sabor.trim() + intensidad + " ";
             lblAcidez.setText(sAcidez);
         } else {
             SourFer10.setValueAt("", SourFer10.getSelectedRow(), 1);
@@ -4980,66 +4955,226 @@ public class jdCatacion2 extends javax.swing.JFrame {
 
     private void GreenVeg10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVeg10KeyReleased
         // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = GreenVeg10.getValueAt(GreenVeg10.getSelectedRow(), 0) + "";
+        intensidad = GreenVeg10.getValueAt(GreenVeg10.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sAcidez += sabor.trim() + intensidad + " ";
+            lblAcidez.setText(sAcidez);
+        } else {
+            GreenVeg10.setValueAt("", GreenVeg10.getSelectedRow(), 1);
+        }
     }//GEN-LAST:event_GreenVeg10KeyReleased
 
     private void Other10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Other10KeyReleased
         // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Other10.getValueAt(Other10.getSelectedRow(), 0) + "";
+        intensidad = Other10.getValueAt(Other10.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sAcidez += sabor.trim() + intensidad + " ";
+            lblAcidez.setText(sAcidez);
+        } else {
+            Other10.setValueAt("", Other10.getSelectedRow(), 1);
+        }
     }//GEN-LAST:event_Other10KeyReleased
 
     private void Roasted10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Roasted10KeyReleased
         // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Roasted10.getValueAt(Roasted10.getSelectedRow(), 0) + "";
+        intensidad = Roasted10.getValueAt(Roasted10.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sAcidez += sabor.trim() + intensidad + " ";
+            lblAcidez.setText(sAcidez);
+        } else {
+            Roasted10.setValueAt("", Roasted10.getSelectedRow(), 1);
+        }
     }//GEN-LAST:event_Roasted10KeyReleased
 
     private void Spices10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Spices10KeyReleased
         // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Spices10.getValueAt(Spices10.getSelectedRow(), 0) + "";
+        intensidad = Spices10.getValueAt(Spices10.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sAcidez += sabor.trim() + intensidad + " ";
+            lblAcidez.setText(sAcidez);
+        } else {
+            Spices10.setValueAt("", Spices10.getSelectedRow(), 1);
+        }
     }//GEN-LAST:event_Spices10KeyReleased
 
     private void Nutty10KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nutty10KeyReleased
         // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Nutty10.getValueAt(Nutty10.getSelectedRow(), 0) + "";
+        intensidad = Nutty10.getValueAt(Nutty10.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sAcidez += sabor.trim() + intensidad + " ";
+            lblAcidez.setText(sAcidez);
+        } else {
+            Nutty10.setValueAt("", Nutty10.getSelectedRow(), 1);
+        }
     }//GEN-LAST:event_Nutty10KeyReleased
 
     private void Body13KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Body13KeyReleased
         // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Body13.getValueAt(Body13.getSelectedRow(), 0) + "";
+        intensidad = Body13.getValueAt(Body13.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sCuerpo += sabor.trim() + intensidad + " ";
+            lblCuerpo.setText(sCuerpo);
+        } else {
+            Body13.setValueAt("", Body13.getSelectedRow(), 1);
+        }
     }//GEN-LAST:event_Body13KeyReleased
 
     private void Finish13KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Finish13KeyReleased
         // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Finish13.getValueAt(Finish13.getSelectedRow(), 0) + "";
+        intensidad = Finish13.getValueAt(Finish13.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sCuerpo += sabor.trim() + intensidad + " ";
+            lblCuerpo.setText(sCuerpo);
+        } else {
+            Finish13.setValueAt("", Finish13.getSelectedRow(), 1);
+        }
     }//GEN-LAST:event_Finish13KeyReleased
 
     private void Sweet12KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Sweet12KeyReleased
         // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Sweet12.getValueAt(Sweet12.getSelectedRow(), 0) + "";
+        intensidad = Sweet12.getValueAt(Sweet12.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sCuerpo += sabor.trim() + intensidad + " ";
+            lblCuerpo.setText(sCuerpo);
+        } else {
+            Sweet12.setValueAt("", Sweet12.getSelectedRow(), 1);
+        }
     }//GEN-LAST:event_Sweet12KeyReleased
 
     private void Floral12KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Floral12KeyReleased
         // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Floral12.getValueAt(Floral12.getSelectedRow(), 0) + "";
+        intensidad = Floral12.getValueAt(Floral12.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sCuerpo += sabor.trim() + intensidad + " ";
+            lblCuerpo.setText(sCuerpo);
+        } else {
+            Floral12.setValueAt("", Floral12.getSelectedRow(), 1);
+        }
     }//GEN-LAST:event_Floral12KeyReleased
 
     private void Fruit12KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Fruit12KeyReleased
         // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Fruit12.getValueAt(Fruit12.getSelectedRow(), 0) + "";
+        intensidad = Fruit12.getValueAt(Fruit12.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sCuerpo += sabor.trim() + intensidad + " ";
+            lblCuerpo.setText(sCuerpo);
+        } else {
+            Fruit12.setValueAt("", Fruit12.getSelectedRow(), 1);
+        }
     }//GEN-LAST:event_Fruit12KeyReleased
 
     private void SourFer12KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_SourFer12KeyReleased
         // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = SourFer12.getValueAt(SourFer12.getSelectedRow(), 0) + "";
+        intensidad = SourFer12.getValueAt(SourFer12.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sCuerpo += sabor.trim() + intensidad + " ";
+            lblCuerpo.setText(sCuerpo);
+        } else {
+            SourFer12.setValueAt("", SourFer12.getSelectedRow(), 1);
+        }
     }//GEN-LAST:event_SourFer12KeyReleased
 
     private void GreenVeg12KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_GreenVeg12KeyReleased
         // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = GreenVeg12.getValueAt(GreenVeg12.getSelectedRow(), 0) + "";
+        intensidad = GreenVeg12.getValueAt(GreenVeg12.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sCuerpo += sabor.trim() + intensidad + " ";
+            lblCuerpo.setText(sCuerpo);
+        } else {
+            GreenVeg12.setValueAt("", GreenVeg12.getSelectedRow(), 1);
+        }
     }//GEN-LAST:event_GreenVeg12KeyReleased
 
     private void Other12KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Other12KeyReleased
         // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Other12.getValueAt(Other12.getSelectedRow(), 0) + "";
+        intensidad = Other12.getValueAt(Other12.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sCuerpo += sabor.trim() + intensidad + " ";
+            lblCuerpo.setText(sCuerpo);
+        } else {
+            Other12.setValueAt("", Other12.getSelectedRow(), 1);
+        }
     }//GEN-LAST:event_Other12KeyReleased
 
     private void Roasted12KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Roasted12KeyReleased
         // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Roasted12.getValueAt(Roasted12.getSelectedRow(), 0) + "";
+        intensidad = Roasted12.getValueAt(Roasted12.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sCuerpo += sabor.trim() + intensidad + " ";
+            lblCuerpo.setText(sCuerpo);
+        } else {
+            Roasted12.setValueAt("", Roasted12.getSelectedRow(), 1);
+        }
     }//GEN-LAST:event_Roasted12KeyReleased
 
     private void Spices12KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Spices12KeyReleased
         // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Spices12.getValueAt(Spices12.getSelectedRow(), 0) + "";
+        intensidad = Spices12.getValueAt(Spices12.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sCuerpo += sabor.trim() + intensidad + " ";
+            lblCuerpo.setText(sCuerpo);
+        } else {
+            Spices12.setValueAt("", Spices12.getSelectedRow(), 1);
+        }
     }//GEN-LAST:event_Spices12KeyReleased
 
     private void Nutty12KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nutty12KeyReleased
         // TODO add your handling code here:
+        String sabor = "", intensidad = "";
+        sabor = Nutty12.getValueAt(Nutty12.getSelectedRow(), 0) + "";
+        intensidad = Nutty12.getValueAt(Nutty12.getSelectedRow(), 1) + "";
+
+        if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
+            sCuerpo += sabor.trim() + intensidad + " ";
+            lblCuerpo.setText(sCuerpo);
+        } else {
+            Nutty12.setValueAt("", Nutty12.getSelectedRow(), 1);
+        }
     }//GEN-LAST:event_Nutty12KeyReleased
 
     private void Nutty8KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nutty8KeyReleased
@@ -5049,7 +5184,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Nutty8.getValueAt(Nutty8.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sSabor += sabor + intensidad + " ";
+            sSabor += sabor.trim() + intensidad + " ";
             lblSabor.setText(sSabor);
         } else {
             Nutty8.setValueAt("", Nutty8.getSelectedRow(), 1);
@@ -5063,7 +5198,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Spices8.getValueAt(Spices8.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sSabor += sabor + intensidad + " ";
+            sSabor += sabor.trim() + intensidad + " ";
             lblSabor.setText(sSabor);
         } else {
             Spices8.setValueAt("", Spices8.getSelectedRow(), 1);
@@ -5077,7 +5212,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Roasted8.getValueAt(Roasted8.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sSabor += sabor + intensidad + " ";
+            sSabor += sabor.trim() + intensidad + " ";
             lblSabor.setText(sSabor);
         } else {
             Roasted8.setValueAt("", Roasted8.getSelectedRow(), 1);
@@ -5091,7 +5226,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Other8.getValueAt(Other8.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sSabor += sabor + intensidad + " ";
+            sSabor += sabor.trim() + intensidad + " ";
             lblSabor.setText(sSabor);
         } else {
             Other8.setValueAt("", Other8.getSelectedRow(), 1);
@@ -5105,7 +5240,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = GreenVeg8.getValueAt(GreenVeg8.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sSabor += sabor + intensidad + " ";
+            sSabor += sabor.trim() + intensidad + " ";
             lblSabor.setText(sSabor);
         } else {
             GreenVeg8.setValueAt("", GreenVeg8.getSelectedRow(), 1);
@@ -5119,7 +5254,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = SourFer8.getValueAt(SourFer8.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sSabor += sabor + intensidad + " ";
+            sSabor += sabor.trim() + intensidad + " ";
             lblSabor.setText(sSabor);
         } else {
             SourFer8.setValueAt("", SourFer8.getSelectedRow(), 1);
@@ -5133,7 +5268,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Fruit8.getValueAt(Fruit8.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sSabor += sabor + intensidad + " ";
+            sSabor += sabor.trim() + intensidad + " ";
             lblSabor.setText(sSabor);
         } else {
             Fruit8.setValueAt("", Fruit8.getSelectedRow(), 1);
@@ -5147,7 +5282,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Floral8.getValueAt(Floral8.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sSabor += sabor + intensidad + " ";
+            sSabor += sabor.trim() + intensidad + " ";
             lblSabor.setText(sSabor);
         } else {
             Floral8.setValueAt("", Floral8.getSelectedRow(), 1);
@@ -5161,7 +5296,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Sweet8.getValueAt(Sweet8.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sSabor += sabor + intensidad + " ";
+            sSabor += sabor.trim() + intensidad + " ";
             lblSabor.setText(sSabor);
         } else {
             Sweet8.setValueAt("", Sweet8.getSelectedRow(), 1);
@@ -5175,7 +5310,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Finish9.getValueAt(Finish9.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sSabor += sabor + intensidad + " ";
+            sSabor += sabor.trim() + intensidad + " ";
             lblSabor.setText(sSabor);
         } else {
             Finish9.setValueAt("", Finish9.getSelectedRow(), 1);
@@ -5189,7 +5324,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         intensidad = Body9.getValueAt(Body9.getSelectedRow(), 1) + "";
 
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
-            sSabor += sabor + intensidad + " ";
+            sSabor += sabor.trim() + intensidad + " ";
             lblSabor.setText(sSabor);
         } else {
             Body9.setValueAt("", Body9.getSelectedRow(), 1);
@@ -5209,11 +5344,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
     String cadenaSabores = "", cadenaOlores = "";
 
     public void guardar() {
-        cadenaSabores = "Sabor: " + lblSabor.getText() + ", Sabor Remanente: " + lblRemanente.getText() + ", Acidez: " + lblAcidez.getText();
+        cadenaSabores = "Sabor:" + lblSabor.getText() + ", Sabor Remanente:" + lblRemanente.getText() + ", Acidez:" + lblAcidez.getText()+ ", Cuerpo:"+lblCuerpo.getText();
 
-        cadenaOlores = "Seco: " + lblSeco.getText() + ", Mojado/Quebrado: " + lblQuebrado.getText();
+        cadenaOlores = "Seco:" + lblSeco.getText() + ", Mojado/Quebrado:" + lblQuebrado.getText();
 
-        JOptionPane.showMessageDialog(null, "Sabores: " + cadenaSabores + "\nOlores: " + cadenaOlores);
+        JOptionPane.showMessageDialog(null, "Sabores:" + cadenaSabores + "\nOlores:" + cadenaOlores);
         String fecha = null;
         if (txtFecha.getDate() != null) {
             fecha = new SimpleDateFormat("dd-MMM-yyyy").format(txtFecha.getDate());
@@ -5520,6 +5655,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane99;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
+    private javax.swing.JSeparator jSeparator3;
     private javax.swing.JSeparator jSeparator4;
     private javax.swing.JSeparator jSeparator5;
     private javax.swing.JSeparator jSeparator6;

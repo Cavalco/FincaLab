@@ -114,10 +114,11 @@ public class excel {
             String[] sabor = datos8[0].split(":");
             String[] saborRemanente = datos8[1].split(":");
             String[] acidez = datos8[2].split(":");
+            String[] cuerpo = datos8[3].split(":");
 
             String[] seco = datos9[0].split(":");
-            String[] mojado = datos9[1].split(":");
-            String[] quebrado = datos9[2].split(":");
+            String[] mojadoQuebrado = datos9[1].split(":");
+            //String[] quebrado = datos9[2].split(":");
 
             //JOptionPane.showMessageDialog(null, sabor[1]+" "+saborRemanente[1]+" "+acidez[1]);
             XSSFWorkbook my_xlsx_workbook;
@@ -1267,13 +1268,13 @@ public class excel {
             if (c186 == null) {
                 c186 = my_worksheet.getRow(17).createCell(16);
             } //sabores body
-            c186.setCellValue(quebrado[1]);
+            c186.setCellValue(cuerpo[1]);
 
             c187 = my_worksheet.getRow(18).getCell(4);
             if (c187 == null) {
                 c187 = my_worksheet.getRow(18).createCell(4);
             }//sabores espuma y mojado
-            c187.setCellValue(quebrado[1] + "," + seco[1]);
+            c187.setCellValue(mojadoQuebrado[1]);
 
             //}
             //XSSFFormulaEvaluator.evaluateAllFormulaCells(my_xlsx_workbook);
