@@ -55,7 +55,6 @@ public class pantallaLogin extends javax.swing.JFrame {
         String bd = "";
         switch (comboBaseDatos.getSelectedItem() + "") {
             case "Seleccione":
-
                 bd = "fincalab_laboratorio";
                 break;
             case "Astal":
@@ -64,8 +63,8 @@ public class pantallaLogin extends javax.swing.JFrame {
             case "Caldio":
                 bd = "fincalab_caldio";
                 break;
-            case "Cafeico":
-                bd = "fincalab_cafeico";
+            case "Malinal":
+                bd = "fincalab_malinal";
                 break;
             case "Basilio/Riviera":
                 bd = "fincalab_basilio";
@@ -169,7 +168,7 @@ public class pantallaLogin extends javax.swing.JFrame {
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        comboBaseDatos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Astal", "Caldio", "Basilio/Riviera", "Cafeico", "Procaa", "Cuerno", "Tambor" }));
+        comboBaseDatos.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione", "Astal", "Caldio", "Basilio/Riviera", "Malinal", "Procaa", "Cuerno", "Tambor" }));
         getContentPane().add(comboBaseDatos, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 590, 120, -1));
 
         jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Imagenes/loginFincalab2.png"))); // NOI18N

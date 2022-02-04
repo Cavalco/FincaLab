@@ -128,7 +128,7 @@ public class jpReporteKilosSociedad extends javax.swing.JPanel {
 
     public void llenarTabla() {
         limpiar(tablaInformacion);
-        String[] bds = {"fincalab_basilio", "fincalab_procaa", "fincalab_caldio", "fincalab_astal", "fincalab_tambor"};
+        String[] bds = {"fincalab_basilio", "fincalab_procaa", "fincalab_caldio", "fincalab_astal", "fincalab_tambor", "fincalab_malinal", "fincalab_cuerno"};
         for (int i = 0; i < bds.length; i++) {
             cn = (new Conexion()).conectar(bds[i]);
             mdb = new metodosDatosBasicos(cn, Idioma);

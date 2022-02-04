@@ -23,8 +23,8 @@ public class Conexion {
         Connection con;
         try {
             Class.forName("com.mysql.jdbc.Driver");
-            String url = "jdbc:mysql://localhost/"+bd+"?autoReconnect=true&useSSL=false";
-            con = DriverManager.getConnection(url, "root", "");
+            String url = "jdbc:mysql://192.168.100.19/"+bd+"?autoReconnect=true&useSSL=false";
+            con = DriverManager.getConnection(url, "sistemas", "csm123");
             //   JOptionPane.showMessageDialog(null, "Conexión establecida");
             //ip local 127.0.0.1:3306
         } catch (Exception ex) {

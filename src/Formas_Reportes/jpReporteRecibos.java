@@ -128,7 +128,7 @@ public class jpReporteRecibos extends javax.swing.JPanel {
         jComboBox1.addItem(idioma.getProperty("Activos"));
         jComboBox1.addItem(idioma.getProperty("Inactivos"));
         jComboBox1.addItem(idioma.getProperty("Todos"));
-        
+
         //PlaceHolder
         PromptSupport.setPrompt(idioma.getProperty("Nombre"), txtNombre);
         PromptSupport.setPrompt(idioma.getProperty("Folio"), txtFolio);
@@ -143,7 +143,7 @@ public class jpReporteRecibos extends javax.swing.JPanel {
 
     public void llenarTabla() {
         limpiar(tablaRecibos);
-        String[] bds = {"fincalab_basilio", "fincalab_procaa", "fincalab_caldio", "fincalab_astal", "fincalab_cuerno", "fincalab_malinal"};
+        String[] bds = {"fincalab_basilio", "fincalab_procaa", "fincalab_caldio", "fincalab_astal", "fincalab_tambor", "fincalab_malinal", "fincalab_cuerno"};
         for (int i = 0; i < bds.length; i++) {
             cn = (new Conexion()).conectar(bds[i]);
             mdb = new metodosDatosBasicos(cn, Idioma);
