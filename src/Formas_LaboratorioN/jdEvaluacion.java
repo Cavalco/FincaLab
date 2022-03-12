@@ -4780,7 +4780,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
 
         jLabel12.setText("Evaluador");
 
-        cbEvaluador.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione..", "Carlos Bustamante", "Daniel Bustamante", "Kala Wolfe", "Jacob Daniel Donaghy" }));
+        cbEvaluador.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Seleccione..", "Carlos Bustamante", "Daniel Bustamante", "Beeno Norris", "Katrina Woodard" }));
 
         jLabel13.setText("Densidad En Oro");
 

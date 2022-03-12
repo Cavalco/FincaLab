@@ -182,6 +182,7 @@ public class metodosDatosBasicos {
 
     public String cargarDatosFormularioPersonas(String sql, int tamaño) {
         try {
+            System.out.println(sql);
             CallableStatement cmd = cn.prepareCall(sql);
             ResultSet rs = cmd.executeQuery();
             String a = "";
