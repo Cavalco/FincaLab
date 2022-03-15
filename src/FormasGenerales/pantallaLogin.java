@@ -64,8 +64,8 @@ public class pantallaLogin extends javax.swing.JFrame {
             case "Caldio":
                 bd = "fincalab_caldio";
                 break;
-            case "Cafeico":
-                bd = "fincalab_cafeico";
+            case "Malinal":
+                bd = "fincalab_malinal";
                 break;
             case "Basilio/Riviera":
                 bd = "fincalab_basilio";

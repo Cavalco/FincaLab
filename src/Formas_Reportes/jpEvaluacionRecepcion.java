@@ -160,8 +160,8 @@ public class jpEvaluacionRecepcion extends javax.swing.JPanel {
 
     public void llenarTabla() {
         limpiar(tablaInformacion);
-        String[] bds = {"fincalab_basilio", "fincalab_procaa", "fincalab_caldio", "fincalab_astal", "fincalab_tambor"};
-        for (int i = 0; i < bds.length; i++) {
+       String[] bds = {"fincalab_basilio", "fincalab_procaa", "fincalab_caldio", "fincalab_astal", "fincalab_cuerno", "fincalab_malinal", "fincalab_tambor"};
+          for (int i = 0; i < bds.length; i++) {
             cn = (new Conexion()).conectar(bds[i]);
             mdb = new metodosDatosBasicos(cn, Idioma);
             mdb.cargarInformacion2(modelo, 17, "SELECT\n"
@@ -504,12 +504,12 @@ public class jpEvaluacionRecepcion extends javax.swing.JPanel {
             jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel2Layout.createSequentialGroup()
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(jButton2)
+                    .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jButton3)
                             .addComponent(jButton5)
-                            .addComponent(jButton6)))
+                            .addComponent(jButton6))
+                        .addComponent(jButton2))
                     .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                         .addComponent(jLabel12, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jFecha1, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
