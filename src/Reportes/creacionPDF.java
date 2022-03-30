@@ -74,7 +74,8 @@ public class creacionPDF {
                 + "    pm.Direccion,\n"
                 + "    l.Descripcion,\n"
                 + "    ec.Descripcion, b.fechaboletamanual,\n"
-                + "    CONCAT(pf.Nombre,' ',pf.ApellidoPaterno,' ',pf.ApellidoMaterno)\n"
+                + "    CONCAT(pf.Nombre,' ',pf.ApellidoPaterno,' ',pf.ApellidoMaterno),\n"
+                + "    CONCAT(pf2.Nombre,' ',pf2.ApellidoPaterno,' ',pf2.ApellidoMaterno)\n"
                 + "FROM\n"
                 + "    boletasalidareceptor b\n"
                 + "LEFT JOIN vehiculo v ON\n"
@@ -87,6 +88,8 @@ public class creacionPDF {
                 + "    (al.id = b.destino)\n"
                 + "LEFT JOIN personam pm ON\n"
                 + "    (b.idSociedad = pm.ID)\n"
+                + "    LEFT JOIN personaf pf2 ON\n"
+                + "    (bh.idPersonaEncargada = pf2.ID)\n"
                 + "LEFT JOIN ejidocolonia ec ON\n"
                 + "    (pm.ID_EjidoColonia = ec.ID)\n"
                 + "LEFT JOIN localidad l ON\n"
@@ -94,9 +97,9 @@ public class creacionPDF {
                 + "LEFT JOIN personaf pf ON\n"
                 + "    (pf.ID = r.idResponsable)\n"
                 + "WHERE\n"
-                + "    b.idBoleta = '" + idBoleta + "'\n"
+                + "    b.idBoleta = '"+idBoleta+"'\n"
                 + "GROUP BY\n"
-                + "    b.idBoleta", 18).split("¬");
+                + "    b.idBoleta", 19).split("¬");
 
         String boletaManual = datos[0];
         String origen = datos[1];
@@ -116,6 +119,7 @@ public class creacionPDF {
         String colonia = datos[15];
         String fechaManual = datos[16];
         String encargado = datos[17];
+        String encargadoBH = datos[18];
 
         Document documento = new Document(PageSize.LETTER);
         Document documento2 = new Document(PageSize.LETTER);
@@ -194,7 +198,7 @@ public class creacionPDF {
 
             documento.add(new Paragraph("\n"));
 
-            documento.add(tablaFirmas(responsableAuto, encargado));
+            documento.add(tablaFirmas(encargadoBH, encargado));
 
             documento.add(new Paragraph("\n"));
 
@@ -869,7 +873,7 @@ public class creacionPDF {
         return table;
     }
 
-    public PdfPTable tablaFirmas(String chofer, String recibe) throws SQLException {
+    public PdfPTable tablaFirmas(String encargadoBH, String recibe) throws SQLException {
         Font fuente2 = new Font();
         fuente2.setSize(9);
         Font fuente3 = new Font();
@@ -886,7 +890,7 @@ public class creacionPDF {
         table.setWidthPercentage(100);
 
         table.addCell(new Paragraph(recibe, fuente2));
-        table.addCell(new Paragraph(chofer, fuente2));
+        table.addCell(new Paragraph(encargadoBH, fuente2));
 
         table.addCell(new Paragraph(idioma.getProperty("Receptor"), fuente3));
         table.addCell(new Paragraph(idioma.getProperty("QuienRecibe"), fuente3));
@@ -1672,7 +1676,7 @@ public class creacionPDF {
         ubicacion.setAlignment(Element.ALIGN_CENTER);
         documento.add(ubicacion);
 
-        Paragraph tel = new Paragraph(idioma.getProperty("Telefono") + " " , fuente2);
+        Paragraph tel = new Paragraph(idioma.getProperty("Telefono") + " ", fuente2);
         tel.setAlignment(Element.ALIGN_CENTER);
         documento.add(tel);
 
@@ -1688,12 +1692,12 @@ public class creacionPDF {
         numBoleta.setAlignment(Element.ALIGN_CENTER);
         documento.add(numBoleta);
 
-        Paragraph origenDestino = new Paragraph(idioma.getProperty("Origen") + " / " + origen +  "\n" + idioma.getProperty("Destino") + " / " + destino , fuente2);
+        Paragraph origenDestino = new Paragraph(idioma.getProperty("Origen") + " / " + origen + "\n" + idioma.getProperty("Destino") + " / " + destino, fuente2);
         origenDestino.setAlignment(Element.ALIGN_LEFT);
         documento.add(origenDestino);
 
         documento.add(new Paragraph("\n"));
-        documento.add(tablaBoletaSalidaBH(idLote, idSociedad,sacos, kg));
+        documento.add(tablaBoletaSalidaBH(idLote, idSociedad, sacos, kg));
         documento.add(new Paragraph("\n"));
 
         documento.add(tablaObservaciones("Las obervaciones se mostraran en este apartado."));
@@ -1709,7 +1713,6 @@ public class creacionPDF {
         documento.close();
     }
 
-    
     public PdfPTable tablaBoletaSalidaBH(String idLote, String idSociedad, String sacos, String kg) throws SQLException {
         Font fuente2 = new Font();
         fuente2.setSize(7);
@@ -1736,7 +1739,7 @@ public class creacionPDF {
 
         columna4.getFont().setStyle(Font.BOLD);
         columna4.getFont().setSize(7);
-  
+
         table.addCell(columna1);
         table.addCell(columna2);
         table.addCell(columna3);
@@ -1748,41 +1751,37 @@ public class creacionPDF {
         table.getDefaultCell().setBorder(Rectangle.NO_BORDER);
         table.setWidthPercentage(100);
 
-       
-            //Paragraph col0 = new Paragraph(String.valueOf(counter + 1), fuente2);
-            // table.addCell(col0);
-            Paragraph col1 = new Paragraph(idLote+ "", fuente2);
-            //JOptionPane.showMessageDialog(null,"Dato "+contenido[counter][0]);
-            table.addCell(col1);
+        //Paragraph col0 = new Paragraph(String.valueOf(counter + 1), fuente2);
+        // table.addCell(col0);
+        Paragraph col1 = new Paragraph(idLote + "", fuente2);
+        //JOptionPane.showMessageDialog(null,"Dato "+contenido[counter][0]);
+        table.addCell(col1);
 
-            Paragraph col2 = new Paragraph(idSociedad+ "", fuente2);
-            // JOptionPane.showMessageDialog(null,"Dato "+contenido[counter][1]);
-            table.addCell(col2);
+        Paragraph col2 = new Paragraph(idSociedad + "", fuente2);
+        // JOptionPane.showMessageDialog(null,"Dato "+contenido[counter][1]);
+        table.addCell(col2);
 
-            Paragraph col3 = new Paragraph(sacos + "", fuente2);
-            // JOptionPane.showMessageDialog(null,"Dato "+contenido[counter][2]);
-            table.addCell(col3);
+        Paragraph col3 = new Paragraph(sacos + "", fuente2);
+        // JOptionPane.showMessageDialog(null,"Dato "+contenido[counter][2]);
+        table.addCell(col3);
 
-            Paragraph col4 = new Paragraph(kg + "", fuente2);
-            // JOptionPane.showMessageDialog(null,"Dato "+contenido[counter][3]);
-            table.addCell(col4);
+        Paragraph col4 = new Paragraph(kg + "", fuente2);
+        // JOptionPane.showMessageDialog(null,"Dato "+contenido[counter][3]);
+        table.addCell(col4);
 
-        
-       
         /*Paragraph totales = new Paragraph("Totales", fuente2);
         Paragraph totalSacos = new Paragraph(sacos, fuente2);
         Paragraph totalKg = new Paragraph(kg, fuente2);
-*/
-        /*table.addCell("");
+         */
+ /*table.addCell("");
         table.addCell("");
         table.addCell("");
         table.addCell("");
         table.addCell(totales);
         table.addCell(totalSacos);
         table.addCell(totalKg);
-*/
+         */
         return table;
     }
-    
-    
+
 }

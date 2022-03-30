@@ -96,6 +96,7 @@ import Formas_BeneficioHumedov2.jpRecibirBoletas;
 import Formas_Exportar_Importar.jpExportar_Importar;
 import Formas_Exportar_Importar.jpImportar;
 import Formas_BeneficioHumedov2.jpBitacoraUnaVista;
+import Formas_LaboratorioN.jpReporteLaboratorio;
 import Formas_Reportes.jpAcopioProductor;
 import Formas_Reportes.jpBoletasSalidaRecepcion;
 import Formas_Reportes.jpEvaluacionRecepcion;
@@ -806,6 +807,14 @@ public class pantallaPrincipal extends javax.swing.JFrame {
             jprec.setLocation(0, 0);
             panelPrincipal.removeAll();
             panelPrincipal.add(jprec);
+            panelPrincipal.revalidate();
+            panelPrincipal.repaint();
+        } else if (idioma.getProperty("ReporteGeneral").equals(tipo)) {
+            jpReporteLaboratorio jpRL = new jpReporteLaboratorio(cn, Idioma);
+            jpRL.setSize(size);
+            jpRL.setLocation(0, 0);
+            panelPrincipal.removeAll();
+            panelPrincipal.add(jpRL);
             panelPrincipal.revalidate();
             panelPrincipal.repaint();
 
@@ -2409,7 +2418,7 @@ public class pantallaPrincipal extends javax.swing.JFrame {
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("ModuloLaboratorio"));
         javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("MuestrasRecibidas"));
         javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("BitacoraLaboratorio"));
-        javax.swing.tree.DefaultMutableTreeNode treeNode4 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("MuestrasExternas"));
+        javax.swing.tree.DefaultMutableTreeNode treeNode4 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("ReporteGeneral"));
         treeNode1.add(treeNode2);
         treeNode1.add(treeNode3);
         treeNode1.add(treeNode4);

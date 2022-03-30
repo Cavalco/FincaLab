@@ -44,7 +44,7 @@ public class jdRecibosDelCorte extends javax.swing.JDialog {
                 + "inner join personam pm on ( pm.ID=r.idSociedad)\n"
                 + "inner join personaf pf on ( pf.ID=r.idPersona)\n"
                 + "inner join parcelas p on ( p.id=r.idParcela) "
-                + "where r.idLote='" + idCorte + "'");
+                + "where r.idLote='" + idCorte + "' and r.id_situacion=1");
 
         traductor();
     }

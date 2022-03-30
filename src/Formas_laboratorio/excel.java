@@ -44,8 +44,8 @@ public class excel {
 
     public void datos(Connection cn, String id, String idb, String taza, String Idioma) throws IOException {
 
-        try {
-
+        //try {
+            //JOptionPane.showMessageDialog(null,"CSM "+id+ " - "+idb);
             this.cn = cn;
             this.Idioma = Idioma;
             mdb = new metodosLaboratorio(cn, Idioma);
@@ -114,16 +114,17 @@ public class excel {
             String[] sabor = datos8[0].split(":");
             String[] saborRemanente = datos8[1].split(":");
             String[] acidez = datos8[2].split(":");
+            String[] cuerpo = datos8[3].split(":");
 
             String[] seco = datos9[0].split(":");
-            String[] mojado = datos9[1].split(":");
-            String[] quebrado = datos9[2].split(":");
+            String[] mojadoQuebrado = datos9[1].split(":");
+            //String[] quebrado = datos9[2].split(":");
 
             //JOptionPane.showMessageDialog(null, sabor[1]+" "+saborRemanente[1]+" "+acidez[1]);
             XSSFWorkbook my_xlsx_workbook;
 
 //obtener el nombre y la ruta del archivo a modificar
-            FileInputStream input_document = new FileInputStream(new File("C:\\fincalab\\plantilla.xlsx"));
+            FileInputStream input_document = new FileInputStream(new File("C:\\fincalab\\reporteLaboratorio.xlsx"));
             //acceso al libro
             my_xlsx_workbook = new XSSFWorkbook(input_document);
             //Acceso a la hoja del libro a modificar 
@@ -1267,13 +1268,13 @@ public class excel {
             if (c186 == null) {
                 c186 = my_worksheet.getRow(17).createCell(16);
             } //sabores body
-            c186.setCellValue(quebrado[1]);
+            c186.setCellValue(cuerpo[1]);
 
             c187 = my_worksheet.getRow(18).getCell(4);
             if (c187 == null) {
                 c187 = my_worksheet.getRow(18).createCell(4);
             }//sabores espuma y mojado
-            c187.setCellValue(quebrado[1] + "," + seco[1]);
+            c187.setCellValue(mojadoQuebrado[1]);
 
             //}
             //XSSFFormulaEvaluator.evaluateAllFormulaCells(my_xlsx_workbook);
@@ -1288,9 +1289,9 @@ public class excel {
             //output_file.flush();
             output_file.close();
             //JOptionPane.showMessageDialog(null, "Reporte Creado");
-        } catch (Exception e) {
-
-        }
+/*        } catch (Exception e) {
+                JOptionPane.showMessageDialog(null, "Revisar Datos Bitacora BD");
+        }*/
 
     }
 

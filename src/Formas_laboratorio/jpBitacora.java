@@ -420,7 +420,7 @@ public class jpBitacora extends javax.swing.JPanel {
                                 .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                                 .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 157, Short.MAX_VALUE))
+                        .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                             .addGroup(jPanel1Layout.createSequentialGroup()
@@ -428,7 +428,7 @@ public class jpBitacora extends javax.swing.JPanel {
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(jButton2))
                             .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGap(0, 0, Short.MAX_VALUE)
+                                .addGap(0, 947, Short.MAX_VALUE)
                                 .addComponent(kgConfirmados))
                             .addComponent(jScrollPane2))
                         .addGap(10, 10, 10)))
@@ -443,10 +443,10 @@ public class jpBitacora extends javax.swing.JPanel {
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(jPanel2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 18, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addComponent(kgConfirmados)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 380, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane2, javax.swing.GroupLayout.PREFERRED_SIZE, 409, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(11, 11, 11)
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jButton2)
@@ -481,8 +481,8 @@ public class jpBitacora extends javax.swing.JPanel {
                 + " b.sacos,b.comunidad,b.dueño,b.fechalote,c.Puntuacion,d.puntuacion,d.humedad_o,c.quakers,b.sabores,\n"
                 + " b.observaciones,d.Densidadoro,c.densidadtostado from  bitacoralab b left join   datosev d on b.id_bitacora=d.id_bitacora left join \n"
                 + " catacion c on b.id_bitacora=c.id_bitacora where estatus != 'Desactivada' order by b.id_muestra");
-         */ String[] datos2 = mdb.cargarCombos2("select CONCAT(Descripcion,' -', Clave,'- ') FROM procesocafe where clave != 'PR';").split("¬");//1
-        combotipo.setModel(new DefaultComboBoxModel((Object[]) datos2));
+         */ /*String[] datos2 = mdb.cargarCombos2("select CONCAT(Descripcion,' -', Clave,'- ') FROM procesocafe where clave != 'PR';").split("¬");//1
+        combotipo.setModel(new DefaultComboBoxModel((Object[]) datos2));*/
     }
 
     public void busqueda() {
@@ -495,13 +495,13 @@ public class jpBitacora extends javax.swing.JPanel {
         String busq = "";
 
         Tipocafe = combotipo.getSelectedItem() + "";
-        if (!Tipocafe.equals(idioma.getProperty("Todos"))) {
+        /*if (!Tipocafe.equals(idioma.getProperty("Todos"))) {
             String[] datos1;
             datos1 = Tipocafe.split("-");
 
             Tipocafe = datos1[1];
 
-        }
+        }*/
         if (busquedacombo.equals(idioma.getProperty("Seleccion"))) {
             busquedacombo = "";
         }
@@ -748,7 +748,7 @@ public class jpBitacora extends javax.swing.JPanel {
             Logger.getLogger(jpBitacora.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-    /*     Workbook wb = new Workbook();
+        /*     Workbook wb = new Workbook();
                     wb.loadFromFile("C:\\fincalab\\reporteLaboratorio.xlsx");
 
                     // Obtenga la segunda hoja de trabajo
@@ -764,7 +764,6 @@ public class jpBitacora extends javax.swing.JPanel {
         } catch (IOException ex) {
             Logger.getLogger(jdRecibos.class.getName()).log(Level.SEVERE, null, ex);
         }*/
-
         Barra_progreso b = new Barra_progreso();
         b.setVisible(true);
 

@@ -52,26 +52,26 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
         String[] datos1 = ml.cargarCombos("SELECT NombreCorto from personam").split("¬");//1
         cmbDueno.setModel(new DefaultComboBoxModel((Object[]) datos1));
         String[] datos2 = ml.cargarCombos("SELECT nombre from codigos_certificacion").split("¬");
-        cmbCertificacion.setModel(new DefaultComboBoxModel((Object[]) datos2));
+       // cmbCertificacion.setModel(new DefaultComboBoxModel((Object[]) datos2));
         String[] datos3 = ml.cargarCombos("select Descripcion  from formacafe").split("¬");
         cmbFormaCafe.setModel(new DefaultComboBoxModel((Object[]) datos3));
         String[] datos4 = ml.cargarCombos("SELECT Descripcion from calidadcereza").split("¬");
-        cmbCalidadCereza.setModel(new DefaultComboBoxModel((Object[]) datos4));
-        String[] datos5 = ml.cargarCombos("SELECT nombrecorto from beneficioshumedos where idEstado=1").split("¬");
-        cmbBeneficio.setModel(new DefaultComboBoxModel((Object[]) datos5));
+      //  cmbCalidadCereza.setModel(new DefaultComboBoxModel((Object[]) datos4));
+        /*String[] datos5 = ml.cargarCombos("SELECT nombrecorto from beneficioshumedos where idEstado=1").split("¬");
+        cmbBeneficio.setModel(new DefaultComboBoxModel((Object[]) datos5));*/
         String[] datos6 = ml.cargarCombos("select Descripcion from localidad").split("¬");
         cmbComunidad.setModel(new DefaultComboBoxModel((Object[]) datos6));
-        String[] datos7 = ml.cargarCombos("select nombrecorto from almacenes where idEstado=1").split("¬");
-        cmbUbicacion.setModel(new DefaultComboBoxModel((Object[]) datos7));
+        /*String[] datos7 = ml.cargarCombos("select nombrecorto from almacenes where idEstado=1").split("¬");
+        cmbUbicacion.setModel(new DefaultComboBoxModel((Object[]) datos7));*/
         String[] datos8 = ml.cargarCombos("SELECT nombre from maquinariabh where idActividad=5").split("¬");
-        cmbMetodoSecado.setModel(new DefaultComboBoxModel((Object[]) datos8));
+        //cmbMetodoSecado.setModel(new DefaultComboBoxModel((Object[]) datos8));
         /*String[] datos9 = ml.cargarCombos("SELECT Responsable from vehiculo").split("¬");
         cmbTransportada.setModel(new DefaultComboBoxModel((Object[]) datos9));*/
-        String[] datos10 = ml.cargarCombos("select concat(p.Nombre,' ',p.ApellidoPaterno,' ',p.ApellidoMaterno)\n"
+       /* String[] datos10 = ml.cargarCombos("select concat(p.Nombre,' ',p.ApellidoPaterno,' ',p.ApellidoMaterno)\n"
                 + "from asignacionespersona a\n"
                 + "left join personaf p on (a.id_persona=p.ID)\n"
                 + "where a.puesto='Encargado de Beneficio Húmedo'").split("¬");
-        cmbTomada.setModel(new DefaultComboBoxModel((Object[]) datos10));
+        cmbTomada.setModel(new DefaultComboBoxModel((Object[]) datos10));*/
     }
 
     public void Guardar2() {
@@ -88,15 +88,15 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
             String res = "insert into bitacoralab (id_bitacora,id_muestra,fecha_llegada,tipocafe,forma,beneficio,dueño,"
                     + "lote,peso,sacos,comunidad,estatus,taza,aspecto,mezasig,Metodosecado,calidadcereza,pesomuestra,ubicacioncafe"
                     + ",fechalote,terminosecado,tomademuestra,fechacosecha,tomadapor,recibidapor,transportadapor,"
-                    + "certificado,idlote,Kgconfirm) values(null,"
+                    + "certificado,idlote,Kgconfirm, observacionesMuestra) values(null,"
                     + "" + txtNoCSM.getText()
                     + ",'" + fechaLlegada + "','" + cmbProceso.getSelectedItem() + "','" + cmbFormaCafe.getSelectedItem() + "','"
                     + cmbBeneficio.getSelectedItem() + "','" + cmbDueno.getSelectedItem() + "','" + txtSublote.getText() + "','" + txtKilos.getText()
                     + "','" + txtCostales.getText() + "','" + cmbComunidad.getSelectedItem() + "','Activada','0','0','0','" + cmbMetodoSecado.getSelectedItem()
                     + "', '" + cmbCalidadCereza.getSelectedItem() + "' ,'" + txtPesoMuestra.getText() + "','" + cmbUbicacion.getSelectedItem()
-                    + "', '" + fechaRecibo2 + "','" + fechaRecibo3 + "','" + fechaRecibo4 + "','" + txtTemporada.getText() + "','" + cmbTomada.getSelectedItem() + "','"
+                    + "', '" + fechaRecibo2 + "','" + fechaRecibo3 + "','" + fechaRecibo4 + "','" + txtTemporada.getText() + "','" + txtTomadaPor.getText() + "','"
                     + cmbRecibida.getSelectedItem() + "','" + txtTransportadaPor.getText() + "','" + cmbCertificacion.getSelectedItem() + "', '" + txtSublote.getText()
-                    + "','" + Kg + "')";
+                    + "','" + Kg + "', '"+txtObservaciones.getText()+"' )";
 
             System.out.println(res);
             ml.insertarBasicos(res);
@@ -139,7 +139,7 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
         } else if (cmbUbicacion.getSelectedItem().equals("Seleccione..")) {
             JOptionPane.showMessageDialog(null, "Seleccione Calidad de Cereza");
             return false;
-        } else if (cmbTomada.getSelectedItem().equals("Seleccione..")) {
+        } else if (txtTomadaPor.getText().equals("")) {
             JOptionPane.showMessageDialog(null, "Seleccione quien Tomó la muestra");
             return false;
         } else if (cmbRecibida.getSelectedItem().equals("Seleccione..")) {
@@ -167,11 +167,11 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
         jPanel1 = new javax.swing.JPanel();
         jPanel6 = new javax.swing.JPanel();
         jLabel25 = new javax.swing.JLabel();
-        cmbTomada = new javax.swing.JComboBox<>();
         cmbRecibida = new javax.swing.JComboBox<>();
         jLabel26 = new javax.swing.JLabel();
         jLabel27 = new javax.swing.JLabel();
         txtTransportadaPor = new javax.swing.JTextField();
+        txtTomadaPor = new javax.swing.JTextField();
         jPanel3 = new javax.swing.JPanel();
         txtSublote = new javax.swing.JTextField();
         jLabel6 = new javax.swing.JLabel();
@@ -226,6 +226,8 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
         jLabel14 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         txtKilos = new javax.swing.JTextField();
+        jLabel28 = new javax.swing.JLabel();
+        txtObservaciones = new javax.swing.JTextField();
         jLabel15 = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
@@ -240,9 +242,7 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
 
         jLabel25.setText("Tomada Por");
 
-        cmbTomada.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-
-        cmbRecibida.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione..", "Carlos Bustamante", "Jacob Donaghy", "Kala Wolfe" }));
+        cmbRecibida.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione..", "Carlos Bustamante", "Daniel Bustamante", "Beeno Norris", "Katrina Woodard" }));
 
         jLabel26.setText("Recibida Por");
 
@@ -256,8 +256,8 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel25)
-                    .addComponent(cmbTomada, javax.swing.GroupLayout.PREFERRED_SIZE, 150, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                    .addComponent(txtTomadaPor, javax.swing.GroupLayout.PREFERRED_SIZE, 155, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(5, 5, 5)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel26)
                     .addGroup(jPanel6Layout.createSequentialGroup()
@@ -281,9 +281,9 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
                     .addComponent(jLabel27))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(cmbTomada, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cmbRecibida, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(txtTransportadaPor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(txtTransportadaPor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(txtTomadaPor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -293,13 +293,13 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
 
         jLabel16.setText("Beneficio");
 
-        cmbBeneficio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbBeneficio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione..", "Arrocera", "Lima", "Pantano", "Rustico", "Sandia", "Cuerno", "Cintepec" }));
 
         cmbComunidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel17.setText("Comunidad");
 
-        cmbUbicacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbUbicacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione..", "Arrocera", "Lima", "Pantano", "Rustico", "Sandia", "Cuerno", "Cintepec" }));
 
         jLabel18.setText("Ubicación del Café");
 
@@ -323,7 +323,7 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
         jLabel37.setText("*");
 
         txtTemporada.setEditable(false);
-        txtTemporada.setText("2020-2021");
+        txtTemporada.setText("2021-2022");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -486,11 +486,11 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
 
         jLabel4.setText("Certificación");
 
-        cmbCertificacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbCertificacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione..", "Covencional", "Organico", "Cafe Mujeres", "Varios" }));
 
         jLabel5.setText("Metodo Secado");
 
-        cmbMetodoSecado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione..", "Patio", "Cama africana" }));
+        cmbMetodoSecado.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione..", "Secadora", "Patio", "Cama Africana" }));
 
         jLabel2.setText("Fecha Llegada");
 
@@ -510,7 +510,7 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
 
         cmbFormaCafe.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
-        cmbCalidadCereza.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        cmbCalidadCereza.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione..", "Azul", "Amarillo", "Rosa", "Varios" }));
 
         jLabel8.setText("Calificación cereza");
 
@@ -525,6 +525,9 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
 
         jLabel7.setText("Kilos");
 
+        jLabel28.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel28.setText("Observaciones");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -534,18 +537,22 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jLabel7)
-                            .addComponent(txtKilos, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel2Layout.createSequentialGroup()
-                                .addComponent(txtCostales, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jLabel7)
+                                    .addComponent(txtKilos, javax.swing.GroupLayout.PREFERRED_SIZE, 80, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(cbKg))
-                            .addComponent(jLabel14))
+                                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(jPanel2Layout.createSequentialGroup()
+                                        .addComponent(txtCostales, javax.swing.GroupLayout.PREFERRED_SIZE, 88, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                        .addComponent(cbKg))
+                                    .addComponent(jLabel14)))
+                            .addComponent(jLabel28))
                         .addGap(0, 0, Short.MAX_VALUE))
                     .addGroup(jPanel2Layout.createSequentialGroup()
                         .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(txtObservaciones)
                             .addGroup(jPanel2Layout.createSequentialGroup()
                                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addComponent(jLabel5)
@@ -658,6 +665,10 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
                     .addComponent(txtKilos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(txtCostales, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(cbKg))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(jLabel28)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(txtObservaciones, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -717,13 +728,13 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jLabel20)
                         .addGap(4, 4, 4)
-                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(jButton2)
+                            .addComponent(jButton1)
+                            .addComponent(jButton3)))
                     .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton2)
-                    .addComponent(jButton1)
-                    .addComponent(jButton3))
                 .addContainerGap())
         );
 
@@ -816,7 +827,7 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
         dcFinSecado.setDate(null);
         dcToma.setDate(null);
         txtTemporada.setText("");
-        cmbTomada.setSelectedIndex(0);
+        txtTomadaPor.setText("");
         cmbRecibida.setSelectedIndex(0);
         //       cmbTransportada.setSelectedIndex(0);
     }
@@ -867,7 +878,6 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
     private javax.swing.JComboBox<String> cmbMetodoSecado;
     private javax.swing.JComboBox<String> cmbProceso;
     private javax.swing.JComboBox<String> cmbRecibida;
-    private javax.swing.JComboBox<String> cmbTomada;
     private javax.swing.JComboBox<String> cmbUbicacion;
     private com.toedter.calendar.JDateChooser dcFechaLlegada;
     private com.toedter.calendar.JDateChooser dcFechaLote;
@@ -896,6 +906,7 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel25;
     private javax.swing.JLabel jLabel26;
     private javax.swing.JLabel jLabel27;
+    private javax.swing.JLabel jLabel28;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
@@ -919,9 +930,11 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
     private javax.swing.JTextField txtCostales;
     private javax.swing.JTextField txtKilos;
     private javax.swing.JTextField txtNoCSM;
+    private javax.swing.JTextField txtObservaciones;
     private javax.swing.JTextField txtPesoMuestra;
     private javax.swing.JTextField txtSublote;
     private javax.swing.JTextField txtTemporada;
+    private javax.swing.JTextField txtTomadaPor;
     private javax.swing.JTextField txtTransportadaPor;
     // End of variables declaration//GEN-END:variables
 }
