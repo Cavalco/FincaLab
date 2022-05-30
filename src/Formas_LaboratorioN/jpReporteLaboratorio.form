@@ -1,6 +1,40 @@
 <?xml version="1.0" encoding="UTF-8" ?>
 
 <Form version="1.5" maxVersion="1.9" type="org.netbeans.modules.form.forminfo.JPanelFormInfo">
+  <NonVisualComponents>
+    <Container class="javax.swing.JPopupMenu" name="jPopupMenu1">
+
+      <Layout class="org.netbeans.modules.form.compat2.layouts.DesignAbsoluteLayout">
+        <Property name="useNullLayout" type="boolean" value="true"/>
+      </Layout>
+      <SubComponents>
+        <MenuItem class="javax.swing.JMenuItem" name="jMenuItem1">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Evaluacion Por Aspecto"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem1ActionPerformed"/>
+          </Events>
+        </MenuItem>
+        <MenuItem class="javax.swing.JMenuItem" name="jMenuItem2">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Evaluacion Por Taza"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem2ActionPerformed"/>
+          </Events>
+        </MenuItem>
+        <MenuItem class="javax.swing.JMenuItem" name="jMenuItem3">
+          <Properties>
+            <Property name="text" type="java.lang.String" value="Reporte Individual"/>
+          </Properties>
+          <Events>
+            <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="jMenuItem3ActionPerformed"/>
+          </Events>
+        </MenuItem>
+      </SubComponents>
+    </Container>
+  </NonVisualComponents>
   <AuxValues>
     <AuxValue name="FormSettings_autoResourcing" type="java.lang.Integer" value="0"/>
     <AuxValue name="FormSettings_autoSetComponentName" type="java.lang.Boolean" value="false"/>
@@ -79,209 +113,218 @@
 
           <Layout class="org.netbeans.modules.form.compat2.layouts.support.JScrollPaneSupportLayout"/>
           <SubComponents>
-            <Component class="javax.swing.JTable" name="jTable1">
+            <Component class="javax.swing.JTable" name="tablaBitacora">
               <Properties>
                 <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                   <Table columnCount="195" rowCount="4">
-                    <Column editable="true" title="CSM" type="java.lang.Object"/>
-                    <Column editable="true" title="Fecha Llegada" type="java.lang.Object"/>
-                    <Column editable="true" title="Tomada Por" type="java.lang.Object"/>
-                    <Column editable="true" title="Fecha Lote" type="java.lang.Object"/>
-                    <Column editable="true" title="Proceso Cafe" type="java.lang.Object"/>
-                    <Column editable="true" title="Forma Cafe" type="java.lang.Object"/>
-                    <Column editable="true" title="Peso" type="java.lang.Object"/>
-                    <Column editable="true" title="Sacos" type="java.lang.Object"/>
-                    <Column editable="true" title="Beneficio" type="java.lang.Object"/>
-                    <Column editable="true" title="Lote" type="java.lang.Object"/>
-                    <Column editable="true" title="Certificado" type="java.lang.Object"/>
-                    <Column editable="true" title="Sociedad" type="java.lang.Object"/>
-                    <Column editable="true" title="Predio" type="java.lang.Object"/>
-                    <Column editable="true" title="Comunidad" type="java.lang.Object"/>
-                    <Column editable="true" title="Calidad Cereza" type="java.lang.Object"/>
-                    <Column editable="true" title="Peso Ev" type="java.lang.Object"/>
-                    <Column editable="true" title="Humedad C" type="java.lang.Object"/>
-                    <Column editable="true" title="Humedad O" type="java.lang.Object"/>
-                    <Column editable="true" title="Metado Secado" type="java.lang.Object"/>
-                    <Column editable="true" title="Densidad Oro" type="java.lang.Object"/>
-                    <Column editable="true" title="Peso Criba" type="java.lang.Object"/>
-                    <Column editable="true" title="Uniformidad" type="java.lang.Object"/>
-                    <Column editable="true" title="Color Oro" type="java.lang.Object"/>
-                    <Column editable="true" title="Agua" type="java.lang.Object"/>
-                    <Column editable="true" title="Numero Tazas" type="java.lang.Object"/>
-                    <Column editable="true" title="Comentario 1" type="java.lang.Object"/>
-                    <Column editable="true" title="Comentario 2" type="java.lang.Object"/>
-                    <Column editable="true" title="Comentario 3" type="java.lang.Object"/>
-                    <Column editable="true" title="Fecha Evaluacion A" type="java.lang.Object"/>
-                    <Column editable="true" title="Evaluador" type="java.lang.Object"/>
-                    <Column editable="true" title="Fecha Evaluacion T" type="java.lang.Object"/>
-                    <Column editable="true" title="Evaluado Por" type="java.lang.Object"/>
-                    <Column editable="true" title="Nivel Tostado" type="java.lang.Object"/>
-                    <Column editable="true" title="Uniformidad" type="java.lang.Object"/>
-                    <Column editable="true" title="Quakers" type="java.lang.Object"/>
-                    <Column editable="true" title="Seco" type="java.lang.Object"/>
-                    <Column editable="true" title="Cualidades Seco" type="java.lang.Object"/>
-                    <Column editable="true" title="Mojado" type="java.lang.Object"/>
-                    <Column editable="true" title="Quebrado" type="java.lang.Object"/>
-                    <Column editable="true" title="Cualidades Mojado/Quebrado" type="java.lang.Object"/>
-                    <Column editable="true" title="Sabor" type="java.lang.Object"/>
-                    <Column editable="true" title="Cualidades Sabor" type="java.lang.Object"/>
-                    <Column editable="true" title="Sabor Remanente" type="java.lang.Object"/>
-                    <Column editable="true" title="Cualidades Sabor R" type="java.lang.Object"/>
-                    <Column editable="true" title="Acidez" type="java.lang.Object"/>
-                    <Column editable="true" title="Cualidades Acidez" type="java.lang.Object"/>
-                    <Column editable="true" title="Intensidad Acidez" type="java.lang.Object"/>
-                    <Column editable="true" title="Cuerpo" type="java.lang.Object"/>
-                    <Column editable="true" title="Cualidades Cuerpo" type="java.lang.Object"/>
-                    <Column editable="true" title="Intensidad Cuerpo" type="java.lang.Object"/>
-                    <Column editable="true" title="Balance" type="java.lang.Object"/>
-                    <Column editable="true" title="Uniformidad Taza" type="java.lang.Object"/>
-                    <Column editable="true" title="Taza Limpia" type="java.lang.Object"/>
-                    <Column editable="true" title="Dulzor" type="java.lang.Object"/>
-                    <Column editable="true" title="Num Tazas" type="java.lang.Object"/>
-                    <Column editable="true" title="Intensidad Defectos" type="java.lang.Object"/>
-                    <Column editable="true" title="Catador" type="java.lang.Object"/>
-                    <Column editable="true" title="Peso 19" type="java.lang.Object"/>
-                    <Column editable="true" title="Peso 18" type="java.lang.Object"/>
-                    <Column editable="true" title="Peso 17" type="java.lang.Object"/>
-                    <Column editable="true" title="Peso 16" type="java.lang.Object"/>
-                    <Column editable="true" title="Peso 15" type="java.lang.Object"/>
-                    <Column editable="true" title="Peso F" type="java.lang.Object"/>
-                    <Column editable="true" title="Broca Severa 19" type="java.lang.Object"/>
-                    <Column editable="true" title="Broca 19" type="java.lang.Object"/>
-                    <Column editable="true" title="Negro 19" type="java.lang.Object"/>
-                    <Column editable="true" title="Negro Parcial 19" type="java.lang.Object"/>
-                    <Column editable="true" title="Agrio 19" type="java.lang.Object"/>
-                    <Column editable="true" title="Agrio Parcial 19" type="java.lang.Object"/>
-                    <Column editable="true" title="Aplastado 19" type="java.lang.Object"/>
-                    <Column editable="true" title="Da&#xf1;o o Mordido 19" type="java.lang.Object"/>
-                    <Column editable="true" title="Da&#xf1;o y Agrio Parcial 19" type="java.lang.Object"/>
-                    <Column editable="true" title="Blanco/Flotador 19" type="java.lang.Object"/>
-                    <Column editable="true" title="Elefante 19" type="java.lang.Object"/>
-                    <Column editable="true" title="Concha 19" type="java.lang.Object"/>
-                    <Column editable="true" title="Malformado 19" type="java.lang.Object"/>
-                    <Column editable="true" title="Da&#xf1;o por Hongos 19" type="java.lang.Object"/>
-                    <Column editable="true" title="Inmaduro 19" type="java.lang.Object"/>
-                    <Column editable="true" title="Sobresecado 19" type="java.lang.Object"/>
-                    <Column editable="true" title="Arrugado 19" type="java.lang.Object"/>
-                    <Column editable="true" title="Quebrado 19" type="java.lang.Object"/>
-                    <Column editable="true" title="Cereza Seca 19" type="java.lang.Object"/>
-                    <Column editable="true" title="Pergamino 19" type="java.lang.Object"/>
-                    <Column editable="true" title="Cascara o Pulpa Seca 19" type="java.lang.Object"/>
-                    <Column editable="true" title="Materia Extra&#xf1;a 19" type="java.lang.Object"/>
-                    <Column editable="true" title="Broca Severa 18" type="java.lang.Object"/>
-                    <Column editable="true" title="Broca 18" type="java.lang.Object"/>
-                    <Column editable="true" title="Negro 18" type="java.lang.Object"/>
-                    <Column editable="true" title="Negro Parcial 18" type="java.lang.Object"/>
-                    <Column editable="true" title="Agrio 18" type="java.lang.Object"/>
-                    <Column editable="true" title="Agrio Parcial 18" type="java.lang.Object"/>
-                    <Column editable="true" title="Aplastado 18" type="java.lang.Object"/>
-                    <Column editable="true" title="Da&#xf1;o o Mordido 18" type="java.lang.Object"/>
-                    <Column editable="true" title="Da&#xf1;o y Agrio Parcial 18" type="java.lang.Object"/>
-                    <Column editable="true" title="Blanco/Flotador 18" type="java.lang.Object"/>
-                    <Column editable="true" title="Elefante 18" type="java.lang.Object"/>
-                    <Column editable="true" title="Concha 18" type="java.lang.Object"/>
-                    <Column editable="true" title="Malformado 18" type="java.lang.Object"/>
-                    <Column editable="true" title="Da&#xf1;o por Hongos 18" type="java.lang.Object"/>
-                    <Column editable="true" title="Inmaduro 18" type="java.lang.Object"/>
-                    <Column editable="true" title="Sobresecado 18" type="java.lang.Object"/>
-                    <Column editable="true" title="Arrugado 18" type="java.lang.Object"/>
-                    <Column editable="true" title="Quebrado 18" type="java.lang.Object"/>
-                    <Column editable="true" title="Cereza Seca 18" type="java.lang.Object"/>
-                    <Column editable="true" title="Pergamino 18" type="java.lang.Object"/>
-                    <Column editable="true" title="Cascara o Pulpa Seca 18" type="java.lang.Object"/>
-                    <Column editable="true" title="Materia Extra&#xf1;a 18" type="java.lang.Object"/>
-                    <Column editable="true" title="Broca Severa 17" type="java.lang.Object"/>
-                    <Column editable="true" title="Broca 17" type="java.lang.Object"/>
-                    <Column editable="true" title="Negro 17" type="java.lang.Object"/>
-                    <Column editable="true" title="Negro Parcial 17" type="java.lang.Object"/>
-                    <Column editable="true" title="Agrio 17" type="java.lang.Object"/>
-                    <Column editable="true" title="Agrio Parcial 17" type="java.lang.Object"/>
-                    <Column editable="true" title="Aplastado 17" type="java.lang.Object"/>
-                    <Column editable="true" title="Da&#xf1;o o Mordido 17" type="java.lang.Object"/>
-                    <Column editable="true" title="Da&#xf1;o y Agrio Parcial 17" type="java.lang.Object"/>
-                    <Column editable="true" title="Blanco/Flotador 17" type="java.lang.Object"/>
-                    <Column editable="true" title="Elefante 17" type="java.lang.Object"/>
-                    <Column editable="true" title="Concha 17" type="java.lang.Object"/>
-                    <Column editable="true" title="Malformado 17" type="java.lang.Object"/>
-                    <Column editable="true" title="Da&#xf1;o por Hongos 17" type="java.lang.Object"/>
-                    <Column editable="true" title="Inmaduro 17" type="java.lang.Object"/>
-                    <Column editable="true" title="Sobresecado 17" type="java.lang.Object"/>
-                    <Column editable="true" title="Arrugado 17" type="java.lang.Object"/>
-                    <Column editable="true" title="Quebrado 17" type="java.lang.Object"/>
-                    <Column editable="true" title="Cereza Seca 17" type="java.lang.Object"/>
-                    <Column editable="true" title="Pergamino 17" type="java.lang.Object"/>
-                    <Column editable="true" title="Cascara o Pulpa Seca 17" type="java.lang.Object"/>
-                    <Column editable="true" title="Materia Extra&#xf1;a 17" type="java.lang.Object"/>
-                    <Column editable="true" title="Broca Severa 16" type="java.lang.Object"/>
-                    <Column editable="true" title="Broca 16" type="java.lang.Object"/>
-                    <Column editable="true" title="Negro 16" type="java.lang.Object"/>
-                    <Column editable="true" title="Negro Parcial 16" type="java.lang.Object"/>
-                    <Column editable="true" title="Agrio 16" type="java.lang.Object"/>
-                    <Column editable="true" title="Agrio Parcial 16" type="java.lang.Object"/>
-                    <Column editable="true" title="Aplastado 16" type="java.lang.Object"/>
-                    <Column editable="true" title="Da&#xf1;o o Mordido 16" type="java.lang.Object"/>
-                    <Column editable="true" title="Da&#xf1;o y Agrio Parcial 16" type="java.lang.Object"/>
-                    <Column editable="true" title="Blanco/Flotador 16" type="java.lang.Object"/>
-                    <Column editable="true" title="Elefante 16" type="java.lang.Object"/>
-                    <Column editable="true" title="Concha 16" type="java.lang.Object"/>
-                    <Column editable="true" title="Malformado 16" type="java.lang.Object"/>
-                    <Column editable="true" title="Da&#xf1;o por Hongos 16" type="java.lang.Object"/>
-                    <Column editable="true" title="Inmaduro 16" type="java.lang.Object"/>
-                    <Column editable="true" title="Sobresecado 16" type="java.lang.Object"/>
-                    <Column editable="true" title="Arrugado 16" type="java.lang.Object"/>
-                    <Column editable="true" title="Quebrado 16" type="java.lang.Object"/>
-                    <Column editable="true" title="Cereza Seca 16" type="java.lang.Object"/>
-                    <Column editable="true" title="Pergamino 16" type="java.lang.Object"/>
-                    <Column editable="true" title="Cascara o Pulpa Seca 16" type="java.lang.Object"/>
-                    <Column editable="true" title="Materia Extra&#xf1;a 16" type="java.lang.Object"/>
-                    <Column editable="true" title="Broca Severa 15" type="java.lang.Object"/>
-                    <Column editable="true" title="Broca 15" type="java.lang.Object"/>
-                    <Column editable="true" title="Negro 15" type="java.lang.Object"/>
-                    <Column editable="true" title="Negro Parcial 15" type="java.lang.Object"/>
-                    <Column editable="true" title="Agrio 15" type="java.lang.Object"/>
-                    <Column editable="true" title="Agrio Parcial 15" type="java.lang.Object"/>
-                    <Column editable="true" title="Aplastado 15" type="java.lang.Object"/>
-                    <Column editable="true" title="Da&#xf1;o o Mordido 15" type="java.lang.Object"/>
-                    <Column editable="true" title="Da&#xf1;o y Agrio Parcial 15" type="java.lang.Object"/>
-                    <Column editable="true" title="Blanco/Flotador 15" type="java.lang.Object"/>
-                    <Column editable="true" title="Elefante 15" type="java.lang.Object"/>
-                    <Column editable="true" title="Concha 15" type="java.lang.Object"/>
-                    <Column editable="true" title="Malformado 15" type="java.lang.Object"/>
-                    <Column editable="true" title="Da&#xf1;o por Hongos 15" type="java.lang.Object"/>
-                    <Column editable="true" title="Inmaduro 15" type="java.lang.Object"/>
-                    <Column editable="true" title="Sobresecado 15" type="java.lang.Object"/>
-                    <Column editable="true" title="Arrugado 15" type="java.lang.Object"/>
-                    <Column editable="true" title="Quebrado 15" type="java.lang.Object"/>
-                    <Column editable="true" title="Cereza Seca 15" type="java.lang.Object"/>
-                    <Column editable="true" title="Pergamino 15" type="java.lang.Object"/>
-                    <Column editable="true" title="Cascara o Pulpa Seca 15" type="java.lang.Object"/>
-                    <Column editable="true" title="Materia Extra&#xf1;a 15" type="java.lang.Object"/>
-                    <Column editable="true" title="Broca Severa F" type="java.lang.Object"/>
-                    <Column editable="true" title="Broca F" type="java.lang.Object"/>
-                    <Column editable="true" title="Negro F" type="java.lang.Object"/>
-                    <Column editable="true" title="Negro Parcial F" type="java.lang.Object"/>
-                    <Column editable="true" title="Agrio F" type="java.lang.Object"/>
-                    <Column editable="true" title="Agrio Parcial F" type="java.lang.Object"/>
-                    <Column editable="true" title="Aplastado F" type="java.lang.Object"/>
-                    <Column editable="true" title="Da&#xf1;o o Mordido F" type="java.lang.Object"/>
-                    <Column editable="true" title="Da&#xf1;o y Agrio Parcial F" type="java.lang.Object"/>
-                    <Column editable="true" title="Blanco/Flotador F" type="java.lang.Object"/>
-                    <Column editable="true" title="Elefante F" type="java.lang.Object"/>
-                    <Column editable="true" title="Concha F" type="java.lang.Object"/>
-                    <Column editable="true" title="Malformado F" type="java.lang.Object"/>
-                    <Column editable="true" title="Da&#xf1;o por Hongos F" type="java.lang.Object"/>
-                    <Column editable="true" title="Inmaduro F" type="java.lang.Object"/>
-                    <Column editable="true" title="Sobresecado F" type="java.lang.Object"/>
-                    <Column editable="true" title="Arrugado F" type="java.lang.Object"/>
-                    <Column editable="true" title="Quebrado F" type="java.lang.Object"/>
-                    <Column editable="true" title="Cereza Seca F" type="java.lang.Object"/>
-                    <Column editable="true" title="Pergamino F" type="java.lang.Object"/>
-                    <Column editable="true" title="Cascara o Pulpa Seca F" type="java.lang.Object"/>
-                    <Column editable="true" title="Materia Extra&#xf1;a F" type="java.lang.Object"/>
+                    <Column editable="false" title="CSM" type="java.lang.Object"/>
+                    <Column editable="false" title="Fecha Llegada" type="java.lang.Object"/>
+                    <Column editable="false" title="Tomada Por" type="java.lang.Object"/>
+                    <Column editable="false" title="Fecha Lote" type="java.lang.Object"/>
+                    <Column editable="false" title="Proceso Cafe" type="java.lang.Object"/>
+                    <Column editable="false" title="Forma Cafe" type="java.lang.Object"/>
+                    <Column editable="false" title="Peso" type="java.lang.Object"/>
+                    <Column editable="false" title="Sacos" type="java.lang.Object"/>
+                    <Column editable="false" title="Beneficio" type="java.lang.Object"/>
+                    <Column editable="false" title="Lote" type="java.lang.Object"/>
+                    <Column editable="false" title="Certificado" type="java.lang.Object"/>
+                    <Column editable="false" title="Sociedad" type="java.lang.Object"/>
+                    <Column editable="false" title="Predio" type="java.lang.Object"/>
+                    <Column editable="false" title="Comunidad" type="java.lang.Object"/>
+                    <Column editable="false" title="Calidad Cereza" type="java.lang.Object"/>
+                    <Column editable="false" title="Peso Ev" type="java.lang.Object"/>
+                    <Column editable="false" title="Humedad C" type="java.lang.Object"/>
+                    <Column editable="false" title="Humedad O" type="java.lang.Object"/>
+                    <Column editable="false" title="Metado Secado" type="java.lang.Object"/>
+                    <Column editable="false" title="Densidad Oro" type="java.lang.Object"/>
+                    <Column editable="false" title="Peso Criba" type="java.lang.Object"/>
+                    <Column editable="false" title="Uniformidad" type="java.lang.Object"/>
+                    <Column editable="false" title="Color Oro" type="java.lang.Object"/>
+                    <Column editable="false" title="Agua" type="java.lang.Object"/>
+                    <Column editable="false" title="Numero Tazas" type="java.lang.Object"/>
+                    <Column editable="false" title="Comentario 1" type="java.lang.Object"/>
+                    <Column editable="false" title="Comentario 2" type="java.lang.Object"/>
+                    <Column editable="false" title="Comentario 3" type="java.lang.Object"/>
+                    <Column editable="false" title="Fecha Evaluacion A" type="java.lang.Object"/>
+                    <Column editable="false" title="Evaluador" type="java.lang.Object"/>
+                    <Column editable="false" title="Fecha Evaluacion T" type="java.lang.Object"/>
+                    <Column editable="false" title="Evaluado Por" type="java.lang.Object"/>
+                    <Column editable="false" title="Nivel Tostado" type="java.lang.Object"/>
+                    <Column editable="false" title="Uniformidad" type="java.lang.Object"/>
+                    <Column editable="false" title="Quakers" type="java.lang.Object"/>
+                    <Column editable="false" title="Seco" type="java.lang.Object"/>
+                    <Column editable="false" title="Cualidades Seco" type="java.lang.Object"/>
+                    <Column editable="false" title="Mojado" type="java.lang.Object"/>
+                    <Column editable="false" title="Quebrado" type="java.lang.Object"/>
+                    <Column editable="false" title="Cualidades Mojado/Quebrado" type="java.lang.Object"/>
+                    <Column editable="false" title="Sabor" type="java.lang.Object"/>
+                    <Column editable="false" title="Cualidades Sabor" type="java.lang.Object"/>
+                    <Column editable="false" title="Sabor Remanente" type="java.lang.Object"/>
+                    <Column editable="false" title="Cualidades Sabor R" type="java.lang.Object"/>
+                    <Column editable="false" title="Acidez" type="java.lang.Object"/>
+                    <Column editable="false" title="Cualidades Acidez" type="java.lang.Object"/>
+                    <Column editable="false" title="Intensidad Acidez" type="java.lang.Object"/>
+                    <Column editable="false" title="Cuerpo" type="java.lang.Object"/>
+                    <Column editable="false" title="Cualidades Cuerpo" type="java.lang.Object"/>
+                    <Column editable="false" title="Intensidad Cuerpo" type="java.lang.Object"/>
+                    <Column editable="false" title="Balance" type="java.lang.Object"/>
+                    <Column editable="false" title="Uniformidad Taza" type="java.lang.Object"/>
+                    <Column editable="false" title="Taza Limpia" type="java.lang.Object"/>
+                    <Column editable="false" title="Dulzor" type="java.lang.Object"/>
+                    <Column editable="false" title="Num Tazas" type="java.lang.Object"/>
+                    <Column editable="false" title="Intensidad Defectos" type="java.lang.Object"/>
+                    <Column editable="false" title="Catador" type="java.lang.Object"/>
+                    <Column editable="false" title="Peso 19" type="java.lang.Object"/>
+                    <Column editable="false" title="Peso 18" type="java.lang.Object"/>
+                    <Column editable="false" title="Peso 17" type="java.lang.Object"/>
+                    <Column editable="false" title="Peso 16" type="java.lang.Object"/>
+                    <Column editable="false" title="Peso 15" type="java.lang.Object"/>
+                    <Column editable="false" title="Peso F" type="java.lang.Object"/>
+                    <Column editable="false" title="Broca Severa 19" type="java.lang.Object"/>
+                    <Column editable="false" title="Broca 19" type="java.lang.Object"/>
+                    <Column editable="false" title="Negro 19" type="java.lang.Object"/>
+                    <Column editable="false" title="Negro Parcial 19" type="java.lang.Object"/>
+                    <Column editable="false" title="Agrio 19" type="java.lang.Object"/>
+                    <Column editable="false" title="Agrio Parcial 19" type="java.lang.Object"/>
+                    <Column editable="false" title="Aplastado 19" type="java.lang.Object"/>
+                    <Column editable="false" title="Da&#xf1;o o Mordido 19" type="java.lang.Object"/>
+                    <Column editable="false" title="Da&#xf1;o y Agrio Parcial 19" type="java.lang.Object"/>
+                    <Column editable="false" title="Blanco/Flotador 19" type="java.lang.Object"/>
+                    <Column editable="false" title="Elefante 19" type="java.lang.Object"/>
+                    <Column editable="false" title="Concha 19" type="java.lang.Object"/>
+                    <Column editable="false" title="Malformado 19" type="java.lang.Object"/>
+                    <Column editable="false" title="Da&#xf1;o por Hongos 19" type="java.lang.Object"/>
+                    <Column editable="false" title="Inmaduro 19" type="java.lang.Object"/>
+                    <Column editable="false" title="Sobresecado 19" type="java.lang.Object"/>
+                    <Column editable="false" title="Arrugado 19" type="java.lang.Object"/>
+                    <Column editable="false" title="Quebrado 19" type="java.lang.Object"/>
+                    <Column editable="false" title="Cereza Seca 19" type="java.lang.Object"/>
+                    <Column editable="false" title="Pergamino 19" type="java.lang.Object"/>
+                    <Column editable="false" title="Cascara o Pulpa Seca 19" type="java.lang.Object"/>
+                    <Column editable="false" title="Materia Extra&#xf1;a 19" type="java.lang.Object"/>
+                    <Column editable="false" title="Broca Severa 18" type="java.lang.Object"/>
+                    <Column editable="false" title="Broca 18" type="java.lang.Object"/>
+                    <Column editable="false" title="Negro 18" type="java.lang.Object"/>
+                    <Column editable="false" title="Negro Parcial 18" type="java.lang.Object"/>
+                    <Column editable="false" title="Agrio 18" type="java.lang.Object"/>
+                    <Column editable="false" title="Agrio Parcial 18" type="java.lang.Object"/>
+                    <Column editable="false" title="Aplastado 18" type="java.lang.Object"/>
+                    <Column editable="false" title="Da&#xf1;o o Mordido 18" type="java.lang.Object"/>
+                    <Column editable="false" title="Da&#xf1;o y Agrio Parcial 18" type="java.lang.Object"/>
+                    <Column editable="false" title="Blanco/Flotador 18" type="java.lang.Object"/>
+                    <Column editable="false" title="Elefante 18" type="java.lang.Object"/>
+                    <Column editable="false" title="Concha 18" type="java.lang.Object"/>
+                    <Column editable="false" title="Malformado 18" type="java.lang.Object"/>
+                    <Column editable="false" title="Da&#xf1;o por Hongos 18" type="java.lang.Object"/>
+                    <Column editable="false" title="Inmaduro 18" type="java.lang.Object"/>
+                    <Column editable="false" title="Sobresecado 18" type="java.lang.Object"/>
+                    <Column editable="false" title="Arrugado 18" type="java.lang.Object"/>
+                    <Column editable="false" title="Quebrado 18" type="java.lang.Object"/>
+                    <Column editable="false" title="Cereza Seca 18" type="java.lang.Object"/>
+                    <Column editable="false" title="Pergamino 18" type="java.lang.Object"/>
+                    <Column editable="false" title="Cascara o Pulpa Seca 18" type="java.lang.Object"/>
+                    <Column editable="false" title="Materia Extra&#xf1;a 18" type="java.lang.Object"/>
+                    <Column editable="false" title="Broca Severa 17" type="java.lang.Object"/>
+                    <Column editable="false" title="Broca 17" type="java.lang.Object"/>
+                    <Column editable="false" title="Negro 17" type="java.lang.Object"/>
+                    <Column editable="false" title="Negro Parcial 17" type="java.lang.Object"/>
+                    <Column editable="false" title="Agrio 17" type="java.lang.Object"/>
+                    <Column editable="false" title="Agrio Parcial 17" type="java.lang.Object"/>
+                    <Column editable="false" title="Aplastado 17" type="java.lang.Object"/>
+                    <Column editable="false" title="Da&#xf1;o o Mordido 17" type="java.lang.Object"/>
+                    <Column editable="false" title="Da&#xf1;o y Agrio Parcial 17" type="java.lang.Object"/>
+                    <Column editable="false" title="Blanco/Flotador 17" type="java.lang.Object"/>
+                    <Column editable="false" title="Elefante 17" type="java.lang.Object"/>
+                    <Column editable="false" title="Concha 17" type="java.lang.Object"/>
+                    <Column editable="false" title="Malformado 17" type="java.lang.Object"/>
+                    <Column editable="false" title="Da&#xf1;o por Hongos 17" type="java.lang.Object"/>
+                    <Column editable="false" title="Inmaduro 17" type="java.lang.Object"/>
+                    <Column editable="false" title="Sobresecado 17" type="java.lang.Object"/>
+                    <Column editable="false" title="Arrugado 17" type="java.lang.Object"/>
+                    <Column editable="false" title="Quebrado 17" type="java.lang.Object"/>
+                    <Column editable="false" title="Cereza Seca 17" type="java.lang.Object"/>
+                    <Column editable="false" title="Pergamino 17" type="java.lang.Object"/>
+                    <Column editable="false" title="Cascara o Pulpa Seca 17" type="java.lang.Object"/>
+                    <Column editable="false" title="Materia Extra&#xf1;a 17" type="java.lang.Object"/>
+                    <Column editable="false" title="Broca Severa 16" type="java.lang.Object"/>
+                    <Column editable="false" title="Broca 16" type="java.lang.Object"/>
+                    <Column editable="false" title="Negro 16" type="java.lang.Object"/>
+                    <Column editable="false" title="Negro Parcial 16" type="java.lang.Object"/>
+                    <Column editable="false" title="Agrio 16" type="java.lang.Object"/>
+                    <Column editable="false" title="Agrio Parcial 16" type="java.lang.Object"/>
+                    <Column editable="false" title="Aplastado 16" type="java.lang.Object"/>
+                    <Column editable="false" title="Da&#xf1;o o Mordido 16" type="java.lang.Object"/>
+                    <Column editable="false" title="Da&#xf1;o y Agrio Parcial 16" type="java.lang.Object"/>
+                    <Column editable="false" title="Blanco/Flotador 16" type="java.lang.Object"/>
+                    <Column editable="false" title="Elefante 16" type="java.lang.Object"/>
+                    <Column editable="false" title="Concha 16" type="java.lang.Object"/>
+                    <Column editable="false" title="Malformado 16" type="java.lang.Object"/>
+                    <Column editable="false" title="Da&#xf1;o por Hongos 16" type="java.lang.Object"/>
+                    <Column editable="false" title="Inmaduro 16" type="java.lang.Object"/>
+                    <Column editable="false" title="Sobresecado 16" type="java.lang.Object"/>
+                    <Column editable="false" title="Arrugado 16" type="java.lang.Object"/>
+                    <Column editable="false" title="Quebrado 16" type="java.lang.Object"/>
+                    <Column editable="false" title="Cereza Seca 16" type="java.lang.Object"/>
+                    <Column editable="false" title="Pergamino 16" type="java.lang.Object"/>
+                    <Column editable="false" title="Cascara o Pulpa Seca 16" type="java.lang.Object"/>
+                    <Column editable="false" title="Materia Extra&#xf1;a 16" type="java.lang.Object"/>
+                    <Column editable="false" title="Broca Severa 15" type="java.lang.Object"/>
+                    <Column editable="false" title="Broca 15" type="java.lang.Object"/>
+                    <Column editable="false" title="Negro 15" type="java.lang.Object"/>
+                    <Column editable="false" title="Negro Parcial 15" type="java.lang.Object"/>
+                    <Column editable="false" title="Agrio 15" type="java.lang.Object"/>
+                    <Column editable="false" title="Agrio Parcial 15" type="java.lang.Object"/>
+                    <Column editable="false" title="Aplastado 15" type="java.lang.Object"/>
+                    <Column editable="false" title="Da&#xf1;o o Mordido 15" type="java.lang.Object"/>
+                    <Column editable="false" title="Da&#xf1;o y Agrio Parcial 15" type="java.lang.Object"/>
+                    <Column editable="false" title="Blanco/Flotador 15" type="java.lang.Object"/>
+                    <Column editable="false" title="Elefante 15" type="java.lang.Object"/>
+                    <Column editable="false" title="Concha 15" type="java.lang.Object"/>
+                    <Column editable="false" title="Malformado 15" type="java.lang.Object"/>
+                    <Column editable="false" title="Da&#xf1;o por Hongos 15" type="java.lang.Object"/>
+                    <Column editable="false" title="Inmaduro 15" type="java.lang.Object"/>
+                    <Column editable="false" title="Sobresecado 15" type="java.lang.Object"/>
+                    <Column editable="false" title="Arrugado 15" type="java.lang.Object"/>
+                    <Column editable="false" title="Quebrado 15" type="java.lang.Object"/>
+                    <Column editable="false" title="Cereza Seca 15" type="java.lang.Object"/>
+                    <Column editable="false" title="Pergamino 15" type="java.lang.Object"/>
+                    <Column editable="false" title="Cascara o Pulpa Seca 15" type="java.lang.Object"/>
+                    <Column editable="false" title="Materia Extra&#xf1;a 15" type="java.lang.Object"/>
+                    <Column editable="false" title="Broca Severa F" type="java.lang.Object"/>
+                    <Column editable="false" title="Broca F" type="java.lang.Object"/>
+                    <Column editable="false" title="Negro F" type="java.lang.Object"/>
+                    <Column editable="false" title="Negro Parcial F" type="java.lang.Object"/>
+                    <Column editable="false" title="Agrio F" type="java.lang.Object"/>
+                    <Column editable="false" title="Agrio Parcial F" type="java.lang.Object"/>
+                    <Column editable="false" title="Aplastado F" type="java.lang.Object"/>
+                    <Column editable="false" title="Da&#xf1;o o Mordido F" type="java.lang.Object"/>
+                    <Column editable="false" title="Da&#xf1;o y Agrio Parcial F" type="java.lang.Object"/>
+                    <Column editable="false" title="Blanco/Flotador F" type="java.lang.Object"/>
+                    <Column editable="false" title="Elefante F" type="java.lang.Object"/>
+                    <Column editable="false" title="Concha F" type="java.lang.Object"/>
+                    <Column editable="false" title="Malformado F" type="java.lang.Object"/>
+                    <Column editable="false" title="Da&#xf1;o por Hongos F" type="java.lang.Object"/>
+                    <Column editable="false" title="Inmaduro F" type="java.lang.Object"/>
+                    <Column editable="false" title="Sobresecado F" type="java.lang.Object"/>
+                    <Column editable="false" title="Arrugado F" type="java.lang.Object"/>
+                    <Column editable="false" title="Quebrado F" type="java.lang.Object"/>
+                    <Column editable="false" title="Cereza Seca F" type="java.lang.Object"/>
+                    <Column editable="false" title="Pergamino F" type="java.lang.Object"/>
+                    <Column editable="false" title="Cascara o Pulpa Seca F" type="java.lang.Object"/>
+                    <Column editable="false" title="Materia Extra&#xf1;a F" type="java.lang.Object"/>
                   </Table>
                 </Property>
                 <Property name="autoResizeMode" type="int" value="0"/>
+                <Property name="componentPopupMenu" type="javax.swing.JPopupMenu" editor="org.netbeans.modules.form.ComponentChooserEditor">
+                  <ComponentRef name="jPopupMenu1"/>
+                </Property>
+                <Property name="cursor" type="java.awt.Cursor" editor="org.netbeans.modules.form.editors2.CursorEditor">
+                  <Color id="Cursor Por defecto"/>
+                </Property>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="tablaBitacoraMouseClicked"/>
+              </Events>
             </Component>
           </SubComponents>
         </Container>

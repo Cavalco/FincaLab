@@ -20,7 +20,7 @@ import javax.swing.UIManager;
  * @author jCarl
  */
 public class jdCatacion2 extends javax.swing.JFrame {
-
+    
     DecimalFormat formato = new DecimalFormat("#.#");
     double dryv = 0, promFragancia, a1, a2, a3;
     int l1, l2, totalD;
@@ -39,13 +39,13 @@ public class jdCatacion2 extends javax.swing.JFrame {
     public jdCatacion2(Connection cn, String proceso, String id, String csm, String comunidad, String formaCafe) {
         initComponents();
         setLocationRelativeTo(null);
-
+        
         this.cn = cn;
         this.id = id;
         lblCSM.setText(csm);
         lblProceso.setText(proceso);
         lblComunidad.setText(comunidad);
-
+        
         Date date = new Date(System.currentTimeMillis());
         txtFecha.setMaxSelectableDate(date);
         mdb = new metodosLaboratorio(cn, "");
@@ -56,67 +56,67 @@ public class jdCatacion2 extends javax.swing.JFrame {
         //JOptionPane.showMessageDialog(null,"Entre al metodo");
         double total, a = Double.valueOf(lblFragancia.getText()), b, c, d,
                 e, f, g, h, i, j, k, l;
-
+        
         if (!txtSabor.getText().equals("")) {
             b = Double.valueOf(txtSabor.getText());
         } else {
             b = 0;
         }
-
-        if (!txtAftertaste.getText().equals("")) {
-            c = Double.valueOf(txtAftertaste.getText());
+        
+        if (!txtSaborRemanente.getText().equals("")) {
+            c = Double.valueOf(txtSaborRemanente.getText());
         } else {
             c = 0;
         }
-
+        
         if (!txtAcidez.getText().equals("")) {
             d = Double.valueOf(txtAcidez.getText());
         } else {
             d = 0;
         }
-
+        
         if (!txtCuerpo.getText().equals("")) {
             e = Double.valueOf(txtCuerpo.getText());
         } else {
             e = 0;
         }
-
+        
         if (!txtBalance.getText().equals("")) {
             f = Double.valueOf(txtBalance.getText());
         } else {
             f = 0;
         }
-
+        
         if (!txtTazasCat.getText().equals("")) {
             g = Double.valueOf(txtTazasCat.getText());
         } else {
             g = 0;
         }
-
+        
         if (!txtUniTaza.getText().equals("")) {
             h = Double.valueOf(txtUniTaza.getText());
         } else {
             h = 0;
         }
-
+        
         if (!txtTazaLim.getText().equals("")) {
             i = Double.valueOf(txtTazaLim.getText());
         } else {
             i = 0;
         }
-
+        
         if (!txtDulzor.getText().equals("")) {
             j = Double.valueOf(txtDulzor.getText());
         } else {
             j = 0;
         }
-
+        
         if (!txtCatador.getText().equals("")) {
             k = Double.valueOf(txtCatador.getText());
         } else {
             k = 0;
         }
-
+        
         if (!txtDefectos.getText().equals("")) {
             l = Double.valueOf(txtDefectos.getText());
         } else {
@@ -128,12 +128,12 @@ public class jdCatacion2 extends javax.swing.JFrame {
         //total = a + b + c + d + e + f + h + i + j + k - l;
 
         lblPuntuacion.setText(formato.format(total) + "");
-
+        
         System.out.println("Puntuacion: " + a + " + " + b + " + " + c + " + " + d + " + " + e + " + " + f + " + ((10/" + g + ")  " + h + ") + ((10/g)  " + i + ") + ((10/" + g + ") * " + j + ") + " + k + " - 1");
     }
-
+    
     public Boolean validar() {
-
+        
         if (txtFecha.getDate() == null) {
             JOptionPane.showMessageDialog(null, "Por favor, verifique campos de fecha");
             return false;
@@ -162,12 +162,12 @@ public class jdCatacion2 extends javax.swing.JFrame {
             return true;
         }
     }
-
+    
     public void promedio() {
         a1 = Double.parseDouble(txtSeco.getText());
         a2 = Double.parseDouble(txtMojado.getText());
         a3 = Double.parseDouble(txtQuebrado.getText());
-
+        
         promFragancia = (a1 + a2 + a3) / 3;
         lblFragancia.setText(formato.format(promFragancia) + "");
     }
@@ -243,6 +243,8 @@ public class jdCatacion2 extends javax.swing.JFrame {
         lblDenTos = new javax.swing.JLabel();
         jTextField6 = new javax.swing.JTextField();
         jLabel18 = new javax.swing.JLabel();
+        jLabel35 = new javax.swing.JLabel();
+        lblUniTos = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         txtFecha = new com.toedter.calendar.JDateChooser();
         jLabel9 = new javax.swing.JLabel();
@@ -282,41 +284,32 @@ public class jdCatacion2 extends javax.swing.JFrame {
         jSeparator6 = new javax.swing.JSeparator();
         jLabel31 = new javax.swing.JLabel();
         jLabel32 = new javax.swing.JLabel();
-        slSeco = new javax.swing.JSlider();
         btnMenos = new javax.swing.JButton();
         txtSeco = new javax.swing.JTextField();
         btnMas = new javax.swing.JButton();
-        slMojado = new javax.swing.JSlider();
         btnMenos2 = new javax.swing.JButton();
         txtMojado = new javax.swing.JTextField();
         btnMas2 = new javax.swing.JButton();
-        slQuebrado = new javax.swing.JSlider();
         btnMenos3 = new javax.swing.JButton();
         txtQuebrado = new javax.swing.JTextField();
         btnMas3 = new javax.swing.JButton();
-        slSabor = new javax.swing.JSlider();
         jButton10 = new javax.swing.JButton();
         txtSabor = new javax.swing.JTextField();
         jButton11 = new javax.swing.JButton();
-        slAftertaste = new javax.swing.JSlider();
         jButton12 = new javax.swing.JButton();
-        txtAftertaste = new javax.swing.JTextField();
+        txtSaborRemanente = new javax.swing.JTextField();
         jButton13 = new javax.swing.JButton();
-        slAcidez = new javax.swing.JSlider();
         jButton14 = new javax.swing.JButton();
         txtAcidez = new javax.swing.JTextField();
         jButton15 = new javax.swing.JButton();
-        slCuerpo = new javax.swing.JSlider();
         jButton16 = new javax.swing.JButton();
         txtCuerpo = new javax.swing.JTextField();
         jButton17 = new javax.swing.JButton();
         spAcidezInt = new javax.swing.JSpinner();
         spCuerpoInt = new javax.swing.JSpinner();
-        slBalance = new javax.swing.JSlider();
         jButton18 = new javax.swing.JButton();
         txtBalance = new javax.swing.JTextField();
         jButton19 = new javax.swing.JButton();
-        slCatador = new javax.swing.JSlider();
         jButton20 = new javax.swing.JButton();
         txtCatador = new javax.swing.JTextField();
         jButton21 = new javax.swing.JButton();
@@ -536,24 +529,34 @@ public class jdCatacion2 extends javax.swing.JFrame {
 
         jTextField1.setEditable(false);
         jTextField1.setBackground(new java.awt.Color(0, 0, 0));
+        jTextField1.setForeground(new java.awt.Color(51, 255, 0));
 
         slUniTostado.setMajorTickSpacing(1);
         slUniTostado.setMaximum(5);
         slUniTostado.setMinimum(1);
         slUniTostado.setPaintLabels(true);
         slUniTostado.setValue(3);
+        slUniTostado.addChangeListener(new javax.swing.event.ChangeListener() {
+            public void stateChanged(javax.swing.event.ChangeEvent evt) {
+                slUniTostadoStateChanged(evt);
+            }
+        });
 
         jTextField2.setEditable(false);
         jTextField2.setBackground(new java.awt.Color(51, 51, 51));
+        jTextField2.setForeground(new java.awt.Color(51, 255, 0));
 
         jTextField3.setEditable(false);
         jTextField3.setBackground(new java.awt.Color(102, 102, 102));
+        jTextField3.setForeground(new java.awt.Color(51, 255, 0));
 
         jTextField4.setEditable(false);
         jTextField4.setBackground(new java.awt.Color(153, 153, 153));
+        jTextField4.setForeground(new java.awt.Color(51, 255, 0));
 
         jTextField5.setEditable(false);
         jTextField5.setBackground(new java.awt.Color(204, 204, 204));
+        jTextField5.setForeground(new java.awt.Color(51, 255, 0));
 
         jLabel5.setText("Uniformidad de tostado");
 
@@ -579,6 +582,10 @@ public class jdCatacion2 extends javax.swing.JFrame {
 
         jLabel18.setText("Observaciones");
 
+        jLabel35.setText("Uniformidad Tostado");
+
+        lblUniTos.setText("-");
+
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
@@ -587,45 +594,47 @@ public class jdCatacion2 extends javax.swing.JFrame {
             .addComponent(slNivelTostado, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addComponent(slUniTostado, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
             .addGroup(jPanel3Layout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(jLabel18)
+                .addGap(34, 34, 34)
+                .addComponent(jLabel5)
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addContainerGap()
-                                .addComponent(jLabel6))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(18, 18, 18)
-                                .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(56, 56, 56)
-                                .addComponent(jLabel4))
-                            .addGroup(jPanel3Layout.createSequentialGroup()
-                                .addGap(44, 44, 44)
-                                .addComponent(jLabel5)))
-                        .addGap(0, 0, Short.MAX_VALUE))
+            .addGroup(jPanel3Layout.createSequentialGroup()
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel3Layout.createSequentialGroup()
                         .addContainerGap()
-                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                            .addComponent(jTextField6)
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                        .addComponent(jLabel6))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addComponent(jTextField5, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField4, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField3, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField2, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jTextField1, javax.swing.GroupLayout.PREFERRED_SIZE, 21, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addGap(56, 56, 56)
+                        .addComponent(jLabel4))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addComponent(jLabel35)
+                        .addGap(14, 14, 14)
+                        .addComponent(lblUniTos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addGroup(jPanel3Layout.createSequentialGroup()
+                        .addContainerGap()
+                        .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jTextField6, javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel8)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                                 .addComponent(Quakers, javax.swing.GroupLayout.PREFERRED_SIZE, 54, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, jPanel3Layout.createSequentialGroup()
+                            .addGroup(jPanel3Layout.createSequentialGroup()
                                 .addComponent(jLabel7)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(lblDenTos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))))
+                                .addComponent(lblDenTos, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addGroup(jPanel3Layout.createSequentialGroup()
+                                .addComponent(jLabel18)
+                                .addGap(0, 0, Short.MAX_VALUE)))))
                 .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
@@ -652,17 +661,21 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 .addComponent(jLabel6)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel35)
+                    .addComponent(lblUniTos))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel7)
                     .addComponent(lblDenTos))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel8)
                     .addComponent(Quakers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel18)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 7, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jTextField6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap())
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         jPanel4.setBorder(javax.swing.BorderFactory.createEtchedBorder());
@@ -705,6 +718,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         });
 
         txtDefectos.setEditable(false);
+        txtDefectos.setText("0");
         txtDefectos.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtDefectosKeyReleased(evt);
@@ -715,6 +729,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
 
         jLabel15.setText("Intensidad");
 
+        txtNoTazas.setText("0");
         txtNoTazas.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtNoTazasKeyReleased(evt);
@@ -724,6 +739,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
 
+        txtIntensidad.setText("0");
         txtIntensidad.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 txtIntensidadKeyReleased(evt);
@@ -822,9 +838,9 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(txtDefectos, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel16)
-                .addGap(107, 107, 107))
+                .addGap(112, 112, 112))
         );
 
         jPanel5.setBackground(new java.awt.Color(153, 153, 153));
@@ -853,7 +869,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 .addComponent(jButton1)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(jButton2)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(13, Short.MAX_VALUE))
         );
         jPanel5Layout.setVerticalGroup(
             jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -895,16 +911,6 @@ public class jdCatacion2 extends javax.swing.JFrame {
 
         jLabel32.setText("Catador:");
 
-        slSeco.setMaximum(950);
-        slSeco.setMinimum(450);
-        slSeco.setToolTipText("");
-        slSeco.setValue(700);
-        slSeco.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                slSecoStateChanged(evt);
-            }
-        });
-
         btnMenos.setText("-");
         btnMenos.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -912,22 +918,13 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
 
-        txtSeco.setText("7.0");
+        txtSeco.setEditable(false);
+        txtSeco.setText("0.0");
 
         btnMas.setText("+");
         btnMas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMasActionPerformed(evt);
-            }
-        });
-
-        slMojado.setMajorTickSpacing(50);
-        slMojado.setMaximum(950);
-        slMojado.setMinimum(450);
-        slMojado.setValue(700);
-        slMojado.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                slMojadoStateChanged(evt);
             }
         });
 
@@ -938,22 +935,13 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
 
-        txtMojado.setText("7.0");
+        txtMojado.setEditable(false);
+        txtMojado.setText("0.0");
 
         btnMas2.setText("+");
         btnMas2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMas2ActionPerformed(evt);
-            }
-        });
-
-        slQuebrado.setMajorTickSpacing(50);
-        slQuebrado.setMaximum(950);
-        slQuebrado.setMinimum(450);
-        slQuebrado.setValue(700);
-        slQuebrado.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                slQuebradoStateChanged(evt);
             }
         });
 
@@ -964,21 +952,13 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
 
-        txtQuebrado.setText("7.0");
+        txtQuebrado.setEditable(false);
+        txtQuebrado.setText("0.0");
 
         btnMas3.setText("+");
         btnMas3.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnMas3ActionPerformed(evt);
-            }
-        });
-
-        slSabor.setMaximum(950);
-        slSabor.setMinimum(450);
-        slSabor.setValue(700);
-        slSabor.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                slSaborStateChanged(evt);
             }
         });
 
@@ -989,21 +969,13 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
 
-        txtSabor.setText("7.0");
+        txtSabor.setEditable(false);
+        txtSabor.setText("0.0");
 
         jButton11.setText("+");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton11ActionPerformed(evt);
-            }
-        });
-
-        slAftertaste.setMaximum(950);
-        slAftertaste.setMinimum(450);
-        slAftertaste.setValue(700);
-        slAftertaste.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                slAftertasteStateChanged(evt);
             }
         });
 
@@ -1014,21 +986,13 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
 
-        txtAftertaste.setText("7.0");
+        txtSaborRemanente.setEditable(false);
+        txtSaborRemanente.setText("0.0");
 
         jButton13.setText("+");
         jButton13.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton13ActionPerformed(evt);
-            }
-        });
-
-        slAcidez.setMaximum(950);
-        slAcidez.setMinimum(450);
-        slAcidez.setValue(700);
-        slAcidez.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                slAcidezStateChanged(evt);
             }
         });
 
@@ -1039,21 +1003,13 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
 
-        txtAcidez.setText("7.0");
+        txtAcidez.setEditable(false);
+        txtAcidez.setText("0.0");
 
         jButton15.setText("+");
         jButton15.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton15ActionPerformed(evt);
-            }
-        });
-
-        slCuerpo.setMaximum(950);
-        slCuerpo.setMinimum(450);
-        slCuerpo.setValue(700);
-        slCuerpo.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                slCuerpoStateChanged(evt);
             }
         });
 
@@ -1064,21 +1020,13 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
 
-        txtCuerpo.setText("7.0");
+        txtCuerpo.setEditable(false);
+        txtCuerpo.setText("0.0");
 
         jButton17.setText("+");
         jButton17.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton17ActionPerformed(evt);
-            }
-        });
-
-        slBalance.setMaximum(950);
-        slBalance.setMinimum(450);
-        slBalance.setValue(700);
-        slBalance.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                slBalanceStateChanged(evt);
             }
         });
 
@@ -1089,21 +1037,13 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
 
-        txtBalance.setText("7.0");
+        txtBalance.setEditable(false);
+        txtBalance.setText("0.0");
 
         jButton19.setText("+");
         jButton19.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton19ActionPerformed(evt);
-            }
-        });
-
-        slCatador.setMaximum(950);
-        slCatador.setMinimum(450);
-        slCatador.setValue(700);
-        slCatador.addChangeListener(new javax.swing.event.ChangeListener() {
-            public void stateChanged(javax.swing.event.ChangeEvent evt) {
-                slCatadorStateChanged(evt);
             }
         });
 
@@ -1114,7 +1054,8 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
 
-        txtCatador.setText("7.0");
+        txtCatador.setEditable(false);
+        txtCatador.setText("0.0");
 
         jButton21.setText("+");
         jButton21.addActionListener(new java.awt.event.ActionListener() {
@@ -1139,108 +1080,90 @@ public class jdCatacion2 extends javax.swing.JFrame {
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel32)
                                     .addComponent(jLabel31))
-                                .addGap(18, 18, 18)
+                                .addGap(66, 66, 66)
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel6Layout.createSequentialGroup()
-                                        .addComponent(slBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jButton18, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton18)
+                                        .addComponent(txtBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtBalance, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton19))
+                                        .addComponent(jButton19, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel6Layout.createSequentialGroup()
-                                        .addComponent(slCatador, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(jButton20, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton20)
+                                        .addComponent(txtCatador, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtCatador, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(jButton21))))
+                                        .addComponent(jButton21, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(jLabel21)
                                     .addComponent(jLabel20)
                                     .addComponent(jLabel22))
-                                .addGap(18, 18, 18)
+                                .addGap(54, 54, 54)
                                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addGroup(jPanel6Layout.createSequentialGroup()
-                                        .addComponent(slSeco, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnMenos, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnMenos)
+                                        .addComponent(txtSeco, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtSeco, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnMas))
+                                        .addComponent(btnMas, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel6Layout.createSequentialGroup()
-                                        .addComponent(slQuebrado, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnMenos3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnMenos3)
+                                        .addComponent(txtQuebrado, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtQuebrado, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnMas3))
+                                        .addComponent(btnMas3, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                                     .addGroup(jPanel6Layout.createSequentialGroup()
-                                        .addComponent(slMojado, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addComponent(btnMenos2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnMenos2)
+                                        .addComponent(txtMojado, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(txtMojado, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                        .addComponent(btnMas2)
+                                        .addComponent(btnMas2, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addGap(18, 18, 18)
                                         .addComponent(jLabel23)
                                         .addGap(18, 18, 18)
                                         .addComponent(lblFragancia, javax.swing.GroupLayout.PREFERRED_SIZE, 48, javax.swing.GroupLayout.PREFERRED_SIZE))))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(jLabel26)
+                                .addGap(18, 18, 18)
+                                .addComponent(jButton12, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(slAftertaste, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtSaborRemanente, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton12)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtAftertaste, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton13))
+                                .addComponent(jButton13, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(jLabel29)
-                                .addGap(18, 18, 18)
-                                .addComponent(slCuerpo, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(69, 69, 69)
+                                .addComponent(jButton16, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton16)
+                                .addComponent(txtCuerpo, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtCuerpo, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton17)
+                                .addComponent(jButton17, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGap(18, 18, 18)
                                 .addComponent(jLabel30)
                                 .addGap(18, 18, 18)
                                 .addComponent(spCuerpoInt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(jLabel25)
+                                .addGap(75, 75, 75)
+                                .addComponent(jButton10, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(slSabor, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(txtSabor, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton10)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtSabor, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton11))
+                                .addComponent(jButton11, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(jPanel6Layout.createSequentialGroup()
                                 .addComponent(jLabel27)
-                                .addGap(59, 59, 59)
-                                .addComponent(slAcidez, javax.swing.GroupLayout.PREFERRED_SIZE, 115, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(73, 73, 73)
+                                .addComponent(jButton14, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton14)
+                                .addComponent(txtAcidez, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(txtAcidez, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jButton15)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jButton15, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
                                 .addComponent(jLabel28)
                                 .addGap(18, 18, 18)
                                 .addComponent(spAcidezInt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(0, 9, Short.MAX_VALUE))
+                        .addGap(0, 108, Short.MAX_VALUE))
                     .addComponent(jSeparator7)
                     .addComponent(jSeparator8)
                     .addComponent(jSeparator9))
@@ -1251,34 +1174,32 @@ public class jdCatacion2 extends javax.swing.JFrame {
             .addGroup(jPanel6Layout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnMenos)
-                        .addComponent(txtSeco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnMas))
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jPanel6Layout.createSequentialGroup()
                         .addComponent(jLabel20)
-                        .addComponent(slSeco, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnMenos2)
-                        .addComponent(txtMojado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnMas2)
-                        .addComponent(jLabel23)
-                        .addComponent(lblFragancia, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                        .addGap(12, 12, 12)
                         .addComponent(jLabel21)
-                        .addComponent(slMojado, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                        .addComponent(btnMenos3)
-                        .addComponent(txtQuebrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(btnMas3))
-                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(jLabel22)
-                        .addComponent(slQuebrado, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGap(15, 15, 15)
+                        .addComponent(jLabel22))
+                    .addGroup(jPanel6Layout.createSequentialGroup()
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnMenos)
+                            .addComponent(txtSeco, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnMas))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(jLabel23)
+                                .addComponent(lblFragancia, javax.swing.GroupLayout.PREFERRED_SIZE, 15, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                                .addComponent(btnMenos2)
+                                .addComponent(txtMojado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(btnMas2)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(btnMenos3)
+                            .addComponent(txtQuebrado, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(btnMas3))))
+                .addGap(9, 9, 9)
                 .addComponent(jSeparator4, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -1286,24 +1207,21 @@ public class jdCatacion2 extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButton10)
                         .addComponent(txtSabor, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton11))
-                    .addComponent(slSabor, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButton11)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator5, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButton12)
-                        .addComponent(txtAftertaste, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(txtSaborRemanente, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton13))
-                    .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(slAftertaste, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel26, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator6, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel27, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(slAcidez, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButton14)
                         .addComponent(txtAcidez, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -1320,8 +1238,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                         .addComponent(txtCuerpo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton17)
                         .addComponent(jLabel30)
-                        .addComponent(spCuerpoInt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addComponent(slCuerpo, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(spCuerpoInt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator8, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -1330,21 +1247,20 @@ public class jdCatacion2 extends javax.swing.JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButton18)
                         .addComponent(txtBalance, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addComponent(jButton19))
-                    .addComponent(slBalance, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jButton19)))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator9, javax.swing.GroupLayout.PREFERRED_SIZE, 10, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(jLabel32)
+                .addGap(11, 11, 11)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jButton20)
                         .addComponent(txtCatador, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addComponent(jButton21))
-                    .addComponent(slCatador, javax.swing.GroupLayout.PREFERRED_SIZE, 17, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jLabel32))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
+        jLabel33.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel33.setText("Información");
 
         Body2.setModel(new javax.swing.table.DefaultTableModel(
@@ -1357,7 +1273,17 @@ public class jdCatacion2 extends javax.swing.JFrame {
             new String [] {
                 "10 Cuerpo", "Int."
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Body2.setEnabled(false);
+        Body2.setOpaque(false);
         Body2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Body2KeyReleased(evt);
@@ -1389,6 +1315,8 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        Finish2.setEnabled(false);
+        Finish2.setOpaque(false);
         Finish2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Finish2KeyReleased(evt);
@@ -1828,7 +1756,16 @@ public class jdCatacion2 extends javax.swing.JFrame {
             new String [] {
                 "10 Cuerpo", "Int."
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Body8.setEnabled(false);
         Body8.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Body8KeyReleased(evt);
@@ -1860,6 +1797,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        Finish8.setEnabled(false);
         Finish8.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Finish8KeyReleased(evt);
@@ -2299,7 +2237,16 @@ public class jdCatacion2 extends javax.swing.JFrame {
             new String [] {
                 "10 Cuerpo", "Int."
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Body9.setEnabled(false);
         Body9.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Body9KeyReleased(evt);
@@ -2331,6 +2278,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        Finish9.setEnabled(false);
         Finish9.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Finish9KeyReleased(evt);
@@ -2773,7 +2721,16 @@ public class jdCatacion2 extends javax.swing.JFrame {
             new String [] {
                 "10 Cuerpo", "Int."
             }
-        ));
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Body10.setEnabled(false);
         Body10.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Body10KeyReleased(evt);
@@ -3242,25 +3199,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Suave", null}
             },
             new String [] {
-                "10 Cuerpo", "Inten."
-            }
-        ));
-        Body11.addKeyListener(new java.awt.event.KeyAdapter() {
-            public void keyReleased(java.awt.event.KeyEvent evt) {
-                Body11KeyReleased(evt);
-            }
-        });
-        jScrollPane115.setViewportView(Body11);
-
-        Finish11.setModel(new javax.swing.table.DefaultTableModel(
-            new Object [][] {
-                {"Duración", null},
-                {"Seco", null},
-                {"Astringent", null},
-                {"Granoso", null}
-            },
-            new String [] {
-                "11 Sabor Rem.", "Inten."
+                "10 Cuerpo", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -3271,12 +3210,50 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        Body11.setEnabled(false);
+        Body11.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyReleased(java.awt.event.KeyEvent evt) {
+                Body11KeyReleased(evt);
+            }
+        });
+        jScrollPane115.setViewportView(Body11);
+        if (Body11.getColumnModel().getColumnCount() > 0) {
+            Body11.getColumnModel().getColumn(1).setMinWidth(30);
+            Body11.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Body11.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
+
+        Finish11.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {"Duración", null},
+                {"Seco", null},
+                {"Astringent", null},
+                {"Granoso", null}
+            },
+            new String [] {
+                "11 Sabor Rem.", "Int."
+            }
+        ) {
+            boolean[] canEdit = new boolean [] {
+                false, true
+            };
+
+            public boolean isCellEditable(int rowIndex, int columnIndex) {
+                return canEdit [columnIndex];
+            }
+        });
+        Finish11.setEnabled(false);
         Finish11.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Finish11KeyReleased(evt);
             }
         });
         jScrollPane116.setViewportView(Finish11);
+        if (Finish11.getColumnModel().getColumnCount() > 0) {
+            Finish11.getColumnModel().getColumn(1).setMinWidth(30);
+            Finish11.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Finish11.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
 
         Sweet10.setBackground(new java.awt.Color(255, 102, 102));
         Sweet10.setModel(new javax.swing.table.DefaultTableModel(
@@ -3375,7 +3352,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"   Lima", null}
             },
             new String [] {
-                "3 Afrutado", "Inten."
+                "3 Afrutado", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -3392,6 +3369,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane119.setViewportView(Fruit10);
+        if (Fruit10.getColumnModel().getColumnCount() > 0) {
+            Fruit10.getColumnModel().getColumn(1).setMinWidth(30);
+            Fruit10.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Fruit10.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
 
         SourFer10.setBackground(new java.awt.Color(255, 255, 153));
         SourFer10.setModel(new javax.swing.table.DefaultTableModel(
@@ -3410,7 +3392,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"   Super-madu", null}
             },
             new String [] {
-                "4 Acido/Fermentado", "Inten."
+                "4 Acido/Fermentado", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -3427,6 +3409,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane120.setViewportView(SourFer10);
+        if (SourFer10.getColumnModel().getColumnCount() > 0) {
+            SourFer10.getColumnModel().getColumn(1).setMinWidth(30);
+            SourFer10.getColumnModel().getColumn(1).setPreferredWidth(30);
+            SourFer10.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
 
         GreenVeg10.setBackground(new java.awt.Color(102, 255, 102));
         GreenVeg10.setModel(new javax.swing.table.DefaultTableModel(
@@ -3444,7 +3431,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Leguminoso", null}
             },
             new String [] {
-                "5 Verde/Vegetal", "Inten."
+                "5 Verde/Vegetal", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -3461,6 +3448,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane121.setViewportView(GreenVeg10);
+        if (GreenVeg10.getColumnModel().getColumnCount() > 0) {
+            GreenVeg10.getColumnModel().getColumn(1).setMinWidth(30);
+            GreenVeg10.getColumnModel().getColumn(1).setPreferredWidth(30);
+            GreenVeg10.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
 
         Other10.setBackground(new java.awt.Color(51, 255, 255));
         Other10.setModel(new javax.swing.table.DefaultTableModel(
@@ -3485,7 +3477,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"   Goma", null}
             },
             new String [] {
-                "6 Otros", "Inten."
+                "6 Otros", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -3502,6 +3494,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane122.setViewportView(Other10);
+        if (Other10.getColumnModel().getColumnCount() > 0) {
+            Other10.getColumnModel().getColumn(1).setMinWidth(30);
+            Other10.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Other10.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
 
         Roasted10.setBackground(new java.awt.Color(0, 204, 255));
         Roasted10.setModel(new javax.swing.table.DefaultTableModel(
@@ -3518,7 +3515,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"   Malta", null}
             },
             new String [] {
-                "7 Tostado", "Inten."
+                "7 Tostado", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -3535,6 +3532,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane123.setViewportView(Roasted10);
+        if (Roasted10.getColumnModel().getColumnCount() > 0) {
+            Roasted10.getColumnModel().getColumn(1).setMinWidth(30);
+            Roasted10.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Roasted10.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
 
         Spices10.setBackground(new java.awt.Color(153, 153, 255));
         Spices10.setModel(new javax.swing.table.DefaultTableModel(
@@ -3548,7 +3550,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"   Clavo-olor", null}
             },
             new String [] {
-                "8 Especias", "Inten."
+                "8 Especias", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -3565,6 +3567,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane124.setViewportView(Spices10);
+        if (Spices10.getColumnModel().getColumnCount() > 0) {
+            Spices10.getColumnModel().getColumn(1).setMinWidth(30);
+            Spices10.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Spices10.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
 
         Nutty10.setBackground(new java.awt.Color(255, 102, 204));
         Nutty10.setModel(new javax.swing.table.DefaultTableModel(
@@ -3578,7 +3585,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"   Choc-amarg", null}
             },
             new String [] {
-                "9 Nueces/Cacao", "Inten."
+                "9 Nueces/Cacao", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -3595,6 +3602,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane125.setViewportView(Nutty10);
+        if (Nutty10.getColumnModel().getColumnCount() > 0) {
+            Nutty10.getColumnModel().getColumn(1).setMinWidth(30);
+            Nutty10.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Nutty10.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
 
         javax.swing.GroupLayout jPanel20Layout = new javax.swing.GroupLayout(jPanel20);
         jPanel20.setLayout(jPanel20Layout);
@@ -3639,9 +3651,9 @@ public class jdCatacion2 extends javax.swing.JFrame {
                                 .addComponent(jScrollPane124, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane120, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel20Layout.createSequentialGroup()
-                                .addComponent(jScrollPane117, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jScrollPane117, javax.swing.GroupLayout.PREFERRED_SIZE, 173, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane118, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jScrollPane118, javax.swing.GroupLayout.PREFERRED_SIZE, 110, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 58, Short.MAX_VALUE))
                     .addGroup(jPanel20Layout.createSequentialGroup()
                         .addGroup(jPanel20Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -3651,11 +3663,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
                                     .addGroup(jPanel20Layout.createSequentialGroup()
                                         .addComponent(jScrollPane125, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jScrollPane115, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(jScrollPane115, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jScrollPane116, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane122, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(96, Short.MAX_VALUE))))
         );
 
         jTabbedPane1.addTab("Acidez", jPanel20);
@@ -3668,7 +3680,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Suave", null}
             },
             new String [] {
-                "10 Cuerpo", "Inten."
+                "10 Cuerpo", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -3679,12 +3691,18 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        Body13.setEnabled(false);
         Body13.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Body13KeyReleased(evt);
             }
         });
         jScrollPane137.setViewportView(Body13);
+        if (Body13.getColumnModel().getColumnCount() > 0) {
+            Body13.getColumnModel().getColumn(1).setMinWidth(30);
+            Body13.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Body13.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
 
         Finish13.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -3694,7 +3712,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Granoso", null}
             },
             new String [] {
-                "11 Sabor Rem.", "Inten."
+                "11 Sabor Rem.", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -3711,6 +3729,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
             }
         });
         jScrollPane138.setViewportView(Finish13);
+        if (Finish13.getColumnModel().getColumnCount() > 0) {
+            Finish13.getColumnModel().getColumn(1).setMinWidth(30);
+            Finish13.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Finish13.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
 
         Sweet12.setBackground(new java.awt.Color(255, 102, 102));
         Sweet12.setModel(new javax.swing.table.DefaultTableModel(
@@ -3737,6 +3760,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        Sweet12.setEnabled(false);
         Sweet12.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Sweet12KeyReleased(evt);
@@ -3770,6 +3794,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        Floral12.setEnabled(false);
         Floral12.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Floral12KeyReleased(evt);
@@ -3809,7 +3834,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"   Lima", null}
             },
             new String [] {
-                "3 Afrutado", "Inten."
+                "3 Afrutado", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -3820,12 +3845,18 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        Fruit12.setEnabled(false);
         Fruit12.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Fruit12KeyReleased(evt);
             }
         });
         jScrollPane141.setViewportView(Fruit12);
+        if (Fruit12.getColumnModel().getColumnCount() > 0) {
+            Fruit12.getColumnModel().getColumn(1).setMinWidth(30);
+            Fruit12.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Fruit12.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
 
         SourFer12.setBackground(new java.awt.Color(255, 255, 153));
         SourFer12.setModel(new javax.swing.table.DefaultTableModel(
@@ -3844,7 +3875,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"   Super-madu", null}
             },
             new String [] {
-                "4 Acido/Fermentado", "Inten."
+                "4 Acido/Fermentado", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -3855,12 +3886,18 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        SourFer12.setEnabled(false);
         SourFer12.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 SourFer12KeyReleased(evt);
             }
         });
         jScrollPane142.setViewportView(SourFer12);
+        if (SourFer12.getColumnModel().getColumnCount() > 0) {
+            SourFer12.getColumnModel().getColumn(1).setMinWidth(30);
+            SourFer12.getColumnModel().getColumn(1).setPreferredWidth(30);
+            SourFer12.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
 
         GreenVeg12.setBackground(new java.awt.Color(102, 255, 102));
         GreenVeg12.setModel(new javax.swing.table.DefaultTableModel(
@@ -3878,7 +3915,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"Leguminoso", null}
             },
             new String [] {
-                "5 Verde/Vegetal", "Inten."
+                "5 Verde/Vegetal", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -3889,12 +3926,18 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        GreenVeg12.setEnabled(false);
         GreenVeg12.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 GreenVeg12KeyReleased(evt);
             }
         });
         jScrollPane143.setViewportView(GreenVeg12);
+        if (GreenVeg12.getColumnModel().getColumnCount() > 0) {
+            GreenVeg12.getColumnModel().getColumn(1).setMinWidth(30);
+            GreenVeg12.getColumnModel().getColumn(1).setPreferredWidth(30);
+            GreenVeg12.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
 
         Other12.setBackground(new java.awt.Color(51, 255, 255));
         Other12.setModel(new javax.swing.table.DefaultTableModel(
@@ -3919,7 +3962,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"   Goma", null}
             },
             new String [] {
-                "6 Otros", "Inten."
+                "6 Otros", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -3930,12 +3973,18 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        Other12.setEnabled(false);
         Other12.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Other12KeyReleased(evt);
             }
         });
         jScrollPane144.setViewportView(Other12);
+        if (Other12.getColumnModel().getColumnCount() > 0) {
+            Other12.getColumnModel().getColumn(1).setMinWidth(30);
+            Other12.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Other12.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
 
         Roasted12.setBackground(new java.awt.Color(0, 204, 255));
         Roasted12.setModel(new javax.swing.table.DefaultTableModel(
@@ -3952,7 +4001,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"   Malta", null}
             },
             new String [] {
-                "7 Tostado", "Inten."
+                "7 Tostado", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -3963,12 +4012,18 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        Roasted12.setEnabled(false);
         Roasted12.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Roasted12KeyReleased(evt);
             }
         });
         jScrollPane145.setViewportView(Roasted12);
+        if (Roasted12.getColumnModel().getColumnCount() > 0) {
+            Roasted12.getColumnModel().getColumn(1).setMinWidth(30);
+            Roasted12.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Roasted12.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
 
         Spices12.setBackground(new java.awt.Color(153, 153, 255));
         Spices12.setModel(new javax.swing.table.DefaultTableModel(
@@ -3982,7 +4037,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"   Clavo-olor", null}
             },
             new String [] {
-                "8 Especias", "Inten."
+                "8 Especias", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -3993,12 +4048,18 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        Spices12.setEnabled(false);
         Spices12.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Spices12KeyReleased(evt);
             }
         });
         jScrollPane146.setViewportView(Spices12);
+        if (Spices12.getColumnModel().getColumnCount() > 0) {
+            Spices12.getColumnModel().getColumn(1).setMinWidth(30);
+            Spices12.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Spices12.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
 
         Nutty12.setBackground(new java.awt.Color(255, 102, 204));
         Nutty12.setModel(new javax.swing.table.DefaultTableModel(
@@ -4012,7 +4073,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 {"   Choc-amarg", null}
             },
             new String [] {
-                "9 Nueces/Cacao", "Inten."
+                "9 Nueces/Cacao", "Int."
             }
         ) {
             boolean[] canEdit = new boolean [] {
@@ -4023,12 +4084,18 @@ public class jdCatacion2 extends javax.swing.JFrame {
                 return canEdit [columnIndex];
             }
         });
+        Nutty12.setEnabled(false);
         Nutty12.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Nutty12KeyReleased(evt);
             }
         });
         jScrollPane147.setViewportView(Nutty12);
+        if (Nutty12.getColumnModel().getColumnCount() > 0) {
+            Nutty12.getColumnModel().getColumn(1).setMinWidth(30);
+            Nutty12.getColumnModel().getColumn(1).setPreferredWidth(30);
+            Nutty12.getColumnModel().getColumn(1).setMaxWidth(30);
+        }
 
         javax.swing.GroupLayout jPanel22Layout = new javax.swing.GroupLayout(jPanel22);
         jPanel22.setLayout(jPanel22Layout);
@@ -4073,9 +4140,9 @@ public class jdCatacion2 extends javax.swing.JFrame {
                                 .addComponent(jScrollPane146, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane142, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addGroup(jPanel22Layout.createSequentialGroup()
-                                .addComponent(jScrollPane139, javax.swing.GroupLayout.PREFERRED_SIZE, 171, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addComponent(jScrollPane139, javax.swing.GroupLayout.PREFERRED_SIZE, 172, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jScrollPane140, javax.swing.GroupLayout.PREFERRED_SIZE, 107, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addComponent(jScrollPane140, javax.swing.GroupLayout.PREFERRED_SIZE, 108, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGap(0, 58, Short.MAX_VALUE))
                     .addGroup(jPanel22Layout.createSequentialGroup()
                         .addGroup(jPanel22Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4085,11 +4152,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
                                     .addGroup(jPanel22Layout.createSequentialGroup()
                                         .addComponent(jScrollPane147, javax.swing.GroupLayout.PREFERRED_SIZE, 140, javax.swing.GroupLayout.PREFERRED_SIZE)
                                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                        .addComponent(jScrollPane137, javax.swing.GroupLayout.PREFERRED_SIZE, 91, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                        .addComponent(jScrollPane137, javax.swing.GroupLayout.PREFERRED_SIZE, 92, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(jScrollPane138, javax.swing.GroupLayout.PREFERRED_SIZE, 93, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addComponent(jScrollPane144, javax.swing.GroupLayout.PREFERRED_SIZE, 316, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addContainerGap(96, Short.MAX_VALUE))))
         );
 
         jTabbedPane1.addTab("Cuerpo", jPanel22);
@@ -4161,29 +4228,29 @@ public class jdCatacion2 extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jPanel1Layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel1Layout.createSequentialGroup()
                         .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                    .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                    .addComponent(jLabel33))
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                            .addComponent(jPanel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jPanel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                            .addComponent(jLabel33))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jPanel4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                        .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                            .addGroup(jPanel1Layout.createSequentialGroup()
-                                .addComponent(jLabel17)
-                                .addGap(18, 18, 18)
-                                .addComponent(lblPuntuacion, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addGap(0, 0, Short.MAX_VALUE))))
-                    .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1070, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(jPanel6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(jPanel9, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(jPanel1Layout.createSequentialGroup()
+                        .addComponent(jLabel17)
+                        .addGap(18, 18, 18)
+                        .addComponent(lblPuntuacion, javax.swing.GroupLayout.PREFERRED_SIZE, 49, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 0, Short.MAX_VALUE)))
                 .addGap(44, 44, 44))
+            .addGroup(jPanel1Layout.createSequentialGroup()
+                .addComponent(jTabbedPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 1070, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(0, 0, Short.MAX_VALUE))
         );
         jPanel1Layout.setVerticalGroup(
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -4203,7 +4270,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
                         .addComponent(jPanel3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel1Layout.createSequentialGroup()
-                        .addGap(78, 78, 78)
+                        .addGap(63, 63, 63)
                         .addComponent(jPanel5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(jPanel9, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -4235,204 +4302,237 @@ public class jdCatacion2 extends javax.swing.JFrame {
 
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
         // TODO add your handling code here:
-        slCatador.setValue(slCatador.getValue() + 50);
+        // slCatador.setValue(slCatador.getValue() + 50);
+        if (slCatador < 0 || slCatador > 10) {
+            JOptionPane.showMessageDialog(null, "Limite");
+        } else {
+            slCatador = slCatador + 0.5;
+            txtCatador.setText(slCatador + "");
+        }
         promedio();
         formula();
     }//GEN-LAST:event_jButton21ActionPerformed
-
+    Double slCatador = 0.0;
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
         // TODO add your handling code here:
-        slCatador.setValue(slCatador.getValue() - 50);
+        // slCatador.setValue(slCatador.getValue() - 50);
+        if (slCatador < 0 || slCatador > 10) {
+            JOptionPane.showMessageDialog(null, "Limite");
+        } else {
+            slCatador = slCatador - 0.5;
+            txtCatador.setText(slCatador + "");
+        }
         promedio();
         formula();
     }//GEN-LAST:event_jButton20ActionPerformed
 
-    private void slCatadorStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slCatadorStateChanged
-        // TODO add your handling code here:
-        Double valor = Double.parseDouble(slCatador.getValue() + "");
-        Double valor2 = valor / 100;
-        txtCatador.setText(valor2 + "");
-    }//GEN-LAST:event_slCatadorStateChanged
-
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         // TODO add your handling code here:
-        slBalance.setValue(slBalance.getValue() + 50);
+        //  slBalance.setValue(slBalance.getValue() + 50);
+        if (slBalance < 0 || slBalance > 10) {
+            JOptionPane.showMessageDialog(null, "Limite");
+        } else {
+            slBalance = slBalance + 0.5;
+            txtBalance.setText(slBalance + "");
+        }
         promedio();
         formula();
     }//GEN-LAST:event_jButton19ActionPerformed
-
+    Double slBalance = 0.0;
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         // TODO add your handling code here:
-        slBalance.setValue(slBalance.getValue() - 50);
+        //  slBalance.setValue(slBalance.getValue() - 50);
+        if (slBalance < 0 || slBalance > 10) {
+            JOptionPane.showMessageDialog(null, "Limite");
+        } else {
+            slBalance = slBalance - 0.5;
+            txtBalance.setText(slBalance + "");
+        }
         promedio();
         formula();
     }//GEN-LAST:event_jButton18ActionPerformed
 
-    private void slBalanceStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slBalanceStateChanged
-        // TODO add your handling code here:
-        Double valor = Double.parseDouble(slBalance.getValue() + "");
-        Double valor2 = valor / 100;
-        txtBalance.setText(valor2 + "");
-    }//GEN-LAST:event_slBalanceStateChanged
-
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
         // TODO add your handling code here:
-        slCuerpo.setValue(slCuerpo.getValue() + 50);
+        // slCuerpo.setValue(slCuerpo.getValue() + 50);
+        if (slCuerpo < 0 || slCuerpo > 10) {
+            JOptionPane.showMessageDialog(null, "Limite");
+        } else {
+            slCuerpo = slCuerpo + 0.5;
+            txtCuerpo.setText(slCuerpo + "");
+        }
         promedio();
         formula();
     }//GEN-LAST:event_jButton17ActionPerformed
-
+    Double slCuerpo = 0.0;
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         // TODO add your handling code here:
-        slCuerpo.setValue(slCuerpo.getValue() - 50);
+        //   slCuerpo.setValue(slCuerpo.getValue() - 50);
+        if (slCuerpo < 0 || slCuerpo > 10) {
+            JOptionPane.showMessageDialog(null, "Limite");
+        } else {
+            slCuerpo = slCuerpo - 0.5;
+            txtCuerpo.setText(slCuerpo + "");
+        }
         promedio();
         formula();
     }//GEN-LAST:event_jButton16ActionPerformed
 
-    private void slCuerpoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slCuerpoStateChanged
-        // TODO add your handling code here:
-        Double valor = Double.parseDouble(slCuerpo.getValue() + "");
-        Double valor2 = valor / 100;
-        txtCuerpo.setText(valor2 + "");
-    }//GEN-LAST:event_slCuerpoStateChanged
-
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         // TODO add your handling code here:
-        slAcidez.setValue(slAcidez.getValue() + 50);
+        //  slAcidez.setValue(slAcidez.getValue() + 50);
+        if (slAcidez < 0 || slAcidez > 10) {
+            JOptionPane.showMessageDialog(null, "Limite");
+        } else {
+            slAcidez = slAcidez + 0.5;
+            txtAcidez.setText(slAcidez + "");
+        }
         promedio();
         formula();
     }//GEN-LAST:event_jButton15ActionPerformed
-
+    Double slAcidez = 0.0;
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         // TODO add your handling code here:
-        slAcidez.setValue(slAcidez.getValue() - 50);
+        //  slAcidez.setValue(slAcidez.getValue() - 50);
+        if (slAcidez < 0 || slAcidez > 10) {
+            JOptionPane.showMessageDialog(null, "Limite");
+        } else {
+            slAcidez = slAcidez - 0.5;
+            txtAcidez.setText(slAcidez + "");
+        }
         promedio();
         formula();
     }//GEN-LAST:event_jButton14ActionPerformed
 
-    private void slAcidezStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slAcidezStateChanged
-        // TODO add your handling code here:
-        Double valor = Double.parseDouble(slAcidez.getValue() + "");
-        Double valor2 = valor / 100;
-        txtAcidez.setText(valor2 + "");
-    }//GEN-LAST:event_slAcidezStateChanged
-
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
-        slAftertaste.setValue(slAftertaste.getValue() + 50);
+        //slAftertaste.setValue(slAftertaste.getValue() + 50);
+        if (slSaborRemanente < 0 || slSaborRemanente > 10) {
+            JOptionPane.showMessageDialog(null, "Limite");
+        } else {
+            slSaborRemanente = slSaborRemanente + 0.5;
+            txtSaborRemanente.setText(slSaborRemanente + "");
+        }
         promedio();
         formula();
     }//GEN-LAST:event_jButton13ActionPerformed
-
+    Double slSaborRemanente = 0.0;
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
-        slAftertaste.setValue(slAftertaste.getValue() - 50);
+        //  slAftertaste.setValue(slAftertaste.getValue() - 50);
+        if (slSaborRemanente < 0 || slSaborRemanente > 10) {
+            JOptionPane.showMessageDialog(null, "Limite");
+        } else {
+            slSaborRemanente = slSaborRemanente - 0.5;
+            txtSaborRemanente.setText(slSaborRemanente + "");
+        }
         promedio();
         formula();
     }//GEN-LAST:event_jButton12ActionPerformed
 
-    private void slAftertasteStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slAftertasteStateChanged
-        // TODO add your handling code here:
-        Double valor = Double.parseDouble(slAftertaste.getValue() + "");
-        Double valor2 = valor / 100;
-        txtAftertaste.setText(valor2 + "");
-    }//GEN-LAST:event_slAftertasteStateChanged
-
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
-        slSabor.setValue(slSabor.getValue() + 50);
+        //  slSabor.setValue(slSabor.getValue() + 50);
+        if (slSabor < 0 || slSabor > 10) {
+            JOptionPane.showMessageDialog(null, "Limite");
+        } else {
+            slSabor = slSabor + 0.5;
+            txtSabor.setText(slSabor + "");
+        }
         promedio();
         formula();
     }//GEN-LAST:event_jButton11ActionPerformed
-
+    Double slSabor = 0.0;
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
-        slSabor.setValue(slSabor.getValue() - 50);
+        //  slSabor.setValue(slSabor.getValue() - 50);
+        if (slSabor < 0 || slSabor > 10) {
+            JOptionPane.showMessageDialog(null, "Limite");
+        } else {
+            slSabor = slSabor - 0.5;
+            txtSabor.setText(slSabor + "");
+        }
         promedio();
         formula();
     }//GEN-LAST:event_jButton10ActionPerformed
 
-    private void slSaborStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slSaborStateChanged
-        // TODO add your handling code here:
-        Double valor = Double.parseDouble(slSabor.getValue() + "");
-        Double valor2 = valor / 100;
-        txtSabor.setText(valor2 + "");
-    }//GEN-LAST:event_slSaborStateChanged
-
     private void btnMas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMas3ActionPerformed
         // TODO add your handling code here:
-        slQuebrado.setValue(slQuebrado.getValue() + 50);
+        //  slQuebrado.setValue(slQuebrado.getValue() + 50);
+        if (slQuebrado < 0 || slQuebrado > 10) {
+            JOptionPane.showMessageDialog(null, "Limite");
+        } else {
+            slQuebrado = slQuebrado + 0.5;
+            txtQuebrado.setText(slQuebrado + "");
+        }
         promedio();
         formula();
     }//GEN-LAST:event_btnMas3ActionPerformed
-
+    Double slQuebrado = 0.0;
     private void btnMenos3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenos3ActionPerformed
         // TODO add your handling code here:
-        slQuebrado.setValue(slQuebrado.getValue() - 50);
+        //  slQuebrado.setValue(slQuebrado.getValue() - 50);
+        if (slQuebrado < 0 || slQuebrado > 10) {
+            JOptionPane.showMessageDialog(null, "Limite");
+        } else {
+            slQuebrado = slQuebrado - 0.5;
+            txtQuebrado.setText(slQuebrado + "");
+        }
         promedio();
         formula();
     }//GEN-LAST:event_btnMenos3ActionPerformed
 
-    private void slQuebradoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slQuebradoStateChanged
-        // TODO add your handling code here:
-        Double valor = Double.parseDouble(slQuebrado.getValue() + "");
-        Double valor2 = valor / 100;
-        txtQuebrado.setText(valor2 + "");
-        promedio();
-    }//GEN-LAST:event_slQuebradoStateChanged
-
     private void btnMas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMas2ActionPerformed
         // TODO add your handling code here:
-        slMojado.setValue(slMojado.getValue() + 50);
+        // slMojado.setValue(slMojado.getValue() + 50);
+        if (slMojado < 0 || slMojado > 10) {
+            JOptionPane.showMessageDialog(null, "Limite");
+        } else {
+            slMojado = slMojado + 0.5;
+            txtMojado.setText(slMojado + "");
+        }
         promedio();
         formula();
     }//GEN-LAST:event_btnMas2ActionPerformed
-
+    Double slMojado = 0.0;
     private void btnMenos2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenos2ActionPerformed
         // TODO add your handling code here:
-        slMojado.setValue(slMojado.getValue() - 50);
+        if (slMojado <= 0 || slMojado >= 10) {
+            JOptionPane.showMessageDialog(null, "Limite");
+        } else {
+            slMojado = slMojado - 0.5;
+            txtMojado.setText(slMojado + "");
+        }
+        
         promedio();
         formula();
     }//GEN-LAST:event_btnMenos2ActionPerformed
 
-    private void slMojadoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slMojadoStateChanged
-        // TODO add your handling code here:
-        Double valor = Double.parseDouble(slMojado.getValue() + "");
-        Double valor2 = valor / 100;
-        txtMojado.setText(valor2 + "");
-        promedio();
-    }//GEN-LAST:event_slMojadoStateChanged
-
     private void btnMasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMasActionPerformed
         // TODO add your handling code here:
-        slSeco.setValue(slSeco.getValue() + 50);
+        //  slSeco.setValue(slSeco.getValue() + 50);
+        if (slSeco < 0 || slSeco > 10) {
+            JOptionPane.showMessageDialog(null, "Limite");
+        } else {
+            slSeco = slSeco + 0.5;
+            txtSeco.setText(slSeco + "");
+        }
         promedio();
         formula();
     }//GEN-LAST:event_btnMasActionPerformed
-
+    Double slSeco = 0.0;
     private void btnMenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenosActionPerformed
         // TODO add your handling code here:
-        slSeco.setValue(slSeco.getValue() - 50);
+        //   slSeco.setValue(slSeco.getValue() - 50);
+        if (slSeco < 0 || slSeco > 10) {
+            JOptionPane.showMessageDialog(null, "Limite");
+        } else {
+            slSeco = slSeco - 0.5;
+            txtSeco.setText(slSeco + "");
+        }
         promedio();
         formula();
     }//GEN-LAST:event_btnMenosActionPerformed
-
-    private void slSecoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slSecoStateChanged
-        // TODO add your handling code here:
-        //JOptionPane.showMessageDialog(this, slSeco.getValue());
-        Double valor = Double.parseDouble(slSeco.getValue() + "");
-        Double valor2 = valor / 100;
-
-        if (valor2 >= 4.0 && valor < 5.0) {
-            valor2 = 4.5;
-        }
-        if (valor2 >= 6.0 && valor < 6.5) {
-            valor2 = 6.0;
-        }
-
-        txtSeco.setText(valor2 + "");
-        promedio();
-    }//GEN-LAST:event_slSecoStateChanged
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
         // TODO add your handling code here:
@@ -4536,6 +4636,42 @@ public class jdCatacion2 extends javax.swing.JFrame {
     private void slNivelTostadoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slNivelTostadoStateChanged
         // TODO add your handling code here:
         System.out.println(slNivelTostado.getValue());
+        int valor = slNivelTostado.getValue();
+        // JOptionPane.showMessageDialog(null, slNivelTostado.getValue());
+
+        if (valor == 1) {
+            jTextField4.setText("");
+            jTextField3.setText("");
+            jTextField2.setText("");
+            jTextField1.setText("");
+            jTextField5.setText("✔");
+        } else if (valor == 2) {
+            jTextField5.setText("");
+            jTextField3.setText("");
+            jTextField2.setText("");
+            jTextField1.setText("");
+            jTextField4.setText("✔");
+        } else if (valor == 3) {
+            jTextField4.setText("");
+            jTextField5.setText("");
+            jTextField2.setText("");
+            jTextField1.setText("");
+            jTextField3.setText("✔");
+        } else if (valor == 4) {
+            jTextField4.setText("");
+            jTextField5.setText("");
+            jTextField3.setText("");
+            jTextField1.setText("");
+            jTextField2.setText("✔");
+        } else {
+            jTextField4.setText("");
+            jTextField5.setText("");
+            jTextField2.setText("");
+            jTextField3.setText("");
+            jTextField1.setText("✔");
+        }
+        
+
     }//GEN-LAST:event_slNivelTostadoStateChanged
 
     private void Nutty6KeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Nutty6KeyReleased
@@ -4543,7 +4679,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Nutty6.getValueAt(Nutty6.getSelectedRow(), 0) + "";
         intensidad = Nutty6.getValueAt(Nutty6.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sSeco += sabor.trim() + intensidad + " ";
             lblSeco.setText(sSeco);
@@ -4557,7 +4693,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Spices6.getValueAt(Spices6.getSelectedRow(), 0) + "";
         intensidad = Spices6.getValueAt(Spices6.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sSeco += sabor.trim() + intensidad + " ";
             lblSeco.setText(sSeco);
@@ -4571,7 +4707,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Roasted6.getValueAt(Roasted6.getSelectedRow(), 0) + "";
         intensidad = Roasted6.getValueAt(Roasted6.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sSeco += sabor.trim() + intensidad + " ";
             lblSeco.setText(sSeco);
@@ -4585,7 +4721,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Other6.getValueAt(Other6.getSelectedRow(), 0) + "";
         intensidad = Other6.getValueAt(Other6.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sSeco += sabor.trim() + intensidad + " ";
             lblSeco.setText(sSeco);
@@ -4599,7 +4735,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = GreenVeg6.getValueAt(GreenVeg6.getSelectedRow(), 0) + "";
         intensidad = GreenVeg6.getValueAt(GreenVeg6.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sSeco += sabor.trim() + intensidad + " ";
             lblSeco.setText(sSeco);
@@ -4613,7 +4749,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = SourFer6.getValueAt(SourFer6.getSelectedRow(), 0) + "";
         intensidad = SourFer6.getValueAt(SourFer6.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sSeco += sabor.trim() + intensidad + " ";
             lblSeco.setText(sSeco);
@@ -4627,7 +4763,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Fruit6.getValueAt(Fruit6.getSelectedRow(), 0) + "";
         intensidad = Fruit6.getValueAt(Fruit6.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sSeco += sabor.trim() + intensidad + " ";
             lblSeco.setText(sSeco);
@@ -4641,7 +4777,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Floral6.getValueAt(Floral6.getSelectedRow(), 0) + "";
         intensidad = Floral6.getValueAt(Floral6.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sSeco += sabor.trim() + intensidad + " ";
             lblSeco.setText(sSeco);
@@ -4655,7 +4791,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Sweet6.getValueAt(Sweet6.getSelectedRow(), 0) + "";
         intensidad = Sweet6.getValueAt(Sweet6.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sSeco += sabor.trim() + intensidad + " ";
             lblSeco.setText(sSeco);
@@ -4669,7 +4805,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Finish2.getValueAt(Finish2.getSelectedRow(), 0) + "";
         intensidad = Finish2.getValueAt(Finish2.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sSeco += sabor.trim() + intensidad + " ";
             lblSeco.setText(sSeco);
@@ -4683,7 +4819,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Body2.getValueAt(Body2.getSelectedRow(), 0) + "";
         intensidad = Body2.getValueAt(Body2.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sSeco += sabor.trim() + intensidad + " ";
             lblSeco.setText(sSeco);
@@ -4697,7 +4833,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Body8.getValueAt(Body8.getSelectedRow(), 0) + "";
         intensidad = Body8.getValueAt(Body8.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sMojadoQuebrado += sabor.trim() + intensidad + " ";
             lblQuebrado.setText(sMojadoQuebrado);
@@ -4711,7 +4847,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Finish8.getValueAt(Finish8.getSelectedRow(), 0) + "";
         intensidad = Finish8.getValueAt(Finish8.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sMojadoQuebrado += sabor.trim() + intensidad + " ";
             lblQuebrado.setText(sMojadoQuebrado);
@@ -4725,7 +4861,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Sweet7.getValueAt(Sweet7.getSelectedRow(), 0) + "";
         intensidad = Sweet7.getValueAt(Sweet7.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sMojadoQuebrado += sabor.trim() + intensidad + " ";
             lblQuebrado.setText(sMojadoQuebrado);
@@ -4739,7 +4875,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Floral7.getValueAt(Floral7.getSelectedRow(), 0) + "";
         intensidad = Floral7.getValueAt(Floral7.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sMojadoQuebrado += sabor.trim() + intensidad + " ";
             lblQuebrado.setText(sMojadoQuebrado);
@@ -4753,7 +4889,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Fruit7.getValueAt(Fruit7.getSelectedRow(), 0) + "";
         intensidad = Fruit7.getValueAt(Fruit7.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sMojadoQuebrado += sabor.trim() + intensidad + " ";
             lblQuebrado.setText(sMojadoQuebrado);
@@ -4767,7 +4903,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = SourFer7.getValueAt(SourFer7.getSelectedRow(), 0) + "";
         intensidad = SourFer7.getValueAt(SourFer7.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sMojadoQuebrado += sabor.trim() + intensidad + " ";
             lblQuebrado.setText(sMojadoQuebrado);
@@ -4781,7 +4917,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = GreenVeg7.getValueAt(GreenVeg7.getSelectedRow(), 0) + "";
         intensidad = GreenVeg7.getValueAt(GreenVeg7.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sMojadoQuebrado += sabor.trim() + intensidad + " ";
             lblQuebrado.setText(sMojadoQuebrado);
@@ -4795,7 +4931,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Other7.getValueAt(Other7.getSelectedRow(), 0) + "";
         intensidad = Other7.getValueAt(Other7.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sMojadoQuebrado += sabor.trim() + intensidad + " ";
             lblQuebrado.setText(sMojadoQuebrado);
@@ -4809,7 +4945,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Roasted7.getValueAt(Roasted7.getSelectedRow(), 0) + "";
         intensidad = Roasted7.getValueAt(Roasted7.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sMojadoQuebrado += sabor.trim() + intensidad + " ";
             lblQuebrado.setText(sMojadoQuebrado);
@@ -4823,7 +4959,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Spices7.getValueAt(Spices7.getSelectedRow(), 0) + "";
         intensidad = Spices7.getValueAt(Spices7.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sMojadoQuebrado += sabor.trim() + intensidad + " ";
             lblQuebrado.setText(sMojadoQuebrado);
@@ -4837,7 +4973,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Nutty7.getValueAt(Nutty7.getSelectedRow(), 0) + "";
         intensidad = Nutty7.getValueAt(Nutty7.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sMojadoQuebrado += sabor.trim() + intensidad + " ";
             lblQuebrado.setText(sMojadoQuebrado);
@@ -4851,7 +4987,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Body10.getValueAt(Body10.getSelectedRow(), 0) + "";
         intensidad = Body10.getValueAt(Body10.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sRemanente += sabor.trim() + intensidad + " ";
             lblRemanente.setText(sRemanente);
@@ -4865,7 +5001,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Finish10.getValueAt(Finish10.getSelectedRow(), 0) + "";
         intensidad = Finish10.getValueAt(Finish10.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sRemanente += sabor.trim() + intensidad + " ";
             lblRemanente.setText(sRemanente);
@@ -4879,7 +5015,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Sweet9.getValueAt(Sweet9.getSelectedRow(), 0) + "";
         intensidad = Sweet9.getValueAt(Sweet9.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sRemanente += sabor.trim() + intensidad + " ";
             lblRemanente.setText(sRemanente);
@@ -4893,7 +5029,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Floral9.getValueAt(Floral9.getSelectedRow(), 0) + "";
         intensidad = Floral9.getValueAt(Floral9.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sRemanente += sabor.trim() + intensidad + " ";
             lblRemanente.setText(sRemanente);
@@ -4907,7 +5043,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Fruit9.getValueAt(Fruit9.getSelectedRow(), 0) + "";
         intensidad = Fruit9.getValueAt(Fruit9.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sRemanente += sabor.trim() + intensidad + " ";
             lblRemanente.setText(sRemanente);
@@ -4921,7 +5057,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = SourFer9.getValueAt(SourFer9.getSelectedRow(), 0) + "";
         intensidad = SourFer9.getValueAt(SourFer9.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sRemanente += sabor.trim() + intensidad + " ";
             lblRemanente.setText(sRemanente);
@@ -4935,7 +5071,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = GreenVeg9.getValueAt(GreenVeg9.getSelectedRow(), 0) + "";
         intensidad = GreenVeg9.getValueAt(GreenVeg9.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sRemanente += sabor.trim() + intensidad + " ";
             lblRemanente.setText(sRemanente);
@@ -4949,7 +5085,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Other9.getValueAt(Other9.getSelectedRow(), 0) + "";
         intensidad = Other9.getValueAt(Other9.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sRemanente += sabor.trim() + intensidad + " ";
             lblRemanente.setText(sRemanente);
@@ -4963,7 +5099,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Roasted9.getValueAt(Roasted9.getSelectedRow(), 0) + "";
         intensidad = Roasted9.getValueAt(Roasted9.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sRemanente += sabor.trim() + intensidad + " ";
             lblRemanente.setText(sRemanente);
@@ -4977,7 +5113,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Spices9.getValueAt(Spices9.getSelectedRow(), 0) + "";
         intensidad = Spices9.getValueAt(Spices9.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sRemanente += sabor.trim() + intensidad + " ";
             lblRemanente.setText(sRemanente);
@@ -4991,7 +5127,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Nutty9.getValueAt(Nutty9.getSelectedRow(), 0) + "";
         intensidad = Nutty9.getValueAt(Nutty9.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sRemanente += sabor.trim() + intensidad + " ";
             lblRemanente.setText(sRemanente);
@@ -5005,7 +5141,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Body11.getValueAt(Body11.getSelectedRow(), 0) + "";
         intensidad = Body11.getValueAt(Body11.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sAcidez += sabor.trim() + intensidad + " ";
             lblAcidez.setText(sAcidez);
@@ -5019,7 +5155,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Finish11.getValueAt(Finish11.getSelectedRow(), 0) + "";
         intensidad = Finish11.getValueAt(Finish11.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sAcidez += sabor.trim() + intensidad + " ";
             lblAcidez.setText(sAcidez);
@@ -5033,7 +5169,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Sweet10.getValueAt(Sweet10.getSelectedRow(), 0) + "";
         intensidad = Sweet10.getValueAt(Sweet10.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sAcidez += sabor.trim() + intensidad + " ";
             lblAcidez.setText(sAcidez);
@@ -5047,7 +5183,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Floral10.getValueAt(Floral10.getSelectedRow(), 0) + "";
         intensidad = Floral10.getValueAt(Floral10.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sAcidez += sabor.trim() + intensidad + " ";
             lblAcidez.setText(sAcidez);
@@ -5061,7 +5197,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Fruit10.getValueAt(Fruit10.getSelectedRow(), 0) + "";
         intensidad = Fruit10.getValueAt(Fruit10.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sAcidez += sabor.trim() + intensidad + " ";
             lblAcidez.setText(sAcidez);
@@ -5075,7 +5211,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = SourFer10.getValueAt(SourFer10.getSelectedRow(), 0) + "";
         intensidad = SourFer10.getValueAt(SourFer10.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sAcidez += sabor.trim() + intensidad + " ";
             lblAcidez.setText(sAcidez);
@@ -5089,7 +5225,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = GreenVeg10.getValueAt(GreenVeg10.getSelectedRow(), 0) + "";
         intensidad = GreenVeg10.getValueAt(GreenVeg10.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sAcidez += sabor.trim() + intensidad + " ";
             lblAcidez.setText(sAcidez);
@@ -5103,7 +5239,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Other10.getValueAt(Other10.getSelectedRow(), 0) + "";
         intensidad = Other10.getValueAt(Other10.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sAcidez += sabor.trim() + intensidad + " ";
             lblAcidez.setText(sAcidez);
@@ -5117,7 +5253,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Roasted10.getValueAt(Roasted10.getSelectedRow(), 0) + "";
         intensidad = Roasted10.getValueAt(Roasted10.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sAcidez += sabor.trim() + intensidad + " ";
             lblAcidez.setText(sAcidez);
@@ -5131,7 +5267,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Spices10.getValueAt(Spices10.getSelectedRow(), 0) + "";
         intensidad = Spices10.getValueAt(Spices10.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sAcidez += sabor.trim() + intensidad + " ";
             lblAcidez.setText(sAcidez);
@@ -5145,7 +5281,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Nutty10.getValueAt(Nutty10.getSelectedRow(), 0) + "";
         intensidad = Nutty10.getValueAt(Nutty10.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sAcidez += sabor.trim() + intensidad + " ";
             lblAcidez.setText(sAcidez);
@@ -5159,7 +5295,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Body13.getValueAt(Body13.getSelectedRow(), 0) + "";
         intensidad = Body13.getValueAt(Body13.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sCuerpo += sabor.trim() + intensidad + " ";
             lblCuerpo.setText(sCuerpo);
@@ -5173,7 +5309,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Finish13.getValueAt(Finish13.getSelectedRow(), 0) + "";
         intensidad = Finish13.getValueAt(Finish13.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sCuerpo += sabor.trim() + intensidad + " ";
             lblCuerpo.setText(sCuerpo);
@@ -5187,7 +5323,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Sweet12.getValueAt(Sweet12.getSelectedRow(), 0) + "";
         intensidad = Sweet12.getValueAt(Sweet12.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sCuerpo += sabor.trim() + intensidad + " ";
             lblCuerpo.setText(sCuerpo);
@@ -5201,7 +5337,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Floral12.getValueAt(Floral12.getSelectedRow(), 0) + "";
         intensidad = Floral12.getValueAt(Floral12.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sCuerpo += sabor.trim() + intensidad + " ";
             lblCuerpo.setText(sCuerpo);
@@ -5215,7 +5351,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Fruit12.getValueAt(Fruit12.getSelectedRow(), 0) + "";
         intensidad = Fruit12.getValueAt(Fruit12.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sCuerpo += sabor.trim() + intensidad + " ";
             lblCuerpo.setText(sCuerpo);
@@ -5229,7 +5365,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = SourFer12.getValueAt(SourFer12.getSelectedRow(), 0) + "";
         intensidad = SourFer12.getValueAt(SourFer12.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sCuerpo += sabor.trim() + intensidad + " ";
             lblCuerpo.setText(sCuerpo);
@@ -5243,7 +5379,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = GreenVeg12.getValueAt(GreenVeg12.getSelectedRow(), 0) + "";
         intensidad = GreenVeg12.getValueAt(GreenVeg12.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sCuerpo += sabor.trim() + intensidad + " ";
             lblCuerpo.setText(sCuerpo);
@@ -5257,7 +5393,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Other12.getValueAt(Other12.getSelectedRow(), 0) + "";
         intensidad = Other12.getValueAt(Other12.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sCuerpo += sabor.trim() + intensidad + " ";
             lblCuerpo.setText(sCuerpo);
@@ -5271,7 +5407,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Roasted12.getValueAt(Roasted12.getSelectedRow(), 0) + "";
         intensidad = Roasted12.getValueAt(Roasted12.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sCuerpo += sabor.trim() + intensidad + " ";
             lblCuerpo.setText(sCuerpo);
@@ -5285,7 +5421,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Spices12.getValueAt(Spices12.getSelectedRow(), 0) + "";
         intensidad = Spices12.getValueAt(Spices12.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sCuerpo += sabor.trim() + intensidad + " ";
             lblCuerpo.setText(sCuerpo);
@@ -5299,7 +5435,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Nutty12.getValueAt(Nutty12.getSelectedRow(), 0) + "";
         intensidad = Nutty12.getValueAt(Nutty12.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sCuerpo += sabor.trim() + intensidad + " ";
             lblCuerpo.setText(sCuerpo);
@@ -5313,7 +5449,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Nutty8.getValueAt(Nutty8.getSelectedRow(), 0) + "";
         intensidad = Nutty8.getValueAt(Nutty8.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sSabor += sabor.trim() + intensidad + " ";
             lblSabor.setText(sSabor);
@@ -5327,7 +5463,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Spices8.getValueAt(Spices8.getSelectedRow(), 0) + "";
         intensidad = Spices8.getValueAt(Spices8.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sSabor += sabor.trim() + intensidad + " ";
             lblSabor.setText(sSabor);
@@ -5341,7 +5477,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Roasted8.getValueAt(Roasted8.getSelectedRow(), 0) + "";
         intensidad = Roasted8.getValueAt(Roasted8.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sSabor += sabor.trim() + intensidad + " ";
             lblSabor.setText(sSabor);
@@ -5355,7 +5491,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Other8.getValueAt(Other8.getSelectedRow(), 0) + "";
         intensidad = Other8.getValueAt(Other8.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sSabor += sabor.trim() + intensidad + " ";
             lblSabor.setText(sSabor);
@@ -5369,7 +5505,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = GreenVeg8.getValueAt(GreenVeg8.getSelectedRow(), 0) + "";
         intensidad = GreenVeg8.getValueAt(GreenVeg8.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sSabor += sabor.trim() + intensidad + " ";
             lblSabor.setText(sSabor);
@@ -5383,7 +5519,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = SourFer8.getValueAt(SourFer8.getSelectedRow(), 0) + "";
         intensidad = SourFer8.getValueAt(SourFer8.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sSabor += sabor.trim() + intensidad + " ";
             lblSabor.setText(sSabor);
@@ -5397,7 +5533,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Fruit8.getValueAt(Fruit8.getSelectedRow(), 0) + "";
         intensidad = Fruit8.getValueAt(Fruit8.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sSabor += sabor.trim() + intensidad + " ";
             lblSabor.setText(sSabor);
@@ -5411,7 +5547,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Floral8.getValueAt(Floral8.getSelectedRow(), 0) + "";
         intensidad = Floral8.getValueAt(Floral8.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sSabor += sabor.trim() + intensidad + " ";
             lblSabor.setText(sSabor);
@@ -5425,7 +5561,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Sweet8.getValueAt(Sweet8.getSelectedRow(), 0) + "";
         intensidad = Sweet8.getValueAt(Sweet8.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sSabor += sabor.trim() + intensidad + " ";
             lblSabor.setText(sSabor);
@@ -5439,7 +5575,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Finish9.getValueAt(Finish9.getSelectedRow(), 0) + "";
         intensidad = Finish9.getValueAt(Finish9.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sSabor += sabor.trim() + intensidad + " ";
             lblSabor.setText(sSabor);
@@ -5453,7 +5589,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         String sabor = "", intensidad = "";
         sabor = Body9.getValueAt(Body9.getSelectedRow(), 0) + "";
         intensidad = Body9.getValueAt(Body9.getSelectedRow(), 1) + "";
-
+        
         if (intensidad.equals("1") || intensidad.equals("2") || intensidad.equals("3")) {
             sSabor += sabor.trim() + intensidad + " ";
             lblSabor.setText(sSabor);
@@ -5466,6 +5602,11 @@ public class jdCatacion2 extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_SourFer8KeyTyped
 
+    private void slUniTostadoStateChanged(javax.swing.event.ChangeEvent evt) {//GEN-FIRST:event_slUniTostadoStateChanged
+        // TODO add your handling code here:
+        lblUniTos.setText(slUniTostado.getValue()+"");
+    }//GEN-LAST:event_slUniTostadoStateChanged
+    
     String sSeco = "";
     String sMojadoQuebrado = "";
     String sSabor = "";
@@ -5473,12 +5614,12 @@ public class jdCatacion2 extends javax.swing.JFrame {
     String sAcidez = "";
     String sCuerpo = "";
     String cadenaSabores = "", cadenaOlores = "";
-
+    
     public void guardar() {
-        cadenaSabores = "Sabor:" + lblSabor.getText() + ", Sabor Remanente:" + lblRemanente.getText() + ", Acidez:" + lblAcidez.getText()+ ", Cuerpo:"+lblCuerpo.getText();
-
+        cadenaSabores = "Sabor:" + lblSabor.getText() + ", Sabor Remanente:" + lblRemanente.getText() + ", Acidez:" + lblAcidez.getText() + ", Cuerpo:" + lblCuerpo.getText();
+        
         cadenaOlores = "Seco:" + lblSeco.getText() + ", Mojado/Quebrado:" + lblQuebrado.getText();
-
+        
         JOptionPane.showMessageDialog(null, "Sabores:" + cadenaSabores + "\nOlores:" + cadenaOlores);
         String fecha = null;
         if (txtFecha.getDate() != null) {
@@ -5493,18 +5634,18 @@ public class jdCatacion2 extends javax.swing.JFrame {
         }
         if (fecha != null) {
             try {
-
+                
                 mdb.insertarBasicos("insert into catacion values "
                         + "(null," + id + "," + slNivelTostado.getValue() + "," + slUniTostado.getValue() + ","
                         + Quakers.getText() + ",'" + lblPuntuacion.getText() + "'," + txtTazasCat.getText() + ","
                         + txtDefectos.getText() + "," + txtNoTazas.getText() + "," + txtIntensidad.getText() + ","
                         + txtUniTaza.getText() + "," + txtTazaLim.getText() + "," + txtDulzor.getText() + ",'"
                         + txtSeco.getText() + "','" + txtMojado.getText() + "','" + txtQuebrado.getText() + "','"
-                        + lblFragancia.getText() + "','" + txtSabor.getText() + "','" + txtAftertaste.getText() + "','"
+                        + lblFragancia.getText() + "','" + txtSabor.getText() + "','" + txtSaborRemanente.getText() + "','"
                         + txtAcidez.getText() + "','" + spAcidezInt.getValue() + "','" + txtCuerpo.getText() + "','"
                         + spCuerpoInt.getValue() + "','" + txtBalance.getText() + "','"
                         + txtCatador.getText() + "','Consenso','" + fecha + "','" + lblDenTos.getText() + "')");
-
+                
                 mdb.actualizarBasicos("update bitacoralab set taza='1', estatus='" + estatus + "', "
                         + "sabores= '" + cadenaSabores + "', olores='" + cadenaOlores + "' where id_bitacora=" + id);
                 //jpCT.llenarTabla();
@@ -5690,6 +5831,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel32;
     private javax.swing.JLabel jLabel33;
     private javax.swing.JLabel jLabel34;
+    private javax.swing.JLabel jLabel35;
     private javax.swing.JLabel jLabel37;
     private javax.swing.JLabel jLabel4;
     private javax.swing.JLabel jLabel5;
@@ -5810,21 +5952,12 @@ public class jdCatacion2 extends javax.swing.JFrame {
     private javax.swing.JLabel lblRemanente;
     private javax.swing.JLabel lblSabor;
     private javax.swing.JLabel lblSeco;
-    private javax.swing.JSlider slAcidez;
-    private javax.swing.JSlider slAftertaste;
-    private javax.swing.JSlider slBalance;
-    private javax.swing.JSlider slCatador;
-    private javax.swing.JSlider slCuerpo;
-    private javax.swing.JSlider slMojado;
+    private javax.swing.JLabel lblUniTos;
     private javax.swing.JSlider slNivelTostado;
-    private javax.swing.JSlider slQuebrado;
-    private javax.swing.JSlider slSabor;
-    private javax.swing.JSlider slSeco;
     private javax.swing.JSlider slUniTostado;
     private javax.swing.JSpinner spAcidezInt;
     private javax.swing.JSpinner spCuerpoInt;
     private javax.swing.JTextField txtAcidez;
-    private javax.swing.JTextField txtAftertaste;
     private javax.swing.JTextField txtBalance;
     private javax.swing.JTextField txtCatador;
     private javax.swing.JTextField txtCuerpo;
@@ -5836,6 +5969,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
     private javax.swing.JTextField txtNoTazas;
     private javax.swing.JTextField txtQuebrado;
     private javax.swing.JTextField txtSabor;
+    private javax.swing.JTextField txtSaborRemanente;
     private javax.swing.JTextField txtSeco;
     private javax.swing.JTextField txtTazaLim;
     private javax.swing.JTextField txtTazasCat;

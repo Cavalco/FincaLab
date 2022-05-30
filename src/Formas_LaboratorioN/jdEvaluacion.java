@@ -56,6 +56,12 @@ public class jdEvaluacion extends javax.swing.JFrame {
         jRadioButton1.isSelected();
 
         df = new DecimalFormat("#.0");
+        desactivarCajas("Materia");
+        
+        if(lblTipo.getText().equals("No Lavado"))
+        {
+            pesoPelados.setEnabled(false);
+        }
 
     }
 
@@ -4928,6 +4934,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
         });
 
         buttonGroup1.add(jRadioButton2);
+        jRadioButton2.setSelected(true);
         jRadioButton2.setText("Materia Prima");
         jRadioButton2.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -4984,15 +4991,16 @@ public class jdEvaluacion extends javax.swing.JFrame {
                     .addComponent(jLabel5)
                     .addComponent(jLabel66))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(lblCSM, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(lblComunidad)
-                    .addComponent(lblTipo)
-                    .addComponent(lblCalC)
-                    .addComponent(lblForma)
+                .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(jRadioButton1)
-                        .addComponent(jRadioButton2)))
+                        .addComponent(jRadioButton2))
+                    .addGroup(jPanel6Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(lblCSM, javax.swing.GroupLayout.PREFERRED_SIZE, 14, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(lblComunidad)
+                        .addComponent(lblTipo)
+                        .addComponent(lblCalC)
+                        .addComponent(lblForma)))
                 .addContainerGap(11, Short.MAX_VALUE))
         );
 
@@ -7805,7 +7813,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (Double.parseDouble(txtHumedadOro.getText()) <= 9
                 || Double.parseDouble(txtHumedadOro.getText()) >= 12) {
-            JOptionPane.showMessageDialog(null, "Humedad Oro Fuera de Parametros");
+            JOptionPane.showMessageDialog(null, "Humedad Oro Deseada: 10% - 11.5%");
         }
     }//GEN-LAST:event_txtHumedadOroFocusLost
 
@@ -7813,7 +7821,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
         // TODO add your handling code here:
         if (Double.parseDouble(txtHumedadCas.getText()) <= 9
                 || Double.parseDouble(txtHumedadCas.getText()) >= 12) {
-            JOptionPane.showMessageDialog(null, "Humedad Cascara Fuera de Parametros");
+            JOptionPane.showMessageDialog(null, "Humedad Cascara Deseada: 10% - 11.5%");
         }
     }//GEN-LAST:event_txtHumedadCasFocusLost
 

@@ -293,13 +293,13 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
 
         jLabel16.setText("Beneficio");
 
-        cmbBeneficio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione..", "Arrocera", "Lima", "Pantano", "Rustico", "Sandia", "Cuerno", "Cintepec" }));
+        cmbBeneficio.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione..", "ARROCERA", "CONCHA", "PANTANO", "RUSTICO", "SANDIA", "BANCO COLORADO1", "BANCO COLORADO2", "GUAJOLOTE", "SOMBRERO", "TEMPIZQUE", "CINTEPEC" }));
 
         cmbComunidad.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
 
         jLabel17.setText("Comunidad");
 
-        cmbUbicacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione..", "Arrocera", "Lima", "Pantano", "Rustico", "Sandia", "Cuerno", "Cintepec" }));
+        cmbUbicacion.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione..", "ARROCERA", "CONCHA", "PANTANO", "RUSTICO", "SANDIA", "CUERNO", "CINTEPEC" }));
 
         jLabel18.setText("Ubicación del Café");
 
@@ -323,7 +323,7 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
         jLabel37.setText("*");
 
         txtTemporada.setEditable(false);
-        txtTemporada.setText("2021-2022");
+        txtTemporada.setText("AD");
 
         javax.swing.GroupLayout jPanel5Layout = new javax.swing.GroupLayout(jPanel5);
         jPanel5.setLayout(jPanel5Layout);
@@ -829,7 +829,7 @@ public class jdNuevaMuestra extends javax.swing.JFrame {
         txtTemporada.setText("");
         txtTomadaPor.setText("");
         cmbRecibida.setSelectedIndex(0);
-        //       cmbTransportada.setSelectedIndex(0);
+        //cmbTransportada.setSelectedIndex(0);
     }
 
     /**

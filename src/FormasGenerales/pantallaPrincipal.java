@@ -793,7 +793,7 @@ public class pantallaPrincipal extends javax.swing.JFrame {
             panelPrincipal.repaint();
 
         } else if (idioma.getProperty("BitacoraLaboratorio").equals(tipo)) {
-            jpBitacora jpCPre = new jpBitacora(cn, Idioma);
+            jpReporteLaboratorio jpCPre = new jpReporteLaboratorio(cn, Idioma);
             jpCPre.setSize(size);
             jpCPre.setLocation(0, 0);
             panelPrincipal.removeAll();
@@ -2418,10 +2418,10 @@ public class pantallaPrincipal extends javax.swing.JFrame {
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("ModuloLaboratorio"));
         javax.swing.tree.DefaultMutableTreeNode treeNode2 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("MuestrasRecibidas"));
         javax.swing.tree.DefaultMutableTreeNode treeNode3 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("BitacoraLaboratorio"));
-        javax.swing.tree.DefaultMutableTreeNode treeNode4 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("ReporteGeneral"));
+       // javax.swing.tree.DefaultMutableTreeNode treeNode4 = new javax.swing.tree.DefaultMutableTreeNode(idioma.getProperty("ReporteGeneral"));
         treeNode1.add(treeNode2);
         treeNode1.add(treeNode3);
-        treeNode1.add(treeNode4);
+      //  treeNode1.add(treeNode4);
 
         jTree1.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
 
