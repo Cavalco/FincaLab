@@ -260,14 +260,18 @@ public class excel {
         c19 = my_worksheet.getRow(8).getCell(11);
         if (c19 == null) {
             c19 = my_worksheet.getRow(8).createCell(11);
+        }if (datos[18].equals("null")) {
+        } else {
+            c19.setCellValue(datos[18]);
         }
-        c19.setCellValue(datos[18]);
-
+        
         c20 = my_worksheet.getRow(9).getCell(11);
         if (c20 == null) {
             c20 = my_worksheet.getRow(9).createCell(11);
-        }
-        c20.setCellValue(datos[19]);
+        }if (datos[19].equals("null")) {
+        } else {
+            c20.setCellValue(datos[19]);
+        }    
 
         c21 = my_worksheet.getRow(10).getCell(14);
         if (c21 == null) {
@@ -281,21 +285,27 @@ public class excel {
         c22 = my_worksheet.getRow(6).getCell(19);
         if (c22 == null) {
             c22 = my_worksheet.getRow(6).createCell(19);
+        }if (datos[21].equals("null")) {
+        } else {
+            c22.setCellValue(datos[21]);
         }
-        c22.setCellValue(datos[21]);
-
+        
         c23 = my_worksheet.getRow(7).getCell(19);
         if (c23 == null) {
             c23 = my_worksheet.getRow(7).createCell(19);
+        }if (datos[22].equals("null")) {
+        } else {
+            c23.setCellValue(datos[22]);
         }
-        c23.setCellValue(datos[22]);
-
+        
         c24 = my_worksheet.getRow(9).getCell(19);
         if (c24 == null) {
             c24 = my_worksheet.getRow(9).createCell(19);
+        }if (datos[23].equals("null")) {
+        } else {
+            c24.setCellValue(datos[23]);
         }
-        c24.setCellValue(datos[23]);
-
+        
         c25 = my_worksheet.getRow(10).getCell(19);
         if (c25 == null) {
             c25 = my_worksheet.getRow(10).createCell(19);
@@ -327,102 +337,157 @@ public class excel {
         if (c28 == null) {
             c28 = my_worksheet.getRow(12).createCell(21);
         }
-        c28.setCellValue(Double.parseDouble(datos[27]));
+        if (datos[27].equals("null")) {
+        } else {
+            c28.setCellValue(Double.parseDouble(datos[27]));
+        }        
 
         c29 = my_worksheet.getRow(14).getCell(1);
         if (c29 == null) {
             c29 = my_worksheet.getRow(14).createCell(1);
         }
-        c29.setCellValue(Double.parseDouble(datos[28]));
+        if (datos[28].equals("null")) {
+        } else {
+            c29.setCellValue(Double.parseDouble(datos[28]));
+        }        
 
         c30 = my_worksheet.getRow(14).getCell(16);
         if (c30 == null) {
             c30 = my_worksheet.getRow(14).createCell(16);
         }
-        c30.setCellValue(Double.parseDouble(datos[29]));
+        if (datos[29].equals("null")) {
+        } else {
+            c30.setCellValue(Double.parseDouble(datos[29]));
+        }        
 
         c31 = my_worksheet.getRow(14).getCell(21);
         if (c31 == null) {
             c31 = my_worksheet.getRow(14).createCell(21);
         }
-        c31.setCellValue(Double.parseDouble(datos[30]));
+        if (datos[30].equals("null")) {
+        } else {
+            c31.setCellValue(Double.parseDouble(datos[30]));
+        }        
 
         c32 = my_worksheet.getRow(14).getCell(26);
         if (c32 == null) {
             c32 = my_worksheet.getRow(14).createCell(26);
         }
-        c32.setCellValue(Double.parseDouble(datos[31]));
+        if (datos[31].equals("null")) {
+        } else {
+            c32.setCellValue(Double.parseDouble(datos[31]));
+        }        
 
         c33 = my_worksheet.getRow(15).getCell(3);
         if (c33 == null) {
             c33 = my_worksheet.getRow(15).createCell(3);
         }
-        c33.setCellValue(Double.parseDouble(datos[32]));
+        if (datos[32].equals("null")) {
+        } else {
+            c33.setCellValue(Double.parseDouble(datos[32]));
+        }        
 
         c34 = my_worksheet.getRow(15).getCell(5);
         if (c34 == null) {
             c34 = my_worksheet.getRow(15).createCell(5);
         }
-        c34.setCellValue(Double.parseDouble(datos[33]));
+        if (datos[33].equals("null")) {
+        } else {
+            c34.setCellValue(Double.parseDouble(datos[33]));
+        }
 
         c35 = my_worksheet.getRow(15).getCell(9);
         if (c35 == null) {
             c35 = my_worksheet.getRow(15).createCell(9);
         }
-        c35.setCellValue(Double.parseDouble(datos[34]));
+        if (datos[34].equals("null")) {
+        } else {
+            c35.setCellValue(Double.parseDouble(datos[34]));
+        }        
 
         c36 = my_worksheet.getRow(16).getCell(15);
         if (c36 == null) {
             c36 = my_worksheet.getRow(16).createCell(15);
         }
-        c36.setCellValue(Double.parseDouble(datos[35]));
+        if (datos[35].equals("null")) {
+        } else {
+            c36.setCellValue(Double.parseDouble(datos[35]));
+        }
 
         c37 = my_worksheet.getRow(16).getCell(21);
         if (c37 == null) {
             c37 = my_worksheet.getRow(16).createCell(21);
         }
-        c37.setCellValue(Double.parseDouble(datos[36]));
+        if (datos[36].equals("null")) {
+        } else {
+            c37.setCellValue(Double.parseDouble(datos[36]));
+        }        
 
         c38 = my_worksheet.getRow(17).getCell(4);
         if (c38 == null) {
             c38 = my_worksheet.getRow(17).createCell(4);
         }
-        c38.setCellValue(Double.parseDouble(datos[37]));
+        if (datos[37].equals("null")) {
+        } else {
+            c38.setCellValue(Double.parseDouble(datos[37]));
+        }        
 
         c39 = my_worksheet.getRow(17).getCell(11);
         if (c39 == null) {
             c39 = my_worksheet.getRow(17).createCell(11);
         }
-        c39.setCellValue(Double.parseDouble(datos[38]));
+        if (datos[38].equals("null")) {
+        } else {
+            c39.setCellValue(Double.parseDouble(datos[38]));
+        }        
+        
         c40 = my_worksheet.getRow(17).getCell(26);
         if (c40 == null) {
             c40 = my_worksheet.getRow(17).createCell(26);
         }
-        c40.setCellValue(Double.parseDouble(datos[39]));
-
+        if (datos[39].equals("null")) {
+        } else {
+            c40.setCellValue(Double.parseDouble(datos[39]));
+        }
+        
         c41 = my_worksheet.getRow(18).getCell(11);
         if (c41 == null) {
             c41 = my_worksheet.getRow(18).createCell(11);
         }
-        c41.setCellValue(Double.parseDouble(datos[40]));
+        if (datos[40].equals("null")) {
+        } else {
+            c41.setCellValue(Double.parseDouble(datos[40]));
+        }        
 
         c42 = my_worksheet.getRow(18).getCell(16);
         if (c42 == null) {
             c42 = my_worksheet.getRow(18).createCell(16);
         }
-        c42.setCellValue(Double.parseDouble(datos[41]));
+        if (datos[41].equals("null")) {
+        } else {
+            c42.setCellValue(Double.parseDouble(datos[41]));
+        }
+        
 
         c43 = my_worksheet.getRow(18).getCell(21);
         if (c43 == null) {
             c43 = my_worksheet.getRow(18).createCell(21);
         }
-        c43.setCellValue(Double.parseDouble(datos[42]));
+        if (datos[42].equals("null")) {
+        } else {
+            c43.setCellValue(Double.parseDouble(datos[42]));
+        }
+        
 
         c44 = my_worksheet.getRow(18).getCell(26);
         if (c44 == null) {
             c44 = my_worksheet.getRow(18).createCell(26);
         }
-        c44.setCellValue(Double.parseDouble(datos[43]));
+        if (datos[43].equals("null")) {
+        } else {
+            c44.setCellValue(Double.parseDouble(datos[43]));
+        }
+        
 
         //cribas 19
         c45 = my_worksheet.getRow(23).getCell(2);

@@ -7,6 +7,7 @@ package Formas_LaboratorioN;
 
 import Formas_laboratorio.jpBitacora;
 import Metodos_Configuraciones.metodosLaboratorio;
+import java.awt.Color;
 import java.awt.Dimension;
 import java.sql.Connection;
 import java.text.DecimalFormat;
@@ -919,7 +920,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         });
 
         txtSeco.setEditable(false);
-        txtSeco.setText("0.0");
+        txtSeco.setText("7.0");
 
         btnMas.setText("+");
         btnMas.addActionListener(new java.awt.event.ActionListener() {
@@ -936,7 +937,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         });
 
         txtMojado.setEditable(false);
-        txtMojado.setText("0.0");
+        txtMojado.setText("7.0");
 
         btnMas2.setText("+");
         btnMas2.addActionListener(new java.awt.event.ActionListener() {
@@ -953,7 +954,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         });
 
         txtQuebrado.setEditable(false);
-        txtQuebrado.setText("0.0");
+        txtQuebrado.setText("7.0");
 
         btnMas3.setText("+");
         btnMas3.addActionListener(new java.awt.event.ActionListener() {
@@ -970,7 +971,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         });
 
         txtSabor.setEditable(false);
-        txtSabor.setText("0.0");
+        txtSabor.setText("7.0");
 
         jButton11.setText("+");
         jButton11.addActionListener(new java.awt.event.ActionListener() {
@@ -987,7 +988,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         });
 
         txtSaborRemanente.setEditable(false);
-        txtSaborRemanente.setText("0.0");
+        txtSaborRemanente.setText("7.0");
 
         jButton13.setText("+");
         jButton13.addActionListener(new java.awt.event.ActionListener() {
@@ -1004,7 +1005,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         });
 
         txtAcidez.setEditable(false);
-        txtAcidez.setText("0.0");
+        txtAcidez.setText("7.0");
 
         jButton15.setText("+");
         jButton15.addActionListener(new java.awt.event.ActionListener() {
@@ -1021,7 +1022,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         });
 
         txtCuerpo.setEditable(false);
-        txtCuerpo.setText("0.0");
+        txtCuerpo.setText("7.0");
 
         jButton17.setText("+");
         jButton17.addActionListener(new java.awt.event.ActionListener() {
@@ -1038,7 +1039,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         });
 
         txtBalance.setEditable(false);
-        txtBalance.setText("0.0");
+        txtBalance.setText("7.0");
 
         jButton19.setText("+");
         jButton19.addActionListener(new java.awt.event.ActionListener() {
@@ -1055,7 +1056,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         });
 
         txtCatador.setEditable(false);
-        txtCatador.setText("0.0");
+        txtCatador.setText("7.0");
 
         jButton21.setText("+");
         jButton21.addActionListener(new java.awt.event.ActionListener() {
@@ -4303,25 +4304,29 @@ public class jdCatacion2 extends javax.swing.JFrame {
     private void jButton21ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton21ActionPerformed
         // TODO add your handling code here:
         // slCatador.setValue(slCatador.getValue() + 50);
-        if (slCatador < 0 || slCatador > 10) {
+        if (slCatador >= 10.0) {
             JOptionPane.showMessageDialog(null, "Limite");
         } else {
             slCatador = slCatador + 0.5;
             txtCatador.setText(slCatador + "");
         }
+        if(txtCatador.getText() != "7.0")
+            txtCatador.setBackground(Color.CYAN);
         promedio();
         formula();
     }//GEN-LAST:event_jButton21ActionPerformed
-    Double slCatador = 0.0;
+    Double slCatador = 7.0;
     private void jButton20ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton20ActionPerformed
         // TODO add your handling code here:
         // slCatador.setValue(slCatador.getValue() - 50);
-        if (slCatador < 0 || slCatador > 10) {
+        if (slCatador <= 4.0) {
             JOptionPane.showMessageDialog(null, "Limite");
         } else {
             slCatador = slCatador - 0.5;
             txtCatador.setText(slCatador + "");
         }
+        if(txtCatador.getText() != "7.0")
+            txtCatador.setBackground(Color.CYAN);
         promedio();
         formula();
     }//GEN-LAST:event_jButton20ActionPerformed
@@ -4329,25 +4334,29 @@ public class jdCatacion2 extends javax.swing.JFrame {
     private void jButton19ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton19ActionPerformed
         // TODO add your handling code here:
         //  slBalance.setValue(slBalance.getValue() + 50);
-        if (slBalance < 0 || slBalance > 10) {
+        if (slBalance >= 10.0) {
             JOptionPane.showMessageDialog(null, "Limite");
         } else {
             slBalance = slBalance + 0.5;
             txtBalance.setText(slBalance + "");
         }
+        if(txtBalance.getText() != "7.0")
+            txtBalance.setBackground(Color.CYAN);
         promedio();
         formula();
     }//GEN-LAST:event_jButton19ActionPerformed
-    Double slBalance = 0.0;
+    Double slBalance = 7.0;
     private void jButton18ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton18ActionPerformed
         // TODO add your handling code here:
         //  slBalance.setValue(slBalance.getValue() - 50);
-        if (slBalance < 0 || slBalance > 10) {
+        if (slBalance <= 4.0) {
             JOptionPane.showMessageDialog(null, "Limite");
         } else {
             slBalance = slBalance - 0.5;
             txtBalance.setText(slBalance + "");
         }
+        if(txtBalance.getText() != "7.0")
+            txtBalance.setBackground(Color.CYAN);
         promedio();
         formula();
     }//GEN-LAST:event_jButton18ActionPerformed
@@ -4355,25 +4364,29 @@ public class jdCatacion2 extends javax.swing.JFrame {
     private void jButton17ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton17ActionPerformed
         // TODO add your handling code here:
         // slCuerpo.setValue(slCuerpo.getValue() + 50);
-        if (slCuerpo < 0 || slCuerpo > 10) {
+        if (slCuerpo >= 10.0) {
             JOptionPane.showMessageDialog(null, "Limite");
         } else {
             slCuerpo = slCuerpo + 0.5;
             txtCuerpo.setText(slCuerpo + "");
         }
+        if(txtCuerpo.getText() != "7.0")
+            txtCuerpo.setBackground(Color.CYAN);
         promedio();
         formula();
     }//GEN-LAST:event_jButton17ActionPerformed
-    Double slCuerpo = 0.0;
+    Double slCuerpo = 7.0;
     private void jButton16ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton16ActionPerformed
         // TODO add your handling code here:
         //   slCuerpo.setValue(slCuerpo.getValue() - 50);
-        if (slCuerpo < 0 || slCuerpo > 10) {
+        if (slCuerpo <= 4.0) {
             JOptionPane.showMessageDialog(null, "Limite");
         } else {
             slCuerpo = slCuerpo - 0.5;
             txtCuerpo.setText(slCuerpo + "");
         }
+        if(txtCuerpo.getText() != "7.0")
+            txtCuerpo.setBackground(Color.CYAN);
         promedio();
         formula();
     }//GEN-LAST:event_jButton16ActionPerformed
@@ -4381,25 +4394,29 @@ public class jdCatacion2 extends javax.swing.JFrame {
     private void jButton15ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton15ActionPerformed
         // TODO add your handling code here:
         //  slAcidez.setValue(slAcidez.getValue() + 50);
-        if (slAcidez < 0 || slAcidez > 10) {
+        if (slAcidez >= 10.0) {
             JOptionPane.showMessageDialog(null, "Limite");
         } else {
             slAcidez = slAcidez + 0.5;
             txtAcidez.setText(slAcidez + "");
         }
+        if(txtAcidez.getText() != "7.0")
+            txtAcidez.setBackground(Color.CYAN);
         promedio();
         formula();
     }//GEN-LAST:event_jButton15ActionPerformed
-    Double slAcidez = 0.0;
+    Double slAcidez = 7.0;
     private void jButton14ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton14ActionPerformed
         // TODO add your handling code here:
         //  slAcidez.setValue(slAcidez.getValue() - 50);
-        if (slAcidez < 0 || slAcidez > 10) {
+        if (slAcidez <= 4.0) {
             JOptionPane.showMessageDialog(null, "Limite");
         } else {
             slAcidez = slAcidez - 0.5;
             txtAcidez.setText(slAcidez + "");
         }
+        if(txtAcidez.getText() != "7.0")
+            txtAcidez.setBackground(Color.CYAN);
         promedio();
         formula();
     }//GEN-LAST:event_jButton14ActionPerformed
@@ -4407,25 +4424,29 @@ public class jdCatacion2 extends javax.swing.JFrame {
     private void jButton13ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton13ActionPerformed
         // TODO add your handling code here:
         //slAftertaste.setValue(slAftertaste.getValue() + 50);
-        if (slSaborRemanente < 0 || slSaborRemanente > 10) {
+        if (slSaborRemanente >= 10) {
             JOptionPane.showMessageDialog(null, "Limite");
         } else {
             slSaborRemanente = slSaborRemanente + 0.5;
             txtSaborRemanente.setText(slSaborRemanente + "");
         }
+        if(txtSaborRemanente.getText() != "7.0")
+            txtSaborRemanente.setBackground(Color.CYAN);
         promedio();
         formula();
     }//GEN-LAST:event_jButton13ActionPerformed
-    Double slSaborRemanente = 0.0;
+    Double slSaborRemanente = 7.0;
     private void jButton12ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton12ActionPerformed
         // TODO add your handling code here:
         //  slAftertaste.setValue(slAftertaste.getValue() - 50);
-        if (slSaborRemanente < 0 || slSaborRemanente > 10) {
+        if (slSaborRemanente <= 4.0) {
             JOptionPane.showMessageDialog(null, "Limite");
         } else {
             slSaborRemanente = slSaborRemanente - 0.5;
             txtSaborRemanente.setText(slSaborRemanente + "");
         }
+        if(txtSaborRemanente.getText() != "7.0")
+            txtSaborRemanente.setBackground(Color.CYAN);
         promedio();
         formula();
     }//GEN-LAST:event_jButton12ActionPerformed
@@ -4433,25 +4454,29 @@ public class jdCatacion2 extends javax.swing.JFrame {
     private void jButton11ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton11ActionPerformed
         // TODO add your handling code here:
         //  slSabor.setValue(slSabor.getValue() + 50);
-        if (slSabor < 0 || slSabor > 10) {
+        if (slSabor >= 10.0) {
             JOptionPane.showMessageDialog(null, "Limite");
         } else {
             slSabor = slSabor + 0.5;
             txtSabor.setText(slSabor + "");
         }
+        if(txtSabor.getText() != "7.0")
+            txtSabor.setBackground(Color.CYAN);
         promedio();
         formula();
     }//GEN-LAST:event_jButton11ActionPerformed
-    Double slSabor = 0.0;
+    Double slSabor = 7.0;
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
         // TODO add your handling code here:
         //  slSabor.setValue(slSabor.getValue() - 50);
-        if (slSabor < 0 || slSabor > 10) {
+        if (slSabor <= 4.0) {
             JOptionPane.showMessageDialog(null, "Limite");
         } else {
             slSabor = slSabor - 0.5;
             txtSabor.setText(slSabor + "");
         }
+        if(txtSabor.getText() != "7.0")
+            txtSabor.setBackground(Color.CYAN);
         promedio();
         formula();
     }//GEN-LAST:event_jButton10ActionPerformed
@@ -4459,25 +4484,29 @@ public class jdCatacion2 extends javax.swing.JFrame {
     private void btnMas3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMas3ActionPerformed
         // TODO add your handling code here:
         //  slQuebrado.setValue(slQuebrado.getValue() + 50);
-        if (slQuebrado < 0 || slQuebrado > 10) {
+        if (slQuebrado >= 10.0) {
             JOptionPane.showMessageDialog(null, "Limite");
         } else {
             slQuebrado = slQuebrado + 0.5;
             txtQuebrado.setText(slQuebrado + "");
         }
+        if(txtQuebrado.getText() != "7.0")
+            txtQuebrado.setBackground(Color.CYAN);
         promedio();
         formula();
     }//GEN-LAST:event_btnMas3ActionPerformed
-    Double slQuebrado = 0.0;
+    Double slQuebrado = 7.0;
     private void btnMenos3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenos3ActionPerformed
         // TODO add your handling code here:
         //  slQuebrado.setValue(slQuebrado.getValue() - 50);
-        if (slQuebrado < 0 || slQuebrado > 10) {
+        if (slQuebrado <= 4.0) {
             JOptionPane.showMessageDialog(null, "Limite");
         } else {
             slQuebrado = slQuebrado - 0.5;
             txtQuebrado.setText(slQuebrado + "");
         }
+        if(txtQuebrado.getText() != "7.0")
+            txtQuebrado.setBackground(Color.CYAN);
         promedio();
         formula();
     }//GEN-LAST:event_btnMenos3ActionPerformed
@@ -4485,25 +4514,28 @@ public class jdCatacion2 extends javax.swing.JFrame {
     private void btnMas2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMas2ActionPerformed
         // TODO add your handling code here:
         // slMojado.setValue(slMojado.getValue() + 50);
-        if (slMojado < 0 || slMojado > 10) {
+        if (slMojado >= 10.0) {
             JOptionPane.showMessageDialog(null, "Limite");
         } else {
             slMojado = slMojado + 0.5;
             txtMojado.setText(slMojado + "");
         }
+        if(txtMojado.getText() != "7.0")
+            txtMojado.setBackground(Color.CYAN);
         promedio();
         formula();
     }//GEN-LAST:event_btnMas2ActionPerformed
-    Double slMojado = 0.0;
+    Double slMojado = 7.0;
     private void btnMenos2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenos2ActionPerformed
         // TODO add your handling code here:
-        if (slMojado <= 0 || slMojado >= 10) {
+        if (slMojado <= 4.0) {
             JOptionPane.showMessageDialog(null, "Limite");
         } else {
             slMojado = slMojado - 0.5;
             txtMojado.setText(slMojado + "");
         }
-        
+        if(txtMojado.getText() != "7.0")
+            txtMojado.setBackground(Color.CYAN);
         promedio();
         formula();
     }//GEN-LAST:event_btnMenos2ActionPerformed
@@ -4511,25 +4543,29 @@ public class jdCatacion2 extends javax.swing.JFrame {
     private void btnMasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMasActionPerformed
         // TODO add your handling code here:
         //  slSeco.setValue(slSeco.getValue() + 50);
-        if (slSeco < 0 || slSeco > 10) {
+        if (slSeco >= 10.0) {
             JOptionPane.showMessageDialog(null, "Limite");
         } else {
             slSeco = slSeco + 0.5;
             txtSeco.setText(slSeco + "");
         }
+        if(txtSeco.getText() != "7.0")
+            txtSeco.setBackground(Color.CYAN);
         promedio();
         formula();
     }//GEN-LAST:event_btnMasActionPerformed
-    Double slSeco = 0.0;
+    Double slSeco = 7.0;
     private void btnMenosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnMenosActionPerformed
         // TODO add your handling code here:
         //   slSeco.setValue(slSeco.getValue() - 50);
-        if (slSeco < 0 || slSeco > 10) {
+        if (slSeco <= 4.0) {
             JOptionPane.showMessageDialog(null, "Limite");
         } else {
             slSeco = slSeco - 0.5;
             txtSeco.setText(slSeco + "");
         }
+        if(txtSeco.getText() != "7.0")
+            txtSeco.setBackground(Color.CYAN);
         promedio();
         formula();
     }//GEN-LAST:event_btnMenosActionPerformed

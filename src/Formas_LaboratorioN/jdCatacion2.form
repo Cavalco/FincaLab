@@ -1063,7 +1063,7 @@
                 <Component class="javax.swing.JTextField" name="txtSeco">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
-                    <Property name="text" type="java.lang.String" value="0.0"/>
+                    <Property name="text" type="java.lang.String" value="7.0"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnMas">
@@ -1085,7 +1085,7 @@
                 <Component class="javax.swing.JTextField" name="txtMojado">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
-                    <Property name="text" type="java.lang.String" value="0.0"/>
+                    <Property name="text" type="java.lang.String" value="7.0"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnMas2">
@@ -1107,7 +1107,7 @@
                 <Component class="javax.swing.JTextField" name="txtQuebrado">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
-                    <Property name="text" type="java.lang.String" value="0.0"/>
+                    <Property name="text" type="java.lang.String" value="7.0"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="btnMas3">
@@ -1129,7 +1129,7 @@
                 <Component class="javax.swing.JTextField" name="txtSabor">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
-                    <Property name="text" type="java.lang.String" value="0.0"/>
+                    <Property name="text" type="java.lang.String" value="7.0"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton11">
@@ -1151,7 +1151,7 @@
                 <Component class="javax.swing.JTextField" name="txtSaborRemanente">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
-                    <Property name="text" type="java.lang.String" value="0.0"/>
+                    <Property name="text" type="java.lang.String" value="7.0"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton13">
@@ -1173,7 +1173,7 @@
                 <Component class="javax.swing.JTextField" name="txtAcidez">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
-                    <Property name="text" type="java.lang.String" value="0.0"/>
+                    <Property name="text" type="java.lang.String" value="7.0"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton15">
@@ -1195,7 +1195,7 @@
                 <Component class="javax.swing.JTextField" name="txtCuerpo">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
-                    <Property name="text" type="java.lang.String" value="0.0"/>
+                    <Property name="text" type="java.lang.String" value="7.0"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton17">
@@ -1221,7 +1221,7 @@
                 <Component class="javax.swing.JTextField" name="txtBalance">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
-                    <Property name="text" type="java.lang.String" value="0.0"/>
+                    <Property name="text" type="java.lang.String" value="7.0"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton19">
@@ -1243,7 +1243,7 @@
                 <Component class="javax.swing.JTextField" name="txtCatador">
                   <Properties>
                     <Property name="editable" type="boolean" value="false"/>
-                    <Property name="text" type="java.lang.String" value="0.0"/>
+                    <Property name="text" type="java.lang.String" value="7.0"/>
                   </Properties>
                 </Component>
                 <Component class="javax.swing.JButton" name="jButton21">
