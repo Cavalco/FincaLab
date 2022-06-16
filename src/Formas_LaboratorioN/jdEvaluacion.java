@@ -95,7 +95,8 @@ public class jdEvaluacion extends javax.swing.JFrame {
         if (taza.equals("1")) {
             estatus = "Disp";
         }
-        g[2] = "update bitacoralab set aspecto='1'  where id_bitacora=" + id + "";
+     
+        g[2] = "update bitacoralab set aspecto='1', estatus='"+estatus+"'  where id_bitacora=" + id + "";
 
         if (!txtPeso.equals("0")) {
             if (!txtHumedadOro.equals("")) {
