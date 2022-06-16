@@ -52,14 +52,13 @@ public class jdEvaluacion extends javax.swing.JFrame {
         lblForma.setText(forma);
         lblCalC.setText(calcer);
         mdb = new metodosLaboratorio(cn, "");
-        
+
         jRadioButton1.isSelected();
 
         df = new DecimalFormat("#.0");
         desactivarCajas("Materia");
-        
-        if(lblTipo.getText().equals("No Lavado"))
-        {
+
+        if (lblTipo.getText().equals("No Lavado")) {
             pesoPelados.setEnabled(false);
         }
 
@@ -205,7 +204,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
             V1.setEnabled(true);
             W1.setEnabled(true);
             X1.setEnabled(true);
-            
+
             //Criba 18
             K2.setEnabled(true);
             L2.setEnabled(true);
@@ -292,7 +291,6 @@ public class jdEvaluacion extends javax.swing.JFrame {
             W6.setEnabled(true);
             X6.setEnabled(true);
 
-            
         } else {
             //Criba 19
             K1.setEnabled(false);
@@ -305,7 +303,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
             V1.setEnabled(false);
             W1.setEnabled(false);
             X1.setEnabled(false);
-            
+
             //Criba 18
             K2.setEnabled(false);
             L2.setEnabled(false);
@@ -1452,6 +1450,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
         jLabel64 = new javax.swing.JLabel();
         pesoPelados = new javax.swing.JTextField();
         jLabel65 = new javax.swing.JLabel();
+        jLabel67 = new javax.swing.JLabel();
         jLabel56 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
@@ -1542,6 +1541,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 A2KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                A2KeyTyped(evt);
+            }
         });
 
         jLabel23.setText("Peso:");
@@ -1559,6 +1561,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 A1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                A1KeyTyped(evt);
+            }
         });
 
         A3.setText("0");
@@ -1573,6 +1578,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         A3.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 A3KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                A3KeyTyped(evt);
             }
         });
 
@@ -1589,6 +1597,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 A5KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                A5KeyTyped(evt);
+            }
         });
 
         A6.setText("0");
@@ -1603,6 +1614,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         A6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 A6KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                A6KeyTyped(evt);
             }
         });
 
@@ -1627,6 +1641,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         A4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 A4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                A4KeyTyped(evt);
             }
         });
 
@@ -1694,6 +1711,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 B1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                B1KeyTyped(evt);
+            }
         });
 
         B2.setText("0");
@@ -1708,6 +1728,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         B2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 B2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                B2KeyTyped(evt);
             }
         });
 
@@ -1724,6 +1747,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 B3KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                B3KeyTyped(evt);
+            }
         });
 
         B4.setText("0");
@@ -1738,6 +1764,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         B4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 B4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                B4KeyTyped(evt);
             }
         });
 
@@ -1754,6 +1783,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 B5KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                B5KeyTyped(evt);
+            }
         });
 
         B6.setText("0");
@@ -1768,6 +1800,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         B6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 B6KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                B6KeyTyped(evt);
             }
         });
 
@@ -1788,6 +1823,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 C1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                C1KeyTyped(evt);
+            }
         });
 
         C2.setText("0");
@@ -1802,6 +1840,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         C2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 C2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                C2KeyTyped(evt);
             }
         });
 
@@ -1818,6 +1859,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 C3KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                C3KeyTyped(evt);
+            }
         });
 
         C4.setText("0");
@@ -1832,6 +1876,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         C4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 C4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                C4KeyTyped(evt);
             }
         });
 
@@ -1848,6 +1895,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 C5KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                C5KeyTyped(evt);
+            }
         });
 
         C6.setText("0");
@@ -1862,6 +1912,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         C6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 C6KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                C6KeyTyped(evt);
             }
         });
 
@@ -1882,6 +1935,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 D1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                D1KeyTyped(evt);
+            }
         });
 
         D2.setText("0");
@@ -1896,6 +1952,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         D2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 D2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                D2KeyTyped(evt);
             }
         });
 
@@ -1912,6 +1971,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 D3KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                D3KeyTyped(evt);
+            }
         });
 
         D4.setText("0");
@@ -1926,6 +1988,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         D4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 D4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                D4KeyTyped(evt);
             }
         });
 
@@ -1942,6 +2007,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 D5KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                D5KeyTyped(evt);
+            }
         });
 
         D6.setText("0");
@@ -1956,6 +2024,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         D6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 D6KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                D6KeyTyped(evt);
             }
         });
 
@@ -1976,6 +2047,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 E1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                E1KeyTyped(evt);
+            }
         });
 
         E2.setText("0");
@@ -1990,6 +2064,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         E2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 E2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                E2KeyTyped(evt);
             }
         });
 
@@ -2006,6 +2083,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 E3KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                E3KeyTyped(evt);
+            }
         });
 
         E4.setText("0");
@@ -2020,6 +2100,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         E4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 E4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                E4KeyTyped(evt);
             }
         });
 
@@ -2036,6 +2119,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 E5KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                E5KeyTyped(evt);
+            }
         });
 
         E6.setText("0");
@@ -2050,6 +2136,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         E6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 E6KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                E6KeyTyped(evt);
             }
         });
 
@@ -2070,6 +2159,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 F1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                F1KeyTyped(evt);
+            }
         });
 
         F2.setText("0");
@@ -2084,6 +2176,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         F2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 F2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                F2KeyTyped(evt);
             }
         });
 
@@ -2100,6 +2195,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 F3KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                F3KeyTyped(evt);
+            }
         });
 
         F4.setText("0");
@@ -2114,6 +2212,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         F4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 F4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                F4KeyTyped(evt);
             }
         });
 
@@ -2130,6 +2231,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 F5KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                F5KeyTyped(evt);
+            }
         });
 
         F6.setText("0");
@@ -2144,6 +2248,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         F6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 F6KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                F6KeyTyped(evt);
             }
         });
 
@@ -2164,6 +2271,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 G1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                G1KeyTyped(evt);
+            }
         });
 
         G2.setText("0");
@@ -2178,6 +2288,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         G2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 G2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                G2KeyTyped(evt);
             }
         });
 
@@ -2194,6 +2307,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 G3KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                G3KeyTyped(evt);
+            }
         });
 
         G4.setText("0");
@@ -2208,6 +2324,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         G4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 G4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                G4KeyTyped(evt);
             }
         });
 
@@ -2224,6 +2343,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 G5KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                G5KeyTyped(evt);
+            }
         });
 
         G6.setText("0");
@@ -2238,6 +2360,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         G6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 G6KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                G6KeyTyped(evt);
             }
         });
 
@@ -2258,6 +2383,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 H1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                H1KeyTyped(evt);
+            }
         });
 
         H2.setText("0");
@@ -2272,6 +2400,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         H2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 H2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                H2KeyTyped(evt);
             }
         });
 
@@ -2288,6 +2419,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 H3KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                H3KeyTyped(evt);
+            }
         });
 
         H4.setText("0");
@@ -2302,6 +2436,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         H4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 H4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                H4KeyTyped(evt);
             }
         });
 
@@ -2318,6 +2455,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 H5KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                H5KeyTyped(evt);
+            }
         });
 
         H6.setText("0");
@@ -2332,6 +2472,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         H6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 H6KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                H6KeyTyped(evt);
             }
         });
 
@@ -2352,6 +2495,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 I1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                I1KeyTyped(evt);
+            }
         });
 
         I2.setText("0");
@@ -2366,6 +2512,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         I2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 I2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                I2KeyTyped(evt);
             }
         });
 
@@ -2382,6 +2531,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 I3KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                I3KeyTyped(evt);
+            }
         });
 
         I4.setText("0");
@@ -2396,6 +2548,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         I4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 I4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                I4KeyTyped(evt);
             }
         });
 
@@ -2412,6 +2567,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 I5KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                I5KeyTyped(evt);
+            }
         });
 
         I6.setText("0");
@@ -2426,6 +2584,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         I6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 I6KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                I6KeyTyped(evt);
             }
         });
 
@@ -2446,6 +2607,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 O1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                O1KeyTyped(evt);
+            }
         });
 
         O2.setText("0");
@@ -2460,6 +2624,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         O2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 O2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                O2KeyTyped(evt);
             }
         });
 
@@ -2476,6 +2643,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 O3KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                O3KeyTyped(evt);
+            }
         });
 
         O4.setText("0");
@@ -2490,6 +2660,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         O4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 O4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                O4KeyTyped(evt);
             }
         });
 
@@ -2506,6 +2679,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 O5KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                O5KeyTyped(evt);
+            }
         });
 
         O6.setText("0");
@@ -2520,6 +2696,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         O6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 O6KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                O6KeyTyped(evt);
             }
         });
 
@@ -2540,6 +2719,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 J1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                J1KeyTyped(evt);
+            }
         });
 
         J2.setText("0");
@@ -2554,6 +2736,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         J2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 J2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                J2KeyTyped(evt);
             }
         });
 
@@ -2570,6 +2755,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 J3KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                J3KeyTyped(evt);
+            }
         });
 
         J4.setText("0");
@@ -2584,6 +2772,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         J4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 J4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                J4KeyTyped(evt);
             }
         });
 
@@ -2600,6 +2791,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 J5KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                J5KeyTyped(evt);
+            }
         });
 
         J6.setText("0");
@@ -2614,6 +2808,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         J6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 J6KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                J6KeyTyped(evt);
             }
         });
 
@@ -2634,6 +2831,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 K1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                K1KeyTyped(evt);
+            }
         });
 
         K2.setText("0");
@@ -2648,6 +2848,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         K2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 K2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                K2KeyTyped(evt);
             }
         });
 
@@ -2664,6 +2867,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 K3KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                K3KeyTyped(evt);
+            }
         });
 
         K4.setText("0");
@@ -2678,6 +2884,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         K4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 K4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                K4KeyTyped(evt);
             }
         });
 
@@ -2694,6 +2903,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 K5KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                K5KeyTyped(evt);
+            }
         });
 
         K6.setText("0");
@@ -2708,6 +2920,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         K6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 K6KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                K6KeyTyped(evt);
             }
         });
 
@@ -2728,6 +2943,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 L1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                L1KeyTyped(evt);
+            }
         });
 
         L2.setText("0");
@@ -2742,6 +2960,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         L2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 L2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                L2KeyTyped(evt);
             }
         });
 
@@ -2758,6 +2979,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 L3KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                L3KeyTyped(evt);
+            }
         });
 
         L4.setText("0");
@@ -2772,6 +2996,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         L4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 L4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                L4KeyTyped(evt);
             }
         });
 
@@ -2788,6 +3015,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 L5KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                L5KeyTyped(evt);
+            }
         });
 
         L6.setText("0");
@@ -2802,6 +3032,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         L6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 L6KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                L6KeyTyped(evt);
             }
         });
 
@@ -2822,6 +3055,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 M1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                M1KeyTyped(evt);
+            }
         });
 
         M2.setText("0");
@@ -2836,6 +3072,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         M2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 M2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                M2KeyTyped(evt);
             }
         });
 
@@ -2852,6 +3091,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 M3KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                M3KeyTyped(evt);
+            }
         });
 
         M4.setText("0");
@@ -2866,6 +3108,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         M4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 M4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                M4KeyTyped(evt);
             }
         });
 
@@ -2882,6 +3127,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 M5KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                M5KeyTyped(evt);
+            }
         });
 
         M6.setText("0");
@@ -2896,6 +3144,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         M6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 M6KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                M6KeyTyped(evt);
             }
         });
 
@@ -2916,6 +3167,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 N1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                N1KeyTyped(evt);
+            }
         });
 
         N2.setText("0");
@@ -2930,6 +3184,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         N2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 N2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                N2KeyTyped(evt);
             }
         });
 
@@ -2946,6 +3203,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 N3KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                N3KeyTyped(evt);
+            }
         });
 
         N4.setText("0");
@@ -2960,6 +3220,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         N4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 N4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                N4KeyTyped(evt);
             }
         });
 
@@ -2976,6 +3239,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 N5KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                N5KeyTyped(evt);
+            }
         });
 
         N6.setText("0");
@@ -2990,6 +3256,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         N6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 N6KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                N6KeyTyped(evt);
             }
         });
 
@@ -3010,6 +3279,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 P1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                P1KeyTyped(evt);
+            }
         });
 
         P2.setText("0");
@@ -3024,6 +3296,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         P2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 P2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                P2KeyTyped(evt);
             }
         });
 
@@ -3040,6 +3315,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 P3KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                P3KeyTyped(evt);
+            }
         });
 
         P4.setText("0");
@@ -3054,6 +3332,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         P4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 P4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                P4KeyTyped(evt);
             }
         });
 
@@ -3070,6 +3351,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyPressed(java.awt.event.KeyEvent evt) {
                 P5KeyPressed(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                P5KeyTyped(evt);
+            }
         });
 
         P6.setText("0");
@@ -3084,6 +3368,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         P6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 P6KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                P6KeyTyped(evt);
             }
         });
 
@@ -3104,6 +3391,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Q1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Q1KeyTyped(evt);
+            }
         });
 
         Q2.setText("0");
@@ -3118,6 +3408,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         Q2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Q2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Q2KeyTyped(evt);
             }
         });
 
@@ -3134,6 +3427,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Q3KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Q3KeyTyped(evt);
+            }
         });
 
         Q4.setText("0");
@@ -3148,6 +3444,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         Q4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Q4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Q4KeyTyped(evt);
             }
         });
 
@@ -3164,6 +3463,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Q5KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Q5KeyTyped(evt);
+            }
         });
 
         Q6.setText("0");
@@ -3178,6 +3480,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         Q6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 Q6KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                Q6KeyTyped(evt);
             }
         });
 
@@ -3198,6 +3503,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 R1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                R1KeyTyped(evt);
+            }
         });
 
         R2.setText("0");
@@ -3212,6 +3520,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         R2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 R2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                R2KeyTyped(evt);
             }
         });
 
@@ -3228,6 +3539,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 R3KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                R3KeyTyped(evt);
+            }
         });
 
         R4.setText("0");
@@ -3242,6 +3556,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         R4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 R4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                R4KeyTyped(evt);
             }
         });
 
@@ -3258,6 +3575,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 R5KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                R5KeyTyped(evt);
+            }
         });
 
         R6.setText("0");
@@ -3272,6 +3592,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         R6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 R6KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                R6KeyTyped(evt);
             }
         });
 
@@ -3292,6 +3615,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 S1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                S1KeyTyped(evt);
+            }
         });
 
         S2.setText("0");
@@ -3306,6 +3632,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         S2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 S2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                S2KeyTyped(evt);
             }
         });
 
@@ -3322,6 +3651,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 S3KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                S3KeyTyped(evt);
+            }
         });
 
         S4.setText("0");
@@ -3336,6 +3668,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         S4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 S4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                S4KeyTyped(evt);
             }
         });
 
@@ -3352,6 +3687,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 S5KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                S5KeyTyped(evt);
+            }
         });
 
         S6.setText("0");
@@ -3366,6 +3704,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         S6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 S6KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                S6KeyTyped(evt);
             }
         });
 
@@ -3386,6 +3727,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 T1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                T1KeyTyped(evt);
+            }
         });
 
         T2.setText("0");
@@ -3400,6 +3744,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         T2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 T2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                T2KeyTyped(evt);
             }
         });
 
@@ -3416,6 +3763,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 T3KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                T3KeyTyped(evt);
+            }
         });
 
         T4.setText("0");
@@ -3430,6 +3780,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         T4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 T4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                T4KeyTyped(evt);
             }
         });
 
@@ -3446,6 +3799,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 T5KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                T5KeyTyped(evt);
+            }
         });
 
         T6.setText("0");
@@ -3460,6 +3816,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         T6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 T6KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                T6KeyTyped(evt);
             }
         });
 
@@ -3480,6 +3839,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 U1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                U1KeyTyped(evt);
+            }
         });
 
         U2.setText("0");
@@ -3494,6 +3856,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         U2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 U2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                U2KeyTyped(evt);
             }
         });
 
@@ -3510,6 +3875,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 U3KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                U3KeyTyped(evt);
+            }
         });
 
         U4.setText("0");
@@ -3524,6 +3892,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         U4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 U4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                U4KeyTyped(evt);
             }
         });
 
@@ -3540,6 +3911,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 U5KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                U5KeyTyped(evt);
+            }
         });
 
         U6.setText("0");
@@ -3554,6 +3928,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         U6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 U6KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                U6KeyTyped(evt);
             }
         });
 
@@ -3574,6 +3951,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 V1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                V1KeyTyped(evt);
+            }
         });
 
         V2.setText("0");
@@ -3588,6 +3968,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         V2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 V2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                V2KeyTyped(evt);
             }
         });
 
@@ -3604,6 +3987,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 V3KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                V3KeyTyped(evt);
+            }
         });
 
         V4.setText("0");
@@ -3618,6 +4004,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         V4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 V4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                V4KeyTyped(evt);
             }
         });
 
@@ -3634,6 +4023,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 V5KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                V5KeyTyped(evt);
+            }
         });
 
         V6.setText("0");
@@ -3648,6 +4040,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         V6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 V6KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                V6KeyTyped(evt);
             }
         });
 
@@ -3668,6 +4063,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 W1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                W1KeyTyped(evt);
+            }
         });
 
         W2.setText("0");
@@ -3682,6 +4080,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         W2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 W2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                W2KeyTyped(evt);
             }
         });
 
@@ -3698,6 +4099,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 W3KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                W3KeyTyped(evt);
+            }
         });
 
         W4.setText("0");
@@ -3712,6 +4116,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         W4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 W4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                W4KeyTyped(evt);
             }
         });
 
@@ -3728,6 +4135,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 W5KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                W5KeyTyped(evt);
+            }
         });
 
         W6.setText("0");
@@ -3742,6 +4152,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         W6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 W6KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                W6KeyTyped(evt);
             }
         });
 
@@ -3762,6 +4175,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 X1KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                X1KeyTyped(evt);
+            }
         });
 
         X2.setText("0");
@@ -3776,6 +4192,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         X2.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 X2KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                X2KeyTyped(evt);
             }
         });
 
@@ -3792,6 +4211,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 X3KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                X3KeyTyped(evt);
+            }
         });
 
         X4.setText("0");
@@ -3806,6 +4228,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         X4.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 X4KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                X4KeyTyped(evt);
             }
         });
 
@@ -3822,6 +4247,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 X5KeyReleased(evt);
             }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                X5KeyTyped(evt);
+            }
         });
 
         X6.setText("0");
@@ -3836,6 +4264,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         X6.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyReleased(java.awt.event.KeyEvent evt) {
                 X6KeyReleased(evt);
+            }
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                X6KeyTyped(evt);
             }
         });
 
@@ -5097,6 +5528,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
         jLabel65.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel65.setText("g");
 
+        jLabel67.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
+        jLabel67.setText("g/ml");
+
         javax.swing.GroupLayout jPanel2Layout = new javax.swing.GroupLayout(jPanel2);
         jPanel2.setLayout(jPanel2Layout);
         jPanel2Layout.setHorizontalGroup(
@@ -5115,7 +5549,6 @@ public class jdEvaluacion extends javax.swing.JFrame {
                             .addComponent(lblPuntuacion, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(jLabel10, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                     .addComponent(jLabel62, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(txtDenOro)
                     .addComponent(jLabel13, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(cbEvaluador, 0, 160, Short.MAX_VALUE)
                     .addComponent(txtObservaciones)
@@ -5176,7 +5609,11 @@ public class jdEvaluacion extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(pesoPelados, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jLabel65)))))
+                                .addComponent(jLabel65))))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel2Layout.createSequentialGroup()
+                        .addComponent(txtDenOro)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                        .addComponent(jLabel67)))
                 .addContainerGap())
         );
         jPanel2Layout.setVerticalGroup(
@@ -5224,7 +5661,9 @@ public class jdEvaluacion extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jLabel13)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(txtDenOro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(txtDenOro, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel67))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(pesoCapulines, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -7866,6 +8305,1302 @@ public class jdEvaluacion extends javax.swing.JFrame {
         desactivarCajas("Materia");
     }//GEN-LAST:event_jRadioButton2ActionPerformed
 
+    private void B1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B1KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_B1KeyTyped
+
+    private void B2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B2KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_B2KeyTyped
+
+    private void B3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B3KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_B3KeyTyped
+
+    private void B4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B4KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_B4KeyTyped
+
+    private void B5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B5KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_B5KeyTyped
+
+    private void B6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_B6KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_B6KeyTyped
+
+    private void C1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_C1KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_C1KeyTyped
+
+    private void C2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_C2KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_C2KeyTyped
+
+    private void C3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_C3KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_C3KeyTyped
+
+    private void C4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_C4KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_C4KeyTyped
+
+    private void C5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_C5KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_C5KeyTyped
+
+    private void C6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_C6KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_C6KeyTyped
+
+    private void D1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_D1KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_D1KeyTyped
+
+    private void D2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_D2KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_D2KeyTyped
+
+    private void D3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_D3KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_D3KeyTyped
+
+    private void D4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_D4KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_D4KeyTyped
+
+    private void D5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_D5KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_D5KeyTyped
+
+    private void D6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_D6KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_D6KeyTyped
+
+    private void E1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_E1KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_E1KeyTyped
+
+    private void E2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_E2KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_E2KeyTyped
+
+    private void E3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_E3KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_E3KeyTyped
+
+    private void E4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_E4KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_E4KeyTyped
+
+    private void E5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_E5KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_E5KeyTyped
+
+    private void E6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_E6KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_E6KeyTyped
+
+    private void F1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_F1KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_F1KeyTyped
+
+    private void F2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_F2KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_F2KeyTyped
+
+    private void F3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_F3KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_F3KeyTyped
+
+    private void F4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_F4KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_F4KeyTyped
+
+    private void F5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_F5KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_F5KeyTyped
+
+    private void F6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_F6KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_F6KeyTyped
+
+    private void G1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_G1KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_G1KeyTyped
+
+    private void G2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_G2KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_G2KeyTyped
+
+    private void G3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_G3KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_G3KeyTyped
+
+    private void G4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_G4KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_G4KeyTyped
+
+    private void G5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_G5KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_G5KeyTyped
+
+    private void G6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_G6KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_G6KeyTyped
+
+    private void H1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_H1KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_H1KeyTyped
+
+    private void H2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_H2KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_H2KeyTyped
+
+    private void H3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_H3KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_H3KeyTyped
+
+    private void H4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_H4KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_H4KeyTyped
+
+    private void H5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_H5KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_H5KeyTyped
+
+    private void H6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_H6KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_H6KeyTyped
+
+    private void I1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_I1KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_I1KeyTyped
+
+    private void I2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_I2KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_I2KeyTyped
+
+    private void I3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_I3KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_I3KeyTyped
+
+    private void I4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_I4KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_I4KeyTyped
+
+    private void I5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_I5KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_I5KeyTyped
+
+    private void I6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_I6KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_I6KeyTyped
+
+    private void O1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_O1KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_O1KeyTyped
+
+    private void O2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_O2KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_O2KeyTyped
+
+    private void O3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_O3KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_O3KeyTyped
+
+    private void O4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_O4KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_O4KeyTyped
+
+    private void O5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_O5KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_O5KeyTyped
+
+    private void O6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_O6KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_O6KeyTyped
+
+    private void J1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_J1KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_J1KeyTyped
+
+    private void J2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_J2KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_J2KeyTyped
+
+    private void J3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_J3KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_J3KeyTyped
+
+    private void J4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_J4KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_J4KeyTyped
+
+    private void J5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_J5KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_J5KeyTyped
+
+    private void J6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_J6KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_J6KeyTyped
+
+    private void K1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_K1KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_K1KeyTyped
+
+    private void K2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_K2KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_K2KeyTyped
+
+    private void K3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_K3KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_K3KeyTyped
+
+    private void K4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_K4KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_K4KeyTyped
+
+    private void K5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_K5KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_K5KeyTyped
+
+    private void K6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_K6KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_K6KeyTyped
+
+    private void L1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_L1KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_L1KeyTyped
+
+    private void L2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_L2KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_L2KeyTyped
+
+    private void L3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_L3KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_L3KeyTyped
+
+    private void L4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_L4KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_L4KeyTyped
+
+    private void L5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_L5KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_L5KeyTyped
+
+    private void L6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_L6KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_L6KeyTyped
+
+    private void M1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M1KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_M1KeyTyped
+
+    private void M2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M2KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_M2KeyTyped
+
+    private void M3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M3KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_M3KeyTyped
+
+    private void M4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M4KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_M4KeyTyped
+
+    private void M5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M5KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_M5KeyTyped
+
+    private void M6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_M6KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_M6KeyTyped
+
+    private void N1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_N1KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_N1KeyTyped
+
+    private void N2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_N2KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_N2KeyTyped
+
+    private void N3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_N3KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_N3KeyTyped
+
+    private void N4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_N4KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_N4KeyTyped
+
+    private void N5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_N5KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_N5KeyTyped
+
+    private void N6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_N6KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_N6KeyTyped
+
+    private void P1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_P1KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_P1KeyTyped
+
+    private void P2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_P2KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_P2KeyTyped
+
+    private void P3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_P3KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_P3KeyTyped
+
+    private void P4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_P4KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_P4KeyTyped
+
+    private void P5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_P5KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_P5KeyTyped
+
+    private void P6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_P6KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_P6KeyTyped
+
+    private void Q1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Q1KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_Q1KeyTyped
+
+    private void Q2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Q2KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_Q2KeyTyped
+
+    private void Q3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Q3KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_Q3KeyTyped
+
+    private void Q4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Q4KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_Q4KeyTyped
+
+    private void Q5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Q5KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_Q5KeyTyped
+
+    private void Q6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_Q6KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_Q6KeyTyped
+
+    private void R1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_R1KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_R1KeyTyped
+
+    private void R2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_R2KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_R2KeyTyped
+
+    private void R3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_R3KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_R3KeyTyped
+
+    private void R4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_R4KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_R4KeyTyped
+
+    private void R5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_R5KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_R5KeyTyped
+
+    private void R6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_R6KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_R6KeyTyped
+
+    private void S1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_S1KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_S1KeyTyped
+
+    private void S2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_S2KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_S2KeyTyped
+
+    private void S3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_S3KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_S3KeyTyped
+
+    private void S4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_S4KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_S4KeyTyped
+
+    private void S5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_S5KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_S5KeyTyped
+
+    private void S6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_S6KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_S6KeyTyped
+
+    private void T1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_T1KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_T1KeyTyped
+
+    private void T2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_T2KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_T2KeyTyped
+
+    private void T3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_T3KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_T3KeyTyped
+
+    private void T4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_T4KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_T4KeyTyped
+
+    private void T5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_T5KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_T5KeyTyped
+
+    private void T6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_T6KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_T6KeyTyped
+
+    private void U1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_U1KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_U1KeyTyped
+
+    private void U2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_U2KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_U2KeyTyped
+
+    private void U3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_U3KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_U3KeyTyped
+
+    private void U4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_U4KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_U4KeyTyped
+
+    private void U5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_U5KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_U5KeyTyped
+
+    private void U6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_U6KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_U6KeyTyped
+
+    private void V1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_V1KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_V1KeyTyped
+
+    private void V2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_V2KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_V2KeyTyped
+
+    private void V3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_V3KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_V3KeyTyped
+
+    private void V4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_V4KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_V4KeyTyped
+
+    private void V5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_V5KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_V5KeyTyped
+
+    private void V6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_V6KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_V6KeyTyped
+
+    private void W1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_W1KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_W1KeyTyped
+
+    private void W2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_W2KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_W2KeyTyped
+
+    private void W3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_W3KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_W3KeyTyped
+
+    private void W4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_W4KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_W4KeyTyped
+
+    private void W5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_W5KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_W5KeyTyped
+
+    private void W6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_W6KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_W6KeyTyped
+
+    private void X1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_X1KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_X1KeyTyped
+
+    private void X2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_X2KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_X2KeyTyped
+
+    private void X3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_X3KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_X3KeyTyped
+
+    private void X4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_X4KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_X4KeyTyped
+
+    private void X5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_X5KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_X5KeyTyped
+
+    private void X6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_X6KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_X6KeyTyped
+
+    private void A1KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A1KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_A1KeyTyped
+
+    private void A2KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A2KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_A2KeyTyped
+
+    private void A3KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A3KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_A3KeyTyped
+
+    private void A4KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A4KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_A4KeyTyped
+
+    private void A5KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A5KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_A5KeyTyped
+
+    private void A6KeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_A6KeyTyped
+        // TODO add your handling code here:
+        int key = evt.getKeyChar();
+        boolean numeros = key >= 48 && key <= 57;
+        if (!numeros) {
+            evt.consume();
+        }
+    }//GEN-LAST:event_A6KeyTyped
+
     /**
      * @param args the command line arguments
      */
@@ -8185,6 +9920,7 @@ public class jdEvaluacion extends javax.swing.JFrame {
     public javax.swing.JLabel jLabel64;
     public javax.swing.JLabel jLabel65;
     public javax.swing.JLabel jLabel66;
+    public javax.swing.JLabel jLabel67;
     public javax.swing.JLabel jLabel7;
     public javax.swing.JLabel jLabel8;
     public javax.swing.JLabel jLabel9;

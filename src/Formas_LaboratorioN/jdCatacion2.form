@@ -1372,6 +1372,9 @@
                       <SubComponents>
                         <Component class="javax.swing.JTable" name="Body2">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                            </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="4">
                                 <Column editable="false" title="10 Cuerpo" type="java.lang.Object">
@@ -1418,6 +1421,9 @@
                       <SubComponents>
                         <Component class="javax.swing.JTable" name="Finish2">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                            </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="4">
                                 <Column editable="false" title="11 Sabor Rem." type="java.lang.Object">
@@ -2043,6 +2049,9 @@
                       <SubComponents>
                         <Component class="javax.swing.JTable" name="Body8">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                            </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="4">
                                 <Column editable="false" title="10 Cuerpo" type="java.lang.Object">
@@ -2088,6 +2097,9 @@
                       <SubComponents>
                         <Component class="javax.swing.JTable" name="Finish8">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                            </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="4">
                                 <Column editable="false" title="11 Sabor Rem." type="java.lang.Object">
@@ -2712,6 +2724,9 @@
                       <SubComponents>
                         <Component class="javax.swing.JTable" name="Body9">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                            </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="4">
                                 <Column editable="false" title="10 Cuerpo" type="java.lang.Object">
@@ -2757,6 +2772,9 @@
                       <SubComponents>
                         <Component class="javax.swing.JTable" name="Finish9">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                            </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="4">
                                 <Column editable="false" title="11 Sabor Rem." type="java.lang.Object">
@@ -3382,6 +3400,9 @@
                       <SubComponents>
                         <Component class="javax.swing.JTable" name="Body10">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                            </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="4">
                                 <Column editable="false" title="10 Cuerpo" type="java.lang.Object">
@@ -4050,6 +4071,9 @@
                       <SubComponents>
                         <Component class="javax.swing.JTable" name="Body11">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                            </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="4">
                                 <Column editable="false" title="10 Cuerpo" type="java.lang.Object">
@@ -4095,6 +4119,9 @@
                       <SubComponents>
                         <Component class="javax.swing.JTable" name="Finish11">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                            </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="4">
                                 <Column editable="false" title="11 Sabor Rem." type="java.lang.Object">
@@ -4141,7 +4168,7 @@
                         <Component class="javax.swing.JTable" name="Sweet10">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="66" green="66" red="ff" type="rgb"/>
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="9">
@@ -4193,7 +4220,7 @@
                         <Component class="javax.swing.JTable" name="Floral10">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="66" green="99" red="ff" type="rgb"/>
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="5">
@@ -4361,7 +4388,7 @@
                         <Component class="javax.swing.JTable" name="GreenVeg10">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="66" green="ff" red="66" type="rgb"/>
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="11">
@@ -4415,7 +4442,7 @@
                         <Component class="javax.swing.JTable" name="Other10">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="ff" red="33" type="rgb"/>
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="18">
@@ -4476,7 +4503,7 @@
                         <Component class="javax.swing.JTable" name="Roasted10">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="cc" red="0" type="rgb"/>
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="10">
@@ -4529,7 +4556,7 @@
                         <Component class="javax.swing.JTable" name="Spices10">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="99" red="99" type="rgb"/>
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="7">
@@ -4579,7 +4606,7 @@
                         <Component class="javax.swing.JTable" name="Nutty10">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="cc" green="66" red="ff" type="rgb"/>
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="7">
@@ -4764,6 +4791,9 @@
                       <SubComponents>
                         <Component class="javax.swing.JTable" name="Finish13">
                           <Properties>
+                            <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
+                            </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="4">
                                 <Column editable="false" title="11 Sabor Rem." type="java.lang.Object">
@@ -4809,7 +4839,7 @@
                         <Component class="javax.swing.JTable" name="Sweet12">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="66" green="66" red="ff" type="rgb"/>
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="9">
@@ -4862,7 +4892,7 @@
                         <Component class="javax.swing.JTable" name="Floral12">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="66" green="99" red="ff" type="rgb"/>
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="5">
@@ -4911,7 +4941,7 @@
                         <Component class="javax.swing.JTable" name="Fruit12">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="0" green="cc" red="ff" type="rgb"/>
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="22">
@@ -4977,7 +5007,7 @@
                         <Component class="javax.swing.JTable" name="SourFer12">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="99" green="ff" red="ff" type="rgb"/>
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="12">
@@ -5033,7 +5063,7 @@
                         <Component class="javax.swing.JTable" name="GreenVeg12">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="66" green="ff" red="66" type="rgb"/>
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="11">
@@ -5088,7 +5118,7 @@
                         <Component class="javax.swing.JTable" name="Other12">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="ff" red="33" type="rgb"/>
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="18">
@@ -5150,7 +5180,7 @@
                         <Component class="javax.swing.JTable" name="Roasted12">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="cc" red="0" type="rgb"/>
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="10">
@@ -5204,7 +5234,7 @@
                         <Component class="javax.swing.JTable" name="Spices12">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="ff" green="99" red="99" type="rgb"/>
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="7">
@@ -5255,7 +5285,7 @@
                         <Component class="javax.swing.JTable" name="Nutty12">
                           <Properties>
                             <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
-                              <Color blue="cc" green="66" red="ff" type="rgb"/>
+                              <Color blue="cc" green="cc" red="cc" type="rgb"/>
                             </Property>
                             <Property name="model" type="javax.swing.table.TableModel" editor="org.netbeans.modules.form.editors2.TableModelEditor">
                               <Table columnCount="2" rowCount="7">

@@ -45,8 +45,9 @@ public class jpRecibirMuestras extends javax.swing.JPanel {
     public void cargarDatos2() {
         limpiar(tablaRegistroManual);
         limpiar(tablaMRecibidas);
-        ml.cargarInformacion2(modelo, 13, "SELECT id_muestra,tipocafe, forma, beneficio, dueño,  lote,certificado, peso, sacos, comunidad,Metodosecado, fecha_llegada, fechalote FROM bitacoralab");
+        ml.cargarInformacion2(modelo, 14, "SELECT id_muestra,tipocafe, forma, beneficio, dueño,  lote,certificado, peso, sacos, comunidad,Metodosecado, fecha_llegada, fechalote, estatus FROM bitacoralab");
         ml.cargarInformacion2(modelo2, 10, "select tipocafe, forma, beneficio,dueño,idlote,certificado,peso,sacos,comunidad,Metodosecado\n"
+                
                 + "from muestrasenviadas");
 
     }
@@ -172,17 +173,17 @@ public class jpRecibirMuestras extends javax.swing.JPanel {
 
         tablaRegistroManual.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "# CSM", "Proceso", "Forma", "Beneficio", "Dueño", "#Sub Lote", "Certificación", "Peso Kg", "#Sacos", "Comunidad", "Metodo secado", "Fecha Recepcion Muestra", "Fecha Lote"
+                "# CSM", "Proceso", "Forma", "Beneficio", "Dueño", "#Sub Lote", "Certificación", "Peso Kg", "#Sacos", "Comunidad", "Metodo secado", "Fecha Recepcion Muestra", "Fecha Lote", "Estatus"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {

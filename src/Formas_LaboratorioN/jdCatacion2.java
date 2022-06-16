@@ -1264,6 +1264,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
         jLabel33.setFont(new java.awt.Font("Tahoma", 1, 11)); // NOI18N
         jLabel33.setText("Información");
 
+        Body2.setBackground(new java.awt.Color(204, 204, 204));
         Body2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Peso", null},
@@ -1297,6 +1298,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
             Body2.getColumnModel().getColumn(1).setMaxWidth(30);
         }
 
+        Finish2.setBackground(new java.awt.Color(204, 204, 204));
         Finish2.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Duración", null},
@@ -1747,6 +1749,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Seco", jPanel16);
 
+        Body8.setBackground(new java.awt.Color(204, 204, 204));
         Body8.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Peso", null},
@@ -1779,6 +1782,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
             Body8.getColumnModel().getColumn(1).setMaxWidth(30);
         }
 
+        Finish8.setBackground(new java.awt.Color(204, 204, 204));
         Finish8.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Duración", null},
@@ -2228,6 +2232,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Mojado/Quebrado", jPanel17);
 
+        Body9.setBackground(new java.awt.Color(204, 204, 204));
         Body9.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Peso", null},
@@ -2260,6 +2265,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
             Body9.getColumnModel().getColumn(1).setMaxWidth(30);
         }
 
+        Finish9.setBackground(new java.awt.Color(204, 204, 204));
         Finish9.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Duración", null},
@@ -2712,6 +2718,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Sabor", jPanel18);
 
+        Body10.setBackground(new java.awt.Color(204, 204, 204));
         Body10.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Peso", null},
@@ -3192,6 +3199,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
 
         jTabbedPane1.addTab("Sabor Remanente", jPanel19);
 
+        Body11.setBackground(new java.awt.Color(204, 204, 204));
         Body11.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Peso", null},
@@ -3224,6 +3232,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
             Body11.getColumnModel().getColumn(1).setMaxWidth(30);
         }
 
+        Finish11.setBackground(new java.awt.Color(204, 204, 204));
         Finish11.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Duración", null},
@@ -3256,7 +3265,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
             Finish11.getColumnModel().getColumn(1).setMaxWidth(30);
         }
 
-        Sweet10.setBackground(new java.awt.Color(255, 102, 102));
+        Sweet10.setBackground(new java.awt.Color(204, 204, 204));
         Sweet10.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Azúcar-Mor", null},
@@ -3293,7 +3302,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
             Sweet10.getColumnModel().getColumn(1).setMaxWidth(30);
         }
 
-        Floral10.setBackground(new java.awt.Color(255, 153, 102));
+        Floral10.setBackground(new java.awt.Color(204, 204, 204));
         Floral10.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Té-Negro", null},
@@ -3416,7 +3425,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
             SourFer10.getColumnModel().getColumn(1).setMaxWidth(30);
         }
 
-        GreenVeg10.setBackground(new java.awt.Color(102, 255, 102));
+        GreenVeg10.setBackground(new java.awt.Color(204, 204, 204));
         GreenVeg10.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Aceit-Oliv", null},
@@ -3455,7 +3464,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
             GreenVeg10.getColumnModel().getColumn(1).setMaxWidth(30);
         }
 
-        Other10.setBackground(new java.awt.Color(51, 255, 255));
+        Other10.setBackground(new java.awt.Color(204, 204, 204));
         Other10.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Papel/Hume", null},
@@ -3501,7 +3510,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
             Other10.getColumnModel().getColumn(1).setMaxWidth(30);
         }
 
-        Roasted10.setBackground(new java.awt.Color(0, 204, 255));
+        Roasted10.setBackground(new java.awt.Color(204, 204, 204));
         Roasted10.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Tabac-pipa", null},
@@ -3539,7 +3548,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
             Roasted10.getColumnModel().getColumn(1).setMaxWidth(30);
         }
 
-        Spices10.setBackground(new java.awt.Color(153, 153, 255));
+        Spices10.setBackground(new java.awt.Color(204, 204, 204));
         Spices10.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Acre", null},
@@ -3574,7 +3583,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
             Spices10.getColumnModel().getColumn(1).setMaxWidth(30);
         }
 
-        Nutty10.setBackground(new java.awt.Color(255, 102, 204));
+        Nutty10.setBackground(new java.awt.Color(204, 204, 204));
         Nutty10.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Nueces", null},
@@ -3705,6 +3714,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
             Body13.getColumnModel().getColumn(1).setMaxWidth(30);
         }
 
+        Finish13.setBackground(new java.awt.Color(204, 204, 204));
         Finish13.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Duración", null},
@@ -3736,7 +3746,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
             Finish13.getColumnModel().getColumn(1).setMaxWidth(30);
         }
 
-        Sweet12.setBackground(new java.awt.Color(255, 102, 102));
+        Sweet12.setBackground(new java.awt.Color(204, 204, 204));
         Sweet12.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Azúcar-Mor", null},
@@ -3774,7 +3784,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
             Sweet12.getColumnModel().getColumn(1).setMaxWidth(30);
         }
 
-        Floral12.setBackground(new java.awt.Color(255, 153, 102));
+        Floral12.setBackground(new java.awt.Color(204, 204, 204));
         Floral12.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Té-Negro", null},
@@ -3808,7 +3818,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
             Floral12.getColumnModel().getColumn(1).setMaxWidth(30);
         }
 
-        Fruit12.setBackground(new java.awt.Color(255, 204, 0));
+        Fruit12.setBackground(new java.awt.Color(204, 204, 204));
         Fruit12.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Bayas", null},
@@ -3859,7 +3869,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
             Fruit12.getColumnModel().getColumn(1).setMaxWidth(30);
         }
 
-        SourFer12.setBackground(new java.awt.Color(255, 255, 153));
+        SourFer12.setBackground(new java.awt.Color(204, 204, 204));
         SourFer12.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Acido", null},
@@ -3900,7 +3910,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
             SourFer12.getColumnModel().getColumn(1).setMaxWidth(30);
         }
 
-        GreenVeg12.setBackground(new java.awt.Color(102, 255, 102));
+        GreenVeg12.setBackground(new java.awt.Color(204, 204, 204));
         GreenVeg12.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Aceit-Oliv", null},
@@ -3940,7 +3950,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
             GreenVeg12.getColumnModel().getColumn(1).setMaxWidth(30);
         }
 
-        Other12.setBackground(new java.awt.Color(51, 255, 255));
+        Other12.setBackground(new java.awt.Color(204, 204, 204));
         Other12.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Papel/Hume", null},
@@ -3987,7 +3997,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
             Other12.getColumnModel().getColumn(1).setMaxWidth(30);
         }
 
-        Roasted12.setBackground(new java.awt.Color(0, 204, 255));
+        Roasted12.setBackground(new java.awt.Color(204, 204, 204));
         Roasted12.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Tabac-pipa", null},
@@ -4026,7 +4036,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
             Roasted12.getColumnModel().getColumn(1).setMaxWidth(30);
         }
 
-        Spices12.setBackground(new java.awt.Color(153, 153, 255));
+        Spices12.setBackground(new java.awt.Color(204, 204, 204));
         Spices12.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Acre", null},
@@ -4062,7 +4072,7 @@ public class jdCatacion2 extends javax.swing.JFrame {
             Spices12.getColumnModel().getColumn(1).setMaxWidth(30);
         }
 
-        Nutty12.setBackground(new java.awt.Color(255, 102, 204));
+        Nutty12.setBackground(new java.awt.Color(204, 204, 204));
         Nutty12.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {"Nueces", null},

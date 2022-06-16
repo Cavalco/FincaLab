@@ -111,20 +111,27 @@ public class excel {
         datos8 = mdb.devuelveUnDato("select sabores from bitacoralab where id_bitacora=" + idb + ";").split(",");
         datos9 = mdb.devuelveUnDato("select olores from bitacoralab where id_bitacora=" + idb + ";").split(",");
 
-        JOptionPane.showMessageDialog(null, "Sabores: " + datos8[0]);
-        JOptionPane.showMessageDialog(null, "Olores: " + datos9[0]);
-
+        //JOptionPane.showMessageDialog(null, "Sabores: " + datos8[0]);
+        //JOptionPane.showMessageDialog(null, "Olores: " + datos9[0]);
+        String sabor2="", saborR="", acidez2="", cuerpo2="",seco2="",mojado2="";
         String[] sabor = null, saborRemanente = null, acidez = null, cuerpo = null, seco = null, mojadoQuebrado = null;
 
         if (datos8[0].equals("null")) {
-            JOptionPane.showMessageDialog(null, "No puedo Martha");
+            //JOptionPane.showMessageDialog(null, "No puedo Martha");
+            sabor2="";
         } else {
             sabor = datos8[0].split(":");
+            sabor2 = sabor[1];
             saborRemanente = datos8[1].split(":");
+            saborR = saborRemanente[1];
             acidez = datos8[2].split(":");
+            acidez2=acidez[1];
             cuerpo = datos8[3].split(":");
+            cuerpo2=cuerpo[1];
             seco = datos9[0].split(":");
+            seco2=seco[1];
             mojadoQuebrado = datos9[1].split(":");
+            mojado2=mojadoQuebrado[1];
         }
 
         //String[] quebrado = datos9[2].split(":");
@@ -1329,37 +1336,37 @@ public class excel {
         if (c182 == null) {
             c182 = my_worksheet.getRow(13).createCell(10);
         } //sabores sabor
-        c182.setCellValue(sabor[1]);
+       c182.setCellValue(sabor2);
 
         c183 = my_worksheet.getRow(13).getCell(16);
         if (c183 == null) {
             c183 = my_worksheet.getRow(13).createCell(16);
         }//sabores acidez
-        c183.setCellValue(acidez[1]);
+        c183.setCellValue(acidez2);
 
         c184 = my_worksheet.getRow(16).getCell(4);
         if (c184 == null) {
             c184 = my_worksheet.getRow(16).createCell(4);
         } // sabores seco
-        c184.setCellValue(seco[1]);
+        c184.setCellValue(seco2);
 
         c185 = my_worksheet.getRow(16).getCell(10);
         if (c185 == null) {
             c185 = my_worksheet.getRow(16).createCell(10);
         } // sabores aftertaste
-        c185.setCellValue(saborRemanente[1]);
+        c185.setCellValue(saborR);
 
         c186 = my_worksheet.getRow(17).getCell(16);
         if (c186 == null) {
             c186 = my_worksheet.getRow(17).createCell(16);
         } //sabores body
-        c186.setCellValue(cuerpo[1]);
+        c186.setCellValue(cuerpo2);
 
         c187 = my_worksheet.getRow(18).getCell(4);
         if (c187 == null) {
             c187 = my_worksheet.getRow(18).createCell(4);
         }//sabores espuma y mojado
-        c187.setCellValue(mojadoQuebrado[1]);
+        c187.setCellValue(mojado2);
 
         //}
         //XSSFFormulaEvaluator.evaluateAllFormulaCells(my_xlsx_workbook);

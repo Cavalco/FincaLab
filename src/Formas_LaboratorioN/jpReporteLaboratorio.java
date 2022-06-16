@@ -73,7 +73,7 @@ public class jpReporteLaboratorio extends javax.swing.JPanel {
                 + "    b.lote as 'Lote',\n"
                 + "    b.certificado as 'Certificado',\n"
                 + "    b.dueño as 'Sociedad',\n"
-                + "    'Predio' as 'Predio',\n"
+                + "    '' as 'Predio',\n"
                 + "    b.comunidad as 'Comunidad',\n"
                 + "    b.calidadcereza as 'Calidad Cereza',\n"
                 + "    d.PesoEv as 'Peso Ev',\n"
@@ -81,18 +81,18 @@ public class jpReporteLaboratorio extends javax.swing.JPanel {
                 + "    d.humedad_o as 'Humedad O',\n"
                 + "    b.Metodosecado as 'Metodo Secado',\n"
                 + "    d.Densidadoro as 'Densidad Oro',\n"
-                + "    'Peso criba num' as 'Peso Criba#',\n"
+                + "    '' as 'Peso Criba#',\n"
                 + "    d.uniformidad as 'Uniformidad Oro',\n"
                 + "    d.color as 'Color Oro',\n"
-                + "    'Agua' as 'Agua',\n"
+                + "    '' as 'Agua',\n"
                 + "    t.numerotazas as 'Numero Tazas',\n"
-                + "    'C1' as 'Coment1',\n"
-                + "    'C2' as 'Coment2',\n"
-                + "    'C3' as 'Coment3',\n"
+                + "    b.observacionesMuestra as 'Coment1',\n"
+                + "    d.observaciones as 'Coment2',\n"
+                + "    '' as 'Coment3',\n"
                 + "    d.fecha as 'Fecha Ev Asp',\n"
                 + "    d.evaluador as 'Evaluador',\n"
                 + "    t.fecha as 'Fecha Ev Taz',\n"
-                + "    'Evaluado por' as 'Evaluado Por',\n"
+                + "    t.catadornom as 'Evaluado Por',\n"
                 + "    t.niveltostado as 'Nivel Tostado',\n"
                 + "    t.uniformidadtostado as 'Uniformidad Tostado',\n"
                 + "    t.quakers as 'Quakers',\n"
@@ -537,7 +537,7 @@ public class jpReporteLaboratorio extends javax.swing.JPanel {
         chooser.setDialogTitle("Guardar archivo");
         chooser.setAcceptAllFileFilterUsed(false);
         if (chooser.showSaveDialog(null) == JFileChooser.APPROVE_OPTION) {
-            String ruta = chooser.getSelectedFile().toString().concat(".xls");
+            String ruta = chooser.getSelectedFile().toString().concat(".csv");
             try {
                 File archivoXLS = new File(ruta);
                 if (archivoXLS.exists()) {
