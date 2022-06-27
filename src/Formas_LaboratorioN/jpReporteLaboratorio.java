@@ -10,12 +10,17 @@ import Formas_laboratorio.excel;
 import Formas_laboratorio.jpBitacora;
 import Metodos_Configuraciones.metodosDatosBasicos;
 import Metodos_Configuraciones.metodosLaboratorio;
+import com.opencsv.CSVWriter;
 import java.awt.Color;
 import java.awt.Desktop;
 import java.io.File;
 import java.io.FileOutputStream;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.sql.Connection;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JFileChooser;
@@ -403,6 +408,17 @@ public class jpReporteLaboratorio extends javax.swing.JPanel {
 
     }
 
+    public Object[][] obtenerContenidoTabla(DefaultTableModel modelo) {
+        Object[][] contenido = null;
+        contenido = new Object[modelo.getRowCount()][modelo.getColumnCount()];
+        for (int i = 0; i < modelo.getRowCount(); i++) {
+            for (int j = 0; j < modelo.getColumnCount(); j++) {
+                contenido[i][j] = modelo.getValueAt(i, j);
+            }
+        }
+        return contenido;
+    }
+
     private void limpiar(JTable tabla) {
         while (tabla.getRowCount() > 0) {
             ((DefaultTableModel) tabla.getModel()).removeRow(0);
@@ -532,7 +548,7 @@ public class jpReporteLaboratorio extends javax.swing.JPanel {
 
     public void exportarExcel(JTable t) throws IOException {
         JFileChooser chooser = new JFileChooser();
-        FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de excel", "xls");
+        FileNameExtensionFilter filter = new FileNameExtensionFilter("Archivos de excel", "csv");
         chooser.setFileFilter(filter);
         chooser.setDialogTitle("Guardar archivo");
         chooser.setAcceptAllFileFilterUsed(false);
@@ -547,7 +563,7 @@ public class jpReporteLaboratorio extends javax.swing.JPanel {
                 Workbook libro = new HSSFWorkbook();
                 FileOutputStream archivo = new FileOutputStream(archivoXLS);
                 Sheet hoja = libro.createSheet("Reporte Laboratorio");
-                hoja.setDisplayGridlines(false);
+                hoja.setDisplayGridlines(true);
                 for (int f = 0; f < t.getRowCount(); f++) {
                     Row fila = hoja.createRow(f);
                     for (int c = 0; c < t.getColumnCount(); c++) {
@@ -582,9 +598,41 @@ public class jpReporteLaboratorio extends javax.swing.JPanel {
     }
 
     private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        try {
+                try {
             // TODO add your handling code here:
             exportarExcel(tablaBitacora);
+        } catch (IOException ex) {
+            Logger.getLogger(jpReporteLaboratorio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        Object[][] contenido = obtenerContenidoTabla(modelo);
+
+        String csv = "C:\\Users\\Cronos\\Desktop\\Reportes Laboratorio\\BitacoraLaboratorio.csv";
+
+        CSVWriter writer = null;
+        try {
+            writer = new CSVWriter(new FileWriter(csv));
+        } catch (IOException ex) {
+            Logger.getLogger(jpReporteLaboratorio.class.getName()).log(Level.SEVERE, null, ex);
+        }
+
+        String[] header = new String[]{"Name", "Age", "Salary", "Address"};
+        writer.writeNext(header);
+        
+        List<String[]> datos = new ArrayList<String[]>();
+
+        for (int i = 0; i < modelo.getRowCount(); i++) {
+            String[] data = new String[modelo.getColumnCount()];
+            for (int j = 0; j < modelo.getColumnCount(); j++) {
+                data[j] = (modelo.getValueAt(i, j) + "");
+            }
+            datos.add(data);
+        }
+
+        writer.writeAll(datos);
+
+        try {
+            writer.close();
         } catch (IOException ex) {
             Logger.getLogger(jpReporteLaboratorio.class.getName()).log(Level.SEVERE, null, ex);
         }
@@ -601,7 +649,7 @@ public class jpReporteLaboratorio extends javax.swing.JPanel {
             jdEA.setVisible(true);
         }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
-    String csm = "", comunidad = "", proceso = "", forma = "", calCer = "",taza="";
+    String csm = "", comunidad = "", proceso = "", forma = "", calCer = "", taza = "";
     private void tablaBitacoraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaBitacoraMouseClicked
         // TODO add your handling code here:
         csm = tablaBitacora.getValueAt(tablaBitacora.getSelectedRow(), 0) + "";
@@ -703,7 +751,7 @@ public class jpReporteLaboratorio extends javax.swing.JPanel {
     excel excel = new excel();
     private void jMenuItem3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jMenuItem3ActionPerformed
         //REPORTE INDIVIDUAL
-            id = mL.devuelveUnDato("select id_bitacora from bitacoralab "
+        id = mL.devuelveUnDato("select id_bitacora from bitacoralab "
                 + "where (id_muestra='" + csm + "' and comunidad='" + comunidad + "')");
         try {
             excel.datos(cn, csm, id, taza, "");      // TODO add your handling code here:
