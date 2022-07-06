@@ -67,91 +67,218 @@ public class jpReporteLaboratorio extends javax.swing.JPanel {
         //limpiar(jTable3);
 
         String procesoCafe = combotipo.getSelectedItem() + "";
-        String where = "";
+        String where = "", busquedacombo = "", busq = "", aspecto = "", taza = "";
 
-        if (!procesoCafe.equals("Todos")) {
-            where = " where tipocafe = '" + procesoCafe + "'  ";
+        if (txtBusqueda.getText().length() > 0) {
+            busquedacombo = combobusqueda.getSelectedItem() + "";
+            if (busquedacombo.equals("# CSM")) {
+                busq = "and b.id_muestra like '" + txtBusqueda.getText() + "%'";
+            }
+            if (busquedacombo.equals("FechaLLegada")) {
+                busq = "and b.fecha_llegada like '" + txtBusqueda.getText() + "%'";
+            }
+            if (busquedacombo.equals("Proceso")) {
+                busq = "and b.tipocafe like '" + txtBusqueda.getText() + "%'";
+            }
+            if (busquedacombo.equals("Forma")) {
+                busq = "and b.forma like '" + txtBusqueda.getText() + "%'";
+            }
+            if (busquedacombo.equals("Beneficio")) {
+                busq = "and b.beneficio like '" + txtBusqueda.getText() + "%'";
+            }
+            if (busquedacombo.equals("Dueño")) {
+                busq = "and b.dueño like '" + txtBusqueda.getText() + "%'";
+            }
         }
 
-        mL.cargarInformacion2(modelo, 64, "SELECT\n"
-                + "    b.id_muestra as 'CSM',\n"
-                + "    b.fecha_llegada as 'Fecha Llegada',\n"
-                + "    b.tomadapor as 'Tomada Por',\n"
-                + "    b.fechalote as 'Fecha Lote',\n"
-                + "    b.tipocafe as 'Proceso Cafe',\n"
-                + "    b.forma as 'Forma Cafe',\n"
-                + "    b.peso as 'Peso',\n"
-                + "    b.sacos as 'Sacos',\n"
-                + "    b.beneficio as 'Beneficio',\n"
-                + "    b.lote as 'Lote',\n"
-                + "    b.certificado as 'Certificado',\n"
-                + "    b.dueño as 'Sociedad',\n"
-                + "    '' as 'Predio',\n"
-                + "    b.comunidad as 'Comunidad',\n"
-                + "    b.calidadcereza as 'Calidad Cereza',\n"
-                + "    d.PesoEv as 'Peso Ev',\n"
-                + "    d.humedad_c as 'Humedad C',\n"
-                + "    d.humedad_o as 'Humedad O',\n"
-                + "    b.Metodosecado as 'Metodo Secado',\n"
-                + "    d.Densidadoro as 'Densidad Oro',\n"
-                + "    '' as 'Peso Criba#',\n"
-                + "    d.uniformidad as 'Uniformidad Oro',\n"
-                + "    d.color as 'Color Oro',\n"
-                + "    '' as 'Agua',\n"
-                + "    t.numerotazas as 'Numero Tazas',\n"
-                + "    b.observacionesMuestra as 'Coment1',\n"
-                + "    d.observaciones as 'Coment2',\n"
-                + "    '' as 'Coment3',\n"
-                + "    d.fecha as 'Fecha Ev Asp',\n"
-                + "    d.evaluador as 'Evaluador',\n"
-                + "    t.fecha as 'Fecha Ev Taz',\n"
-                + "    t.catadornom as 'Evaluado Por',\n"
-                + "    t.niveltostado as 'Nivel Tostado',\n"
-                + "    t.uniformidadtostado as 'Uniformidad Tostado',\n"
-                + "    t.quakers as 'Quakers',\n"
-                + "    t.dry as 'Seco',\n"
-                + "    b.olores as 'Cualidades Seco',\n"
-                + "    t.wet as 'Mojado',\n"
-                + "    t.break as 'Quebrado',\n"
-                + "    b.olores as 'Cualidades Moj/Queb',\n"
-                + "    t.flavor as 'Sabor',\n"
-                + "    b.sabores as 'Cualidades Sabor',\n"
-                + "    t.aftertaste as 'Sabor Remanente',\n"
-                + "    b.sabores as 'Cualidades Remanente',\n"
-                + "    t.acidity as 'Acidez',\n"
-                + "    b.sabores as 'Cualidades Acidez',\n"
-                + "    t.intensidadacidit as 'Intensidad Acidez',\n"
-                + "    t.body as 'Cuerpo',\n"
-                + "    b.sabores as 'Cualidades Cuerpo',\n"
-                + "    t.intensidadbody as 'Intensidad Cuerpo',\n"
-                + "    t.balance as 'Balance',\n"
-                + "    t.uniformidadtaza as 'Uniformidad Taza',\n"
-                + "    t.tazalimpia as 'Taza Limpia',\n"
-                + "    t.dulzor as 'Dulzor',\n"
-                + "    t.numtazasdefect as 'Num Taza Defectos',\n"
-                + "    t.intensidaddef as 'Intensidad Defectos',\n"
-                + "    t.catador as 'Catador',\n"
-                + "    GROUP_CONCAT(c.criba,'-', SUBSTRING_INDEX(c.datos,',',1) order by c.id_cribas),\n"
-                + " 'Peso 18',"
-                + " 'Peso 17',"
-                + " 'Peso 16',"
-                + " 'Peso 15',"
-                + " 'Peso F',"
-                + "    GROUP_CONCAT(c.datos order by c.id_cribas) \n"
-                + "FROM\n"
-                + "    bitacoralab b\n"
-                + "LEFT JOIN datosev d ON\n"
-                + "    (b.id_bitacora = d.id_muestra)\n"
-                + "LEFT JOIN cribas c ON\n"
-                + "    (c.id_bitacora = b.id_bitacora)\n"
-                + "LEFT JOIN catacion t ON\n"
-                + "    (t.id_bitacora = b.id_bitacora)\n"
-                +" " + where + " "
-                + "GROUP BY\n"
-                + "    b.id_muestra\n"
-                + "ORDER BY\n"
-                + "    b.id_muestra");
+        //filtros de evaluaciones
+        if (Sinevaluar.isSelected()) {
+            taza = "and b.taza = '0'";
+            aspecto = "and b.aspecto = '0'";
+        }
 
+        if (Catadas.isSelected()) {
+            taza = "and b.taza = '1'";
+            aspecto = "and b.aspecto = '1'";
+        }
+
+        if (Aspecto.isSelected()) {
+            taza = "and b.taza = '0'";
+            aspecto = "and b.aspecto = '1'";
+        }
+        if (ALL.isSelected()) {
+            taza = "";
+            aspecto = "";
+        }
+
+        if (procesoCafe.equals("Todos")) {
+            // where = "and tipocafe = '" + procesoCafe + "'  ";
+            //busq = "where " + busq;
+            mL.cargarInformacion2(modelo, 65, "SELECT\n"
+                    + "    b.estatus as 'Estatus',\n"
+                    + "    b.id_muestra as 'CSM',\n"
+                    + "    b.fecha_llegada as 'Fecha Llegada',\n"
+                    + "    b.tomadapor as 'Tomada Por',\n"
+                    + "    b.fechalote as 'Fecha Lote',\n"
+                    + "    b.tipocafe as 'Proceso Cafe',\n"
+                    + "    b.forma as 'Forma Cafe',\n"
+                    + "    b.peso as 'Peso',\n"
+                    + "    b.sacos as 'Sacos',\n"
+                    + "    b.beneficio as 'Beneficio',\n"
+                    + "    b.lote as 'Lote',\n"
+                    + "    b.certificado as 'Certificado',\n"
+                    + "    b.dueño as 'Sociedad',\n"
+                    + "    '' as 'Predio',\n"
+                    + "    b.comunidad as 'Comunidad',\n"
+                    + "    b.calidadcereza as 'Calidad Cereza',\n"
+                    + "    d.PesoEv as 'Peso Ev',\n"
+                    + "    d.humedad_c as 'Humedad C',\n"
+                    + "    d.humedad_o as 'Humedad O',\n"
+                    + "    b.Metodosecado as 'Metodo Secado',\n"
+                    + "    d.Densidadoro as 'Densidad Oro',\n"
+                    + "    '' as 'Peso Criba#',\n"
+                    + "    d.uniformidad as 'Uniformidad Oro',\n"
+                    + "    d.color as 'Color Oro',\n"
+                    + "    '' as 'Agua',\n"
+                    + "    t.numerotazas as 'Numero Tazas',\n"
+                    + "    b.observacionesMuestra as 'Coment1',\n"
+                    + "    d.observaciones as 'Coment2',\n"
+                    + "    '' as 'Coment3',\n"
+                    + "    d.fecha as 'Fecha Ev Asp',\n"
+                    + "    d.evaluador as 'Evaluador',\n"
+                    + "    t.fecha as 'Fecha Ev Taz',\n"
+                    + "    t.catadornom as 'Evaluado Por',\n"
+                    + "    t.niveltostado as 'Nivel Tostado',\n"
+                    + "    t.uniformidadtostado as 'Uniformidad Tostado',\n"
+                    + "    t.quakers as 'Quakers',\n"
+                    + "    t.dry as 'Seco',\n"
+                    + "    b.olores as 'Cualidades Seco',\n"
+                    + "    t.wet as 'Mojado',\n"
+                    + "    t.break as 'Quebrado',\n"
+                    + "    b.olores as 'Cualidades Moj/Queb',\n"
+                    + "    t.flavor as 'Sabor',\n"
+                    + "    b.sabores as 'Cualidades Sabor',\n"
+                    + "    t.aftertaste as 'Sabor Remanente',\n"
+                    + "    b.sabores as 'Cualidades Remanente',\n"
+                    + "    t.acidity as 'Acidez',\n"
+                    + "    b.sabores as 'Cualidades Acidez',\n"
+                    + "    t.intensidadacidit as 'Intensidad Acidez',\n"
+                    + "    t.body as 'Cuerpo',\n"
+                    + "    b.sabores as 'Cualidades Cuerpo',\n"
+                    + "    t.intensidadbody as 'Intensidad Cuerpo',\n"
+                    + "    t.balance as 'Balance',\n"
+                    + "    t.uniformidadtaza as 'Uniformidad Taza',\n"
+                    + "    t.tazalimpia as 'Taza Limpia',\n"
+                    + "    t.dulzor as 'Dulzor',\n"
+                    + "    t.numtazasdefect as 'Num Taza Defectos',\n"
+                    + "    t.intensidaddef as 'Intensidad Defectos',\n"
+                    + "    t.catador as 'Catador',\n"
+                    + "    GROUP_CONCAT(c.criba,'-', SUBSTRING_INDEX(c.datos,',',1) order by c.id_cribas),\n"
+                    + " 'Peso 18',"
+                    + " 'Peso 17',"
+                    + " 'Peso 16',"
+                    + " 'Peso 15',"
+                    + " 'Peso F',"
+                    + "    GROUP_CONCAT(c.datos order by c.id_cribas) \n"
+                    + "FROM\n"
+                    + "    bitacoralab b\n"
+                    + "LEFT JOIN datosev d ON\n"
+                    + "    (b.id_bitacora = d.id_muestra)\n"
+                    + "LEFT JOIN cribas c ON\n"
+                    + "    (c.id_bitacora = b.id_bitacora)\n"
+                    + "LEFT JOIN catacion t ON\n"
+                    + "    (t.id_bitacora = b.id_bitacora)\n"
+                    + "where tipocafe !='z' " + where + " " + busq + "  " + aspecto + "  " + taza + "  "
+                    + "GROUP BY\n"
+                    + "    b.id_muestra\n"
+                    + "ORDER BY\n"
+                    + "    b.id_muestra");
+
+        } else {
+            where = procesoCafe;
+            mL.cargarInformacion2(modelo, 65, "SELECT\n"
+                    + "    b.estatus as 'Estatus',\n"
+                    + "    b.id_muestra as 'CSM',\n"
+                    + "    b.fecha_llegada as 'Fecha Llegada',\n"
+                    + "    b.tomadapor as 'Tomada Por',\n"
+                    + "    b.fechalote as 'Fecha Lote',\n"
+                    + "    b.tipocafe as 'Proceso Cafe',\n"
+                    + "    b.forma as 'Forma Cafe',\n"
+                    + "    b.peso as 'Peso',\n"
+                    + "    b.sacos as 'Sacos',\n"
+                    + "    b.beneficio as 'Beneficio',\n"
+                    + "    b.lote as 'Lote',\n"
+                    + "    b.certificado as 'Certificado',\n"
+                    + "    b.dueño as 'Sociedad',\n"
+                    + "    '' as 'Predio',\n"
+                    + "    b.comunidad as 'Comunidad',\n"
+                    + "    b.calidadcereza as 'Calidad Cereza',\n"
+                    + "    d.PesoEv as 'Peso Ev',\n"
+                    + "    d.humedad_c as 'Humedad C',\n"
+                    + "    d.humedad_o as 'Humedad O',\n"
+                    + "    b.Metodosecado as 'Metodo Secado',\n"
+                    + "    d.Densidadoro as 'Densidad Oro',\n"
+                    + "    '' as 'Peso Criba#',\n"
+                    + "    d.uniformidad as 'Uniformidad Oro',\n"
+                    + "    d.color as 'Color Oro',\n"
+                    + "    '' as 'Agua',\n"
+                    + "    t.numerotazas as 'Numero Tazas',\n"
+                    + "    b.observacionesMuestra as 'Coment1',\n"
+                    + "    d.observaciones as 'Coment2',\n"
+                    + "    '' as 'Coment3',\n"
+                    + "    d.fecha as 'Fecha Ev Asp',\n"
+                    + "    d.evaluador as 'Evaluador',\n"
+                    + "    t.fecha as 'Fecha Ev Taz',\n"
+                    + "    t.catadornom as 'Evaluado Por',\n"
+                    + "    t.niveltostado as 'Nivel Tostado',\n"
+                    + "    t.uniformidadtostado as 'Uniformidad Tostado',\n"
+                    + "    t.quakers as 'Quakers',\n"
+                    + "    t.dry as 'Seco',\n"
+                    + "    b.olores as 'Cualidades Seco',\n"
+                    + "    t.wet as 'Mojado',\n"
+                    + "    t.break as 'Quebrado',\n"
+                    + "    b.olores as 'Cualidades Moj/Queb',\n"
+                    + "    t.flavor as 'Sabor',\n"
+                    + "    b.sabores as 'Cualidades Sabor',\n"
+                    + "    t.aftertaste as 'Sabor Remanente',\n"
+                    + "    b.sabores as 'Cualidades Remanente',\n"
+                    + "    t.acidity as 'Acidez',\n"
+                    + "    b.sabores as 'Cualidades Acidez',\n"
+                    + "    t.intensidadacidit as 'Intensidad Acidez',\n"
+                    + "    t.body as 'Cuerpo',\n"
+                    + "    b.sabores as 'Cualidades Cuerpo',\n"
+                    + "    t.intensidadbody as 'Intensidad Cuerpo',\n"
+                    + "    t.balance as 'Balance',\n"
+                    + "    t.uniformidadtaza as 'Uniformidad Taza',\n"
+                    + "    t.tazalimpia as 'Taza Limpia',\n"
+                    + "    t.dulzor as 'Dulzor',\n"
+                    + "    t.numtazasdefect as 'Num Taza Defectos',\n"
+                    + "    t.intensidaddef as 'Intensidad Defectos',\n"
+                    + "    t.catador as 'Catador',\n"
+                    + "    GROUP_CONCAT(c.criba,'-', SUBSTRING_INDEX(c.datos,',',1) order by c.id_cribas),\n"
+                    + " 'Peso 18',"
+                    + " 'Peso 17',"
+                    + " 'Peso 16',"
+                    + " 'Peso 15',"
+                    + " 'Peso F',"
+                    + "    GROUP_CONCAT(c.datos order by c.id_cribas) \n"
+                    + "FROM\n"
+                    + "    bitacoralab b\n"
+                    + "LEFT JOIN datosev d ON\n"
+                    + "    (b.id_bitacora = d.id_muestra)\n"
+                    + "LEFT JOIN cribas c ON\n"
+                    + "    (c.id_bitacora = b.id_bitacora)\n"
+                    + "LEFT JOIN catacion t ON\n"
+                    + "    (t.id_bitacora = b.id_bitacora)\n"
+                    + "where tipocafe ='" + where + "' " + busq + "  " + aspecto + "  " + taza + "  "
+                    + "GROUP BY\n"
+                    + "    b.id_muestra\n"
+                    + "ORDER BY\n"
+                    + "    b.id_muestra");
+
+        }
+
+       
         procesos();
     }
 
@@ -159,7 +286,7 @@ public class jpReporteLaboratorio extends javax.swing.JPanel {
 
         //       JOptionPane.showMessageDialog(null, jTable1.getRowCount());
         for (int i = 0; i < tablaBitacora.getRowCount(); i++) {
-            String peso = tablaBitacora.getValueAt(i, 57) + "";
+            String peso = tablaBitacora.getValueAt(i, 58) + "";
             //JOptionPane.showMessageDialog(null, peso);
 
             if (peso.equals("null")) {
@@ -187,231 +314,231 @@ public class jpReporteLaboratorio extends javax.swing.JPanel {
                 String peso15 = pesos15[1];
                 String pesoF = pesosF[1];
 
-                tablaBitacora.setValueAt(peso19, i, 57);
-                tablaBitacora.setValueAt(peso18, i, 58);
-                tablaBitacora.setValueAt(peso17, i, 59);
-                tablaBitacora.setValueAt(peso16, i, 60);
-                tablaBitacora.setValueAt(peso15, i, 61);
-                tablaBitacora.setValueAt(pesoF, i, 62);
+                tablaBitacora.setValueAt(peso19, i, 58);
+                tablaBitacora.setValueAt(peso18, i, 59);
+                tablaBitacora.setValueAt(peso17, i, 60);
+                tablaBitacora.setValueAt(peso16, i, 61);
+                tablaBitacora.setValueAt(peso15, i, 62);
+                tablaBitacora.setValueAt(pesoF, i, 63);
 
-                String cadenaDefectos = tablaBitacora.getValueAt(i, 63) + "";
+                String cadenaDefectos = tablaBitacora.getValueAt(i, 64) + "";
                 String defectos[] = cadenaDefectos.split(",");
                 //Peso Criba 19
                 //jTable1.setValueAt(defectos[0], i, 63);
-                tablaBitacora.setValueAt(defectos[1], i, 63);
-                tablaBitacora.setValueAt(defectos[2], i, 64);
-                tablaBitacora.setValueAt(defectos[3], i, 65);
-                tablaBitacora.setValueAt(defectos[4], i, 66);
-                tablaBitacora.setValueAt(defectos[5], i, 67);
-                tablaBitacora.setValueAt(defectos[6], i, 68);
-                tablaBitacora.setValueAt(defectos[7], i, 69);
-                tablaBitacora.setValueAt(defectos[8], i, 70);
-                tablaBitacora.setValueAt(defectos[9], i, 71);
-                tablaBitacora.setValueAt(defectos[10], i, 72);
-                tablaBitacora.setValueAt(defectos[11], i, 73);
-                tablaBitacora.setValueAt(defectos[12], i, 74);
-                tablaBitacora.setValueAt(defectos[13], i, 75);
-                tablaBitacora.setValueAt(defectos[14], i, 76);
-                tablaBitacora.setValueAt(defectos[15], i, 77);
-                tablaBitacora.setValueAt(defectos[16], i, 78);
-                tablaBitacora.setValueAt(defectos[17], i, 79);
+                tablaBitacora.setValueAt(defectos[1], i, 64);
+                tablaBitacora.setValueAt(defectos[2], i, 65);
+                tablaBitacora.setValueAt(defectos[3], i, 66);
+                tablaBitacora.setValueAt(defectos[4], i, 67);
+                tablaBitacora.setValueAt(defectos[5], i, 68);
+                tablaBitacora.setValueAt(defectos[6], i, 69);
+                tablaBitacora.setValueAt(defectos[7], i, 70);
+                tablaBitacora.setValueAt(defectos[8], i, 71);
+                tablaBitacora.setValueAt(defectos[9], i, 72);
+                tablaBitacora.setValueAt(defectos[10], i, 73);
+                tablaBitacora.setValueAt(defectos[11], i, 74);
+                tablaBitacora.setValueAt(defectos[12], i, 75);
+                tablaBitacora.setValueAt(defectos[13], i, 76);
+                tablaBitacora.setValueAt(defectos[14], i, 77);
+                tablaBitacora.setValueAt(defectos[15], i, 78);
+                tablaBitacora.setValueAt(defectos[16], i, 79);
+                tablaBitacora.setValueAt(defectos[17], i, 80);
                 //Grano Humedo 19                            
                 //jTable1.setValueAt(defectos[18], i, 79);
-                tablaBitacora.setValueAt(defectos[19], i, 80);
-                tablaBitacora.setValueAt(defectos[20], i, 81);
-                tablaBitacora.setValueAt(defectos[21], i, 82);
-                tablaBitacora.setValueAt(defectos[22], i, 83);
-                tablaBitacora.setValueAt(defectos[23], i, 84);
+                tablaBitacora.setValueAt(defectos[19], i, 81);
+                tablaBitacora.setValueAt(defectos[20], i, 82);
+                tablaBitacora.setValueAt(defectos[21], i, 83);
+                tablaBitacora.setValueAt(defectos[22], i, 84);
+                tablaBitacora.setValueAt(defectos[23], i, 85);
                 //Peso Criba 18                
                 //jTable1.setValueAt(defectos[24], i, 87);
-                tablaBitacora.setValueAt(defectos[25], i, 85);
-                tablaBitacora.setValueAt(defectos[26], i, 86);
-                tablaBitacora.setValueAt(defectos[27], i, 87);
-                tablaBitacora.setValueAt(defectos[28], i, 88);
-                tablaBitacora.setValueAt(defectos[29], i, 89);
-                tablaBitacora.setValueAt(defectos[30], i, 90);
-                tablaBitacora.setValueAt(defectos[31], i, 91);
-                tablaBitacora.setValueAt(defectos[32], i, 92);
-                tablaBitacora.setValueAt(defectos[33], i, 93);
-                tablaBitacora.setValueAt(defectos[34], i, 94);
-                tablaBitacora.setValueAt(defectos[35], i, 95);
-                tablaBitacora.setValueAt(defectos[36], i, 96);
-                tablaBitacora.setValueAt(defectos[37], i, 97);
-                tablaBitacora.setValueAt(defectos[38], i, 98);
-                tablaBitacora.setValueAt(defectos[39], i, 99);
-                tablaBitacora.setValueAt(defectos[40], i, 100);
-                tablaBitacora.setValueAt(defectos[41], i, 101);
+                tablaBitacora.setValueAt(defectos[25], i, 86);
+                tablaBitacora.setValueAt(defectos[26], i, 87);
+                tablaBitacora.setValueAt(defectos[27], i, 88);
+                tablaBitacora.setValueAt(defectos[28], i, 89);
+                tablaBitacora.setValueAt(defectos[29], i, 90);
+                tablaBitacora.setValueAt(defectos[30], i, 91);
+                tablaBitacora.setValueAt(defectos[31], i, 92);
+                tablaBitacora.setValueAt(defectos[32], i, 93);
+                tablaBitacora.setValueAt(defectos[33], i, 94);
+                tablaBitacora.setValueAt(defectos[34], i, 95);
+                tablaBitacora.setValueAt(defectos[35], i, 96);
+                tablaBitacora.setValueAt(defectos[36], i, 97);
+                tablaBitacora.setValueAt(defectos[37], i, 98);
+                tablaBitacora.setValueAt(defectos[38], i, 99);
+                tablaBitacora.setValueAt(defectos[39], i, 100);
+                tablaBitacora.setValueAt(defectos[40], i, 101);
+                tablaBitacora.setValueAt(defectos[41], i, 102);
                 //Grano Humedo 18
                 //jTable1.setValueAt(defectos[42], i, 101);
-                tablaBitacora.setValueAt(defectos[43], i, 102);
-                tablaBitacora.setValueAt(defectos[44], i, 103);
-                tablaBitacora.setValueAt(defectos[45], i, 104);
-                tablaBitacora.setValueAt(defectos[46], i, 105);
-                tablaBitacora.setValueAt(defectos[47], i, 106);
+                tablaBitacora.setValueAt(defectos[43], i, 103);
+                tablaBitacora.setValueAt(defectos[44], i, 104);
+                tablaBitacora.setValueAt(defectos[45], i, 105);
+                tablaBitacora.setValueAt(defectos[46], i, 106);
+                tablaBitacora.setValueAt(defectos[47], i, 107);
                 //Peso Criba 17
                 //jTable1.setValueAt(defectos[48], i, 111);
-                tablaBitacora.setValueAt(defectos[49], i, 107);
-                tablaBitacora.setValueAt(defectos[50], i, 108);
-                tablaBitacora.setValueAt(defectos[51], i, 109);
-                tablaBitacora.setValueAt(defectos[52], i, 110);
-                tablaBitacora.setValueAt(defectos[53], i, 111);
-                tablaBitacora.setValueAt(defectos[54], i, 112);
-                tablaBitacora.setValueAt(defectos[55], i, 113);
-                tablaBitacora.setValueAt(defectos[56], i, 114);
-                tablaBitacora.setValueAt(defectos[57], i, 115);
-                tablaBitacora.setValueAt(defectos[58], i, 116);
-                tablaBitacora.setValueAt(defectos[59], i, 117);
-                tablaBitacora.setValueAt(defectos[60], i, 118);
-                tablaBitacora.setValueAt(defectos[61], i, 119);
-                tablaBitacora.setValueAt(defectos[62], i, 120);
-                tablaBitacora.setValueAt(defectos[63], i, 121);
-                tablaBitacora.setValueAt(defectos[64], i, 122);
-                tablaBitacora.setValueAt(defectos[65], i, 123);
+                tablaBitacora.setValueAt(defectos[49], i, 108);
+                tablaBitacora.setValueAt(defectos[50], i, 109);
+                tablaBitacora.setValueAt(defectos[51], i, 110);
+                tablaBitacora.setValueAt(defectos[52], i, 111);
+                tablaBitacora.setValueAt(defectos[53], i, 112);
+                tablaBitacora.setValueAt(defectos[54], i, 113);
+                tablaBitacora.setValueAt(defectos[55], i, 114);
+                tablaBitacora.setValueAt(defectos[56], i, 115);
+                tablaBitacora.setValueAt(defectos[57], i, 116);
+                tablaBitacora.setValueAt(defectos[58], i, 117);
+                tablaBitacora.setValueAt(defectos[59], i, 118);
+                tablaBitacora.setValueAt(defectos[60], i, 119);
+                tablaBitacora.setValueAt(defectos[61], i, 120);
+                tablaBitacora.setValueAt(defectos[62], i, 121);
+                tablaBitacora.setValueAt(defectos[63], i, 122);
+                tablaBitacora.setValueAt(defectos[64], i, 123);
+                tablaBitacora.setValueAt(defectos[65], i, 124);
                 //Grano Humedo 17                
                 //jTable1.setValueAt(defectos[66], i, 123);
-                tablaBitacora.setValueAt(defectos[67], i, 124);
-                tablaBitacora.setValueAt(defectos[68], i, 125);
-                tablaBitacora.setValueAt(defectos[69], i, 126);
-                tablaBitacora.setValueAt(defectos[70], i, 127);
-                tablaBitacora.setValueAt(defectos[71], i, 128);
+                tablaBitacora.setValueAt(defectos[67], i, 125);
+                tablaBitacora.setValueAt(defectos[68], i, 126);
+                tablaBitacora.setValueAt(defectos[69], i, 127);
+                tablaBitacora.setValueAt(defectos[70], i, 128);
+                tablaBitacora.setValueAt(defectos[71], i, 129);
                 //Peso Criba 16                
                 // jTable1.setValueAt(defectos[72], i, 135);
-                tablaBitacora.setValueAt(defectos[73], i, 129);
-                tablaBitacora.setValueAt(defectos[74], i, 130);
-                tablaBitacora.setValueAt(defectos[75], i, 131);
-                tablaBitacora.setValueAt(defectos[76], i, 132);
-                tablaBitacora.setValueAt(defectos[77], i, 133);
-                tablaBitacora.setValueAt(defectos[78], i, 134);
-                tablaBitacora.setValueAt(defectos[79], i, 135);
-                tablaBitacora.setValueAt(defectos[80], i, 136);
-                tablaBitacora.setValueAt(defectos[81], i, 137);
-                tablaBitacora.setValueAt(defectos[82], i, 138);
-                tablaBitacora.setValueAt(defectos[83], i, 139);
-                tablaBitacora.setValueAt(defectos[84], i, 140);
-                tablaBitacora.setValueAt(defectos[85], i, 141);
-                tablaBitacora.setValueAt(defectos[86], i, 142);
-                tablaBitacora.setValueAt(defectos[87], i, 143);
-                tablaBitacora.setValueAt(defectos[88], i, 144);
-                tablaBitacora.setValueAt(defectos[89], i, 145);
+                tablaBitacora.setValueAt(defectos[73], i, 130);
+                tablaBitacora.setValueAt(defectos[74], i, 131);
+                tablaBitacora.setValueAt(defectos[75], i, 132);
+                tablaBitacora.setValueAt(defectos[76], i, 133);
+                tablaBitacora.setValueAt(defectos[77], i, 134);
+                tablaBitacora.setValueAt(defectos[78], i, 135);
+                tablaBitacora.setValueAt(defectos[79], i, 136);
+                tablaBitacora.setValueAt(defectos[80], i, 137);
+                tablaBitacora.setValueAt(defectos[81], i, 138);
+                tablaBitacora.setValueAt(defectos[82], i, 139);
+                tablaBitacora.setValueAt(defectos[83], i, 140);
+                tablaBitacora.setValueAt(defectos[84], i, 141);
+                tablaBitacora.setValueAt(defectos[85], i, 142);
+                tablaBitacora.setValueAt(defectos[86], i, 143);
+                tablaBitacora.setValueAt(defectos[87], i, 144);
+                tablaBitacora.setValueAt(defectos[88], i, 145);
+                tablaBitacora.setValueAt(defectos[89], i, 146);
                 //Grano Humedo 16               
                 // jTable1.setValueAt(defectos[90], i, 145);
-                tablaBitacora.setValueAt(defectos[91], i, 146);
-                tablaBitacora.setValueAt(defectos[92], i, 147);
-                tablaBitacora.setValueAt(defectos[93], i, 148);
-                tablaBitacora.setValueAt(defectos[94], i, 149);
-                tablaBitacora.setValueAt(defectos[95], i, 150);
+                tablaBitacora.setValueAt(defectos[91], i, 147);
+                tablaBitacora.setValueAt(defectos[92], i, 148);
+                tablaBitacora.setValueAt(defectos[93], i, 149);
+                tablaBitacora.setValueAt(defectos[94], i, 150);
+                tablaBitacora.setValueAt(defectos[95], i, 151);
                 //Peso Criba 15
                 // jTable1.setValueAt(defectos[96], i, 159);
-                tablaBitacora.setValueAt(defectos[97], i, 151);
-                tablaBitacora.setValueAt(defectos[98], i, 152);
-                tablaBitacora.setValueAt(defectos[99], i, 153);
-                tablaBitacora.setValueAt(defectos[100], i, 154);
-                tablaBitacora.setValueAt(defectos[101], i, 155);
-                tablaBitacora.setValueAt(defectos[102], i, 156);
-                tablaBitacora.setValueAt(defectos[103], i, 157);
-                tablaBitacora.setValueAt(defectos[104], i, 158);
-                tablaBitacora.setValueAt(defectos[105], i, 159);
-                tablaBitacora.setValueAt(defectos[106], i, 160);
-                tablaBitacora.setValueAt(defectos[107], i, 161);
-                tablaBitacora.setValueAt(defectos[108], i, 162);
-                tablaBitacora.setValueAt(defectos[109], i, 163);
-                tablaBitacora.setValueAt(defectos[110], i, 164);
-                tablaBitacora.setValueAt(defectos[111], i, 165);
-                tablaBitacora.setValueAt(defectos[112], i, 166);
-                tablaBitacora.setValueAt(defectos[113], i, 167);
+                tablaBitacora.setValueAt(defectos[97], i, 152);
+                tablaBitacora.setValueAt(defectos[98], i, 153);
+                tablaBitacora.setValueAt(defectos[99], i, 154);
+                tablaBitacora.setValueAt(defectos[100], i, 155);
+                tablaBitacora.setValueAt(defectos[101], i, 156);
+                tablaBitacora.setValueAt(defectos[102], i, 157);
+                tablaBitacora.setValueAt(defectos[103], i, 158);
+                tablaBitacora.setValueAt(defectos[104], i, 159);
+                tablaBitacora.setValueAt(defectos[105], i, 160);
+                tablaBitacora.setValueAt(defectos[106], i, 161);
+                tablaBitacora.setValueAt(defectos[107], i, 162);
+                tablaBitacora.setValueAt(defectos[108], i, 163);
+                tablaBitacora.setValueAt(defectos[109], i, 164);
+                tablaBitacora.setValueAt(defectos[110], i, 165);
+                tablaBitacora.setValueAt(defectos[111], i, 166);
+                tablaBitacora.setValueAt(defectos[112], i, 167);
+                tablaBitacora.setValueAt(defectos[113], i, 168);
                 //Grano Humedo 15
                 //jTable1.setValueAt(defectos[114], i, 167);
-                tablaBitacora.setValueAt(defectos[115], i, 168);
-                tablaBitacora.setValueAt(defectos[116], i, 169);
-                tablaBitacora.setValueAt(defectos[117], i, 170);
-                tablaBitacora.setValueAt(defectos[118], i, 171);
-                tablaBitacora.setValueAt(defectos[119], i, 172);
+                tablaBitacora.setValueAt(defectos[115], i, 169);
+                tablaBitacora.setValueAt(defectos[116], i, 170);
+                tablaBitacora.setValueAt(defectos[117], i, 171);
+                tablaBitacora.setValueAt(defectos[118], i, 172);
+                tablaBitacora.setValueAt(defectos[119], i, 173);
                 //Peso Criba F                
                 //jTable1.setValueAt(defectos[120], i, 183);
-                tablaBitacora.setValueAt(defectos[121], i, 173);
-                tablaBitacora.setValueAt(defectos[122], i, 174);
-                tablaBitacora.setValueAt(defectos[123], i, 175);
-                tablaBitacora.setValueAt(defectos[124], i, 176);
-                tablaBitacora.setValueAt(defectos[125], i, 177);
-                tablaBitacora.setValueAt(defectos[126], i, 178);
-                tablaBitacora.setValueAt(defectos[127], i, 179);
-                tablaBitacora.setValueAt(defectos[128], i, 180);
-                tablaBitacora.setValueAt(defectos[129], i, 181);
-                tablaBitacora.setValueAt(defectos[130], i, 182);
-                tablaBitacora.setValueAt(defectos[131], i, 183);
-                tablaBitacora.setValueAt(defectos[132], i, 184);
-                tablaBitacora.setValueAt(defectos[133], i, 185);
-                tablaBitacora.setValueAt(defectos[134], i, 186);
-                tablaBitacora.setValueAt(defectos[135], i, 187);
-                tablaBitacora.setValueAt(defectos[136], i, 188);
-                tablaBitacora.setValueAt(defectos[137], i, 189);
+                tablaBitacora.setValueAt(defectos[121], i, 174);
+                tablaBitacora.setValueAt(defectos[122], i, 175);
+                tablaBitacora.setValueAt(defectos[123], i, 176);
+                tablaBitacora.setValueAt(defectos[124], i, 177);
+                tablaBitacora.setValueAt(defectos[125], i, 178);
+                tablaBitacora.setValueAt(defectos[126], i, 179);
+                tablaBitacora.setValueAt(defectos[127], i, 180);
+                tablaBitacora.setValueAt(defectos[128], i, 181);
+                tablaBitacora.setValueAt(defectos[129], i, 182);
+                tablaBitacora.setValueAt(defectos[130], i, 183);
+                tablaBitacora.setValueAt(defectos[131], i, 184);
+                tablaBitacora.setValueAt(defectos[132], i, 185);
+                tablaBitacora.setValueAt(defectos[133], i, 186);
+                tablaBitacora.setValueAt(defectos[134], i, 187);
+                tablaBitacora.setValueAt(defectos[135], i, 188);
+                tablaBitacora.setValueAt(defectos[136], i, 189);
+                tablaBitacora.setValueAt(defectos[137], i, 190);
                 //Grano Humedo F
                 //jTable1.setValueAt(defectos[138], i, 189);
-                tablaBitacora.setValueAt(defectos[139], i, 190);
-                tablaBitacora.setValueAt(defectos[140], i, 191);
-                tablaBitacora.setValueAt(defectos[141], i, 192);
-                tablaBitacora.setValueAt(defectos[142], i, 193);
-                tablaBitacora.setValueAt(defectos[143], i, 194);
+                tablaBitacora.setValueAt(defectos[139], i, 191);
+                tablaBitacora.setValueAt(defectos[140], i, 192);
+                tablaBitacora.setValueAt(defectos[141], i, 193);
+                tablaBitacora.setValueAt(defectos[142], i, 194);
+                tablaBitacora.setValueAt(defectos[143], i, 195);
             }
             //Separar cualidades Seco
-            String cadenaSeco = tablaBitacora.getValueAt(i, 36) + "";
+            String cadenaSeco = tablaBitacora.getValueAt(i, 37) + "";
             if (cadenaSeco.equals("null")) {
                 // JOptionPane.showMessageDialog(null, "Valí Seco");
             } else {
                 String cualidadesSeco[] = cadenaSeco.split(",");
                 cadenaSeco = cualidadesSeco[0];
                 cualidadesSeco = cadenaSeco.split(":");
-                tablaBitacora.setValueAt(cualidadesSeco[1], i, 36);
+                tablaBitacora.setValueAt(cualidadesSeco[1], i, 37);
             }
             //Separar cualidades MojadoQuebrado
-            String cadenaMojQue = tablaBitacora.getValueAt(i, 39) + "";
+            String cadenaMojQue = tablaBitacora.getValueAt(i, 40) + "";
             if (cadenaMojQue.equals("null")) {
                 // JOptionPane.showMessageDialog(null, "Valí Mojado");
             } else {
                 String cualidadesMojQue[] = cadenaMojQue.split(",");
                 cadenaMojQue = cualidadesMojQue[1];
                 cualidadesMojQue = cadenaMojQue.split(":");
-                tablaBitacora.setValueAt(cualidadesMojQue[1], i, 39);
+                tablaBitacora.setValueAt(cualidadesMojQue[1], i, 40);
             }
             //Separar cualidades Sabor
-            String cadenaSabor = tablaBitacora.getValueAt(i, 41) + "";
+            String cadenaSabor = tablaBitacora.getValueAt(i, 42) + "";
             if (cadenaSabor.equals("null")) {
                 // JOptionPane.showMessageDialog(null, "Valí Sabor");
             } else {
                 String cualidadesSabor[] = cadenaSabor.split(",");
                 cadenaSabor = cualidadesSabor[0];
                 cualidadesSabor = cadenaSabor.split(":");
-                tablaBitacora.setValueAt(cualidadesSabor[1], i, 41);
+                tablaBitacora.setValueAt(cualidadesSabor[1], i, 42);
             }
             //Separar cualidades Remanente
-            String cadenaRemanente = tablaBitacora.getValueAt(i, 43) + "";
+            String cadenaRemanente = tablaBitacora.getValueAt(i, 44) + "";
             if (cadenaRemanente.equals("null")) {
                 // JOptionPane.showMessageDialog(null, "Valí Remanente");
             } else {
                 String cualidadesRemanente[] = cadenaRemanente.split(",");
                 cadenaRemanente = cualidadesRemanente[1];
                 cualidadesRemanente = cadenaRemanente.split(":");
-                tablaBitacora.setValueAt(cualidadesRemanente[1], i, 43);
+                tablaBitacora.setValueAt(cualidadesRemanente[1], i, 44);
             }
             //Separar cualidades Acidez
-            String cadenaAcidez = tablaBitacora.getValueAt(i, 45) + "";
+            String cadenaAcidez = tablaBitacora.getValueAt(i, 46) + "";
             if (cadenaAcidez.equals("null")) {
                 // JOptionPane.showMessageDialog(null, "Valí Acidez");
             } else {
                 String cualidadesAcidez[] = cadenaAcidez.split(",");
                 cadenaAcidez = cualidadesAcidez[2];
                 cualidadesAcidez = cadenaAcidez.split(":");
-                tablaBitacora.setValueAt(cualidadesAcidez[1], i, 45);
+                tablaBitacora.setValueAt(cualidadesAcidez[1], i, 46);
             }
             //Separar cualidades Cuerpo
-            String cadenaCuerpo = tablaBitacora.getValueAt(i, 48) + "";
+            String cadenaCuerpo = tablaBitacora.getValueAt(i, 49) + "";
             if (cadenaCuerpo.equals("null")) {
                 //  JOptionPane.showMessageDialog(null, "Valí Cuerpo");
             } else {
                 String cualidadesCuerpo[] = cadenaCuerpo.split(",");
                 cadenaCuerpo = cualidadesCuerpo[3];
                 cualidadesCuerpo = cadenaCuerpo.split(":");
-                tablaBitacora.setValueAt(cualidadesCuerpo[1], i, 48);
+                tablaBitacora.setValueAt(cualidadesCuerpo[1], i, 49);
             }
         }
 
@@ -447,6 +574,7 @@ public class jpReporteLaboratorio extends javax.swing.JPanel {
         jMenuItem1 = new javax.swing.JMenuItem();
         jMenuItem2 = new javax.swing.JMenuItem();
         jMenuItem3 = new javax.swing.JMenuItem();
+        buttonGroup1 = new javax.swing.ButtonGroup();
         jPanel1 = new javax.swing.JPanel();
         jScrollPane1 = new javax.swing.JScrollPane();
         tablaBitacora = new javax.swing.JTable();
@@ -491,17 +619,17 @@ public class jpReporteLaboratorio extends javax.swing.JPanel {
 
         tablaBitacora.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "CSM", "Fecha Llegada", "Tomada Por", "Fecha Lote", "Proceso Cafe", "Forma Cafe", "Peso", "Sacos", "Beneficio", "Lote", "Certificado", "Sociedad", "Predio", "Comunidad", "Calidad Cereza", "Peso Ev", "Humedad C", "Humedad O", "Metado Secado", "Densidad Oro", "Peso Criba", "Uniformidad", "Color Oro", "Agua", "Numero Tazas", "Comentario 1", "Comentario 2", "Comentario 3", "Fecha Evaluacion A", "Evaluador", "Fecha Evaluacion T", "Evaluado Por", "Nivel Tostado", "Uniformidad", "Quakers", "Seco", "Cualidades Seco", "Mojado", "Quebrado", "Cualidades Mojado/Quebrado", "Sabor", "Cualidades Sabor", "Sabor Remanente", "Cualidades Sabor R", "Acidez", "Cualidades Acidez", "Intensidad Acidez", "Cuerpo", "Cualidades Cuerpo", "Intensidad Cuerpo", "Balance", "Uniformidad Taza", "Taza Limpia", "Dulzor", "Num Tazas", "Intensidad Defectos", "Catador", "Peso 19", "Peso 18", "Peso 17", "Peso 16", "Peso 15", "Peso F", "Broca Severa 19", "Broca 19", "Negro 19", "Negro Parcial 19", "Agrio 19", "Agrio Parcial 19", "Aplastado 19", "Daño o Mordido 19", "Daño y Agrio Parcial 19", "Blanco/Flotador 19", "Elefante 19", "Concha 19", "Malformado 19", "Daño por Hongos 19", "Inmaduro 19", "Sobresecado 19", "Arrugado 19", "Quebrado 19", "Cereza Seca 19", "Pergamino 19", "Cascara o Pulpa Seca 19", "Materia Extraña 19", "Broca Severa 18", "Broca 18", "Negro 18", "Negro Parcial 18", "Agrio 18", "Agrio Parcial 18", "Aplastado 18", "Daño o Mordido 18", "Daño y Agrio Parcial 18", "Blanco/Flotador 18", "Elefante 18", "Concha 18", "Malformado 18", "Daño por Hongos 18", "Inmaduro 18", "Sobresecado 18", "Arrugado 18", "Quebrado 18", "Cereza Seca 18", "Pergamino 18", "Cascara o Pulpa Seca 18", "Materia Extraña 18", "Broca Severa 17", "Broca 17", "Negro 17", "Negro Parcial 17", "Agrio 17", "Agrio Parcial 17", "Aplastado 17", "Daño o Mordido 17", "Daño y Agrio Parcial 17", "Blanco/Flotador 17", "Elefante 17", "Concha 17", "Malformado 17", "Daño por Hongos 17", "Inmaduro 17", "Sobresecado 17", "Arrugado 17", "Quebrado 17", "Cereza Seca 17", "Pergamino 17", "Cascara o Pulpa Seca 17", "Materia Extraña 17", "Broca Severa 16", "Broca 16", "Negro 16", "Negro Parcial 16", "Agrio 16", "Agrio Parcial 16", "Aplastado 16", "Daño o Mordido 16", "Daño y Agrio Parcial 16", "Blanco/Flotador 16", "Elefante 16", "Concha 16", "Malformado 16", "Daño por Hongos 16", "Inmaduro 16", "Sobresecado 16", "Arrugado 16", "Quebrado 16", "Cereza Seca 16", "Pergamino 16", "Cascara o Pulpa Seca 16", "Materia Extraña 16", "Broca Severa 15", "Broca 15", "Negro 15", "Negro Parcial 15", "Agrio 15", "Agrio Parcial 15", "Aplastado 15", "Daño o Mordido 15", "Daño y Agrio Parcial 15", "Blanco/Flotador 15", "Elefante 15", "Concha 15", "Malformado 15", "Daño por Hongos 15", "Inmaduro 15", "Sobresecado 15", "Arrugado 15", "Quebrado 15", "Cereza Seca 15", "Pergamino 15", "Cascara o Pulpa Seca 15", "Materia Extraña 15", "Broca Severa F", "Broca F", "Negro F", "Negro Parcial F", "Agrio F", "Agrio Parcial F", "Aplastado F", "Daño o Mordido F", "Daño y Agrio Parcial F", "Blanco/Flotador F", "Elefante F", "Concha F", "Malformado F", "Daño por Hongos F", "Inmaduro F", "Sobresecado F", "Arrugado F", "Quebrado F", "Cereza Seca F", "Pergamino F", "Cascara o Pulpa Seca F", "Materia Extraña F"
+                "Estatus", "CSM", "Fecha Llegada", "Tomada Por", "Fecha Lote", "Proceso Cafe", "Forma Cafe", "Peso", "Sacos", "Beneficio", "Lote", "Certificado", "Sociedad", "Predio", "Comunidad", "Calidad Cereza", "Peso Ev", "Humedad C", "Humedad O", "Metado Secado", "Densidad Oro", "Peso Criba", "Uniformidad", "Color Oro", "Agua", "Numero Tazas", "Comentario 1", "Comentario 2", "Comentario 3", "Fecha Evaluacion A", "Evaluador", "Fecha Evaluacion T", "Evaluado Por", "Nivel Tostado", "Uniformidad", "Quakers", "Seco", "Cualidades Seco", "Mojado", "Quebrado", "Cualidades Mojado/Quebrado", "Sabor", "Cualidades Sabor", "Sabor Remanente", "Cualidades Sabor R", "Acidez", "Cualidades Acidez", "Intensidad Acidez", "Cuerpo", "Cualidades Cuerpo", "Intensidad Cuerpo", "Balance", "Uniformidad Taza", "Taza Limpia", "Dulzor", "Num Tazas", "Intensidad Defectos", "Catador", "Peso 19", "Peso 18", "Peso 17", "Peso 16", "Peso 15", "Peso F", "Broca Severa 19", "Broca 19", "Negro 19", "Negro Parcial 19", "Agrio 19", "Agrio Parcial 19", "Aplastado 19", "Daño o Mordido 19", "Daño y Agrio Parcial 19", "Blanco/Flotador 19", "Elefante 19", "Concha 19", "Malformado 19", "Daño por Hongos 19", "Inmaduro 19", "Sobresecado 19", "Arrugado 19", "Quebrado 19", "Cereza Seca 19", "Pergamino 19", "Cascara o Pulpa Seca 19", "Materia Extraña 19", "Broca Severa 18", "Broca 18", "Negro 18", "Negro Parcial 18", "Agrio 18", "Agrio Parcial 18", "Aplastado 18", "Daño o Mordido 18", "Daño y Agrio Parcial 18", "Blanco/Flotador 18", "Elefante 18", "Concha 18", "Malformado 18", "Daño por Hongos 18", "Inmaduro 18", "Sobresecado 18", "Arrugado 18", "Quebrado 18", "Cereza Seca 18", "Pergamino 18", "Cascara o Pulpa Seca 18", "Materia Extraña 18", "Broca Severa 17", "Broca 17", "Negro 17", "Negro Parcial 17", "Agrio 17", "Agrio Parcial 17", "Aplastado 17", "Daño o Mordido 17", "Daño y Agrio Parcial 17", "Blanco/Flotador 17", "Elefante 17", "Concha 17", "Malformado 17", "Daño por Hongos 17", "Inmaduro 17", "Sobresecado 17", "Arrugado 17", "Quebrado 17", "Cereza Seca 17", "Pergamino 17", "Cascara o Pulpa Seca 17", "Materia Extraña 17", "Broca Severa 16", "Broca 16", "Negro 16", "Negro Parcial 16", "Agrio 16", "Agrio Parcial 16", "Aplastado 16", "Daño o Mordido 16", "Daño y Agrio Parcial 16", "Blanco/Flotador 16", "Elefante 16", "Concha 16", "Malformado 16", "Daño por Hongos 16", "Inmaduro 16", "Sobresecado 16", "Arrugado 16", "Quebrado 16", "Cereza Seca 16", "Pergamino 16", "Cascara o Pulpa Seca 16", "Materia Extraña 16", "Broca Severa 15", "Broca 15", "Negro 15", "Negro Parcial 15", "Agrio 15", "Agrio Parcial 15", "Aplastado 15", "Daño o Mordido 15", "Daño y Agrio Parcial 15", "Blanco/Flotador 15", "Elefante 15", "Concha 15", "Malformado 15", "Daño por Hongos 15", "Inmaduro 15", "Sobresecado 15", "Arrugado 15", "Quebrado 15", "Cereza Seca 15", "Pergamino 15", "Cascara o Pulpa Seca 15", "Materia Extraña 15", "Broca Severa F", "Broca F", "Negro F", "Negro Parcial F", "Agrio F", "Agrio Parcial F", "Aplastado F", "Daño o Mordido F", "Daño y Agrio Parcial F", "Blanco/Flotador F", "Elefante F", "Concha F", "Malformado F", "Daño por Hongos F", "Inmaduro F", "Sobresecado F", "Arrugado F", "Quebrado F", "Cereza Seca F", "Pergamino F", "Cascara o Pulpa Seca F", "Materia Extraña F"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -543,7 +671,7 @@ public class jpReporteLaboratorio extends javax.swing.JPanel {
 
         jLabel2.setText("Busqueda Por");
 
-        combobusqueda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione...", "# CSM", "Fecha de llegada", "Proceso", "Forma", "Beneficio", "Dueño" }));
+        combobusqueda.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Seleccione...", "# CSM", "Fecha de llegada", "Forma", "Beneficio", "Dueño" }));
 
         txtBusqueda.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -594,6 +722,7 @@ public class jpReporteLaboratorio extends javax.swing.JPanel {
 
         jPanel2.setBorder(javax.swing.BorderFactory.createEtchedBorder());
 
+        buttonGroup1.add(Sinevaluar);
         Sinevaluar.setText("Sin evaluar");
         Sinevaluar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -601,6 +730,7 @@ public class jpReporteLaboratorio extends javax.swing.JPanel {
             }
         });
 
+        buttonGroup1.add(Catadas);
         Catadas.setText("Catadas y listas para Mezclas");
         Catadas.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -608,6 +738,7 @@ public class jpReporteLaboratorio extends javax.swing.JPanel {
             }
         });
 
+        buttonGroup1.add(Aspecto);
         Aspecto.setText("Evaluada Por Aspecto");
         Aspecto.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -615,6 +746,7 @@ public class jpReporteLaboratorio extends javax.swing.JPanel {
             }
         });
 
+        buttonGroup1.add(ALL);
         ALL.setText("Todas");
         ALL.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -805,13 +937,14 @@ public class jpReporteLaboratorio extends javax.swing.JPanel {
             jdEA.setVisible(true);
         }
     }//GEN-LAST:event_jMenuItem1ActionPerformed
-    String csm = "", comunidad = "", proceso = "", forma = "", calCer = "", taza = "";
+    String csm = "", comunidad = "", proceso = "", forma = "", calCer = "", taza = "", estatus="";
     private void tablaBitacoraMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tablaBitacoraMouseClicked
         // TODO add your handling code here:
-        csm = tablaBitacora.getValueAt(tablaBitacora.getSelectedRow(), 0) + "";
-        comunidad = tablaBitacora.getValueAt(tablaBitacora.getSelectedRow(), 13) + "";
-        proceso = tablaBitacora.getValueAt(tablaBitacora.getSelectedRow(), 4) + "";
-        forma = tablaBitacora.getValueAt(tablaBitacora.getSelectedRow(), 5) + "";
+        estatus = tablaBitacora.getValueAt(tablaBitacora.getSelectedRow(), 0) + "";
+        csm = tablaBitacora.getValueAt(tablaBitacora.getSelectedRow(), 1) + "";
+        comunidad = tablaBitacora.getValueAt(tablaBitacora.getSelectedRow(), 14) + "";
+        proceso = tablaBitacora.getValueAt(tablaBitacora.getSelectedRow(), 5) + "";
+        forma = tablaBitacora.getValueAt(tablaBitacora.getSelectedRow(), 6) + "";
         calCer = mL.devuelveUnDato("select calidadcereza from bitacoralab "
                 + "where (id_muestra='" + csm + "' and comunidad='" + comunidad + "')");
         taza = mL.devuelveUnDato("select taza from bitacoralab "
@@ -841,54 +974,29 @@ public class jpReporteLaboratorio extends javax.swing.JPanel {
             yn.setForeground(Color.red);
             kgyn.setEnabled(true);
         }*/
- /*   if (estatus.equals(idioma.getProperty("Desactivada"))) {
-            jMenuItem4.setText(idioma.getProperty("Activar"));
-            System.out.println(estatus);
-        } else {
-            jMenuItem4.setText(idioma.getProperty("Desactivar"));
-        }
-        if (taza.equals("1") || aspecto.equals("0")) {
-            evtaza.setEnabled(false);
-            System.out.println(estatus);
-        } else {
-            evtaza.setEnabled(true);
-        }
-        if (aspecto.equals("1")) {
-            evaspecto.setEnabled(false);
-            System.out.println(estatus);
-        } else {
-            evaspecto.setEnabled(true);
-        }
-        if (aspecto.equals("1")/**
-                 * && taza.equals("1")
-         */
- /*      )
-        {
-            jMenuItem1.setEnabled(true);
-            System.out.println(estatus);
-        }else {
+   
+        if (estatus.equals("Disp")) {
             jMenuItem1.setEnabled(false);
-        }
-        if (aspecto.equals("1") && taza.equals("1") && mezasig.equals("0")) {
-            mezcla.setEnabled(true);
-            System.out.println(estatus);
+            jMenuItem2.setEnabled(false);
         } else {
-            mezcla.setEnabled(false);
+            jMenuItem1.setEnabled(true);
+            jMenuItem2.setEnabled(true);
         }
-        if (taza.equals("1")) {
-            sabores.setEnabled(true);
-            System.out.println(estatus);
-        } else {
-            sabores.setEnabled(false);
+        
+        if (estatus.equals("A")) {
+            jMenuItem1.setEnabled(false);
+            jMenuItem2.setEnabled(true);
         }
+        
+        if (estatus.equals("T")) {
+            jMenuItem1.setEnabled(true);
+            jMenuItem2.setEnabled(false);
+        }
+        
+        
+        
 
-        if (kgconfirm.equals("1")) {
-            kgConfirmados.setText("Kg Confimados");
-            kgConfirmados.setForeground(Color.green);
-        } else {
-            kgConfirmados.setText("Kg No Confirmados");
-            kgConfirmados.setForeground(Color.red);
-        }  */
+       
 
     }//GEN-LAST:event_tablaBitacoraMouseClicked
 
@@ -928,7 +1036,7 @@ public class jpReporteLaboratorio extends javax.swing.JPanel {
     }//GEN-LAST:event_txtBusquedaActionPerformed
 
     private void txtBusquedaKeyReleased(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaKeyReleased
-        //busqueda();
+        llenarTabla();
     }//GEN-LAST:event_txtBusquedaKeyReleased
 
     private void txtBusquedaKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtBusquedaKeyTyped
@@ -936,19 +1044,19 @@ public class jpReporteLaboratorio extends javax.swing.JPanel {
     }//GEN-LAST:event_txtBusquedaKeyTyped
 
     private void SinevaluarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_SinevaluarActionPerformed
-        //busqueda();
+        llenarTabla();
     }//GEN-LAST:event_SinevaluarActionPerformed
 
     private void CatadasActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_CatadasActionPerformed
-        //busqueda();
+        llenarTabla();
     }//GEN-LAST:event_CatadasActionPerformed
 
     private void AspectoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_AspectoActionPerformed
-        //busqueda();
+        llenarTabla();
     }//GEN-LAST:event_AspectoActionPerformed
 
     private void ALLActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_ALLActionPerformed
-       // busqueda();
+        llenarTabla();
     }//GEN-LAST:event_ALLActionPerformed
 
     private void combotipoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_combotipoActionPerformed
@@ -961,6 +1069,7 @@ public class jpReporteLaboratorio extends javax.swing.JPanel {
     private javax.swing.JRadioButton Aspecto;
     private javax.swing.JRadioButton Catadas;
     private javax.swing.JRadioButton Sinevaluar;
+    private javax.swing.ButtonGroup buttonGroup1;
     private javax.swing.JComboBox<String> combobusqueda;
     private javax.swing.JComboBox<String> combotipo;
     private javax.swing.JButton jButton1;
