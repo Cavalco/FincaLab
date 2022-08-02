@@ -112,14 +112,14 @@ public class jpAcopioProductor extends javax.swing.JPanel {
         //    jButton3.setText(idioma.getProperty("Cancelar"));
         jButton4.setText(idioma.getProperty("Cerrar"));
          */
-        /*jComboBox1.addItem(idioma.getProperty("Activos"));
+ /*jComboBox1.addItem(idioma.getProperty("Activos"));
         jComboBox1.addItem(idioma.getProperty("Inactivos"));
         jComboBox1.addItem(idioma.getProperty("Todos"));*/
-        
+
         PromptSupport.setPrompt(idioma.getProperty("Nombre"), txtNombre);
         PromptSupport.setPrompt(idioma.getProperty("ApellidoPaterno"), txtAPat);
         PromptSupport.setPrompt(idioma.getProperty("ApellidoMaterno"), txtAMat);
-        
+
         DefaultTableCellRenderer tcr = new DefaultTableCellRenderer();
         tcr.setHorizontalAlignment(SwingConstants.RIGHT);
         tablaAcopio.getColumnModel().getColumn(5).setCellRenderer(tcr);
@@ -128,12 +128,12 @@ public class jpAcopioProductor extends javax.swing.JPanel {
 
     public void llenarTabla() {
         limpiar(tablaAcopio);
-        String[] bds = {"fincalab_basilio", "fincalab_procaa", "fincalab_caldio", "fincalab_astal", "fincalab_tambor","fincalab_malinal","fincalab_cuerno"};
-       //String[] bds = {"prueba_fincalab"};
+        String[] bds = {"fincalab_basilio", "fincalab_procaa", "fincalab_caldio", "fincalab_astal", "fincalab_tambor", "fincalab_malinal", "fincalab_cuerno"};
+        //String[] bds = {"prueba_fincalab"};
         for (int i = 0; i < bds.length; i++) {
             cn = (new Conexion()).conectar(bds[i]);
             mdb = new metodosDatosBasicos(cn, Idioma);
-            mdb.cargarInformacion2(modelo, 7,
+            mdb.cargarInformacion2(modelo, 8,
                     "SELECT\n"
                     + "    p.clave_productor,\n"
                     + "    pm.NombreCorto,\n"
@@ -141,6 +141,7 @@ public class jpAcopioProductor extends javax.swing.JPanel {
                     + "    pf.ApellidoMaterno,\n"
                     + "    pf.Nombre,\n"
                     + "    FORMAT(SUM(r.kgRecibidos),2),\n"
+                    + "    r.precioNeto,\n"
                     + "    FORMAT(SUM(r.total),2)\n"
                     + "FROM\n"
                     + "    recibos r\n"
@@ -150,7 +151,8 @@ public class jpAcopioProductor extends javax.swing.JPanel {
                     + "    (pf.ID = r.idPersona)\n"
                     + "LEFT JOIN personam pm ON\n"
                     + "    (pm.ID = r.idSociedad)\n"
-                    + "GROUP BY p.clave_productor");
+                    + "    WHERE r.id_situacion=1\n"
+                    + "GROUP BY p.clave_productor, r.precioNeto;");
 
         }
 
@@ -299,11 +301,10 @@ public class jpAcopioProductor extends javax.swing.JPanel {
             cRecibos = cRecibos + Float.parseFloat(acRecibos);
         }
 
-/*        this.contadorEstimacion.setText(cEstimacion + "");
+        /*        this.contadorEstimacion.setText(cEstimacion + "");
         this.contadorKg.setText(cKg + "");
         this.contadorDinero.setText(cDinero + "");
         this.contadorRecibos.setText(cRecibos + "");*/
-
     }
 
     private void limpiar(JTable tabla) {
@@ -446,17 +447,17 @@ public class jpAcopioProductor extends javax.swing.JPanel {
 
         tablaAcopio.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null},
-                {null, null, null, null, null, null, null}
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null},
+                {null, null, null, null, null, null, null, null}
             },
             new String [] {
-                "Clave Productor", "Sociedad", "Apellido Paterno", "Apellido Materno", "Nombre", "Cereza (kg)", "Total M.N"
+                "Clave Productor", "Sociedad", "Apellido Paterno", "Apellido Materno", "Nombre", "Cereza (kg)", "Precio Unitario", "Total M.N"
             }
         ) {
             boolean[] canEdit = new boolean [] {
-                false, false, false, false, false, false, false
+                false, false, false, false, false, false, false, false
             };
 
             public boolean isCellEditable(int rowIndex, int columnIndex) {
@@ -629,7 +630,7 @@ public class jpAcopioProductor extends javax.swing.JPanel {
         limpiar(tablaAcopio);
         switch (comboSociedades.getSelectedItem() + "") {
             case "Seleccione":
-                sociedad="Seleccione";
+                sociedad = "Seleccione";
                 llenarTabla();
                 break;
             case "Basilio":
